@@ -1,0 +1,43 @@
+name: 🌹 Daily Gaza Rose Promoter
+
+on:
+  schedule:
+    # Every day at 9 AM UTC — no laptop needed, no localhost, runs in the cloud
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    # Also trigger manually from the Actions tab anytime
+    inputs:
+      platform:
+        description: 'Platform to post to'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - discord
+          - mastodon
+          - devto
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Promoter
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_SERVER: ${{ secrets.MASTODON_SERVER }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          TARGET_PLATFORM: ${{ github.event.inputs.platform || 'all' }}
+        run: python promoter/run.py
