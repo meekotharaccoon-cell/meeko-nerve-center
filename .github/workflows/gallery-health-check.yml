@@ -1,0 +1,31 @@
+name: 🌹 Gallery Health Check
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Gallery is Alive
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://meekotharaccoon-cell.github.io/gaza-rose-gallery/)
+          echo "Gallery HTTP status: $STATUS"
+          if [ "$STATUS" = "200" ]; then
+            echo "✅ Gallery is live"
+          else
+            echo "::warning::Gallery returned $STATUS"
+          fi
+
+      - name: Check Art Release Exists
+        run: |
+          RELEASE=$(curl -s https://api.github.com/repos/meekotharaccoon-cell/gaza-rose-gallery/releases/tags/v1.0-art-collection)
+          COUNT=$(echo $RELEASE | python3 -c "import sys,json; d=json.load(sys.stdin); print(len([a for a in d.get('assets',[]) if a['name'].lower().endswith(('.jpg','.png'))]))" 2>/dev/null || echo "0")
+          echo "Art pieces in release: $COUNT"
+          if [ "$COUNT" = "0" ]; then
+            echo "::warning::No art in release yet! Go to github.com/meekotharaccoon-cell/gaza-rose-gallery/releases/new and upload your JPGs tagged v1.0-art-collection"
+          else
+            echo "✅ $COUNT pieces ready to sell"
+          fi
