@@ -1,0 +1,46 @@
+name: 🌅 Mycelium Morning Pulse
+# Runs 9AM EST (14:00 UTC) every day
+# SENSES: checks gallery, reads web trends
+# THINKS: generates content with AI
+# ACTS: posts to all platforms
+# REMEMBERS: updates brain repo
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+jobs:
+  morning-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-dateutil
+
+      - name: Run Morning Pulse
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_SERVER: ${{ secrets.MASTODON_SERVER }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+          BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULSE_TIME: morning
+        run: python mycelium/pulse.py
+
+      - name: Update Brain Repo
+        env:
+          BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULSE_TIME: morning
+        run: python mycelium/brain_sync.py

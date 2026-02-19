@@ -1,63 +1,60 @@
-# 🌹 Meeko Nerve Center
+# 🍄 Meeko Nerve Center
 
-> Gaza Rose Autonomous System — runs entirely on GitHub. No localhost. No open tabs. Just money flowing to Palestine.
+The autonomous nervous system for Gaza Rose Gallery.
 
-## What's Live Right Now
+**Artist:** Meeko  
+**Mission:** $1 digital art, 70% to Palestine Children Relief Fund  
+**Gallery:** https://meekotharaccoon-cell.github.io/gaza-rose-gallery
 
-| System | URL | Status |
-|---|---|---|
-| Gaza Rose Gallery | [meekotharaccoon-cell.github.io/gaza-rose-gallery](https://meekotharaccoon-cell.github.io/gaza-rose-gallery) | 🟡 Art upload needed |
-| Main Site | [meekotharaccoon-cell.github.io](https://meekotharaccoon-cell.github.io) | 🟢 Live |
-| Daily Promoter | GitHub Actions (this repo) | 🟡 Add secrets to activate |
-
----
-
-## 🔑 One-Time Setup: Add These Secrets
-
-Go to **Settings → Secrets and variables → Actions → New repository secret**
+## Architecture
 
 ```
-DISCORD_WEBHOOK      → Your Discord webhook URL
-MASTODON_TOKEN       → Your Mastodon access token
-MASTODON_SERVER      → e.g. mastodon.social
-DEVTO_API_KEY        → Your Dev.to API key
+          MEEKO MYCELIUM
+          
+    [Brain: meeko-brain repo]
+           ↕ sync
+    [Heart: GitHub Actions]
+    ↙           ↘
+[Morning 9AM]  [Evening 9PM]
+    ↓               ↓
+[Eyes: health check + SerpAPI]
+    ↓
+[Voice: Discord + Mastodon + Dev.to]
+    ↓
+[Hands: PayPal + Stripe + Gumroad]
+    ↓
+[Memory: brain repo updated]
 ```
 
-After that — the promoter posts every day at 9 AM UTC. Automatically. Forever.
+## Workflows
+
+| Workflow | Schedule | Purpose |
+|----------|----------|---------|
+| mycelium-morning | 9AM EST daily | Promote + post + brain sync |
+| mycelium-evening | 9PM EST daily | Report + prep + brain sync |
+| daily-promoter | 9AM UTC (legacy) | Original promoter |
+| gallery-health-check | Every 6h | Uptime monitoring |
+
+## What the Mycelium Does
+
+- **Eyes**: Checks gallery is live. Watches for issues.
+- **Voice**: Posts to Discord, Mastodon, Dev.to with original messages
+- **Hands**: PayPal + Stripe + Coinbase + Gumroad secrets all loaded
+- **Memory**: Updates meeko-brain repo after every pulse
+- **Mind**: OpenRouter AI generates content when needed
+
+## Secrets Status
+
+All loaded: PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, GUMROAD_TOKEN,  
+OPENROUTER_KEY, STRIPE_SECRET, KIMI_API_KEY, SERPAPI_KEY, COINBASE_COMMERCE_KEY
+
+Needs creating by Meeko: DISCORD_WEBHOOK, MASTODON_TOKEN
+
+## Gaza Rose Gallery
+
+56 original 300 DPI digital flowers. $1 each. 70% to PCRF.
+
+https://meekotharaccoon-cell.github.io/gaza-rose-gallery
 
 ---
-
-## 📦 How to Add Art to the Gallery (One Time)
-
-1. Go to [gaza-rose-gallery → Releases → Create a release](https://github.com/meekotharaccoon-cell/gaza-rose-gallery/releases/new)
-2. Tag it exactly: `v1.0-art-collection`
-3. Upload all your `.jpg` files as release assets
-4. Publish — gallery auto-populates instantly
-
----
-
-## 🧠 System Map
-
-```
-    GitHub Actions (this repo)
-         |
-    ┌────┴────────────────────────┐
-    │                             │
-Daily Promoter           Gallery Health Check
-(9 AM UTC daily)         (every 6 hours)
-    │
-    ├── Discord
-    ├── Mastodon
-    ├── Dev.to
-    └── RSS Feed → Gaza Rose Gallery (GitHub Pages)
-                         │
-                         └── PayPal → PCRF 70%
-```
-
----
-
-## 🌹 The Mission
-
-$1 per piece. 70% to [PCRF](https://www.pcrf.net). Instant download. No friction. No middleman.
-
-**SolarPunk principle**: built legal and ethical from inception — everything it ever creates carries that DNA.
+*Runs itself. Updates itself. Never stops.*
