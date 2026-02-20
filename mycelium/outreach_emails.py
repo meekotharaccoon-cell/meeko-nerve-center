@@ -1,88 +1,78 @@
 #!/usr/bin/env python3
 """
-MYCELIUM OUTREACH
-
-Sends all initial outreach emails on first run.
-Tracks what was sent so it never sends twice.
-All emails are fully composed — no placeholders.
+MYCELIUM OUTREACH EMAILS
+Fully composed. Never repeated. Sent once per ID.
+Activates when GMAIL_APP_PASSWORD secret is set.
 """
-
-import os
-import json
-import smtplib
+import smtplib, json, os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timezone
 
-GMAIL_USER = 'mickowood86@gmail.com'
-GMAIL_PASS = os.environ.get('GMAIL_APP_PASSWORD')
-SENT_LOG = 'mycelium/sent_outreach.json'
-GALLERY = 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery'
-GITHUB = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
+GMAIL_USER = "mickowood86@gmail.com"
+GMAIL_PASS = os.environ.get("GMAIL_APP_PASSWORD", "")
+GALLERY    = "https://meekotharaccoon-cell.github.io/gaza-rose-gallery"
+GITHUB     = "https://github.com/meekotharaccoon-cell"
+SENT_LOG   = "mycelium/sent_outreach.json"
 
-OUTREACH = [
+EMAILS = [
     {
-        'id': 'pcrf_partnership',
-        'to': 'info@pcrf.net',
-        'subject': 'Gaza Rose Gallery — Artist Partnership & Donation Routing',
-        'body': """Hi PCRF team,
+        "id": "pcrf_partnership",
+        "to": "info@pcrf.net",
+        "subject": "Artist Partnership \u2014 Gaza Rose Gallery Donating 70% of Sales to PCRF",
+        "body": """Hi PCRF team,
 
-I'm Meeko — I'm a digital artist and I built Gaza Rose Gallery (https://meekotharaccoon-cell.github.io/gaza-rose-gallery) specifically to fund your work.
+My name is Meeko. I'm a self-taught digital artist and I built something specifically for your organization: Gaza Rose Gallery.
 
-Here's what it does: 56 original 300 DPI digital art pieces, $1 each, 70% of every sale pledged to PCRF. The gallery runs automatically 24/7 on free infrastructure with no ads, no investors, no middlemen. Buyers pay via PayPal, Bitcoin, or Lightning Network.
+It's a fully autonomous gallery of 56 original 300 DPI digital flower artworks, each sold for $1, with 70% of every sale committed to PCRF. The system runs 24 hours a day on free infrastructure \u2014 no ads, no investors, no corporate partners. Just art and a direct line to your work.
 
-I have two practical questions:
+I want to make sure the money reaches you with as little friction as possible. PayPal's donation processing takes roughly 3% before it reaches a nonprofit. I'd rather find a better path \u2014 whether that's a direct wire, a crypto address you already use, or a specific donation portal tied to your organization.
 
-1. Is there a direct payment method — wire, crypto address, or a dedicated Benevity/network link — that gets donations to you with the fewest fees? PayPal donates take ~3% before it reaches you.
+Two questions:
+1. Is there a preferred payment method that maximizes what you actually receive \u2014 ideally under 1% fees?
+2. Would you be open to a brief acknowledgment so I can attribute donations correctly?
 
-2. Would a formal acknowledgment or partnership letter be possible? Not for promotional purposes — I just want to make sure the money is attributed correctly when I transfer it.
+The gallery is open source: https://github.com/meekotharaccoon-cell/gaza-rose-gallery
 
-I'm not an organization. I'm one person who wanted to do something real. The gallery is open source at https://github.com/meekotharaccoon-cell/gaza-rose-gallery if you'd like to see how it works.
+Thank you for everything you do. The children you serve are the reason this exists.
 
-Thank you for everything you do for the children.
+Meeko
+mickowood86@gmail.com
+https://meekotharaccoon-cell.github.io/gaza-rose-gallery"""
+    },
+    {
+        "id": "cloudinary_cdn",
+        "to": "support@cloudinary.com",
+        "subject": "Free CDN Access Request \u2014 Open Source Humanitarian Art Gallery",
+        "body": """Hi Cloudinary,
 
+I'm a solo digital artist who built Gaza Rose Gallery (https://meekotharaccoon-cell.github.io/gaza-rose-gallery) \u2014 a fully open-source autonomous gallery where 70% of every $1 sale goes to the Palestine Children's Relief Fund.
+
+The whole stack runs on free infrastructure. Total monthly cost: $0. That's intentional \u2014 every dollar belongs to the mission.
+
+I have 12 high-resolution artworks (300 DPI, 50\u2013125 MB each) too large to serve from GitHub. Your CDN and automatic WebP conversion would solve this completely.
+
+I'm asking whether you have a humanitarian or open-source free tier for projects like this. If yes, I'd credit Cloudinary visibly in the gallery and GitHub README.
+
+Project: https://github.com/meekotharaccoon-cell/gaza-rose-gallery
+
+Thank you,
 Meeko
 mickowood86@gmail.com"""
     },
     {
-        'id': 'cloudinary_humanitarian',
-        'to': 'support@cloudinary.com',
-        'subject': 'Humanitarian Project — Free Tier Request for Gaza Art Gallery',
-        'body': """Hi Cloudinary team,
+        "id": "strike_api",
+        "to": "support@strike.me",
+        "subject": "API Access for Humanitarian Lightning Payments \u2014 Gaza Rose Gallery",
+        "body": """Hi Strike team,
 
-I'm writing to ask whether Cloudinary has a humanitarian or open-source free tier.
+I just signed up for Strike and I'm integrating Lightning payments into Gaza Rose Gallery (https://meekotharaccoon-cell.github.io/gaza-rose-gallery) \u2014 a $1-per-artwork gallery where 70% of sales goes to the Palestine Children's Relief Fund.
 
-I built Gaza Rose Gallery (https://meekotharaccoon-cell.github.io/gaza-rose-gallery), an autonomous digital art gallery where 70% of every $1 sale goes directly to the Palestine Children's Relief Fund. It's fully open source, zero ads, zero corporate backing.
+Lightning is the right tool here. PayPal takes ~49 cents on every $1 I sell. That's not acceptable when the mission is this direct.
 
-I have 12 high-resolution artworks (300 DPI, 50–125 MB each) that are too large to serve from GitHub. Cloudinary's CDN and automatic WebP conversion would make these accessible without breaking anything — and it aligns perfectly with what you're already great at.
+I need the Strike API to generate Lightning invoices from a Cloudflare Worker (serverless, no backend). I've already built the integration \u2014 I just need API access.
 
-I'm a single person. Not a company. The whole stack costs me $0/month and I'd like to keep it that way so every dollar goes to Gaza.
-
-If a free or reduced account is possible, I'd prominently credit Cloudinary in the gallery and GitHub README. If not, I understand — just wanted to ask the right people directly.
-
-Thank you,
-Meeko
-mickowood86@gmail.com
-https://github.com/meekotharaccoon-cell/gaza-rose-gallery"""
-    },
-    {
-        'id': 'strike_business_upgrade',
-        'to': 'support@strike.me',
-        'subject': 'Upgrading to Business API — Gaza Rose Lightning Payments',
-        'body': """Hi Strike team,
-
-I just signed up for a Strike account and I'm integrating Lightning payments into my humanitarian art gallery.
-
-Gaza Rose Gallery (https://meekotharaccoon-cell.github.io/gaza-rose-gallery) sells 56 original digital artworks at $1 each, with 70% going to the Palestine Children's Relief Fund. I'm building this to be as friction-free as possible — and Lightning is the answer for near-zero fee $1 payments.
-
-I'd like to use the Strike API to:
-- Generate Lightning invoices when buyers click 'Pay' on the gallery
-- Auto-deliver download links after payment confirmation via webhook
-- Keep everything serverless on GitHub Actions
-
-I understand I need to onboard as a business for API access. I'm happy to provide whatever is needed — my goal is to get this working so Lightning becomes the default payment method and PayPal becomes the fallback.
-
-Can you point me to the fastest path to get API access for a small humanitarian creator?
+Can you point me to the fastest path to get API access as a small humanitarian creator?
 
 Thank you,
 Meeko
@@ -90,74 +80,103 @@ mickowood86@gmail.com
 https://meekotharaccoon-cell.github.io/gaza-rose-gallery"""
     },
     {
-        'id': 'github_sponsors_apply',
-        'to': 'sponsors@github.com',
-        'subject': 'Gaza Rose Gallery — Open Source Humanitarian Project',
-        'body': """Hi GitHub Sponsors team,
+        "id": "github_sponsors",
+        "to": "sponsors@github.com",
+        "subject": "GitHub Sponsors Application \u2014 Gaza Rose Mycelium (Open Source Humanitarian)",
+        "body": """Hi GitHub Sponsors team,
 
-I'd like to apply for GitHub Sponsors for my project Gaza Rose Gallery.
+I'd like to apply for GitHub Sponsors for Gaza Rose Mycelium \u2014 an autonomous, open-source humanitarian art system running entirely on GitHub infrastructure.
 
-The project: An autonomous, open-source digital art gallery at https://meekotharaccoon-cell.github.io/gaza-rose-gallery. 56 original artworks, $1 each, 70% of sales goes to the Palestine Children's Relief Fund. The entire system — promotion, health checks, brain memory, email responses — runs automatically on GitHub Actions with zero monthly cost.
+What it is: 56 original digital artworks, $1 each, 70% to Palestine Children's Relief Fund. GitHub Actions handles everything \u2014 promotion, health checks, email responses, memory sync. Zero monthly cost.
 
 GitHub org: meekotharaccoon-cell
-Main repo: https://github.com/meekotharaccoon-cell/meeko-nerve-center
+Repo: https://github.com/meekotharaccoon-cell/meeko-nerve-center
+Gallery: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
 
-Any sponsorship would go directly into expanding the gallery (more art, better infrastructure, potentially a full donation routing system). This is a one-person project with a real mission.
+The architecture is forkable and replicable for any humanitarian cause. Sponsorship would help me document it and build it into a proper toolkit.
 
-I'd love to be considered. Happy to provide any additional information you need.
+Happy to provide anything needed.
 
 Meeko
 mickowood86@gmail.com"""
-    }
+    },
+    {
+        "id": "tech_for_palestine",
+        "to": "hello@techforpalestine.org",
+        "subject": "Open Source Humanitarian Gallery \u2014 Sharing for the Community",
+        "body": """Hi Tech for Palestine,
+
+I built something that belongs in your community: Gaza Rose Gallery.
+
+56 original digital artworks by me (Meeko), $1 each, 70% to PCRF. The system is fully autonomous \u2014 GitHub Actions handles everything, zero monthly cost, fully open source.
+
+I'm calling the architecture the Meeko Mycelium: a living digital organism with memory (private GitHub repo), heartbeat (twice-daily Actions), voice (platform posting), and hands (payment processing). Anyone could fork it for their own humanitarian project.
+
+Repos: https://github.com/meekotharaccoon-cell
+Gallery: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
+
+Sharing it if useful. No ask beyond that.
+
+Meeko
+mickowood86@gmail.com"""
+    },
+    {
+        "id": "producthunt",
+        "to": "hello@producthunt.com",
+        "subject": "Launch Inquiry \u2014 Gaza Rose Gallery (Humanitarian AI Art System)",
+        "body": """Hi Product Hunt,
+
+I'm wondering if Gaza Rose Gallery is a good fit for a launch and what the right process is.
+
+What it is: A fully autonomous digital art gallery. 56 original 300 DPI digital flowers, $1 each, 70% to Palestine Children's Relief Fund. The whole system runs on free GitHub infrastructure \u2014 no backend, no monthly cost, open source.
+
+What's technically interesting: GitHub Actions replaces a backend. A private repo acts as persistent AI memory. Lightning Network payments are being integrated for near-zero fees. The architecture is replicable for any humanitarian cause.
+
+Gallery: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
+Code: https://github.com/meekotharaccoon-cell
+
+Just asking about process \u2014 happy to follow whatever path you recommend.
+
+Meeko
+mickowood86@gmail.com"""
+    },
 ]
 
 def load_sent():
     try:
-        with open(SENT_LOG) as f:
-            return json.load(f)
-    except:
-        return {}
+        with open(SENT_LOG) as f: return json.load(f)
+    except: return {}
 
 def save_sent(sent):
-    os.makedirs('mycelium', exist_ok=True)
-    with open(SENT_LOG, 'w') as f:
-        json.dump(sent, f, indent=2)
+    os.makedirs("mycelium", exist_ok=True)
+    with open(SENT_LOG, "w") as f: json.dump(sent, f, indent=2)
 
 def send_email(to, subject, body):
-    if not GMAIL_PASS:
-        print(f'[Outreach] No GMAIL_APP_PASSWORD — would send to {to}')
-        print(f'  Subject: {subject}')
-        return False
-    try:
-        msg = MIMEMultipart()
-        msg['From'] = f'Meeko / Gaza Rose Gallery <{GMAIL_USER}>'
-        msg['To'] = to
-        msg['Subject'] = subject
-        msg.attach(MIMEText(body, 'plain'))
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
-            s.login(GMAIL_USER, GMAIL_PASS)
-            s.send_message(msg)
-        print(f'[Outreach] Sent to {to}')
-        return True
-    except Exception as e:
-        print(f'[Outreach] Failed to {to}: {e}')
-        return False
+    msg = MIMEMultipart()
+    msg["From"] = f"Meeko / Gaza Rose Gallery <{GMAIL_USER}>"
+    msg["To"] = to
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body, "plain"))
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+        s.login(GMAIL_USER, GMAIL_PASS)
+        s.send_message(msg)
 
 def run():
+    if not GMAIL_PASS:
+        print("[Outreach] GMAIL_APP_PASSWORD not set. Emails ready but not sending.")
+        return
     sent = load_sent()
-    for email_def in OUTREACH:
-        eid = email_def['id']
-        if eid in sent:
-            print(f'[Outreach] Already sent: {eid}')
+    for e in EMAILS:
+        if e["id"] in sent:
+            print(f"[Outreach] Already sent: {e['id']}")
             continue
-        ok = send_email(email_def['to'], email_def['subject'], email_def['body'])
-        if ok:
-            sent[eid] = {
-                'sent_at': datetime.now(timezone.utc).isoformat(),
-                'to': email_def['to'],
-                'subject': email_def['subject']
-            }
-    save_sent(sent)
+        try:
+            send_email(e["to"], e["subject"], e["body"])
+            sent[e["id"]] = {"to": e["to"], "sent_at": datetime.now(timezone.utc).isoformat()}
+            save_sent(sent)
+            print(f"[Outreach] SENT -> {e['to']}")
+        except Exception as ex:
+            print(f"[Outreach] FAILED {e['to']}: {ex}")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()
