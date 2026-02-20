@@ -1,0 +1,52 @@
+{
+  "verified": [
+    {
+      "name": "Palestine Children's Relief Fund (PCRF)",
+      "ein": "93-1057665",
+      "rating": "4-star Charity Navigator — 12 consecutive years (only 3% of charities achieve this)",
+      "founded": 1991,
+      "legal_status": "501(c)(3) registered USA",
+      "donate_url": "https://www.pcrf.net/get-involved/donate.html",
+      "email": "info@pcrf.net",
+      "verified_by": ["Charity Navigator", "GuideStar", "IRS 990 public filings"],
+      "notes": "Builds pediatric cancer depts in Gaza. Medical missions. Founded by Steve Sosebee. Real people, audited books, on the ground."
+    },
+    {
+      "name": "Doctors Without Borders (MSF) USA",
+      "rating": "4-star Charity Navigator, CharityWatch top-rated",
+      "legal_status": "501(c)(3)",
+      "donate_url": "https://www.doctorswithoutborders.org/donate",
+      "covers": ["Sudan", "DRC Congo", "Gaza", "global conflicts"],
+      "notes": "Operating in 11 of Sudan's 18 states. On-ground in DRC. One of the most respected medical aid orgs in the world. Refuses govt funding to stay independent."
+    },
+    {
+      "name": "International Rescue Committee (IRC)",
+      "rating": "4-star Charity Navigator",
+      "legal_status": "501(c)(3)",
+      "donate_url": "https://www.rescue.org/donate",
+      "covers": ["Sudan", "DRC Congo", "Gaza"],
+      "notes": "Health, nutrition, WASH, child protection, women's protection. Active in both Sudan and DRC."
+    },
+    {
+      "name": "Concern Worldwide US",
+      "rating": "4-star Charity Navigator",
+      "legal_status": "501(c)(3)",
+      "donate_url": "https://www.concernusa.org/donate",
+      "covers": ["Sudan", "DRC Congo"],
+      "notes": "Extreme poverty and conflict response. In Sudan since conflict began April 2023."
+    },
+    {
+      "name": "Oxfam America",
+      "rating": "Verified, 186,997 people reached in DRC as of Feb 2025",
+      "legal_status": "501(c)(3)",
+      "donate_url": "https://www.oxfamamerica.org/explore/emergencies/donate-crisis-drc-appeal/",
+      "covers": ["DRC Congo", "Sudan", "Gaza"],
+      "notes": "Food, water, sanitation, cash. North and South Kivu DRC specifically. USAID cut 70% of DRC funding in 2025 — Oxfam is filling the gap."
+    }
+  ],
+  "do_not_use": [
+    "Any GoFundMe for individuals you cannot personally verify",
+    "Any charity without IRS EIN and public 990 filings",
+    "Any org with less than 70% program spending ratio"
+  ]
+}
