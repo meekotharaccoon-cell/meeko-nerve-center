@@ -1,8 +1,8 @@
 name: 🌅 Mycelium Morning Pulse
 # Runs 9AM EST (14:00 UTC) every day
-# SENSES: checks gallery, reads web trends
+# SENSES: checks gallery, reads web
 # THINKS: generates content with AI
-# ACTS: posts to all platforms
+# ACTS: posts, emails briefing, sends outreach
 # REMEMBERS: updates brain repo
 
 on:
@@ -26,21 +26,55 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dateutil
 
-      - name: Run Morning Pulse
+      - name: 📰 Send Morning Briefing to Meeko
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/morning_briefing.py
+
+      - name: 📬 Send Outreach Emails (once each, tracked)
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/outreach_emails.py
+
+      - name: 🌱 Send Grant Emails (once each, tracked)
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/grant_outreach.py
+
+      - name: 🌿 Send More Grant Emails (once each, tracked)
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/more_grant_emails.py
+
+      - name: 📖 Publish Dev.to Article (once)
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+        run: python mycelium/publish_devto.py
+
+      - name: 🔊 Run Morning Pulse
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           MASTODON_SERVER: ${{ secrets.MASTODON_SERVER }}
-          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
-          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: morning
         run: python mycelium/pulse.py
 
-      - name: Update Brain Repo
+      - name: 🧠 Update Brain Repo
         env:
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: morning
         run: python mycelium/brain_sync.py
+
+      - name: 💾 Commit sent logs
+        run: |
+          git config user.email "meekotharaccoon@gmail.com"
+          git config user.name "Mycelium"
+          git add mycelium/sent_*.json mycelium/devto_published.json mycelium/replied_messages.json || true
+          git diff --staged --quiet || git commit -m "auto: morning pulse logs $(date -u +%Y-%m-%d)"
+          git push || true
