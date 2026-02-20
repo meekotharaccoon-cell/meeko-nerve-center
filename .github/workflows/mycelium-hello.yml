@@ -1,0 +1,26 @@
+name: 👋 Mycelium Hello
+on:
+  schedule:
+    - cron: '0 16 * * 2,4'  # Tue + Thu at noon EST — not every day, never feels spammy
+  workflow_dispatch:
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Send hellos + process unsubscribes
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+        run: python mycelium/mycelium_hello.py
+      - name: Save sent/unsub records
+        run: |
+          git config user.email "meekotharaccoon@gmail.com"
+          git config user.name "Mycelium Hello"
+          git add mycelium/data/ || true
+          git diff --staged --quiet || git commit -m "hello records $(date -u +%Y-%m-%d)"
+          git push || true
