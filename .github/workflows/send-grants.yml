@@ -1,0 +1,22 @@
+name: 🌱 Send Grant Outreach Emails
+on:
+  workflow_dispatch:
+jobs:
+  grants:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Send grant emails
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/grant_outreach.py
+      - name: Commit sent log
+        run: |
+          git config user.email "meekotharaccoon@gmail.com"
+          git config user.name "Mycelium"
+          git add mycelium/sent_grants.json || true
+          git diff --staged --quiet || git commit -m "auto: grant emails sent"
+          git push || true
