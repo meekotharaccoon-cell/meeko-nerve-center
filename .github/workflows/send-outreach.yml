@@ -1,5 +1,5 @@
-name: 📤 Send Outreach Emails (run once)
-# Manually triggered. Sends all staged emails. Tracks sent, never repeats.
+name: 📬 Send Outreach Emails
+# Manually triggered. Sends via unified_emailer — one log, no duplicates.
 on:
   workflow_dispatch:
 
@@ -11,14 +11,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Send all outreach emails
+      - name: Send outreach (unified, brain-gated)
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/outreach_emails.py
+        run: EMAIL_MODE=hello python mycelium/unified_emailer.py
       - name: Commit sent log
         run: |
-          git config user.email "meekotharaccoon@gmail.com"
-          git config user.name "Mycelium"
-          git add mycelium/sent_outreach.json || true
-          git diff --staged --quiet || git commit -m "auto: outreach emails sent"
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/ || true
+          git diff --staged --quiet || git commit -m "auto: outreach emails sent $(date -u +%Y-%m-%d)"
           git push || true
