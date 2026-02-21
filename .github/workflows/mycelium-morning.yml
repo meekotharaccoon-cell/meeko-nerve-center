@@ -26,33 +26,28 @@ jobs:
       - name: Install dependencies
         run: pip install requests python-dateutil
 
-      - name: 📰 Send Morning Briefing to Meeko
+      - name: 📰 Send Morning Briefing
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python mycelium/morning_briefing.py
+        run: python mycelium/morning_briefing.py || true
 
-      - name: 📬 Send Outreach Emails (once each, tracked)
+      - name: 📬 Send Hello Outreach (unified, brain-gated, one log)
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/outreach_emails.py
+        run: EMAIL_MODE=hello python mycelium/unified_emailer.py || true
 
-      - name: 🌱 Send Grant Emails (once each, tracked)
+      - name: 🌱 Send Grant Outreach (unified, brain-gated, one log)
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/grant_outreach.py
-
-      - name: 🌿 Send More Grant Emails (once each, tracked)
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/more_grant_emails.py
+        run: EMAIL_MODE=grants python mycelium/unified_emailer.py || true
 
       - name: 📖 Publish Dev.to Article (once)
         env:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
-        run: python mycelium/publish_devto.py
+        run: python mycelium/publish_devto.py || true
 
       - name: 🔊 Run Morning Pulse
         env:
@@ -63,18 +58,18 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: morning
-        run: python mycelium/pulse.py
+        run: python mycelium/pulse.py || true
 
       - name: 🧠 Update Brain Repo
         env:
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: morning
-        run: python mycelium/brain_sync.py
+        run: python mycelium/brain_sync.py || true
 
       - name: 💾 Commit sent logs
         run: |
-          git config user.email "meekotharaccoon@gmail.com"
-          git config user.name "Mycelium"
-          git add mycelium/sent_*.json mycelium/devto_published.json mycelium/replied_messages.json || true
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/ mycelium/last_*.json mycelium/devto_published.json mycelium/replied_messages.json || true
           git diff --staged --quiet || git commit -m "auto: morning pulse logs $(date -u +%Y-%m-%d)"
           git push || true
