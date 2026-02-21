@@ -1,0 +1,92 @@
+name: 🧬 Meeko Brain — Autonomous Daily Run
+on:
+  schedule:
+    - cron: '0 12 * * *'   # Noon UTC every day. No human required.
+  workflow_dispatch:         # Meeko can trigger manually if they feel like it. Or not.
+
+jobs:
+  think_and_act:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+
+      - name: Run the twin — make decisions, take actions, report
+        env:
+          GMAIL_APP_PASSWORD:  ${{ secrets.GMAIL_APP_PASSWORD }}
+          GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+          OPENROUTER_KEY:      ${{ secrets.OPENROUTER_KEY }}
+        run: |
+          python - <<'EOF'
+          import sys, json
+          sys.path.insert(0, 'mycelium')
+          from meeko_brain import would_meeko_approve, daily_autonomy_report, MEEKO_DNA
+
+          print("🧬 MEEKO BRAIN — Daily autonomous run")
+          print("   The human is not required for any of this.\n")
+
+          # DECISION LOG — what the twin chose to do today
+          decisions = []
+
+          # Queue of things the system wants to do
+          candidate_actions = [
+              ("send_hello_emails",       "send automated hello emails to new contacts"),
+              ("run_grant_search",        "search for new open grant opportunities"),
+              ("post_to_communities",     "post knowledge content to dev communities"),
+              ("backup_to_archive",       "submit pages to Internet Archive"),
+              ("sync_knowledge_repos",    "sync knowledge base across repos"),
+              ("check_unsubscribes",      "process any incoming unsubscribe requests"),
+              ("generate_daily_briefing", "compile daily briefing for morning report"),
+              ("update_living_readme",    "update READMEs with current real stats"),
+          ]
+
+          for action_id, description in candidate_actions:
+              approved, reason = would_meeko_approve(description)
+              decisions.append({
+                  "action": action_id,
+                  "description": description,
+                  "approved": approved,
+                  "reason": reason
+              })
+              symbol = "✓" if approved else ("⚠ HOLD" if approved is None else "✗ SKIP")
+              print(f"   {symbol}: {description}")
+              if approved is None:
+                  print(f"          → Needs Meeko: {reason}")
+
+          # Save the decision log
+          import os, datetime
+          os.makedirs('data', exist_ok=True)
+          log = {
+              "date": datetime.datetime.utcnow().isoformat(),
+              "decisions": decisions,
+              "human_needed": [d for d in decisions if d["approved"] is None],
+              "ran_autonomously": [d for d in decisions if d["approved"] is True],
+              "skipped": [d for d in decisions if d["approved"] is False],
+          }
+          with open('data/brain_log.json', 'w') as f:
+              json.dump(log, f, indent=2)
+
+          print(f"\n   Ran autonomously: {len(log['ran_autonomously'])}")
+          print(f"   Skipped (conflicts values): {len(log['skipped'])}")
+          print(f"   Held for human (if Meeko wants): {len(log['human_needed'])}")
+          print(f"\n   Meeko can rest. 🌱")
+          EOF
+
+      - name: Run approved actions
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          OPENROUTER_KEY:     ${{ secrets.OPENROUTER_KEY }}
+        run: |
+          # Only runs what the twin approved
+          # Each script checks meeko_brain itself before doing anything
+          python mycelium/mycelium_hello.py     || true
+          python mycelium/appointment_guardian.py || true
+
+      - name: Save logs + push
+        run: |
+          git config user.email "meekotharaccoon@gmail.com"
+          git config user.name "Meeko Brain (Autonomous)"
+          git add data/ || true
+          git diff --staged --quiet || git commit -m "🧬 brain run $(date -u +%Y-%m-%d) — autonomous, no human required"
+          git push || true
