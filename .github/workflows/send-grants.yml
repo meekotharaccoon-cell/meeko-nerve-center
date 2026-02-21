@@ -1,6 +1,8 @@
 name: 🌱 Send Grant Outreach Emails
+# Manually triggered. Uses unified_emailer — one log, no duplicates, brain-gated.
 on:
   workflow_dispatch:
+
 jobs:
   grants:
     runs-on: ubuntu-latest
@@ -9,14 +11,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Send grant emails
+      - name: Send grant emails (unified, brain-gated)
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/grant_outreach.py
+        run: EMAIL_MODE=grants python mycelium/unified_emailer.py
       - name: Commit sent log
         run: |
-          git config user.email "meekotharaccoon@gmail.com"
-          git config user.name "Mycelium"
-          git add mycelium/sent_grants.json || true
-          git diff --staged --quiet || git commit -m "auto: grant emails sent"
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/ || true
+          git diff --staged --quiet || git commit -m "auto: grant emails sent $(date -u +%Y-%m-%d)"
           git push || true
