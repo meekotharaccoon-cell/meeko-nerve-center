@@ -1,0 +1,45 @@
+name: 📺 YouTube Manager
+on:
+  schedule:
+    - cron: '0 15 * * *'  # Daily at 3pm UTC, after morning pulse
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Mode: descriptions, comments, stats'
+        required: false
+        default: 'descriptions'
+      dry_run:
+        description: 'Dry run (true = preview only, false = make changes)'
+        required: false
+        default: 'true'
+
+jobs:
+  youtube:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run YouTube Manager
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          GUMROAD_FLOWERS_URL: ${{ secrets.GUMROAD_FLOWERS_URL }}
+          YT_MODE: ${{ github.event.inputs.mode || 'descriptions' }}
+          YT_DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+        run: python mycelium/youtube_manager.py
+
+      - name: Commit YouTube logs
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/youtube_log.json || true
+          git diff --staged --quiet || git commit -m "auto: youtube stats $(date -u +%Y-%m-%d)"
+          git push || true
