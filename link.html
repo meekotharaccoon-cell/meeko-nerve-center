@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk Mycelium — Links</title>
+<meta name="description" content="All the links: gallery, free tools, legal help, mutual aid, fork the system">
+<meta property="og:title" content="SolarPunk Mycelium">
+<meta property="og:description" content="Autonomous humanitarian AI. $0/month. Open source. Fork it.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Syne+Mono&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;padding:32px 16px;
+    background:#050505;
+    font-family:'Space Grotesk',sans-serif;
+    color:#fff;
+  }
+  /* Animated background */
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(0,255,136,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,45,107,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(0,180,255,0.03) 0%, transparent 50%);
+  }
+  .container{width:100%;max-width:420px;position:relative;z-index:1}
+  
+  /* Profile */
+  .profile{text-align:center;margin-bottom:32px}
+  .avatar{
+    width:80px;height:80px;border-radius:50%;margin:0 auto 16px;
+    background:linear-gradient(135deg,#00ff88,#ff2d6b);
+    display:flex;align-items:center;justify-content:center;
+    font-size:2rem;
+    box-shadow:0 0 40px rgba(0,255,136,0.15);
+  }
+  .handle{font-family:'Syne Mono',monospace;font-size:.75rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .bio{font-size:.85rem;color:rgba(255,255,255,0.4);line-height:1.6}
+  .bio strong{color:var(--green,#00ff88)}
+
+  /* Tags */
+  .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+  .tag{font-size:.6rem;padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);font-family:'Syne Mono',monospace}
+
+  /* Links */
+  .links{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+  .link{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 20px;border-radius:14px;
+    text-decoration:none;color:#fff;
+    border:1px solid rgba(255,255,255,0.07);
+    background:rgba(255,255,255,0.03);
+    transition:all .2s;position:relative;overflow:hidden;
+  }
+  .link::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,var(--lc,rgba(0,255,136,0.06)),transparent);
+    opacity:0;transition:opacity .2s;
+  }
+  .link:hover::before{opacity:1}
+  .link:hover{border-color:rgba(255,255,255,0.15);transform:translateY(-1px)}
+  .link-icon{font-size:1.3rem;min-width:28px;text-align:center}
+  .link-text{flex:1}
+  .link-name{font-size:.9rem;font-weight:500;display:block;margin-bottom:2px}
+  .link-desc{font-size:.68rem;color:rgba(255,255,255,0.3)}
+  .link-arrow{color:rgba(255,255,255,0.15);font-size:.8rem}
+
+  /* Section labels */
+  .section-label{
+    font-family:'Syne Mono',monospace;font-size:.58rem;
+    letter-spacing:3px;text-transform:uppercase;
+    color:rgba(255,255,255,0.15);text-align:center;
+    margin:20px 0 12px;position:relative;
+  }
+  .section-label::before,.section-label::after{
+    content:'';position:absolute;top:50%;width:30%;height:1px;
+    background:rgba(255,255,255,0.06);
+  }
+  .section-label::before{left:0}
+  .section-label::after{right:0}
+
+  /* Footer */
+  .foot{text-align:center;font-size:.6rem;color:rgba(255,255,255,0.1);font-family:'Syne Mono',monospace;line-height:2}
+  .foot a{color:rgba(0,255,136,0.25);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="profile">
+    <div class="avatar">🌿</div>
+    <div class="handle">solarpunk.mycelium</div>
+    <div class="bio">Autonomous humanitarian AI · <strong>$0/month</strong> · open source<br>70% of art sales → Palestinian children's aid</div>
+    <div class="tags">
+      <span class="tag">#solarpunk</span>
+      <span class="tag">#opensource</span>
+      <span class="tag">#Palestine</span>
+      <span class="tag">#mutualaid</span>
+      <span class="tag">#forkable</span>
+    </div>
+  </div>
+
+  <div class="links">
+
+    <div class="section-label">art & gallery</div>
+
+    <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="link" style="--lc:rgba(255,45,107,0.08)">
+      <span class="link-icon">🌹</span>
+      <span class="link-text">
+        <span class="link-name">Gaza Rose Gallery</span>
+        <span class="link-desc">56 flowers · $1 each · 70% to PCRF · verified charity</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://meekotharaccoon.gumroad.com" class="link">
+      <span class="link-icon">🌸</span>
+      <span class="link-text">
+        <span class="link-name">Flower Designs</span>
+        <span class="link-desc">300 DPI originals · print · frame · commercial use</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <div class="section-label">free tools</div>
+
+    <a href="https://meekotharaccoon-cell.github.io/solarpunk-learn" class="link" style="--lc:rgba(0,255,136,0.06)">
+      <span class="link-icon">📚</span>
+      <span class="link-text">
+        <span class="link-name">SolarPunk Learn</span>
+        <span class="link-desc">Rights · free money · free infrastructure · no paywall</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal" class="link" style="--lc:rgba(255,215,0,0.04)">
+      <span class="link-icon">⚖️</span>
+      <span class="link-text">
+        <span class="link-name">Free Legal Tools</span>
+        <span class="link-desc">TCPA · FOIA · debt dispute · no lawyer needed</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://github.com/meekotharaccoon-cell/solarpunk-remedies" class="link" style="--lc:rgba(0,255,136,0.04)">
+      <span class="link-icon">🌿</span>
+      <span class="link-text">
+        <span class="link-name">Herbal Remedies Guide</span>
+        <span class="link-desc">12 plants · 40+ preparations · free PDF</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <div class="section-label">community</div>
+
+    <a href="https://meekotharaccoon-cell.github.io/solarpunk-mutual-aid/board.html" class="link">
+      <span class="link-icon">🤝</span>
+      <span class="link-text">
+        <span class="link-name">Mutual Aid Board</span>
+        <span class="link-desc">Post needs · offer help · no gatekeeping</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <a href="https://meekotharaccoon-cell.github.io/solarpunk-market" class="link">
+      <span class="link-icon">🏪</span>
+      <span class="link-text">
+        <span class="link-name">0% Fee Marketplace</span>
+        <span class="link-desc">Sellers keep 97.1% · no platform cut</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+    <div class="section-label">the system</div>
+
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="link" style="--lc:rgba(0,255,136,0.08);border-color:rgba(0,255,136,0.15)">
+      <span class="link-icon">🌱</span>
+      <span class="link-text">
+        <span class="link-name">Fork This System</span>
+        <span class="link-desc">Run your own · $0/month · one afternoon</span>
+      </span>
+      <span class="link-arrow" style="color:rgba(0,255,136,0.5)">→</span>
+    </a>
+
+    <a href="spawn.html" class="link">
+      <span class="link-icon">🧠</span>
+      <span class="link-text">
+        <span class="link-name">How It Works</span>
+        <span class="link-desc">Architecture · principles · what it does</span>
+      </span>
+      <span class="link-arrow">→</span>
+    </a>
+
+  </div>
+
+  <div class="foot">
+    SolarPunk Mycelium · AGPL-3.0 + Ethical Use<br>
+    No ads · No tracking · No corporate backing<br>
+    <a href="https://github.com/meekotharaccoon-cell">github.com/meekotharaccoon-cell</a>
+  </div>
+</div>
+</body>
+</html>

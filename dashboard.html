@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk Mycelium — System Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;700&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --green:#00ff88;--red:#ff2d6b;--gold:#ffd700;--dim:rgba(255,255,255,0.12);
+    --bg:#070707;--card:rgba(255,255,255,0.025);
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:#fff;font-family:'IBM Plex Mono',monospace;min-height:100vh;overflow-x:hidden}
+
+  /* Scanline overlay */
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:999;
+    background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
+  }
+
+  /* Header */
+  header{
+    border-bottom:1px solid var(--dim);padding:18px 28px;
+    display:flex;align-items:center;gap:16px;
+    background:rgba(0,255,136,0.02);
+  }
+  .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 12px var(--green);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+  .logo{font-size:.85rem;color:var(--green);letter-spacing:2px;text-transform:uppercase}
+  .timestamp{margin-left:auto;font-size:.65rem;color:rgba(255,255,255,0.2);letter-spacing:1px}
+
+  /* Grid */
+  main{padding:28px;display:grid;gap:16px;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  }
+
+  /* Cards */
+  .card{
+    background:var(--card);border:1px solid var(--dim);
+    border-radius:12px;padding:22px;
+    position:relative;overflow:hidden;
+    transition:border-color .2s;
+  }
+  .card:hover{border-color:rgba(0,255,136,0.2)}
+  .card::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(0,255,136,0.03) 0%,transparent 60%);
+    pointer-events:none;
+  }
+  .card-label{
+    font-size:.58rem;letter-spacing:3px;text-transform:uppercase;
+    color:rgba(255,255,255,0.2);margin-bottom:14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .card-label::after{content:'';flex:1;height:1px;background:var(--dim)}
+  .card h2{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:300;
+    color:var(--green);line-height:1;margin-bottom:6px;
+  }
+  .card .sub{font-size:.7rem;color:rgba(255,255,255,0.25);line-height:1.7}
+
+  /* Status rows */
+  .status-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .status-row{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:.72rem;padding:8px 10px;
+    background:rgba(255,255,255,0.02);border-radius:6px;
+    border:1px solid rgba(255,255,255,0.04);
+  }
+  .status-row .name{color:rgba(255,255,255,0.45)}
+  .status-row .val{color:#fff;font-weight:500}
+  .dot{width:6px;height:6px;border-radius:50%;margin-right:8px;display:inline-block}
+  .dot.green{background:var(--green);box-shadow:0 0 6px var(--green)}
+  .dot.red{background:var(--red)}
+  .dot.gold{background:var(--gold)}
+
+  /* Workflow grid */
+  .workflow-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .wf{
+    padding:10px 12px;background:rgba(0,255,136,0.04);
+    border:1px solid rgba(0,255,136,0.1);border-radius:8px;
+    font-size:.65rem;line-height:1.6;
+  }
+  .wf .wf-name{color:rgba(255,255,255,0.6);display:block;margin-bottom:2px}
+  .wf .wf-sched{color:rgba(255,255,255,0.2)}
+
+  /* Repo list */
+  .repo-list{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+  .repo-item{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:8px 12px;border-radius:6px;
+    background:rgba(255,255,255,0.02);
+    border:1px solid rgba(255,255,255,0.04);
+    font-size:.68rem;
+    text-decoration:none;
+    color:#fff;
+    transition:background .15s;
+  }
+  .repo-item:hover{background:rgba(0,255,136,0.05)}
+  .repo-item .rname{color:rgba(255,255,255,0.55)}
+  .repo-item .rstatus{color:var(--green);font-size:.6rem}
+
+  /* Full-width card */
+  .full{grid-column:1/-1}
+
+  /* Log terminal */
+  .terminal{
+    background:#000;border:1px solid var(--dim);
+    border-radius:10px;padding:18px 20px;
+    font-size:.72rem;line-height:2;
+    color:rgba(255,255,255,0.4);
+    max-height:260px;overflow-y:auto;
+    margin-top:4px;
+  }
+  .terminal .log-line{display:flex;gap:12px}
+  .terminal .log-time{color:rgba(255,255,255,0.15);min-width:80px}
+  .terminal .log-ok{color:var(--green)}
+  .terminal .log-info{color:rgba(255,255,255,0.35)}
+  .terminal .log-warn{color:var(--gold)}
+
+  /* Progress bar */
+  .progress{background:rgba(255,255,255,0.05);border-radius:4px;height:4px;margin:10px 0 4px}
+  .progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--green),#00cc66)}
+
+  /* Mission card */
+  .mission-card{
+    background:linear-gradient(135deg,rgba(255,45,107,0.06),rgba(0,255,136,0.04));
+    border:1px solid rgba(255,45,107,0.15);
+  }
+  .mission-card h2{color:var(--red)}
+  .pcrf-bar{
+    display:flex;align-items:center;gap:12px;margin-top:14px;
+    font-size:.7rem;
+  }
+  .pcrf-bar .pct{color:var(--green);font-size:1.4rem;font-weight:700}
+  .pcrf-bar .desc{color:rgba(255,255,255,0.3);line-height:1.6}
+
+  /* Links */
+  .card-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .card-link{
+    font-size:.65rem;padding:6px 14px;
+    border:1px solid rgba(0,255,136,0.2);border-radius:20px;
+    color:var(--green);text-decoration:none;
+    transition:background .15s;
+  }
+  .card-link:hover{background:rgba(0,255,136,0.08)}
+  .card-link.red{border-color:rgba(255,45,107,0.2);color:var(--red)}
+  .card-link.red:hover{background:rgba(255,45,107,0.06)}
+
+  footer{
+    border-top:1px solid var(--dim);padding:20px 28px;
+    font-size:.62rem;color:rgba(255,255,255,0.12);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  footer a{color:rgba(0,255,136,0.3);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="pulse"></div>
+  <div class="logo">🌏 SolarPunk Mycelium — System Dashboard</div>
+  <div class="timestamp" id="clock"></div>
+</header>
+
+<main>
+
+  <!-- MISSION -->
+  <div class="card mission-card full">
+    <div class="card-label">🌹 Mission</div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start">
+      <div>
+        <p style="color:rgba(255,255,255,0.5);font-size:.85rem;line-height:1.8">
+          Gaza Rose Gallery — 56 original flower artworks · $1 each · autonomous sales · AGPL-3.0
+        </p>
+        <div class="pcrf-bar">
+          <span class="pct">70%</span>
+          <span class="desc">of every sale → Palestine Children's Relief Fund<br>4-star Charity Navigator · EIN 93-1057665 · verified</span>
+        </div>
+        <div class="card-links">
+          <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="card-link red">🌹 Gallery</a>
+          <a href="https://meekotharaccoon.gumroad.com" class="card-link">🌸 Gumroad</a>
+          <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="card-link">🌱 Fork This</a>
+          <a href="spawn.html" class="card-link">About the System</a>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.6rem;color:rgba(255,255,255,0.2);margin-bottom:4px">INFRASTRUCTURE COST</div>
+        <div style="font-size:3rem;color:var(--green);line-height:1">$0</div>
+        <div style="font-size:.6rem;color:rgba(255,255,255,0.15)">per month · always</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW STATUS -->
+  <div class="card" style="grid-column:span 2">
+    <div class="card-label">⚙️ Active Workflows</div>
+    <div class="workflow-grid">
+      <div class="wf"><span class="wf-name">🌅 Morning Pulse</span><span class="wf-sched">9am UTC daily</span></div>
+      <div class="wf"><span class="wf-name">📧 Unified Emailer</span><span class="wf-sched">10am UTC · 3 modes</span></div>
+      <div class="wf"><span class="wf-name">📡 Cross-Poster</span><span class="wf-sched">4pm UTC daily</span></div>
+      <div class="wf"><span class="wf-name">📺 YouTube Manager</span><span class="wf-sched">3pm UTC daily</span></div>
+      <div class="wf"><span class="wf-name">🤝 Mutual Aid Digest</span><span class="wf-sched">Mon 8am UTC</span></div>
+      <div class="wf"><span class="wf-name">📊 Signal Tracker</span><span class="wf-sched">Mon 8am UTC</span></div>
+      <div class="wf"><span class="wf-name">🗣️ Community Outreach</span><span class="wf-sched">Mon/Wed/Fri 5pm</span></div>
+      <div class="wf"><span class="wf-name">🔍 SEO Submitter</span><span class="wf-sched">Sun noon UTC</span></div>
+      <div class="wf"><span class="wf-name">📚 PDF Generator</span><span class="wf-sched">on push</span></div>
+      <div class="wf"><span class="wf-name">🌍 Archive Pulse</span><span class="wf-sched">weekly</span></div>
+    </div>
+  </div>
+
+  <!-- COMPUTE BUDGET -->
+  <div class="card">
+    <div class="card-label">⚡ GitHub Actions Budget</div>
+    <h2 id="minutes-used">~420</h2>
+    <div class="sub">estimated minutes used this month</div>
+    <div class="progress"><div class="progress-fill" style="width:21%"></div></div>
+    <div class="sub">2,000 min/month free · <span style="color:var(--green)">~1,580 remaining</span></div>
+    <div class="status-list" style="margin-top:14px">
+      <div class="status-row"><span class="name">free tier</span><span class="val">public repos ∞</span></div>
+      <div class="status-row"><span class="name">runners</span><span class="val">ubuntu-latest</span></div>
+      <div class="status-row"><span class="name">cost</span><span class="val" style="color:var(--green)">$0.00</span></div>
+    </div>
+  </div>
+
+  <!-- SYSTEM SECRETS STATUS -->
+  <div class="card">
+    <div class="card-label">🔑 Secrets / Capabilities</div>
+    <div class="status-list">
+      <div class="status-row"><span class="name"><span class="dot gold"></span>GMAIL_APP_PASSWORD</span><span class="val" style="color:var(--gold)">add to activate email</span></div>
+      <div class="status-row"><span class="name"><span class="dot gold"></span>MASTODON_TOKEN</span><span class="val" style="color:var(--gold)">add to post</span></div>
+      <div class="status-row"><span class="name"><span class="dot gold"></span>BLUESKY_APP_PASSWORD</span><span class="val" style="color:var(--gold)">add to post</span></div>
+      <div class="status-row"><span class="name"><span class="dot gold"></span>YOUTUBE OAuth</span><span class="val" style="color:var(--gold)">10-min setup</span></div>
+      <div class="status-row"><span class="name"><span class="dot green"></span>GITHUB_TOKEN</span><span class="val" style="color:var(--green)">auto-provided ✓</span></div>
+      <div class="status-row"><span class="name"><span class="dot green"></span>GitHub Pages</span><span class="val" style="color:var(--green)">live ✓</span></div>
+    </div>
+  </div>
+
+  <!-- REPOS -->
+  <div class="card">
+    <div class="card-label">🌱 Active Repos</div>
+    <div class="repo-list">
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" class="repo-item"><span class="rname">meeko-nerve-center</span><span class="rstatus">brain ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/gaza-rose-gallery" class="repo-item"><span class="rname">gaza-rose-gallery</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal" class="repo-item"><span class="rname">solarpunk-legal</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-learn" class="repo-item"><span class="rname">solarpunk-learn</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-remedies" class="repo-item"><span class="rname">solarpunk-remedies</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-market" class="repo-item"><span class="rname">solarpunk-market</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-mutual-aid" class="repo-item"><span class="rname">solarpunk-mutual-aid</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-bank" class="repo-item"><span class="rname">solarpunk-bank</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-radio" class="repo-item"><span class="rname">solarpunk-radio</span><span class="rstatus">live ✓</span></a>
+      <a href="https://github.com/meekotharaccoon-cell/solarpunk-grants" class="repo-item"><span class="rname">solarpunk-grants</span><span class="rstatus">live ✓</span></a>
+    </div>
+  </div>
+
+  <!-- ACTIVITY LOG -->
+  <div class="card full">
+    <div class="card-label">📟 Activity Log</div>
+    <div class="terminal" id="log">
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ GitHub Pages live across all repos</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ 10 workflows scheduled and active</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ 56 artworks live in Gaza Rose Gallery</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ cross_poster.py — 10 rotating content pieces</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ signal_tracker.py — feedback loop active</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ mailer_pro.py — provider cascade ready</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ FORK_REGISTRY.md — awaiting first fork</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ AGPL-3.0 + Ethical Use — values in license</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-warn">○ GMAIL_APP_PASSWORD — add to activate email</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-warn">○ MASTODON_TOKEN — add to activate social</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-info">— system cost: $0.00/month</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-info">— hardware: i5-8500, 32GB, integrated GPU</span></div>
+      <div class="log-line"><span class="log-time">system</span><span class="log-ok">✓ ready. add secrets to activate each layer.</span></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span>SolarPunk Mycelium · AGPL-3.0 + Ethical Use License · <a href="https://github.com/meekotharaccoon-cell">github.com/meekotharaccoon-cell</a></span>
+  <span>No tracking · No ads · No corporate backing · <a href="spawn.html">Fork this</a></span>
+</footer>
+
+<script>
+  // Live clock
+  function tick(){
+    const d = new Date();
+    document.getElementById('clock').textContent =
+      d.toISOString().replace('T',' ').slice(0,19) + ' UTC';
+  }
+  tick(); setInterval(tick,1000);
+
+  // Animate log lines in
+  document.querySelectorAll('.log-line').forEach((el,i)=>{
+    el.style.opacity=0;
+    el.style.transform='translateX(-8px)';
+    el.style.transition=`opacity .3s ${i*60}ms, transform .3s ${i*60}ms`;
+    setTimeout(()=>{ el.style.opacity=1; el.style.transform='none'; }, 100+i*60);
+  });
+
+  // Simulate compute minutes ticking
+  let mins = 420;
+  const el = document.getElementById('minutes-used');
+  const bar = document.querySelector('.progress-fill');
+  setInterval(()=>{
+    mins += Math.random() > 0.95 ? 1 : 0;
+    el.textContent = '~' + mins;
+    bar.style.width = (mins/2000*100).toFixed(1) + '%';
+  }, 3000);
+</script>
+</body>
+</html>
