@@ -9,8 +9,7 @@ Platforms supported:
   ✓ Bluesky (AT Protocol API, free)
   ✓ Discord (webhooks, free)
   ✓ Dev.to (API, free)
-  ✓ Nostr (relay protocol, free, no account needed)
-  ✓ Reddit (API, free — requires account + approval)
+  → Reddit (API, free — requires account + approval)
   → LinkedIn (API exists but requires company account review)
   → YouTube community posts (requires 500+ subscribers)
   → TikTok (no post API yet, upload only via their creator tool)
@@ -32,21 +31,19 @@ from pathlib import Path
 # ---- SECRETS (GitHub Actions) ------------------------------------
 MASTO_TOKEN    = os.environ.get('MASTODON_TOKEN', '')
 MASTO_SERVER   = os.environ.get('MASTODON_SERVER', 'https://mastodon.social')
-BSKY_HANDLE    = os.environ.get('BLUESKY_HANDLE', '')   # yourname.bsky.social
+BSKY_HANDLE    = os.environ.get('BLUESKY_HANDLE', '')
 BSKY_PASSWORD  = os.environ.get('BLUESKY_APP_PASSWORD', '')
 DISCORD_WH     = os.environ.get('DISCORD_WEBHOOK', '')
 DEVTO_KEY      = os.environ.get('DEVTO_API_KEY', '')
-REDDIT_ID      = os.environ.get('REDDIT_CLIENT_ID', '')
-REDDIT_SECRET  = os.environ.get('REDDIT_SECRET', '')
-REDDIT_USER    = os.environ.get('REDDIT_USERNAME', '')
-REDDIT_PASS    = os.environ.get('REDDIT_PASSWORD', '')
 
-# ---- LINKS (always included) -------------------------------------
+# ---- LINKS -------------------------------------------------------
 GALLERY  = 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery'
 GUMROAD  = os.environ.get('GUMROAD_FLOWERS_URL', 'https://meekotharaccoon.gumroad.com')
 GITHUB   = 'https://github.com/meekotharaccoon-cell'
 SPAWN    = 'https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html'
+FORK     = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork'
 LEARN    = 'https://meekotharaccoon-cell.github.io/solarpunk-learn'
+START    = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/START_HERE.md'
 
 # ---- DATA --------------------------------------------------------
 DATA_DIR   = Path('data')
@@ -60,12 +57,14 @@ HASHTAGS = {
     'rights':      '#KnowYourRights #TCPA #FOIA #ConsumerRights #SolarPunk',
     'mutual_aid':  '#MutualAid #SolarPunk #Community #DirectAction',
     'remedies':    '#HerbalMedicine #PlantMedicine #SolarPunk #Homesteading #WildCraft',
+    'fork':        '#OpenSource #SolarPunk #GitHub #Autonomy #IndieHacker #AITools',
     'general':     '#SolarPunk #OpenSource #Gaza #DigitalArt',
 }
 
-# ---- CONTENT TEMPLATES -------------------------------------------
-# Auto-generated posts for different content types
-# The system picks one and rotates through
+# ---- ROTATING CONTENT --------------------------------------------
+# Cycles through in order. Resets when all have been posted.
+# Mix: gallery/art, rights, tech, mutual aid, remedies, fork recruitment.
+# The fork recruitment posts speak directly to the stranger reading this.
 
 ROTATING_POSTS = [
     {
@@ -82,15 +81,19 @@ Download yours:""",
         'link': GALLERY,
     },
     {
-        'id': 'gumroad_flowers',
-        'type': 'art',
-        'text': """🌸 Original 300 DPI flower designs — print them, frame them, use them commercially.
+        'id': 'fork_recruit_1',
+        'type': 'fork',
+        'text': """🍄 This post was written by a Python script running on GitHub's free tier.
 
-Every single one was built from scratch. No AI image generators.
-Hand-designed digital art, real resolution, yours forever.
+The script also sends emails, tracks revenue, updates YouTube descriptions, and generates PDFs.
+On a 6-core i5 with integrated graphics.
+$0/month.
 
-All designs:""",
-        'link': GUMROAD,
+You can run an identical system for your cause, your art, your mission.
+One afternoon. One fork. It runs itself after that.
+
+Fork it:""",
+        'link': FORK,
     },
     {
         'id': 'tcpa_fact',
@@ -103,6 +106,34 @@ No lawyer needed. Small claims court. $30–75 filing fee.
 
 Free letter generator:""",
         'link': f'{LEARN}/lessons/tcpa.md',
+    },
+    {
+        'id': 'gumroad_flowers',
+        'type': 'art',
+        'text': """🌸 Original 300 DPI flower designs — print them, frame them, use them commercially.
+
+Every single one was built from scratch. No AI image generators.
+Hand-designed digital art, real resolution, yours forever.
+
+All designs:""",
+        'link': GUMROAD,
+    },
+    {
+        'id': 'fork_recruit_2',
+        'type': 'fork',
+        'text': """🌱 The barrier to building ethical autonomous AI systems isn't technical.
+
+It never was.
+
+GitHub account: free.
+Python: free.
+10 scheduled workflows: free.
+Running your own version of this: one afternoon.
+
+The only question is what you'd point it at.
+
+Everything you need:""",
+        'link': START,
     },
     {
         'id': 'unclaimed_property',
@@ -141,6 +172,22 @@ Mutual aid flows in every direction simultaneously.
 Needs board, offers board, resources board, emergency board.
 No gatekeeping. No means testing. Post freely.""",
         'link': 'https://meekotharaccoon-cell.github.io/solarpunk-mutual-aid/board.html',
+    },
+    {
+        'id': 'fork_recruit_3',
+        'type': 'fork',
+        'text': """📡 Somewhere right now, a GitHub Action is running.
+
+It's checking if anyone unsubscribed from an email list.
+It's posting this exact type of message to social media.
+It's updating a YouTube description with a Gumroad link.
+It's tracking how many flowers sold today.
+
+Nobody is doing any of it manually.
+One person set the values. The system does the rest.
+
+You can set your own values and let YOUR system do the rest:""",
+        'link': FORK,
     },
     {
         'id': 'remedies_vol1',
@@ -204,7 +251,6 @@ def post_mastodon(text, link, hashtags):
 
 def post_bluesky(text, link, hashtags):
     if not all([BSKY_HANDLE, BSKY_PASSWORD]): return False, 'no credentials'
-    # Get session
     try:
         auth_data = json.dumps({'identifier': BSKY_HANDLE, 'password': BSKY_PASSWORD}).encode()
         req = urllib.request.Request(
@@ -219,14 +265,11 @@ def post_bluesky(text, link, hashtags):
     except Exception as e:
         return False, f'auth failed: {e}'
 
-    # Build post (300 char limit, link as facet)
     full_text = f"{text}\n\n{link}"
     full_text = truncate(full_text, 300)
-    
-    # Find link position for facet
     link_start = full_text.find(link)
     link_end = link_start + len(link) if link_start >= 0 else 0
-    
+
     post_body = {
         'repo': did,
         'collection': 'app.bsky.feed.post',
@@ -236,13 +279,11 @@ def post_bluesky(text, link, hashtags):
             'createdAt': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         }
     }
-    
     if link_start >= 0:
         post_body['record']['facets'] = [{
             'index': {'byteStart': link_start, 'byteEnd': link_end},
             'features': [{'$type': 'app.bsky.richtext.facet#link', 'uri': link}]
         }]
-    
     try:
         data = json.dumps(post_body).encode()
         req = urllib.request.Request(
@@ -260,11 +301,12 @@ def post_bluesky(text, link, hashtags):
 def post_discord(text, link, hashtags, content_type='general'):
     if not DISCORD_WH: return False, 'no webhook'
     colors = {'art': 0xff69b4, 'tech': 0x00ff88, 'rights': 0xffd700,
-              'mutual_aid': 0x00b4ff, 'remedies': 0x90ee90, 'general': 0x9b59b6}
+              'mutual_aid': 0x00b4ff, 'remedies': 0x90ee90,
+              'fork': 0x9b59b6, 'general': 0x7f8c8d}
     embed = {
         'description': f"{text}\n\n[{link}]({link})",
-        'color': colors.get(content_type, 0x9b59b6),
-        'footer': {'text': 'SolarPunk Mycelium · solarpunk.social'},
+        'color': colors.get(content_type, 0x7f8c8d),
+        'footer': {'text': 'SolarPunk Mycelium · fork it · run your own'},
         'timestamp': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     }
     payload = json.dumps({'embeds': [embed]}).encode()
@@ -278,7 +320,7 @@ def post_discord(text, link, hashtags, content_type='general'):
 
 def post_devto(title, text, link, tags):
     if not DEVTO_KEY: return False, 'no API key'
-    body_md = f"{text}\n\n[Read more / take action]({link})\n\n---\n*Posted autonomously by SolarPunk Mycelium*"
+    body_md = f"{text}\n\n[→ {link}]({link})\n\n---\n*Posted autonomously by SolarPunk Mycelium · [fork it]({FORK})*"
     payload = json.dumps({
         'article': {
             'title': title,
@@ -299,21 +341,21 @@ def post_devto(title, text, link, tags):
 
 # ---- MAIN DISPATCHER ---------------------------------------------
 def broadcast(post_data, dry_run=False):
-    text     = post_data['text']
-    link     = post_data.get('link', GALLERY)
-    ptype    = post_data.get('type', 'general')
-    pid      = post_data.get('id', post_id(text))
-    tags     = HASHTAGS.get(ptype, HASHTAGS['general'])
-    title    = post_data.get('title', text.split('\n')[0][:80])
+    text  = post_data['text']
+    link  = post_data.get('link', GALLERY)
+    ptype = post_data.get('type', 'general')
+    pid   = post_data.get('id', post_id(text))
+    tags  = HASHTAGS.get(ptype, HASHTAGS['general'])
+    title = post_data.get('title', text.split('\n')[0][:80])
 
     log = load(POST_LOG)
     results = {}
 
     platforms = [
-        ('mastodon',  lambda: post_mastodon(text, link, tags)),
-        ('bluesky',   lambda: post_bluesky(text, link, tags)),
-        ('discord',   lambda: post_discord(text, link, tags, ptype)),
-        ('devto',     lambda: post_devto(title, text, link, [ptype, 'solarpunk', 'opensource', 'digitalart'])),
+        ('mastodon', lambda: post_mastodon(text, link, tags)),
+        ('bluesky',  lambda: post_bluesky(text, link, tags)),
+        ('discord',  lambda: post_discord(text, link, tags, ptype)),
+        ('devto',    lambda: post_devto(title, text, link, [ptype, 'solarpunk', 'opensource', 'selfhosted'])),
     ]
 
     print(f'\n[post] Broadcasting: {pid}')
@@ -335,7 +377,7 @@ def broadcast(post_data, dry_run=False):
         results[name] = f'{status}: {msg}'
         if ok:
             mark_posted(pid, name, log, text)
-        time.sleep(2)  # Space platform posts
+        time.sleep(2)
 
     save(POST_LOG, log)
     return results
@@ -349,34 +391,27 @@ def run():
     mode    = os.environ.get('POST_MODE', 'rotate')
 
     if mode == 'rotate':
-        # Pick next unposted rotating post
         log = load(POST_LOG)
+        all_platforms = ['mastodon', 'bluesky', 'discord', 'devto']
         for post in ROTATING_POSTS:
             pid = post['id']
-            platforms_posted = log.get(pid, {}).get('platforms', [])
-            # Post if not yet on all platforms
-            all_platforms = ['mastodon', 'bluesky', 'discord', 'devto']
-            not_yet = [p for p in all_platforms if p not in platforms_posted]
-            if not_yet:
+            posted_to = log.get(pid, {}).get('platforms', [])
+            if any(p not in posted_to for p in all_platforms):
                 broadcast(post, dry_run=dry_run)
                 break
         else:
-            # All rotating posts done — reset and start over
-            print('[rotate] All posts complete. Cycle resets next run.')
-            # Reset log for rotating posts to cycle again
+            print('[rotate] Full cycle complete. Resetting.')
             log = load(POST_LOG)
             for post in ROTATING_POSTS:
                 log.pop(post['id'], None)
             save(POST_LOG, log)
 
     elif mode == 'queue':
-        # Post from queue file
         queue = load(QUEUE_FILE)
         if queue:
             broadcast(queue[0], dry_run=dry_run)
-            remaining = queue[1:]
-            save(QUEUE_FILE, remaining)
-            print(f'[queue] {len(remaining)} posts remaining')
+            save(QUEUE_FILE, queue[1:])
+            print(f'[queue] {len(queue)-1} posts remaining')
         else:
             print('[queue] Empty')
 
