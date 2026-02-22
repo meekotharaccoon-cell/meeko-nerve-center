@@ -1,0 +1,30 @@
+name: 🔍 SEO + Discovery Submitter
+on:
+  schedule:
+    - cron: '0 12 * * 0'  # Weekly, Sunday noon UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'true = preview, false = actually submit'
+        default: 'true'
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run SEO submitter
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SEO_DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+        run: python mycelium/seo_submitter.py
+      - name: Commit sitemap and key file
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add sitemap.xml *.txt data/seo_submissions.json || true
+          git diff --staged --quiet || git commit -m "auto: sitemap + SEO update $(date -u +%Y-%m-%d)"
+          git push || true
