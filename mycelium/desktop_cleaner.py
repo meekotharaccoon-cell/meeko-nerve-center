@@ -1,165 +1,200 @@
 #!/usr/bin/env python3
 """
-DESKTOP CLEANER
-================
-Organizes C:\\Users\\meeko\\Desktop
-Groups files into the minimum number of folders.
-Deletes nothing without logging first.
-Makes the machine faster by clearing temp files and old logs.
+DESKTOP CLEANER v2 — Knows Your Actual Machine
+================================================
+Scans C:\\Users\\meeko\\Desktop and organizes intelligently.
 
-Rules:
-  - NEVER delete: .bat, .py, .git, .env, anything in UltimateAI_Master
-  - MOVE to folders: documents, images, downloads, shortcuts, misc
-  - DELETE: .tmp, desktop.ini (duplicates), ~$ files (Office temp)
-  - REPORT: everything moved/deleted, nothing silent
+What it does:
+  - Consolidates 5+ BACKUP dirs into one BACKUPS\ folder
+  - Moves all *_report_*.json and health_report_*.json into Reports\
+  - Moves all _ prefixed temp/one-off scripts into _Archive\
+  - Moves old versioned files (v14.py, (1).py, (2).py) into _Archive\
+  - Moves logs (.log, .txt reports) into Logs\
+  - Consolidates all .lnk shortcuts into Shortcuts\
+  - Keeps EVOLVE.bat, COMMAND_CENTER.bat at root
+  - Keeps UltimateAI_Master\ at root
+  - Reports every single action — nothing silent
+  - Writes cleanup summary to data/
 
-Outputs:
-  - data/desktop_clean_log.json
-  - Prints every action taken
+NEVER deletes without explicit flag. Safe by default.
 """
-import os, shutil, json
+import os, shutil, json, re
 from pathlib import Path
 from datetime import datetime, timezone
 
-DESKTOP   = Path(r'C:\Users\meeko\Desktop')
-DATA_DIR  = Path(__file__).parent.parent / 'data'
+DESKTOP  = Path(r'C:\Users\meeko\Desktop')
+DATA_DIR = Path(__file__).parent.parent / 'data'
 DATA_DIR.mkdir(exist_ok=True)
-CLEAN_LOG = DATA_DIR / 'desktop_clean_log.json'
+LOG_FILE = DATA_DIR / 'desktop_clean_log.json'
 
-# Folders to create (minimum necessary)
+# ---- FOLDER STRUCTURE (minimum folders) -------------------------
 FOLDERS = {
-    'docs':      DESKTOP / '📂 Documents',
-    'images':    DESKTOP / '🖼️ Images',
-    'shortcuts': DESKTOP / '🔗 Shortcuts',
-    'misc':      DESKTOP / '🗂️ Misc',
+    'backups':   DESKTOP / 'BACKUPS',
+    'reports':   DESKTOP / 'Reports',
+    'archive':   DESKTOP / '_Archive',
+    'logs':      DESKTOP / 'Logs',
+    'shortcuts': DESKTOP / 'Shortcuts',
+    'art':       DESKTOP / 'Art',
+    'trading':   DESKTOP / 'Finance',
 }
 
-# Extension to folder mapping
-EXT_MAP = {
-    '.pdf':  'docs', '.doc':  'docs', '.docx': 'docs',
-    '.txt':  'docs', '.md':   'docs', '.rtf':  'docs',
-    '.xls':  'docs', '.xlsx': 'docs', '.csv':  'docs',
-    '.ppt':  'docs', '.pptx': 'docs',
-    '.png':  'images', '.jpg': 'images', '.jpeg': 'images',
-    '.gif':  'images', '.bmp': 'images', '.svg':  'images',
-    '.webp': 'images', '.ico': 'images',
-    '.lnk':  'shortcuts', '.url': 'shortcuts',
-}
+# ---- RULES -------------------------------------------------------
 
-# Always delete these
-DELETE_EXTS = {'.tmp', '.temp', '.bak'}
-DELETE_NAMES = {'desktop.ini', 'thumbs.db'}
-
-# Never touch these
+# Files/dirs to NEVER touch
 PROTECT = {
-    'UltimateAI_Master', 'EVOLVE.bat', '.git', '.env',
-    '📂 Documents', '🖼️ Images', '🔗 Shortcuts', '🗂️ Misc',
+    'EVOLVE.bat', 'COMMAND_CENTER.bat', 'LAUNCH.bat',
+    'UltimateAI_Master', 'mycelium_env',
+    'BACKUPS', 'Reports', '_Archive', 'Logs', 'Shortcuts', 'Art', 'Finance',
+    '.brave_debug_profile', '.chainlit', '.files',
+    'INVESTMENT_HQ', 'TRADING_SYSTEM', 'SOLARPUNK_AUTONOMOUS',
+    'atomic-agents-conductor', 'AtomicMycelium-Portable',
+    'PRODUCTS', 'New', 'notepad_all',
+    'GAZA_ROSE_GALLERY', 'GAZA_ROSE_OMNI',
+    'My Gaza Rose designs',
+    'desktop.ini',
 }
 
-def load_log():
-    try: return json.loads(CLEAN_LOG.read_text())
-    except: return {'runs': [], 'total_moved': 0, 'total_deleted': 0}
+# Pattern matchers
+def is_backup_dir(name):
+    return bool(re.match(r'BACKUP_\d+', name))
 
-def save_log(log): CLEAN_LOG.write_text(json.dumps(log, indent=2))
+def is_report_file(name):
+    return bool(re.match(r'(daily_report|health_report|system_report).*\.(json|txt)', name, re.I))
+
+def is_archive_script(name):
+    # Underscore-prefixed one-off scripts
+    return name.startswith('_') and name.endswith('.py')
+
+def is_old_version(name):
+    # Files like ultimate_ai_self (1).py, v14.py
+    return bool(re.search(r'(\(\d+\)|_v\d+)\.py$', name, re.I))
+
+def is_log_file(name):
+    return bool(re.match(r'.*(cleanup|log|events).*\.(log|jsonl|txt)$', name, re.I))
+
+def is_shortcut(name):
+    return name.endswith('.lnk') or name.endswith('.url')
+
+def is_art_related(name):
+    return 'GAZA' in name.upper() or 'ART' in name.upper() or 'ROSE' in name.upper()
+
+# ---- MAIN -------------------------------------------------------
 
 def run():
-    print('\n' + '='*52)
-    print('  DESKTOP CLEANER')
+    print('\n' + '='*56)
+    print('  DESKTOP CLEANER v2')
     print(f'  {datetime.now().strftime("%Y-%m-%d %H:%M")}')
-    print('='*52)
+    print('  Target:', DESKTOP)
+    print('='*56)
 
     if not DESKTOP.exists():
-        print('  Desktop not found — running on different machine')
+        print('  Desktop not found on this machine. Skipping.')
         return
 
     # Create folders
-    for folder in FOLDERS.values():
+    for key, folder in FOLDERS.items():
         folder.mkdir(exist_ok=True)
 
-    log = load_log()
-    run_log = {'at': datetime.now(timezone.utc).isoformat(), 'moved': [], 'deleted': [], 'skipped': []}
+    moved   = []
+    skipped = []
+    errors  = []
 
-    items = list(DESKTOP.iterdir())
-    print(f'  Items on desktop: {len(items)}')
-
-    moved = 0
-    deleted = 0
-    skipped = 0
+    items = sorted(DESKTOP.iterdir(), key=lambda x: x.name)
 
     for item in items:
         name = item.name
-        ext  = item.suffix.lower()
 
-        # Skip protected
-        if any(p in name for p in PROTECT) or name.startswith('.'):
-            skipped += 1
+        # Protected — never touch
+        if name in PROTECT or any(p in name for p in {'UltimateAI_Master'}):
             continue
 
-        # Delete junk
-        if ext in DELETE_EXTS or name.lower() in DELETE_NAMES:
-            try:
-                if item.is_file():
-                    item.unlink()
-                    print(f'  [DELETE] {name}')
-                    run_log['deleted'].append(name)
-                    deleted += 1
-            except Exception as e:
-                print(f'  [SKIP] Could not delete {name}: {e}')
-            continue
+        dest = None
+        reason = ''
 
-        # Skip folders that aren't ours to move
-        if item.is_dir():
-            skipped += 1
-            continue
+        # BACKUP dirs → BACKUPS\
+        if item.is_dir() and is_backup_dir(name):
+            dest = FOLDERS['backups'] / name
+            reason = 'backup directory'
 
-        # Move to appropriate folder
-        folder_key = EXT_MAP.get(ext)
-        if folder_key and folder_key in FOLDERS:
-            dest = FOLDERS[folder_key] / name
-            if not dest.exists():
+        # Report JSON/txt files → Reports\
+        elif item.is_file() and is_report_file(name):
+            dest = FOLDERS['reports'] / name
+            reason = 'report file'
+
+        # Underscore temp scripts → _Archive\
+        elif item.is_file() and is_archive_script(name):
+            dest = FOLDERS['archive'] / name
+            reason = 'temp/one-off script'
+
+        # Old versioned scripts → _Archive\
+        elif item.is_file() and is_old_version(name):
+            dest = FOLDERS['archive'] / name
+            reason = 'old version'
+
+        # Log/event files → Logs\
+        elif item.is_file() and is_log_file(name):
+            dest = FOLDERS['logs'] / name
+            reason = 'log file'
+
+        # Shortcuts → Shortcuts\
+        elif item.is_file() and is_shortcut(name):
+            dest = FOLDERS['shortcuts'] / name
+            reason = 'shortcut'
+
+        # Gaza/Art bat files → Art\
+        elif item.is_file() and is_art_related(name) and name.endswith('.bat'):
+            if name not in PROTECT:
+                dest = FOLDERS['art'] / name
+                reason = 'art-related bat'
+
+        if dest:
+            if dest.exists():
+                skipped.append({'file': name, 'reason': f'already at {dest.name}'})
+            else:
                 try:
                     shutil.move(str(item), str(dest))
-                    print(f'  [MOVE] {name} → {FOLDERS[folder_key].name}')
-                    run_log['moved'].append({'file': name, 'to': FOLDERS[folder_key].name})
-                    moved += 1
+                    print(f'  [MOVE]  {name}')
+                    print(f'          → {dest.parent.name}\\')
+                    moved.append({'file': name, 'to': str(dest.relative_to(DESKTOP)), 'reason': reason})
                 except Exception as e:
-                    print(f'  [SKIP] Could not move {name}: {e}')
-                    skipped += 1
-            else:
-                skipped += 1
-        else:
-            # Unfamiliar extension — move to misc if it's a lone file
-            if item.is_file() and ext not in {'.bat', '.py', '.sh', '.ps1', '.exe', '.msi'}:
-                dest = FOLDERS['misc'] / name
-                if not dest.exists():
-                    try:
-                        shutil.move(str(item), str(dest))
-                        print(f'  [MOVE] {name} → Misc')
-                        run_log['moved'].append({'file': name, 'to': 'Misc'})
-                        moved += 1
-                    except:
-                        skipped += 1
-                else:
-                    skipped += 1
-            else:
-                skipped += 1
+                    print(f'  [ERR]   {name}: {e}')
+                    errors.append({'file': name, 'error': str(e)})
 
-    # Clean empty created folders
+    # Remove empty created folders
     for folder in FOLDERS.values():
         try:
             if folder.exists() and not any(folder.iterdir()):
                 folder.rmdir()
+                print(f'  [RMDIR] Empty folder removed: {folder.name}')
         except: pass
 
-    print(f'\n  Moved:   {moved}')
-    print(f'  Deleted: {deleted}')
-    print(f'  Skipped: {skipped}')
+    # Summary
+    print(f'\n  Moved:   {len(moved)}')
+    print(f'  Skipped: {len(skipped)}')
+    print(f'  Errors:  {len(errors)}')
 
-    log['runs'].append(run_log)
-    log['total_moved'] += moved
-    log['total_deleted'] += deleted
-    save_log(log)
-    print('  ✔ Desktop clean complete')
+    # Remaining loose files on desktop
+    remaining = [x.name for x in DESKTOP.iterdir() if x.is_file() and x.name != 'desktop.ini']
+    print(f'  Loose files remaining: {len(remaining)}')
+    for r in remaining:
+        print(f'    • {r}')
+
+    # Log
+    try:
+        log = json.loads(LOG_FILE.read_text()) if LOG_FILE.exists() else {'runs': []}
+    except:
+        log = {'runs': []}
+
+    log['runs'].append({
+        'at': datetime.now(timezone.utc).isoformat(),
+        'moved': len(moved),
+        'moved_files': moved,
+        'errors': errors,
+    })
+    LOG_FILE.write_text(json.dumps(log, indent=2))
+    print(f'  Log: {LOG_FILE}')
+    print('  ✓ Desktop clean complete')
+    return moved, skipped, errors
 
 if __name__ == '__main__':
     run()
