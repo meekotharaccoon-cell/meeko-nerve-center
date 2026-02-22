@@ -1,0 +1,40 @@
+name: 📡 Cross-Platform Auto-Poster
+on:
+  schedule:
+    - cron: '0 16 * * *'  # 4pm UTC daily — after morning pulse and YouTube
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'rotate (cycle through content) or queue (post from queue)'
+        default: 'rotate'
+      dry_run:
+        description: 'true = preview only, false = actually post'
+        default: 'true'
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run cross-poster
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_SERVER: ${{ secrets.MASTODON_SERVER }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          GUMROAD_FLOWERS_URL: ${{ secrets.GUMROAD_FLOWERS_URL }}
+          POST_MODE: ${{ github.event.inputs.mode || 'rotate' }}
+          POST_DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+        run: python mycelium/cross_poster.py
+      - name: Commit post log
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/posted.json data/post_queue.json || true
+          git diff --staged --quiet || git commit -m "auto: cross-posted $(date -u +%Y-%m-%d)"
+          git push || true
