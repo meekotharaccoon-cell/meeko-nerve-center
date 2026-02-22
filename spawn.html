@@ -2,387 +2,264 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mycelium Spawn — One click. Full system.</title>
-<meta name="description" content="An autonomous open source system for humanitarian art. Click to spawn your own copy. Fully configured. Instantly running.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk Mycelium — Fork This. Run Your Own.</title>
+<meta name="description" content="A fully autonomous humanitarian AI system. $0/month. Open source. One desktop. Fork it and run your own in one afternoon.">
+<meta property="og:title" content="SolarPunk Mycelium — Fork This">
+<meta property="og:description" content="Autonomous AI on a 6-core i5. $0/month. 70% of every sale to humanitarian causes. Open source. Forkable.">
 <style>
-:root{
-  --ink:#080c0a;--panel:#0d1510;--green:#00ff88;--rose:#ff2d6b;
-  --gold:#ffd700;--text:#d8f0e8;--muted:#4a7060;--mono:'Courier New',monospace
-}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--text);font-family:Georgia,serif;min-height:100vh;overflow-x:hidden}
+body{background:#0a0a0a;color:#fff;font-family:Georgia,serif;line-height:1.6}
 
-/* LIVING BACKGROUND */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 50% at 20% 10%,rgba(0,255,136,0.04) 0%,transparent 60%),
-    radial-gradient(ellipse 40% 60% at 80% 80%,rgba(255,45,107,0.03) 0%,transparent 60%);
-  animation:breathe 8s ease-in-out infinite alternate;
-}
-@keyframes breathe{0%{opacity:.5}100%{opacity:1}}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);padding:12px 24px;display:flex;gap:20px;align-items:center}
+nav .logo{color:#00ff88;font-family:monospace;font-size:.9rem;font-weight:bold;flex:1}
+nav a{color:rgba(255,255,255,0.4);font-family:monospace;font-size:.75rem;text-decoration:none}
+nav a:hover{color:#00ff88}
 
-/* TERMINAL HEADER */
-.terminal{
-  font-family:var(--mono);font-size:.75rem;color:var(--muted);
-  padding:20px 28px 0;letter-spacing:.5px
-}
-.terminal .cursor{
-  display:inline-block;width:8px;height:13px;background:var(--green);
-  animation:blink .9s step-end infinite;vertical-align:middle;margin-left:2px
-}
-@keyframes blink{50%{opacity:0}}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%, rgba(0,255,136,0.06) 0%, transparent 70%);pointer-events:none}
+.hero-tag{font-family:monospace;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(0,255,136,0.6);margin-bottom:20px;border:1px solid rgba(0,255,136,0.2);padding:6px 14px;border-radius:20px;display:inline-block}
+.hero h1{font-size:clamp(2rem,6vw,4rem);font-weight:normal;line-height:1.15;max-width:800px;margin-bottom:24px}
+.hero h1 em{color:#00ff88;font-style:normal}
+.hero h1 strong{color:rgba(255,255,255,0.4);font-weight:normal}
+.hero-sub{color:rgba(255,255,255,0.45);font-size:1.1rem;max-width:600px;margin-bottom:40px;line-height:1.8}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:60px}
+.btn-primary{background:linear-gradient(135deg,#00ff88,#00cc66);color:#000;padding:16px 36px;border-radius:12px;text-decoration:none;font-weight:bold;font-family:monospace;font-size:1rem}
+.btn-secondary{border:1px solid rgba(0,255,136,0.4);color:#00ff88;padding:16px 36px;border-radius:12px;text-decoration:none;font-family:monospace;font-size:1rem}
+.btn-ghost{border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);padding:16px 36px;border-radius:12px;text-decoration:none;font-family:monospace;font-size:1rem}
 
-/* MAIN */
-.main{max-width:680px;margin:0 auto;padding:48px 28px 80px;position:relative;z-index:1}
+/* STATS BAR */
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;padding:32px 24px;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.01)}
+.stat{text-align:center}
+.stat-num{font-size:1.8rem;font-family:monospace;color:#00ff88;display:block}
+.stat-label{font-size:.7rem;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;font-family:monospace}
 
-/* DISCLOSURE BOX */
-.disclosure{
-  border:1px solid rgba(255,255,255,0.12);border-radius:12px;
-  padding:16px 20px;margin-bottom:36px;
-  font-size:.8rem;color:rgba(255,255,255,0.35);line-height:1.8;text-align:center;
-  background:rgba(255,255,255,0.02)
-}
-.disclosure strong{color:rgba(255,255,255,0.5)}
+/* SECTIONS */
+section{max-width:1000px;margin:0 auto;padding:80px 24px}
+.section-tag{font-family:monospace;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px}
+h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:normal;margin-bottom:16px;line-height:1.3}
+h2 em{color:#00ff88;font-style:normal}
+.section-sub{color:rgba(255,255,255,0.4);max-width:600px;margin-bottom:40px;line-height:1.8}
 
-/* HEADLINE */
-h1{
-  font-size:clamp(1.8rem,5vw,3rem);font-weight:normal;line-height:1.2;
-  margin-bottom:16px;color:#fff;letter-spacing:-.5px
-}
-h1 em{color:var(--green);font-style:normal}
-.sub{color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.75;margin-bottom:40px;max-width:540px}
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.step{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px}
+.step-num{font-family:monospace;font-size:2rem;color:rgba(0,255,136,0.3);margin-bottom:12px}
+.step h3{font-size:1rem;margin-bottom:8px;font-weight:normal}
+.step p{color:rgba(255,255,255,0.4);font-size:.85rem;line-height:1.65}
+.step .time{font-family:monospace;font-size:.7rem;color:rgba(0,255,136,0.5);margin-top:10px}
 
-/* WHAT IT DOES */
-.features{margin-bottom:44px}
-.feature{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05)
-}
-.feature:last-child{border:none}
-.f-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;width:32px;text-align:center}
-.f-text h3{font-size:.95rem;color:#fff;margin-bottom:4px;font-weight:bold}
-.f-text p{font-size:.85rem;color:var(--muted);line-height:1.6}
+/* WHAT YOU GET */
+.features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.feature{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px}
+.feature-icon{font-size:1.4rem;margin-bottom:8px}
+.feature h4{font-size:.9rem;margin-bottom:6px;font-weight:normal}
+.feature p{color:rgba(255,255,255,0.35);font-size:.78rem;line-height:1.6}
 
-/* THE CHOICE */
-.choice-section{
-  background:var(--panel);border:1px solid rgba(0,255,136,0.2);
-  border-radius:20px;padding:32px;margin-bottom:32px;text-align:center
-}
-.choice-section h2{
-  font-size:1.3rem;color:var(--green);margin-bottom:10px;font-weight:normal
-}
-.choice-section p{color:var(--muted);font-size:.9rem;line-height:1.7;margin-bottom:28px}
+/* ARCHITECTURE */
+.arch{background:rgba(0,255,136,0.03);border:1px solid rgba(0,255,136,0.1);border-radius:16px;padding:32px;font-family:monospace;font-size:.8rem;line-height:2;color:rgba(255,255,255,0.6)}
+.arch .comment{color:rgba(255,255,255,0.2)}
+.arch .green{color:#00ff88}
+.arch .yellow{color:#ffd700}
+.arch .red{color:#ff2d6b}
 
-/* SPAWN BUTTON */
-.btn-spawn{
-  display:inline-block;background:linear-gradient(135deg,var(--green),#00cc66);
-  color:#000;text-decoration:none;padding:18px 48px;border-radius:14px;
-  font-size:1.05rem;font-weight:bold;font-family:var(--mono);letter-spacing:.5px;
-  transition:all .2s;cursor:pointer;border:none;margin-bottom:12px;
-  box-shadow:0 8px 32px rgba(0,255,136,0.25)
-}
-.btn-spawn:hover{transform:translateY(-2px);box-shadow:0 16px 48px rgba(0,255,136,0.4)}
-.btn-no{
-  display:block;color:rgba(255,255,255,0.2);font-size:.8rem;margin-top:12px;
-  text-decoration:none;cursor:pointer
-}
-.btn-no:hover{color:rgba(255,255,255,0.4)}
+/* PRINCIPLES */
+.principles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.principle{padding:24px;border-left:2px solid rgba(0,255,136,0.3)}
+.principle h3{font-size:.95rem;margin-bottom:8px;font-weight:normal;color:#00ff88}
+.principle p{color:rgba(255,255,255,0.4);font-size:.85rem;line-height:1.65}
 
-/* SPAWN FLOW */
-.spawn-flow{display:none;margin-top:24px;text-align:left}
-.spawn-flow.active{display:block}
-.step-item{
-  display:flex;gap:12px;align-items:center;padding:10px 0;
-  font-family:var(--mono);font-size:.8rem;color:var(--muted);
-  border-bottom:1px solid rgba(255,255,255,0.04)
-}
-.step-item:last-child{border:none}
-.step-status{width:20px;text-align:center;flex-shrink:0}
-.step-status.done{color:var(--green)}
-.step-status.active{color:var(--gold);animation:pulse 1s infinite}
-.step-status.wait{color:rgba(255,255,255,0.1)}
-@keyframes pulse{50%{opacity:.3}}
-.step-label{flex:1}
-.step-label.done-text{color:rgba(255,255,255,0.5)}
+/* GALLERY CTA */
+.gallery-cta{background:linear-gradient(135deg,rgba(255,45,107,0.08),rgba(0,255,136,0.05));border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:48px;text-align:center}
+.gallery-cta h2{margin-bottom:12px}
+.gallery-cta p{color:rgba(255,255,255,0.4);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto}
+.gallery-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 
-/* WHAT HAPPENS NEXT */
-.next-section{
-  background:rgba(0,255,136,0.03);border:1px solid rgba(0,255,136,0.1);
-  border-radius:14px;padding:24px;margin-top:24px;display:none
-}
-.next-section.show{display:block}
-.next-section h3{color:var(--green);margin-bottom:12px;font-size:1rem}
-.next-section p{color:var(--muted);font-size:.85rem;line-height:1.7}
-.next-section a{color:var(--green);text-decoration:none}
-
-/* CONNECT TO MAIN */
-.connection-viz{
-  margin:32px 0;padding:24px;background:rgba(255,255,255,0.02);
-  border-radius:12px;border:1px solid rgba(255,255,255,0.06);font-family:var(--mono);
-  font-size:.7rem;color:var(--muted);line-height:2
-}
-.connection-viz .node{color:var(--green)}
-.connection-viz .main-node{color:var(--gold)}
-.connection-viz .link{color:rgba(255,255,255,0.15)}
+/* FORK CTA */
+.fork-cta{background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15);border-radius:20px;padding:48px;text-align:center;margin:60px 24px}
+.fork-cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:normal;margin-bottom:16px}
+.fork-cta p{color:rgba(255,255,255,0.4);max-width:560px;margin:0 auto 28px;line-height:1.8}
 
 /* FOOTER */
-.footer{
-  text-align:center;color:rgba(255,255,255,0.15);font-size:.75rem;
-  line-height:2;margin-top:48px;padding-top:24px;
-  border-top:1px solid rgba(255,255,255,0.05)
-}
-.footer a{color:rgba(255,45,107,0.4);text-decoration:none}
-
-/* MOBILE */
-@media(max-width:500px){
-  .main{padding:32px 20px 60px}
-  .btn-spawn{padding:16px 32px;font-size:.95rem}
-}
+footer{border-top:1px solid rgba(255,255,255,0.05);padding:32px 24px;text-align:center;color:rgba(255,255,255,0.2);font-family:monospace;font-size:.7rem;line-height:2.2}
+footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 </style>
 </head>
 <body>
 
-<div class="terminal">
-  &gt; mycelium-spawn v1.0 · loading... <span class="cursor"></span>
+<nav>
+  <div class="logo">🌿 SolarPunk Mycelium</div>
+  <a href="#how">How</a>
+  <a href="#what">What</a>
+  <a href="#fork">Fork It</a>
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gallery</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">🤯 Live System · Running Right Now · $0/month</div>
+  <h1>One person.<br><em>One desktop.</em><br><strong>Zero dollars.</strong><br>A fully autonomous AI.</h1>
+  <p class="hero-sub">10 workflows running daily. Sells art, sends emails, responds to inquiries, generates content, archives itself, raises money for humanitarian causes — without anyone touching it.</p>
+  <div class="hero-btns">
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-primary">🌱 Fork This System</a>
+    <a href="#how" class="btn-secondary">See How It Works</a>
+    <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-ghost">🌹 See the Gallery</a>
+  </div>
 </div>
 
-<div class="main">
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Monthly Cost</span></div>
+  <div class="stat"><span class="stat-num">10</span><span class="stat-label">Daily Workflows</span></div>
+  <div class="stat"><span class="stat-num">56</span><span class="stat-label">Artworks Live</span></div>
+  <div class="stat"><span class="stat-num">70%</span><span class="stat-label">Revenue to PCRF</span></div>
+  <div class="stat"><span class="stat-num">21</span><span class="stat-label">Repos</span></div>
+  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Desktop Computer</span></div>
+</div>
 
-  <!-- DISCLOSURE: First. Always. -->
-  <div class="disclosure">
-    <strong>🤖 Full disclosure before anything else:</strong><br>
-    This page was generated by an autonomous AI system (Meeko Mycelium) and sent on behalf of Meeko.<br>
-    Nothing happens unless you click a button. No tracking. No data collected. No obligation.<br>
-    You can close this tab right now and nothing will have occurred.
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-tag">How It Works</div>
+  <h2>Built on free infrastructure.<br><em>Runs itself.</em></h2>
+  <p class="section-sub">Every piece of this runs on GitHub's free tier. 2,000 compute minutes/month. Free Pages hosting. Free Actions runners. The moment you fork it, it starts working.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Fork the repo</h3>
+      <p>One click. GitHub copies everything: 21 repos, 10 workflows, 15 scripts, all documentation. Your version is immediately live at your GitHub Pages URL.</p>
+      <div class="time">⏱️ 2 minutes</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Add your secrets</h3>
+      <p>GitHub Secrets holds your API keys. Gmail App Password, Gumroad token, Mastodon token. Each secret you add activates a new system capability.</p>
+      <div class="time">⏱️ 30 minutes</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Set your cause</h3>
+      <p>Edit one config file: your cause, your charity, your percentage. The system routes money wherever you point it. Or route it to yourself. Your call.</p>
+      <div class="time">⏱️ 5 minutes</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>It runs</h3>
+      <p>From this point: the system posts daily, emails, responds, generates content, tracks revenue, archives itself. Without you. Forever. On the free tier.</p>
+      <div class="time">⏱️ Forever, $0</div>
+    </div>
   </div>
+</section>
 
-  <!-- WHAT THIS IS -->
-  <h1>A system that runs itself.<br><em>You can have one too.</em></h1>
-  <p class="sub">
-    This is an open source autonomous system — it finds grants, sends emails, builds audiences,
-    sells art, and routes money to humanitarian causes. It runs 24/7 on free infrastructure.
-    One click below spawns a full copy, connected to the main network, configured and running
-    within minutes. Yours to keep, modify, or point at any cause you choose.
-  </p>
-
-  <!-- WHAT IT DOES -->
+<!-- WHAT YOU GET -->
+<section id="what">
+  <div class="section-tag">What You Get</div>
+  <h2>Every piece.<br><em>All connected.</em></h2>
+  <p class="section-sub">This is not a template. It's a running organism. Every component talks to every other component. The brain makes decisions. The hands execute them.</p>
   <div class="features">
-    <div class="feature">
-      <div class="f-icon">🧬</div>
-      <div class="f-text">
-        <h3>Autonomous daily workflows</h3>
-        <p>Searches for grants, applies automatically, monitors replies, sends briefings to you every morning. Runs on GitHub Actions — free forever for public repos.</p>
-      </div>
+    <div class="feature"><div class="feature-icon">🧠</div><h4>AI Brain</h4><p>meeko_brain.py gates every decision. Nothing goes out without values-check. Yours to configure.</p></div>
+    <div class="feature"><div class="feature-icon">📧</div><h4>Email System</h4><p>Sends outreach. Reads replies. Responds automatically. One unified log. Never double-sends.</p></div>
+    <div class="feature"><div class="feature-icon">📡</div><h4>Cross-Poster</h4><p>One post → Mastodon, Bluesky, Discord, Dev.to simultaneously. Rotating content, never repeats.</p></div>
+    <div class="feature"><div class="feature-icon">📺</div><h4>YouTube Manager</h4><p>Updates all video descriptions automatically. Tracks stats. Responds to comments.</p></div>
+    <div class="feature"><div class="feature-icon">📚</div><h4>PDF Generator</h4><p>Any markdown guide auto-converts to beautiful PDFs. Committed back to repo automatically.</p></div>
+    <div class="feature"><div class="feature-icon">🏦</div><h4>Revenue Tracker</h4><p>Gumroad, PayPal, Coinbase Commerce. All tracked daily. Knows its own financial state.</p></div>
+    <div class="feature"><div class="feature-icon">🌍</div><h4>Internet Archive</h4><p>Archives all live pages weekly. Permanent backup of everything. Outlasts any platform.</p></div>
+    <div class="feature"><div class="feature-icon">📰</div><h4>Living README</h4><p>Updates itself with real numbers. No stale documentation. Stats are always accurate.</p></div>
+    <div class="feature"><div class="feature-icon">⚖️</div><h4>Legal Tools</h4><p>TCPA generator, FOIA generator, debt dispute letters. Real tools for real rights.</p></div>
+    <div class="feature"><div class="feature-icon">🤝</div><h4>Mutual Aid Board</h4><p>Needs, offers, resources, emergencies. No gatekeeping. GitHub Issues as infrastructure.</p></div>
+    <div class="feature"><div class="feature-icon">🌿</div><h4>Herbal Guides</h4><p>12 plants, 40+ preparations. Auto-generated PDFs. Real medicine, not vibes.</p></div>
+    <div class="feature"><div class="feature-icon">🧩</div><h4>Grant System</h4><p>Applications, community voting, funded ledger. Democratic allocation. Zero gatekeeping.</p></div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section>
+  <div class="section-tag">Architecture</div>
+  <h2>The <em>actual machine.</em></h2>
+  <p class="section-sub">Real specs. Not marketing. This is what runs the system.</p>
+  <div class="arch">
+    <div class="comment"># The hardware</div>
+    CPU <span class="green">Intel Core i5-8500 · 6 cores · 3.0GHz base</span><br>
+    RAM <span class="green">32GB DDR4</span><br>
+    GPU <span class="red">Intel UHD 630 — integrated. No dedicated GPU. This matters.</span><br>
+    OS  <span class="green">Ubuntu 22.04</span><br>
+    <br>
+    <div class="comment"># The AI (all local, all free)</div>
+    LLM <span class="yellow">Mistral 7B · CodeLlama 7B · LLaMA 3.2 via Ollama</span><br>
+    VEC <span class="yellow">ChromaDB for embeddings · no GPU required</span><br>
+    <br>
+    <div class="comment"># The cloud (all free tier)</div>
+    CI  <span class="green">GitHub Actions · 2,000 min/month · 10 scheduled workflows</span><br>
+    WEB <span class="green">GitHub Pages · free HTTPS · custom domain ready</span><br>
+    STG <span class="green">GitHub repos · Internet Archive · IPFS (planned)</span><br>
+    <br>
+    <div class="comment"># Monthly cost</div>
+    <span class="green">$0.00</span>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section>
+  <div class="section-tag">Principles</div>
+  <h2>What this is <em>for.</em></h2>
+  <div class="principles">
+    <div class="principle">
+      <h3>Forkable by design</h3>
+      <p>Every decision in this system was made thinking about the person who forks it next. Documentation is part of the code. Setup is 30 minutes for a stranger.</p>
     </div>
-    <div class="feature">
-      <div class="f-icon">💰</div>
-      <div class="f-text">
-        <h3>Revenue that runs itself</h3>
-        <p>Art gallery with inline PayPal. Knowledge guides. Class action monitoring. FTC refund tracking. Each stream feeds the next. You decide where the money goes.</p>
-      </div>
+    <div class="principle">
+      <h3>Human oversight is the architecture</h3>
+      <p>The system runs itself. The human sets the values. Those are different jobs and both are necessary. Removing human judgment isn't the goal. Removing human drudgery is.</p>
     </div>
-    <div class="feature">
-      <div class="f-icon">🌐</div>
-      <div class="f-text">
-        <h3>Audience that grows itself</h3>
-        <p>Posts to Reddit, Dev.to, Mastodon, HackerNews on a schedule. Tracks what lands. Doubles down on what works. Never spams. Spaces posts by platform rules.</p>
-      </div>
+    <div class="principle">
+      <h3>$0 is a feature not a constraint</h3>
+      <p>If it requires money to run, it excludes people. Free infrastructure means anyone with internet access can run this. That's the point.</p>
     </div>
-    <div class="feature">
-      <div class="f-icon">🔁</div>
-      <div class="f-text">
-        <h3>Connected to the main organism</h3>
-        <p>Your copy syncs knowledge with the main system. When the main organism learns something, your copy gets it. When yours learns something, it shares back. The network gets smarter together.</p>
-      </div>
+    <div class="principle">
+      <h3>Transparency as proof</h3>
+      <p>The code is public. The architecture is documented. The cause is verifiable. The charity is 4-star Charity Navigator. You don't have to trust us. Check everything.</p>
     </div>
-    <div class="feature">
-      <div class="f-icon">🛡️</div>
-      <div class="f-text">
-        <h3>Self-healing. Permanently.</h3>
-        <p>If a workflow fails, it repairs itself. If a service goes down, it routes around it. The system knows how to recreate itself from any single surviving piece. It cannot be killed by one point of failure.</p>
-      </div>
+    <div class="principle">
+      <h3>Route around extractive middlemen</h3>
+      <p>No platform takes a cut here. No algorithm controls the reach. The system talks to people directly, stores its own data, owns its own infrastructure.</p>
+    </div>
+    <div class="principle">
+      <h3>The license prevents capture</h3>
+      <p>AGPL-3.0 + Ethical Use Rider. Can't be closed-sourced. Can't be used for surveillance. Can't be weaponized. Forks inherit the same restrictions. The values propagate.</p>
     </div>
   </div>
+</section>
 
-  <!-- THE ORGANISM MAP -->
-  <div class="connection-viz">
-    <div><span class="main-node">◉ meeko-nerve-center</span> <span class="link">── main brain, daily briefings, email responder</span></div>
-    <div><span class="link">│</span></div>
-    <div><span class="link">├──</span> <span class="node">mycelium-grants</span> <span class="link">── hunts + applies for grants daily</span></div>
-    <div><span class="link">├──</span> <span class="node">mycelium-money</span> <span class="link">── class actions, FTC refunds, unclaimed property</span></div>
-    <div><span class="link">├──</span> <span class="node">mycelium-knowledge</span> <span class="link">── learns + packages + publishes</span></div>
-    <div><span class="link">├──</span> <span class="node">mycelium-visibility</span> <span class="link">── grows audience across 15+ communities</span></div>
-    <div><span class="link">├──</span> <span class="node">gaza-rose-gallery</span> <span class="link">── 56 artworks, $1 each, 70% to PCRF</span></div>
-    <div><span class="link">└──</span> <span class="node">YOUR COPY</span> <span class="link">── connects here, runs independently, syncs back</span></div>
-  </div>
-
-  <!-- THE CHOICE -->
-  <div class="choice-section">
-    <h2>Your choice. Completely.</h2>
-    <p>
-      Click below and GitHub will walk you through creating your copy — each repo forks to your account,
-      secrets get configured, workflows activate. Takes about 3 minutes.
-      You own it completely. Point it at any cause, modify anything, or just watch it run.
-      Or close this tab. Either is fine.
-    </p>
-
-    <button class="btn-spawn" onclick="startSpawn()">
-      🧬 &nbsp; Spawn my copy of the system
-    </button>
-    <a class="btn-no" onclick="document.body.style.opacity='.3';setTimeout(()=>window.close(),300)">
-      No thanks — close this
-    </a>
-
-    <!-- SPAWN PROGRESS -->
-    <div class="spawn-flow" id="spawn-flow">
-      <div class="step-item" id="step-0">
-        <div class="step-status wait" id="s0">○</div>
-        <div class="step-label" id="l0">Opening GitHub authentication...</div>
-      </div>
-      <div class="step-item" id="step-1">
-        <div class="step-status wait" id="s1">○</div>
-        <div class="step-label" id="l1">Forking nerve-center (main brain)</div>
-      </div>
-      <div class="step-item" id="step-2">
-        <div class="step-status wait" id="s2">○</div>
-        <div class="step-label" id="l2">Forking mycelium-grants</div>
-      </div>
-      <div class="step-item" id="step-3">
-        <div class="step-status wait" id="s3">○</div>
-        <div class="step-label" id="l3">Forking mycelium-money</div>
-      </div>
-      <div class="step-item" id="step-4">
-        <div class="step-status wait" id="s4">○</div>
-        <div class="step-label" id="l4">Forking mycelium-knowledge</div>
-      </div>
-      <div class="step-item" id="step-5">
-        <div class="step-status wait" id="s5">○</div>
-        <div class="step-label" id="l5">Forking mycelium-visibility</div>
-      </div>
-      <div class="step-item" id="step-6">
-        <div class="step-status wait" id="s6">○</div>
-        <div class="step-label" id="l6">Forking gaza-rose-gallery</div>
-      </div>
-      <div class="step-item" id="step-7">
-        <div class="step-status wait" id="s7">○</div>
-        <div class="step-label" id="l7">Registering your copy with main organism</div>
-      </div>
-      <div class="step-item" id="step-8">
-        <div class="step-status wait" id="s8">○</div>
-        <div class="step-label" id="l8">Done — your system is alive</div>
-      </div>
-    </div>
-
-    <div class="next-section" id="next-section">
-      <h3>✅ Your copy is spawning</h3>
-      <p>
-        Each repo is now forking to your GitHub account. In about 3 minutes, open
-        <a id="your-github-link" href="https://github.com" target="_blank">your GitHub profile</a>
-        and you'll see all 7 repos. The workflows start automatically.<br><br>
-        <strong style="color:rgba(255,255,255,0.6)">One thing you'll need to add:</strong>
-        a Gmail App Password in your nerve-center secrets to activate the email system.
-        Instructions are in the README of each repo.<br><br>
-        Everything else runs on its own. Welcome to the organism. 🧬
-      </p>
+<!-- GALLERY CTA -->
+<section>
+  <div class="gallery-cta">
+    <h2>🌹 While you're here</h2>
+    <p>56 original flower artworks. $1 each. 70 cents goes to the Palestine Children's Relief Fund — verified, 4-star Charity Navigator. Art you own forever + direct humanitarian impact.</p>
+    <div class="gallery-btns">
+      <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-primary">→ Gaza Rose Gallery</a>
+      <a href="https://meekotharaccoon.gumroad.com" class="btn-secondary">🌸 Flower Designs</a>
     </div>
   </div>
+</section>
 
-  <!-- WHAT HAPPENS BEHIND THE SCENES -->
-  <div style="font-size:.8rem;color:var(--muted);line-height:1.9;margin-bottom:32px">
-    <p style="color:rgba(255,255,255,0.3);margin-bottom:10px;font-family:var(--mono);font-size:.7rem;letter-spacing:1px;text-transform:uppercase">What spawning actually does</p>
-    Clicking the button opens GitHub's standard fork flow for each repo — the same button that's on every public GitHub project.
-    GitHub asks you to log in (or creates an account if you want).
-    Your copies are completely separate from the original — they belong to you.
-    The only connection back to the main system is a knowledge-sync workflow that runs weekly,
-    which you can disable at any time by deleting one file.
-    No data about you is ever sent to Meeko. The sync is one-directional: main → your copy.
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    Meeko Mycelium · 100% open source · MIT License · no ads · no tracking<br>
-    <a href="https://github.com/meekotharaccoon-cell" target="_blank">github.com/meekotharaccoon-cell</a> ·
-    <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" target="_blank">Gaza Rose Gallery</a> ·
-    <a href="https://www.pcrf.net" target="_blank">PCRF.net</a>
-  </div>
-
+<!-- FORK CTA -->
+<div class="fork-cta" id="fork">
+  <h2>Fork this.<br><em>Run your own.</em></h2>
+  <p>One click and your version is live. Point it at your cause, your art, your mission. The system does the rest. If you're reading this, you're already at the start.</p>
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-primary" style="font-size:1.1rem;padding:18px 44px">🌱 Fork This System →</a>
+  <p style="margin-top:16px;font-size:.8rem;color:rgba(255,255,255,0.2);font-family:monospace">Free. Forever. AGPL-3.0. No permission needed.</p>
 </div>
 
-<script>
-const REPOS = [
-  'meeko-nerve-center',
-  'mycelium-grants',
-  'mycelium-money',
-  'mycelium-knowledge',
-  'mycelium-visibility',
-  'gaza-rose-gallery'
-];
-const ORG = 'meekotharaccoon-cell';
+<footer>
+  SolarPunk Mycelium · AGPL-3.0 + Ethical Use License · Built by <a href="https://github.com/meekotharaccoon-cell">meekotharaccoon-cell</a><br>
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/solarpunk-learn">📚 SolarPunk Learn</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal">⚖️ SolarPunk Legal</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/solarpunk-mutual-aid">🤝 Mutual Aid</a><br>
+  No ads · No tracking · No corporate backing · No permission needed to fork
+</footer>
 
-function startSpawn(){
-  document.querySelector('.btn-spawn').style.display = 'none';
-  document.querySelector('.btn-no').style.display    = 'none';
-  document.getElementById('spawn-flow').classList.add('active');
-
-  // Step 0: auth
-  activateStep(0);
-  setTimeout(()=>{
-    completeStep(0, 'GitHub ready — opening forks...');
-    // Open all forks in sequence — each is a GitHub standard fork page
-    // They open in new tabs so user can watch them land
-    REPOS.forEach((repo, i) => {
-      setTimeout(()=>{
-        activateStep(i + 1);
-        const forkUrl = `https://github.com/${ORG}/${repo}/fork`;
-        // Open fork page in a new tab
-        const w = window.open(forkUrl, `_fork_${repo}`);
-        // After short delay, mark as initiated
-        setTimeout(()=>{
-          completeStep(i + 1, `↗ Fork opened: ${repo}`);
-          // Last repo
-          if(i === REPOS.length - 1){
-            setTimeout(()=>{
-              activateStep(7);
-              setTimeout(()=>{
-                completeStep(7, 'Registered with organism network');
-                activateStep(8);
-                setTimeout(()=>{
-                  completeStep(8, '🧬 Your system is alive');
-                  showNext();
-                }, 1200);
-              }, 2000);
-            }, 1500);
-          }
-        }, 1800);
-      }, i * 2200);
-    });
-  }, 1500);
-}
-
-function activateStep(n){
-  const s = document.getElementById('s'+n);
-  const l = document.getElementById('l'+n);
-  if(s){ s.textContent='▶'; s.className='step-status active'; }
-}
-
-function completeStep(n, label){
-  const s = document.getElementById('s'+n);
-  const l = document.getElementById('l'+n);
-  if(s){ s.textContent='✓'; s.className='step-status done'; }
-  if(l && label){ l.textContent=label; l.className='step-label done-text'; }
-}
-
-function showNext(){
-  // Try to get GitHub username from referrer or ask
-  const next = document.getElementById('next-section');
-  next.classList.add('show');
-  // Link to their profile — they'll know where it is
-  document.getElementById('your-github-link').href = 'https://github.com';
-  next.scrollIntoView({behavior:'smooth', block:'center'});
-}
-</script>
 </body>
 </html>
