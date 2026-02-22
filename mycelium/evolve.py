@@ -1,332 +1,339 @@
 #!/usr/bin/env python3
 """
-EVOLVE.PY
-==========
-The self-improvement engine.
+EVOLVE.PY v2 — Full Self-Improvement Engine
+=============================================
+Every run:
+  1.  Pull latest from GitHub
+  2.  Scan local assets (finds what the system doesn't know about)
+  3.  Consolidate local knowledge into GitHub system
+  4.  Clean desktop (organizes into minimum folders)
+  5.  Map all connections (finds unwired scripts, gaps, missed links)
+  6.  Build one item from the rotating queue
+  7.  Auto-push new files to GitHub
+  8.  Write next-generation EVOLVE.bat with findings baked in
 
-Every time it runs:
-  1. Pulls latest from GitHub (stays current)
-  2. Runs connection_mapper (finds gaps + missed links)
-  3. Runs desktop_cleaner (organizes local machine)
-  4. Checks all workflows for what needs activation
-  5. Builds something new (rotates through the build queue)
-  6. Reports everything it found
-  7. Writes the NEXT version of EVOLVE.bat with findings baked in
-
-The bat file that called this script gets replaced by a smarter one.
-The system evolves every single morning.
-
-Run via: EVOLVE.bat (scheduled daily at 7am)
-Or manually: python mycelium/evolve.py
+The bat file that called this gets replaced by a smarter one.
+Run daily at 7am via Task Scheduler.
+Or run manually: python mycelium/evolve.py
 """
-import os, sys, json, subprocess, shutil, datetime, platform
+import os, sys, json, subprocess, datetime, importlib.util
 from pathlib import Path
 
-START_TIME = datetime.datetime.now()
-REPO_ROOT  = Path(__file__).parent.parent
-DATA_DIR   = REPO_ROOT / 'data'
-DATA_DIR.mkdir(exist_ok=True)
+START   = datetime.datetime.now()
+REPO    = Path(__file__).parent.parent
+DATA    = REPO / 'data'
+DATA.mkdir(exist_ok=True)
 
-EVOLVE_LOG = DATA_DIR / 'evolve_history.json'
-BAT_PATH   = Path(r'C:\Users\meeko\Desktop\EVOLVE.bat')
-REPO_URL   = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
+HISTORY_FILE = DATA / 'evolve_history.json'
+BAT_PATH     = Path(r'C:\Users\meeko\Desktop\EVOLVE.bat')
+REPO_URL     = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
 
-# ---- UTILITIES ---------------------------------------------------
+def ts(): return datetime.datetime.now().strftime('%H:%M:%S')
 
-def log(msg, level='INFO'):
-    ts = datetime.datetime.now().strftime('%H:%M:%S')
-    icons = {'INFO': '•', 'OK': '✓', 'WARN': '⚠', 'BUILD': '🔨', 'CLEAN': '🧹', 'CONNECT': '🔗', 'EVOLVE': '🌱'}
-    icon = icons.get(level, '•')
-    print(f'  [{ts}] {icon} {msg}')
+def log(msg, sym='•'):
+    print(f'  [{ts()}] {sym} {msg}')
 
-def load_history():
-    try: return json.loads(EVOLVE_LOG.read_text())
-    except: return {'runs': [], 'built': [], 'next_build_index': 0}
-
-def save_history(h):
-    EVOLVE_LOG.write_text(json.dumps(h, indent=2))
-
-def run_cmd(cmd, cwd=None, capture=True):
+def run_cmd(cmd, cwd=None):
     try:
-        r = subprocess.run(cmd, shell=True, capture_output=capture, text=True, cwd=cwd or REPO_ROOT)
+        r = subprocess.run(cmd, shell=True, capture_output=True, text=True, cwd=cwd or REPO)
         return r.returncode == 0, (r.stdout + r.stderr).strip()
     except Exception as e:
         return False, str(e)
 
-# ---- STEP 1: PULL LATEST -----------------------------------------
+def load_mod(name):
+    p = REPO / 'mycelium' / f'{name}.py'
+    if not p.exists(): return None
+    spec = importlib.util.spec_from_file_location(name, p)
+    mod  = importlib.util.module_from_spec(spec)
+    try: spec.loader.exec_module(mod)
+    except: return None
+    return mod
 
-def pull_latest():
-    log('Pulling latest from GitHub...', 'INFO')
-    ok, out = run_cmd('git pull origin main')
-    if ok:
-        log('Up to date with GitHub', 'OK')
-    else:
-        log(f'Pull issue (might be offline): {out[:80]}', 'WARN')
-    return ok
+def load_history():
+    try: return json.loads(HISTORY_FILE.read_text())
+    except: return {'runs': [], 'built': [], 'gen': 1}
 
-# ---- STEP 2: CONNECTION MAPPER -----------------------------------
+def save_history(h):
+    HISTORY_FILE.write_text(json.dumps(h, indent=2))
 
-def find_connections():
-    log('Scanning for missed connections...', 'CONNECT')
-    try:
-        ok, out = run_cmd('python mycelium/connection_mapper.py')
-        if ok:
-            log('Connection map updated', 'OK')
-        return out
-    except:
-        return 'connection_mapper not available yet'
-
-# ---- STEP 3: DESKTOP CLEANER ------------------------------------
-
-def clean_desktop():
-    log('Cleaning desktop...', 'CLEAN')
-    try:
-        ok, out = run_cmd('python mycelium/desktop_cleaner.py')
-        log('Desktop organized', 'OK')
-        return out
-    except:
-        return 'desktop_cleaner not available yet'
-
-# ---- STEP 4: BUILD QUEUE ----------------------------------------
-# Each run builds one thing from this rotating queue.
-# Items are marked done and never re-built.
-# New items get added as the system evolves.
+# ===================== BUILD QUEUE ================================
+# Rotates through every run. Never builds the same thing twice
+# until all are done, then resets.
 
 BUILD_QUEUE = [
-    {'id': 'index_lessons',      'desc': 'Rebuild knowledge library index',         'cmd': 'python mycelium/knowledge_indexer.py'},
-    {'id': 'gen_changelog',      'desc': 'Regenerate changelog from git history',   'cmd': 'python mycelium/changelog_generator.py'},
-    {'id': 'run_signal_tracker', 'desc': 'Run signal tracker — what\'s working',    'cmd': 'python mycelium/signal_tracker.py'},
-    {'id': 'run_monetization',   'desc': 'Update revenue tracker',                  'cmd': 'python mycelium/monetization_tracker.py'},
-    {'id': 'run_seo',            'desc': 'Ping search engines with sitemap',        'cmd': 'python mycelium/seo_submitter.py SEO_DRY_RUN=false'},
-    {'id': 'run_cross_poster',   'desc': 'Queue next social media post',            'cmd': 'python mycelium/cross_poster.py'},
-    {'id': 'run_brain_check',    'desc': 'Run brain self-check',                    'cmd': 'python mycelium/meeko_brain.py'},
-    {'id': 'run_outreach',       'desc': 'Run community outreach (dry)',            'cmd': 'python mycelium/community_outreach.py'},
-    {'id': 'verify_workflows',   'desc': 'Verify all workflow files exist',         'cmd': 'python -c "import glob; wf=glob.glob(\'.github/workflows/*.yml\'); print(f\'{len(wf)} workflows found\')"'},
-    {'id': 'audit_data_dir',     'desc': 'Audit data directory',                   'cmd': 'python -c "import os,json; files=list(os.walk(\'data\')); print(f\'data/: {sum(len(f) for _,_,f in files)} files\')"'},
+    {'id': 'index_lessons',     'desc': 'Rebuild knowledge library index (now 13 lessons)',  'fn': 'knowledge_indexer', 'method': 'run'},
+    {'id': 'gen_changelog',     'desc': 'Regenerate changelog from full git history',         'fn': 'changelog_generator', 'method': 'run'},
+    {'id': 'scan_assets',       'desc': 'Scan local assets — find missed connections',        'fn': 'asset_scanner', 'method': 'run'},
+    {'id': 'consolidate',       'desc': 'Consolidate local knowledge into system',            'fn': 'system_consolidator', 'method': 'run'},
+    {'id': 'map_connections',   'desc': 'Map all connections + generate gap report',          'fn': 'connection_mapper', 'method': 'run'},
+    {'id': 'signal_tracker',    'desc': 'Run signal tracker — what is actually working',     'fn': 'signal_tracker', 'method': 'run'},
+    {'id': 'seo_ping',          'desc': 'Ping search engines with updated sitemap',           'fn': 'seo_submitter', 'method': 'run'},
+    {'id': 'verify_workflows',  'desc': 'Count + verify all GitHub Actions workflows',
+     'cmd': 'python -c "import glob; wf=glob.glob(\'.github/workflows/*.yml\'); print(str(len(wf))+\' workflows active\')"; '},
+    {'id': 'audit_data',        'desc': 'Audit data/ — what has been generated so far',
+     'cmd': 'python -c "import os; [print(f) for f in os.listdir(\'data\')]" '},
+    {'id': 'clean_desktop',     'desc': 'Deep clean and organize desktop',                    'fn': 'desktop_cleaner', 'method': 'run'},
 ]
 
-def run_build(history):
+def run_build_item(item, history):
+    log(f'Building: {item["desc"]}', '🔨')
+    if 'fn' in item:
+        mod = load_mod(item['fn'])
+        if mod and hasattr(mod, item.get('method', 'run')):
+            try:
+                getattr(mod, item['method'])()
+                return True, 'module run OK'
+            except Exception as e:
+                return False, str(e)
+        else:
+            # Fallback: run as subprocess
+            ok, out = run_cmd(f'python mycelium/{item["fn"]}.py')
+            return ok, out
+    elif 'cmd' in item:
+        ok, out = run_cmd(item['cmd'])
+        return ok, out
+    return False, 'no runner'
+
+def next_build_item(history):
     built = set(history.get('built', []))
-    queue = [b for b in BUILD_QUEUE if b['id'] not in built]
+    remaining = [b for b in BUILD_QUEUE if b['id'] not in built]
+    if not remaining:
+        log('All build items complete — resetting queue for next cycle', '🔄')
+        history['built'] = []
+        remaining = BUILD_QUEUE
+    return remaining[0]
 
-    if not queue:
-        log('All build items complete — queue will reset', 'BUILD')
-        history['built'] = []  # Reset and start over with next evolution
-        queue = BUILD_QUEUE
+# ===================== ENHANCEMENT SUGGESTIONS ====================
 
-    item = queue[0]
-    log(f'Building: {item["desc"]}', 'BUILD')
-    ok, out = run_cmd(item['cmd'])
-    status = 'OK' if ok else 'WARN'
-    log(f'Build result: {out[:120]}', status)
-    history['built'].append(item['id'])
-    return item, ok, out
-
-# ---- STEP 5: ENHANCEMENT SUGGESTIONS ----------------------------
-
-def generate_enhancements(connections_out, build_item, build_ok):
-    """
-    Look at system state and generate specific, actionable enhancements.
-    These get baked into the next EVOLVE.bat as visible suggestions.
-    """
-    history = load_history()
+def gather_suggestions(history, conn_data):
     runs = len(history.get('runs', []))
+    sugs = []
 
-    suggestions = []
+    # Always: missing secrets
+    sugs.append(('SECRETS', 'Add GitHub Secrets to unlock locked workflows', [
+        'GMAIL_APP_PASSWORD  → repo Settings > Secrets > Actions',
+        'MASTODON_TOKEN + MASTODON_SERVER  → create at any Mastodon instance',
+        'MAILGUN_API_KEY + MAILGUN_DOMAIN  → mailgun.com → free 100/day',
+        'GUMROAD_TOKEN  → Gumroad account > Settings > Advanced',
+    ]))
 
-    # Always check for missing secrets
-    secrets_needed = [
-        ('GMAIL_APP_PASSWORD', 'activates all 10 email workflows'),
-        ('MASTODON_TOKEN + MASTODON_SERVER', 'activates social posting'),
-        ('BLUESKY_APP_PASSWORD + BLUESKY_HANDLE', 'activates Bluesky posting'),
-        ('YOUTUBE_CLIENT_ID etc (5 secrets)', 'activates YouTube manager'),
-        ('GUMROAD_TOKEN', 'activates revenue tracking'),
-        ('MAILGUN_API_KEY + MAILGUN_DOMAIN', 'activates open tracking on emails (free)'),
-    ]
-    suggestions.append(('SECRETS', 'Add GitHub secrets to activate more workflows', secrets_needed))
-
-    # Run-count based suggestions
-    if runs < 3:
-        suggestions.append(('FORK', 'Share the fork link — system recruits its own successors', [REPO_URL + '/fork']))
-    if runs >= 3:
-        suggestions.append(('DOMAIN', 'Buy solarpunkmycelium.org (~$8/year) — email deliverability upgrade', ['porkbun.com']))
-    if runs >= 5:
-        suggestions.append(('REDDIT', 'Post to r/solarpunk, r/selfhosted, r/opensource — content ready in content/', ['Use content/ANNOUNCEMENT_REDDIT_*.md']))
-    if runs >= 7:
-        suggestions.append(('PRODUCTMAP', 'Add yourself to FORK_REGISTRY.md — prove the model', [REPO_URL + '/blob/main/FORK_REGISTRY.md']))
-
-    # Connection gaps (simple static analysis)
-    py_files = list((REPO_ROOT / 'mycelium').glob('*.py')) if (REPO_ROOT / 'mycelium').exists() else []
-    wf_files = list((REPO_ROOT / '.github' / 'workflows').glob('*.yml')) if (REPO_ROOT / '.github' / 'workflows').exists() else []
-
-    unwired = []
-    for py in py_files:
-        name = py.stem
-        wired = any(name in wf.read_text() for wf in wf_files)
-        if not wired and name not in ('meeko_brain', '__init__'):
-            unwired.append(name)
-
+    # Unwired scripts
+    unwired = conn_data.get('unwired_scripts', []) if conn_data else []
     if unwired:
-        suggestions.append(('WIRE', f'These scripts have no GitHub Actions workflow yet', unwired))
+        sugs.append(('WIRE', f'{len(unwired)} scripts need GitHub Actions workflows', unwired[:4]))
 
-    return suggestions
+    # Missing connections
+    absent = conn_data.get('connections_absent', []) if conn_data else []
+    if absent:
+        desc = [f"{c['from']} → {c['to']}" for c in absent[:3]]
+        sugs.append(('CONNECT', 'Scripts that should call each other but don\'t', desc))
 
-# ---- STEP 6: WRITE NEXT EVOLVE.BAT ------------------------------
+    # Run-based suggestions
+    if runs == 0:
+        sugs.append(('FIRST', 'First run! Post to Hacker News today', ['content/ANNOUNCEMENT_HACKERNEWS.md is ready to copy-paste']))
+    if runs >= 2:
+        sugs.append(('SHARE', 'Share the one-pager — content/ONE_PAGER.md is public domain', ['Forward it. Post it. Print it.']))
+    if runs >= 4:
+        sugs.append(('REDDIT', 'Post to Reddit communities — content is ready', [
+            'r/selfhosted → content/ANNOUNCEMENT_REDDIT_SELFHOSTED.md',
+            'r/solarpunk → content/ANNOUNCEMENT_REDDIT_SOLARPUNK.md',
+        ]))
+    if runs >= 6:
+        sugs.append(('DEVTO', 'Publish Dev.to article — content/DEVTO_ARTICLE.md is ready', ['Go to dev.to > New Post > paste it']))
+    if runs >= 8:
+        sugs.append(('DOMAIN', 'Consider solarpunkmycelium.org (~$8/yr) for email deliverability', ['porkbun.com or namecheap.com']))
 
-def write_next_bat(run_num, suggestions, build_item, connections_out, clean_out):
-    """
-    Write a new EVOLVE.bat that:
-    - Has this run's findings baked in as visible comments
-    - Runs everything again tomorrow
-    - Gets smarter each iteration
-    """
-    now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-    next_run = run_num + 1
+    return sugs
+
+# ===================== WRITE NEXT BAT ============================
+
+def write_next_bat(gen, sugs, built_item, build_ok):
+    now  = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    next_gen = gen + 1
 
     sug_lines = []
-    for cat, title, items in suggestions:
+    for cat, title, items in sugs:
         sug_lines.append(f'echo   [{cat}] {title}')
-        for item in items[:2]:
-            item_str = str(item)[:70]
-            sug_lines.append(f'echo       {item_str}')
-    suggestions_block = '\n'.join(sug_lines)
+        for item in items[:3]:
+            safe = str(item).replace('%', '%%')[:72]
+            sug_lines.append(f'echo     - {safe}')
+    sug_block = '\n'.join(sug_lines)
 
-    bat_content = f"""@echo off
-REM EVOLVE.bat — Generation {next_run}
+    build_status = 'OK' if build_ok else 'WARN'
+    build_desc   = built_item.get('desc', '?')[:60]
+
+    bat = f"""@echo off
+REM EVOLVE.bat — Generation {next_gen}
 REM Last evolved: {now}
-REM Last built: {build_item['desc']}
-REM This file was written by the system itself. It replaces itself on every run.
-REM Delete it and it will be recreated next push. Fork it and it runs for someone else.
+REM Last built:   [{build_status}] {build_desc}
+REM
+REM This file was written by the system itself.
+REM It replaces itself on every run.
+REM Fork it: {REPO_URL}/fork
 
-title SolarPunk Mycelium — Evolving... (Gen {next_run})
+title SolarPunk Mycelium — Gen {next_gen} evolving...
 color 0A
 
 echo.
 echo  ==================================================
 echo   SOLARPUNK MYCELIUM — EVOLUTION ENGINE
-echo   Generation: {next_run}
-echo   {now}
+echo   Generation {next_gen}  /  {now}
+echo   Last built: {build_desc[:50]}
 echo  ==================================================
 echo.
 
-REM Step 1: Go to the repo
-cd /d "%~dp0UltimateAI_Master\meeko-nerve-center" 2>nul || (
-  cd /d "%USERPROFILE%\Desktop\UltimateAI_Master\meeko-nerve-center" 2>nul || (
-    echo   [WARN] Could not find repo. Clone it first:
-echo   git clone {REPO_URL}
-    pause
-    exit /b 1
-  )
+set REPO=%USERPROFILE%\Desktop\UltimateAI_Master\meeko-nerve-center
+if not exist "%REPO%" (
+  echo [SETUP] Cloning repo...
+  md "%USERPROFILE%\Desktop\UltimateAI_Master" 2>nul
+  cd /d "%USERPROFILE%\Desktop\UltimateAI_Master"
+  git clone {REPO_URL}
 )
+cd /d "%REPO%"
 
-echo  [1/6] Pulling latest from GitHub...
+echo [1/8] Pulling latest...
 git pull origin main
 echo.
 
-echo  [2/6] Cleaning desktop...
-python mycelium\desktop_cleaner.py
-echo.
-
-echo  [3/6] Mapping connections...
-python mycelium\connection_mapper.py
-echo.
-
-echo  [4/6] Running build queue...
+echo [2/8] Running full evolution engine...
 python mycelium\evolve.py
 echo.
 
-echo  [5/6] Pushing any new files...
+echo [3/8] Pushing new outputs to GitHub...
 git add -A
-git commit -m "auto: evolution gen {next_run} %date%" 2>nul
+git commit -m "auto: gen {next_gen} %%date%%" 2>nul
 git push origin main 2>nul
 echo.
 
-echo  [6/6] This run's enhancements:
-echo.
-{suggestions_block}
-echo.
-echo  ==================================================
-echo   Evolution complete. New EVOLVE.bat written.
-echo   Open it tomorrow morning or let Task Scheduler run it.
-echo  ==================================================
+echo [4/8] Ensuring daily schedule exists...
+schtasks /query /tn "SolarPunk Mycelium Evolve" >nul 2>&1
+if errorlevel 1 (
+  schtasks /create /tn "SolarPunk Mycelium Evolve" /tr "\"%USERPROFILE%\Desktop\EVOLVE.bat\"" /sc daily /st 07:00 /f >nul 2>&1
+  echo Scheduled: daily at 7:00 AM
+) else (
+  echo Already scheduled at 7:00 AM
+)
 echo.
 
-REM Copy new bat to desktop (the system replaces itself)
-copy /Y mycelium\evolve_output\EVOLVE_next.bat "%USERPROFILE%\Desktop\EVOLVE.bat" 2>nul
-
+echo  ==================================================
+echo   ENHANCEMENTS — Generation {next_gen} Report
+echo  ==================================================
+echo.
+{sug_block}
+echo.
+echo   System: {REPO_URL}
+echo   Dashboard: meekotharaccoon-cell.github.io/meeko-nerve-center/dashboard.html
+echo   Links: meekotharaccoon-cell.github.io/meeko-nerve-center/link.html
+echo   Gallery: meekotharaccoon-cell.github.io/gaza-rose-gallery
+echo.
+echo   Generation {next_gen} complete. This bat has been replaced.
+echo   Next run: tomorrow 7am (or double-click EVOLVE.bat now).
+echo  ==================================================
+echo.
 pause
 """
-    return bat_content
+    return bat
 
-# ---- STEP 7: TASK SCHEDULER SETUP -------------------------------
-
-def print_task_scheduler_cmd(bat_path):
-    cmd = f'schtasks /create /tn "SolarPunk Mycelium Evolve" /tr "{bat_path}" /sc daily /st 07:00 /f'
-    print('\n' + '='*52)
-    print('  TO SCHEDULE DAILY AT 7AM:')
-    print('  Run this in Command Prompt as Administrator:')
-    print(f'  {cmd}')
-    print('='*52 + '\n')
-    return cmd
-
-# ---- MAIN -------------------------------------------------------
+# ===================== MAIN ======================================
 
 def run():
-    print('\n' + '='*52)
-    print('  EVOLVE.PY — Self-Improvement Engine')
-    print(f'  {START_TIME.strftime("%Y-%m-%d %H:%M:%S")}')
-    print('='*52)
+    print('\n' + '='*56)
+    print('  EVOLVE.PY v2 — Self-Improvement Engine')
+    print(f'  {START.strftime("%Y-%m-%d %H:%M:%S")}')
+    print('='*56)
 
-    history = load_history()
-    run_num = len(history.get('runs', [])) + 1
-    log(f'Evolution run #{run_num}', 'EVOLVE')
+    history  = load_history()
+    gen      = history.get('gen', 1)
+    run_num  = len(history.get('runs', [])) + 1
+    log(f'Generation {gen} / Run #{run_num}', '🌱')
 
-    # Run all steps
-    pull_latest()
-    connections_out = find_connections()
-    clean_out = clean_desktop()
-    build_item, build_ok, build_out = run_build(history)
-    suggestions = generate_enhancements(connections_out, build_item, build_ok)
+    # Step 1: Pull
+    log('Pulling from GitHub...')
+    run_cmd('git pull origin main')
 
-    # Record this run
-    run_record = {
-        'run': run_num,
-        'at': START_TIME.isoformat(),
+    # Step 2: Scan local assets
+    log('Scanning local assets...')
+    asset_mod = load_mod('asset_scanner')
+    asset_data = {}
+    if asset_mod:
+        try: asset_data = asset_mod.run() or {}
+        except: pass
+
+    # Step 3: Consolidate knowledge
+    log('Consolidating local knowledge...')
+    cons_mod = load_mod('system_consolidator')
+    if cons_mod:
+        try: cons_mod.run()
+        except: pass
+
+    # Step 4: Clean desktop
+    log('Cleaning desktop...')
+    clean_mod = load_mod('desktop_cleaner')
+    if clean_mod:
+        try: clean_mod.run()
+        except: pass
+
+    # Step 5: Map connections
+    log('Mapping connections...')
+    conn_data = {}
+    conn_mod = load_mod('connection_mapper')
+    if conn_mod:
+        try: conn_data = conn_mod.run() or {}
+        except: pass
+
+    # Step 6: Build one item
+    build_item = next_build_item(history)
+    build_ok, build_out = run_build_item(build_item, history)
+    history.setdefault('built', []).append(build_item['id'])
+    log(f'Built: {build_item["desc"]} — {"OK" if build_ok else "WARN"}', '🔨')
+
+    # Gather suggestions
+    sugs = gather_suggestions(history, conn_data)
+
+    # Record run
+    history.setdefault('runs', []).append({
+        'run': run_num, 'gen': gen,
+        'at': START.isoformat(),
         'built': build_item['id'],
         'build_ok': build_ok,
-        'suggestions': [s[0] for s in suggestions],
-        'duration_s': (datetime.datetime.now() - START_TIME).seconds,
-    }
-    history.setdefault('runs', []).append(run_record)
+        'sugs': [s[0] for s in sugs],
+        'duration_s': (datetime.datetime.now() - START).seconds,
+    })
+    history['gen'] = gen
     save_history(history)
 
     # Write next bat
-    next_bat = write_next_bat(run_num, suggestions, build_item, connections_out, clean_out)
-    out_dir = REPO_ROOT / 'mycelium' / 'evolve_output'
-    out_dir.mkdir(exist_ok=True)
-    next_bat_path = out_dir / 'EVOLVE_next.bat'
-    next_bat_path.write_text(next_bat)
-    log(f'Next EVOLVE.bat written: Gen {run_num + 1}', 'EVOLVE')
+    next_bat = write_next_bat(gen, sugs, build_item, build_ok)
 
-    # Also write directly to desktop
+    # Write to repo (committed next push)
+    out_dir = REPO / 'mycelium' / 'evolve_output'
+    out_dir.mkdir(exist_ok=True)
+    (out_dir / 'EVOLVE_next.bat').write_text(next_bat)
+
+    # Write directly to desktop (replaces current bat)
     try:
         BAT_PATH.write_text(next_bat)
-        log(f'Desktop EVOLVE.bat updated to Gen {run_num + 1}', 'OK')
+        history['gen'] = gen + 1
+        save_history(history)
+        log(f'Desktop EVOLVE.bat → Gen {gen + 1}', '✓')
     except Exception as e:
-        log(f'Could not write to desktop: {e}', 'WARN')
+        log(f'Could not write desktop bat: {e}', '⚠')
 
-    # Summary
-    print('\n' + '='*52)
-    print(f'  RUN #{run_num} COMPLETE')
+    # Print summary
+    elapsed = (datetime.datetime.now() - START).seconds
+    print('\n' + '='*56)
+    print(f'  EVOLUTION COMPLETE — Gen {gen} Run #{run_num}')
     print(f'  Built: {build_item["desc"]}')
-    print(f'  Duration: {(datetime.datetime.now() - START_TIME).seconds}s')
-    print(f'  Total runs: {run_num}')
-    print('\n  ENHANCEMENTS FOR NEXT EVOLUTION:')
-    for cat, title, items in suggestions:
+    print(f'  Time:  {elapsed}s')
+    print(f'  Next generation: {gen + 1}')
+    print()
+    print('  ENHANCEMENTS:')
+    for cat, title, items in sugs:
         print(f'  [{cat}] {title}')
-        for item in items[:2]:
-            print(f'    • {str(item)[:70]}')
-    print_task_scheduler_cmd(BAT_PATH)
+        for item in items[:2]: print(f'    • {str(item)[:68]}')
+    print()
+    print(f'  Dashboard: meekotharaccoon-cell.github.io/meeko-nerve-center/dashboard.html')
+    print('=' * 56)
 
 if __name__ == '__main__':
     run()

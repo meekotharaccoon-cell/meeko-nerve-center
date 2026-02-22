@@ -1,0 +1,22 @@
+name: 🔎 Asset Scanner
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Monday 6am UTC
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Run connection mapper
+        run: python mycelium/connection_mapper.py
+      - name: Commit
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/ || true
+          git diff --staged --quiet || git commit -m "🔎 auto: asset scan $(date -u +%Y-%m-%d)"
+          git push || true
