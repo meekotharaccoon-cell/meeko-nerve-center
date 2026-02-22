@@ -1,0 +1,28 @@
+name: 📊 Signal Tracker
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Monday mornings — weekly performance review
+  workflow_dispatch:
+
+jobs:
+  signals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run signal tracker
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_SERVER: ${{ secrets.MASTODON_SERVER }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+        run: python mycelium/signal_tracker.py
+      - name: Commit signal data
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/signals.json data/what_works.json || true
+          git diff --staged --quiet || git commit -m "auto: weekly signal report $(date -u +%Y-%m-%d)"
+          git push || true
