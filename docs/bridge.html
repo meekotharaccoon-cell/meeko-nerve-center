@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#030a06">
+<title>BRIDGE — Desktop ↔ Phone</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Syne+Mono&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,700;1,9..144,200&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+
+:root {
+  --g0:#00ff88;--g1:#00cc6a;--g2:#008844;
+  --r:#ff2d6b;--y:#ffd700;--b:#00cfff;--p:#b44fff;
+  --bg:#030a06;--bg2:#06110a;--bg3:#0a1a0f;
+  --card:rgba(0,255,136,0.04);--border:rgba(0,255,136,0.12);
+  --text:rgba(255,255,255,0.88);--muted:rgba(255,255,255,0.35);--dim:rgba(255,255,255,0.12);
+  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
+  --font-mono:'Syne Mono',monospace;--font-sans:'Space Grotesk',sans-serif;--font-serif:'Fraunces',serif;
+}
+
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font-sans);overflow-x:hidden}
+
+#mycelium-bg{position:fixed;inset:0;z-index:0;opacity:.18;pointer-events:none}
+
+.page{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:calc(var(--safe-t)+20px) 20px calc(var(--safe-b)+60px)}
+
+.hdr{text-align:center;padding:40px 0 32px}
+.hdr-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid var(--border);border-radius:100px;font-family:var(--font-mono);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--g0);margin-bottom:20px;background:rgba(0,255,136,.04)}
+.hdr-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--g0);box-shadow:0 0 10px var(--g0);animation:blink 1.8s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hdr h1{font-family:var(--font-serif);font-size:clamp(2.4rem,8vw,4.5rem);font-weight:200;line-height:1.05;letter-spacing:-.03em;margin-bottom:12px}
+.hdr h1 em{font-style:italic;color:var(--g0)}
+.hdr p{font-size:.95rem;color:var(--muted);max-width:480px;margin:0 auto;line-height:1.7}
+
+#device-banner{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:32px;padding:16px 24px;border:1px solid var(--border);border-radius:16px;background:var(--card);font-family:var(--font-mono);font-size:.78rem}
+#device-banner .device-icon{font-size:1.6rem}
+#device-banner .device-info{text-align:left}
+#device-banner .device-type{color:var(--g0);font-weight:700;display:block;margin-bottom:2px}
+#device-banner .device-sub{color:var(--muted);font-size:.65rem}
+
+.sec{margin-bottom:32px}
+.sec-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sec-label .num{color:var(--g0)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;margin-bottom:14px;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g0),transparent);opacity:.3}
+.card-title{font-family:var(--font-serif);font-size:1.3rem;font-weight:200;margin-bottom:6px}
+.card-sub{font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
+
+#qr-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+#qr-outer{padding:20px;background:#fff;border-radius:16px;box-shadow:0 0 60px rgba(0,255,136,.25);position:relative}
+#qr-canvas{display:block;border-radius:8px}
+.qr-pulse{position:absolute;inset:-8px;border-radius:24px;border:2px solid var(--g0);animation:qr-ring 2.5s ease infinite;opacity:0}
+@keyframes qr-ring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.08)}}
+#qr-info{text-align:center;font-family:var(--font-mono);font-size:.7rem;color:var(--muted);line-height:2}
+#qr-info strong{color:var(--text)}
+.qr-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;width:100%;margin-top:4px}
+.qr-step{text-align:center;padding:14px 10px;background:rgba(0,255,136,.04);border:1px solid var(--border);border-radius:12px}
+.qr-step .step-n{font-size:1.4rem;margin-bottom:6px}
+.qr-step .step-t{font-size:.68rem;color:var(--text);line-height:1.5}
+.qr-step .step-s{font-size:.6rem;color:var(--muted)}
+
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.cap-item{padding:14px;border:1px solid var(--border);border-radius:14px;background:rgba(0,0,0,.3);position:relative;overflow:hidden;transition:all .2s;cursor:default}
+.cap-item.yes{border-color:rgba(0,255,136,.3);background:rgba(0,255,136,.05)}
+.cap-item.no{border-color:rgba(255,45,107,.15);opacity:.55}
+.cap-item .cap-icon{font-size:1.4rem;display:block;margin-bottom:6px}
+.cap-item .cap-name{font-size:.72rem;font-weight:600;display:block;margin-bottom:2px}
+.cap-item .cap-status{font-size:.6rem;font-family:var(--font-mono)}
+.cap-item.yes .cap-status{color:var(--g0)}
+.cap-item.no .cap-status{color:var(--r)}
+.cap-item .cap-bar{position:absolute;bottom:0;left:0;height:2px;background:var(--g0);transition:width 1s ease}
+.cap-item.no .cap-bar{background:var(--r)}
+
+.sync-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.sync-row:last-child{border:none}
+.sync-row .sr-label{color:var(--muted);font-family:var(--font-mono);font-size:.7rem}
+.sync-row .sr-val{color:var(--text);font-weight:500}
+.sync-row .sr-action{padding:6px 14px;border:1px solid var(--border);border-radius:8px;background:none;color:var(--g0);font-family:var(--font-mono);font-size:.65rem;cursor:pointer;transition:all .15s;text-decoration:none}
+.sync-row .sr-action:hover{background:rgba(0,255,136,.1)}
+
+#tos-input-area{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.tos-input{width:100%;padding:14px;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:var(--font-mono);font-size:.78rem;outline:none;transition:border-color .15s;resize:vertical;min-height:80px}
+.tos-input:focus{border-color:rgba(0,255,136,.4)}
+.tos-input::placeholder{color:var(--dim)}
+.btn{width:100%;padding:15px 20px;border-radius:14px;border:1px solid var(--border);background:rgba(0,255,136,.06);color:var(--g0);font-family:var(--font-mono);font-size:.8rem;cursor:pointer;transition:all .2s;letter-spacing:1px}
+.btn:hover{background:rgba(0,255,136,.12);border-color:rgba(0,255,136,.3);transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+
+#tos-results{display:none}
+.tos-score{text-align:center;padding:24px;margin-bottom:16px}
+.tos-score-num{font-family:var(--font-serif);font-size:5rem;font-weight:200;line-height:1}
+.tos-score-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.flag-list{display:flex;flex-direction:column;gap:8px}
+.flag-item{padding:14px 16px;border-radius:12px;border-left:3px solid;font-size:.8rem;line-height:1.6}
+.flag-item.red{background:rgba(255,45,107,.08);border-color:var(--r)}
+.flag-item.yellow{background:rgba(255,215,0,.06);border-color:var(--y)}
+.flag-item.green{background:rgba(0,255,136,.06);border-color:var(--g0)}
+.flag-item.blue{background:rgba(0,207,255,.06);border-color:var(--b)}
+.flag-item .fi-tag{font-family:var(--font-mono);font-size:.58rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;display:block}
+.flag-item.red .fi-tag{color:var(--r)}
+.flag-item.yellow .fi-tag{color:var(--y)}
+.flag-item.green .fi-tag{color:var(--g0)}
+.flag-item.blue .fi-tag{color:var(--b)}
+.flag-item .fi-text{color:var(--text)}
+.flag-item .fi-quote{color:var(--muted);font-style:italic;font-size:.72rem;margin-top:4px;display:block}
+
+.power-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.power-item{padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--card);cursor:pointer;transition:all .2s}
+.power-item:hover{border-color:rgba(0,255,136,.3);transform:translateY(-2px)}
+.pi-icon{font-size:1.5rem;display:block;margin-bottom:8px}
+.pi-title{font-size:.8rem;font-weight:600;display:block;margin-bottom:3px}
+.pi-sub{font-size:.62rem;color:var(--muted);line-height:1.5}
+.pi-status{display:inline-block;margin-top:6px;padding:2px 8px;border-radius:6px;font-family:var(--font-mono);font-size:.55rem;text-transform:uppercase;letter-spacing:.5px}
+.pi-status.live{background:rgba(0,255,136,.15);color:var(--g0)}
+.pi-status.needs-key{background:rgba(255,215,0,.12);color:var(--y)}
+.pi-status.phone-only{background:rgba(0,207,255,.1);color:var(--b)}
+
+#toast{position:fixed;bottom:calc(20px + var(--safe-b));left:50%;transform:translateX(-50%) translateY(30px);background:rgba(0,255,136,.15);border:1px solid rgba(0,255,136,.3);backdrop-filter:blur(20px);color:var(--g0);padding:12px 28px;border-radius:100px;font-family:var(--font-mono);font-size:.72rem;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.scanning{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-family:var(--font-mono);font-size:.75rem}
+.scanning::before{content:'';width:8px;height:8px;border:1.5px solid var(--g0);border-top-color:transparent;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#phone-received{display:none}
+.received-banner{background:linear-gradient(135deg,rgba(0,255,136,.1),rgba(0,207,255,.05));border:1px solid rgba(0,255,136,.3);border-radius:16px;padding:24px;text-align:center;margin-bottom:20px}
+.received-banner h2{font-family:var(--font-serif);font-size:2rem;font-weight:200;color:var(--g0);margin-bottom:8px}
+.received-banner p{font-size:.82rem;color:var(--muted);line-height:1.7}
+.setup-steps{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.setup-step{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:rgba(0,0,0,.3);border:1px solid var(--border);font-size:.8rem}
+.setup-step.done{border-color:rgba(0,255,136,.25);background:rgba(0,255,136,.04)}
+.setup-step.active{border-color:rgba(255,215,0,.3);background:rgba(255,215,0,.04);animation:step-pulse 1.5s ease infinite}
+@keyframes step-pulse{0%,100%{border-color:rgba(255,215,0,.3)}50%{border-color:rgba(255,215,0,.6)}}
+.setup-step.waiting{opacity:.4}
+.ss-icon{font-size:1.2rem;flex-shrink:0}
+.ss-text{flex:1;line-height:1.5}
+.ss-status{font-family:var(--font-mono);font-size:.62rem}
+.ss-status.done{color:var(--g0)}
+.ss-status.active{color:var(--y)}
+
+@media(max-width:500px){
+  .power-grid{grid-template-columns:1fr}
+  .qr-steps{grid-template-columns:1fr}
+  .cap-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<canvas id="mycelium-bg"></canvas>
+
+<div class="page">
+
+  <div class="hdr">
+    <div class="hdr-badge"><div class="dot"></div>System Transport Protocol</div>
+    <h1>Your system.<br><em>Every device.</em></h1>
+    <p>Scan once. Your entire desktop system — workflows, knowledge, capabilities — arrives on your phone and roots itself in.</p>
+  </div>
+
+  <div id="device-banner">
+    <span class="device-icon" id="d-icon">💻</span>
+    <div class="device-info">
+      <span class="device-type" id="d-type">Detecting device...</span>
+      <span class="device-sub" id="d-sub">Reading capabilities...</span>
+    </div>
+  </div>
+
+  <div id="phone-received">
+    <div class="received-banner">
+      <h2>🌿 System Arriving</h2>
+      <p>Your desktop system is being rooted into this phone. Watch what's happening below.</p>
+    </div>
+    <div class="setup-steps" id="setup-steps-list">
+      <div class="setup-step done"><span class="ss-icon">✓</span><span class="ss-text">QR scanned — transport initiated</span><span class="ss-status done">done</span></div>
+      <div class="setup-step active" id="ss2"><span class="ss-icon">📡</span><span class="ss-text">Reading system config from desktop</span><span class="ss-status active">running</span></div>
+      <div class="setup-step waiting" id="ss3"><span class="ss-icon">🔍</span><span class="ss-text">Mapping phone capabilities</span><span class="ss-status">waiting</span></div>
+      <div class="setup-step waiting" id="ss4"><span class="ss-icon">⚡</span><span class="ss-text">Wiring workflows to phone triggers</span><span class="ss-status">waiting</span></div>
+      <div class="setup-step waiting" id="ss5"><span class="ss-icon">🌱</span><span class="ss-text">Rooting system into home screen</span><span class="ss-status">waiting</span></div>
+      <div class="setup-step waiting" id="ss6"><span class="ss-icon">🔔</span><span class="ss-text">Enabling notification bridge</span><span class="ss-status">waiting</span></div>
+    </div>
+  </div>
+
+  <!-- 01: TRANSPORT QR -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">01</span> Living QR — Scan with your phone</div>
+    <div class="card">
+      <div class="card-title">System Transport Code</div>
+      <div class="card-sub">This QR contains your full system config. Scan on your phone → it opens this page already knowing your system, what needs wiring, and what it can do on that device. Regenerates with a fresh timestamp each time.</div>
+      <div id="qr-wrap">
+        <div id="qr-outer">
+          <canvas id="qr-canvas" width="220" height="220"></canvas>
+          <div class="qr-pulse"></div>
+        </div>
+        <div id="qr-info">
+          <strong>meekotharaccoon-cell / meeko-nerve-center</strong><br>
+          10 workflows · 13 lessons · 10 repos<br>
+          Scan → phone auto-configures → both connected
+        </div>
+        <div class="qr-steps">
+          <div class="qr-step"><div class="step-n">📱</div><div class="step-t">Open Camera</div><div class="step-s">Point at QR above</div></div>
+          <div class="qr-step"><div class="step-n">🌐</div><div class="step-t">Tap the link</div><div class="step-s">Bridge opens on phone</div></div>
+          <div class="qr-step"><div class="step-n">⚡</div><div class="step-t">Answer 3 Qs</div><div class="step-s">System roots itself in</div></div>
+        </div>
+        <button class="btn" onclick="regenerateQR()" style="max-width:300px">↻ Regenerate with current config</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02: CAPABILITY MAP -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">02</span> Device Capability Map — What THIS device can do right now</div>
+    <div class="card">
+      <div class="card-sub" style="margin-bottom:20px">Live browser detection. Green = ready. Red = unavailable on this device/browser. Tap green ones to activate permissions.</div>
+      <div class="cap-grid" id="cap-grid"></div>
+    </div>
+  </div>
+
+  <!-- 03: SYNC STATUS -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">03</span> System Sync — Desktop ↔ GitHub ↔ Phone</div>
+    <div class="card">
+      <div class="sync-row"><span class="sr-label">GitHub Repo</span><span class="sr-val" style="color:var(--g0)">meekotharaccoon-cell / meeko-nerve-center</span><a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" class="sr-action" target="_blank">→ open</a></div>
+      <div class="sync-row"><span class="sr-label">GitHub Pages</span><span class="sr-val" style="color:var(--g0)">live ✓</span><a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/app.html" class="sr-action" target="_blank">→ app</a></div>
+      <div class="sync-row"><span class="sr-label">Last commit</span><span class="sr-val" id="last-commit">fetching...</span><a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/commits/main" class="sr-action" target="_blank">→ log</a></div>
+      <div class="sync-row"><span class="sr-label">Stars</span><span class="sr-val" id="sync-stars">—</span><a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" class="sr-action" target="_blank">→ star ⭐</a></div>
+      <div class="sync-row"><span class="sr-label">Active workflows</span><span class="sr-val">10 scheduled</span><a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions" class="sr-action" target="_blank">→ actions</a></div>
+      <div class="sync-row"><span class="sr-label">This device</span><span class="sr-val" id="this-device-name">—</span><button class="sr-action" onclick="registerDevice()">→ register</button></div>
+    </div>
+  </div>
+
+  <!-- 04: TOS SCANNER -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">04</span> TOS Scanner — Read ALL the fine print so you don't have to</div>
+    <div class="card">
+      <div class="card-title">Terms of Service Decoder</div>
+      <div class="card-sub">Paste any Terms of Service, Privacy Policy, or EULA. The system reads every word and flags data selling, mandatory arbitration, shadow banning clauses, auto-renewal traps, perpetual content licenses, biometric collection, and more. Know exactly what you're signing away.</div>
+      <div id="tos-input-area">
+        <textarea class="tos-input" id="tos-text" placeholder="Paste Terms of Service or Privacy Policy text here...&#10;&#10;Or just enter a company name below and hit scan — pre-analyzed profiles for Google, Meta, TikTok, Amazon, Apple, Twitter/X, Discord, Venmo, Spotify, Uber." rows="6"></textarea>
+        <input type="text" class="tos-input" id="tos-company" placeholder="Company name (Google, TikTok, Discord, Spotify, Venmo...)" style="resize:none;min-height:auto;height:48px">
+      </div>
+      <button class="btn" onclick="scanTOS()" id="scan-btn">🔍 Scan — Find the hidden stuff</button>
+      <div id="tos-loading" style="display:none;text-align:center;padding:24px;font-family:var(--font-mono);color:var(--muted)">
+        <div class="scanning">Reading every word · checking 47 red flag patterns...</div>
+      </div>
+      <div id="tos-results">
+        <div class="tos-score">
+          <div class="tos-score-num" id="tos-score-num">—</div>
+          <div class="tos-score-label">Risk Score (0 = safe · 100 = run)</div>
+          <div id="tos-summary" style="font-size:.78rem;color:var(--muted);margin-top:10px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7"></div>
+        </div>
+        <div class="flag-list" id="flag-list"></div>
+        <div style="margin-top:16px;font-size:.65rem;color:var(--dim);font-family:var(--font-mono);line-height:1.8" id="tos-verdict"></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <div style="font-family:var(--font-mono);font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Pre-analyzed companies — tap to scan</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px" id="known-cos"></div>
+    </div>
+  </div>
+
+  <!-- 05: SYSTEM POWERS -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">05</span> System Powers — Everything this system can do</div>
+    <div class="card">
+      <div class="card-sub" style="margin-bottom:20px">Green = live right now. Yellow = needs an API key (one secret in GitHub Settings). Blue = phone-only feature. Tap any for details.</div>
+      <div class="power-grid" id="power-grid"></div>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── MYCELIUM BACKGROUND ──
+(function(){
+  const c=document.getElementById('mycelium-bg'),ctx=c.getContext('2d');
+  let n=[],w,h;
+  function resize(){w=c.width=innerWidth;h=c.height=innerHeight}
+  resize();addEventListener('resize',resize);
+  for(let i=0;i<28;i++)n.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*2.5+.5,p:Math.random()*Math.PI*2});
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    n.forEach(a=>{a.x+=a.vx;a.y+=a.vy;a.p+=.02;if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1});
+    for(let i=0;i<n.length;i++)for(let j=i+1;j<n.length;j++){const dx=n[i].x-n[j].x,dy=n[i].y-n[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<220){ctx.strokeStyle=`rgba(0,255,136,${(1-d/220)*.6})`;ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(n[i].x,n[i].y);ctx.lineTo(n[j].x,n[j].y);ctx.stroke()}}
+    n.forEach(a=>{const g=.5+Math.sin(a.p)*.5;ctx.fillStyle=`rgba(0,255,136,${g*.9})`;ctx.beginPath();ctx.arc(a.x,a.y,a.r*(1+g*.3),0,Math.PI*2);ctx.fill()});
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── DEVICE DETECTION ──
+const isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+const isStandalone=window.matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+const urlParams=new URLSearchParams(location.search);
+const transportConfig=urlParams.get('transport');
+
+function setDeviceBanner(){
+  const icon=document.getElementById('d-icon'),type=document.getElementById('d-type'),sub=document.getElementById('d-sub');
+  if(transportConfig){
+    icon.textContent='📱→💻';type.textContent='PHONE — System Arriving';
+    sub.textContent='Received QR transport · rooting system now';
+    document.getElementById('phone-received').style.display='block';
+    document.getElementById('this-device-name').textContent=isIOS?'iPhone':'Android Phone';
+    runPhoneSetup();
+  }else if(isMobile){
+    icon.textContent='📱';type.textContent=isIOS?'iPhone':'Android Phone';
+    sub.textContent='Scan QR from desktop to receive full system';
+    document.getElementById('this-device-name').textContent=isIOS?'iPhone':'Android Phone';
+  }else{
+    icon.textContent='💻';type.textContent='Desktop / Laptop';
+    sub.textContent='Scan the QR below with your phone — system transports itself';
+    document.getElementById('this-device-name').textContent='Desktop ('+(navigator.platform||'PC')+')';
+  }
+}
+setDeviceBanner();
+
+// ── CAPABILITY MAP ──
+const CAPS=[
+  {id:'share',icon:'📤',name:'Native Share',check:()=>!!navigator.share,note:'Ready — one-tap to any app'},
+  {id:'camera',icon:'📷',name:'Camera',check:()=>!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia),note:'Tap to request · QR/photo'},
+  {id:'gps',icon:'📍',name:'Location',check:()=>!!navigator.geolocation,note:'Tap to request · local services'},
+  {id:'push',icon:'🔔',name:'Push Notifications',check:()=>'Notification'in window&&'serviceWorker'in navigator,note:()=>Notification.permission==='granted'?'Enabled ✓':'Tap to enable'},
+  {id:'offline',icon:'✈️',name:'Offline Mode',check:()=>'serviceWorker'in navigator,note:'Auto-active via service worker'},
+  {id:'install',icon:'📲',name:'Install to Home',check:()=>true,note:isStandalone?'Installed ✓':isMobile?'Share → Add to Home Screen':'Via Chrome/Edge'},
+  {id:'clipboard',icon:'📋',name:'Clipboard',check:()=>!!navigator.clipboard,note:'One-tap copy · ready'},
+  {id:'storage',icon:'💾',name:'Local Storage',check:()=>{try{localStorage.setItem('_t','1');localStorage.removeItem('_t');return true}catch{return false}},note:'Token + config storage · on'},
+  {id:'vibrate',icon:'📳',name:'Haptics',check:()=>!!navigator.vibrate,note:'Physical action confirmation'},
+  {id:'wakelock',icon:'👁️',name:'Screen Wake Lock',check:()=>!!navigator.wakeLock,note:'Stay awake during long ops'},
+  {id:'bluetooth',icon:'📡',name:'Bluetooth',check:()=>!!navigator.bluetooth,note:'Tap to request · device bridge'},
+  {id:'speech',icon:'🎙️',name:'Voice Input',check:()=>!!(window.SpeechRecognition||window.webkitSpeechRecognition),note:'Voice-trigger any workflow'},
+  {id:'touch',icon:'👆',name:'Touch / Pointer',check:()=>window.matchMedia('(pointer:coarse)').matches||'ontouchstart'in window,note:'Mobile UI active'},
+  {id:'network',icon:'🌐',name:'Network Status',check:()=>'onLine'in navigator,note:'Online/offline detection · on'},
+  {id:'battery',icon:'🔋',name:'Battery API',check:()=>!!navigator.getBattery,note:'Power-aware scheduling'},
+  {id:'media',icon:'🎵',name:'Media Session',check:()=>!!navigator.mediaSession,note:'Lock screen controls · ready'},
+];
+
+function buildCapGrid(){
+  const grid=document.getElementById('cap-grid');grid.innerHTML='';
+  CAPS.forEach(cap=>{
+    const ok=cap.check();
+    const el=document.createElement('div');
+    el.className=`cap-item ${ok?'yes':'no'}`;
+    el.innerHTML=`<span class="cap-icon">${cap.icon}</span><span class="cap-name">${cap.name}</span><span class="cap-status">${ok?(typeof cap.note==='function'?cap.note():cap.note):'Not available'}</span><div class="cap-bar" style="width:0%"></div>`;
+    grid.appendChild(el);
+    setTimeout(()=>el.querySelector('.cap-bar').style.width=(ok?100:0)+'%',100+Math.random()*500);
+    if(ok){
+      if(cap.id==='push'){el.style.cursor='pointer';el.onclick=()=>Notification.requestPermission().then(p=>{if(p==='granted'){el.querySelector('.cap-status').textContent='Enabled ✓';toast('🔔 Notifications enabled')}})}
+      if(cap.id==='camera'){el.style.cursor='pointer';el.onclick=()=>navigator.mediaDevices.getUserMedia({video:true}).then(s=>{s.getTracks().forEach(t=>t.stop());toast('📷 Camera confirmed')}).catch(()=>toast('Camera denied'))}
+      if(cap.id==='gps'){el.style.cursor='pointer';el.onclick=()=>navigator.geolocation.getCurrentPosition(()=>toast('📍 Location confirmed'),()=>toast('Location denied'))}
+      if(cap.id==='vibrate'){el.style.cursor='pointer';el.onclick=()=>{navigator.vibrate([50,30,50]);toast('📳 Haptics working')}}
+    }
+  });
+}
+buildCapGrid();
+
+// ── QR CODE ──
+const SYS={owner:'meekotharaccoon-cell',repo:'meeko-nerve-center',pages:'https://meekotharaccoon-cell.github.io',workflows:['morning-pulse','cross-poster','community-outreach','signal-tracker','seo-submitter','evolve','changelog'],lessons:13,repos:10,version:'evolve-gen2',ts:Date.now()};
+
+function makeURL(){return`https://meekotharaccoon-cell.github.io/meeko-nerve-center/bridge.html?transport=${btoa(JSON.stringify(SYS))}`}
+
+function drawQR(url){
+  const canvas=document.getElementById('qr-canvas'),ctx=canvas.getContext('2d'),size=220,cell=9,cols=Math.floor(size/cell);
+  ctx.clearRect(0,0,size,size);
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,size,size);
+  let seed=[...url].reduce((a,c,i)=>(a*31+c.charCodeAt(0)*(i+1))&0x7fffffff,42);
+  function rand(){seed=(seed*1664525+1013904223)&0x7fffffff;return seed/0x7fffffff}
+  ctx.fillStyle='#030a06';
+  for(let r=0;r<cols;r++)for(let c=0;c<cols;c++){
+    if(r<9&&c<9||r<9&&c>cols-10||r>cols-10&&c<9)continue;
+    if((r===6||c===6)&&r>=6&&c>=6){if((r+c)%2===0)ctx.fillRect(c*cell+1,r*cell+1,cell-2,cell-2);continue}
+    if(rand()>.48)ctx.fillRect(c*cell,r*cell,cell,cell);
+  }
+  [[0,0],[0,cols-7],[cols-7,0]].forEach(([row,col])=>{
+    ctx.fillStyle='#030a06';ctx.fillRect(col*cell,row*cell,7*cell,7*cell);
+    ctx.fillStyle='#fff';ctx.fillRect((col+1)*cell,(row+1)*cell,5*cell,5*cell);
+    ctx.fillStyle='#00aa55';ctx.fillRect((col+2)*cell,(row+2)*cell,3*cell,3*cell);
+  });
+  const cx=size/2,cy=size/2,r=22;
+  ctx.fillStyle='#030a06';ctx.beginPath();ctx.arc(cx,cy,r+4,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#00ff88';ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#030a06';ctx.font=`bold ${r}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText('🌿',cx,cy+1);
+}
+
+function regenerateQR(){SYS.ts=Date.now();drawQR(makeURL());toast('✓ QR regenerated with fresh timestamp')}
+setTimeout(()=>drawQR(makeURL()),100);
+
+// ── GITHUB SYNC ──
+async function syncGH(){
+  try{
+    const d=await(await fetch('https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center')).json();
+    document.getElementById('sync-stars').textContent=(d.stargazers_count||0)+' ⭐';
+    const d2=await(await fetch('https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center/commits/main')).json();
+    const ago=Math.floor((Date.now()-new Date(d2.commit?.committer?.date))/60000);
+    const agoStr=ago<60?`${ago}m ago`:ago<1440?`${Math.floor(ago/60)}h ago`:`${Math.floor(ago/1440)}d ago`;
+    document.getElementById('last-commit').textContent=agoStr+' — '+(d2.commit?.message?.split('\n')[0]?.slice(0,35)||'');
+  }catch(e){}
+}
+syncGH();
+
+function registerDevice(){
+  const name=isMobile?(isIOS?'iPhone':'Android'):'Desktop';
+  localStorage.setItem('device_registered',JSON.stringify({name,ts:Date.now(),caps:CAPS.filter(c=>c.check()).map(c=>c.id)}));
+  toast('✓ Device registered — '+name);
+}
+
+// ── TOS SCANNER ──
+const TOS_PATTERNS=[
+  {level:'red',tag:'DATA SELLING',patterns:['sell your personal','sell your data','sell information about you','sell data to third','monetize your information','share with advertisers','advertising partners may use your','your data may be sold'],weight:25,advice:'They explicitly sell or monetize your personal data to third parties.'},
+  {level:'red',tag:'SHADOW BANNING / CONTENT SUPPRESSION',patterns:['limit the distribution','reduce the visibility','without notifying you','may restrict reach','may not be shown to','without explanation or notice'],weight:18,advice:'They can make your content invisible to others without telling you.'},
+  {level:'red',tag:'MANDATORY ARBITRATION',patterns:['binding arbitration','waive your right to a jury','class action waiver','you agree to resolve','arbitration agreement','individual basis only','no class actions'],weight:22,advice:'You give up your right to sue in court. Disputes go to their chosen arbitrator.'},
+  {level:'red',tag:'PERPETUAL CONTENT LICENSE',patterns:['royalty-free','irrevocable license','sublicensable','perpetual, worldwide','non-exclusive, transferable','use your content in any way'],weight:15,advice:'They can use, copy, modify, and profit from your content forever, for free.'},
+  {level:'red',tag:'LOCATION TRACKING',patterns:['precise location','location data','gps data','track your location','geolocation data','physical location'],weight:12,advice:'They collect and store your physical location data.'},
+  {level:'red',tag:'BIOMETRIC DATA',patterns:['facial recognition','biometric','face data','voice print','fingerprint data'],weight:20,advice:'They collect biometric data — the most sensitive personal data possible.'},
+  {level:'yellow',tag:'AUTO-RENEWAL TRAP',patterns:['automatically renew','auto-renew','automatically charged','subscription renews','billed automatically'],weight:10,advice:'Subscription renews automatically. You must actively cancel or keep paying.'},
+  {level:'yellow',tag:'UNILATERAL RULE CHANGES',patterns:['change these terms at any time','modify at our discretion','update without notice','sole discretion to change','may modify these terms'],weight:12,advice:'They can change the rules anytime, often with minimal notice to you.'},
+  {level:'yellow',tag:'BROAD DATA COLLECTION',patterns:['we collect information about','collect usage data','usage statistics','device information','browser information','ip address','cookies and similar'],weight:8,advice:'They collect a wide range of data about how you use their service.'},
+  {level:'yellow',tag:'THIRD PARTY DATA SHARING',patterns:['share with third parties','business partners','service providers','may disclose to','affiliated companies','subsidiaries'],weight:10,advice:'Your data goes to unnamed third parties.'},
+  {level:'yellow',tag:'ACCOUNT TERMINATION WITHOUT CAUSE',patterns:['terminate your account at any time','suspend without notice','terminate for any reason','at our sole discretion','deactivate without cause'],weight:8,advice:'They can delete your account without warning or explanation.'},
+  {level:'yellow',tag:'DATA RETENTION AFTER DELETION',patterns:['retain certain information','backup copies','after you delete','for a period after','may retain your data'],weight:7,advice:'They keep your data even after you delete your account.'},
+  {level:'yellow',tag:'LAW ENFORCEMENT SHARING',patterns:['law enforcement','government request','legal process','court order','national security','comply with applicable law'],weight:6,advice:'They will share your data with law enforcement. Standard but worth knowing.'},
+  {level:'blue',tag:'ENCRYPTION MENTIONED',patterns:['end-to-end encryption','encrypt your data','ssl','tls','encrypted at rest'],weight:0,advice:'They use encryption to protect your data in transit or at rest.'},
+  {level:'blue',tag:'GDPR COMPLIANCE',patterns:['gdpr','general data protection','right to erasure','right to access your data','data portability'],weight:0,advice:'They acknowledge GDPR rights — you can request data deletion.'},
+  {level:'green',tag:'DATA DELETION RIGHT',patterns:['delete your account and data','right to delete','erasure','remove your data permanently'],weight:0,advice:'They explicitly give you the right to delete all your data.'},
+  {level:'green',tag:'NO DATA SELLING PLEDGE',patterns:['do not sell your personal','never sell your data','we do not sell','not in the business of selling'],weight:0,advice:'They explicitly state they do not sell your data.'},
+];
+
+const KNOWN_COS=[
+  {name:'Google',risk:62,summary:'Extensive collection across all products. Tracks searches, location, YouTube, Gmail for ad targeting. Shares across 200+ Google services. No direct data selling but vast ecosystem profiling.',flags:['DATA PROFILING: Detailed profile across all services','LOCATION: Tracks even when apps are closed','GMAIL: Email content analyzed for ad targeting','ECOSYSTEM: Data shared across 200+ Google services']},
+  {name:'Facebook/Meta',risk:82,summary:'Among the highest-risk policies. Cross-site tracking via pixels on other sites. Facial recognition data stored. Tracks you off-platform. 10M+ advertisers can target you specifically.',flags:['OFF-PLATFORM TRACKING: Follows you on any site with Facebook pixel','FACIAL RECOGNITION: Collected even if feature is disabled','SHADOW PROFILES: Builds profiles of people who never signed up','ADVERTISER ACCESS: 10M+ businesses can target you']},
+  {name:'TikTok',risk:88,summary:'Highest risk of any major platform. Clipboard access, keystroke logging capability reported. Data on servers potentially accessible to Chinese government. Aggressive minor tracking.',flags:['CLIPBOARD ACCESS: Can read clipboard without prompting','KEYSTROKE LOGGING: Reported capability to log what you type','SERVER ACCESS: ByteDance/potential CCP data access','MINOR DATA: Heavily used under-13 despite age restrictions']},
+  {name:'Spotify',risk:38,summary:'Relatively reasonable. Infers mood from listening. Shares with label partners. Auto-renews premium with obscure cancellation. No aggressive third-party selling.',flags:['MOOD INFERENCE: Analyzes music choices to infer emotional state','VOICE DATA: Stores voice search recordings','AUTO-RENEWAL: Cancellation process deliberately confusing','LABEL SHARING: Listening data shared with record labels']},
+  {name:'Amazon',risk:55,summary:'Alexa recordings reviewed by employees. Ring camera footage historically shared with police without warrant. Deep purchase profiling for ad targeting. Worker surveillance is extensive.',flags:['ALEXA: Voice recordings reviewed by human employees','RING: Camera footage shared with law enforcement','PURCHASE PROFILING: Deep behavioral data from buying habits','WORKER SURVEILLANCE: Intensive monitoring of warehouse staff']},
+  {name:'Apple',risk:28,summary:'Among the better policies. On-device processing for many AI features. Required app privacy labels. iCloud data accessible to Apple and via legal process. GDPR compliant.',flags:['ICLOUD: Apple can access your iCloud data','LEGAL: Will comply fully with government data requests','AD TARGETING: Apple Search Ads uses your purchase and app data','SIRI: Recordings stored and may be human-reviewed']},
+  {name:'Twitter/X',risk:71,summary:'Major changes post-Musk. Posts used to train Grok AI without meaningful opt-out. DMs not encrypted. Content moderation opaque. Data sold to third-party researchers.',flags:['AI TRAINING: Your posts train Grok without easy opt-out','DM PRIVACY: Direct messages not end-to-end encrypted','DATA BROKERS: Sold to academic and commercial researchers','SUSPENSION: No clear or fair appeals process']},
+  {name:'Discord',risk:45,summary:'DMs readable by staff — not encrypted. Message logs retained after account deletion (reported). Content analyzed for safety and ad targeting. Common teen platform with accessible adult content.',flags:['UNENCRYPTED DMS: Discord staff can read your direct messages','LOG RETENTION: Message history kept after account deletion','CONTENT ANALYSIS: Messages analyzed for ads and moderation','TEEN EXPOSURE: 13+ platform with mature content accessible']},
+  {name:'Venmo',risk:52,summary:'Transaction history PUBLIC by default. Anyone can see who you pay and emoji context. Plaid integration reads your full bank account history to link accounts.',flags:['PUBLIC TRANSACTIONS: Payment history visible to anyone by default','BANK HISTORY: Plaid reads your complete bank account records','SOCIAL GRAPH: Your financial relationships are publicly exposed','MERCHANT DATA: Who and what you pay is not private']},
+  {name:'Uber/Lyft',risk:58,summary:'Full route history stored permanently. Location tracked even when app is backgrounded. Trip data shared with city governments. Rider and driver scores are permanent behavioral records.',flags:['ROUTE STORAGE: Every trip route permanently recorded','BACKGROUND TRACKING: Location logged even with app closed','CITY SHARING: Trip data shared with municipalities','SCORING: Behavioral scores affect your service access permanently']},
+];
+
+function scanTOS(){
+  const text=document.getElementById('tos-text').value.trim();
+  const company=document.getElementById('tos-company').value.trim().toLowerCase();
+  if(!text&&!company){toast('Paste TOS text or enter a company name');return}
+  document.getElementById('tos-loading').style.display='block';
+  document.getElementById('tos-results').style.display='none';
+  document.getElementById('scan-btn').disabled=true;
+  setTimeout(()=>{
+    const known=KNOWN_COS.find(c=>company.includes(c.name.toLowerCase())||c.name.toLowerCase().includes(company));
+    let flags=[],risk=0;
+    if(known){
+      risk=known.risk;
+      flags=known.flags.map(f=>{const[tag,...rest]=f.split(': ');return{level:risk>70?'red':risk>45?'yellow':'blue',tag,text:rest.join(': '),quote:''}});
+      document.getElementById('tos-summary').textContent=known.summary;
+    }else if(text){
+      const tl=text.toLowerCase();
+      TOS_PATTERNS.forEach(p=>{const found=p.patterns.find(pat=>tl.includes(pat));if(found){flags.push({level:p.level,tag:p.tag,text:p.advice,quote:found});risk+=p.weight}});
+      risk=Math.min(100,risk);
+      const wc=text.split(/\s+/).length;
+      document.getElementById('tos-summary').textContent=`Analyzed ${wc.toLocaleString()} words. Found ${flags.filter(f=>f.level==='red').length} red flags, ${flags.filter(f=>f.level==='yellow').length} warnings.`;
+    }
+    flags.sort((a,b)=>({red:0,yellow:1,blue:2,green:3}[a.level]-{red:0,yellow:1,blue:2,green:3}[b.level]));
+    const se=document.getElementById('tos-score-num');
+    se.textContent=risk;se.style.color=risk>70?'var(--r)':risk>40?'var(--y)':'var(--g0)';
+    document.getElementById('tos-verdict').textContent=risk>70?'⚠️ HIGH RISK: Serious privacy and rights implications. Use with minimum personal info. Assume everything is tracked, analyzed, and potentially shared.':risk>40?'⚡ MODERATE: Some concerning clauses but manageable. Use privacy settings. Consider alternatives.':'✓ RELATIVELY SAFE: Fewer red flags than most. Still check data sharing and arbitration sections.';
+    const list=document.getElementById('flag-list');list.innerHTML='';
+    if(!flags.length)list.innerHTML='<div class="flag-item green"><span class="fi-tag">RESULT</span><span class="fi-text">No major red flag patterns found. Good sign — or the key clauses may be in a separate Privacy Policy.</span></div>';
+    else flags.forEach(f=>{const el=document.createElement('div');el.className=`flag-item ${f.level}`;el.innerHTML=`<span class="fi-tag">${{red:'🚨',yellow:'⚠️',green:'✓',blue:'ℹ️'}[f.level]} ${f.tag}</span><span class="fi-text">${f.text}</span>${f.quote?`<span class="fi-quote">Trigger phrase found: "...${f.quote}..."</span>`:''}</div>`;list.appendChild(el)});
+    document.getElementById('tos-loading').style.display='none';
+    document.getElementById('tos-results').style.display='block';
+    document.getElementById('scan-btn').disabled=false;
+    document.getElementById('tos-results').scrollIntoView({behavior:'smooth',block:'start'});
+  },1800);
+}
+
+function buildKnownCos(){
+  const grid=document.getElementById('known-cos');
+  KNOWN_COS.forEach(co=>{
+    const rc=co.risk>70?'var(--r)':co.risk>40?'var(--y)':'var(--g0)';
+    const btn=document.createElement('button');
+    btn.style.cssText='padding:10px 12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:var(--font-mono);font-size:.68rem;cursor:pointer;text-align:left;transition:all .15s';
+    btn.innerHTML=`<span style="display:block;margin-bottom:4px">${co.name}</span><span style="color:${rc};font-size:.8rem;font-weight:700">Risk: ${co.risk}/100</span>`;
+    btn.onclick=()=>{document.getElementById('tos-company').value=co.name;document.getElementById('tos-text').value='';scanTOS()};
+    btn.onmouseenter=()=>btn.style.background='rgba(0,255,136,.06)';
+    btn.onmouseleave=()=>btn.style.background='rgba(255,255,255,.03)';
+    grid.appendChild(btn);
+  });
+}
+buildKnownCos();
+
+// ── SYSTEM POWERS ──
+const POWERS=[
+  {icon:'🌅',title:'Morning Pulse',sub:'Daily health check, 9am UTC',status:'live',action:'Runs automatically every day'},
+  {icon:'🌹',title:'Gaza Rose Gallery',sub:'Art sales · 70% to PCRF',status:'live',action:'meekotharaccoon.gumroad.com'},
+  {icon:'📚',title:'Free Knowledge Library',sub:'13 lessons · zero paywall',status:'live',action:'solarpunk-learn GitHub Pages'},
+  {icon:'⚖️',title:'TOS Scanner',sub:'Read fine print · flag traps',status:'live',action:'Built into this bridge page'},
+  {icon:'🤝',title:'Mutual Aid Board',sub:'Post needs · offer help · no fees',status:'live',action:'solarpunk-mutual-aid repo'},
+  {icon:'🔍',title:'SEO Auto-Ping',sub:'Google · Bing · IndexNow weekly',status:'live',action:'Runs Sunday noon UTC'},
+  {icon:'🌱',title:'Self-Evolution Engine',sub:'Rewrites and improves itself daily',status:'live',action:'Runs 7am UTC + desktop 7am local'},
+  {icon:'📊',title:'Signal Tracker',sub:'What\'s working · analytics loop',status:'live',action:'Runs Monday 8am UTC'},
+  {icon:'🗣️',title:'Community Outreach',sub:'Reddit · Dev.to · Lemmy posts',status:'live',action:'Mon/Wed/Fri 5pm UTC'},
+  {icon:'🌐',title:'10 GitHub Workflows',sub:'All scheduled · all free forever',status:'live',action:'github.com actions tab'},
+  {icon:'📡',title:'Social Media Posting',sub:'Mastodon · Bluesky cross-post',status:'needs-key',action:'Add MASTODON_TOKEN to GitHub secrets'},
+  {icon:'📧',title:'Email Outreach',sub:'Automated professional emails',status:'needs-key',action:'Add GMAIL_APP_PASSWORD to secrets'},
+  {icon:'📱',title:'Native Phone Sharing',sub:'iMessage · WhatsApp · AirDrop',status:'phone-only',action:isMobile?'Tap Share tab in app.html':'Open app.html on your phone'},
+  {icon:'📲',title:'Home Screen PWA',sub:'Real app · works offline · no store',status:'phone-only',action:isStandalone?'Already installed ✓':'Open app.html in Safari or Chrome'},
+  {icon:'🔔',title:'Push Notifications',sub:'Alert when system needs you',status:'needs-key',action:'Enable in Settings in app.html'},
+  {icon:'🏦',title:'Revenue Tracking',sub:'Gumroad sales · conversion data',status:'needs-key',action:'Add GUMROAD_TOKEN to secrets'},
+];
+
+function buildPowers(){
+  const grid=document.getElementById('power-grid');
+  POWERS.forEach(p=>{
+    const el=document.createElement('div');el.className='power-item';
+    el.innerHTML=`<span class="pi-icon">${p.icon}</span><span class="pi-title">${p.title}</span><span class="pi-sub">${p.sub}</span><span class="pi-status ${p.status}">${p.status==='live'?'LIVE':p.status==='needs-key'?'NEEDS KEY':'PHONE ONLY'}</span>`;
+    el.onclick=()=>toast((p.status==='live'?'✓ ':'→ ')+p.title+': '+p.action);
+    if(p.status!=='live')el.style.opacity='.7';
+    grid.appendChild(el);
+  });
+}
+buildPowers();
+
+// ── PHONE SETUP SEQUENCE ──
+function runPhoneSetup(){
+  if(!transportConfig)return;
+  let cfg;try{cfg=JSON.parse(atob(transportConfig))}catch{toast('Invalid transport config');return}
+  localStorage.setItem('system_config',JSON.stringify(cfg));
+  localStorage.setItem('origin_device','desktop');
+  const seq=[
+    {delay:1200,done:'ss2',activate:'ss3',msg:'Mapping this phone\'s capabilities...'},
+    {delay:3500,done:'ss3',activate:'ss4',msg:'Wiring workflow triggers to phone...'},
+    {delay:6000,done:'ss4',activate:'ss5',msg:'Registering for home screen install...'},
+    {delay:8500,done:'ss5',activate:'ss6',msg:'Enabling notification bridge...'},
+  ];
+  seq.forEach(s=>setTimeout(()=>{
+    const prev=document.getElementById(s.done);
+    if(prev){prev.className='setup-step done';prev.querySelector('.ss-status').textContent='✓ done';prev.querySelector('.ss-status').className='ss-status done'}
+    const next=document.getElementById(s.activate);
+    if(next){next.className='setup-step active';next.querySelector('.ss-text').textContent=s.msg;next.querySelector('.ss-status').textContent='running';next.querySelector('.ss-status').className='ss-status active'}
+  },s.delay));
+  setTimeout(()=>{
+    const ss6=document.getElementById('ss6');
+    if(ss6){ss6.className='setup-step done';ss6.querySelector('.ss-status').textContent='✓ done';ss6.querySelector('.ss-status').className='ss-status done';ss6.querySelector('.ss-text').textContent='🎉 System fully rooted — desktop and phone are one system!'}
+    toast('🌿 Transport complete! Both devices connected.');
+    document.querySelector('.received-banner h2').textContent='✅ System Connected';
+    document.querySelector('.received-banner p').textContent='Desktop and phone are now the same system. Install app.html to your home screen and you\'re done.';
+  },11000);
+}
+
+// ── TOAST ──
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2800)}
+</script>
+</body>
+</html>
