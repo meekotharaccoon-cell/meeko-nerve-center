@@ -1,0 +1,25 @@
+name: 📝 Auto-Changelog
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed for changelog
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate changelog
+        run: python mycelium/changelog_generator.py
+      - name: Commit changelog
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add CHANGELOG.md data/changelog.json || true
+          git diff --staged --quiet || git commit -m "📝 auto: changelog $(date -u +%Y-%m-%d)"
+          git push || true
