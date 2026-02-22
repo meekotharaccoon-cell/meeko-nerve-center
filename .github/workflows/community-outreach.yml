@@ -1,0 +1,34 @@
+name: 🗣️ Community Outreach
+on:
+  schedule:
+    - cron: '0 17 * * 1,3,5'  # Mon/Wed/Fri at 5pm UTC — space out community posts
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'true = preview, false = actually post'
+        default: 'true'
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run community outreach
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          OUTREACH_DRY_RUN: ${{ github.event.inputs.dry_run || 'true' }}
+        run: python mycelium/community_outreach.py
+      - name: Commit outreach log
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add data/community_posts.json || true
+          git diff --staged --quiet || git commit -m "auto: community outreach $(date -u +%Y-%m-%d)"
+          git push || true
