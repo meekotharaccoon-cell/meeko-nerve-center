@@ -1,0 +1,36 @@
+name: 📄 Sync HTML to docs/
+# Runs on every push — copies root HTML files into docs/ so GitHub Pages serves them
+# This is the fix: Pages serves from docs/, not root
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.html'
+      - 'manifest.json'
+      - 'sw.js'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Copy HTML files to docs/
+        run: |
+          mkdir -p docs
+          # Copy all root-level HTML files
+          for f in *.html; do
+            [ -f "$f" ] && cp "$f" "docs/$f" && echo "Copied $f → docs/$f"
+          done
+          # Copy PWA files
+          [ -f manifest.json ] && cp manifest.json docs/manifest.json && echo "Copied manifest.json"
+          [ -f sw.js ] && cp sw.js docs/sw.js && echo "Copied sw.js"
+
+      - name: Commit synced files
+        run: |
+          git config user.email "solarpunk.mycelium@gmail.com"
+          git config user.name "SolarPunk Mycelium"
+          git add docs/
+          git diff --staged --quiet || git commit -m "📄 auto: sync HTML to docs/ for GitHub Pages"
+          git push || true

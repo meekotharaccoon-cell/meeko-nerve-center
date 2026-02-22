@@ -1,0 +1,23 @@
+{
+  "name": "SolarPunk Mycelium",
+  "short_name": "Mycelium",
+  "description": "Autonomous humanitarian AI. $0/month. Forkable.",
+  "start_url": "/meeko-nerve-center/app.html",
+  "scope": "/meeko-nerve-center/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070707",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23070707' rx='80'/><text y='370' x='256' text-anchor='middle' font-size='320'>🌿</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {"name": "Gaza Rose Gallery", "url": "https://meekotharaccoon-cell.github.io/gaza-rose-gallery"},
+    {"name": "Fork the System", "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork"}
+  ]
+}
