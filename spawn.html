@@ -11,14 +11,11 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#0a0a0a;color:#fff;font-family:Georgia,serif;line-height:1.6}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);padding:12px 24px;display:flex;gap:20px;align-items:center}
 nav .logo{color:#00ff88;font-family:monospace;font-size:.9rem;font-weight:bold;flex:1}
 nav a{color:rgba(255,255,255,0.4);font-family:monospace;font-size:.75rem;text-decoration:none}
 nav a:hover{color:#00ff88}
-
-/* HERO */
+nav .nav-sponsor{background:rgba(0,255,136,0.15);color:#00ff88;border:1px solid rgba(0,255,136,0.3);padding:5px 12px;border-radius:20px;font-size:.7rem;}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%, rgba(0,255,136,0.06) 0%, transparent 70%);pointer-events:none}
 .hero-tag{font-family:monospace;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(0,255,136,0.6);margin-bottom:20px;border:1px solid rgba(0,255,136,0.2);padding:6px 14px;border-radius:20px;display:inline-block}
@@ -26,64 +23,69 @@ nav a:hover{color:#00ff88}
 .hero h1 em{color:#00ff88;font-style:normal}
 .hero h1 strong{color:rgba(255,255,255,0.4);font-weight:normal}
 .hero-sub{color:rgba(255,255,255,0.45);font-size:1.1rem;max-width:600px;margin-bottom:40px;line-height:1.8}
-.hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:60px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:40px}
 .btn-primary{background:linear-gradient(135deg,#00ff88,#00cc66);color:#000;padding:16px 36px;border-radius:12px;text-decoration:none;font-weight:bold;font-family:monospace;font-size:1rem}
 .btn-secondary{border:1px solid rgba(0,255,136,0.4);color:#00ff88;padding:16px 36px;border-radius:12px;text-decoration:none;font-family:monospace;font-size:1rem}
 .btn-ghost{border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);padding:16px 36px;border-radius:12px;text-decoration:none;font-family:monospace;font-size:1rem}
 
-/* STATS BAR */
+/* SUPPORT STRIP */
+.support-strip{background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.12);border-radius:16px;padding:24px 32px;margin:0 24px 40px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:center;max-width:800px;margin-left:auto;margin-right:auto}
+.support-strip .support-label{font-family:monospace;font-size:.7rem;letter-spacing:2px;color:rgba(255,255,255,0.3);text-transform:uppercase;width:100%;text-align:center;margin-bottom:4px}
+.support-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;text-decoration:none;font-family:monospace;font-size:.8rem;font-weight:bold;transition:all .2s;white-space:nowrap}
+.sb-kofi{background:#ff5e5b;color:#fff;}
+.sb-kofi:hover{background:#e54d4a}
+.sb-gh{background:#238636;color:#fff;}
+.sb-gh:hover{background:#1a6b2a}
+.sb-gumroad{background:#ff90e8;color:#000;}
+.sb-gumroad:hover{background:#f07fd8}
+.sb-paypal{background:#003087;color:#fff;}
+.sb-paypal:hover{background:#001e5a}
+.sb-btc{background:#f7931a;color:#fff;}
+.sb-btc:hover{background:#e07f10}
+
 .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:32px;padding:32px 24px;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.01)}
 .stat{text-align:center}
 .stat-num{font-size:1.8rem;font-family:monospace;color:#00ff88;display:block}
 .stat-label{font-size:.7rem;color:rgba(255,255,255,0.3);letter-spacing:1px;text-transform:uppercase;font-family:monospace}
 
-/* SECTIONS */
+/* SPACE WIDGET */
+.space-widget{background:rgba(0,0,0,0.6);border:1px solid rgba(0,200,255,0.2);border-radius:12px;padding:20px 24px;margin:32px auto;max-width:700px;font-family:monospace;font-size:.78rem;color:rgba(0,200,255,0.8);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center}
+.space-item{text-align:center}
+.space-val{font-size:1.1rem;color:#00c8ff;display:block;font-weight:bold}
+.space-lbl{font-size:.6rem;letter-spacing:1px;color:rgba(0,200,255,0.4);text-transform:uppercase}
+
 section{max-width:1000px;margin:0 auto;padding:80px 24px}
 .section-tag{font-family:monospace;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px}
 h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:normal;margin-bottom:16px;line-height:1.3}
 h2 em{color:#00ff88;font-style:normal}
 .section-sub{color:rgba(255,255,255,0.4);max-width:600px;margin-bottom:40px;line-height:1.8}
-
-/* HOW IT WORKS */
 .steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .step{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:28px}
 .step-num{font-family:monospace;font-size:2rem;color:rgba(0,255,136,0.3);margin-bottom:12px}
 .step h3{font-size:1rem;margin-bottom:8px;font-weight:normal}
 .step p{color:rgba(255,255,255,0.4);font-size:.85rem;line-height:1.65}
 .step .time{font-family:monospace;font-size:.7rem;color:rgba(0,255,136,0.5);margin-top:10px}
-
-/* WHAT YOU GET */
 .features{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .feature{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px}
 .feature-icon{font-size:1.4rem;margin-bottom:8px}
 .feature h4{font-size:.9rem;margin-bottom:6px;font-weight:normal}
 .feature p{color:rgba(255,255,255,0.35);font-size:.78rem;line-height:1.6}
-
-/* ARCHITECTURE */
 .arch{background:rgba(0,255,136,0.03);border:1px solid rgba(0,255,136,0.1);border-radius:16px;padding:32px;font-family:monospace;font-size:.8rem;line-height:2;color:rgba(255,255,255,0.6)}
 .arch .comment{color:rgba(255,255,255,0.2)}
 .arch .green{color:#00ff88}
 .arch .yellow{color:#ffd700}
 .arch .red{color:#ff2d6b}
-
-/* PRINCIPLES */
 .principles{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
 .principle{padding:24px;border-left:2px solid rgba(0,255,136,0.3)}
 .principle h3{font-size:.95rem;margin-bottom:8px;font-weight:normal;color:#00ff88}
 .principle p{color:rgba(255,255,255,0.4);font-size:.85rem;line-height:1.65}
-
-/* GALLERY CTA */
 .gallery-cta{background:linear-gradient(135deg,rgba(255,45,107,0.08),rgba(0,255,136,0.05));border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:48px;text-align:center}
 .gallery-cta h2{margin-bottom:12px}
 .gallery-cta p{color:rgba(255,255,255,0.4);margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto}
 .gallery-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-
-/* FORK CTA */
 .fork-cta{background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15);border-radius:20px;padding:48px;text-align:center;margin:60px 24px}
 .fork-cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:normal;margin-bottom:16px}
 .fork-cta p{color:rgba(255,255,255,0.4);max-width:560px;margin:0 auto 28px;line-height:1.8}
-
-/* FOOTER */
 footer{border-top:1px solid rgba(255,255,255,0.05);padding:32px 24px;text-align:center;color:rgba(255,255,255,0.2);font-family:monospace;font-size:.7rem;line-height:2.2}
 footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 </style>
@@ -96,58 +98,77 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
   <a href="#what">What</a>
   <a href="#fork">Fork It</a>
   <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gallery</a>
+  <a href="https://ko-fi.com/meekotharaccoon" class="nav-sponsor" target="_blank">☕ Support</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-tag">🤯 Live System · Running Right Now · $0/month</div>
   <h1>One person.<br><em>One desktop.</em><br><strong>Zero dollars.</strong><br>A fully autonomous AI.</h1>
-  <p class="hero-sub">10 workflows running daily. Sells art, sends emails, responds to inquiries, generates content, archives itself, raises money for humanitarian causes — without anyone touching it.</p>
+  <p class="hero-sub">10 workflows running daily. Sells art, sends emails, responds to inquiries, connects to ISS + NASA, runs legal tools, generates content — without anyone touching it.</p>
   <div class="hero-btns">
     <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-primary">🌱 Fork This System</a>
     <a href="#how" class="btn-secondary">See How It Works</a>
     <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-ghost">🌹 See the Gallery</a>
+  </div>
+
+  <!-- SUPPORT STRIP — all revenue paths in one place -->
+  <div class="support-strip">
+    <div class="support-label">Support the work · Every path routes to causes that matter</div>
+    <a href="https://ko-fi.com/meekotharaccoon" class="support-btn sb-kofi" target="_blank">☕ Ko-fi Tip</a>
+    <a href="https://github.com/sponsors/meekotharaccoon-cell" class="support-btn sb-gh" target="_blank">💚 GitHub Sponsor</a>
+    <a href="https://gumroad.com/meekotharaccoon" class="support-btn sb-gumroad" target="_blank">📦 $5 Fork Guide</a>
+    <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="support-btn sb-paypal" target="_blank">🌹 $1 Art Print</a>
+    <a href="#btc" class="support-btn sb-btc">₿ Bitcoin</a>
+  </div>
+
+  <!-- LIVE SPACE WIDGET -->
+  <div class="space-widget" id="spaceWidget">
+    <div class="space-item"><span class="space-val" id="issLat">...</span><span class="space-lbl">ISS Latitude</span></div>
+    <div class="space-item"><span class="space-val" id="issLon">...</span><span class="space-lbl">ISS Longitude</span></div>
+    <div class="space-item"><span class="space-val" id="issCrew">...</span><span class="space-lbl">People in Space</span></div>
+    <div class="space-item"><span class="space-val" id="issTime">...</span><span class="space-lbl">Last Updated</span></div>
   </div>
 </div>
 
 <!-- STATS -->
 <div class="stats">
   <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Monthly Cost</span></div>
-  <div class="stat"><span class="stat-num">10</span><span class="stat-label">Daily Workflows</span></div>
+  <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Daily Workflows</span></div>
   <div class="stat"><span class="stat-num">56</span><span class="stat-label">Artworks Live</span></div>
   <div class="stat"><span class="stat-num">70%</span><span class="stat-label">Revenue to PCRF</span></div>
   <div class="stat"><span class="stat-num">21</span><span class="stat-label">Repos</span></div>
-  <div class="stat"><span class="stat-num">1</span><span class="stat-label">Desktop Computer</span></div>
+  <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Forkable</span></div>
 </div>
 
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="section-tag">How It Works</div>
   <h2>Built on free infrastructure.<br><em>Runs itself.</em></h2>
-  <p class="section-sub">Every piece of this runs on GitHub's free tier. 2,000 compute minutes/month. Free Pages hosting. Free Actions runners. The moment you fork it, it starts working.</p>
+  <p class="section-sub">Every piece runs on GitHub's free tier. 2,000 compute minutes/month. Free Pages hosting. Free Actions runners. The moment you fork it, it starts working.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">01</div>
       <h3>Fork the repo</h3>
-      <p>One click. GitHub copies everything: 21 repos, 10 workflows, 15 scripts, all documentation. Your version is immediately live at your GitHub Pages URL.</p>
+      <p>One click. GitHub copies everything: repos, workflows, scripts, documentation. Your version is immediately live at your GitHub Pages URL.</p>
       <div class="time">⏱️ 2 minutes</div>
     </div>
     <div class="step">
       <div class="step-num">02</div>
       <h3>Add your secrets</h3>
-      <p>GitHub Secrets holds your API keys. Gmail App Password, Gumroad token, Mastodon token. Each secret you add activates a new system capability.</p>
+      <p>GitHub Secrets holds your API keys. Each secret you add activates new capabilities: email, payments, AI, space data, legal tools.</p>
       <div class="time">⏱️ 30 minutes</div>
     </div>
     <div class="step">
       <div class="step-num">03</div>
       <h3>Set your cause</h3>
-      <p>Edit one config file: your cause, your charity, your percentage. The system routes money wherever you point it. Or route it to yourself. Your call.</p>
+      <p>Edit one config file. Your mission, your charity, your split percentage. Revenue routes wherever you point it.</p>
       <div class="time">⏱️ 5 minutes</div>
     </div>
     <div class="step">
       <div class="step-num">04</div>
       <h3>It runs</h3>
-      <p>From this point: the system posts daily, emails, responds, generates content, tracks revenue, archives itself. Without you. Forever. On the free tier.</p>
+      <p>Posts daily, emails, responds, generates content, tracks revenue, connects to ISS + NASA, discovers new nodes. Without you. Forever. Free.</p>
       <div class="time">⏱️ Forever, $0</div>
     </div>
   </div>
@@ -156,21 +177,21 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 <!-- WHAT YOU GET -->
 <section id="what">
   <div class="section-tag">What You Get</div>
-  <h2>Every piece.<br><em>All connected.</em></h2>
-  <p class="section-sub">This is not a template. It's a running organism. Every component talks to every other component. The brain makes decisions. The hands execute them.</p>
+  <h2>Every layer.<br><em>All wired together.</em></h2>
+  <p class="section-sub">40+ scripts. All connected. Space bridge → morning briefing → cross-poster → email → revenue → repeat.</p>
   <div class="features">
-    <div class="feature"><div class="feature-icon">🧠</div><h4>AI Brain</h4><p>meeko_brain.py gates every decision. Nothing goes out without values-check. Yours to configure.</p></div>
-    <div class="feature"><div class="feature-icon">📧</div><h4>Email System</h4><p>Sends outreach. Reads replies. Responds automatically. One unified log. Never double-sends.</p></div>
-    <div class="feature"><div class="feature-icon">📡</div><h4>Cross-Poster</h4><p>One post → Mastodon, Bluesky, Discord, Dev.to simultaneously. Rotating content, never repeats.</p></div>
-    <div class="feature"><div class="feature-icon">📺</div><h4>YouTube Manager</h4><p>Updates all video descriptions automatically. Tracks stats. Responds to comments.</p></div>
-    <div class="feature"><div class="feature-icon">📚</div><h4>PDF Generator</h4><p>Any markdown guide auto-converts to beautiful PDFs. Committed back to repo automatically.</p></div>
-    <div class="feature"><div class="feature-icon">🏦</div><h4>Revenue Tracker</h4><p>Gumroad, PayPal, Coinbase Commerce. All tracked daily. Knows its own financial state.</p></div>
-    <div class="feature"><div class="feature-icon">🌍</div><h4>Internet Archive</h4><p>Archives all live pages weekly. Permanent backup of everything. Outlasts any platform.</p></div>
-    <div class="feature"><div class="feature-icon">📰</div><h4>Living README</h4><p>Updates itself with real numbers. No stale documentation. Stats are always accurate.</p></div>
-    <div class="feature"><div class="feature-icon">⚖️</div><h4>Legal Tools</h4><p>TCPA generator, FOIA generator, debt dispute letters. Real tools for real rights.</p></div>
-    <div class="feature"><div class="feature-icon">🤝</div><h4>Mutual Aid Board</h4><p>Needs, offers, resources, emergencies. No gatekeeping. GitHub Issues as infrastructure.</p></div>
-    <div class="feature"><div class="feature-icon">🌿</div><h4>Herbal Guides</h4><p>12 plants, 40+ preparations. Auto-generated PDFs. Real medicine, not vibes.</p></div>
-    <div class="feature"><div class="feature-icon">🧩</div><h4>Grant System</h4><p>Applications, community voting, funded ledger. Democratic allocation. Zero gatekeeping.</p></div>
+    <div class="feature"><div class="feature-icon">🧠</div><h4>Orchestrator</h4><p>Runs all 40+ scripts in order. Pipes data between them. Space → briefing → social. One command, full system.</p></div>
+    <div class="feature"><div class="feature-icon">🛸</div><h4>Space Bridge</h4><p>Live ISS position. NASA APOD. Near Earth Objects. Solar weather. Mars rover photos. All wired into morning briefing.</p></div>
+    <div class="feature"><div class="feature-icon">📧</div><h4>Email System</h4><p>Morning briefing includes space data + revenue status + grant deadlines. All from one data bus.</p></div>
+    <div class="feature"><div class="feature-icon">📡</div><h4>Cross-Poster</h4><p>Space APOD auto-posted everywhere daily. Signal tracker feeds it. One post → all platforms.</p></div>
+    <div class="feature"><div class="feature-icon">🕸️</div><h4>Network Node</h4><p>Bluetooth, WiFi, WebSocket, MQTT hub. Discovers other Mycelium forks on local network. Mesh grows.</p></div>
+    <div class="feature"><div class="feature-icon">⚖️</div><h4>Legal Tools</h4><p>TCPA ($500-$1500/call), FDCPA disputes, FOIA requests. Identity vault signs all docs. Use them.</p></div>
+    <div class="feature"><div class="feature-icon">💰</div><h4>Revenue Layer</h4><p>Gallery, Ko-fi, GitHub Sponsors, Gumroad, Lightning, Solana, Bitcoin, grants. All tracked. All wired.</p></div>
+    <div class="feature"><div class="feature-icon">🔐</div><h4>Identity Vault</h4><p>Signs legal docs. Manages wallet addresses. Generates artist certs. All local, nothing pushed.</p></div>
+    <div class="feature"><div class="feature-icon">🌱</div><h4>Grant Outreach</h4><p>Scans 8 grant programs. Auto-generates applications. NLnet, Mozilla, Creative Capital, GitHub Sponsors.</p></div>
+    <div class="feature"><div class="feature-icon">🔄</div><h4>Self-Evolving</h4><p>evolve.py analyzes what's working. Updates README with real stats. Commits its own improvements.</p></div>
+    <div class="feature"><div class="feature-icon">🌍</div><h4>Internet Archive</h4><p>Archives all live pages weekly. Permanent record. Outlasts any platform.</p></div>
+    <div class="feature"><div class="feature-icon">🌿</div><h4>AGPL + Ethics</h4><p>Values travel with every fork. Can't be closed. Can't be weaponized. The license is the enforcement.</p></div>
   </div>
 </section>
 
@@ -178,22 +199,25 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 <section>
   <div class="section-tag">Architecture</div>
   <h2>The <em>actual machine.</em></h2>
-  <p class="section-sub">Real specs. Not marketing. This is what runs the system.</p>
+  <p class="section-sub">Real specs. Not marketing.</p>
   <div class="arch">
-    <div class="comment"># The hardware</div>
-    CPU <span class="green">Intel Core i5-8500 · 6 cores · 3.0GHz base</span><br>
+    <div class="comment"># Hardware</div>
+    CPU <span class="green">Intel Core i5-8500 · 6 cores · 3.0GHz</span><br>
     RAM <span class="green">32GB DDR4</span><br>
-    GPU <span class="red">Intel UHD 630 — integrated. No dedicated GPU. This matters.</span><br>
-    OS  <span class="green">Ubuntu 22.04</span><br>
+    AI  <span class="yellow">Ollama · Mistral 7B · CodeLlama 7B · LLaMA 3.2 — all local, no API costs</span><br>
     <br>
-    <div class="comment"># The AI (all local, all free)</div>
-    LLM <span class="yellow">Mistral 7B · CodeLlama 7B · LLaMA 3.2 via Ollama</span><br>
-    VEC <span class="yellow">ChromaDB for embeddings · no GPU required</span><br>
+    <div class="comment"># Data flows (all wired)</div>
+    space_bridge <span class="green">→</span> orchestrator_bus <span class="green">→</span> morning_briefing <span class="green">→</span> email<br>
+    space_bridge <span class="green">→</span> cross_poster <span class="green">→</span> Mastodon + Bluesky + Discord<br>
+    signal_tracker <span class="green">→</span> evolve <span class="green">→</span> self-improvement<br>
+    network_node <span class="green">→</span> mesh_discovery <span class="green">→</span> community_outreach<br>
+    monetization_tracker <span class="green">→</span> revenue_snapshot <span class="green">→</span> morning_briefing<br>
+    identity_vault <span class="green">→</span> legal_docs + artist_certs + wallet_info<br>
+    grant_outreach <span class="green">→</span> application_packages <span class="green">→</span> email<br>
     <br>
-    <div class="comment"># The cloud (all free tier)</div>
-    CI  <span class="green">GitHub Actions · 2,000 min/month · 10 scheduled workflows</span><br>
-    WEB <span class="green">GitHub Pages · free HTTPS · custom domain ready</span><br>
-    STG <span class="green">GitHub repos · Internet Archive · IPFS (planned)</span><br>
+    <div class="comment"># Cloud (all free)</div>
+    CI  <span class="green">GitHub Actions · 2,000 min/month · 10+ scheduled workflows</span><br>
+    WEB <span class="green">GitHub Pages · free HTTPS</span><br>
     <br>
     <div class="comment"># Monthly cost</div>
     <span class="green">$0.00</span>
@@ -205,41 +229,43 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
   <div class="section-tag">Principles</div>
   <h2>What this is <em>for.</em></h2>
   <div class="principles">
-    <div class="principle">
-      <h3>Forkable by design</h3>
-      <p>Every decision in this system was made thinking about the person who forks it next. Documentation is part of the code. Setup is 30 minutes for a stranger.</p>
-    </div>
-    <div class="principle">
-      <h3>Human oversight is the architecture</h3>
-      <p>The system runs itself. The human sets the values. Those are different jobs and both are necessary. Removing human judgment isn't the goal. Removing human drudgery is.</p>
-    </div>
-    <div class="principle">
-      <h3>$0 is a feature not a constraint</h3>
-      <p>If it requires money to run, it excludes people. Free infrastructure means anyone with internet access can run this. That's the point.</p>
-    </div>
-    <div class="principle">
-      <h3>Transparency as proof</h3>
-      <p>The code is public. The architecture is documented. The cause is verifiable. The charity is 4-star Charity Navigator. You don't have to trust us. Check everything.</p>
-    </div>
-    <div class="principle">
-      <h3>Route around extractive middlemen</h3>
-      <p>No platform takes a cut here. No algorithm controls the reach. The system talks to people directly, stores its own data, owns its own infrastructure.</p>
-    </div>
-    <div class="principle">
-      <h3>The license prevents capture</h3>
-      <p>AGPL-3.0 + Ethical Use Rider. Can't be closed-sourced. Can't be used for surveillance. Can't be weaponized. Forks inherit the same restrictions. The values propagate.</p>
+    <div class="principle"><h3>Forkable by design</h3><p>Every decision was made thinking about the person who forks it next. Setup is 30 minutes for a stranger.</p></div>
+    <div class="principle"><h3>Human oversight is the architecture</h3><p>The system runs itself. The human sets the values. Both necessary. Removing human drudgery — not judgment.</p></div>
+    <div class="principle"><h3>$0 is a feature</h3><p>If it costs money to run, it excludes people. Free infrastructure means anyone can run this.</p></div>
+    <div class="principle"><h3>Transparency as proof</h3><p>Code is public. Architecture is documented. Charity is verifiable (4-star Charity Navigator). Check everything.</p></div>
+    <div class="principle"><h3>Route around extractive middlemen</h3><p>No platform takes a cut. No algorithm controls reach. Direct payments. Owned infrastructure.</p></div>
+    <div class="principle"><h3>The license prevents capture</h3><p>AGPL-3.0 + Ethical Use Rider. Can't be closed-sourced. Can't be weaponized. Values propagate with every fork.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY + PRODUCT CTA -->
+<section>
+  <div class="gallery-cta">
+    <h2>🌹 Art that does something</h2>
+    <p>56 original artworks. $1 each. 70 cents to Palestinian Children's Relief Fund. Art you own + direct humanitarian impact.</p>
+    <div class="gallery-btns">
+      <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-primary">→ Gaza Rose Gallery ($1)</a>
+      <a href="https://gumroad.com/meekotharaccoon" class="btn-secondary" target="_blank">📦 Fork Guide ($5)</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-ghost" target="_blank">☕ Ko-fi Tip</a>
     </div>
   </div>
 </section>
 
-<!-- GALLERY CTA -->
-<section>
-  <div class="gallery-cta">
-    <h2>🌹 While you're here</h2>
-    <p>56 original flower artworks. $1 each. 70 cents goes to the Palestine Children's Relief Fund — verified, 4-star Charity Navigator. Art you own forever + direct humanitarian impact.</p>
-    <div class="gallery-btns">
-      <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-primary">→ Gaza Rose Gallery</a>
-      <a href="https://meekotharaccoon.gumroad.com" class="btn-secondary">🌸 Flower Designs</a>
+<!-- BITCOIN SECTION -->
+<section id="btc" style="text-align:center;padding:40px 24px">
+  <div class="section-tag">Direct Support</div>
+  <h2>Zero <em>middlemen.</em></h2>
+  <p style="color:rgba(255,255,255,0.4);margin-bottom:32px">Bitcoin and Lightning go directly to the wallet. No fees. Immediate.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center">
+    <div style="background:rgba(247,147,26,0.08);border:1px solid rgba(247,147,26,0.2);border-radius:12px;padding:24px 32px;font-family:monospace">
+      <div style="color:#f7931a;font-size:.7rem;letter-spacing:2px;margin-bottom:12px">BITCOIN</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,0.6);word-break:break-all;max-width:280px">bc1qmeekotharaccoon000placeholder000000</div>
+      <div style="color:rgba(255,255,255,0.2);font-size:.65rem;margin-top:8px">(update with your real address in identity_vault.py --init)</div>
+    </div>
+    <div style="background:rgba(255,165,0,0.06);border:1px solid rgba(255,165,0,0.2);border-radius:12px;padding:24px 32px;font-family:monospace">
+      <div style="color:#ffa500;font-size:.7rem;letter-spacing:2px;margin-bottom:12px">LIGHTNING / STRIKE</div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,0.6)">Wire via GRAND_SETUP_WIZARD.py</div>
+      <div style="color:rgba(255,255,255,0.2);font-size:.65rem;margin-top:8px">lightning_checkout.js ready in mycelium/</div>
     </div>
   </div>
 </section>
@@ -247,19 +273,52 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 <!-- FORK CTA -->
 <div class="fork-cta" id="fork">
   <h2>Fork this.<br><em>Run your own.</em></h2>
-  <p>One click and your version is live. Point it at your cause, your art, your mission. The system does the rest. If you're reading this, you're already at the start.</p>
+  <p>One click and your version is live. Point it at your cause, your art, your mission. The system does the rest.</p>
   <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-primary" style="font-size:1.1rem;padding:18px 44px">🌱 Fork This System →</a>
   <p style="margin-top:16px;font-size:.8rem;color:rgba(255,255,255,0.2);font-family:monospace">Free. Forever. AGPL-3.0. No permission needed.</p>
+  <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <a href="https://ko-fi.com/meekotharaccoon" class="support-btn sb-kofi" target="_blank" style="font-size:.75rem;padding:10px 18px">☕ Ko-fi</a>
+    <a href="https://github.com/sponsors/meekotharaccoon-cell" class="support-btn sb-gh" target="_blank" style="font-size:.75rem;padding:10px 18px">💚 Sponsor</a>
+    <a href="https://gumroad.com/meekotharaccoon" class="support-btn sb-gumroad" target="_blank" style="font-size:.75rem;padding:10px 18px">📦 $5 Guide</a>
+  </div>
 </div>
 
 <footer>
-  SolarPunk Mycelium · AGPL-3.0 + Ethical Use License · Built by <a href="https://github.com/meekotharaccoon-cell">meekotharaccoon-cell</a><br>
-  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a> ·
-  <a href="https://github.com/meekotharaccoon-cell/solarpunk-learn">📚 SolarPunk Learn</a> ·
-  <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal">⚖️ SolarPunk Legal</a> ·
-  <a href="https://github.com/meekotharaccoon-cell/solarpunk-mutual-aid">🤝 Mutual Aid</a><br>
-  No ads · No tracking · No corporate backing · No permission needed to fork
+  SolarPunk Mycelium · AGPL-3.0 + Ethical Use License · <a href="https://github.com/meekotharaccoon-cell">meekotharaccoon-cell</a><br>
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gallery</a> ·
+  <a href="proliferator.html">⚖️ Legal Tools</a> ·
+  <a href="revenue.html">💰 Revenue</a> ·
+  <a href="https://ko-fi.com/meekotharaccoon" target="_blank">☕ Ko-fi</a> ·
+  <a href="https://github.com/sponsors/meekotharaccoon-cell" target="_blank">💚 Sponsor</a> ·
+  <a href="https://gumroad.com/meekotharaccoon" target="_blank">📦 Fork Guide $5</a><br>
+  No ads · No tracking · No corporate backing · $0/month infrastructure
 </footer>
+
+<script>
+// Live ISS tracker — wired directly into the page
+async function updateISS() {
+  try {
+    const r = await fetch('http://api.open-notify.org/iss-now.json');
+    const d = await r.json();
+    document.getElementById('issLat').textContent = parseFloat(d.iss_position.latitude).toFixed(2) + '°';
+    document.getElementById('issLon').textContent = parseFloat(d.iss_position.longitude).toFixed(2) + '°';
+    document.getElementById('issTime').textContent = new Date().toLocaleTimeString();
+  } catch(e) {
+    document.getElementById('issLat').textContent = 'unavail';
+  }
+}
+async function updateCrew() {
+  try {
+    const r = await fetch('http://api.open-notify.org/astros.json');
+    const d = await r.json();
+    const iss = d.people.filter(p => p.craft === 'ISS');
+    document.getElementById('issCrew').textContent = iss.length;
+  } catch(e) {}
+}
+updateISS();
+updateCrew();
+setInterval(updateISS, 10000); // update every 10s
+</script>
 
 </body>
 </html>

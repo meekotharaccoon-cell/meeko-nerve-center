@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.venv/
+
+# Identity vault — NEVER push these
+.meeko_vault/
+*.sig
+*.asc
+*.gpg
+vault.json
+*_private*
+*_secret*
+
+# Local DB files with sensitive data
+local_*.db
+private_*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# Local config overrides
+local_config.json
+local_secrets.json
