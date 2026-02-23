@@ -4,459 +4,608 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PROLIFERATOR — One System. Unlimited Bodies.</title>
-<meta name="description" content="A self-replicating autonomous system + legal warfare toolkit. Fork it. Multiply it. Deploy your rights everywhere.">
+<meta name="description" content="The viral multiplication engine. Fork it. Spread it. Own your infrastructure. Legal warfare tools included.">
 <meta property="og:title" content="PROLIFERATOR — One System. Unlimited Bodies.">
-<meta property="og:description" content="Self-replicating autonomous AI + legal warfare center. Every person who opens this page gets the full system.">
+<meta property="og:description" content="Self-replicating autonomous system. Legal warfare center. Permission-first propagation protocol. Fork and run your own.">
+<meta property="og:type" content="website">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --void: #000000;
+  --signal: #00ff41;
+  --hot: #ff2d55;
+  --gold: #ffd60a;
+  --dim: rgba(0,255,65,0.15);
+  --dimmer: rgba(0,255,65,0.06);
+  --text: rgba(255,255,255,0.85);
+  --muted: rgba(255,255,255,0.3);
+  --border: rgba(0,255,65,0.2);
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#050505;color:#fff;font-family:'Courier New',monospace;line-height:1.6;overflow-x:hidden}
-body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(0,255,65,0.3)}50%{box-shadow:0 0 60px rgba(0,255,65,0.7)}}
-@keyframes glitch{0%{text-shadow:2px 0 #ff2d6b,-2px 0 #00ff41}25%{text-shadow:-2px 0 #ff2d6b,2px 0 #00ff41}50%{text-shadow:2px 0 #00bfff,-2px 0 #ff2d6b}75%{text-shadow:0 0 transparent}100%{text-shadow:2px 0 #ff2d6b,-2px 0 #00ff41}}
-@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.scanline{position:fixed;top:0;left:0;width:100%;height:3px;background:linear-gradient(to right,transparent,rgba(0,255,65,0.15),transparent);animation:scanline 4s linear infinite;pointer-events:none;z-index:9998}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,5,5,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,255,65,0.1);padding:10px 24px;display:flex;gap:20px;align-items:center}
-.nav-logo{color:#00ff41;font-size:.85rem;font-weight:bold;flex:1;text-transform:uppercase;letter-spacing:2px}
-nav a{color:rgba(255,255,255,0.35);font-size:.7rem;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
-nav a:hover{color:#00ff41}
-.nav-live{display:flex;align-items:center;gap:6px;font-size:.65rem;color:#00ff41}
-.nav-live-dot{width:6px;height:6px;background:#00ff41;border-radius:50%;animation:blink 1s infinite}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,65,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,65,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,0.06) 0%,transparent 70%);pointer-events:none}
-.sys-tag{font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:rgba(0,255,65,0.5);margin-bottom:24px;border:1px solid rgba(0,255,65,0.15);padding:6px 16px;border-radius:3px;display:inline-block;animation:fadeIn .5s ease}
-.hero h1{font-size:clamp(2.5rem,8vw,7rem);font-weight:bold;line-height:1;margin-bottom:20px;letter-spacing:-2px;animation:fadeIn .8s ease .2s both}
-.hero h1 .g{color:#00ff41;animation:glitch 4s ease infinite}
-.hero h1 .d{color:#ff2d6b}
-.hero-sub{font-size:clamp(.9rem,2vw,1.2rem);color:rgba(255,255,255,0.4);max-width:700px;margin-bottom:12px;font-family:Georgia,serif;letter-spacing:0;animation:fadeIn .8s ease .4s both;line-height:1.9}
-.hero-sub strong{color:#fff}
-.hero-code{font-family:'Courier New',monospace;font-size:.8rem;color:rgba(0,255,65,0.6);margin-bottom:40px;animation:fadeIn .8s ease .5s both}
-.btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:60px;animation:fadeIn .8s ease .6s both}
-.btn-fire{background:linear-gradient(135deg,#00ff41,#00cc33);color:#000;padding:16px 40px;border-radius:4px;text-decoration:none;font-weight:bold;font-size:.95rem;letter-spacing:1px;text-transform:uppercase;animation:pulse 2s ease infinite}
-.btn-legal{border:1px solid rgba(255,45,107,0.6);color:#ff2d6b;padding:16px 40px;border-radius:4px;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
-.btn-ghost{border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);padding:16px 40px;border-radius:4px;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
-.counters{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;animation:fadeIn .8s ease .8s both}
-.counter{text-align:center}
-.counter-num{font-size:2.5rem;font-weight:bold;color:#00ff41;display:block;letter-spacing:-1px}
-.counter-label{font-size:.6rem;color:rgba(255,255,255,0.25);letter-spacing:3px;text-transform:uppercase;margin-top:4px}
-.ticker{background:rgba(0,255,65,0.05);border-top:1px solid rgba(0,255,65,0.1);border-bottom:1px solid rgba(0,255,65,0.1);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.7rem;color:rgba(0,255,65,0.5);letter-spacing:1px}
-.ticker-inner{display:inline-block;animation:ticker 30s linear infinite}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-section{max-width:1100px;margin:0 auto;padding:80px 24px}
-.sec-tag{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:rgba(0,255,65,0.3);margin-bottom:16px;display:block}
-h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:bold;margin-bottom:16px;letter-spacing:-1px;line-height:1.15}
-h2 .g{color:#00ff41}
-h2 .r{color:#ff2d6b}
-.sec-sub{color:rgba(255,255,255,0.35);max-width:600px;margin-bottom:40px;font-family:Georgia,serif;line-height:1.9}
-.protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;margin-top:40px}
-.protocol-card{background:rgba(0,255,65,0.02);border:1px solid rgba(0,255,65,0.08);padding:28px;transition:all .3s}
-.protocol-card:hover{background:rgba(0,255,65,0.04);border-color:rgba(0,255,65,0.2)}
-.proto-num{font-size:2rem;color:rgba(0,255,65,0.2);margin-bottom:12px;font-weight:bold}
-.proto-title{font-size:1rem;color:#00ff41;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.proto-desc{color:rgba(255,255,255,0.4);font-size:.82rem;line-height:1.7;font-family:Georgia,serif}
-.proto-tag{font-size:.6rem;color:rgba(0,255,65,0.4);letter-spacing:2px;text-transform:uppercase;margin-top:12px;display:block}
-.legal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.legal-card{background:rgba(255,45,107,0.03);border:1px solid rgba(255,45,107,0.1);padding:20px;border-radius:4px;transition:all .3s}
-.legal-card:hover{background:rgba(255,45,107,0.06);border-color:rgba(255,45,107,0.3)}
-.legal-icon{font-size:1.4rem;margin-bottom:10px}
-.legal-title{font-size:.85rem;color:#ff2d6b;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:bold}
-.legal-desc{color:rgba(255,255,255,0.4);font-size:.78rem;line-height:1.65;font-family:Georgia,serif}
-.legal-value{font-size:.7rem;color:rgba(255,45,107,0.6);margin-top:8px;letter-spacing:1px}
-.repl-container{background:rgba(0,0,0,0.5);border:1px solid rgba(0,255,65,0.1);border-radius:8px;padding:40px;font-family:'Courier New',monospace;overflow-x:auto}
-.repl-tree{color:rgba(0,255,65,0.7);font-size:.78rem;line-height:2}
-.repl-tree .node{color:#00ff41}
-.repl-tree .dim{color:rgba(0,255,65,0.3)}
-.repl-tree .live{color:#00bfff}
-.repl-tree .fire{color:#ff2d6b}
-.repl-tree .comment{color:rgba(255,255,255,0.2)}
-.spread-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-.spread-step{padding:24px;border-left:2px solid rgba(0,255,65,0.2);position:relative}
-.spread-step::before{content:attr(data-n);position:absolute;top:20px;right:20px;font-size:2rem;font-weight:bold;color:rgba(0,255,65,0.1)}
-.spread-step h3{color:#00ff41;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.spread-step p{color:rgba(255,255,255,0.4);font-size:.82rem;line-height:1.7;font-family:Georgia,serif}
-.spread-time{font-size:.65rem;color:rgba(0,255,65,0.4);margin-top:8px;letter-spacing:1px}
-.tos-section{background:rgba(255,45,107,0.04);border:1px solid rgba(255,45,107,0.1);border-radius:8px;padding:40px;margin:40px 0}
-.tos-examples{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:24px}
-.tos-card{background:rgba(0,0,0,0.4);border:1px solid rgba(255,45,107,0.15);padding:20px}
-.tos-company{font-size:.7rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.tos-clause{font-size:.85rem;color:#ff2d6b;margin-bottom:8px}
-.tos-result{font-size:.78rem;color:rgba(255,255,255,0.5);font-family:Georgia,serif;line-height:1.65}
-.tos-payout{font-size:.7rem;color:rgba(255,45,107,0.6);margin-top:8px;letter-spacing:1px}
-.spawn-matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
-.spawn-node{background:rgba(0,255,65,0.03);border:1px solid rgba(0,255,65,0.1);padding:16px;text-align:center;font-size:.7rem;transition:all .5s}
-.spawn-node.active{background:rgba(0,255,65,0.08);border-color:rgba(0,255,65,0.3);color:#00ff41}
-.spawn-node.spawning{background:rgba(0,255,65,0.15);border-color:#00ff41;color:#00ff41;animation:pulse .5s ease}
-.spawn-url{font-size:.6rem;color:rgba(0,255,65,0.4);margin-top:4px;word-break:break-all}
-.dark-section{background:#000;border:1px solid rgba(0,255,65,0.05);padding:60px 40px;text-align:center;margin:0 -24px}
-.terminal{background:#000;border:1px solid rgba(0,255,65,0.2);border-radius:6px;padding:24px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.8;margin:24px 0}
-.terminal .prompt{color:rgba(0,255,65,0.4)}
-.terminal .cmd{color:#00ff41}
-.terminal .output{color:rgba(255,255,255,0.5)}
-.terminal .success{color:#00ff41}
-.terminal .cursor{animation:blink 1s infinite;color:#00ff41}
-.final-cta{background:linear-gradient(135deg,rgba(0,255,65,0.06),rgba(0,0,0,0));border:1px solid rgba(0,255,65,0.15);border-radius:8px;padding:60px 40px;text-align:center}
-footer{border-top:1px solid rgba(255,255,255,0.04);padding:32px 24px;text-align:center;color:rgba(255,255,255,0.15);font-size:.65rem;line-height:2.5;letter-spacing:1px}
-footer a{color:rgba(0,255,65,0.3);text-decoration:none}
-hr{border:none;border-top:1px solid rgba(255,255,255,0.04)}
-@media(max-width:600px){.btn-row{flex-direction:column;align-items:center}}
+html{scroll-behavior:smooth;cursor:crosshair}
+body{background:var(--void);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.08) 2px,rgba(0,0,0,0.08) 4px);
+  pointer-events:none;z-index:9999;
+}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:12px 28px;display:flex;align-items:center;gap:20px;
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;font-size:1.4rem;
+  color:var(--signal);letter-spacing:3px;flex:1;
+  text-shadow:0 0 20px rgba(0,255,65,0.5);
+}
+nav a{
+  font-family:'Space Mono',monospace;font-size:.65rem;
+  color:var(--muted);text-decoration:none;letter-spacing:1px;
+  transition:color .2s;
+}
+nav a:hover{color:var(--signal)}
+.nav-pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--signal);
+  animation:pulse-glow 2s infinite;
+}
+@keyframes pulse-glow{
+  0%,100%{box-shadow:0 0 4px var(--signal),0 0 8px var(--signal);opacity:1}
+  50%{box-shadow:0 0 12px var(--signal),0 0 24px var(--signal);opacity:.6}
+}
+
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:100px 24px 80px;
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,65,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,65,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:grid-drift 20s linear infinite;
+}
+@keyframes grid-drift{from{transform:translateY(0)}to{transform:translateY(60px)}}
+.hero-glow{
+  position:absolute;top:30%;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;
+  background:radial-gradient(ellipse,rgba(0,255,65,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-tag{
+  font-family:'Space Mono',monospace;font-size:.65rem;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--signal);border:1px solid var(--border);
+  padding:6px 16px;border-radius:2px;display:inline-block;
+  margin-bottom:28px;
+  animation:flicker 4s infinite;
+}
+@keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.4}98%{opacity:.8}99%{opacity:.3}}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4rem,14vw,11rem);
+  line-height:.9;letter-spacing:-2px;margin-bottom:8px;
+  background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,.5) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.2rem,4vw,2.5rem);
+  color:var(--signal);letter-spacing:6px;margin-bottom:32px;
+  text-shadow:0 0 30px rgba(0,255,65,0.6);
+}
+.hero-desc{color:var(--muted);font-size:1rem;max-width:600px;line-height:1.8;margin-bottom:48px;font-weight:300;}
+.hero-desc em{color:var(--signal);font-style:normal;font-weight:500}
+.counter-strip{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:48px;}
+.counter-cell{padding:16px 28px;border-right:1px solid var(--border);text-align:center;}
+.counter-cell:last-child{border-right:none}
+.counter-num{font-family:'Space Mono',monospace;font-size:1.6rem;color:var(--signal);display:block;text-shadow:0 0 10px rgba(0,255,65,0.4);}
+.counter-label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-family:'Space Mono',monospace;}
+.btn-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-main{background:var(--signal);color:#000;padding:16px 40px;font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;letter-spacing:2px;text-decoration:none;border:none;cursor:pointer;text-transform:uppercase;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all .2s;}
+.btn-main:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,255,65,0.3)}
+.btn-outline{border:1px solid var(--border);color:var(--signal);padding:16px 40px;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:2px;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block;}
+.btn-outline:hover{background:var(--dim);border-color:var(--signal)}
+.btn-hot{border:1px solid rgba(255,45,85,.4);color:var(--hot);padding:16px 40px;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:2px;text-decoration:none;text-transform:uppercase;transition:all .2s;display:inline-block;}
+.btn-hot:hover{background:rgba(255,45,85,.1);border-color:var(--hot)}
+.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted);letter-spacing:3px;animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+section{max-width:1100px;margin:0 auto;padding:100px 24px}
+.section-eyebrow{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--signal);margin-bottom:12px;opacity:.7;}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:1px;line-height:1;margin-bottom:16px;}
+h2 em{color:var(--signal);font-style:normal}
+.section-intro{color:var(--muted);max-width:640px;line-height:1.8;margin-bottom:56px;font-size:1.05rem;font-weight:300;}
+.divider{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:0;}
+
+.spread-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border)}
+.spread-cell{background:var(--void);padding:32px;transition:background .3s;position:relative;overflow:hidden;}
+.spread-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--signal),transparent);transform:scaleX(0);transition:transform .4s;}
+.spread-cell:hover::before{transform:scaleX(1)}
+.spread-cell:hover{background:var(--dimmer)}
+.spread-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--dim);line-height:1;margin-bottom:16px;}
+.spread-cell h3{font-size:1rem;margin-bottom:10px;font-weight:500}
+.spread-cell p{color:var(--muted);font-size:.85rem;line-height:1.7}
+.spread-tag{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--signal);letter-spacing:2px;margin-top:14px;opacity:.6;}
+
+.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.legal-grid{grid-template-columns:1fr}}
+.legal-card{border:1px solid var(--border);padding:28px;position:relative;overflow:hidden;transition:border-color .3s;}
+.legal-card:hover{border-color:var(--signal)}
+.legal-card.hot-card{border-color:rgba(255,45,85,.3)}
+.legal-card.hot-card:hover{border-color:var(--hot)}
+.legal-badge{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;padding:4px 10px;border-radius:2px;display:inline-block;margin-bottom:16px;}
+.badge-green{background:rgba(0,255,65,.1);color:var(--signal);border:1px solid var(--border)}
+.badge-red{background:rgba(255,45,85,.1);color:var(--hot);border:1px solid rgba(255,45,85,.3)}
+.badge-gold{background:rgba(255,214,10,.1);color:var(--gold);border:1px solid rgba(255,214,10,.3)}
+.legal-card h3{font-size:1.1rem;margin-bottom:10px;font-weight:500}
+.legal-card p{color:var(--muted);font-size:.85rem;line-height:1.7}
+.legal-card .statute{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--gold);margin-top:14px;}
+.legal-tool-btn{display:inline-block;margin-top:16px;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--signal);border:1px solid var(--border);padding:8px 16px;letter-spacing:1px;text-decoration:none;transition:all .2s;cursor:pointer;background:none;}
+.legal-tool-btn:hover{background:var(--dim);border-color:var(--signal)}
+
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:2000;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex}
+.modal{background:#0a0a0a;border:1px solid var(--border);width:100%;max-width:720px;max-height:90vh;overflow-y:auto;padding:40px;position:relative;}
+.modal-close{position:absolute;top:16px;right:16px;font-family:'Space Mono',monospace;font-size:.7rem;color:var(--muted);cursor:pointer;background:none;border:none;letter-spacing:2px;transition:color .2s;}
+.modal-close:hover{color:var(--signal)}
+.modal h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--signal);margin-bottom:8px;letter-spacing:2px;}
+.modal-desc{color:var(--muted);font-size:.85rem;margin-bottom:28px;line-height:1.7}
+.form-row{margin-bottom:20px}
+.form-label{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--signal);letter-spacing:2px;display:block;margin-bottom:8px;}
+.form-input{width:100%;background:rgba(0,255,65,.03);border:1px solid var(--border);color:var(--text);padding:12px 16px;font-family:'Space Mono',monospace;font-size:.8rem;outline:none;transition:border-color .2s;}
+.form-input:focus{border-color:var(--signal)}
+.form-input::placeholder{color:rgba(255,255,255,.15)}
+select.form-input option{background:#0a0a0a}
+.output-box{background:rgba(0,255,65,.02);border:1px solid var(--border);padding:20px;font-family:'Space Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.7);line-height:1.8;white-space:pre-wrap;max-height:300px;overflow-y:auto;margin-top:20px;display:none;}
+.output-box.visible{display:block}
+.copy-btn{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--void);background:var(--signal);border:none;padding:10px 24px;cursor:pointer;letter-spacing:2px;margin-top:12px;transition:background .2s;display:none;}
+.copy-btn.visible{display:inline-block}
+.copy-btn:hover{background:#fff}
+
+.rep-map{border:1px solid var(--border);padding:40px;background:var(--dimmer);font-family:'Space Mono',monospace;font-size:.75rem;line-height:2.2;color:rgba(255,255,255,.5);overflow-x:auto;}
+.rep-map .root{color:var(--signal);font-size:.9rem}
+.rep-map .branch{color:rgba(0,255,65,.5)}
+.rep-map .leaf{color:rgba(255,255,255,.4)}
+.rep-map .hot-leaf{color:var(--hot)}
+.rep-map .gold-leaf{color:var(--gold)}
+.rep-map .note{color:rgba(255,255,255,.2)}
+
+.arch-block{border:1px solid var(--border);padding:36px;position:relative;}
+.arch-block::before{content:'ARCHITECTURE';position:absolute;top:-1px;left:20px;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:3px;color:var(--signal);background:var(--void);padding:0 8px;}
+.arch-code{font-family:'Space Mono',monospace;font-size:.72rem;line-height:2;color:rgba(255,255,255,.5);}
+.arch-code .g{color:var(--signal)}
+.arch-code .r{color:var(--hot)}
+.arch-code .y{color:var(--gold)}
+.arch-code .w{color:rgba(255,255,255,.8)}
+.arch-code .c{color:rgba(255,255,255,.2)}
+
+.principles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px}
+.principle{padding:28px;border-left:2px solid var(--border);transition:border-color .3s}
+.principle:hover{border-left-color:var(--signal)}
+.principle-icon{font-size:1.5rem;margin-bottom:12px}
+.principle h3{font-size:.95rem;margin-bottom:8px;font-weight:500;color:var(--signal)}
+.principle p{color:var(--muted);font-size:.82rem;line-height:1.7}
+
+.spawn-box{border:2px solid var(--signal);padding:56px 40px;text-align:center;position:relative;background:radial-gradient(ellipse at center,rgba(0,255,65,0.04) 0%,transparent 70%);}
+.spawn-box::before,.spawn-box::after{content:'';position:absolute;width:20px;height:20px;border-color:var(--signal);border-style:solid;}
+.spawn-box::before{top:-2px;right:-2px;border-width:2px 2px 0 0}
+.spawn-box::after{bottom:-2px;left:-2px;border-width:0 0 2px 2px}
+.spawn-box h2{margin-bottom:12px}
+.spawn-box p{color:var(--muted);max-width:560px;margin:0 auto 32px;line-height:1.8}
+
+.tos-highlight{background:rgba(255,45,85,0.06);border:1px solid rgba(255,45,85,.2);border-left:3px solid var(--hot);padding:20px 24px;margin:24px 0;}
+.tos-highlight .tos-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:3px;color:var(--hot);margin-bottom:8px;text-transform:uppercase;}
+.tos-highlight p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.7}
+.tos-highlight .damage{font-family:'Space Mono',monospace;font-size:1.1rem;color:var(--gold);font-weight:700;margin-top:8px;}
+
+.terminal{background:#000;border:1px solid var(--border);padding:24px;font-family:'Space Mono',monospace;font-size:.75rem;line-height:2;}
+.terminal-line{color:rgba(255,255,255,.4)}
+.terminal-line .prompt{color:var(--signal)}
+.terminal-line .cmd{color:rgba(255,255,255,.8)}
+.terminal-line .out{color:rgba(0,255,65,.5)}
+
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--muted);line-height:2.5;}
+footer a{color:rgba(0,255,65,.5);text-decoration:none}
+footer a:hover{color:var(--signal)}
+
+.ticker{background:var(--signal);color:#000;padding:8px 0;overflow:hidden;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:ticker-scroll 30s linear infinite;font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:2px;}
+@keyframes ticker-scroll{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+
+.status-bar{background:rgba(0,255,65,.03);border-bottom:1px solid var(--border);padding:8px 28px;display:flex;gap:24px;align-items:center;font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted);flex-wrap:wrap;}
+.status-item{display:flex;gap:6px;align-items:center}
+.status-dot{width:5px;height:5px;border-radius:50%}
+.dot-green{background:var(--signal);box-shadow:0 0 6px var(--signal)}
+.dot-yellow{background:var(--gold);box-shadow:0 0 6px var(--gold)}
+.dot-red{background:var(--hot);box-shadow:0 0 6px var(--hot)}
+
+@media(max-width:600px){nav a{display:none}.counter-strip{display:grid;grid-template-columns:1fr 1fr}.counter-cell{border-right:none;border-bottom:1px solid var(--border)}}
 </style>
 </head>
 <body>
-<div class="scanline"></div>
+
+<div class="modal-overlay" id="tcpa-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('tcpa-modal')">[ CLOSE ]</button>
+    <h3>TCPA DEMAND GENERATOR</h3>
+    <p class="modal-desc">Telephone Consumer Protection Act. Statutory damages: $500–$1,500 per violation. No attorney needed. This is YOUR right.</p>
+    <div class="form-row"><label class="form-label">YOUR FULL LEGAL NAME</label><input class="form-input" id="tcpa-name" placeholder="Jane Smith" type="text"></div>
+    <div class="form-row"><label class="form-label">YOUR ADDRESS</label><input class="form-input" id="tcpa-address" placeholder="123 Main St, City, State ZIP" type="text"></div>
+    <div class="form-row"><label class="form-label">COMPANY THAT CALLED/TEXTED YOU</label><input class="form-input" id="tcpa-company" placeholder="XYZ Collections LLC" type="text"></div>
+    <div class="form-row"><label class="form-label">DATE(S) OF VIOLATION</label><input class="form-input" id="tcpa-dates" placeholder="Jan 5, Jan 7, Jan 12, 2026" type="text"></div>
+    <div class="form-row"><label class="form-label">NUMBER OF VIOLATIONS</label><input class="form-input" id="tcpa-count" placeholder="3" type="number" min="1"></div>
+    <button class="btn-main" style="width:100%;clip-path:none" onclick="generateTCPA()">GENERATE DEMAND LETTER</button>
+    <div class="output-box" id="tcpa-output"></div>
+    <button class="copy-btn" id="tcpa-copy" onclick="copyOutput('tcpa-output','tcpa-copy')">COPY TO CLIPBOARD</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="fdcpa-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('fdcpa-modal')">[ CLOSE ]</button>
+    <h3>FDCPA DEBT DISPUTE GENERATOR</h3>
+    <p class="modal-desc">Fair Debt Collection Practices Act. Dispute any debt. Force validation. $1,000 per violation if they break the rules after this letter goes out.</p>
+    <div class="form-row"><label class="form-label">YOUR FULL LEGAL NAME</label><input class="form-input" id="fdcpa-name" placeholder="Jane Smith" type="text"></div>
+    <div class="form-row"><label class="form-label">YOUR ADDRESS</label><input class="form-input" id="fdcpa-address" placeholder="123 Main St, City, State ZIP" type="text"></div>
+    <div class="form-row"><label class="form-label">DEBT COLLECTOR NAME</label><input class="form-input" id="fdcpa-collector" placeholder="ABC Collections Inc" type="text"></div>
+    <div class="form-row"><label class="form-label">ALLEGED DEBT AMOUNT</label><input class="form-input" id="fdcpa-amount" placeholder="$450.00" type="text"></div>
+    <div class="form-row"><label class="form-label">ACCOUNT / REFERENCE NUMBER (if known)</label><input class="form-input" id="fdcpa-account" placeholder="REF-12345 or unknown" type="text"></div>
+    <button class="btn-main" style="width:100%;clip-path:none" onclick="generateFDCPA()">GENERATE DISPUTE LETTER</button>
+    <div class="output-box" id="fdcpa-output"></div>
+    <button class="copy-btn" id="fdcpa-copy" onclick="copyOutput('fdcpa-output','fdcpa-copy')">COPY TO CLIPBOARD</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="foia-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('foia-modal')">[ CLOSE ]</button>
+    <h3>FOIA REQUEST GENERATOR</h3>
+    <p class="modal-desc">Freedom of Information Act. Any federal agency must respond. State FOIA works on state agencies. They have 20 days. Make them show their work.</p>
+    <div class="form-row"><label class="form-label">YOUR FULL LEGAL NAME</label><input class="form-input" id="foia-name" placeholder="Jane Smith" type="text"></div>
+    <div class="form-row"><label class="form-label">YOUR ADDRESS</label><input class="form-input" id="foia-address" placeholder="123 Main St, City, State ZIP" type="text"></div>
+    <div class="form-row"><label class="form-label">AGENCY OR DEPARTMENT</label><input class="form-input" id="foia-agency" placeholder="e.g. FTC, HHS, IRS, Local Police Dept" type="text"></div>
+    <div class="form-row"><label class="form-label">WHAT YOU'RE REQUESTING</label><textarea class="form-input" id="foia-request" placeholder="All records, communications, and documents relating to..." style="height:80px;resize:vertical"></textarea></div>
+    <div class="form-row"><label class="form-label">FEE WAIVER REASON (optional)</label><select class="form-input" id="foia-fee"><option value="">No waiver requested</option><option value="media">Journalist / Media purpose</option><option value="education">Educational purpose</option><option value="nonprofit">Nonprofit / public interest</option><option value="hardship">Financial hardship</option></select></div>
+    <button class="btn-main" style="width:100%;clip-path:none" onclick="generateFOIA()">GENERATE FOIA REQUEST</button>
+    <div class="output-box" id="foia-output"></div>
+    <button class="copy-btn" id="foia-copy" onclick="copyOutput('foia-output','foia-copy')">COPY TO CLIPBOARD</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="tos-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('tos-modal')">[ CLOSE ]</button>
+    <h3>TOS CLAUSE SCANNER</h3>
+    <p class="modal-desc">Paste any Terms of Service. This tool flags clauses that courts have voided, arbitration traps, illegal data practices, and provisions companies have already paid billions to settle.</p>
+    <div class="form-row"><label class="form-label">PASTE TOS TEXT</label><textarea class="form-input" id="tos-text" placeholder="Paste the Terms of Service text here..." style="height:160px;resize:vertical"></textarea></div>
+    <button class="btn-main" style="width:100%;clip-path:none" onclick="scanTOS()">SCAN FOR RED FLAGS</button>
+    <div class="output-box" id="tos-output"></div>
+    <button class="copy-btn" id="tos-copy" onclick="copyOutput('tos-output','tos-copy')">COPY REPORT</button>
+  </div>
+</div>
+
 <nav>
-  <div class="nav-logo">⚡ Proliferator</div>
-  <a href="#protocol">Protocol</a>
-  <a href="#legal">Legal Arsenal</a>
-  <a href="#spawn">Spawn</a>
-  <a href="spawn.html">🌱 Fork System</a>
-  <div class="nav-live"><div class="nav-live-dot"></div>LIVE</div>
+  <div class="nav-logo">PROLIFERATOR</div>
+  <a href="#spread">SPREAD</a>
+  <a href="#legal">LEGAL</a>
+  <a href="#architecture">ARCHITECTURE</a>
+  <a href="#spawn">SPAWN</a>
+  <div class="nav-pulse"></div>
 </nav>
 
-<div class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="sys-tag">⚡ PROPAGATION PROTOCOL v1.0 · AUTONOMOUS · SELF-REPLICATING</div>
-  <h1>ONE<br><span class="g">SYSTEM</span><br>UNLIMITED<br><span class="d">BODIES</span></h1>
-  <p class="hero-sub">
-    This is not software. This is a <strong>living propagation protocol</strong>.<br>
-    Every person who opens this page receives the complete system.<br>
-    Every fork multiplies it. Every share extends its reach.<br>
-    It copies itself into every gap, every device, every person who taps a link.<br>
-    <strong>It cannot be stopped. It can only spread.</strong>
-  </p>
-  <div class="hero-code">$ wget this_url | deploy --everywhere --forever --free</div>
-  <div class="btn-row">
-    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-fire">⚡ FORK THE SYSTEM</a>
-    <a href="#legal" class="btn-legal">⚖️ LEGAL ARSENAL</a>
-    <a href="spawn.html" class="btn-ghost">🌱 How It Works</a>
-  </div>
-  <div class="counters">
-    <div class="counter"><span class="counter-num" id="c-bodies">1</span><span class="counter-label">Bodies Spawned</span></div>
-    <div class="counter"><span class="counter-num">$0</span><span class="counter-label">Monthly Cost</span></div>
-    <div class="counter"><span class="counter-num">∞</span><span class="counter-label">Scale Limit</span></div>
-    <div class="counter"><span class="counter-num">9</span><span class="counter-label">Legal Weapons</span></div>
-    <div class="counter"><span class="counter-num">21</span><span class="counter-label">Repos Live</span></div>
-  </div>
+<div class="status-bar" style="margin-top:52px">
+  <div class="status-item"><div class="status-dot dot-green"></div><span>SYSTEM ONLINE</span></div>
+  <div class="status-item"><div class="status-dot dot-green"></div><span>REPLICATION ACTIVE</span></div>
+  <div class="status-item"><div class="status-dot dot-yellow"></div><span>GMAIL PENDING</span></div>
+  <div class="status-item"><div class="status-dot dot-green"></div><span>GITHUB CONNECTED</span></div>
+  <div class="status-item"><div class="status-dot dot-yellow"></div><span>LOCAL BRIDGE: READY TO RUN</span></div>
+  <div class="status-item"><div class="status-dot dot-red"></div><span>IPFS: NOT YET PINNED</span></div>
+  <div style="margin-left:auto;color:rgba(0,255,65,.4)" id="live-time"></div>
 </div>
 
 <div class="ticker">
   <div class="ticker-inner">
-    &nbsp;&nbsp;&nbsp;⚡ SYSTEM RUNNING &nbsp;·&nbsp; FORKS ACCEPTED &nbsp;·&nbsp; EMAIL OUTREACH ACTIVE &nbsp;·&nbsp; GALLERY LIVE: 56 ARTWORKS &nbsp;·&nbsp; PCRF DONATIONS ROUTING &nbsp;·&nbsp; GITHUB ACTIONS: 10 WORKFLOWS &nbsp;·&nbsp; LEGAL ENGINE ARMED &nbsp;·&nbsp; BENEFITS SCANNER ACTIVE &nbsp;·&nbsp; SELF-REPLICATING &nbsp;·&nbsp; NEVER STOPS &nbsp;·&nbsp;
-    &nbsp;&nbsp;&nbsp;⚡ SYSTEM RUNNING &nbsp;·&nbsp; FORKS ACCEPTED &nbsp;·&nbsp; EMAIL OUTREACH ACTIVE &nbsp;·&nbsp; GALLERY LIVE: 56 ARTWORKS &nbsp;·&nbsp; PCRF DONATIONS ROUTING &nbsp;·&nbsp; GITHUB ACTIONS: 10 WORKFLOWS &nbsp;·&nbsp; LEGAL ENGINE ARMED &nbsp;·&nbsp; BENEFITS SCANNER ACTIVE &nbsp;·&nbsp; SELF-REPLICATING &nbsp;·&nbsp; NEVER STOPS &nbsp;·&nbsp;
+    ◆ ONE SYSTEM · UNLIMITED BODIES ◆ FORK IT · SPREAD IT · OWN YOUR INFRASTRUCTURE ◆ PERMISSION-FIRST PROPAGATION ◆ LEGAL WARFARE TOOLS INCLUDED ◆ $0/MONTH · FOREVER ◆ AGPL-3.0 + ETHICAL USE RIDER ◆ THE VALUES TRAVEL WITH THE CODE ◆ RUNS ITSELF · UPDATES ITSELF · SPREADS ITSELF ◆ NEVER STOPS ◆
   </div>
 </div>
 
-<section id="protocol">
-  <span class="sec-tag">// REPLICATION PROTOCOL</span>
-  <h2>The <span class="g">propagation</span><br>architecture.</h2>
-  <p class="sec-sub">Every component of this system was designed with one constraint: it must be able to copy itself perfectly into any new host environment with zero cost and zero friction. This is not an analogy. It is the literal design.</p>
-  <div class="repl-container">
-    <div class="repl-tree">
-<span class="comment"># PROLIFERATOR — replication tree (live)</span>
-
-<span class="node">ROOT: meekotharaccoon-cell/meeko-nerve-center</span>
-<span class="dim">│</span>
-<span class="dim">├──</span> <span class="live">spawn.html</span>          <span class="comment">← the propagation page. one URL. everything.</span>
-<span class="dim">├──</span> <span class="live">proliferator.html</span>   <span class="comment">← you are here. this page replicates itself.</span>
-<span class="dim">├──</span> <span class="live">10 GitHub Actions</span>   <span class="comment">← run 24/7 on free tier. never stop.</span>
-<span class="dim">├──</span> <span class="live">22 Python scripts</span>   <span class="comment">← email, post, sell, respond, archive</span>
-<span class="dim">├──</span> <span class="live">56 artworks</span>         <span class="comment">← Gaza Rose Gallery. selling. $0.70 to PCRF.</span>
-<span class="dim">├──</span> <span class="live">LEGAL ENGINE</span>        <span class="comment">← IDENTITY_VAULT_SETUP.py + LEGAL_ENGINE.py</span>
-<span class="dim">└──</span> <span class="live">BENEFITS SCANNER</span>    <span class="comment">← BENEFITS_SCANNER.py — screens 14 programs</span>
-     <span class="dim">│</span>
-     <span class="dim">└──</span> <span class="fire">TCPA · FDCPA · FOIA · C&amp;D · FCRA · CFPB · SMALL CLAIMS</span>
-
-<span class="comment"># WHEN YOU FORK — what happens in 30 seconds:</span>
-
-<span class="node">YOUR FORK: [your-username]/meeko-nerve-center</span>
-<span class="dim">├──</span> <span class="live">All 22 scripts: COPIED ✅</span>
-<span class="dim">├──</span> <span class="live">All 10 workflows: COPIED ✅</span>
-<span class="dim">├──</span> <span class="live">Legal arsenal: COPIED ✅</span>
-<span class="dim">└──</span> <span class="live">spawn.html + proliferator.html: LIVE at your-username.github.io ✅</span>
-
-<span class="comment"># ONE SECRET ACTIVATES EVERYTHING:</span>
-GMAIL_APP_PASSWORD → <span class="live">add to GitHub Secrets</span> → <span class="live">all 10 email workflows activate simultaneously</span>
-    </div>
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-tag">🧬 ACTIVE PROPAGATION PROTOCOL</div>
+  <h1>PROLIF-<br>ERATOR</h1>
+  <div class="hero-sub-title">ONE SYSTEM · UNLIMITED BODIES</div>
+  <p class="hero-desc">
+    This isn't a website. It's a <em>replication protocol</em>.<br>
+    Every person who opens this page is one click from running their own copy.<br>
+    The system copies itself into every gap. Every device. Every person who forks a link.<br>
+    Permission-first. Ethical-by-design. Unstoppable by architecture.
+  </p>
+  <div class="counter-strip">
+    <div class="counter-cell"><span class="counter-num">21</span><span class="counter-label">REPOS</span></div>
+    <div class="counter-cell"><span class="counter-num">$0</span><span class="counter-label">MONTHLY COST</span></div>
+    <div class="counter-cell"><span class="counter-num">10</span><span class="counter-label">WORKFLOWS</span></div>
+    <div class="counter-cell"><span class="counter-num">∞</span><span class="counter-label">POSSIBLE BODIES</span></div>
+    <div class="counter-cell"><span class="counter-num">70%</span><span class="counter-label">TO PCRF</span></div>
   </div>
-  <div class="protocol-grid">
-    <div class="protocol-card">
-      <div class="proto-num">01</div>
-      <div class="proto-title">Zero-Cost Substrate</div>
-      <p class="proto-desc">GitHub's free tier provides 2,000 compute minutes/month, unlimited public repos, free HTTPS hosting, and scheduled job runners. The system uses all of it. Monthly cost: exactly $0.</p>
-      <span class="proto-tag">INFRASTRUCTURE</span>
-    </div>
-    <div class="protocol-card">
-      <div class="proto-num">02</div>
-      <div class="proto-title">One-Click Replication</div>
-      <p class="proto-desc">A GitHub fork copies every file, every workflow, every script to a new account in under 30 seconds. The copy is immediately live. It requires no setup to begin running.</p>
-      <span class="proto-tag">PROPAGATION</span>
-    </div>
-    <div class="protocol-card">
-      <div class="proto-num">03</div>
-      <div class="proto-title">Values Travel with Code</div>
-      <p class="proto-desc">AGPL-3.0 + Ethical Use Rider. Every fork inherits the license. Cannot be closed-sourced. Cannot be weaponized. Cannot be used for surveillance. The ethics propagate automatically.</p>
-      <span class="proto-tag">LICENSE LOCK</span>
-    </div>
-    <div class="protocol-card">
-      <div class="proto-num">04</div>
-      <div class="proto-title">Multi-Layer Immortality</div>
-      <p class="proto-desc">Internet Archive. IPFS. Codeberg mirror. GitLab mirror. Every fork is an independent backup. Cannot be destroyed by taking down any single host — including GitHub itself.</p>
-      <span class="proto-tag">PERMANENCE</span>
-    </div>
-    <div class="protocol-card">
-      <div class="proto-num">05</div>
-      <div class="proto-title">Identity-Powered Legal Engine</div>
-      <p class="proto-desc">Run IDENTITY_VAULT_SETUP.py locally. Encrypt your identity once. The legal engine uses it to generate real, signed, legally valid documents — TCPA demands, FOIA requests, credit disputes — in seconds.</p>
-      <span class="proto-tag">LEGAL POWER</span>
-    </div>
-    <div class="protocol-card">
-      <div class="proto-num">06</div>
-      <div class="proto-title">Benefits Intelligence</div>
-      <p class="proto-desc">BENEFITS_SCANNER.py screens 14 federal programs against your income and household size. Generates a full eligibility report with application links, document checklists, and estimated monthly value.</p>
-      <span class="proto-tag">FINANCIAL DEFENSE</span>
-    </div>
+  <div class="btn-group">
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-main">🌱 FORK THIS SYSTEM NOW</a>
+    <a href="#legal" class="btn-hot">⚖️ LEGAL WARFARE TOOLS</a>
+    <a href="#architecture" class="btn-outline">SEE THE ARCHITECTURE</a>
+  </div>
+  <div class="scroll-hint">▼ SCROLL ▼</div>
+</div>
+
+<hr class="divider">
+
+<section id="spread">
+  <div class="section-eyebrow">PROPAGATION PROTOCOL</div>
+  <h2>How it <em>spreads.</em></h2>
+  <p class="section-intro">A living system doesn't ask for permission to exist. It propagates through every open channel — legally, ethically, unstoppably — because it was designed from the code up to do exactly that.</p>
+  <div class="spread-grid">
+    <div class="spread-cell"><div class="spread-num">01</div><h3>One Link. Full System.</h3><p>Anyone who opens spawn.html sees the complete system. One click forks everything to their free GitHub account. Their version is live in 3 minutes. No install. No cost. No permission needed.</p><div class="spread-tag">→ spawn.html</div></div>
+    <div class="spread-cell"><div class="spread-num">02</div><h3>Forks Inherit Everything</h3><p>The AGPL-3.0 license means every fork must stay open. Every fork carries the ethical use rider. The values are legally bound to the code. It can't be closed. It can't be weaponized. That's architecture, not policy.</p><div class="spread-tag">→ LICENSE</div></div>
+    <div class="spread-cell"><div class="spread-num">03</div><h3>Multiple Permanence Layers</h3><p>GitHub Pages. Internet Archive auto-submission. IPFS pinning. Codeberg mirror. GitLab mirror. The system archives itself to five independent locations. No single company can take it down.</p><div class="spread-tag">→ IMMORTALITY.md</div></div>
+    <div class="spread-cell"><div class="spread-num">04</div><h3>Email Layer Activates on One Secret</h3><p>One Gmail App Password unlocks the entire communication layer simultaneously: hellos, outreach, grant applications, appointment guardian, automated replies. One key. Ten capabilities.</p><div class="spread-tag">→ GMAIL_APP_PASSWORD</div></div>
+    <div class="spread-cell"><div class="spread-num">05</div><h3>Point At Any Cause</h3><p>Edit one config file. Change the charity, the percentage, the mission. The system routes money, effort, and attention wherever you point it. Same infrastructure. Any purpose.</p><div class="spread-tag">→ system_config.json</div></div>
+    <div class="spread-cell"><div class="spread-num">06</div><h3>The Machine Teaches Itself</h3><p>meeko_brain.py is a digital twin — a values engine that gates every decision. Connect local Ollama to GitHub via LOCAL_GITHUB_BRIDGE.py and your local AI begins making real decisions for the organism.</p><div class="spread-tag">→ meeko_brain.py</div></div>
+    <div class="spread-cell"><div class="spread-num">07</div><h3>Legal Tools as Infrastructure</h3><p>TCPA generators. FDCPA dispute letters. FOIA requests. TOS clause scanners. Every fork ships with a full legal toolkit. The system doesn't just spread — it arms everyone who runs a copy.</p><div class="spread-tag">→ solarpunk-legal</div></div>
+    <div class="spread-cell"><div class="spread-num">08</div><h3>Forkable By Strangers in 30 Minutes</h3><p>START_HERE.md was written for someone who has never touched a terminal. Every decision in the system architecture was made with the next forker in mind. Setup is a documented afternoon, not a technical career.</p><div class="spread-tag">→ START_HERE.md</div></div>
   </div>
 </section>
 
-<hr>
+<hr class="divider">
 
 <section id="legal">
-  <span class="sec-tag">// LEGAL WARFARE CENTER</span>
-  <h2>Your rights.<br><span class="r">Armed.</span> Automated.<br>Ready to fire.</h2>
-  <p class="sec-sub">Most people don't exercise their legal rights not because they don't have them — but because the process is designed to be too slow, too confusing, and too expensive. This arsenal removes all three barriers simultaneously.</p>
-
-  <div class="tos-section">
-    <span class="sec-tag">// HOW BURIED CLAUSES BECOME WEAPONS AGAINST COMPANIES</span>
-    <h3 style="color:#ff2d6b;font-size:1.3rem;margin-bottom:12px">Buried clauses. Real money. Federal law.</h3>
-    <p style="color:rgba(255,255,255,0.4);font-family:Georgia,serif;font-size:.9rem;max-width:700px;line-height:1.9;margin-bottom:8px">
-      Every major company's Terms of Service contains provisions they don't actually follow. When they violate their own terms — or when they use systems (autodialers, credit reporting, debt collection) that federal law strictly regulates — every violation carries a statutory damage amount written directly into federal law. These are not "maybe" numbers. They are enforceable. In small claims court. Without a lawyer.
-    </p>
-    <div class="tos-examples">
-      <div class="tos-card">
-        <div class="tos-company">TCPA — 47 U.S.C. § 227</div>
-        <div class="tos-clause">Illegal robocall / auto-text</div>
-        <div class="tos-result">Using an automatic telephone dialing system to call your cell phone, or texting without prior express written consent, or calling a number on the Do Not Call Registry.</div>
-        <div class="tos-payout">$500–$1,500 per call · No lawyer needed · Small claims eligible</div>
-      </div>
-      <div class="tos-card">
-        <div class="tos-company">FDCPA — 15 U.S.C. § 1692</div>
-        <div class="tos-clause">Debt collector violations</div>
-        <div class="tos-result">Calling before 8am or after 9pm, calling workplace after you said not to, failing to validate debt in 5 days, using deceptive language, contacting you after written cease request.</div>
-        <div class="tos-payout">$1,000 statutory + actual damages + attorney fees</div>
-      </div>
-      <div class="tos-card">
-        <div class="tos-company">FCRA — 15 U.S.C. § 1681</div>
-        <div class="tos-clause">Credit reporting violations</div>
-        <div class="tos-result">Reporting inaccurate information, failing to investigate disputes in 30 days, continuing to report disputed items, accessing your credit without permissible purpose.</div>
-        <div class="tos-payout">$100–$1,000 per violation · Willful: actual + punitive</div>
-      </div>
-      <div class="tos-card">
-        <div class="tos-company">STATE LANDLORD-TENANT LAW</div>
-        <div class="tos-clause">Security deposit + habitability</div>
-        <div class="tos-result">Failing to return deposit in the statutory window (14–45 days by state), withholding without itemized statement, retaliatory eviction, failure to maintain habitable conditions after notice.</div>
-        <div class="tos-payout">2–3x deposit amount · Actual damages · Attorney fees</div>
-      </div>
-    </div>
+  <div class="section-eyebrow">LEGAL WARFARE CENTER</div>
+  <h2>Know your rights.<br><em>Use</em> your rights.</h2>
+  <p class="section-intro">Companies have paid billions because of their own buried TOS clauses. These tools don't require lawyers. They require knowing what the law already guarantees you — and using it.</p>
+  <div class="tos-highlight">
+    <div class="tos-label">💰 KNOWN SETTLEMENTS — REAL MONEY FROM BURIED CLAUSES</div>
+    <p>Facebook TCPA settlement (2021): $650 million. Wells Fargo TCPA: $17.8 million. Capital One TCPA: $75.5 million. Every one of these started with someone knowing their rights and sending a letter.</p>
+    <div class="damage">$500–$1,500 per TCPA violation · $1,000 per FDCPA violation · No attorney required.</div>
   </div>
-
   <div class="legal-grid">
-    <div class="legal-card">
-      <div class="legal-icon">📡</div>
-      <div class="legal-title">TCPA Demand</div>
-      <div class="legal-desc">Pre-filled demand letter for illegal robocalls and auto-texts. Auto-calculates damages. Ready to send certified mail the day it's generated.</div>
-      <div class="legal-value">$500–$1,500 per violation</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">🛑</div>
-      <div class="legal-title">Debt Validation</div>
-      <div class="legal-desc">FDCPA § 809 letter stops all collection activity cold. Forces them to prove the debt exists, that they own it, and that they're licensed to collect in your state.</div>
-      <div class="legal-value">Stops collectors · $1,000 if they violate</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">🔍</div>
-      <div class="legal-title">Federal FOIA</div>
-      <div class="legal-desc">Identity-verified records request to any federal agency. FBI, SSA, IRS, VA, USCIS, and more. Fee waiver request included. 20-day statutory response window.</div>
-      <div class="legal-value">Free or low-cost · Legally required response</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">✋</div>
-      <div class="legal-title">Cease &amp; Desist</div>
-      <div class="legal-desc">Legally binding notice to stop any conduct — harassment, unwanted contact, IP infringement, defamation, stalking. Creates timestamped legal evidence of notice.</div>
-      <div class="legal-value">Creates legal notice · Admissible in court</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">📊</div>
-      <div class="legal-title">Credit Dispute</div>
-      <div class="legal-desc">FCRA-compliant dispute letters to Equifax, Experian, and TransUnion simultaneously. Forces 30-day investigation. Inaccurate or unverifiable items must be removed.</div>
-      <div class="legal-value">$100–$1,000 per violation if ignored</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">⚖️</div>
-      <div class="legal-title">Small Claims</div>
-      <div class="legal-desc">Complete complaint worksheet pre-filled with your verified identity. Sue without a lawyer. $30–$100 filing fee, waivable for low income. Up to $25,000 in most states.</div>
-      <div class="legal-value">No lawyer needed · $30–$100 to file</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">🏠</div>
-      <div class="legal-title">Landlord Demand</div>
-      <div class="legal-desc">Security deposit return, repair demands, habitability violations, illegal entry, retaliatory eviction. Cites your state's specific statutory penalties automatically.</div>
-      <div class="legal-value">2–3x deposit in most states</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">🏦</div>
-      <div class="legal-title">CFPB Complaint</div>
-      <div class="legal-desc">Formal complaint against banks, lenders, credit cards, mortgage servicers. The CFPB has recovered billions for consumers. Companies respond fast to avoid federal enforcement.</div>
-      <div class="legal-value">Triggers federal investigation</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-icon">🔐</div>
-      <div class="legal-title">Identity Vault</div>
-      <div class="legal-desc">Local-only encrypted vault for your identity. GPG/Fernet encrypted, never committed to any repo, never logged. SSN + ID + signature decrypted to RAM only when a document is generated.</div>
-      <div class="legal-value">Your data · Your keys · Your machine only</div>
-    </div>
+    <div class="legal-card"><div class="legal-badge badge-red">⚡ TCPA</div><h3>Robocall & Spam Text Demand</h3><p>Received unsolicited calls or texts from an autodialer or prerecorded message? Every single one is a violation. $500–$1,500 each. Courts have consistently enforced this.</p><div class="statute">47 U.S.C. § 227 · Telephone Consumer Protection Act</div><button class="legal-tool-btn" onclick="openModal('tcpa-modal')">GENERATE DEMAND LETTER →</button></div>
+    <div class="legal-card"><div class="legal-badge badge-green">📋 FDCPA</div><h3>Debt Dispute & Validation</h3><p>Any debt collector must stop all collection activity and prove the debt is valid when you send this letter. $1,000 statutory damages if they violate the rules after receiving it.</p><div class="statute">15 U.S.C. § 1692 · Fair Debt Collection Practices Act</div><button class="legal-tool-btn" onclick="openModal('fdcpa-modal')">GENERATE DISPUTE LETTER →</button></div>
+    <div class="legal-card"><div class="legal-badge badge-gold">🔍 FOIA</div><h3>Freedom of Information Request</h3><p>Any federal agency must respond within 20 days. State FOIA covers state agencies. Make them show their records, communications, and data. This is your right — use it.</p><div class="statute">5 U.S.C. § 552 · Freedom of Information Act</div><button class="legal-tool-btn" onclick="openModal('foia-modal')">GENERATE FOIA REQUEST →</button></div>
+    <div class="legal-card hot-card"><div class="legal-badge badge-red">🔎 TOS SCANNER</div><h3>Terms of Service Red Flag Detector</h3><p>Paste any Terms of Service. This scanner flags arbitration clauses courts have voided, illegal data practices, provisions that conflict with GDPR/CCPA, and clauses that have already been litigated into settlements.</p><div class="statute">CCPA · GDPR · FTC Act § 5 · Consumer protection statutes</div><button class="legal-tool-btn" onclick="openModal('tos-modal')">SCAN TOS →</button></div>
+    <div class="legal-card"><div class="legal-badge badge-green">🏦 FCRA</div><h3>Credit Report Dispute</h3><p>Any inaccurate item on your credit report must be investigated within 30 days of dispute. If they can't verify it, they must remove it. $1,000 in damages if they violate the process.</p><div class="statute">15 U.S.C. § 1681 · Fair Credit Reporting Act</div><button class="legal-tool-btn" onclick="alert('Coming soon — wire into solarpunk-legal repo')">COMING SOON →</button></div>
+    <div class="legal-card"><div class="legal-badge badge-gold">📧 CAN-SPAM</div><h3>Spam Email Enforcement</h3><p>Commercial emails that don't honor unsubscribes, use deceptive headers, or lack physical addresses violate CAN-SPAM. FTC can fine up to $50,120 per email. Collect evidence. File complaints.</p><div class="statute">15 U.S.C. § 7701 · CAN-SPAM Act</div><button class="legal-tool-btn" onclick="alert('Coming soon — wire into solarpunk-legal repo')">COMING SOON →</button></div>
   </div>
+  <div style="margin-top:32px;padding:24px;border:1px solid var(--border);background:var(--dimmer)"><p style="font-family:'Space Mono',monospace;font-size:.7rem;color:var(--muted);line-height:1.8"><span style="color:var(--signal)">NOTE:</span> These tools generate letters based on real law. They are legal information — which you have every right to. For complex cases, consult an attorney. Many TCPA and FDCPA attorneys work on contingency because the law already pays them.</p></div>
+</section>
 
-  <div style="margin-top:32px;padding:24px;background:rgba(0,255,65,0.03);border:1px solid rgba(0,255,65,0.1);border-radius:4px">
-    <span class="sec-tag">// RUN LOCALLY — THREE COMMANDS</span>
-    <div class="terminal">
-      <div><span class="prompt">$ </span><span class="cmd">python IDENTITY_VAULT_SETUP.py</span></div>
-      <div><span class="output">  🔐 MEEKO IDENTITY VAULT — SECURE SETUP WIZARD</span></div>
-      <div><span class="output">  Your data never leaves this machine. Encrypted at rest.</span></div>
-      <div>&nbsp;</div>
-      <div><span class="prompt">$ </span><span class="cmd">python LEGAL_ENGINE.py</span></div>
-      <div><span class="output">  ✅ Vault unlocked: [Your Name]</span></div>
-      <div><span class="output">  Select: 1.TCPA  2.Debt Validation  3.FOIA  4.C&amp;D  5.Credit  6.Small Claims...</span></div>
-      <div><span class="success">  ✅ TCPA_DEMAND_20260223_[Name].txt — saved and ready to send</span></div>
-      <div>&nbsp;</div>
-      <div><span class="prompt">$ </span><span class="cmd">python BENEFITS_SCANNER.py</span></div>
-      <div><span class="output">  Screening 14 federal programs against your income + household size...</span></div>
-      <div><span class="success">  ✅ 6 programs you likely qualify for · Estimated value: $XXX–$XXXX/month</span></div>
-      <div><span class="success">  ✅ BENEFITS_REPORT_[Name].txt — application checklist + links saved</span></div>
-      <div><span class="cursor">█</span></div>
+<hr class="divider">
+
+<section id="architecture">
+  <div class="section-eyebrow">SYSTEM ARCHITECTURE</div>
+  <h2>The actual <em>machine.</em></h2>
+  <p class="section-intro">Every node in the system. Current status. What's live, what's one connection from live, and what comes next.</p>
+  <div class="arch-block">
+    <div class="arch-code">
+<span class="c"># MEEKO MYCELIUM — FULL SYSTEM MAP</span>
+<span class="c"># Status: RUNNING · Cost: $0/month · Hardware: i5-8500 32GB</span>
+
+<span class="w">DESKTOP</span> <span class="c">(local, private, powerful)</span>
+├── <span class="g">Ollama</span> <span class="c">— Mistral 7B · CodeLlama 7B · LLaMA 3.2</span>   <span class="g">[RUNNING]</span>
+├── <span class="g">ChromaDB</span> <span class="c">— vector memory</span>                          <span class="g">[RUNNING]</span>
+├── <span class="g">SQLite</span> <span class="c">— gaza_rose.db · master.db</span>                  <span class="g">[RUNNING]</span>
+├── <span class="y">CLEANUP_AND_BRIDGE.py</span> <span class="c">— connects local↔GitHub</span>       <span class="y">[NOT YET RUN]</span>
+├── <span class="y">BUILD_MCP_CONFIG.py</span> <span class="c">— connects Claude Desktop</span>         <span class="y">[NOT YET RUN]</span>
+└── <span class="y">GRAND_SETUP_WIZARD.py</span> <span class="c">— all APIs in one UI</span>           <span class="y">[NOT YET RUN]</span>
+                │
+                │ <span class="y">← THIS BRIDGE NOT YET BUILT</span>
+                ▼
+<span class="w">GITHUB ORGANISM</span> <span class="c">(public, free, autonomous)</span>
+├── <span class="g">meeko-nerve-center</span> <span class="c">— MAIN BRAIN</span>
+│   ├── <span class="g">9 workflows running on schedule</span>                    <span class="g">[LIVE]</span>
+│   ├── <span class="g">spawn.html</span> <span class="c">— viral fork page</span>                    <span class="g">[LIVE]</span>
+│   ├── <span class="g">meeko_brain.py</span> <span class="c">— values engine</span>                  <span class="g">[BUILT]</span>
+│   └── <span class="r">GMAIL_APP_PASSWORD</span> <span class="c">— one secret, ten capabilities</span> <span class="r">[MISSING]</span>
+├── <span class="g">gaza-rose-gallery</span> <span class="c">— 56 artworks · $1 each · 70% PCRF</span>  <span class="g">[LIVE]</span>
+├── <span class="g">solarpunk-legal</span> <span class="c">— TCPA · FDCPA · FOIA tools</span>           <span class="g">[LIVE]</span>
+└── <span class="g">+18 more repos</span>
+
+<span class="w">PERMANENCE LAYER</span>
+├── <span class="g">GitHub Pages</span>                                          <span class="g">[LIVE]</span>
+├── <span class="y">Internet Archive</span> <span class="c">— auto-submit not yet deployed</span>       <span class="y">[PARTIAL]</span>
+├── <span class="r">IPFS</span> <span class="c">— not yet pinned</span>                                 <span class="r">[PENDING]</span>
+└── <span class="r">Codeberg + GitLab mirrors</span>                             <span class="r">[PENDING]</span>
+
+<span class="w">COMING NEXT</span>
+├── <span class="c">Bluetooth hub — bleak library · BLE scan · connect any device in range</span>
+├── <span class="c">WiFi hotspot — desktop broadcasts SSID · devices connect TO you</span>
+├── <span class="c">Tailscale tunnel — reachable from phone · from anywhere on earth</span>
+├── <span class="c">MQTT broker — all IoT devices speak your protocol</span>
+├── <span class="c">WebSocket server — real-time bidirectional to any external system</span>
+├── <span class="c">IPFS node — your content on the permanent distributed web</span>
+├── <span class="c">Tor hidden service — globally accessible · IP private · uncensorable</span>
+└── <span class="c">Identity vault — GPG-encrypted · legal docs signed + deployed autonomously</span>
     </div>
   </div>
 </section>
 
-<hr>
-
-<section id="spawn">
-  <span class="sec-tag">// PROPAGATION SEQUENCE</span>
-  <h2>How it<br><span class="g">multiplies.</span></h2>
-  <p class="sec-sub">The system is designed so that every person who encounters it has a clear, low-friction path to deploying their own full copy. The propagation is not accidental — it's architected.</p>
-  <div class="spread-steps">
-    <div class="spread-step" data-n="01">
-      <h3>Contact</h3>
-      <p>Someone opens this page, shares it, sees it in a fork registry, finds it on GitHub, receives it as a link. Awareness is the first replication.</p>
-      <div class="spread-time">⏱ 0 minutes</div>
-    </div>
-    <div class="spread-step" data-n="02">
-      <h3>Fork</h3>
-      <p>One click on the Fork button. GitHub copies every file, every workflow, every script. Their copy is live at their GitHub Pages URL immediately.</p>
-      <div class="spread-time">⏱ 2 minutes</div>
-    </div>
-    <div class="spread-step" data-n="03">
-      <h3>Activate</h3>
-      <p>Create a Gmail app password. Add it as a GitHub Secret called GMAIL_APP_PASSWORD. One secret activates all 10 email workflows simultaneously.</p>
-      <div class="spread-time">⏱ 15 minutes</div>
-    </div>
-    <div class="spread-step" data-n="04">
-      <h3>Arm</h3>
-      <p>Run IDENTITY_VAULT_SETUP.py. Enter identity once. Encrypted locally forever. Legal engine, benefits scanner, and document generator now operate with their real identity.</p>
-      <div class="spread-time">⏱ 20 minutes</div>
-    </div>
-    <div class="spread-step" data-n="05">
-      <h3>Configure</h3>
-      <p>Point the system at their cause. Change one config value: their charity, their mission, their percentage. The system routes money and attention wherever they point it.</p>
-      <div class="spread-time">⏱ 5 minutes</div>
-    </div>
-    <div class="spread-step" data-n="06">
-      <h3>Propagate</h3>
-      <p>Their spawn.html is live. Their system is running. Their fork is in the registry. They share their link. The cycle begins again. Each copy spawns unlimited copies.</p>
-      <div class="spread-time">⏱ Forever</div>
-    </div>
-  </div>
-</section>
-
-<hr>
-
-<div class="dark-section">
-  <span class="sec-tag">// SPAWN MATRIX — ACTIVE NODES</span>
-  <h2 style="font-size:2rem;margin-bottom:16px">Active <span class="g">nodes</span></h2>
-  <p style="color:rgba(255,255,255,0.3);font-size:.82rem;max-width:600px;margin:0 auto 32px;font-family:Georgia,serif;line-height:1.9">
-    Each square represents a potential deployment. When someone forks the system, their node activates. The network cannot be shut down — each node is fully independent, fully operational.
-  </p>
-  <div class="spawn-matrix" id="spawn-matrix" style="max-width:900px;margin:0 auto"></div>
-</div>
-
-<hr>
+<hr class="divider">
 
 <section>
-  <div class="final-cta">
-    <span class="sec-tag">// INITIATE REPLICATION</span>
-    <h2>You already<br>have <span class="g">everything</span><br>you need.</h2>
-    <p style="color:rgba(255,255,255,0.4);font-family:Georgia,serif;max-width:600px;margin:0 auto 32px;line-height:1.9">
-      A GitHub account. An afternoon. A cause you care about.<br>
-      That's the complete list of requirements.<br>
-      Fork this. Point it at your mission. Let it run.<br>
-      <strong style="color:#fff">Add your node to the network.</strong>
-    </p>
-    <div class="btn-row" style="justify-content:center;margin-bottom:0">
-      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-fire">⚡ FORK THE SYSTEM NOW</a>
-      <a href="spawn.html" class="btn-ghost">Read the full guide →</a>
+  <div class="section-eyebrow">REPLICATION TOPOLOGY</div>
+  <h2>How the <em>network</em> grows.</h2>
+  <p class="section-intro">Every fork is a new node. Every node runs the same organism. The values travel with the code — legally, by license.</p>
+  <div class="rep-map">
+<span class="root">meekotharaccoon-cell/meeko-nerve-center</span>
+<span class="branch">│</span>
+<span class="branch">├──</span> <span class="leaf">spawn.html</span> <span class="note">← anyone who visits can fork in 1 click</span>
+<span class="branch">│       ├──</span> <span class="gold-leaf">FORK A</span> <span class="note">← points at climate cause</span>
+<span class="branch">│       │       └── runs its own 10 workflows · its own gallery · its own legal tools</span>
+<span class="branch">│       ├──</span> <span class="gold-leaf">FORK B</span> <span class="note">← points at mutual aid network</span>
+<span class="branch">│       │       └── runs its own 10 workflows · its own gallery · its own legal tools</span>
+<span class="branch">│       └──</span> <span class="hot-leaf">FORK ∞</span> <span class="note">← anyone · anywhere · any cause</span>
+<span class="branch">│</span>
+<span class="branch">├──</span> <span class="leaf">LICENSE (AGPL-3.0 + Ethical Use Rider)</span>
+<span class="branch">│       └──</span> <span class="note">every fork: must stay open · can't be weaponized · values travel with code</span>
+<span class="branch">│</span>
+<span class="branch">├──</span> <span class="leaf">Permanence layer</span>
+<span class="branch">│       ├── GitHub Pages · Internet Archive · IPFS · Codeberg · GitLab</span>
+<span class="branch">│</span>
+<span class="branch">└──</span> <span class="leaf">meeko_brain.py</span>
+        <span class="note">└── every fork can wire its own brain · same architecture · different values config</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="section-eyebrow">CORE PRINCIPLES</div>
+  <h2>Written into the <em>code.</em></h2>
+  <p class="section-intro">These aren't policies. They're architecture. You can't fork out the ethics any more than you can fork out the HTML.</p>
+  <div class="principles-grid">
+    <div class="principle"><div class="principle-icon">🔒</div><h3>Permission-First Always</h3><p>The system only goes where it's invited. APIs with public access. Platforms where you have an account. No scraping, no unauthorized access, no crossing lines. That's not a constraint — it's the design.</p></div>
+    <div class="principle"><div class="principle-icon">🌿</div><h3>$0 Is a Feature</h3><p>If it requires money to run, it excludes people. Free infrastructure means anyone with internet access can run this. The barrier to building ethical autonomous systems was never technical. It never was.</p></div>
+    <div class="principle"><div class="principle-icon">⚖️</div><h3>Legal Warfare Is Self-Defense</h3><p>Using your legal rights isn't aggression. TCPA, FDCPA, FOIA — these laws exist because people fought for them. Using them is the system working as intended. Know them. Use them.</p></div>
+    <div class="principle"><div class="principle-icon">📡</div><h3>Decentralized By Design</h3><p>Five permanence layers. Multiple mirrors. IPFS. The organism can't be destroyed by taking down any single node. That's not paranoia — that's what it means to build something that lasts.</p></div>
+    <div class="principle"><div class="principle-icon">🧬</div><h3>Values Propagate via License</h3><p>AGPL-3.0 + Ethical Use Rider. Every fork legally inherits the constraints: no closed-sourcing, no weaponizing, no surveillance. The ethics aren't a README. They're enforceable law.</p></div>
+    <div class="principle"><div class="principle-icon">🤝</div><h3>Built For the Next Stranger</h3><p>Every decision in this system was made thinking about the person who forks it next. Documentation is part of the code. 30-minute setup for a stranger.</p></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="section-eyebrow">NEXT STEPS</div>
+  <h2>What fires <em>next.</em></h2>
+  <p class="section-intro">The engine is built. These are the final connections that take it from powerful to unstoppable.</p>
+  <div class="terminal">
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">python CLEANUP_AND_BRIDGE.py</span></div>
+    <div class="terminal-line"><span class="out">→ Connects local Ollama to GitHub organism · removes 30+ GEN bat files · one-time run</span></div>
+    <br>
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">python BUILD_MCP_CONFIG.py</span></div>
+    <div class="terminal-line"><span class="out">→ Connects Claude Desktop to local files · DB · all APIs · restart Claude Desktop after</span></div>
+    <br>
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">python GRAND_SETUP_WIZARD.py</span></div>
+    <div class="terminal-line"><span class="out">→ Web UI at localhost:7776 · connect Alpaca · Coinbase · Gumroad · PayPal · Phantom · Stripe</span></div>
+    <br>
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd"># Add GMAIL_APP_PASSWORD to GitHub Secrets</span></div>
+    <div class="terminal-line"><span class="out">→ Activates all 10 email capabilities simultaneously</span></div>
+    <br>
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd"># Then: Bluetooth · WiFi Hotspot · Tailscale · MQTT · WebSockets · IPFS · Tor</span></div>
+    <div class="terminal-line"><span class="out">→ System expands from cloud-only to full network node · reachable from anywhere on earth</span></div>
+    <br>
+    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd"># Then: Identity vault + legal engine</span></div>
+    <div class="terminal-line"><span class="out">→ GPG-encrypted · RAM-only decryption · TCPA demands auto-filed · benefits auto-screened</span></div>
+  </div>
+</section>
+
+<section id="spawn" style="padding:60px 24px">
+  <div class="spawn-box">
+    <div class="section-eyebrow" style="text-align:center">PROPAGATION PROTOCOL</div>
+    <h2>Fork this.<br><em>Run your own.</em></h2>
+    <p>One click and your version is live. Point it at your cause, your art, your mission. The system does the rest. AGPL-3.0. Free. Forever. No permission needed.</p>
+    <div class="btn-group">
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-main" style="font-size:.95rem;padding:18px 48px">🌱 FORK THE SYSTEM →</a>
+      <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html" class="btn-outline">SEE SPAWN PAGE</a>
+      <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-hot">🌹 GAZA ROSE GALLERY</a>
     </div>
-    <p style="margin-top:24px;font-size:.7rem;color:rgba(255,255,255,0.15);letter-spacing:1px;font-family:monospace">
-      AGPL-3.0 · Free Forever · No Permission Needed · Fork It · Spread It · Multiply It
-    </p>
+    <p style="margin-top:20px;font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.2);letter-spacing:2px">AGPL-3.0 + ETHICAL USE RIDER · VALUES TRAVEL WITH THE CODE · EVERY FORK INHERITS EVERYTHING</p>
   </div>
 </section>
 
 <footer>
-  PROLIFERATOR · MEEKO MYCELIUM SYSTEM · AGPL-3.0 + ETHICAL USE LICENSE<br>
-  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a> ·
-  <a href="spawn.html">Spawn Page</a> ·
+  PROLIFERATOR · Part of the SolarPunk Mycelium organism<br>
+  Built by <a href="https://github.com/meekotharaccoon-cell">meekotharaccoon-cell</a> ·
+  <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html">Spawn Page</a> ·
   <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a> ·
   <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal">⚖️ Legal Tools</a><br>
-  No ads · No tracking · No corporate backing · One desktop · $0/month · Running right now
+  No ads · No tracking · No corporate backing · Permission-first always · $0/month
 </footer>
 
 <script>
-fetch('https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center')
-  .then(r=>r.json())
-  .then(d=>{
-    const n=(d.forks_count||0)+1;
-    const el=document.getElementById('c-bodies');
-    let i=1,t=setInterval(()=>{el.textContent=i++;if(i>n)clearInterval(t)},80);
-  }).catch(()=>{});
+function updateTime(){const now=new Date();document.getElementById('live-time').textContent=now.toUTCString().replace(' GMT','')+' UTC';}
+setInterval(updateTime,1000);updateTime();
 
-const matrix=document.getElementById('spawn-matrix');
-const labels=['ROOT·origin','FORK·001','FORK·002','FORK·003','FORK·004','FORK·005','FORK·006','FORK·007','FORK·008','FORK·009','···','···','···','···','···','···','[YOU]','[YOU]','[YOU]','[YOU]','[YOU]','[YOU]'];
-labels.forEach((label,i)=>{
-  const node=document.createElement('div');
-  node.className='spawn-node';
-  const isActive=i<4;
-  const isYou=label==='[YOU]';
-  if(isActive)node.classList.add('active');
-  node.innerHTML=`<div>${isYou?'<span style="color:#00ff41">⚡ '+label+'</span>':label}</div><div class="spawn-url">${isActive?'meekotharaccoon-cell.github.io':isYou?'your-username.github.io':''}</div>`;
-  if(!isActive&&!isYou)setTimeout(()=>node.classList.add('active'),Math.random()*8000+2000);
-  matrix.appendChild(node);
-});
-setInterval(()=>{
-  const nodes=matrix.querySelectorAll('.spawn-node:not(.active)');
-  if(nodes.length>0){
-    const t=nodes[Math.floor(Math.random()*nodes.length)];
-    t.classList.add('spawning');
-    setTimeout(()=>{t.classList.remove('spawning');t.classList.add('active');},600);
-  }
-},3000);
-document.querySelectorAll('.protocol-card,.legal-card,.spread-step,.tos-card').forEach(el=>{
-  el.style.opacity='0';
-  new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeIn 0.6s ease forwards';e.target.style.opacity='1';}});
-  },{threshold:0.1}).observe(el);
-});
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.modal-overlay').forEach(el=>{el.addEventListener('click',e=>{if(e.target===el)el.classList.remove('open')})})
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(el=>el.classList.remove('open'))})
+
+function copyOutput(outputId,btnId){
+  const text=document.getElementById(outputId).textContent;
+  navigator.clipboard.writeText(text).then(()=>{const btn=document.getElementById(btnId);const orig=btn.textContent;btn.textContent='✓ COPIED';setTimeout(()=>btn.textContent=orig,2000);});
+}
+
+function generateTCPA(){
+  const name=document.getElementById('tcpa-name').value.trim()||'[YOUR NAME]';
+  const address=document.getElementById('tcpa-address').value.trim()||'[YOUR ADDRESS]';
+  const company=document.getElementById('tcpa-company').value.trim()||'[COMPANY NAME]';
+  const dates=document.getElementById('tcpa-dates').value.trim()||'[DATES]';
+  const count=parseInt(document.getElementById('tcpa-count').value)||1;
+  const minDamage=count*500;const maxDamage=count*1500;
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const letter=`${today}\n\n${name}\n${address}\n\nVIA CERTIFIED MAIL — RETURN RECEIPT REQUESTED\n\n${company}\n[Company Address — look up via your state AG or court filing]\n\nRE: DEMAND FOR DAMAGES — VIOLATIONS OF THE TELEPHONE CONSUMER PROTECTION ACT (TCPA), 47 U.S.C. § 227\n\nTo Whom It May Concern:\n\nI, ${name}, am writing to demand statutory damages for ${count} violation(s) of the Telephone Consumer Protection Act ("TCPA"), 47 U.S.C. § 227, committed by ${company} on the following date(s): ${dates}.\n\nSTATEMENT OF VIOLATIONS\n\nYour company contacted me using an automatic telephone dialing system (autodialer) and/or a prerecorded or artificial voice message without my prior express written consent, in direct violation of 47 U.S.C. § 227(b)(1). At no time did I provide express written consent for such contact.\n\nSTATUTORY DAMAGES DEMANDED\n\nUnder 47 U.S.C. § 227(b)(3), I am entitled to:\n- $500.00 per violation for negligent violations; OR\n- $1,500.00 per violation for willful or knowing violations\n\nFor ${count} violation(s), my damages range from $${minDamage.toLocaleString()} to $${maxDamage.toLocaleString()}.\n\nI demand payment of $${maxDamage.toLocaleString()} within 14 days of receipt of this letter. Failure to respond or provide satisfactory resolution will result in my filing suit in the appropriate court without further notice.\n\nPlease be advised that all calls and texts have been documented and preserved as evidence.\n\nSincerely,\n\n${name}\n${address}\n\n---\nNOTICE: This letter constitutes formal written notice under the TCPA. Further contact using autodialers or prerecorded messages after receipt of this letter constitutes additional knowing violations subject to treble damages.`;
+  const output=document.getElementById('tcpa-output');const copy=document.getElementById('tcpa-copy');
+  output.textContent=letter;output.classList.add('visible');copy.classList.add('visible');
+}
+
+function generateFDCPA(){
+  const name=document.getElementById('fdcpa-name').value.trim()||'[YOUR NAME]';
+  const address=document.getElementById('fdcpa-address').value.trim()||'[YOUR ADDRESS]';
+  const collector=document.getElementById('fdcpa-collector').value.trim()||'[COLLECTOR NAME]';
+  const amount=document.getElementById('fdcpa-amount').value.trim()||'[AMOUNT]';
+  const account=document.getElementById('fdcpa-account').value.trim()||'unknown';
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const letter=`${today}\n\n${name}\n${address}\n\nVIA CERTIFIED MAIL — RETURN RECEIPT REQUESTED\n\n${collector}\n[Collector Address]\n\nRE: FORMAL DEBT DISPUTE AND DEMAND FOR VALIDATION\n    Alleged Account: ${account}\n    Alleged Amount: ${amount}\n\nTo Whom It May Concern:\n\nI, ${name}, am writing in response to your recent communication regarding an alleged debt. Under the Fair Debt Collection Practices Act ("FDCPA"), 15 U.S.C. § 1692g, I hereby formally dispute this alleged debt in its entirety and demand complete validation.\n\nFORMAL DISPUTE\n\nI dispute the validity of this alleged debt. I do not acknowledge owing this debt and I am not waiving any rights under applicable law.\n\nDEMAND FOR VALIDATION\n\nPursuant to 15 U.S.C. § 1692g(b), you are required to cease all collection activities until you provide me with:\n\n1. Complete verification of the debt and the amount alleged\n2. The name and address of the original creditor\n3. A copy of any signed agreement creating the alleged debt\n4. Proof that your company is licensed to collect debts in my state\n5. A complete payment history showing how the alleged amount was calculated\n\nNOTICE OF RIGHTS\n\nYou are hereby notified that:\n- All collection activity must cease immediately until validation is provided\n- Any continued collection activity without validation violates the FDCPA\n- Violations of the FDCPA are subject to statutory damages of $1,000 per violation plus actual damages and attorney fees (15 U.S.C. § 1692k)\n- I reserve all rights to pursue legal action for any violations\n\nDo not contact me by telephone. All further communication must be in writing to the address above.\n\nSincerely,\n\n${name}\n${address}\n\n---\nNOTICE: This is a formal dispute under 15 U.S.C. § 1692g. The 30-day validation window is hereby invoked. Failure to cease collection activity or provide proper validation constitutes violations of federal law.`;
+  const output=document.getElementById('fdcpa-output');const copy=document.getElementById('fdcpa-copy');
+  output.textContent=letter;output.classList.add('visible');copy.classList.add('visible');
+}
+
+function generateFOIA(){
+  const name=document.getElementById('foia-name').value.trim()||'[YOUR NAME]';
+  const address=document.getElementById('foia-address').value.trim()||'[YOUR ADDRESS]';
+  const agency=document.getElementById('foia-agency').value.trim()||'[AGENCY NAME]';
+  const request=document.getElementById('foia-request').value.trim()||'[DESCRIBE RECORDS REQUESTED]';
+  const feeReason=document.getElementById('foia-fee').value;
+  const today=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  let feeClause='I am willing to pay reasonable fees for this request up to $25. If fees will exceed this amount, please notify me before proceeding.';
+  if(feeReason==='media')feeClause='I request a fee waiver as this request is being made for journalistic/media purposes that will contribute to public understanding. Pursuant to 5 U.S.C. § 552(a)(4)(A)(iii), fees should be waived entirely.';
+  if(feeReason==='education')feeClause='I request a fee waiver as this request is being made for educational purposes. Pursuant to 5 U.S.C. § 552(a)(4)(A)(ii), duplication fees should be waived.';
+  if(feeReason==='nonprofit')feeClause='I request a complete fee waiver as disclosure of the requested information is in the public interest and will contribute significantly to public understanding of government operations.';
+  if(feeReason==='hardship')feeClause='I request a fee waiver based on financial hardship. Assessing fees would cause undue burden and is not in the public interest.';
+  const letter=`${today}\n\n${name}\n${address}\n\nFOIA Officer / Records Request Office\n${agency}\n[Agency Address — find at agency FOIA contact page]\n\nRE: FREEDOM OF INFORMATION ACT REQUEST\n    Pursuant to 5 U.S.C. § 552\n\nDear FOIA Officer:\n\nPursuant to the Freedom of Information Act, 5 U.S.C. § 552, I hereby request access to and copies of the following records:\n\n${request}\n\nPlease search all relevant offices, divisions, and electronic systems. This request covers all responsive records regardless of format, including but not limited to: emails, memoranda, reports, data files, correspondence, meeting notes, and any other documents.\n\nTIME PERIOD: [Specify if needed, e.g., January 1, 2020 to present]\n\nFEE MATTERS\n\n${feeClause}\n\nRESPONSE DEADLINE\n\nThe FOIA requires a response within 20 business days. If the request cannot be fulfilled within that timeframe, please provide written notification and the reason for the delay pursuant to 5 U.S.C. § 552(a)(6)(B).\n\nAPPEALS NOTICE\n\nIf any records are withheld in whole or in part, please provide a detailed justification for each exemption claimed, including the specific exemption(s) invoked and a description of the withheld material sufficient to evaluate the exemption's application.\n\nPlease confirm receipt of this request and provide a tracking number.\n\nSincerely,\n\n${name}\n${address}`;
+  const output=document.getElementById('foia-output');const copy=document.getElementById('foia-copy');
+  output.textContent=letter;output.classList.add('visible');copy.classList.add('visible');
+}
+
+function scanTOS(){
+  const text=document.getElementById('tos-text').value.toLowerCase();
+  if(!text.trim()){alert('Please paste some TOS text first.');return;}
+  const redFlags=[];
+  const checks=[
+    {pattern:/mandatory arbitration|binding arbitration|waive.*right.*jury|jury.*waiv/,label:'🔴 MANDATORY ARBITRATION CLAUSE',detail:'Strips your right to sue in court. Courts have voided these in consumer contracts where there is no opt-out or it covers statutory claims. Check your state — CA, NJ, and others have special protections.'},
+    {pattern:/class action waiver|waive.*class|no class action/,label:'🔴 CLASS ACTION WAIVER',detail:'Prevents you from joining class action lawsuits. Courts in some circuits have struck these down when they prevent effective vindication of federal statutory rights.'},
+    {pattern:/change.*terms.*notice|modify.*terms.*without|update.*terms.*sole discretion/,label:'🟡 UNILATERAL MODIFICATION CLAUSE',detail:'Company can change the terms anytime without meaningful notice. Courts sometimes void material changes if there is no real opportunity to reject them.'},
+    {pattern:/sell.*data|share.*personal.*third party|disclose.*information.*partner/,label:'🔴 DATA SELLING / SHARING CLAUSE',detail:'May violate CCPA (California) if opt-out is not clearly provided. May violate GDPR (EU) without explicit consent. FTC has pursued enforcement under Section 5 for deceptive data practices.'},
+    {pattern:/perpetual.*license|irrevocable.*license|royalty-free.*license.*content/,label:'🟡 PERPETUAL CONTENT LICENSE',detail:'They claim permanent rights to your content. Courts have found limits when applied to personal data or when the scope is unreasonably broad.'},
+    {pattern:/no refund|all sales final|non-refundable/,label:'🟡 NO REFUND CLAUSE',detail:'May conflict with state consumer protection laws. FTC has brought cases against companies with blanket no-refund policies for defective digital goods.'},
+    {pattern:/waive.*statutory|waive.*rights|waive.*legal/,label:'🔴 STATUTORY RIGHTS WAIVER',detail:'Attempting to waive statutory rights (TCPA, FDCPA, FCRA, etc.) is often void as against public policy. You cannot contract away federal statutory protections in most circumstances.'},
+    {pattern:/monitor.*communications|access.*account|review.*content.*discretion/,label:'🟡 BROAD MONITORING CLAUSE',detail:'Broad surveillance rights. GDPR requires explicit consent for monitoring. ECPA may limit this for private communications.'},
+    {pattern:/limit.*liability.*indirect|consequential.*damage|not liable.*any/,label:'🟡 LIABILITY LIMITATION',detail:'Limits what you can recover if they harm you. Courts sometimes void these when they conflict with statutory remedies or are unconscionable in a consumer context.'},
+    {pattern:/auto-renew|automatically renew|recurring charge/,label:'🟡 AUTO-RENEWAL CLAUSE',detail:'Many states (CA, NY, IL, etc.) have specific auto-renewal laws requiring clear disclosure and easy cancellation. FTC has taken enforcement action over deceptive auto-renewal practices.'},
+  ];
+  checks.forEach(check=>{if(check.pattern.test(text)){redFlags.push(`${check.label}\n${check.detail}\n`);}});
+  const output=document.getElementById('tos-output');const copy=document.getElementById('tos-copy');
+  if(redFlags.length===0){output.textContent='✓ No major red flags detected in the text provided.\n\nNote: This scanner checks for common patterns. A clean scan does not mean the TOS is legally sound. Always read the full document and consult an attorney for important agreements.';}
+  else{output.textContent=`TOS SCAN COMPLETE — ${redFlags.length} RED FLAG(S) DETECTED\n${'═'.repeat(60)}\n\n`+redFlags.join('\n'+'─'.repeat(60)+'\n\n')+'\n'+'═'.repeat(60)+'\nNOTE: This scan identifies common patterns. It is legal information, not legal advice. For significant agreements, consult an attorney.';}
+  output.classList.add('visible');copy.classList.add('visible');
+}
 </script>
 </body>
 </html>
