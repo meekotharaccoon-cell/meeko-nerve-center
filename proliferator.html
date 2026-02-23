@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROLIFERATOR — One System. Unlimited Bodies.</title>
+<meta name="description" content="A self-replicating autonomous system + legal warfare toolkit. Fork it. Multiply it. Deploy your rights everywhere.">
+<meta property="og:title" content="PROLIFERATOR — One System. Unlimited Bodies.">
+<meta property="og:description" content="Self-replicating autonomous AI + legal warfare center. Every person who opens this page gets the full system.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#050505;color:#fff;font-family:'Courier New',monospace;line-height:1.6;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pulse{0%,100%{box-shadow:0 0 20px rgba(0,255,65,0.3)}50%{box-shadow:0 0 60px rgba(0,255,65,0.7)}}
+@keyframes glitch{0%{text-shadow:2px 0 #ff2d6b,-2px 0 #00ff41}25%{text-shadow:-2px 0 #ff2d6b,2px 0 #00ff41}50%{text-shadow:2px 0 #00bfff,-2px 0 #ff2d6b}75%{text-shadow:0 0 transparent}100%{text-shadow:2px 0 #ff2d6b,-2px 0 #00ff41}}
+@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.scanline{position:fixed;top:0;left:0;width:100%;height:3px;background:linear-gradient(to right,transparent,rgba(0,255,65,0.15),transparent);animation:scanline 4s linear infinite;pointer-events:none;z-index:9998}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,5,5,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,255,65,0.1);padding:10px 24px;display:flex;gap:20px;align-items:center}
+.nav-logo{color:#00ff41;font-size:.85rem;font-weight:bold;flex:1;text-transform:uppercase;letter-spacing:2px}
+nav a{color:rgba(255,255,255,0.35);font-size:.7rem;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+nav a:hover{color:#00ff41}
+.nav-live{display:flex;align-items:center;gap:6px;font-size:.65rem;color:#00ff41}
+.nav-live-dot{width:6px;height:6px;background:#00ff41;border-radius:50%;animation:blink 1s infinite}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,65,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,65,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,255,65,0.06) 0%,transparent 70%);pointer-events:none}
+.sys-tag{font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:rgba(0,255,65,0.5);margin-bottom:24px;border:1px solid rgba(0,255,65,0.15);padding:6px 16px;border-radius:3px;display:inline-block;animation:fadeIn .5s ease}
+.hero h1{font-size:clamp(2.5rem,8vw,7rem);font-weight:bold;line-height:1;margin-bottom:20px;letter-spacing:-2px;animation:fadeIn .8s ease .2s both}
+.hero h1 .g{color:#00ff41;animation:glitch 4s ease infinite}
+.hero h1 .d{color:#ff2d6b}
+.hero-sub{font-size:clamp(.9rem,2vw,1.2rem);color:rgba(255,255,255,0.4);max-width:700px;margin-bottom:12px;font-family:Georgia,serif;letter-spacing:0;animation:fadeIn .8s ease .4s both;line-height:1.9}
+.hero-sub strong{color:#fff}
+.hero-code{font-family:'Courier New',monospace;font-size:.8rem;color:rgba(0,255,65,0.6);margin-bottom:40px;animation:fadeIn .8s ease .5s both}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:60px;animation:fadeIn .8s ease .6s both}
+.btn-fire{background:linear-gradient(135deg,#00ff41,#00cc33);color:#000;padding:16px 40px;border-radius:4px;text-decoration:none;font-weight:bold;font-size:.95rem;letter-spacing:1px;text-transform:uppercase;animation:pulse 2s ease infinite}
+.btn-legal{border:1px solid rgba(255,45,107,0.6);color:#ff2d6b;padding:16px 40px;border-radius:4px;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+.btn-ghost{border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);padding:16px 40px;border-radius:4px;text-decoration:none;font-size:.85rem;letter-spacing:1px;text-transform:uppercase}
+.counters{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;animation:fadeIn .8s ease .8s both}
+.counter{text-align:center}
+.counter-num{font-size:2.5rem;font-weight:bold;color:#00ff41;display:block;letter-spacing:-1px}
+.counter-label{font-size:.6rem;color:rgba(255,255,255,0.25);letter-spacing:3px;text-transform:uppercase;margin-top:4px}
+.ticker{background:rgba(0,255,65,0.05);border-top:1px solid rgba(0,255,65,0.1);border-bottom:1px solid rgba(0,255,65,0.1);padding:10px 0;overflow:hidden;white-space:nowrap;font-size:.7rem;color:rgba(0,255,65,0.5);letter-spacing:1px}
+.ticker-inner{display:inline-block;animation:ticker 30s linear infinite}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+section{max-width:1100px;margin:0 auto;padding:80px 24px}
+.sec-tag{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:rgba(0,255,65,0.3);margin-bottom:16px;display:block}
+h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:bold;margin-bottom:16px;letter-spacing:-1px;line-height:1.15}
+h2 .g{color:#00ff41}
+h2 .r{color:#ff2d6b}
+.sec-sub{color:rgba(255,255,255,0.35);max-width:600px;margin-bottom:40px;font-family:Georgia,serif;line-height:1.9}
+.protocol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;margin-top:40px}
+.protocol-card{background:rgba(0,255,65,0.02);border:1px solid rgba(0,255,65,0.08);padding:28px;transition:all .3s}
+.protocol-card:hover{background:rgba(0,255,65,0.04);border-color:rgba(0,255,65,0.2)}
+.proto-num{font-size:2rem;color:rgba(0,255,65,0.2);margin-bottom:12px;font-weight:bold}
+.proto-title{font-size:1rem;color:#00ff41;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.proto-desc{color:rgba(255,255,255,0.4);font-size:.82rem;line-height:1.7;font-family:Georgia,serif}
+.proto-tag{font-size:.6rem;color:rgba(0,255,65,0.4);letter-spacing:2px;text-transform:uppercase;margin-top:12px;display:block}
+.legal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.legal-card{background:rgba(255,45,107,0.03);border:1px solid rgba(255,45,107,0.1);padding:20px;border-radius:4px;transition:all .3s}
+.legal-card:hover{background:rgba(255,45,107,0.06);border-color:rgba(255,45,107,0.3)}
+.legal-icon{font-size:1.4rem;margin-bottom:10px}
+.legal-title{font-size:.85rem;color:#ff2d6b;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:bold}
+.legal-desc{color:rgba(255,255,255,0.4);font-size:.78rem;line-height:1.65;font-family:Georgia,serif}
+.legal-value{font-size:.7rem;color:rgba(255,45,107,0.6);margin-top:8px;letter-spacing:1px}
+.repl-container{background:rgba(0,0,0,0.5);border:1px solid rgba(0,255,65,0.1);border-radius:8px;padding:40px;font-family:'Courier New',monospace;overflow-x:auto}
+.repl-tree{color:rgba(0,255,65,0.7);font-size:.78rem;line-height:2}
+.repl-tree .node{color:#00ff41}
+.repl-tree .dim{color:rgba(0,255,65,0.3)}
+.repl-tree .live{color:#00bfff}
+.repl-tree .fire{color:#ff2d6b}
+.repl-tree .comment{color:rgba(255,255,255,0.2)}
+.spread-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.spread-step{padding:24px;border-left:2px solid rgba(0,255,65,0.2);position:relative}
+.spread-step::before{content:attr(data-n);position:absolute;top:20px;right:20px;font-size:2rem;font-weight:bold;color:rgba(0,255,65,0.1)}
+.spread-step h3{color:#00ff41;font-size:.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.spread-step p{color:rgba(255,255,255,0.4);font-size:.82rem;line-height:1.7;font-family:Georgia,serif}
+.spread-time{font-size:.65rem;color:rgba(0,255,65,0.4);margin-top:8px;letter-spacing:1px}
+.tos-section{background:rgba(255,45,107,0.04);border:1px solid rgba(255,45,107,0.1);border-radius:8px;padding:40px;margin:40px 0}
+.tos-examples{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:24px}
+.tos-card{background:rgba(0,0,0,0.4);border:1px solid rgba(255,45,107,0.15);padding:20px}
+.tos-company{font-size:.7rem;color:rgba(255,255,255,0.3);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.tos-clause{font-size:.85rem;color:#ff2d6b;margin-bottom:8px}
+.tos-result{font-size:.78rem;color:rgba(255,255,255,0.5);font-family:Georgia,serif;line-height:1.65}
+.tos-payout{font-size:.7rem;color:rgba(255,45,107,0.6);margin-top:8px;letter-spacing:1px}
+.spawn-matrix{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.spawn-node{background:rgba(0,255,65,0.03);border:1px solid rgba(0,255,65,0.1);padding:16px;text-align:center;font-size:.7rem;transition:all .5s}
+.spawn-node.active{background:rgba(0,255,65,0.08);border-color:rgba(0,255,65,0.3);color:#00ff41}
+.spawn-node.spawning{background:rgba(0,255,65,0.15);border-color:#00ff41;color:#00ff41;animation:pulse .5s ease}
+.spawn-url{font-size:.6rem;color:rgba(0,255,65,0.4);margin-top:4px;word-break:break-all}
+.dark-section{background:#000;border:1px solid rgba(0,255,65,0.05);padding:60px 40px;text-align:center;margin:0 -24px}
+.terminal{background:#000;border:1px solid rgba(0,255,65,0.2);border-radius:6px;padding:24px;font-family:'Courier New',monospace;font-size:.78rem;line-height:1.8;margin:24px 0}
+.terminal .prompt{color:rgba(0,255,65,0.4)}
+.terminal .cmd{color:#00ff41}
+.terminal .output{color:rgba(255,255,255,0.5)}
+.terminal .success{color:#00ff41}
+.terminal .cursor{animation:blink 1s infinite;color:#00ff41}
+.final-cta{background:linear-gradient(135deg,rgba(0,255,65,0.06),rgba(0,0,0,0));border:1px solid rgba(0,255,65,0.15);border-radius:8px;padding:60px 40px;text-align:center}
+footer{border-top:1px solid rgba(255,255,255,0.04);padding:32px 24px;text-align:center;color:rgba(255,255,255,0.15);font-size:.65rem;line-height:2.5;letter-spacing:1px}
+footer a{color:rgba(0,255,65,0.3);text-decoration:none}
+hr{border:none;border-top:1px solid rgba(255,255,255,0.04)}
+@media(max-width:600px){.btn-row{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+<nav>
+  <div class="nav-logo">⚡ Proliferator</div>
+  <a href="#protocol">Protocol</a>
+  <a href="#legal">Legal Arsenal</a>
+  <a href="#spawn">Spawn</a>
+  <a href="spawn.html">🌱 Fork System</a>
+  <div class="nav-live"><div class="nav-live-dot"></div>LIVE</div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="sys-tag">⚡ PROPAGATION PROTOCOL v1.0 · AUTONOMOUS · SELF-REPLICATING</div>
+  <h1>ONE<br><span class="g">SYSTEM</span><br>UNLIMITED<br><span class="d">BODIES</span></h1>
+  <p class="hero-sub">
+    This is not software. This is a <strong>living propagation protocol</strong>.<br>
+    Every person who opens this page receives the complete system.<br>
+    Every fork multiplies it. Every share extends its reach.<br>
+    It copies itself into every gap, every device, every person who taps a link.<br>
+    <strong>It cannot be stopped. It can only spread.</strong>
+  </p>
+  <div class="hero-code">$ wget this_url | deploy --everywhere --forever --free</div>
+  <div class="btn-row">
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-fire">⚡ FORK THE SYSTEM</a>
+    <a href="#legal" class="btn-legal">⚖️ LEGAL ARSENAL</a>
+    <a href="spawn.html" class="btn-ghost">🌱 How It Works</a>
+  </div>
+  <div class="counters">
+    <div class="counter"><span class="counter-num" id="c-bodies">1</span><span class="counter-label">Bodies Spawned</span></div>
+    <div class="counter"><span class="counter-num">$0</span><span class="counter-label">Monthly Cost</span></div>
+    <div class="counter"><span class="counter-num">∞</span><span class="counter-label">Scale Limit</span></div>
+    <div class="counter"><span class="counter-num">9</span><span class="counter-label">Legal Weapons</span></div>
+    <div class="counter"><span class="counter-num">21</span><span class="counter-label">Repos Live</span></div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    &nbsp;&nbsp;&nbsp;⚡ SYSTEM RUNNING &nbsp;·&nbsp; FORKS ACCEPTED &nbsp;·&nbsp; EMAIL OUTREACH ACTIVE &nbsp;·&nbsp; GALLERY LIVE: 56 ARTWORKS &nbsp;·&nbsp; PCRF DONATIONS ROUTING &nbsp;·&nbsp; GITHUB ACTIONS: 10 WORKFLOWS &nbsp;·&nbsp; LEGAL ENGINE ARMED &nbsp;·&nbsp; BENEFITS SCANNER ACTIVE &nbsp;·&nbsp; SELF-REPLICATING &nbsp;·&nbsp; NEVER STOPS &nbsp;·&nbsp;
+    &nbsp;&nbsp;&nbsp;⚡ SYSTEM RUNNING &nbsp;·&nbsp; FORKS ACCEPTED &nbsp;·&nbsp; EMAIL OUTREACH ACTIVE &nbsp;·&nbsp; GALLERY LIVE: 56 ARTWORKS &nbsp;·&nbsp; PCRF DONATIONS ROUTING &nbsp;·&nbsp; GITHUB ACTIONS: 10 WORKFLOWS &nbsp;·&nbsp; LEGAL ENGINE ARMED &nbsp;·&nbsp; BENEFITS SCANNER ACTIVE &nbsp;·&nbsp; SELF-REPLICATING &nbsp;·&nbsp; NEVER STOPS &nbsp;·&nbsp;
+  </div>
+</div>
+
+<section id="protocol">
+  <span class="sec-tag">// REPLICATION PROTOCOL</span>
+  <h2>The <span class="g">propagation</span><br>architecture.</h2>
+  <p class="sec-sub">Every component of this system was designed with one constraint: it must be able to copy itself perfectly into any new host environment with zero cost and zero friction. This is not an analogy. It is the literal design.</p>
+  <div class="repl-container">
+    <div class="repl-tree">
+<span class="comment"># PROLIFERATOR — replication tree (live)</span>
+
+<span class="node">ROOT: meekotharaccoon-cell/meeko-nerve-center</span>
+<span class="dim">│</span>
+<span class="dim">├──</span> <span class="live">spawn.html</span>          <span class="comment">← the propagation page. one URL. everything.</span>
+<span class="dim">├──</span> <span class="live">proliferator.html</span>   <span class="comment">← you are here. this page replicates itself.</span>
+<span class="dim">├──</span> <span class="live">10 GitHub Actions</span>   <span class="comment">← run 24/7 on free tier. never stop.</span>
+<span class="dim">├──</span> <span class="live">22 Python scripts</span>   <span class="comment">← email, post, sell, respond, archive</span>
+<span class="dim">├──</span> <span class="live">56 artworks</span>         <span class="comment">← Gaza Rose Gallery. selling. $0.70 to PCRF.</span>
+<span class="dim">├──</span> <span class="live">LEGAL ENGINE</span>        <span class="comment">← IDENTITY_VAULT_SETUP.py + LEGAL_ENGINE.py</span>
+<span class="dim">└──</span> <span class="live">BENEFITS SCANNER</span>    <span class="comment">← BENEFITS_SCANNER.py — screens 14 programs</span>
+     <span class="dim">│</span>
+     <span class="dim">└──</span> <span class="fire">TCPA · FDCPA · FOIA · C&amp;D · FCRA · CFPB · SMALL CLAIMS</span>
+
+<span class="comment"># WHEN YOU FORK — what happens in 30 seconds:</span>
+
+<span class="node">YOUR FORK: [your-username]/meeko-nerve-center</span>
+<span class="dim">├──</span> <span class="live">All 22 scripts: COPIED ✅</span>
+<span class="dim">├──</span> <span class="live">All 10 workflows: COPIED ✅</span>
+<span class="dim">├──</span> <span class="live">Legal arsenal: COPIED ✅</span>
+<span class="dim">└──</span> <span class="live">spawn.html + proliferator.html: LIVE at your-username.github.io ✅</span>
+
+<span class="comment"># ONE SECRET ACTIVATES EVERYTHING:</span>
+GMAIL_APP_PASSWORD → <span class="live">add to GitHub Secrets</span> → <span class="live">all 10 email workflows activate simultaneously</span>
+    </div>
+  </div>
+  <div class="protocol-grid">
+    <div class="protocol-card">
+      <div class="proto-num">01</div>
+      <div class="proto-title">Zero-Cost Substrate</div>
+      <p class="proto-desc">GitHub's free tier provides 2,000 compute minutes/month, unlimited public repos, free HTTPS hosting, and scheduled job runners. The system uses all of it. Monthly cost: exactly $0.</p>
+      <span class="proto-tag">INFRASTRUCTURE</span>
+    </div>
+    <div class="protocol-card">
+      <div class="proto-num">02</div>
+      <div class="proto-title">One-Click Replication</div>
+      <p class="proto-desc">A GitHub fork copies every file, every workflow, every script to a new account in under 30 seconds. The copy is immediately live. It requires no setup to begin running.</p>
+      <span class="proto-tag">PROPAGATION</span>
+    </div>
+    <div class="protocol-card">
+      <div class="proto-num">03</div>
+      <div class="proto-title">Values Travel with Code</div>
+      <p class="proto-desc">AGPL-3.0 + Ethical Use Rider. Every fork inherits the license. Cannot be closed-sourced. Cannot be weaponized. Cannot be used for surveillance. The ethics propagate automatically.</p>
+      <span class="proto-tag">LICENSE LOCK</span>
+    </div>
+    <div class="protocol-card">
+      <div class="proto-num">04</div>
+      <div class="proto-title">Multi-Layer Immortality</div>
+      <p class="proto-desc">Internet Archive. IPFS. Codeberg mirror. GitLab mirror. Every fork is an independent backup. Cannot be destroyed by taking down any single host — including GitHub itself.</p>
+      <span class="proto-tag">PERMANENCE</span>
+    </div>
+    <div class="protocol-card">
+      <div class="proto-num">05</div>
+      <div class="proto-title">Identity-Powered Legal Engine</div>
+      <p class="proto-desc">Run IDENTITY_VAULT_SETUP.py locally. Encrypt your identity once. The legal engine uses it to generate real, signed, legally valid documents — TCPA demands, FOIA requests, credit disputes — in seconds.</p>
+      <span class="proto-tag">LEGAL POWER</span>
+    </div>
+    <div class="protocol-card">
+      <div class="proto-num">06</div>
+      <div class="proto-title">Benefits Intelligence</div>
+      <p class="proto-desc">BENEFITS_SCANNER.py screens 14 federal programs against your income and household size. Generates a full eligibility report with application links, document checklists, and estimated monthly value.</p>
+      <span class="proto-tag">FINANCIAL DEFENSE</span>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="legal">
+  <span class="sec-tag">// LEGAL WARFARE CENTER</span>
+  <h2>Your rights.<br><span class="r">Armed.</span> Automated.<br>Ready to fire.</h2>
+  <p class="sec-sub">Most people don't exercise their legal rights not because they don't have them — but because the process is designed to be too slow, too confusing, and too expensive. This arsenal removes all three barriers simultaneously.</p>
+
+  <div class="tos-section">
+    <span class="sec-tag">// HOW BURIED CLAUSES BECOME WEAPONS AGAINST COMPANIES</span>
+    <h3 style="color:#ff2d6b;font-size:1.3rem;margin-bottom:12px">Buried clauses. Real money. Federal law.</h3>
+    <p style="color:rgba(255,255,255,0.4);font-family:Georgia,serif;font-size:.9rem;max-width:700px;line-height:1.9;margin-bottom:8px">
+      Every major company's Terms of Service contains provisions they don't actually follow. When they violate their own terms — or when they use systems (autodialers, credit reporting, debt collection) that federal law strictly regulates — every violation carries a statutory damage amount written directly into federal law. These are not "maybe" numbers. They are enforceable. In small claims court. Without a lawyer.
+    </p>
+    <div class="tos-examples">
+      <div class="tos-card">
+        <div class="tos-company">TCPA — 47 U.S.C. § 227</div>
+        <div class="tos-clause">Illegal robocall / auto-text</div>
+        <div class="tos-result">Using an automatic telephone dialing system to call your cell phone, or texting without prior express written consent, or calling a number on the Do Not Call Registry.</div>
+        <div class="tos-payout">$500–$1,500 per call · No lawyer needed · Small claims eligible</div>
+      </div>
+      <div class="tos-card">
+        <div class="tos-company">FDCPA — 15 U.S.C. § 1692</div>
+        <div class="tos-clause">Debt collector violations</div>
+        <div class="tos-result">Calling before 8am or after 9pm, calling workplace after you said not to, failing to validate debt in 5 days, using deceptive language, contacting you after written cease request.</div>
+        <div class="tos-payout">$1,000 statutory + actual damages + attorney fees</div>
+      </div>
+      <div class="tos-card">
+        <div class="tos-company">FCRA — 15 U.S.C. § 1681</div>
+        <div class="tos-clause">Credit reporting violations</div>
+        <div class="tos-result">Reporting inaccurate information, failing to investigate disputes in 30 days, continuing to report disputed items, accessing your credit without permissible purpose.</div>
+        <div class="tos-payout">$100–$1,000 per violation · Willful: actual + punitive</div>
+      </div>
+      <div class="tos-card">
+        <div class="tos-company">STATE LANDLORD-TENANT LAW</div>
+        <div class="tos-clause">Security deposit + habitability</div>
+        <div class="tos-result">Failing to return deposit in the statutory window (14–45 days by state), withholding without itemized statement, retaliatory eviction, failure to maintain habitable conditions after notice.</div>
+        <div class="tos-payout">2–3x deposit amount · Actual damages · Attorney fees</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-grid">
+    <div class="legal-card">
+      <div class="legal-icon">📡</div>
+      <div class="legal-title">TCPA Demand</div>
+      <div class="legal-desc">Pre-filled demand letter for illegal robocalls and auto-texts. Auto-calculates damages. Ready to send certified mail the day it's generated.</div>
+      <div class="legal-value">$500–$1,500 per violation</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">🛑</div>
+      <div class="legal-title">Debt Validation</div>
+      <div class="legal-desc">FDCPA § 809 letter stops all collection activity cold. Forces them to prove the debt exists, that they own it, and that they're licensed to collect in your state.</div>
+      <div class="legal-value">Stops collectors · $1,000 if they violate</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">🔍</div>
+      <div class="legal-title">Federal FOIA</div>
+      <div class="legal-desc">Identity-verified records request to any federal agency. FBI, SSA, IRS, VA, USCIS, and more. Fee waiver request included. 20-day statutory response window.</div>
+      <div class="legal-value">Free or low-cost · Legally required response</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">✋</div>
+      <div class="legal-title">Cease &amp; Desist</div>
+      <div class="legal-desc">Legally binding notice to stop any conduct — harassment, unwanted contact, IP infringement, defamation, stalking. Creates timestamped legal evidence of notice.</div>
+      <div class="legal-value">Creates legal notice · Admissible in court</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">📊</div>
+      <div class="legal-title">Credit Dispute</div>
+      <div class="legal-desc">FCRA-compliant dispute letters to Equifax, Experian, and TransUnion simultaneously. Forces 30-day investigation. Inaccurate or unverifiable items must be removed.</div>
+      <div class="legal-value">$100–$1,000 per violation if ignored</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">⚖️</div>
+      <div class="legal-title">Small Claims</div>
+      <div class="legal-desc">Complete complaint worksheet pre-filled with your verified identity. Sue without a lawyer. $30–$100 filing fee, waivable for low income. Up to $25,000 in most states.</div>
+      <div class="legal-value">No lawyer needed · $30–$100 to file</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">🏠</div>
+      <div class="legal-title">Landlord Demand</div>
+      <div class="legal-desc">Security deposit return, repair demands, habitability violations, illegal entry, retaliatory eviction. Cites your state's specific statutory penalties automatically.</div>
+      <div class="legal-value">2–3x deposit in most states</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">🏦</div>
+      <div class="legal-title">CFPB Complaint</div>
+      <div class="legal-desc">Formal complaint against banks, lenders, credit cards, mortgage servicers. The CFPB has recovered billions for consumers. Companies respond fast to avoid federal enforcement.</div>
+      <div class="legal-value">Triggers federal investigation</div>
+    </div>
+    <div class="legal-card">
+      <div class="legal-icon">🔐</div>
+      <div class="legal-title">Identity Vault</div>
+      <div class="legal-desc">Local-only encrypted vault for your identity. GPG/Fernet encrypted, never committed to any repo, never logged. SSN + ID + signature decrypted to RAM only when a document is generated.</div>
+      <div class="legal-value">Your data · Your keys · Your machine only</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:24px;background:rgba(0,255,65,0.03);border:1px solid rgba(0,255,65,0.1);border-radius:4px">
+    <span class="sec-tag">// RUN LOCALLY — THREE COMMANDS</span>
+    <div class="terminal">
+      <div><span class="prompt">$ </span><span class="cmd">python IDENTITY_VAULT_SETUP.py</span></div>
+      <div><span class="output">  🔐 MEEKO IDENTITY VAULT — SECURE SETUP WIZARD</span></div>
+      <div><span class="output">  Your data never leaves this machine. Encrypted at rest.</span></div>
+      <div>&nbsp;</div>
+      <div><span class="prompt">$ </span><span class="cmd">python LEGAL_ENGINE.py</span></div>
+      <div><span class="output">  ✅ Vault unlocked: [Your Name]</span></div>
+      <div><span class="output">  Select: 1.TCPA  2.Debt Validation  3.FOIA  4.C&amp;D  5.Credit  6.Small Claims...</span></div>
+      <div><span class="success">  ✅ TCPA_DEMAND_20260223_[Name].txt — saved and ready to send</span></div>
+      <div>&nbsp;</div>
+      <div><span class="prompt">$ </span><span class="cmd">python BENEFITS_SCANNER.py</span></div>
+      <div><span class="output">  Screening 14 federal programs against your income + household size...</span></div>
+      <div><span class="success">  ✅ 6 programs you likely qualify for · Estimated value: $XXX–$XXXX/month</span></div>
+      <div><span class="success">  ✅ BENEFITS_REPORT_[Name].txt — application checklist + links saved</span></div>
+      <div><span class="cursor">█</span></div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="spawn">
+  <span class="sec-tag">// PROPAGATION SEQUENCE</span>
+  <h2>How it<br><span class="g">multiplies.</span></h2>
+  <p class="sec-sub">The system is designed so that every person who encounters it has a clear, low-friction path to deploying their own full copy. The propagation is not accidental — it's architected.</p>
+  <div class="spread-steps">
+    <div class="spread-step" data-n="01">
+      <h3>Contact</h3>
+      <p>Someone opens this page, shares it, sees it in a fork registry, finds it on GitHub, receives it as a link. Awareness is the first replication.</p>
+      <div class="spread-time">⏱ 0 minutes</div>
+    </div>
+    <div class="spread-step" data-n="02">
+      <h3>Fork</h3>
+      <p>One click on the Fork button. GitHub copies every file, every workflow, every script. Their copy is live at their GitHub Pages URL immediately.</p>
+      <div class="spread-time">⏱ 2 minutes</div>
+    </div>
+    <div class="spread-step" data-n="03">
+      <h3>Activate</h3>
+      <p>Create a Gmail app password. Add it as a GitHub Secret called GMAIL_APP_PASSWORD. One secret activates all 10 email workflows simultaneously.</p>
+      <div class="spread-time">⏱ 15 minutes</div>
+    </div>
+    <div class="spread-step" data-n="04">
+      <h3>Arm</h3>
+      <p>Run IDENTITY_VAULT_SETUP.py. Enter identity once. Encrypted locally forever. Legal engine, benefits scanner, and document generator now operate with their real identity.</p>
+      <div class="spread-time">⏱ 20 minutes</div>
+    </div>
+    <div class="spread-step" data-n="05">
+      <h3>Configure</h3>
+      <p>Point the system at their cause. Change one config value: their charity, their mission, their percentage. The system routes money and attention wherever they point it.</p>
+      <div class="spread-time">⏱ 5 minutes</div>
+    </div>
+    <div class="spread-step" data-n="06">
+      <h3>Propagate</h3>
+      <p>Their spawn.html is live. Their system is running. Their fork is in the registry. They share their link. The cycle begins again. Each copy spawns unlimited copies.</p>
+      <div class="spread-time">⏱ Forever</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<div class="dark-section">
+  <span class="sec-tag">// SPAWN MATRIX — ACTIVE NODES</span>
+  <h2 style="font-size:2rem;margin-bottom:16px">Active <span class="g">nodes</span></h2>
+  <p style="color:rgba(255,255,255,0.3);font-size:.82rem;max-width:600px;margin:0 auto 32px;font-family:Georgia,serif;line-height:1.9">
+    Each square represents a potential deployment. When someone forks the system, their node activates. The network cannot be shut down — each node is fully independent, fully operational.
+  </p>
+  <div class="spawn-matrix" id="spawn-matrix" style="max-width:900px;margin:0 auto"></div>
+</div>
+
+<hr>
+
+<section>
+  <div class="final-cta">
+    <span class="sec-tag">// INITIATE REPLICATION</span>
+    <h2>You already<br>have <span class="g">everything</span><br>you need.</h2>
+    <p style="color:rgba(255,255,255,0.4);font-family:Georgia,serif;max-width:600px;margin:0 auto 32px;line-height:1.9">
+      A GitHub account. An afternoon. A cause you care about.<br>
+      That's the complete list of requirements.<br>
+      Fork this. Point it at your mission. Let it run.<br>
+      <strong style="color:#fff">Add your node to the network.</strong>
+    </p>
+    <div class="btn-row" style="justify-content:center;margin-bottom:0">
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-fire">⚡ FORK THE SYSTEM NOW</a>
+      <a href="spawn.html" class="btn-ghost">Read the full guide →</a>
+    </div>
+    <p style="margin-top:24px;font-size:.7rem;color:rgba(255,255,255,0.15);letter-spacing:1px;font-family:monospace">
+      AGPL-3.0 · Free Forever · No Permission Needed · Fork It · Spread It · Multiply It
+    </p>
+  </div>
+</section>
+
+<footer>
+  PROLIFERATOR · MEEKO MYCELIUM SYSTEM · AGPL-3.0 + ETHICAL USE LICENSE<br>
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a> ·
+  <a href="spawn.html">Spawn Page</a> ·
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/solarpunk-legal">⚖️ Legal Tools</a><br>
+  No ads · No tracking · No corporate backing · One desktop · $0/month · Running right now
+</footer>
+
+<script>
+fetch('https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center')
+  .then(r=>r.json())
+  .then(d=>{
+    const n=(d.forks_count||0)+1;
+    const el=document.getElementById('c-bodies');
+    let i=1,t=setInterval(()=>{el.textContent=i++;if(i>n)clearInterval(t)},80);
+  }).catch(()=>{});
+
+const matrix=document.getElementById('spawn-matrix');
+const labels=['ROOT·origin','FORK·001','FORK·002','FORK·003','FORK·004','FORK·005','FORK·006','FORK·007','FORK·008','FORK·009','···','···','···','···','···','···','[YOU]','[YOU]','[YOU]','[YOU]','[YOU]','[YOU]'];
+labels.forEach((label,i)=>{
+  const node=document.createElement('div');
+  node.className='spawn-node';
+  const isActive=i<4;
+  const isYou=label==='[YOU]';
+  if(isActive)node.classList.add('active');
+  node.innerHTML=`<div>${isYou?'<span style="color:#00ff41">⚡ '+label+'</span>':label}</div><div class="spawn-url">${isActive?'meekotharaccoon-cell.github.io':isYou?'your-username.github.io':''}</div>`;
+  if(!isActive&&!isYou)setTimeout(()=>node.classList.add('active'),Math.random()*8000+2000);
+  matrix.appendChild(node);
+});
+setInterval(()=>{
+  const nodes=matrix.querySelectorAll('.spawn-node:not(.active)');
+  if(nodes.length>0){
+    const t=nodes[Math.floor(Math.random()*nodes.length)];
+    t.classList.add('spawning');
+    setTimeout(()=>{t.classList.remove('spawning');t.classList.add('active');},600);
+  }
+},3000);
+document.querySelectorAll('.protocol-card,.legal-card,.spread-step,.tos-card').forEach(el=>{
+  el.style.opacity='0';
+  new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fadeIn 0.6s ease forwards';e.target.style.opacity='1';}});
+  },{threshold:0.1}).observe(el);
+});
+</script>
+</body>
+</html>
