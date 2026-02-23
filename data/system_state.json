@@ -1,40 +1,11 @@
 {
-  "updated": "2026-02-23 — session build",
+  "updated": "2026-02-23 20:42 UTC",
+  "last_commit": "\ud83d\udd78\ufe0f Full cross-wiring: spawn.html (Ko-fi+Sponsors+Gumroad+live ISS widget) + FUNDING.yml + .gitignore + morning_briefing data bus + WIRING_MAP",
+  "last_commit_date": "2026-02-23 15:41:56 -0500",
+  "tracked_files": 107,
   "system": "meeko-nerve-center",
   "status": "ACTIVE",
-  "layers": {
-    "space_bridge": "LIVE — ISS, NASA, solar, Mars",
-    "network_node": "LIVE — BLE, WiFi, WS, MQTT, mesh",
-    "orchestrator": "LIVE — wires all 40+ scripts",
-    "identity_vault": "LIVE — signs docs, manages wallets",
-    "grant_outreach": "LIVE — 8 programs, auto-applications",
-    "morning_briefing": "LIVE — reads data bus + revenue + space",
-    "revenue_html": "LIVE — all streams in one dashboard",
-    "spawn_html": "LIVE — Ko-fi, Sponsors, Gumroad, BTC all wired",
-    "proliferator": "LIVE — legal tools + viral spread",
-    "mcp_config": "READY — run BUILD_MCP_CONFIG.py on desktop",
-    "email_layer": "BLOCKED — needs GMAIL_APP_PASSWORD in GitHub Secrets",
-    "lightning": "BUILT — needs Strike API key",
-    "gumroad_listing": "PRODUCT READY — needs listing at gumroad.com",
-    "kofi_page": "WIRED IN SITE — needs page at ko-fi.com/meekotharaccoon",
-    "github_sponsors": "FUNDING.yml SET — needs enable at github.com/sponsors"
-  },
-  "next_actions": [
-    "1. Run BUILD_MCP_CONFIG.py on desktop → permanent Claude memory",
-    "2. Add GMAIL_APP_PASSWORD to GitHub Secrets → 10 email capabilities",
-    "3. Enable GitHub Sponsors at github.com/sponsors → passive income",
-    "4. Create Ko-fi at ko-fi.com → tips, already linked in spawn.html",
-    "5. Create Gumroad $5 fork guide listing → product/fork-guide.md is ready",
-    "6. Run identity_vault.py --init → enter wallet addresses",
-    "7. Run ORCHESTRATOR.py → activates all wired layers"
-  ],
-  "revenue_streams": {
-    "live": ["gaza_rose_gallery", "bitcoin_address"],
-    "wired_needs_account": ["ko_fi", "github_sponsors", "gumroad"],
-    "built_needs_key": ["lightning_strike", "solana_phantom"],
-    "blocked_on_email": ["grant_auto_apply", "morning_briefing_email"]
-  },
-  "wiring_pattern": "collect → process → distribute → monetize → route → repeat",
-  "gitignore": "ADDED — vault files protected",
-  "funding_yml": "ADDED — GitHub Sponsors button live on repo"
+  "gmail_secret": "MISSING",
+  "local_bridge": "NOT_YET_RUN",
+  "mcp_config": "NOT_YET_RUN"
 }

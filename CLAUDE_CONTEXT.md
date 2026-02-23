@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-23 20:35 UTC — 🧠 ORCHESTRATOR.py + identity_vault.py + real grant_outreach.py — wiring all 40 layers together*
+*Auto-updated by the system. Last update: 2026-02-23 20:42 UTC — 🕸️ Full cross-wiring: spawn.html (Ko-fi+Sponsors+Gumroad+live ISS widget) + FUNDING.yml + .gitignore + morning_briefing data bus + WIRING_MAP*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. This is the brain handoff. You are not starting fresh — you are picking up an active organism mid-build.
 
