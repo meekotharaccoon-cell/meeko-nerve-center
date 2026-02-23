@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-23 20:20 UTC — 🧠 Session fix + revenue layer + fork guide product — never start cold again*
+*Auto-updated by the system. Last update: 2026-02-23 20:24 UTC — 🕸️ network_node.py + BUILD_MCP_CONFIG.py — connectivity layer + permanent Claude connection*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. This is the brain handoff. You are not starting fresh — you are picking up an active organism mid-build.
 
