@@ -1,0 +1,39 @@
+name: 🛸 Space Bridge — Daily Report
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  space-bridge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run Space Bridge
+        run: |
+          python mycelium/space_bridge.py --push
+        env:
+          MY_LAT: ${{ secrets.MY_LAT }}
+          MY_LON: ${{ secrets.MY_LON }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+
+      - name: Commit space report
+        run: |
+          git config user.name "Meeko Mycelium"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add data/space_report.md
+          git diff --staged --quiet || git commit -m "🛸 space bridge update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push origin main
+        continue-on-error: true
