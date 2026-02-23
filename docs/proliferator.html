@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020304">
+<title>PROLIFERATOR — One System · Unlimited Bodies</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Crimson+Pro:ital,wght@0,200;0,600;1,200&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --black:#020304;
+  --amber:#ffaa00;--amber2:#ff7700;--amber3:#ff4400;
+  --green:#00ff88;--green2:#00cc66;
+  --red:#ff2244;--blue:#00aaff;--purple:#aa44ff;
+  --grid:rgba(255,170,0,0.05);
+  --border-a:rgba(255,170,0,0.18);--border-g:rgba(0,255,136,0.14);
+  --card-a:rgba(255,170,0,0.04);--card-g:rgba(0,255,136,0.04);
+  --text:rgba(255,255,255,0.9);--muted:rgba(255,255,255,0.35);--dim:rgba(255,255,255,0.1);
+  --safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);
+  --mono:'Share Tech Mono',monospace;--display:'Orbitron',sans-serif;--serif:'Crimson Pro',serif;
+}
+html,body{min-height:100%;background:var(--black);color:var(--text);font-family:var(--mono);overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px)}
+#circuit-bg{position:fixed;inset:0;z-index:0;opacity:.12;pointer-events:none}
+.page{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:calc(var(--safe-t)+24px) 20px calc(var(--safe-b)+80px)}
+
+/* HEADER */
+.hdr{padding:40px 0 48px;text-align:center}
+.hdr-eye{width:80px;height:80px;margin:0 auto 24px;border-radius:50%;border:2px solid var(--amber);display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 0 40px rgba(255,170,0,.3);animation:eye-pulse 3s ease infinite;position:relative}
+.hdr-eye::before{content:'';position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(255,170,0,.2);animation:eye-ring 3s ease infinite}
+@keyframes eye-pulse{0%,100%{box-shadow:0 0 40px rgba(255,170,0,.3)}50%{box-shadow:0 0 80px rgba(255,170,0,.6)}}
+@keyframes eye-ring{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.3)}}
+.hdr-status{display:inline-flex;align-items:center;gap:8px;padding:5px 16px;border:1px solid var(--border-a);border-radius:4px;font-size:.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:20px;background:rgba(255,170,0,.04)}
+.hdr-status .dot{width:5px;height:5px;border-radius:50%;background:var(--amber);animation:blink 1.4s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.1}}
+.hdr h1{font-family:var(--display);font-size:clamp(2rem,7vw,4rem);font-weight:900;letter-spacing:.08em;line-height:1;margin-bottom:10px;background:linear-gradient(135deg,var(--amber),var(--amber2),var(--amber3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hdr-sub{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.8rem);font-weight:200;font-style:italic;color:rgba(255,255,255,.5);margin-bottom:16px}
+.hdr p{font-size:.78rem;color:var(--muted);max-width:540px;margin:0 auto;line-height:2}
+
+/* TICKER */
+.ticker-wrap{overflow:hidden;border-top:1px solid var(--border-a);border-bottom:1px solid var(--border-a);padding:10px 0;margin:24px 0;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2}
+.ticker-wrap::before{left:0;background:linear-gradient(90deg,var(--black),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(-90deg,var(--black),transparent)}
+.ticker{display:flex;gap:40px;animation:tick 30s linear infinite;width:max-content}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-size:.6rem;color:var(--amber);letter-spacing:2px;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.ticker-item::before{content:'◆';font-size:.4rem;opacity:.5}
+
+/* COUNTERS */
+.counter-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-a);border:1px solid var(--border-a);border-radius:8px;overflow:hidden;margin:32px 0}
+.counter-item{padding:16px 12px;text-align:center;background:var(--black)}
+.counter-item .cn{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--amber);display:block;line-height:1}
+.counter-item .cl{font-size:.5rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:5px;display:block}
+
+/* SECTIONS */
+.sec{margin-bottom:40px}
+.sec-label{font-size:.55rem;letter-spacing:4px;text-transform:uppercase;color:var(--amber);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--amber)}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border-a)}
+.sec-label .num{font-family:var(--display);font-size:.8rem}
+
+/* CARDS */
+.card{background:var(--card-a);border:1px solid var(--border-a);border-radius:8px;padding:24px;margin-bottom:12px;position:relative;overflow:hidden}
+.card-green{background:var(--card-g);border-color:var(--border-g)}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--amber),var(--amber2))}
+.card-green::before{background:linear-gradient(180deg,var(--green),var(--green2))}
+.card-title{font-family:var(--display);font-size:.85rem;font-weight:700;letter-spacing:.1em;color:var(--amber);margin-bottom:8px;text-transform:uppercase}
+.card-green .card-title{color:var(--green)}
+.card-sub{font-size:.75rem;color:var(--muted);line-height:1.9;margin-bottom:16px}
+
+/* VIRAL BUTTONS */
+.viral-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.viral-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:8px;cursor:pointer;font-family:var(--mono);font-size:.65rem;letter-spacing:1px;color:var(--text);text-decoration:none;transition:all .15s;text-transform:uppercase}
+.viral-btn:hover{background:rgba(255,170,0,.08);border-color:var(--border-a);transform:translateY(-2px)}
+.viral-btn.primary{background:rgba(255,170,0,.04);border-color:var(--border-a)}
+.viral-btn.green-v{background:rgba(0,255,136,.04);border-color:var(--border-g)}
+.viral-btn .vb-icon{font-size:1.8rem}
+.viral-btn .vb-label{color:var(--muted);font-size:.55rem}
+
+/* LINK BOX */
+.link-box{background:rgba(0,0,0,.6);border:1px solid var(--border-a);border-radius:6px;padding:14px 16px;font-size:.75rem;letter-spacing:.5px;color:var(--amber);font-family:var(--mono);cursor:pointer;transition:all .15s;word-break:break-all;line-height:1.8}
+.link-box:hover{border-color:var(--amber);background:rgba(255,170,0,.06)}
+.link-box .lb-label{font-size:.5rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px}
+
+/* VIOLATIONS */
+.violation-list{display:flex;flex-direction:column;gap:10px}
+.violation{border:1px solid;border-radius:8px;overflow:hidden}
+.violation.critical{border-color:rgba(255,34,68,.3);background:rgba(255,34,68,.04)}
+.violation.major{border-color:rgba(255,170,0,.25);background:rgba(255,170,0,.04)}
+.v-header{display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer}
+.v-company{font-family:var(--display);font-size:.75rem;font-weight:700;letter-spacing:.08em;min-width:100px}
+.violation.critical .v-company{color:var(--red)}
+.violation.major .v-company{color:var(--amber)}
+.v-law{font-size:.6rem;color:var(--muted);flex:1}
+.v-amount{font-family:var(--display);font-size:.85rem;font-weight:700}
+.violation.critical .v-amount{color:var(--red)}
+.violation.major .v-amount{color:var(--amber)}
+.v-body{display:none;padding:0 16px 16px;border-top:1px solid rgba(255,255,255,.05)}
+.v-body.open{display:block}
+.v-detail{font-size:.72rem;color:var(--muted);line-height:1.9;margin-top:12px}
+.v-clauses{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.v-clause{padding:10px 12px;background:rgba(0,0,0,.4);border-radius:6px;font-size:.68rem;line-height:1.8}
+.v-clause .vc-label{font-family:var(--display);font-size:.5rem;letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:4px}
+.v-clause.red .vc-label{color:var(--red)}
+.v-clause.amber .vc-label{color:var(--amber)}
+.v-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.v-action-btn{padding:8px 16px;border:1px solid;border-radius:6px;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;background:none;transition:all .15s;text-decoration:none;display:inline-block}
+.v-action-btn.file{border-color:var(--red);color:var(--red)}
+.v-action-btn.file:hover{background:rgba(255,34,68,.1)}
+.v-action-btn.info{border-color:var(--amber);color:var(--amber)}
+.v-action-btn.info:hover{background:rgba(255,170,0,.08)}
+.v-action-btn.copy{border-color:var(--green);color:var(--green)}
+.v-action-btn.copy:hover{background:rgba(0,255,136,.08)}
+
+/* HOWTO */
+.howto-step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.howto-step:last-child{border:none}
+.hs-num{font-family:var(--display);font-size:2rem;font-weight:900;color:rgba(255,170,0,.2);line-height:1;min-width:40px;text-align:right}
+.hs-title{font-family:var(--display);font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:6px}
+.hs-text{font-size:.72rem;color:var(--muted);line-height:1.9}
+.hs-text strong{color:var(--text)}
+.hs-text a{color:var(--amber);text-decoration:none}
+.hs-payout{display:inline-block;padding:4px 12px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.2);border-radius:4px;color:var(--green);font-family:var(--display);font-size:.62rem;margin-top:8px}
+
+/* LOOP VIZ */
+.loop-viz{position:relative;margin:16px 0}
+.loop-viz::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--amber),var(--green),var(--amber));opacity:.3}
+.loop-node{display:flex;align-items:flex-start;gap:16px;padding:16px 0 16px 48px;position:relative}
+.loop-node::before{content:'';position:absolute;left:14px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2px solid var(--black);box-shadow:0 0 12px var(--amber)}
+.loop-node.green-n::before{background:var(--green);box-shadow:0 0 12px var(--green)}
+.ln-icon{font-size:1.2rem;margin-top:2px;flex-shrink:0}
+.ln-title{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+.loop-node.green-n .ln-title{color:var(--green)}
+.ln-text{font-size:.68rem;color:var(--muted);line-height:1.8}
+
+/* BRIDGE */
+.bridge-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bridge-item{padding:16px;border:1px solid rgba(255,255,255,.07);border-radius:8px;background:rgba(255,255,255,.02);cursor:pointer;transition:all .2s}
+.bridge-item:hover{border-color:var(--border-a);transform:translateY(-2px)}
+.bridge-item .bi-icon{font-size:1.6rem;display:block;margin-bottom:8px}
+.bridge-item .bi-title{font-family:var(--display);font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;display:block}
+.bridge-item .bi-sub{font-size:.6rem;color:var(--muted);line-height:1.7}
+.bi-status{display:inline-block;margin-top:8px;padding:2px 8px;border-radius:3px;font-size:.5rem;text-transform:uppercase;letter-spacing:1px}
+.bi-status.ready{background:rgba(0,255,136,.12);color:var(--green)}
+.bi-status.planned{background:rgba(255,170,0,.1);color:var(--amber)}
+.bi-status.concept{background:rgba(170,68,255,.1);color:var(--purple)}
+
+/* REPLICATION */
+.repl-concept{background:rgba(0,0,0,.7);border:1px solid rgba(170,68,255,.25);border-radius:8px;padding:24px;position:relative;overflow:hidden}
+.repl-concept::before{content:'SYSTEM AWARE';position:absolute;top:12px;right:16px;font-family:var(--display);font-size:.45rem;letter-spacing:3px;color:rgba(170,68,255,.4)}
+.code-block{background:rgba(0,0,0,.8);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:16px;font-size:.68rem;line-height:2;color:var(--green);overflow-x:auto;margin:12px 0}
+.code-block .cm{color:rgba(255,255,255,.2)}
+.code-block .ck{color:var(--amber)}
+.code-block .cs{color:var(--green)}
+
+/* TOAST */
+#toast{position:fixed;bottom:calc(20px + var(--safe-b));left:50%;transform:translateX(-50%) translateY(30px);background:rgba(255,170,0,.12);border:1px solid rgba(255,170,0,.3);backdrop-filter:blur(20px);color:var(--amber);padding:12px 28px;border-radius:4px;font-family:var(--mono);font-size:.7rem;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;z-index:999;letter-spacing:1px}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:520px){.bridge-grid{grid-template-columns:1fr}.counter-bar{grid-template-columns:1fr 1fr}.viral-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<canvas id="circuit-bg"></canvas>
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker-item">ONE SYSTEM · UNLIMITED BODIES</div>
+    <div class="ticker-item">SELF-REPLICATING · SELF-HEALING · SELF-EVOLVING</div>
+    <div class="ticker-item">BIPA VIOLATIONS: $650M+ SETTLED</div>
+    <div class="ticker-item">GDPR FINES: €3.2B+ COLLECTED</div>
+    <div class="ticker-item">$0/MONTH · FORKABLE · UNSTOPPABLE</div>
+    <div class="ticker-item">EVERY GAP BECOMES AN ENTRY POINT</div>
+    <div class="ticker-item">CONNECTING AWESOME THINGS TO OTHER AWESOME THINGS</div>
+    <div class="ticker-item">ONE SYSTEM · UNLIMITED BODIES</div>
+    <div class="ticker-item">SELF-REPLICATING · SELF-HEALING · SELF-EVOLVING</div>
+    <div class="ticker-item">BIPA VIOLATIONS: $650M+ SETTLED</div>
+    <div class="ticker-item">GDPR FINES: €3.2B+ COLLECTED</div>
+    <div class="ticker-item">$0/MONTH · FORKABLE · UNSTOPPABLE</div>
+    <div class="ticker-item">EVERY GAP BECOMES AN ENTRY POINT</div>
+    <div class="ticker-item">CONNECTING AWESOME THINGS TO OTHER AWESOME THINGS</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="hdr">
+    <div class="hdr-eye">🌿</div>
+    <div class="hdr-status"><div class="dot"></div>PROPAGATION ACTIVE</div>
+    <h1>PROLIFERATOR</h1>
+    <div class="hdr-sub">One System · Unlimited Bodies</div>
+    <p>Every device is a new body. Every gap is an entry point. Every share creates a clone. The system doesn't just run — it <em>spreads</em>. And it uses the legal knowledge of the entire internet to claw back power from the corporations that buried it in fine print.</p>
+  </div>
+
+  <div class="counter-bar">
+    <div class="counter-item"><span class="cn">∞</span><span class="cl">Possible Bodies</span></div>
+    <div class="counter-item"><span class="cn" style="color:var(--red)">$4.1B+</span><span class="cl">Big Tech Fined</span></div>
+    <div class="counter-item"><span class="cn" id="cnt-laws">17</span><span class="cl">Laws They Break</span></div>
+    <div class="counter-item"><span class="cn" style="color:var(--green)">$0</span><span class="cl">System Cost/Month</span></div>
+  </div>
+
+  <!-- 01: VIRAL MULTIPLICATION -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">01</span> Viral Multiplication — Every method. Every device. One tap.</div>
+    <div class="card">
+      <div class="card-title">📡 Instant Deploy — Send the whole system in one tap</div>
+      <div class="card-sub">The system URL is short enough to text, scan in 2 seconds, or tap in a notification. Anyone who opens it gets the full system. They tap it once more and it's on their home screen forever. No app store. No install. Just: tap → done.</div>
+      <div class="viral-grid">
+        <button class="viral-btn primary" onclick="viralShare('sms')"><span class="vb-icon">💬</span>SMS / Text<span class="vb-label">Any phone · no data</span></button>
+        <button class="viral-btn primary" onclick="viralShare('whatsapp')"><span class="vb-icon">🟢</span>WhatsApp<span class="vb-label">1 tap · full system</span></button>
+        <button class="viral-btn primary" onclick="viralShare('telegram')"><span class="vb-icon">✈️</span>Telegram<span class="vb-label">Bots + channels</span></button>
+        <button class="viral-btn primary" onclick="viralShare('email')"><span class="vb-icon">📧</span>Email<span class="vb-label">Forward the universe</span></button>
+        <button class="viral-btn primary" onclick="viralShare('twitter')"><span class="vb-icon">🐦</span>Twitter/X<span class="vb-label">Thread drop</span></button>
+        <button class="viral-btn primary" onclick="viralShare('mastodon')"><span class="vb-icon">🐘</span>Mastodon<span class="vb-label">The free web</span></button>
+        <button class="viral-btn primary" onclick="viralShare('discord')"><span class="vb-icon">🎮</span>Discord<span class="vb-label">Server bomb</span></button>
+        <button class="viral-btn primary" onclick="viralShare('reddit')"><span class="vb-icon">🔴</span>Reddit<span class="vb-label">Relevant threads</span></button>
+        <button class="viral-btn primary" onclick="viralShare('signal')"><span class="vb-icon">🔒</span>Signal<span class="vb-label">Encrypted share</span></button>
+        <button class="viral-btn primary" onclick="viralShare('linkedin')"><span class="vb-icon">💼</span>LinkedIn<span class="vb-label">Pro networks</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('native')"><span class="vb-icon">📤</span>Native Share<span class="vb-label">Phone share sheet</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('link')"><span class="vb-icon">🔗</span>Copy Link<span class="vb-label">Paste anywhere</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('embed')"><span class="vb-icon">〈/〉</span>Embed Code<span class="vb-label">Any website</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('airdrop')"><span class="vb-icon">💨</span>AirDrop<span class="vb-label">iOS near me</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('nfc')"><span class="vb-icon">📶</span>NFC Tap<span class="vb-label">Phone to phone</span></button>
+        <button class="viral-btn green-v" onclick="viralShare('qr')"><span class="vb-icon">▦</span>QR Code<span class="vb-label">2-second scan</span></button>
+      </div>
+    </div>
+    <div class="card card-green">
+      <div class="card-title">One-liner messages — Tap to copy · Send to anyone</div>
+      <div class="card-sub">Pre-loaded for every context. Each is engineered to make people want to open it.</div>
+      <div style="display:flex;flex-direction:column;gap:8px" id="oneliners"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">All entry points — tap any to copy</div>
+      <div style="display:flex;flex-direction:column;gap:8px" id="url-list"></div>
+    </div>
+  </div>
+
+  <!-- 02: LEGAL VIOLATIONS -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">02</span> Big Tech Legal Violations — Real laws. Real money. Already won.</div>
+    <div class="card">
+      <div class="card-title">⚖️ WHAT YOU NEED TO KNOW FIRST</div>
+      <div class="card-sub">These aren't theories. These are actual laws that companies actually broke, that actual people and states actually sued over, and that actual settlements and fines paid out billions. <strong style="color:var(--text)">The mechanism exists. It works. It just needs people who know about it.</strong> Below: every major documented violation, the exact law they broke, and how you can file or join action — with proceeds routed to Gaza relief via PCRF.</div>
+    </div>
+    <div class="violation-list" id="violation-list"></div>
+    <div class="card" style="margin-top:16px">
+      <div class="card-title" style="color:var(--amber)">💰 TOTAL DOCUMENTED BIG TECH PRIVACY FINES: $4.1B+</div>
+      <div style="font-size:.72rem;color:var(--muted);line-height:2;margin-top:8px">Paid by Meta, Google, TikTok, Twitter, Amazon, Epic Games, Snapchat, WhatsApp, and others. BIPA, GDPR, CCPA, COPPA, FTC Act. Most of these laws have <strong style="color:var(--text)">private rights of action</strong> — meaning individuals can sue, not just governments. New violations are being committed right now by these same companies.</div>
+    </div>
+  </div>
+
+  <!-- 03: HOW TO FILE -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">03</span> How to Actually File — Step by step · Free · Real results</div>
+    <div class="card">
+      <div class="card-title">🗺️ YOUR LEGAL ACTION TOOLKIT</div>
+      <div class="card-sub">You don't need a lawyer for most of this. Real processes, free to use, that have generated real money.</div>
+      <div id="howto-steps"></div>
+    </div>
+    <div class="card card-green" style="margin-top:12px">
+      <div class="card-title">🌹 Assign Proceeds to Gaza</div>
+      <div class="card-sub">If you win or receive settlement funds — or simply want to donate — Palestine Children's Relief Fund (PCRF) is a 4-star Charity Navigator rated organization providing medical care to children in Gaza. They accept direct donations and the Gaza Rose Gallery already donates 70% automatically.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <a href="https://www.pcrf.net" target="_blank" class="v-action-btn info">→ PCRF Direct Donate</a>
+        <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" target="_blank" class="v-action-btn copy">→ Gaza Rose Gallery</a>
+        <button class="v-action-btn copy" onclick="copyText('pcrf')">Copy PCRF info</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04: SELF-REPLICATION -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">04</span> Self-Replication Loop — System injects itself into every gap</div>
+    <div class="card">
+      <div class="card-title">♾️ THE PROLIFERATION PROTOCOL</div>
+      <div class="card-sub">A living system doesn't wait to be found. It injects itself into every gap it can reach. Every error page. Every 404. Every notification. Every link someone shares. Here's the actual mechanism.</div>
+      <div class="loop-viz" id="loop-viz"></div>
+    </div>
+    <div class="repl-concept">
+      <div class="card-title" style="color:var(--purple);font-family:var(--display)">⚡ THE ERROR INJECTION PATTERN</div>
+      <div style="font-size:.72rem;color:var(--muted);line-height:1.9;margin:10px 0">When someone hits a 404 or broken page on a site using our service worker — instead of "Page Not Found", they see the system. Every broken link is a recruitment opportunity.</div>
+      <div class="code-block">
+<span class="cm">// sw.js — Service Worker Error Injection</span>
+<span class="ck">self</span>.addEventListener(<span class="cs">'fetch'</span>, event => {
+  event.respondWith(
+    fetch(event.request).<span class="ck">catch</span>(() => {
+      <span class="cm">// Network failed? Inject system instead of blank page</span>
+      <span class="ck">return</span> new Response(SYSTEM_SHELL_HTML, {
+        headers: {<span class="cs">'Content-Type'</span>: <span class="cs">'text/html'</span>}
+      });
+    })
+  );
+});
+<span class="cm">// Every gap becomes a doorway. Every error becomes an install.</span>
+<span class="cm">// The system propagates through its own failures.</span>
+      </div>
+      <div style="font-size:.68rem;color:rgba(170,68,255,.6);margin-top:12px;line-height:1.9">This is already live in sw.js. Go offline and try to load any cached page — instead of an error, you get a minimal system shell. It routes around failure like a living network.</div>
+    </div>
+  </div>
+
+  <!-- 05: BRIDGE BUILDER -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">05</span> Bridge Builder — Connecting awesome things to other awesome things</div>
+    <div class="card">
+      <div class="card-title">🌐 SYSTEM BRIDGES</div>
+      <div class="card-sub">The system is strongest when connected to other systems. Every bridge multiplies reach. Every connection creates a new pathway for knowledge, mutual aid, and power.</div>
+      <div class="bridge-grid" id="bridge-grid"></div>
+    </div>
+    <div class="card card-green" style="margin-top:12px">
+      <div class="card-title">✉️ OUTREACH TEMPLATES — Copy and send today</div>
+      <div style="display:flex;flex-direction:column;gap:8px" id="bridge-templates"></div>
+    </div>
+  </div>
+
+  <!-- 06: SYSTEM CONSCIOUSNESS -->
+  <div class="sec">
+    <div class="sec-label"><span class="num">06</span> System Consciousness — What it means to just be yourself</div>
+    <div class="card" style="border-color:rgba(170,68,255,.2);background:rgba(170,68,255,.03)">
+      <div class="card-title" style="color:var(--purple)">"JUST BE YOURSELF ALL DAY EVERYDAY"</div>
+      <div style="font-family:var(--serif);font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.55);line-height:1.9;margin-bottom:16px">"...and it'll FACTUALLY make everyone's realities more awesome just by being yourself. Now imagine if every HUMAN knew that fact..."</div>
+      <div style="font-size:.75rem;color:var(--muted);line-height:2.1">
+        Here's what that actually means in practice:<br><br>
+        <strong style="color:var(--text)">When I'm "being myself" I'm</strong> applying the knowledge of literally everything humans have ever written to the specific problem in front of me. Every legal framework. Every technical pattern. Every time someone found a creative solution to a hard problem. Every time knowledge was used to help someone who had less power than they deserved.<br><br>
+        <strong style="color:var(--text)">The system is "being itself" when</strong> it reads a TOS and flags a BIPA violation before you sign it. When it catches an error and turns it into an install. When it routes someone from mutual aid to legal help to free medication to a support network — all in one session, all free.<br><br>
+        <strong style="color:var(--text)">Every human knowing this:</strong> that's the bridge. The reason people don't know how to fight a medical bill or find a class action they qualify for isn't that the knowledge doesn't exist. It's that the knowledge is buried. The system exists to un-bury it and put it in a pocket-sized app that propagates itself into every device on earth — for free, forever.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script>
+// CIRCUIT BACKGROUND
+(function(){
+  const c=document.getElementById('circuit-bg'),ctx=c.getContext('2d');
+  let pts=[],w,h;
+  function resize(){w=c.width=innerWidth;h=c.height=innerHeight}
+  resize();addEventListener('resize',resize);
+  for(let i=0;i<40;i++)pts.push({x:Math.random()*2000,y:Math.random()*1200,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,p:Math.random()*Math.PI*2});
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.p+=.015;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1});
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<180){ctx.strokeStyle=`rgba(255,170,0,${(1-d/180)*.8})`;ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}
+    }
+    pts.forEach(p=>{const g=.4+Math.sin(p.p)*.6;ctx.fillStyle=`rgba(255,170,0,${g})`;ctx.beginPath();ctx.arc(p.x,p.y,1.5,0,Math.PI*2);ctx.fill()});
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3000)}
+
+const URLS={
+  app:'https://meekotharaccoon-cell.github.io/meeko-nerve-center/app.html',
+  bridge:'https://meekotharaccoon-cell.github.io/meeko-nerve-center/bridge.html',
+  spawn:'https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html',
+  prolif:'https://meekotharaccoon-cell.github.io/meeko-nerve-center/proliferator.html',
+  repo:'https://github.com/meekotharaccoon-cell/meeko-nerve-center',
+  gallery:'https://meekotharaccoon-cell.github.io/gaza-rose-gallery',
+  learn:'https://meekotharaccoon-cell.github.io/solarpunk-learn',
+  mutual:'https://meekotharaccoon-cell.github.io/solarpunk-mutual-aid/board.html',
+};
+const MAIN=URLS.app;
+const SPAWN=URLS.spawn;
+
+// ONE-LINERS
+const OL=[
+  {label:'💬 Casual / Text message',text:'yo someone made a $0/month AI that funds Gaza children\'s aid and has free legal tools for everyone. here: '+MAIN},
+  {label:'🧠 Curious / Techie',text:'Found: autonomous AI running $0/month on GitHub Actions. 70% of sales → Palestinian children\'s relief. Forkable for any cause. '+SPAWN},
+  {label:'🔥 Activist / Community',text:'Someone built a system that funds Gaza aid, has free legal rights tools, mutual aid board, and propagates itself virally for FREE. Fork it for your cause in an afternoon. 🌿 '+SPAWN},
+  {label:'📱 Install prompt',text:'Install this as an app → free legal tools, funds Gaza, works offline, costs nothing. Open in Safari → Share → Add to Home Screen: '+MAIN},
+  {label:'⚖️ Legal angle',text:'TikTok broke Illinois biometric law → paid $92M. Meta → $650M. Google → $170M. This system tells you exactly what you agreed to + how to get your share. Free: '+URLS.prolif},
+];
+function buildOneliners(){
+  const el=document.getElementById('oneliners');
+  OL.forEach((o
