@@ -1,0 +1,27 @@
+name: 🧠 Update System State
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  update-state:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Update system state
+        run: python mycelium/update_state.py
+      - name: Commit state update
+        run: |
+          git config user.name "Meeko Mycelium"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add data/system_state.json CLAUDE_CONTEXT.md
+          git diff --staged --quiet || git commit -m "🧠 auto: system state update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push origin main
+        continue-on-error: true

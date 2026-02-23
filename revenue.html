@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REVENUE LAYER — Meeko Mycelium</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
+:root{--void:#000;--signal:#00ff41;--hot:#ff2d55;--gold:#ffd60a;--muted:rgba(255,255,255,0.3);--border:rgba(0,255,65,0.2);--dim:rgba(0,255,65,0.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--void);color:rgba(255,255,255,0.85);font-family:'Space Mono',monospace;padding:24px;max-width:900px;margin:0 auto}
+h1{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--signal);letter-spacing:3px;margin:40px 0 4px}
+.sub{color:var(--muted);font-size:.7rem;letter-spacing:2px;margin-bottom:40px}
+h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:rgba(255,255,255,.7);letter-spacing:2px;margin:40px 0 16px;border-bottom:1px solid var(--border);padding-bottom:8px}
+.stream{border:1px solid var(--border);padding:24px;margin-bottom:16px;transition:border-color .2s}
+.stream:hover{border-color:var(--signal)}
+.stream-header{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dot-live{background:var(--signal);box-shadow:0 0 8px var(--signal)}
+.dot-partial{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.dot-pending{background:rgba(255,255,255,.2)}
+.stream-name{font-size:1rem;font-weight:700;color:rgba(255,255,255,.9)}
+.stream-status{font-size:.6rem;letter-spacing:2px;margin-left:auto}
+.s-live{color:var(--signal)}
+.s-partial{color:var(--gold)}
+.s-pending{color:var(--muted)}
+.stream-desc{font-size:.72rem;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.stream-action{display:inline-block;font-size:.65rem;color:var(--signal);border:1px solid var(--border);padding:8px 16px;text-decoration:none;letter-spacing:1px;transition:all .2s}
+.stream-action:hover{background:var(--dim);border-color:var(--signal)}
+.stream-action.hot{color:var(--hot);border-color:rgba(255,45,85,.3)}
+.stream-action.hot:hover{background:rgba(255,45,85,.06)}
+.stream-action.gold{color:var(--gold);border-color:rgba(255,214,10,.3)}
+.tag{font-size:.55rem;letter-spacing:2px;padding:3px 8px;border-radius:2px;margin-right:6px}
+.tag-instant{background:rgba(0,255,65,.1);color:var(--signal);border:1px solid var(--border)}
+.tag-passive{background:rgba(255,214,10,.1);color:var(--gold);border:1px solid rgba(255,214,10,.3)}
+.tag-active{background:rgba(255,45,85,.1);color:var(--hot);border:1px solid rgba(255,45,85,.3)}
+.model-box{background:rgba(0,255,65,.03);border:1px solid var(--border);border-left:3px solid var(--signal);padding:20px 24px;margin:24px 0;font-size:.75rem;line-height:2;color:var(--muted)}
+.model-box strong{color:rgba(255,255,255,.8)}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);font-size:.6rem;color:var(--muted);line-height:2.5;text-align:center}
+footer a{color:rgba(0,255,65,.5);text-decoration:none}
+</style>
+</head>
+<body>
+
+<h1>REVENUE LAYER</h1>
+<div class="sub">ALL MONEY PATHS · MEEKO MYCELIUM · EVERYTHING CONNECTED</div>
+
+<div class="model-box">
+<strong>THE MODEL:</strong> Small digital goods → automated delivery → repeat customers → no human labor after setup.<br>
+The system IS the product. Revenue fuels the system. System grows the revenue. Repeat at every scale.
+</div>
+
+<h2>ACTIVE STREAMS</h2>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-live"></div>
+    <span class="stream-name">🌹 Gaza Rose Gallery</span>
+    <span class="stream-status s-live">LIVE</span>
+  </div>
+  <div style="margin-bottom:10px"><span class="tag tag-passive">PASSIVE</span><span class="tag tag-instant">AUTO-DELIVERY</span></div>
+  <p class="stream-desc">56 original artworks. $1 each. 70% goes directly to PCRF (Palestinian Children's Relief Fund). PayPal inline. Zero friction. The art sells itself — the bottleneck is traffic, not the store.</p>
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="stream-action">VIEW GALLERY →</a>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-partial"></div>
+    <span class="stream-name">📦 Fork Guide — $5 Digital Product</span>
+    <span class="stream-status s-partial">PRODUCT READY · NEEDS GUMROAD LISTING</span>
+  </div>
+  <div style="margin-bottom:10px"><span class="tag tag-passive">PASSIVE</span><span class="tag tag-instant">AUTO-DELIVERY</span></div>
+  <p class="stream-desc">The complete guide to forking and running the Meeko Mycelium system. Written, ready to sell. Content lives at <code>products/fork-guide.md</code> in the repo. Needs a Gumroad listing at $5. Every person who buys it gets a running autonomous system. They fork it. Network grows. More people find the gallery.</p>
+  <a href="https://gumroad.com" class="stream-action gold" target="_blank">CREATE GUMROAD LISTING →</a>
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md" class="stream-action" target="_blank" style="margin-left:8px">VIEW PRODUCT CONTENT</a>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-partial"></div>
+    <span class="stream-name">☕ Ko-fi Tips</span>
+    <span class="stream-status s-partial">SETUP NEEDED</span>
+  </div>
+  <div style="margin-bottom:10px"><span class="tag tag-passive">PASSIVE</span></div>
+  <p class="stream-desc">Zero fees. Direct tip link. One line of HTML to embed anywhere. Create account at ko-fi.com, get your link, paste it into spawn.html, proliferator.html, and link.html. 5 minutes of work.</p>
+  <a href="https://ko-fi.com" class="stream-action" target="_blank">CREATE KO-FI →</a>
+</div>
+
+<h2>PAYMENT INFRASTRUCTURE</h2>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-live"></div>
+    <span class="stream-name">💳 PayPal</span>
+    <span class="stream-status s-live">LIVE IN GALLERY</span>
+  </div>
+  <p class="stream-desc">Inline buy buttons in Gaza Rose gallery. Working now. Extend to: proliferator.html buy button, spawn.html donation link, any page that gets traffic.</p>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-live"></div>
+    <span class="stream-name">₿ Bitcoin</span>
+    <span class="stream-status s-live">ADDRESS ACTIVE</span>
+  </div>
+  <p class="stream-desc">Direct wallet address exists. Add a QR code to the gallery and proliferator pages. Zero fees. Immediate settlement.</p>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-partial"></div>
+    <span class="stream-name">⚡ Lightning / Strike</span>
+    <span class="stream-status s-partial">BUILT · NOT WIRED</span>
+  </div>
+  <p class="stream-desc">Instant, near-zero-fee Bitcoin payments. Built and configured. Needs API connection via GRAND_SETUP_WIZARD.py on desktop.</p>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-partial"></div>
+    <span class="stream-name">◎ Solana / Phantom</span>
+    <span class="stream-status s-partial">CONFIGURED · NOT WIRED</span>
+  </div>
+  <p class="stream-desc">Solana wallet configured. Phantom integration ready. Needs wiring via GRAND_SETUP_WIZARD.py. Enables crypto payments directly on any page.</p>
+</div>
+
+<h2>NEXT REVENUE UNLOCKS</h2>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-pending"></div>
+    <span class="stream-name">📧 Email Layer → Grant Applications</span>
+    <span class="stream-status s-pending">ONE SECRET AWAY</span>
+  </div>
+  <div style="margin-bottom:10px"><span class="tag tag-active">REQUIRES: GMAIL_APP_PASSWORD</span></div>
+  <p class="stream-desc">The moment GMAIL_APP_PASSWORD is added to GitHub Secrets, the system begins automatically identifying and applying to grants, fellowships, and arts funding programs that match the mission. This is income generation that runs itself.</p>
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/settings/secrets/actions" class="stream-action hot" target="_blank">ADD SECRET → UNLOCK THIS</a>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-pending"></div>
+    <span class="stream-name">⚖️ Legal Tools → Affiliate + Contingency</span>
+    <span class="stream-status s-pending">TRAFFIC NEEDED</span>
+  </div>
+  <p class="stream-desc">proliferator.html legal tools (TCPA, FDCPA, FOIA) are free — and they drive traffic. TCPA and FDCPA attorneys work on contingency. Referral agreements with contingency attorneys = revenue for every successful case referred. Add referral links below each legal tool.</p>
+</div>
+
+<div class="stream">
+  <div class="stream-header">
+    <div class="status-dot dot-pending"></div>
+    <span class="stream-name">🧬 Fork License Rider</span>
+    <span class="stream-status s-pending">FUTURE</span>
+  </div>
+  <p class="stream-desc">AGPL-3.0 is free. An optional "commercial use" license tier for organizations that want to build closed products on top — paid, permissioned, separate from the open community version. This is how open source projects sustainably monetize at scale.</p>
+</div>
+
+<h2>THE POWERSHELL</h2>
+<div class="model-box">
+<strong># Run inventory (safe — just shows what's there):</strong><br>
+Get-ChildItem -Path "$env:USERPROFILE\Desktop\UltimateAI_Master" -Recurse -Filter "*.py" | Where-Object { $_.Name -notlike "GEN_*" } | Sort-Object FullName | Select-Object Name, DirectoryName | Format-Table -AutoSize<br><br>
+<strong># Run everything in order:</strong><br>
+Get-ChildItem -Path "$env:USERPROFILE\Desktop\UltimateAI_Master" -Recurse -Filter "*.py" | Where-Object { $_.Name -notlike "GEN_*" } | Sort-Object FullName | ForEach-Object { Write-Host "RUNNING: $($_.Name)"; python "$($_.FullName)" }
+</div>
+
+<footer>
+  REVENUE LAYER · Meeko Mycelium<br>
+  <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/proliferator.html">Proliferator</a> ·
+  <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html">Spawn</a> ·
+  <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a><br>
+  No ads · No tracking · Permission-first · $0/month infrastructure
+</footer>
+
+</body>
+</html>
