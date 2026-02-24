@@ -1,1 +1,11 @@
-{"generated":"bootstrap","note":"Will be overwritten by heartbeat and update_state.py","pages_live":true,"email_dark":true,"todo":["Add GMAIL_APP_PASSWORD to GitHub Secrets","Set up Gumroad listing for fork-guide.md at $5","Create Ko-fi account","Run MASTER.bat on desktop"]}
+{
+  "updated": "2026-02-24 22:31 UTC",
+  "last_commit": "Create jekyll-gh-pages.yml",
+  "last_commit_date": "2026-02-24 17:31:22 -0500",
+  "tracked_files": 119,
+  "system": "meeko-nerve-center",
+  "status": "ACTIVE",
+  "gmail_secret": "MISSING",
+  "local_bridge": "NOT_YET_RUN",
+  "mcp_config": "NOT_YET_RUN"
+}
