@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-24 22:05 UTC — 🌐 Fix GitHub Pages (index.html + .nojekyll + pages workflow) + MASTER.bat + LOCAL_SERVER.bat*
+*Auto-updated by the system. Last update: 2026-02-24 22:06 UTC — 📱 a-Shell complete command sequence for iPhone*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
