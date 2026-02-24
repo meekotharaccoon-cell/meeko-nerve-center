@@ -1,8 +1,6 @@
-name: 🧬 Meeko Brain — Autonomous Daily Run
+name: 🧬 Meeko Brain — Autonomous Run
 on:
-  schedule:
-    - cron: '0 12 * * *'   # Noon UTC every day. No human required.
-  workflow_dispatch:         # Meeko can trigger manually if they feel like it. Or not.
+  workflow_dispatch:
 
 jobs:
   think_and_act:
@@ -26,10 +24,8 @@ jobs:
           print("🧬 MEEKO BRAIN — Daily autonomous run")
           print("   The human is not required for any of this.\n")
 
-          # DECISION LOG — what the twin chose to do today
           decisions = []
 
-          # Queue of things the system wants to do
           candidate_actions = [
               ("send_hello_emails",       "send automated hello emails to new contacts"),
               ("run_grant_search",        "search for new open grant opportunities"),
@@ -54,7 +50,6 @@ jobs:
               if approved is None:
                   print(f"          → Needs Meeko: {reason}")
 
-          # Save the decision log
           import os, datetime
           os.makedirs('data', exist_ok=True)
           log = {
@@ -78,8 +73,6 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           OPENROUTER_KEY:     ${{ secrets.OPENROUTER_KEY }}
         run: |
-          # Only runs what the twin approved
-          # Each script checks meeko_brain itself before doing anything
           python mycelium/mycelium_hello.py     || true
           python mycelium/appointment_guardian.py || true
 

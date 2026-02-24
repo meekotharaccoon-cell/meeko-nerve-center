@@ -1,7 +1,5 @@
 name: 📺 YouTube Manager
 on:
-  schedule:
-    - cron: '0 15 * * *'  # Daily at 3pm UTC, after morning pulse
   workflow_dispatch:
     inputs:
       mode:

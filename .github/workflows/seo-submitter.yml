@@ -1,7 +1,5 @@
 name: 🔍 SEO + Discovery Submitter
 on:
-  schedule:
-    - cron: '0 12 * * 0'  # Weekly, Sunday noon UTC
   workflow_dispatch:
     inputs:
       dry_run:

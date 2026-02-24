@@ -1,9 +1,6 @@
-name: 🧠 Orchestrator — Daily Full Cycle
+name: 🧠 Orchestrator — Full Cycle
 
 on:
-  schedule:
-    - cron: '0 7 * * *'   # Morning cycle 7am UTC
-    - cron: '0 19 * * *'  # Evening cycle 7pm UTC
   workflow_dispatch:
 
 jobs:
@@ -18,29 +15,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Morning Cycle (7am)
-        if: github.event_name == 'schedule'
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "07" ]; then
-            python mycelium/ORCHESTRATOR.py --morning
-          fi
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-
-      - name: Evening Cycle (7pm)
-        if: github.event_name == 'schedule'
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "19" ]; then
-            python mycelium/ORCHESTRATOR.py --evening
-          fi
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-
-      - name: Manual Full Cycle
-        if: github.event_name == 'workflow_dispatch'
+      - name: Run Full Cycle
         run: python mycelium/ORCHESTRATOR.py
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}

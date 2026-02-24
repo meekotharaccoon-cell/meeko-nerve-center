@@ -1,11 +1,7 @@
-name: 🌹 Daily Gaza Rose Promoter
+name: 🌹 Gaza Rose Promoter
 
 on:
-  schedule:
-    # Every day at 9 AM UTC — no laptop needed, no localhost, runs in the cloud
-    - cron: '0 9 * * *'
   workflow_dispatch:
-    # Also trigger manually from the Actions tab anytime
     inputs:
       platform:
         description: 'Platform to post to'

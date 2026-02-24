@@ -1,8 +1,6 @@
-name: 🕸️ Wiring Hub — Daily Data Bus Update
+name: 🕸️ Wiring Hub — Data Bus Update
 
 on:
-  schedule:
-    - cron: '0 7,19 * * *'  # 7am + 7pm UTC daily (offset from space_bridge)
   workflow_dispatch:
   push:
     paths:
@@ -23,17 +21,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run wiring hub
-        run: python mycelium/wiring_hub.py --no-write
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-
-      - name: Write data bus
-        run: python mycelium/wiring_hub.py --json > data/wiring_status_raw.json 2>/dev/null || true
-
-      - name: Update data files
+      - name: Update data bus
         run: python mycelium/wiring_hub.py
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}

@@ -1,7 +1,5 @@
 name: 📡 Cross-Platform Auto-Poster
 on:
-  schedule:
-    - cron: '0 16 * * *'  # 4pm UTC daily — after morning pulse and YouTube
   workflow_dispatch:
     inputs:
       mode:

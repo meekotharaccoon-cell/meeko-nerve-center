@@ -1,13 +1,5 @@
 name: 🌅 Mycelium Morning Pulse
-# Runs 9AM EST (14:00 UTC) every day
-# SENSES: checks gallery, reads web
-# THINKS: generates content with AI
-# ACTS: posts, emails briefing, sends outreach
-# REMEMBERS: updates brain repo
-
 on:
-  schedule:
-    - cron: '0 14 * * *'
   workflow_dispatch:
 
 jobs:

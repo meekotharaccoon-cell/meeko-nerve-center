@@ -1,8 +1,6 @@
 name: 🌹 Gallery Health Check
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -25,7 +23,7 @@ jobs:
           COUNT=$(echo $RELEASE | python3 -c "import sys,json; d=json.load(sys.stdin); print(len([a for a in d.get('assets',[]) if a['name'].lower().endswith(('.jpg','.png'))]))" 2>/dev/null || echo "0")
           echo "Art pieces in release: $COUNT"
           if [ "$COUNT" = "0" ]; then
-            echo "::warning::No art in release yet! Go to github.com/meekotharaccoon-cell/gaza-rose-gallery/releases/new and upload your JPGs tagged v1.0-art-collection"
+            echo "::warning::No art in release yet!"
           else
             echo "✅ $COUNT pieces ready to sell"
           fi

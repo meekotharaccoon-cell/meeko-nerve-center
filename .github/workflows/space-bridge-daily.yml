@@ -1,9 +1,6 @@
-name: 🛸 Space Bridge — Daily Report
+name: 🛸 Space Bridge — Report
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
-    - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,8 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run Space Bridge
-        run: |
-          python mycelium/space_bridge.py --push
+        run: python mycelium/space_bridge.py --push
         env:
           MY_LAT: ${{ secrets.MY_LAT }}
           MY_LON: ${{ secrets.MY_LON }}

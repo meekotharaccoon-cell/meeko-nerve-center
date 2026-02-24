@@ -1,7 +1,5 @@
-name: 🌱 Daily Evolution Engine
+name: 🌱 Evolution Engine
 on:
-  schedule:
-    - cron: '0 7 * * *'  # 7am UTC daily
   workflow_dispatch:
     inputs:
       dry_run:

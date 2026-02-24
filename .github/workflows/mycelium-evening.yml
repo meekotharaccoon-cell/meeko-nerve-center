@@ -1,13 +1,5 @@
 name: 🌙 Mycelium Evening Pulse
-# Runs 9PM EST (02:00 UTC next day)
-# SENSES: checks sales, gallery traffic
-# THINKS: prepares next day content
-# ACTS: posts evening update to platforms
-# REMEMBERS: syncs brain with full day summary
-
 on:
-  schedule:
-    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -41,10 +33,10 @@ jobs:
           STRIPE_SECRET: ${{ secrets.STRIPE_SECRET }}
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: evening
-        run: python mycelium/pulse.py
+        run: python mycelium/pulse.py || true
 
       - name: Update Brain Repo
         env:
           BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PULSE_TIME: evening
-        run: python mycelium/brain_sync.py
+        run: python mycelium/brain_sync.py || true

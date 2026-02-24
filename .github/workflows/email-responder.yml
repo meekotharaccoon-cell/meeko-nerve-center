@@ -1,11 +1,6 @@
 name: 📬 Mycelium Email Responder
-# Checks Gmail for new replies every 30 minutes
-# Uses AI to draft response, sends it automatically
-# Logs everything to brain repo
-
+# Run manually when you want to check for email replies
 on:
-  schedule:
-    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:

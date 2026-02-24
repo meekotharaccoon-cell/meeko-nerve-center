@@ -1,7 +1,5 @@
 name: 📊 Signal Tracker
 on:
-  schedule:
-    - cron: '0 8 * * 1'  # Monday mornings — weekly performance review
   workflow_dispatch:
 
 jobs:

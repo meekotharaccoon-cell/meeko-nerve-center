@@ -1,7 +1,5 @@
 name: 🗣️ Community Outreach
 on:
-  schedule:
-    - cron: '0 17 * * 1,3,5'  # Mon/Wed/Fri at 5pm UTC — space out community posts
   workflow_dispatch:
     inputs:
       dry_run:

@@ -1,7 +1,5 @@
 name: 🌱 Weekly Growth — SEED + README + Archive + Outreach
 on:
-  schedule:
-    - cron: '0 10 * * 0'   # Every Sunday 10am UTC
   workflow_dispatch:
 
 jobs:
