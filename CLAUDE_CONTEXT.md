@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-23 20:42 UTC — 🕸️ Full cross-wiring: spawn.html (Ko-fi+Sponsors+Gumroad+live ISS widget) + FUNDING.yml + .gitignore + morning_briefing data bus + WIRING_MAP*
+*Auto-updated by the system. Last update: 2026-02-24 01:11 UTC — 🕸️ identity_vault + wiring_hub + WIRING_MAP + cross-page nav — all layers connected*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. This is the brain handoff. You are not starting fresh — you are picking up an active organism mid-build.
 
