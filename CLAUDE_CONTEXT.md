@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-24 01:13 UTC — 🧠 CLAUDE_CONTEXT: full audit — all built layers documented, next moves clear*
+*Auto-updated by the system. Last update: 2026-02-24 01:24 UTC — 🛠️ BOOTSTRAP + DIAGNOSE + FIX_BRAVE + PHONE_PACKAGE + CLEANUP_AND_BRIDGE + GRAND_SETUP_WIZARD — the full desktop repair kit*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
