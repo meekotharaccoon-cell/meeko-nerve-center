@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-24 01:24 UTC — 🛠️ BOOTSTRAP + DIAGNOSE + FIX_BRAVE + PHONE_PACKAGE + CLEANUP_AND_BRIDGE + GRAND_SETUP_WIZARD — the full desktop repair kit*
+*Auto-updated by the system. Last update: 2026-02-24 03:28 UTC — 🚀 RUN_SEQUENCE.ps1 — runs everything in order, connected*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
