@@ -1,11 +1,1 @@
-{
-  "updated": "2026-02-24 22:06 UTC",
-  "last_commit": "\ud83d\udcf1 a-Shell complete command sequence for iPhone",
-  "last_commit_date": "2026-02-24 17:06:11 -0500",
-  "tracked_files": 116,
-  "system": "meeko-nerve-center",
-  "status": "ACTIVE",
-  "gmail_secret": "MISSING",
-  "local_bridge": "NOT_YET_RUN",
-  "mcp_config": "NOT_YET_RUN"
-}
+{"generated":"bootstrap","note":"Will be overwritten by heartbeat and update_state.py","pages_live":true,"email_dark":true,"todo":["Add GMAIL_APP_PASSWORD to GitHub Secrets","Set up Gumroad listing for fork-guide.md at $5","Create Ko-fi account","Run MASTER.bat on desktop"]}

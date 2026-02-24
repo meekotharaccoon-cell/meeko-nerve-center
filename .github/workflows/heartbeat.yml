@@ -1,0 +1,69 @@
+name: 💓 Daily Heartbeat — System Runs Itself
+
+# This is the pulse. Runs twice a day whether you're at the computer or not.
+# Fetches live data, updates the system state, commits results back.
+# Your system is ALIVE even when you're asleep.
+
+on:
+  schedule:
+    - cron: '0 8 * * *'   # 8am UTC = 3-4am EST (morning data before you wake)
+    - cron: '0 20 * * *'  # 8pm UTC = 3-4pm EST (afternoon refresh)
+  push:
+    branches: [main]
+  workflow_dispatch:       # Run manually anytime from GitHub Actions tab
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: 🚀 Run Space Bridge (ISS + NASA)
+        run: python mycelium/space_bridge.py
+        continue-on-error: true
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+
+      - name: 🕸️ Run Wiring Hub (connect all layers)
+        run: python mycelium/wiring_hub.py
+        continue-on-error: true
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+
+      - name: 🧠 Update System State
+        run: python mycelium/update_state.py
+        continue-on-error: true
+
+      - name: 📊 Generate status page
+        run: python mycelium/gen_status.py
+        continue-on-error: true
+
+      - name: 📧 Send morning briefing email
+        if: env.GMAIL_APP_PASSWORD != ''
+        run: python mycelium/morning_briefing.py
+        continue-on-error: true
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+
+      - name: Commit updated data
+        run: |
+          git config user.name "Meeko Heartbeat"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add data/ CLAUDE_CONTEXT.md status.html 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "💓 heartbeat: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push origin main
+        continue-on-error: true
