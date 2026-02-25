@@ -36,6 +36,36 @@ h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:rgba(255,255,255,.
 .tag-active{background:rgba(255,45,85,.1);color:var(--hot);border:1px solid rgba(255,45,85,.3)}
 .model-box{background:rgba(0,255,65,.03);border:1px solid var(--border);border-left:3px solid var(--signal);padding:20px 24px;margin:24px 0;font-size:.75rem;line-height:2;color:var(--muted)}
 .model-box strong{color:rgba(255,255,255,.8)}
+/* Widget slot styling */
+.widget-slot{
+  margin-top:16px;padding:18px 20px;
+  background:rgba(0,0,0,0.5);
+  border:1px dashed rgba(255,255,255,0.1);
+  border-radius:4px;
+  font-size:.65rem;
+}
+.widget-slot.ready{border-color:rgba(0,255,65,.3);background:rgba(0,255,65,.02)}
+.widget-slot .ws-label{color:rgba(255,255,255,.2);letter-spacing:2px;font-size:.55rem;margin-bottom:10px;text-transform:uppercase}
+.widget-slot .ws-pending{color:rgba(255,255,255,.2);font-style:italic}
+.widget-slot code{display:block;margin-top:8px;padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);font-size:.62rem;color:rgba(0,255,65,.6);white-space:pre-wrap;word-break:break-all;line-height:1.8}
+/* Ko-fi button override */
+.kofi-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#29abe0;color:#fff;font-family:'Space Mono',monospace;
+  font-size:.7rem;font-weight:700;letter-spacing:1px;
+  padding:10px 20px;text-decoration:none;border-radius:3px;
+  transition:opacity .2s;margin-top:4px;
+}
+.kofi-btn:hover{opacity:.85}
+/* Gumroad button override */
+.gumroad-button{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#ff90e8;color:#000 !important;
+  font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;
+  letter-spacing:1px;padding:10px 20px;text-decoration:none;
+  border-radius:3px;transition:opacity .2s;margin-top:4px;
+}
+.gumroad-button:hover{opacity:.85}
 footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--border);font-size:.6rem;color:var(--muted);line-height:2.5;text-align:center}
 footer a{color:rgba(0,255,65,.5);text-decoration:none}
 /* Site nav */
@@ -49,6 +79,8 @@ footer a{color:rgba(0,255,65,.5);text-decoration:none}
 #snav .gallery{color:rgba(255,45,107,.6)!important}
 #snav .gallery:hover{color:#ff2d6b!important}
 </style>
+<!-- Gumroad overlay (loads async, does nothing until a .gumroad-button exists) -->
+<script src="https://gumroad.com/js/gumroad.js" async></script>
 </head>
 <body>
 
@@ -77,27 +109,84 @@ The system IS the product. Revenue fuels the system. System grows the revenue. R
   <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="stream-action">VIEW GALLERY →</a>
 </div>
 
+<!-- ── GUMROAD STREAM ─────────────────────────────────────────────────── -->
 <div class="stream">
   <div class="stream-header">
     <div class="status-dot dot-partial"></div>
     <span class="stream-name">📦 Fork Guide — $5 Digital Product</span>
-    <span class="stream-status s-partial">PRODUCT READY · NEEDS GUMROAD LISTING</span>
+    <span class="stream-status s-partial" id="gumroad-status-label">PRODUCT READY · NEEDS GUMROAD LISTING</span>
   </div>
   <div style="margin-bottom:10px"><span class="tag tag-passive">PASSIVE</span><span class="tag tag-instant">AUTO-DELIVERY</span></div>
   <p class="stream-desc">The complete guide to forking and running the Meeko Mycelium system. Written, ready to sell. Content lives at <code>products/fork-guide.md</code> in the repo. Needs a Gumroad listing at $5. Every person who buys it gets a running autonomous system. They fork it. Network grows. More people find the gallery.</p>
-  <a href="https://gumroad.com" class="stream-action gold" target="_blank">CREATE GUMROAD LISTING →</a>
-  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md" class="stream-action" target="_blank" style="margin-left:8px">VIEW PRODUCT CONTENT</a>
+
+  <!-- ── GUMROAD WIDGET SLOT ── -->
+  <div class="widget-slot" id="gumroad-slot">
+    <div class="ws-label">🛒 Gumroad Buy Button</div>
+
+    <!--
+      ┌─────────────────────────────────────────────────────────────────┐
+      │  TO ACTIVATE:                                                   │
+      │  1. Go to gumroad.com → create product "Meeko Fork Guide" $5   │
+      │  2. Copy the product permalink (e.g. "fork-guide")             │
+      │  3. Replace YOUR_PRODUCT_ID below with that permalink          │
+      │  4. The button below will instantly work                        │
+      └─────────────────────────────────────────────────────────────────┘
+    -->
+
+    <!-- LIVE BUTTON — replace YOUR_PRODUCT_ID with your Gumroad permalink -->
+    <a class="gumroad-button"
+       href="https://meekotharaccoon.gumroad.com/l/YOUR_PRODUCT_ID"
+       data-gumroad-overlay-checkout="true"
+       target="_blank">
+      🌱 Buy the Fork Guide — $5
+    </a>
+
+    <div style="margin-top:10px;font-size:.58rem;color:rgba(255,255,255,.2)">
+      ⚙️ Replace <code style="display:inline;padding:2px 6px;background:rgba(255,255,255,.05)">YOUR_PRODUCT_ID</code> in this file with your Gumroad product permalink to activate the overlay checkout.
+    </div>
+  </div>
+
+  <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+    <a href="https://gumroad.com/dashboard" class="stream-action gold" target="_blank">OPEN GUMROAD DASHBOARD →</a>
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md" class="stream-action" target="_blank" style="margin-left:0">VIEW PRODUCT CONTENT</a>
+  </div>
 </div>
 
+<!-- ── KO-FI STREAM ──────────────────────────────────────────────────── -->
 <div class="stream">
   <div class="stream-header">
     <div class="status-dot dot-partial"></div>
     <span class="stream-name">☕ Ko-fi Tips</span>
-    <span class="stream-status s-partial">SETUP NEEDED</span>
+    <span class="stream-status s-partial" id="kofi-status-label">SETUP NEEDED</span>
   </div>
   <div style="margin-bottom:10px"><span class="tag tag-passive">PASSIVE</span></div>
-  <p class="stream-desc">Zero fees. Direct tip link. One line of HTML to embed anywhere. Create account at ko-fi.com, get your link, paste it into spawn.html, proliferator.html, and link.html. 5 minutes of work.</p>
-  <a href="https://ko-fi.com" class="stream-action" target="_blank">CREATE KO-FI →</a>
+  <p class="stream-desc">Zero fees. Direct tip link. One line of HTML to embed anywhere. Create account at ko-fi.com, get your username, paste it into the slot below — widget activates instantly on this page and anywhere else you embed it.</p>
+
+  <!-- ── KO-FI WIDGET SLOT ── -->
+  <div class="widget-slot" id="kofi-slot">
+    <div class="ws-label">☕ Ko-fi Button + Floating Widget</div>
+
+    <!--
+      ┌─────────────────────────────────────────────────────────────────┐
+      │  TO ACTIVATE:                                                   │
+      │  1. Go to ko-fi.com → create free account                      │
+      │  2. Your username will be in your profile URL: ko-fi.com/XXXX  │
+      │  3. Replace YOUR_KOFI_USERNAME in this file (2 places below)   │
+      │  4. Both the button AND the floating widget activate instantly  │
+      └─────────────────────────────────────────────────────────────────┘
+    -->
+
+    <!-- Inline Ko-fi button -->
+    <a href="https://ko-fi.com/YOUR_KOFI_USERNAME" class="kofi-btn" target="_blank">
+      ☕ Support on Ko-fi
+    </a>
+
+    <div style="margin-top:10px;font-size:.58rem;color:rgba(255,255,255,.2)">
+      ⚙️ Replace <code style="display:inline;padding:2px 6px;background:rgba(255,255,255,.05)">YOUR_KOFI_USERNAME</code> in this file (and in the floating widget script below) to activate both the inline button and the floating bubble.
+    </div>
+  </div>
+
+  <a href="https://ko-fi.com" class="stream-action" target="_blank" style="margin-top:12px;display:inline-block">CREATE KO-FI ACCOUNT →</a>
 </div>
 
 <h2>PAYMENT INFRASTRUCTURE</h2>
@@ -185,6 +274,24 @@ Get-ChildItem -Path "$env:USERPROFILE\Desktop\UltimateAI_Master" -Recurse -Filte
   <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gaza Rose Gallery</a><br>
   No ads · No tracking · Permission-first · $0/month infrastructure
 </footer>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  KO-FI FLOATING WIDGET — activate by replacing YOUR_KOFI_USERNAME  ║
+  ║  with your actual Ko-fi username in the line below.                ║
+  ║  Then uncomment the two script tags.                               ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('YOUR_KOFI_USERNAME', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': '#00ff41',
+      'floating-chat.donateButton.text-color': '#000000'
+    });
+  </script>
+-->
 
 </body>
 </html>
