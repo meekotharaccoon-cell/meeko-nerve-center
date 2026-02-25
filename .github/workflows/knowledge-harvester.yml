@@ -1,0 +1,42 @@
+name: 🧠 Knowledge Harvester
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # daily 5am UTC
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Extra topic to harvest (optional)'
+        required: false
+        default: ''
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run harvester
+        env:
+          EXTRA_TOPIC: ${{ github.event.inputs.topic }}
+        run: python mycelium/knowledge_harvester.py
+
+      - name: Commit knowledge
+        run: |
+          git config user.name  "meeko-brain"
+          git config user.email "brain@meeko-nerve-center"
+          git add knowledge/
+          git diff --cached --quiet && echo "No new knowledge today" || (
+            git commit -m "🧠 knowledge update [$(date -u +%Y-%m-%d)]" && git push
+          )
