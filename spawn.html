@@ -97,6 +97,38 @@ h2 em{color:#00ff88;font-style:normal}
 .fork-cta{background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15);border-radius:20px;padding:48px;text-align:center;margin:60px 24px}
 .fork-cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:normal;margin-bottom:16px}
 .fork-cta p{color:rgba(255,255,255,0.4);max-width:560px;margin:0 auto 28px;line-height:1.8}
+
+/* ── Hall of Forks ────────────────────────────────────────── */
+#hall{background:rgba(0,255,136,0.02);border-top:1px solid rgba(0,255,136,0.07);border-bottom:1px solid rgba(0,255,136,0.07);padding:80px 24px}
+#hall .inner{max-width:1000px;margin:0 auto}
+.fork-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:32px}
+.fork-card{
+  background:rgba(0,255,136,0.03);
+  border:1px solid rgba(0,255,136,0.1);
+  border-radius:12px;padding:18px 20px;
+  font-family:monospace;font-size:.72rem;
+  transition:border-color .2s;
+  text-decoration:none;color:#fff;
+  display:block;
+}
+.fork-card:hover{border-color:rgba(0,255,136,0.4)}
+.fork-card .fc-name{color:#00ff88;font-size:.8rem;font-weight:700;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fork-card .fc-owner{color:rgba(255,255,255,.3);margin-bottom:8px}
+.fork-card .fc-date{color:rgba(255,255,255,.15)}
+.fork-empty{
+  grid-column:1/-1;
+  text-align:center;
+  padding:40px;
+  border:1px dashed rgba(0,255,136,0.15);
+  border-radius:12px;
+  color:rgba(255,255,255,0.25);
+  font-family:monospace;
+  font-size:.8rem;
+  line-height:2;
+}
+.fork-empty a{color:#00ff88;text-decoration:none}
+.hof-meta{font-family:monospace;font-size:.65rem;color:rgba(255,255,255,.15);margin-top:20px;text-align:right}
+
 footer{border-top:1px solid rgba(255,255,255,0.05);padding:32px 24px;text-align:center;color:rgba(255,255,255,0.2);font-family:monospace;font-size:.7rem;line-height:2.2}
 footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 </style>
@@ -111,6 +143,7 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
   <div class="logo">🌿 SolarPunk Mycelium</div>
   <a href="#how">How</a>
   <a href="#what">What</a>
+  <a href="#hall">Network</a>
   <a href="#fork">Fork It</a>
   <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">🌹 Gallery</a>
   <a href="https://ko-fi.com/meekotharaccoon" class="nav-sponsor" target="_blank">☕ Support</a>
@@ -127,7 +160,7 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
     <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="btn-ghost">🌹 See the Gallery</a>
   </div>
 
-  <!-- SUPPORT STRIP — all revenue paths in one place -->
+  <!-- SUPPORT STRIP -->
   <div class="support-strip">
     <div class="support-label">Support the work · Every path routes to causes that matter</div>
     <a href="https://ko-fi.com/meekotharaccoon" class="support-btn sb-kofi" target="_blank">☕ Ko-fi Tip</a>
@@ -146,14 +179,14 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
   </div>
 </div>
 
-<!-- STATS -->
+<!-- STATS — live from GitHub API -->
 <div class="stats">
   <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Monthly Cost</span></div>
-  <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Daily Workflows</span></div>
+  <div class="stat"><span class="stat-num" id="stat-forks">…</span><span class="stat-label">Network Forks</span></div>
+  <div class="stat"><span class="stat-num" id="stat-stars">…</span><span class="stat-label">Stars</span></div>
   <div class="stat"><span class="stat-num">56</span><span class="stat-label">Artworks Live</span></div>
   <div class="stat"><span class="stat-num">70%</span><span class="stat-label">Revenue to PCRF</span></div>
-  <div class="stat"><span class="stat-num">21</span><span class="stat-label">Repos</span></div>
-  <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Forkable</span></div>
+  <div class="stat"><span class="stat-num">23</span><span class="stat-label">Workflows Active</span></div>
 </div>
 
 <!-- HOW IT WORKS -->
@@ -285,6 +318,25 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
   </div>
 </section>
 
+<!-- ── HALL OF FORKS ──────────────────────────────────────────────────────── -->
+<div id="hall">
+  <div class="inner">
+    <div class="section-tag">🌍 The Network</div>
+    <h2>Hall of <em>Forks.</em></h2>
+    <p class="section-sub">Every fork is a new autonomous node. Each one runs the same values, aimed at a different cause. The network grows every time someone clicks fork. Auto-updated daily.</p>
+
+    <div class="fork-grid" id="fork-grid">
+      <div class="fork-empty">⟳ Loading network nodes…</div>
+    </div>
+
+    <div class="hof-meta" id="hof-meta"></div>
+
+    <div style="text-align:center;margin-top:32px">
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork" class="btn-primary">🌱 Add Your Node →</a>
+    </div>
+  </div>
+</div>
+
 <!-- FORK CTA -->
 <div class="fork-cta" id="fork">
   <h2>Fork this.<br><em>Run your own.</em></h2>
@@ -311,7 +363,7 @@ footer a{color:rgba(0,255,136,0.4);text-decoration:none}
 </footer>
 
 <script>
-// Live ISS tracker — wired directly into the page
+// ── Live ISS tracker ────────────────────────────────────────────────────────
 async function updateISS() {
   try {
     const r = await fetch('http://api.open-notify.org/iss-now.json');
@@ -333,7 +385,57 @@ async function updateCrew() {
 }
 updateISS();
 updateCrew();
-setInterval(updateISS, 10000); // update every 10s
+setInterval(updateISS, 10000);
+
+// ── GitHub stats + Hall of Forks ────────────────────────────────────────────
+const GH_API = 'https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center';
+
+async function loadGitHubData() {
+  try {
+    const [info, forks] = await Promise.all([
+      fetch(GH_API).then(r => r.json()),
+      fetch(GH_API + '/forks?per_page=100&sort=newest').then(r => r.json())
+    ]);
+
+    // Update stats strip
+    document.getElementById('stat-forks').textContent = info.forks_count || 0;
+    document.getElementById('stat-stars').textContent  = info.stargazers_count || 0;
+
+    // Render Hall of Forks
+    const grid = document.getElementById('fork-grid');
+    const meta = document.getElementById('hof-meta');
+
+    if (!forks.length) {
+      grid.innerHTML = `
+        <div class="fork-empty">
+          No forks yet — be the first node.<br><br>
+          <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork">🌱 Fork this system →</a><br><br>
+          <span style="font-size:.65rem;color:rgba(255,255,255,.12)">Your node appears here automatically within 24 hours.</span>
+        </div>`;
+    } else {
+      grid.innerHTML = forks.map(f => {
+        const created = f.created_at.slice(0, 10);
+        const pagesUrl = `https://${f.owner.login}.github.io/${f.name}`;
+        return `
+          <a class="fork-card" href="${f.html_url}" target="_blank" rel="noopener">
+            <div class="fc-name">🌿 ${f.full_name}</div>
+            <div class="fc-owner">@${f.owner.login}</div>
+            <div class="fc-date">forked ${created}</div>
+            ${f.description ? `<div style="color:rgba(255,255,255,.25);margin-top:6px;font-size:.62rem;line-height:1.5">${f.description.slice(0,80)}</div>` : ''}
+          </a>`;
+      }).join('');
+    }
+
+    meta.textContent = `Auto-updated daily by fork-tracker.yml · ${forks.length} node${forks.length !== 1 ? 's' : ''} in the network`;
+
+  } catch(e) {
+    console.warn('GitHub API:', e);
+    document.getElementById('stat-forks').textContent = '—';
+    document.getElementById('stat-stars').textContent  = '—';
+  }
+}
+
+loadGitHubData();
 </script>
 
 </body>
