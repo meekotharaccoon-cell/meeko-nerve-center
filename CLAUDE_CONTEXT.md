@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-24 23:13 UTC — fix: disable auto-schedules on all non-heartbeat workflows (manual-only until credentials ready)*
+*Auto-updated by the system. Last update: 2026-02-25 04:09 UTC — feat: add unified site nav to revenue.html*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
