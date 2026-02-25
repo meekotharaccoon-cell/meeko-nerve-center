@@ -1,0 +1,77 @@
+name: 🔌 Wiring Status Generator
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate wiring_status.json
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+          KOFI_TOKEN: ${{ secrets.KOFI_TOKEN }}
+          STRIKE_API_KEY: ${{ secrets.STRIKE_API_KEY }}
+          SOLANA_WALLET: ${{ secrets.SOLANA_WALLET }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, os, datetime
+
+          def check(val, name):
+              v = os.environ.get(val, '').strip()
+              if v:
+                  return {"service": name, "status": "connected", "note": "secret present"}
+              else:
+                  return {"service": name, "status": "missing",
+                          "note": f"add {val} to GitHub Secrets"}
+
+          services = [
+              check("GMAIL_APP_PASSWORD",   "Gmail"),
+              check("MASTODON_TOKEN",        "Mastodon"),
+              check("BLUESKY_APP_PASSWORD",  "Bluesky"),
+              check("YOUTUBE_CLIENT_ID",     "YouTube"),
+              check("GUMROAD_TOKEN",         "Gumroad"),
+              check("KOFI_TOKEN",            "Ko-fi"),
+              check("STRIKE_API_KEY",        "Lightning/Strike"),
+              check("SOLANA_WALLET",         "Solana/Phantom"),
+              # always-available
+              {"service": "GitHub Actions",  "status": "ok",      "note": "running now"},
+              {"service": "GitHub Pages",    "status": "ok",      "note": "live"},
+              {"service": "GITHUB_TOKEN",    "status": "ok",      "note": "auto-provided"},
+              # local services — unknown from cloud, instructs user
+              {"service": "Ollama",          "status": "unknown", "note": "run CLEANUP_AND_BRIDGE.py"},
+              {"service": "ChromaDB",        "status": "unknown", "note": "run CLEANUP_AND_BRIDGE.py"},
+              {"service": "MCP Config",      "status": "unknown", "note": "run BUILD_MCP_CONFIG.py"},
+          ]
+
+          out = {
+              "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
+              "generator": "github-actions",
+              "services": services
+          }
+
+          with open("wiring_status.json", "w") as f:
+              json.dump(out, f, indent=2)
+
+          print("wiring_status.json written")
+          PYEOF
+
+      - name: Commit wiring_status.json
+        run: |
+          git config user.name  "meeko-system"
+          git config user.email "system@meeko-nerve-center"
+          git add wiring_status.json
+          git diff --cached --quiet || git commit -m "chore: update wiring_status.json [$(date -u +%Y-%m-%dT%H:%M)]" && git push
