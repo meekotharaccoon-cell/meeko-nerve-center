@@ -1,0 +1,27 @@
+name: ✉️ Email Drafter
+
+on:
+  schedule:
+    - cron: '30 7 * * *'   # 7:30am UTC — after healer, before your day starts
+  workflow_dispatch:
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate draft emails
+        run: python mycelium/email_drafter.py
+
+      - name: Commit drafts
+        run: |
+          git config user.name  "meeko-drafter"
+          git config user.email "drafter@meeko-nerve-center"
+          git add DRAFT_EMAILS.md data/draft_emails.json
+          git diff --cached --quiet && echo "No new drafts" || (
+            git commit -m "✉️ email drafts [$(date -u +%Y-%m-%d)]" && git push
+          )
