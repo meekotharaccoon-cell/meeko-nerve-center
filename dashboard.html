@@ -163,6 +163,24 @@
   .card-link.red{border-color:rgba(255,45,107,0.2);color:var(--red)}
   .card-link.red:hover{background:rgba(255,45,107,0.06)}
 
+  /* Wiring status card */
+  #wiring-card{border-color:rgba(0,255,136,0.12)}
+  .wiring-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+  .wiring-item{
+    padding:9px 12px;border-radius:8px;
+    background:rgba(0,0,0,0.3);
+    border:1px solid rgba(255,255,255,0.06);
+    font-size:.65rem;line-height:1.7;
+    display:flex;flex-direction:column;gap:2px;
+  }
+  .wiring-item .wi-name{color:rgba(255,255,255,0.5)}
+  .wiring-item .wi-val{font-weight:600}
+  .wi-ok{color:var(--green)}
+  .wi-warn{color:var(--gold)}
+  .wi-err{color:var(--red)}
+  .wiring-meta{font-size:.58rem;color:rgba(255,255,255,0.15);margin-top:10px;text-align:right}
+  .wiring-loading{color:rgba(255,255,255,0.2);font-size:.7rem;padding:8px 0;text-align:center}
+
   footer{
     border-top:1px solid var(--dim);padding:20px 28px;
     font-size:.62rem;color:rgba(255,255,255,0.12);
@@ -210,6 +228,12 @@
         <div style="font-size:.6rem;color:rgba(255,255,255,0.15)">per month · always</div>
       </div>
     </div>
+  </div>
+
+  <!-- LIVE WIRING STATUS -->
+  <div class="card full" id="wiring-card">
+    <div class="card-label">🔌 Live Wiring Status <span style="font-size:.55rem;color:rgba(0,255,136,0.4);letter-spacing:1px;margin-left:4px" id="wiring-age"></span></div>
+    <div id="wiring-body"><div class="wiring-loading">⟳ fetching wiring_status.json…</div></div>
   </div>
 
   <!-- WORKFLOW STATUS -->
@@ -326,6 +350,81 @@
     el.textContent = '~' + mins;
     bar.style.width = (mins/2000*100).toFixed(1) + '%';
   }, 3000);
+
+  // ── Live Wiring Status ──────────────────────────────────────────────────────
+  const WIRING_URL = 'https://raw.githubusercontent.com/meekotharaccoon-cell/meeko-nerve-center/main/wiring_status.json';
+
+  // Default/fallback entries shown if file hasn't been generated yet
+  const DEFAULTS = [
+    {service:'Ollama',          status:'unknown', note:'run CLEANUP_AND_BRIDGE.py'},
+    {service:'ChromaDB',        status:'unknown', note:'run CLEANUP_AND_BRIDGE.py'},
+    {service:'SQLite',          status:'unknown', note:'run CLEANUP_AND_BRIDGE.py'},
+    {service:'GitHub Bridge',   status:'unknown', note:'run CLEANUP_AND_BRIDGE.py'},
+    {service:'MCP Config',      status:'unknown', note:'run BUILD_MCP_CONFIG.py'},
+    {service:'Grand Wizard UI', status:'unknown', note:'localhost:7776'},
+    {service:'Gmail',           status:'missing', note:'add GMAIL_APP_PASSWORD secret'},
+    {service:'Mastodon',        status:'missing', note:'add MASTODON_TOKEN secret'},
+    {service:'Bluesky',         status:'missing', note:'add BLUESKY_APP_PASSWORD secret'},
+    {service:'Gumroad',         status:'unknown', note:'connect in revenue.html'},
+    {service:'Ko-fi',           status:'unknown', note:'connect in revenue.html'},
+    {service:'GitHub Actions',  status:'ok',      note:'10 workflows active'},
+  ];
+
+  function statusClass(s){
+    if(s==='ok'||s==='connected'||s==='live') return 'wi-ok';
+    if(s==='missing'||s==='error'||s==='failed') return 'wi-err';
+    return 'wi-warn';
+  }
+  function statusIcon(s){
+    if(s==='ok'||s==='connected'||s==='live') return '✓';
+    if(s==='missing'||s==='error'||s==='failed') return '✗';
+    return '○';
+  }
+
+  function renderWiring(items, generatedAt){
+    const body = document.getElementById('wiring-body');
+    const age  = document.getElementById('wiring-age');
+
+    if(generatedAt){
+      const d = new Date(generatedAt);
+      age.textContent = 'updated ' + d.toISOString().replace('T',' ').slice(0,16) + ' UTC';
+    } else {
+      age.textContent = 'awaiting first run · defaults shown';
+    }
+
+    const grid = document.createElement('div');
+    grid.className = 'wiring-grid';
+
+    items.forEach(item=>{
+      const cls = statusClass(item.status);
+      const ico = statusIcon(item.status);
+      grid.innerHTML += `
+        <div class="wiring-item">
+          <span class="wi-name">${item.service}</span>
+          <span class="wi-val ${cls}">${ico} ${item.status}</span>
+          ${item.note ? `<span style="font-size:.58rem;color:rgba(255,255,255,.18)">${item.note}</span>` : ''}
+        </div>`;
+    });
+
+    body.innerHTML = '';
+    body.appendChild(grid);
+  }
+
+  async function fetchWiring(){
+    try{
+      const r = await fetch(WIRING_URL + '?t=' + Date.now());
+      if(!r.ok) throw new Error('not found');
+      const data = await r.json();
+      const items = data.services || DEFAULTS;
+      renderWiring(items, data.generated_at || null);
+    } catch(e){
+      // File doesn't exist yet — show instructive defaults
+      renderWiring(DEFAULTS, null);
+    }
+  }
+
+  fetchWiring();
+  setInterval(fetchWiring, 60000); // refresh every 60s
 </script>
 </body>
 </html>
