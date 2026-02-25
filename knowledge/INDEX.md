@@ -1,43 +1,36 @@
 # 🧠 Knowledge Base Index
 
-*Auto-built daily by knowledge_harvester.py*
+*22 files · Last updated: 2026-02-25*
 
-This directory is populated automatically every day at 5am UTC by the `knowledge-harvester.yml` workflow.
+Auto-built daily by knowledge_harvester.py from:
+- GitHub API (trending repos by topic)
+- Wikipedia REST API
+- arXiv API (research papers)
+- HackerNews Firebase API
+- NASA Open APIs (DEMO_KEY)
+- Direct repo README harvesting
 
-## Sources
-- `github/` — trending repos by topic (autonomous agents, solarpunk, mutual aid, local-llm, etc.)
-- `wikipedia/` — reference articles on key topics
-- `arxiv/` — recent research papers (AI, decentralized systems, humanitarian tech)
-- `hackernews/` — top stories + Show HN builder projects
-- `nasa/` — ISS position, APOD, Near Earth Objects
-- `repos/` — deep README harvests of specific high-value repos
-- `digest/` — daily combined digest, one file
-- `LATEST_DIGEST.md` — always the most recent digest
+## Files
 
-## How to use this
-
-Other scripts in the system can read from `knowledge/` to get fresh context:
-
-```python
-from pathlib import Path
-digest = Path('knowledge/LATEST_DIGEST.md').read_text()
-# pass digest into Ollama prompt for context-aware responses
-```
-
-Or from any GitHub Actions workflow:
-```yaml
-- name: Load knowledge
-  run: |
-    cat knowledge/LATEST_DIGEST.md >> $GITHUB_ENV
-```
-
-## Manual harvest
-
-Trigger a harvest anytime (no secrets needed):
-1. Go to Actions tab in your repo
-2. Click "Knowledge Harvester"
-3. Click "Run workflow"
-4. Optionally type a custom topic in the input box
-
----
-*No API keys required. All sources are public and free.*
+- `arxiv\2026-02-25.md`
+- `arxiv\latest.md`
+- `digest\2026-02-25.md`
+- `digest\latest.md`
+- `github\2026-02-25.md`
+- `github\latest.md`
+- `hackernews\2026-02-25.md`
+- `hackernews\latest.md`
+- `INDEX.md`
+- `LATEST_DIGEST.md`
+- `nasa\2026-02-25.md`
+- `nasa\latest.md`
+- `repos\crewaiinc-crewai.md`
+- `repos\hotosm-tasking-manager.md`
+- `repos\microsoft-autogen.md`
+- `repos\n8n-io-n8n.md`
+- `repos\ollama-ollama.md`
+- `repos\publiclab-plots2.md`
+- `repos\sdras-awesome-actions.md`
+- `repos\significant-gravitas-autogpt.md`
+- `wikipedia\2026-02-25.md`
+- `wikipedia\latest.md`

@@ -1,0 +1,434 @@
+[
+  {
+    "name": "awesome-selfhosted/awesome-selfhosted",
+    "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+    "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+    "stars": 275153,
+    "language": "unknown",
+    "topic": "free-software",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "Significant-Gravitas/AutoGPT",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "stars": 182021,
+    "language": "Python",
+    "topic": "autonomous-agents",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "Mintplex-Labs/anything-llm",
+    "url": "https://github.com/Mintplex-Labs/anything-llm",
+    "description": "The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.",
+    "stars": 55019,
+    "language": "JavaScript",
+    "topic": "local-llm",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "mudler/LocalAI",
+    "url": "https://github.com/mudler/LocalAI",
+    "description": ":robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, MCP, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
+    "stars": 43060,
+    "language": "Go",
+    "topic": "decentralized",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "nextcloud/server",
+    "url": "https://github.com/nextcloud/server",
+    "description": "\u2601\ufe0f Nextcloud server, a safe home for all your data",
+    "stars": 34167,
+    "language": "PHP",
+    "topic": "free-software",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "flameshot-org/flameshot",
+    "url": "https://github.com/flameshot-org/flameshot",
+    "description": "Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:",
+    "stars": 29372,
+    "language": "C++",
+    "topic": "free-software",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "e2b-dev/awesome-ai-agents",
+    "url": "https://github.com/e2b-dev/awesome-ai-agents",
+    "description": "A list of AI autonomous agents",
+    "stars": 26036,
+    "language": "unknown",
+    "topic": "autonomous-agents",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "Fosowl/agenticSeek",
+    "url": "https://github.com/Fosowl/agenticSeek",
+    "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. \ud83d\udd14 Official updates only via twitter @Martin993886460 (Beware of fake account)",
+    "stars": 25125,
+    "language": "Python",
+    "topic": "autonomous-agents",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "yjs/yjs",
+    "url": "https://github.com/yjs/yjs",
+    "description": "Shared data types for building collaborative software",
+    "stars": 21288,
+    "language": "JavaScript",
+    "topic": "decentralized",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "amark/gun",
+    "url": "https://github.com/amark/gun",
+    "description": "An open source cybersecurity protocol for syncing decentralized graph data.",
+    "stars": 18916,
+    "language": "JavaScript",
+    "topic": "decentralized",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "mikeroyal/Self-Hosting-Guide",
+    "url": "https://github.com/mikeroyal/Self-Hosting-Guide",
+    "description": "Self-Hosting Guide. Learn all about  locally hosting (on premises & private web servers) and managing software applications by yourself or your organization. Including Cloud, LLMs, WireGuard, Automation, Home Assistant, and Networking.",
+    "stars": 18754,
+    "language": "Dockerfile",
+    "topic": "decentralized",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "lichess-org/lila",
+    "url": "https://github.com/lichess-org/lila",
+    "description": "\u265e lichess.org: the forever free, adless and open source chess server \u265e",
+    "stars": 17823,
+    "language": "Scala",
+    "topic": "free-software",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "TransformerOptimus/SuperAGI",
+    "url": "https://github.com/TransformerOptimus/SuperAGI",
+    "description": "<\u26a1\ufe0f> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
+    "stars": 17200,
+    "language": "Python",
+    "topic": "autonomous-agents",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "gotify/server",
+    "url": "https://github.com/gotify/server",
+    "description": "A simple server for sending and receiving messages in real-time per WebSocket. (Includes a sleek web-ui)",
+    "stars": 14670,
+    "language": "Go",
+    "topic": "free-software",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "ruvnet/claude-flow",
+    "url": "https://github.com/ruvnet/claude-flow",
+    "description": "\ud83c\udf0a The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code support via MCP protocol. Ranked #1 in agent-based frameworks.",
+    "stars": 14509,
+    "language": "TypeScript",
+    "topic": "autonomous-agents",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "arwes/arwes",
+    "url": "https://github.com/arwes/arwes",
+    "description": "Futuristic Sci-Fi UI Web Framework.",
+    "stars": 7472,
+    "language": "TypeScript",
+    "topic": "solarpunk",
+    "updated": "2026-02-22"
+  },
+  {
+    "name": "LearningCircuit/local-deep-research",
+    "url": "https://github.com/LearningCircuit/local-deep-research",
+    "description": "Local Deep Research achieves ~95% on SimpleQA benchmark (tested with GPT-4.1-mini). Supports local and cloud LLMs (Ollama, Google, Anthropic, ...). Searches 10+ sources - arXiv, PubMed, web, and your private documents. Everything Local & Encrypted.",
+    "stars": 4042,
+    "language": "Python",
+    "topic": "local-llm",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "langroid/langroid",
+    "url": "https://github.com/langroid/langroid",
+    "description": "Harness LLMs with Multi-Agent Programming",
+    "stars": 3910,
+    "language": "Python",
+    "topic": "local-llm",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "adamcohenhillel/ADeus",
+    "url": "https://github.com/adamcohenhillel/ADeus",
+    "description": "An open source AI wearable device that captures what you say and hear in the real world and then transcribes and stores it on your own server. You can then chat with Adeus using the app, and it will have all the right context about what you want to talk about - a truly personalized, personal AI.",
+    "stars": 3397,
+    "language": "TypeScript",
+    "topic": "open-source-ai",
+    "updated": "2026-02-23"
+  },
+  {
+    "name": "deta/surf",
+    "url": "https://github.com/deta/surf",
+    "description": "Personal AI Notebooks. Organize files & webpages and generate notes from them. Open source, local & open data, open model choice (incl. local).",
+    "stars": 3228,
+    "language": "TypeScript",
+    "topic": "local-llm",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "travisvn/openai-edge-tts",
+    "url": "https://github.com/travisvn/openai-edge-tts",
+    "description": "Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs",
+    "stars": 1622,
+    "language": "Python",
+    "topic": "local-llm",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "bonfire-networks/bonfire-app",
+    "url": "https://github.com/bonfire-networks/bonfire-app",
+    "description": "Bonfire - tend to your digital life in community. Customise and host your own online space and control your experience at the most granular level.",
+    "stars": 883,
+    "language": "Elixir",
+    "topic": "mutual-aid",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "SamurAIGPT/awesome-openclaw",
+    "url": "https://github.com/SamurAIGPT/awesome-openclaw",
+    "description": "A curated list of OpenClaw resources, tools, skills, tutorials & articles. OpenClaw (formerly Moltbot / Clawdbot) \u2014 open-source self-hosted AI agent for WhatsApp, Telegram, Discord & 50+ integrations.",
+    "stars": 681,
+    "language": "unknown",
+    "topic": "open-source-ai",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "WofWca/jumpcutter",
+    "url": "https://github.com/WofWca/jumpcutter",
+    "description": "\u23e9 Fast-forwards long pauses between sentences \u2014 watch lectures ~1.5x faster (browser extension)",
+    "stars": 553,
+    "language": "TypeScript",
+    "topic": "agpl",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "jacobwb/hashover-next",
+    "url": "https://github.com/jacobwb/hashover-next",
+    "description": "This branch will be HashOver 2.0",
+    "stars": 420,
+    "language": "PHP",
+    "topic": "agpl",
+    "updated": "2026-02-20"
+  },
+  {
+    "name": "oxylabs/ai-scraper-py",
+    "url": "https://github.com/oxylabs/ai-scraper-py",
+    "description": "AI Scraper is a powerful scraping tool and scrape agent built to automate data extraction with unmatched precision. Ideal for scalable AI scraping tasks across diverse web sources, this tool simplifies complex scraping operations into efficient, intelligent workflows.",
+    "stars": 375,
+    "language": "unknown",
+    "topic": "open-source-ai",
+    "updated": "2026-02-23"
+  },
+  {
+    "name": "RolandR/place-atlas",
+    "url": "https://github.com/RolandR/place-atlas",
+    "description": "The /r/place Atlas is a project aiming to catalog all the artworks created during Reddit's /r/place event.",
+    "stars": 285,
+    "language": "JavaScript",
+    "topic": "agpl",
+    "updated": "2026-02-04"
+  },
+  {
+    "name": "Asqatasun/Asqatasun",
+    "url": "https://github.com/Asqatasun/Asqatasun",
+    "description": "Mirror of Asqatasun ---> we've moved to GITLAB https://gitlab.com/asqatasun/Asqatasun - Opensource web site analyser, used for web accessibility \"a11y\" ",
+    "stars": 243,
+    "language": "Java",
+    "topic": "agpl",
+    "updated": "2026-02-18"
+  },
+  {
+    "name": "garylab/MakeMoneyWithAI",
+    "url": "https://github.com/garylab/MakeMoneyWithAI",
+    "description": "A list of open-source AI projects you can use to generate income easily.",
+    "stars": 215,
+    "language": "Python",
+    "topic": "open-source-ai",
+    "updated": "2026-02-24"
+  },
+  {
+    "name": "mapswipe/mapswipe",
+    "url": "https://github.com/mapswipe/mapswipe",
+    "description": "MapSwipe mobile application",
+    "stars": 166,
+    "language": "JavaScript",
+    "topic": "humanitarian",
+    "updated": "2026-02-13"
+  },
+  {
+    "name": "ksm26/Multi-AI-Agent-Systems-with-crewAI",
+    "url": "https://github.com/ksm26/Multi-AI-Agent-Systems-with-crewAI",
+    "description": "Master the art of designing and organizing AI agents. Learn to automate complex, multi-step business processes by creating specialized AI agent teams using the open-source library crewAI.",
+    "stars": 149,
+    "language": "Jupyter Notebook",
+    "topic": "open-source-ai",
+    "updated": "2026-02-23"
+  },
+  {
+    "name": "ahdinosaur/intertwingled",
+    "url": "https://github.com/ahdinosaur/intertwingled",
+    "description": "A collection of videos to showcase the magic alchemy of computation.",
+    "stars": 138,
+    "language": "JavaScript",
+    "topic": "solarpunk",
+    "updated": "2025-12-31"
+  },
+  {
+    "name": "PolarisTeam/PolarisServer",
+    "url": "https://github.com/PolarisTeam/PolarisServer",
+    "description": "A Phantasy Star Online 2 private server project in C#",
+    "stars": 125,
+    "language": "C#",
+    "topic": "agpl",
+    "updated": "2026-01-20"
+  },
+  {
+    "name": "hotosm/fAIr",
+    "url": "https://github.com/hotosm/fAIr",
+    "description": "fAIr - AI Assisted Mapping Tool",
+    "stars": 124,
+    "language": "TypeScript",
+    "topic": "humanitarian",
+    "updated": "2026-02-21"
+  },
+  {
+    "name": "CodeandoMexico/terremoto-cdmx",
+    "url": "https://github.com/CodeandoMexico/terremoto-cdmx",
+    "description": "Respuesta r\u00e1pida ante el terremoto de la CDMX",
+    "stars": 118,
+    "language": "CSS",
+    "topic": "humanitarian",
+    "updated": "2026-01-26"
+  },
+  {
+    "name": "melizeche/ayudapy",
+    "url": "https://github.com/melizeche/ayudapy",
+    "description": "Humanitarian platform to help people help people",
+    "stars": 118,
+    "language": "JavaScript",
+    "topic": "humanitarian",
+    "updated": "2026-01-29"
+  },
+  {
+    "name": "unicef/magicbox",
+    "url": "https://github.com/unicef/magicbox",
+    "description": "A platform that uses real-time data to inform life-saving humanitarian responses to emergency situations",
+    "stars": 93,
+    "language": "unknown",
+    "topic": "humanitarian",
+    "updated": "2026-01-25"
+  },
+  {
+    "name": "mertyildiran/ldca",
+    "url": "https://github.com/mertyildiran/ldca",
+    "description": "Self-replicating, self-modifying Assembly program that can evolve into every possible computer program in the universe (EXPERIMENTAL)",
+    "stars": 63,
+    "language": "Assembly",
+    "topic": "self-replicating",
+    "updated": "2025-11-14"
+  },
+  {
+    "name": "lizTheDeveloper/solarpunk_utopia",
+    "url": "https://github.com/lizTheDeveloper/solarpunk_utopia",
+    "description": "\ud83c\udf31 Production-ready gift economy mesh network for Solarpunk communes - Complete offline-first system for mutual aid coordination",
+    "stars": 31,
+    "language": "Python",
+    "topic": "solarpunk",
+    "updated": "2026-02-08"
+  },
+  {
+    "name": "shelvick/quoracle",
+    "url": "https://github.com/shelvick/quoracle",
+    "description": "Recursive agent orchestration with multi-LLM consensus",
+    "stars": 21,
+    "language": "Elixir",
+    "topic": "self-replicating",
+    "updated": "2026-02-23"
+  },
+  {
+    "name": "EvelynSubarrow/BismuthScorpion",
+    "url": "https://github.com/EvelynSubarrow/BismuthScorpion",
+    "description": "Java bytecode virus proof of concept (jarfile self-replication)",
+    "stars": 17,
+    "language": "Java",
+    "topic": "self-replicating",
+    "updated": "2024-10-22"
+  },
+  {
+    "name": "iandennismiller/solarpunk",
+    "url": "https://github.com/iandennismiller/solarpunk",
+    "description": "A collection of solarpunk resources",
+    "stars": 17,
+    "language": "HTML",
+    "topic": "solarpunk",
+    "updated": "2026-01-30"
+  },
+  {
+    "name": "multiplanetaryhomestead/reprap-chinampa",
+    "url": "https://github.com/multiplanetaryhomestead/reprap-chinampa",
+    "description": "Passive self-watering 3D-printable vegetable pot, inspired by the chinampa (floating garden bed)",
+    "stars": 8,
+    "language": "OpenSCAD",
+    "topic": "self-replicating",
+    "updated": "2026-02-20"
+  },
+  {
+    "name": "Julian-1-2-3-4-5/awesome-solarpunk",
+    "url": "https://github.com/Julian-1-2-3-4-5/awesome-solarpunk",
+    "description": "ideas, tools, media and more to build and imagine a better and hopeful, but realistic: solarpunk future",
+    "stars": 8,
+    "language": "unknown",
+    "topic": "solarpunk",
+    "updated": "2026-01-31"
+  },
+  {
+    "name": "element1965/DSI-EXODUS-2.0",
+    "url": "https://github.com/element1965/DSI-EXODUS-2.0",
+    "description": "DSI Exodus 2.0 is a digital societal invention - a method and instrument of network self-organization into a decentralized, peer-to-peer trust network for mutual aid and direct cooperation, with mathematically proven inevitability.",
+    "stars": 7,
+    "language": "unknown",
+    "topic": "mutual-aid",
+    "updated": "2026-01-29"
+  },
+  {
+    "name": "groundgamela/mutual-aid-hub-server",
+    "url": "https://github.com/groundgamela/mutual-aid-hub-server",
+    "description": "Server code for https://github.com/groundgamela/mutual-aid-networks",
+    "stars": 6,
+    "language": "JavaScript",
+    "topic": "mutual-aid",
+    "updated": "2025-12-13"
+  },
+  {
+    "name": "RodEsp/chfgma.org",
+    "url": "https://github.com/RodEsp/chfgma.org",
+    "description": "",
+    "stars": 6,
+    "language": "JavaScript",
+    "topic": "mutual-aid",
+    "updated": "2026-02-25"
+  },
+  {
+    "name": "bediger4000/self-replicating-programs",
+    "url": "https://github.com/bediger4000/self-replicating-programs",
+    "description": "Assorted self replicating programs: python, bash, php, m4, perl, awk, gpp",
+    "stars": 5,
+    "language": "Shell",
+    "topic": "self-replicating",
+    "updated": "2024-01-23"
+  }
+]
