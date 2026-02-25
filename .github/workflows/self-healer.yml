@@ -1,0 +1,55 @@
+name: 🩹 Self Healer
+
+# Runs:
+#   - After ANY other workflow fails (workflow_run trigger)
+#   - Daily at 7am UTC (after feedback loop)
+#   - Manually from the Actions tab
+
+on:
+  workflow_run:
+    workflows:
+      - "🧠 Knowledge Harvester"
+      - "🌍 Humanitarian Content Engine"
+      - "🔄 Feedback Loop"
+      - "🔬 Full System Diagnostics"
+      - "🔌 Wiring Status Generator"
+      - "🌱 Fork Tracker"
+    types: [completed]
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  heal:
+    # Only run after a failure, or on schedule/manual trigger
+    if: >
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run self healer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/self_healer.py
+
+      - name: Commit healer outputs
+        run: |
+          git config user.name  "meeko-healer"
+          git config user.email "healer@meeko-nerve-center"
+          git add data/errors.json data/heal_log.md data/heal_report.json \
+                  FIXES_NEEDED.md requirements.txt 2>/dev/null || true
+          git diff --cached --quiet && echo "Nothing to commit" || (
+            git commit -m "🩹 self-healer run [$(date -u +%Y-%m-%dT%H:%M)]" && git push
+          )
+
+      - name: Print open issues
+        run: |
+          echo ""
+          cat FIXES_NEEDED.md 2>/dev/null || echo "FIXES_NEEDED.md not generated"
