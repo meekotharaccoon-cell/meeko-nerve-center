@@ -1,169 +1,206 @@
 #!/usr/bin/env python3
 """
-Humanitarian Content Engine
+Humanitarian Content Engine — Strategy-Aware Version
 
-Reads the daily knowledge harvest and generates:
-  1. Social posts (Mastodon/Bluesky) that raise awareness + drive traffic
-  2. Content linking crises (Gaza, Congo, Sudan) to real action (gallery, donations)
-  3. A daily content_queue.json other workflows can consume
+Reads data/strategy.json (from loop_brain.py) and weights post
+generation toward what the signals say is actually working.
 
-No API keys required for generation. Mastodon/Bluesky posting uses
-existing secrets when available.
+If no strategy file exists, uses sensible defaults.
+
+Crises covered: Gaza, Congo (DRC), Sudan
+Revenue paths: gallery ($1 art), fork guide ($5), Ko-fi tips, GitHub Sponsors
 """
 
 import os, json, datetime, random
 from pathlib import Path
 
-ROOT    = Path(__file__).parent.parent
-KB      = ROOT / 'knowledge'
-CONTENT = ROOT / 'content'
-TODAY   = datetime.date.today().isoformat()
+ROOT     = Path(__file__).parent.parent
+KB       = ROOT / 'knowledge'
+CONTENT  = ROOT / 'content'
+DATA     = ROOT / 'data'
+TODAY    = datetime.date.today().isoformat()
 
 CONTENT.mkdir(exist_ok=True)
 (CONTENT / 'queue').mkdir(exist_ok=True)
 (CONTENT / 'archive').mkdir(exist_ok=True)
+DATA.mkdir(exist_ok=True)
 
-# ── Load latest knowledge ──────────────────────────────────────────────────
-digest = ''
-latest = KB / 'LATEST_DIGEST.md'
-if latest.exists():
-    digest = latest.read_text(encoding='utf-8')[:2000]
-
-github_json = KB / 'github' / 'latest.json'
-gh_repos = []
-if github_json.exists():
+# ── Load strategy ──────────────────────────────────────────────────────────
+strategy_path = DATA / 'strategy.json'
+strategy = {}
+if strategy_path.exists():
     try:
-        gh_repos = json.loads(github_json.read_text())[:5]
+        strategy = json.loads(strategy_path.read_text(encoding='utf-8'))
+        print(f'  [content] Strategy loaded: {strategy.get("method","?")}')
+        print(f'  [content] Primary crisis: {strategy.get("primary_crisis","?")} | Channel: {strategy.get("push_channel","?")}' )
     except Exception:
         pass
 
-# ── Crisis context ─────────────────────────────────────────────────────────
+if not strategy:
+    print('  [content] No strategy file — using defaults')
+    strategy = {
+        'primary_crisis': 'Gaza',
+        'all_crises':     ['Gaza', 'Congo (DRC)', 'Sudan'],
+        'post_weights':   {'awareness': 2, 'gallery': 3, 'fork': 2, 'info': 1, 'punchy': 2},
+        'push_channel':   'gallery',
+        'knowledge_hook': '',
+    }
+
+PRIMARY   = strategy.get('primary_crisis', 'Gaza')
+ALL_CRISES= strategy.get('all_crises', ['Gaza', 'Congo (DRC)', 'Sudan'])
+WEIGHTS   = strategy.get('post_weights', {})
+CHANNEL   = strategy.get('push_channel', 'gallery')
+HOOK      = strategy.get('knowledge_hook', '')
+
+# ── Load knowledge digest for hook injection ───────────────────────────────
+digest_text = ''
+if (KB / 'LATEST_DIGEST.md').exists():
+    digest_text = (KB / 'LATEST_DIGEST.md').read_text(encoding='utf-8')[:500]
+
+# ── Crisis definitions ─────────────────────────────────────────────────────
 CRISES = [
     {
         'name': 'Gaza',
         'context': 'Over 40,000 killed. 2 million displaced. Ongoing siege.',
-        'action': 'Palestine Children\'s Relief Fund (PCRF) — 4-star Charity Navigator · EIN 93-1057665',
+        'action': "Palestine Children's Relief Fund (PCRF) — 4-star Charity Navigator",
         'action_url': 'https://www.pcrf.net',
         'gallery_url': 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery',
         'gallery_note': '70% of every $1 art sale goes directly to PCRF',
-        'hashtags': ['#Gaza', '#Palestine', '#PCRF', '#GazaGenocide', '#FreePalestine'],
+        'hashtags': ['#Gaza', '#Palestine', '#PCRF', '#FreePalestine', '#SolarpunkMycelium'],
     },
     {
         'name': 'Congo (DRC)',
-        'context': 'Eastern DRC conflict — millions displaced, worst humanitarian crisis in Africa.',
-        'action': 'International Rescue Committee · Doctors Without Borders · UNICEF DRC',
+        'context': 'Eastern DRC — millions displaced, worst humanitarian crisis in Africa.',
+        'action': 'International Rescue Committee · Doctors Without Borders',
         'action_url': 'https://www.rescue.org',
         'gallery_url': 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery',
         'gallery_note': 'Support this system — proceeds fund humanitarian causes',
-        'hashtags': ['#DRC', '#Congo', '#EasternCongo', '#M23', '#HumanitarianCrisis'],
+        'hashtags': ['#DRC', '#Congo', '#EasternCongo', '#HumanitarianCrisis', '#SolarpunkMycelium'],
     },
     {
         'name': 'Sudan',
-        'context': 'Sudan civil war — 8+ million displaced, largest displacement crisis in the world.',
+        'context': 'Sudan civil war — 8M+ displaced, largest displacement crisis in the world.',
         'action': 'UNHCR Sudan · Save the Children Sudan',
         'action_url': 'https://www.unhcr.org/sudan',
         'gallery_url': 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery',
         'gallery_note': 'Support this system — proceeds fund humanitarian causes',
-        'hashtags': ['#Sudan', '#SudanWar', '#SudanCrisis', '#Khartoum', '#Darfur'],
+        'hashtags': ['#Sudan', '#SudanCrisis', '#Darfur', '#HumanitarianAid', '#SolarpunkMycelium'],
     },
 ]
 
-# ── Template library ───────────────────────────────────────────────────────
-# Each template rotates. Long enough to be real, short enough to post.
+# Put primary crisis first
+CRISES.sort(key=lambda c: (0 if c['name'] == PRIMARY else 1))
 
-def make_posts(crisis: dict) -> list:
-    name = crisis['name']
-    ctx  = crisis['context']
-    act  = crisis['action']
-    url  = crisis['action_url']
-    gurl = crisis['gallery_url']
-    gnote= crisis['gallery_note']
-    tags = ' '.join(crisis['hashtags'][:3])
+# ── Channel-specific CTAs ──────────────────────────────────────────────────
+CHANNEL_CTA = {
+    'gallery':    ('→ $1 art, 70% to relief: ', 'https://meekotharaccoon-cell.github.io/gaza-rose-gallery'),
+    'kofi':       ('→ Ko-fi tip jar (no fees): ', 'https://ko-fi.com/meekotharaccoon'),
+    'fork_guide': ('→ $5 fork guide (build your own): ', 'https://gumroad.com/meekotharaccoon'),
+    'sponsor':    ('→ GitHub Sponsors: ', 'https://github.com/sponsors/meekotharaccoon-cell'),
+}
+cta_label, cta_url = CHANNEL_CTA.get(CHANNEL, CHANNEL_CTA['gallery'])
 
-    posts = [
-        # Awareness + action
-        f"{name}: {ctx}\n\nThis is happening right now.\n\n"
-        f"Direct action: {act}\n{url}\n\n"
-        f"{tags} #SolarpunkMycelium",
+# ── Post template factory ──────────────────────────────────────────────────
+def make_posts(crisis: dict) -> dict:
+    """Returns dict of {template_name: post_text} for this crisis."""
+    name  = crisis['name']
+    ctx   = crisis['context']
+    act   = crisis['action']
+    url   = crisis['action_url']
+    gurl  = crisis['gallery_url']
+    gnote = crisis['gallery_note']
+    tags  = ' '.join(crisis['hashtags'][:3])
 
-        # Gallery-linked
-        f"A self-replicating AI system built on free infrastructure.\n"
-        f"56 original artworks · $1 each · {gnote}.\n\n"
-        f"Every sale is a vote for people over profit.\n"
-        f"{gurl}\n\n"
-        f"{tags} #OpenSource #Solarpunk",
+    hook_line = f'\n\nToday in open-source: {HOOK}' if HOOK else ''
 
-        # Fork/replicate call to action
-        f"This system runs itself 24/7 at $0/month.\n"
-        f"Anyone can fork it and aim it at any cause.\n\n"
-        f"Current mission: raise money for {name}.\n"
-        f"Code: https://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n"
-        f"{tags} #FOSS #AutonomousAI",
+    return {
+        'awareness': (
+            f"{name}: {ctx}\n\n"
+            f"This is happening now. Direct action:\n"
+            f"{act}\n{url}\n\n"
+            f"{tags} #DirectAction"
+        ),
+        'gallery': (
+            f"56 original artworks. $1 each. {gnote}.\n\n"
+            f"Every sale funds {name} relief directly — no middlemen.\n"
+            f"{cta_label}{cta_url}\n\n"
+            f"{tags} #Art #OpenSource"
+        ),
+        'fork': (
+            f"A self-replicating autonomous AI. $0/month to run.\n"
+            f"Anyone can fork it and aim it at any cause.\n\n"
+            f"Current mission: {name}.\n"
+            f"Fork it: https://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n"
+            f"{tags} #FOSS #Solarpunk"
+        ),
+        'info': (
+            f"{name} crisis: {ctx}\n\n"
+            f"How to help:\n"
+            f"· {act}: {url}\n"
+            f"· Buy $1 art → {gnote}: {gurl}\n"
+            f"· Fork this system: github.com/meekotharaccoon-cell{hook_line}\n\n"
+            f"{tags}"
+        ),
+        'punchy': (
+            f"$1. One dollar.\n"
+            f"Original art. 70% to {name} relief.\n"
+            f"Zero middlemen. Zero corporate cut.\n"
+            f"{gurl}\n\n"
+            f"{tags} #DirectAction"
+        ),
+    }
 
-        # Informational + link
-        f"{name} crisis update: {ctx}\n\n"
-        f"Ways to help:\n"
-        f"· {act}\n"
-        f"· Buy $1 art → {gnote}: {gurl}\n"
-        f"· Fork this system, aim it at your cause: github.com/meekotharaccoon-cell\n\n"
-        f"{tags}",
-
-        # Short punchy
-        f"$1. That's it. One dollar.\n"
-        f"Buy original art. 70% goes to {name} relief.\n"
-        f"Zero corporate middlemen.\n"
-        f"{gurl}\n\n"
-        f"{tags} #DirectAction",
-    ]
-    return posts
-
-
-# ── Build content queue ────────────────────────────────────────────────────
+# ── Build weighted queue ───────────────────────────────────────────────────
 queue = []
+
 for crisis in CRISES:
-    for post in make_posts(crisis):
-        queue.append({
-            'crisis':    crisis['name'],
-            'text':      post,
-            'char_len':  len(post),
-            'platforms': ['mastodon', 'bluesky'],
-            'generated': TODAY,
-            'status':    'queued',
-        })
+    templates = make_posts(crisis)
+    # Primary crisis gets full weight, others get 1 post each (variety)
+    is_primary = (crisis['name'] == PRIMARY)
 
-# Shuffle so platforms see varied content
+    for tname, text in templates.items():
+        weight = WEIGHTS.get(tname, 1) if is_primary else 1
+        for _ in range(weight):
+            queue.append({
+                'crisis':    crisis['name'],
+                'template':  tname,
+                'primary':   is_primary,
+                'channel':   CHANNEL,
+                'text':      text,
+                'char_len':  len(text),
+                'platforms': ['mastodon', 'bluesky'],
+                'generated': TODAY,
+                'status':    'queued',
+                'strategy':  strategy.get('method', 'default'),
+            })
+
 random.shuffle(queue)
+print(f'  [content] {len(queue)} posts generated | primary={PRIMARY} | channel={CHANNEL}')
 
-# Save full queue
-queue_path = CONTENT / 'queue' / f'{TODAY}.json'
-queue_path.write_text(json.dumps(queue, indent=2), encoding='utf-8')
+# ── Save queue ─────────────────────────────────────────────────────────────
+(CONTENT / 'queue' / f'{TODAY}.json').write_text(
+    json.dumps(queue, indent=2), encoding='utf-8')
+(CONTENT / 'queue' / 'latest.json').write_text(
+    json.dumps(queue, indent=2), encoding='utf-8')
 
-# Latest pointer (other workflows read this)
-latest_queue = CONTENT / 'queue' / 'latest.json'
-latest_queue.write_text(json.dumps(queue, indent=2), encoding='utf-8')
-
-print(f'✓ Generated {len(queue)} posts for {len(CRISES)} crises')
-
-# ── Post to Mastodon (if token present) ────────────────────────────────────
+# ── Post to Mastodon ───────────────────────────────────────────────────────
+import urllib.request
 MASTODON_TOKEN = os.environ.get('MASTODON_TOKEN', '').strip()
 MASTODON_URL   = os.environ.get('MASTODON_URL', 'https://mastodon.social').strip()
 
 if MASTODON_TOKEN:
-    try:
-        import urllib.request
-        # Post one item from each crisis per day (3 posts total)
-        posted = 0
-        for crisis in CRISES:
-            crisis_posts = [q for q in queue if q['crisis'] == crisis['name']]
-            if not crisis_posts: continue
-            post = crisis_posts[0]  # first = most recently shuffled
-            text = post['text']
-            if len(text) > 500: text = text[:497] + '…'
-
-            payload = json.dumps({'status': text,
-                                  'visibility': 'public'}).encode()
+    posted = 0
+    # Post one per crisis (max 3/day so we don't spam)
+    seen_crises = set()
+    for item in queue:
+        if item['crisis'] in seen_crises: continue
+        if posted >= 3: break
+        text = item['text']
+        if len(text) > 500: text = text[:497] + '…'
+        try:
+            payload = json.dumps({'status': text, 'visibility': 'public'}).encode()
             req = urllib.request.Request(
-                f'{MASTODON_URL}/api/v1/statuses',
+                f"{MASTODON_URL}/api/v1/statuses",
                 data=payload,
                 headers={'Authorization': f'Bearer {MASTODON_TOKEN}',
                          'Content-Type': 'application/json'},
@@ -171,79 +208,76 @@ if MASTODON_TOKEN:
             )
             with urllib.request.urlopen(req, timeout=15) as r:
                 resp = json.loads(r.read())
-                print(f'  ✓ Mastodon [{crisis["name"]}]: {resp.get("url","posted")}')
-                post['status'] = 'posted_mastodon'
+                item['status'] = 'posted_mastodon'
+                item['post_url'] = resp.get('url', '')
+                print(f'  [mastodon] {item["crisis"]}: {resp.get("url","posted")}')
+                seen_crises.add(item['crisis'])
                 posted += 1
-    except Exception as e:
-        print(f'  ✗ Mastodon error: {e}')
+        except Exception as e:
+            print(f'  [mastodon] Error: {e}')
 else:
-    print('  ○ Mastodon: no token — posts queued, not sent')
+    print('  [mastodon] No token — posts queued only')
 
-# ── Post to Bluesky (if credentials present) ───────────────────────────────
+# ── Post to Bluesky ────────────────────────────────────────────────────────
 BSKY_HANDLE = os.environ.get('BLUESKY_HANDLE', '').strip()
 BSKY_PASS   = os.environ.get('BLUESKY_APP_PASSWORD', '').strip()
 
 if BSKY_HANDLE and BSKY_PASS:
     try:
-        import urllib.request
-        # Auth
-        auth_payload = json.dumps({'identifier': BSKY_HANDLE,
-                                    'password': BSKY_PASS}).encode()
-        req = urllib.request.Request(
+        auth = json.dumps({'identifier': BSKY_HANDLE, 'password': BSKY_PASS}).encode()
+        req  = urllib.request.Request(
             'https://bsky.social/xrpc/com.atproto.server.createSession',
-            data=auth_payload,
-            headers={'Content-Type': 'application/json'},
-            method='POST'
-        )
+            data=auth, headers={'Content-Type': 'application/json'}, method='POST')
         with urllib.request.urlopen(req, timeout=15) as r:
             session = json.loads(r.read())
         token = session['accessJwt']
         did   = session['did']
 
-        for crisis in CRISES:
-            crisis_posts = [q for q in queue if q['crisis'] == crisis['name']]
-            if not crisis_posts: continue
-            post = crisis_posts[0]
-            text = post['text']
+        seen_crises = set()
+        for item in queue:
+            if item['crisis'] in seen_crises: continue
+            text = item['text']
             if len(text) > 300: text = text[:297] + '…'
-
             now_iso = datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-            record  = {'$type': 'app.bsky.feed.post',
-                       'text': text, 'createdAt': now_iso}
             payload = json.dumps({'repo': did, 'collection': 'app.bsky.feed.post',
-                                  'record': record}).encode()
+                                  'record': {'$type': 'app.bsky.feed.post',
+                                             'text': text, 'createdAt': now_iso}}).encode()
             req = urllib.request.Request(
                 'https://bsky.social/xrpc/com.atproto.repo.createRecord',
                 data=payload,
                 headers={'Authorization': f'Bearer {token}',
                          'Content-Type': 'application/json'},
-                method='POST'
-            )
+                method='POST')
             with urllib.request.urlopen(req, timeout=15) as r:
-                resp = json.loads(r.read())
-                print(f'  ✓ Bluesky [{crisis["name"]}]: posted')
+                json.loads(r.read())
+                print(f'  [bluesky] {item["crisis"]}: posted')
+                seen_crises.add(item['crisis'])
+            if len(seen_crises) >= 3: break
     except Exception as e:
-        print(f'  ✗ Bluesky error: {e}')
+        print(f'  [bluesky] Error: {e}')
 else:
-    print('  ○ Bluesky: no credentials — posts queued, not sent')
+    print('  [bluesky] No credentials — posts queued only')
 
-# ── Save updated queue with statuses ──────────────────────────────────────
-queue_path.write_text(json.dumps(queue, indent=2), encoding='utf-8')
-latest_queue.write_text(json.dumps(queue, indent=2), encoding='utf-8')
+# ── Update queue with final statuses ──────────────────────────────────────
+(CONTENT / 'queue' / f'{TODAY}.json').write_text(
+    json.dumps(queue, indent=2), encoding='utf-8')
+(CONTENT / 'queue' / 'latest.json').write_text(
+    json.dumps(queue, indent=2), encoding='utf-8')
 
-# ── Write human-readable summary ──────────────────────────────────────────
-summary = [
-    f'# Humanitarian Content — {TODAY}', '',
-    f'*{len(queue)} posts generated for {len(CRISES)} crises*', '',
+# ── Human-readable archive ─────────────────────────────────────────────────
+lines = [
+    f'# Humanitarian Content — {TODAY}',
+    f'*Strategy: {strategy.get("method","default")} | Primary: {PRIMARY} | Channel: {CHANNEL}*',
+    f'*Reasoning: {strategy.get("reasoning","defaults")}*', '',
+    f'{len(queue)} posts generated', '',
 ]
 for crisis in CRISES:
-    summary += [f"## {crisis['name']}", '', f"> {crisis['context']}", '']
-    for p in [q for q in queue if q['crisis'] == crisis['name']][:2]:
-        summary += ['```', p['text'], '```', '']
+    lines += [f'## {crisis["name"]}', '']
+    for item in [q for q in queue if q['crisis']==crisis['name']][:2]:
+        lines += [f'**[{item["template"]}]** status: {item["status"]}',
+                  '```', item['text'], '```', '']
 
-(CONTENT / 'archive' / f'{TODAY}.md').write_text(
-    '\n'.join(summary), encoding='utf-8')
-(CONTENT / 'latest.md').write_text(
-    '\n'.join(summary), encoding='utf-8')
+(CONTENT / 'archive' / f'{TODAY}.md').write_text('\n'.join(lines), encoding='utf-8')
+(CONTENT / 'latest.md').write_text('\n'.join(lines), encoding='utf-8')
 
-print(f'\n✅ Done. Content written to content/queue/latest.json')
+print(f'\n  Done. content/queue/latest.json ready.')
