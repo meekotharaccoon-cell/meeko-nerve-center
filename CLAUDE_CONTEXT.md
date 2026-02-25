@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-25 20:46 UTC — feat: diagnostics workflow + humanitarian content engine (Gaza, Congo, Sudan)*
+*Auto-updated by the system. Last update: 2026-02-25 21:22 UTC — first local harvest run*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
