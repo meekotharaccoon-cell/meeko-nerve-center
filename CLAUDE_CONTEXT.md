@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-25 04:09 UTC — feat: add unified site nav to revenue.html*
+*Auto-updated by the system. Last update: 2026-02-25 04:10 UTC — feat: add unified site nav to dashboard.html*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
