@@ -1,0 +1,277 @@
+name: 🔬 Full System Diagnostics
+
+on:
+  workflow_dispatch:
+    inputs:
+      verbose:
+        description: 'Verbose output (yes/no)'
+        required: false
+        default: 'yes'
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run full diagnostics
+        env:
+          GMAIL_APP_PASSWORD:    ${{ secrets.GMAIL_APP_PASSWORD }}
+          MASTODON_TOKEN:        ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL:          ${{ secrets.MASTODON_URL }}
+          BLUESKY_HANDLE:        ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD:  ${{ secrets.BLUESKY_APP_PASSWORD }}
+          YOUTUBE_CLIENT_ID:     ${{ secrets.YOUTUBE_CLIENT_ID }}
+          GUMROAD_TOKEN:         ${{ secrets.GUMROAD_TOKEN }}
+          KOFI_TOKEN:            ${{ secrets.KOFI_TOKEN }}
+          STRIKE_API_KEY:        ${{ secrets.STRIKE_API_KEY }}
+          SOLANA_WALLET:         ${{ secrets.SOLANA_WALLET }}
+          PAYPAL_CLIENT_ID:      ${{ secrets.PAYPAL_CLIENT_ID }}
+          NASA_API_KEY:          ${{ secrets.NASA_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, datetime, urllib.request, urllib.error
+          from pathlib import Path
+
+          NOW   = datetime.datetime.utcnow().isoformat() + 'Z'
+          TODAY = datetime.date.today().isoformat()
+          ROOT  = Path('.')
+          OUT   = ROOT / 'diagnostics'
+          OUT.mkdir(exist_ok=True)
+
+          results = []
+          PASS, WARN, FAIL, INFO = '✅', '⚠️', '❌', 'ℹ️'
+
+          def check(category, name, status, detail='', fix=''):
+              r = dict(category=category, name=name,
+                       status=status, detail=detail, fix=fix)
+              results.append(r)
+              icon = {'pass':PASS,'warn':WARN,'fail':FAIL,'info':INFO}.get(status,INFO)
+              print(f'  {icon} [{category}] {name}: {detail}')
+              if fix: print(f'       FIX: {fix}')
+
+          print('\n══════════════════════════════════════════════')
+          print(' MEEKO NERVE CENTER — FULL DIAGNOSTICS')
+          print(f' {NOW}')
+          print('══════════════════════════════════════════════\n')
+
+          # ── SECRETS ────────────────────────────────────────────────────────
+          print('\n🔑 SECRETS / CAPABILITIES')
+          secret_map = [
+              ('GMAIL_APP_PASSWORD',   'Email (10 capabilities)',   'Add at github.com/meekotharaccoon-cell/meeko-nerve-center/settings/secrets/actions'),
+              ('MASTODON_TOKEN',       'Mastodon posting',          'Create token at mastodon.social/settings/applications'),
+              ('MASTODON_URL',         'Mastodon server URL',       'Add secret MASTODON_URL = https://mastodon.social'),
+              ('BLUESKY_HANDLE',       'Bluesky handle',            'Add your handle e.g. you.bsky.social'),
+              ('BLUESKY_APP_PASSWORD', 'Bluesky posting',           'Create at bsky.app/settings/app-passwords'),
+              ('YOUTUBE_CLIENT_ID',    'YouTube posting',           'Create OAuth app at console.cloud.google.com'),
+              ('GUMROAD_TOKEN',        'Gumroad sales API',         'Get at app.gumroad.com/settings/advanced'),
+              ('KOFI_TOKEN',           'Ko-fi webhooks',            'Get at ko-fi.com/account/webhooks'),
+              ('STRIKE_API_KEY',       'Lightning payments',        'Get at developer.strike.me'),
+              ('SOLANA_WALLET',        'Solana/Phantom',            'Add your wallet public key'),
+              ('PAYPAL_CLIENT_ID',     'PayPal API',                'Get at developer.paypal.com'),
+              ('NASA_API_KEY',         'NASA (higher rate limit)',  'Free at api.nasa.gov — currently using DEMO_KEY'),
+          ]
+          secrets_present = 0
+          for env_name, label, fix in secret_map:
+              val = os.environ.get(env_name, '').strip()
+              if val:
+                  check('secrets', label, 'pass', 'connected', '')
+                  secrets_present += 1
+              else:
+                  check('secrets', label, 'fail', 'MISSING', fix)
+
+          check('secrets', 'GITHUB_TOKEN', 'pass', 'auto-provided by Actions', '')
+
+          # ── KNOWLEDGE BASE ─────────────────────────────────────────────────
+          print('\n🧠 KNOWLEDGE BASE')
+          kb = ROOT / 'knowledge'
+          if not kb.exists():
+              check('knowledge', 'knowledge/ directory', 'fail',
+                    'Not yet created',
+                    'Trigger knowledge-harvester.yml manually from the Actions tab')
+          else:
+              all_files = list(kb.rglob('*.md'))
+              check('knowledge', 'Total knowledge files', 'info',
+                    f'{len(all_files)} .md files')
+              for subdir in ['github','wikipedia','arxiv','hackernews','nasa','repos','digest']:
+                  p = kb / subdir
+                  if p.exists():
+                      files = list(p.glob('*.md'))
+                      check('knowledge', f'knowledge/{subdir}/', 'pass',
+                            f'{len(files)} files')
+                  else:
+                      check('knowledge', f'knowledge/{subdir}/', 'warn',
+                            'Empty — harvester not yet run',
+                            'Trigger knowledge-harvester.yml from Actions tab')
+              latest = kb / 'LATEST_DIGEST.md'
+              if latest.exists():
+                  age = datetime.date.today().isoformat()
+                  sz  = latest.stat().st_size
+                  check('knowledge', 'LATEST_DIGEST.md', 'pass',
+                        f'{sz:,} bytes')
+              else:
+                  check('knowledge', 'LATEST_DIGEST.md', 'warn',
+                        'Not yet generated',
+                        'Trigger knowledge-harvester.yml first')
+
+          # ── WORKFLOWS ─────────────────────────────────────────────────────
+          print('\n⚙️  WORKFLOWS')
+          wf_dir = ROOT / '.github' / 'workflows'
+          workflows = list(wf_dir.glob('*.yml'))
+          check('workflows', 'Total workflows', 'info', f'{len(workflows)} .yml files')
+          critical = [
+              'knowledge-harvester.yml',
+              'wiring-status-generator.yml',
+              'fork-tracker.yml',
+              'heartbeat.yml',
+              'cross-poster.yml',
+              'mycelium-morning.yml',
+          ]
+          for wf in critical:
+              p = wf_dir / wf
+              if p.exists():
+                  check('workflows', wf, 'pass', 'file present')
+              else:
+                  check('workflows', wf, 'fail', 'MISSING')
+
+          # ── PAGES / HTML ──────────────────────────────────────────────────
+          print('\n🌐 PAGES')
+          for page in ['spawn.html','dashboard.html','revenue.html',
+                       'proliferator.html','app.html','link.html','index.html']:
+              p = ROOT / page
+              if p.exists():
+                  sz = p.stat().st_size
+                  check('pages', page, 'pass', f'{sz:,} bytes')
+              else:
+                  check('pages', page, 'fail', 'MISSING')
+
+          # ── KNOWLEDGE → REVENUE PIPELINE ─────────────────────────────────
+          print('\n💰 KNOWLEDGE → REVENUE PIPELINE')
+          hc = ROOT / 'mycelium' / 'humanitarian_content.py'
+          if hc.exists():
+              check('pipeline', 'humanitarian_content.py', 'pass', 'ready')
+          else:
+              check('pipeline', 'humanitarian_content.py', 'warn',
+                    'Not yet deployed',
+                    'Will be created automatically')
+
+          for fname in ['RESULTS.md','FORK_REGISTRY.md','wiring_status.json']:
+              p = ROOT / fname
+              if p.exists():
+                  check('pipeline', fname, 'pass',
+                        f'{p.stat().st_size:,} bytes')
+              else:
+                  check('pipeline', fname, 'warn', 'Not yet generated')
+
+          # ── PRODUCTS ──────────────────────────────────────────────────────
+          print('\n📦 PRODUCTS')
+          prod = ROOT / 'products'
+          if prod.exists():
+              for f in prod.rglob('*'):
+                  if f.is_file():
+                      check('products', f.name, 'pass',
+                            f'{f.stat().st_size:,} bytes')
+          else:
+              check('products', 'products/ dir', 'fail', 'Missing')
+
+          # ── NETWORK CONNECTIVITY ─────────────────────────────────────────
+          print('\n🌐 NETWORK (public APIs this runner can reach)')
+          endpoints = [
+              ('https://api.github.com',               'GitHub API'),
+              ('https://en.wikipedia.org/api/rest_v1/page/summary/Test', 'Wikipedia'),
+              ('https://hacker-news.firebaseio.com/v0/topstories.json', 'HackerNews'),
+              ('https://export.arxiv.org/api/query?search_query=test&max_results=1', 'arXiv'),
+              ('http://api.open-notify.org/iss-now.json', 'ISS / Open-Notify'),
+              ('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', 'NASA APOD'),
+          ]
+          for url, name in endpoints:
+              try:
+                  req = urllib.request.Request(url, headers={'User-Agent':'meeko/1.0'})
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      check('network', name, 'pass', f'HTTP {r.status}')
+              except Exception as e:
+                  check('network', name, 'fail', str(e)[:80])
+
+          # ── SUMMARY ───────────────────────────────────────────────────────
+          print('\n══════════════════════════════════════════════')
+          passed = sum(1 for r in results if r['status']=='pass')
+          warned = sum(1 for r in results if r['status']=='warn')
+          failed = sum(1 for r in results if r['status']=='fail')
+          total  = passed + warned + failed
+
+          print(f' RESULTS: {passed}/{total} passing  |  {warned} warnings  |  {failed} failures')
+          print(f' Secrets connected: {secrets_present}/12')
+          print('══════════════════════════════════════════════\n')
+
+          # ── WRITE REPORT ──────────────────────────────────────────────────
+          lines = [
+              f'# 🔬 Diagnostics Report — {TODAY}',
+              f'*Run: {NOW}*', '',
+              f'**{passed}/{total} checks passing · {warned} warnings · {failed} failures**',
+              f'**Secrets connected: {secrets_present}/12**', '',
+          ]
+
+          by_cat = {}
+          for r in results:
+              by_cat.setdefault(r['category'], []).append(r)
+
+          icons = {'pass':'✅','warn':'⚠️','fail':'❌','info':'ℹ️'}
+          cat_labels = {
+              'secrets':'🔑 Secrets / Capabilities',
+              'knowledge':'🧠 Knowledge Base',
+              'workflows':'⚙️ Workflows',
+              'pages':'🌐 Pages',
+              'pipeline':'💰 Revenue Pipeline',
+              'products':'📦 Products',
+              'network':'🌐 Network',
+          }
+          for cat, items in by_cat.items():
+              lines += [f'## {cat_labels.get(cat, cat)}', '']
+              for r in items:
+                  icon = icons.get(r['status'], 'ℹ️')
+                  lines.append(f'{icon} **{r["name"]}** — {r["detail"]}')
+                  if r['fix']:
+                      lines.append(f'   > Fix: {r["fix"]}')
+              lines.append('')
+
+          if failed > 0:
+              lines += ['## ❌ Action Required', '']
+              for r in results:
+                  if r['status'] == 'fail':
+                      lines.append(f'- **{r["name"]}**: {r["detail"]}')
+                      if r['fix']: lines.append(f'  - {r["fix"]}')
+              lines.append('')
+
+          if warned > 0:
+              lines += ['## ⚠️ Warnings', '']
+              for r in results:
+                  if r['status'] == 'warn':
+                      lines.append(f'- **{r["name"]}**: {r["detail"]}')
+                      if r['fix']: lines.append(f'  - {r["fix"]}')
+              lines.append('')
+
+          lines += ['---', f'*Generated by diagnostics.yml · {NOW}*']
+
+          report_path = OUT / f'{TODAY}.md'
+          report_path.write_text('\n'.join(lines), encoding='utf-8')
+          latest_path = OUT / 'latest.md'
+          latest_path.write_text('\n'.join(lines), encoding='utf-8')
+          print(f'Report written to {report_path}')
+
+          # also write JSON for dashboard widget
+          (OUT / 'latest.json').write_text(
+              json.dumps({'run_at': NOW, 'passed': passed, 'warned': warned,
+                          'failed': failed, 'secrets': secrets_present,
+                          'results': results}, indent=2),
+              encoding='utf-8')
+          PYEOF
+
+      - name: Commit diagnostics report
+        run: |
+          git config user.name  "meeko-diagnostics"
+          git config user.email "diagnostics@meeko-nerve-center"
+          git add diagnostics/
+          git diff --cached --quiet || git commit -m "🔬 diagnostics report [$(date -u +%Y-%m-%dT%H:%M)]" && git push

@@ -1,0 +1,30 @@
+name: 🌍 Humanitarian Content Engine
+
+on:
+  schedule:
+    - cron: '30 5 * * *'   # 30 min after knowledge harvest (5:30am UTC)
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate + post humanitarian content
+        env:
+          MASTODON_TOKEN:        ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL:          ${{ secrets.MASTODON_URL }}
+          BLUESKY_HANDLE:        ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD:  ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: python mycelium/humanitarian_content.py
+
+      - name: Commit content queue
+        run: |
+          git config user.name  "meeko-content"
+          git config user.email "content@meeko-nerve-center"
+          git add content/
+          git diff --cached --quiet || git commit -m "🌍 content update [$(date -u +%Y-%m-%d)]" && git push
