@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-02-25T16:57:27.287759Z",
+  "generator": "github-actions",
+  "services": [
+    {
+      "service": "Gmail",
+      "status": "connected",
+      "note": "secret present"
+    },
+    {
+      "service": "Mastodon",
+      "status": "missing",
+      "note": "add MASTODON_TOKEN to GitHub Secrets"
+    },
+    {
+      "service": "Bluesky",
+      "status": "missing",
+      "note": "add BLUESKY_APP_PASSWORD to GitHub Secrets"
+    },
+    {
+      "service": "YouTube",
+      "status": "missing",
+      "note": "add YOUTUBE_CLIENT_ID to GitHub Secrets"
+    },
+    {
+      "service": "Gumroad",
+      "status": "connected",
+      "note": "secret present"
+    },
+    {
+      "service": "Ko-fi",
+      "status": "missing",
+      "note": "add KOFI_TOKEN to GitHub Secrets"
+    },
+    {
+      "service": "Lightning/Strike",
+      "status": "missing",
+      "note": "add STRIKE_API_KEY to GitHub Secrets"
+    },
+    {
+      "service": "Solana/Phantom",
+      "status": "missing",
+      "note": "add SOLANA_WALLET to GitHub Secrets"
+    },
+    {
+      "service": "GitHub Actions",
+      "status": "ok",
+      "note": "running now"
+    },
+    {
+      "service": "GitHub Pages",
+      "status": "ok",
+      "note": "live"
+    },
+    {
+      "service": "GITHUB_TOKEN",
+      "status": "ok",
+      "note": "auto-provided"
+    },
+    {
+      "service": "Ollama",
+      "status": "unknown",
+      "note": "run CLEANUP_AND_BRIDGE.py"
+    },
+    {
+      "service": "ChromaDB",
+      "status": "unknown",
+      "note": "run CLEANUP_AND_BRIDGE.py"
+    },
+    {
+      "service": "MCP Config",
+      "status": "unknown",
+      "note": "run BUILD_MCP_CONFIG.py"
+    }
+  ]
+}
