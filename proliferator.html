@@ -33,8 +33,19 @@ body::before{
   pointer-events:none;z-index:9999;
 }
 
+/* Site nav */
+#snav{position:fixed;top:0;left:0;right:0;z-index:10000;height:34px;display:flex;align-items:center;padding:0 12px;background:rgba(3,3,3,0.97);border-bottom:1px solid rgba(0,255,136,0.09);overflow-x:auto;white-space:nowrap;-ms-overflow-style:none;scrollbar-width:none;font-family:monospace;font-size:.62rem}
+#snav::-webkit-scrollbar{display:none}
+#snav a{color:rgba(255,255,255,.28);text-decoration:none;padding:0 8px;line-height:34px;transition:color .15s;flex-shrink:0}
+#snav a:hover,#snav a.on{color:#00ff88}
+#snav a.on{background:rgba(0,255,136,.08)}
+#snav .logo{color:rgba(0,255,136,.85);font-weight:700;margin-right:2px}
+#snav .sep{color:rgba(255,255,255,.1);padding:0;user-select:none;pointer-events:none}
+#snav .gallery{color:rgba(255,45,107,.6)!important}
+#snav .gallery:hover{color:#ff2d6b!important}
+
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
+  position:fixed;top:34px;left:0;right:0;z-index:1000;
   background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
   padding:12px 28px;display:flex;align-items:center;gap:20px;
@@ -233,6 +244,10 @@ footer a:hover{color:var(--signal)}
 </head>
 <body>
 
+<div id="snav">
+<a href="spawn.html" class="logo">🌿</a><a href="spawn.html">Spawn</a><span class="sep"> · </span><a href="dashboard.html">Dashboard</a><span class="sep"> · </span><a href="revenue.html">Revenue</a><span class="sep"> · </span><a href="proliferator.html" class="on">Proliferator</a><span class="sep"> · </span><a href="app.html">App</a><span class="sep"> · </span><a href="link.html">Links</a><span class="sep"> · </span><a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery" class="gallery">🌹 Gallery</a>
+</div>
+
 <div class="modal-overlay" id="tcpa-modal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('tcpa-modal')">[ CLOSE ]</button>
@@ -302,7 +317,7 @@ footer a:hover{color:var(--signal)}
   <div class="nav-pulse"></div>
 </nav>
 
-<div class="status-bar" style="margin-top:52px">
+<div class="status-bar" style="margin-top:86px">
   <div class="status-item"><div class="status-dot dot-green"></div><span>SYSTEM ONLINE</span></div>
   <div class="status-item"><div class="status-dot dot-green"></div><span>REPLICATION ACTIVE</span></div>
   <div class="status-item"><div class="status-dot dot-yellow"></div><span>GMAIL PENDING</span></div>
