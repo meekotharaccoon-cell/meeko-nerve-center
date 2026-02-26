@@ -1,27 +1,29 @@
-name: 💡 Idea Engine
+name: 🧠 Idea Engine + Builder
 
 on:
   schedule:
-    - cron: '0 3 * * 0'   # Every Sunday 3am UTC
+    - cron: '0 3 * * *'   # 3am UTC — runs before everything else
   workflow_dispatch:
 
 jobs:
-  think-test-build:
+  think:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Idea Engine (test ideas)
+      - name: Run Idea Engine (generate + test ideas)
         run: python mycelium/idea_engine.py
+        continue-on-error: true
 
-      - name: Run Builder (build validated ideas)
-        run: python mycelium/builder.py
+      - name: Run Idea Builder (build passed ideas)
+        run: python mycelium/idea_builder.py
+        continue-on-error: true
 
       - name: Commit results
         run: |
           git config user.name "meeko-idea-engine"
           git config user.email "ideas@meeko-nerve-center"
-          git add data/ideas.json data/idea_learnings.json knowledge/ideas/ mycelium/
-          git diff --cached --quiet || git commit -m "ideas: engine cycle [$(date -u +%Y-%m-%d)] - new builds + learnings" && git push
+          git add data/ knowledge/ mycelium/IDEAS.md WIRED.md
+          git diff --cached --quiet || git commit -m "ideas: engine cycle [$(date -u +%Y-%m-%d %H:%M)] — tested/built" && git push
