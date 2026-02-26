@@ -1,7 +1,7 @@
 # sdras/awesome-actions
-*Category: automation · Harvested: 2026-02-25*
+*Category: automation · Harvested: 2026-02-26*
 
-**Stars:** 27,498  
+**Stars:** 27,495  
 **Language:** None  
 **License:** CC0-1.0  
 **URL:** https://github.com/sdras/awesome-actions

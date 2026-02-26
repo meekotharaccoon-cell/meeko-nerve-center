@@ -1,7 +1,7 @@
 # crewAIInc/crewAI
-*Category: multi-agent · Harvested: 2026-02-25*
+*Category: multi-agent · Harvested: 2026-02-26*
 
-**Stars:** 44,614  
+**Stars:** 44,649  
 **Language:** Python  
 **License:** MIT  
 **URL:** https://github.com/crewAIInc/crewAI

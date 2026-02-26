@@ -1,5 +1,5 @@
 # hotosm/tasking-manager
-*Category: humanitarian · Harvested: 2026-02-25*
+*Category: humanitarian · Harvested: 2026-02-26*
 
 **Stars:** 575  
 **Language:** Python  

@@ -1,7 +1,7 @@
 # ollama/ollama
-*Category: local-llm · Harvested: 2026-02-25*
+*Category: local-llm · Harvested: 2026-02-26*
 
-**Stars:** 163,383  
+**Stars:** 163,431  
 **Language:** Go  
 **License:** MIT  
 **URL:** https://github.com/ollama/ollama

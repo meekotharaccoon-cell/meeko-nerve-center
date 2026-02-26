@@ -3,88 +3,88 @@
     "name": "awesome-selfhosted/awesome-selfhosted",
     "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
     "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
-    "stars": 275153,
+    "stars": 275331,
     "language": "unknown",
     "topic": "free-software",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "Significant-Gravitas/AutoGPT",
     "url": "https://github.com/Significant-Gravitas/AutoGPT",
     "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
-    "stars": 182021,
+    "stars": 182030,
     "language": "Python",
     "topic": "autonomous-agents",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "Mintplex-Labs/anything-llm",
     "url": "https://github.com/Mintplex-Labs/anything-llm",
     "description": "The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.",
-    "stars": 55019,
+    "stars": 55048,
     "language": "JavaScript",
     "topic": "local-llm",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "mudler/LocalAI",
     "url": "https://github.com/mudler/LocalAI",
     "description": ":robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers, diffusers and many more. Features: Generate Text, MCP, Audio, Video, Images, Voice Cloning, Distributed, P2P and decentralized inference",
-    "stars": 43060,
+    "stars": 43070,
     "language": "Go",
     "topic": "decentralized",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "nextcloud/server",
     "url": "https://github.com/nextcloud/server",
     "description": "\u2601\ufe0f Nextcloud server, a safe home for all your data",
-    "stars": 34167,
+    "stars": 34168,
     "language": "PHP",
     "topic": "free-software",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "flameshot-org/flameshot",
     "url": "https://github.com/flameshot-org/flameshot",
     "description": "Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:",
-    "stars": 29372,
+    "stars": 29370,
     "language": "C++",
     "topic": "free-software",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "e2b-dev/awesome-ai-agents",
     "url": "https://github.com/e2b-dev/awesome-ai-agents",
     "description": "A list of AI autonomous agents",
-    "stars": 26036,
+    "stars": 26058,
     "language": "unknown",
     "topic": "autonomous-agents",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "Fosowl/agenticSeek",
     "url": "https://github.com/Fosowl/agenticSeek",
     "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. \ud83d\udd14 Official updates only via twitter @Martin993886460 (Beware of fake account)",
-    "stars": 25125,
+    "stars": 25131,
     "language": "Python",
     "topic": "autonomous-agents",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "yjs/yjs",
     "url": "https://github.com/yjs/yjs",
     "description": "Shared data types for building collaborative software",
-    "stars": 21288,
+    "stars": 21291,
     "language": "JavaScript",
     "topic": "decentralized",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "amark/gun",
     "url": "https://github.com/amark/gun",
     "description": "An open source cybersecurity protocol for syncing decentralized graph data.",
-    "stars": 18916,
+    "stars": 18915,
     "language": "JavaScript",
     "topic": "decentralized",
     "updated": "2026-02-25"
@@ -93,64 +93,64 @@
     "name": "mikeroyal/Self-Hosting-Guide",
     "url": "https://github.com/mikeroyal/Self-Hosting-Guide",
     "description": "Self-Hosting Guide. Learn all about  locally hosting (on premises & private web servers) and managing software applications by yourself or your organization. Including Cloud, LLMs, WireGuard, Automation, Home Assistant, and Networking.",
-    "stars": 18754,
+    "stars": 18760,
     "language": "Dockerfile",
     "topic": "decentralized",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "lichess-org/lila",
     "url": "https://github.com/lichess-org/lila",
     "description": "\u265e lichess.org: the forever free, adless and open source chess server \u265e",
-    "stars": 17823,
+    "stars": 17827,
     "language": "Scala",
     "topic": "free-software",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "TransformerOptimus/SuperAGI",
     "url": "https://github.com/TransformerOptimus/SuperAGI",
     "description": "<\u26a1\ufe0f> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.",
-    "stars": 17200,
+    "stars": 17205,
     "language": "Python",
     "topic": "autonomous-agents",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "gotify/server",
     "url": "https://github.com/gotify/server",
     "description": "A simple server for sending and receiving messages in real-time per WebSocket. (Includes a sleek web-ui)",
-    "stars": 14670,
+    "stars": 14672,
     "language": "Go",
     "topic": "free-software",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "ruvnet/claude-flow",
     "url": "https://github.com/ruvnet/claude-flow",
-    "description": "\ud83c\udf0a The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code support via MCP protocol. Ranked #1 in agent-based frameworks.",
-    "stars": 14509,
+    "description": "\ud83c\udf0a The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, distributed swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
+    "stars": 14641,
     "language": "TypeScript",
     "topic": "autonomous-agents",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "arwes/arwes",
     "url": "https://github.com/arwes/arwes",
     "description": "Futuristic Sci-Fi UI Web Framework.",
-    "stars": 7472,
+    "stars": 7474,
     "language": "TypeScript",
     "topic": "solarpunk",
-    "updated": "2026-02-22"
+    "updated": "2026-02-26"
   },
   {
     "name": "LearningCircuit/local-deep-research",
     "url": "https://github.com/LearningCircuit/local-deep-research",
     "description": "Local Deep Research achieves ~95% on SimpleQA benchmark (tested with GPT-4.1-mini). Supports local and cloud LLMs (Ollama, Google, Anthropic, ...). Searches 10+ sources - arXiv, PubMed, web, and your private documents. Everything Local & Encrypted.",
-    "stars": 4042,
+    "stars": 4045,
     "language": "Python",
     "topic": "local-llm",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "langroid/langroid",
@@ -174,19 +174,19 @@
     "name": "deta/surf",
     "url": "https://github.com/deta/surf",
     "description": "Personal AI Notebooks. Organize files & webpages and generate notes from them. Open source, local & open data, open model choice (incl. local).",
-    "stars": 3228,
+    "stars": 3232,
     "language": "TypeScript",
     "topic": "local-llm",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "travisvn/openai-edge-tts",
     "url": "https://github.com/travisvn/openai-edge-tts",
     "description": "Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs",
-    "stars": 1622,
+    "stars": 1623,
     "language": "Python",
     "topic": "local-llm",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "bonfire-networks/bonfire-app",
@@ -201,19 +201,19 @@
     "name": "SamurAIGPT/awesome-openclaw",
     "url": "https://github.com/SamurAIGPT/awesome-openclaw",
     "description": "A curated list of OpenClaw resources, tools, skills, tutorials & articles. OpenClaw (formerly Moltbot / Clawdbot) \u2014 open-source self-hosted AI agent for WhatsApp, Telegram, Discord & 50+ integrations.",
-    "stars": 681,
+    "stars": 684,
     "language": "unknown",
     "topic": "open-source-ai",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "WofWca/jumpcutter",
     "url": "https://github.com/WofWca/jumpcutter",
     "description": "\u23e9 Fast-forwards long pauses between sentences \u2014 watch lectures ~1.5x faster (browser extension)",
-    "stars": 553,
+    "stars": 556,
     "language": "TypeScript",
     "topic": "agpl",
-    "updated": "2026-02-25"
+    "updated": "2026-02-26"
   },
   {
     "name": "jacobwb/hashover-next",
@@ -258,7 +258,7 @@
     "stars": 215,
     "language": "Python",
     "topic": "open-source-ai",
-    "updated": "2026-02-24"
+    "updated": "2026-02-26"
   },
   {
     "name": "mapswipe/mapswipe",
@@ -405,15 +405,6 @@
     "updated": "2026-01-29"
   },
   {
-    "name": "groundgamela/mutual-aid-hub-server",
-    "url": "https://github.com/groundgamela/mutual-aid-hub-server",
-    "description": "Server code for https://github.com/groundgamela/mutual-aid-networks",
-    "stars": 6,
-    "language": "JavaScript",
-    "topic": "mutual-aid",
-    "updated": "2025-12-13"
-  },
-  {
     "name": "RodEsp/chfgma.org",
     "url": "https://github.com/RodEsp/chfgma.org",
     "description": "",
@@ -421,6 +412,15 @@
     "language": "JavaScript",
     "topic": "mutual-aid",
     "updated": "2026-02-25"
+  },
+  {
+    "name": "groundgamela/mutual-aid-hub-server",
+    "url": "https://github.com/groundgamela/mutual-aid-hub-server",
+    "description": "Server code for https://github.com/groundgamela/mutual-aid-networks",
+    "stars": 6,
+    "language": "JavaScript",
+    "topic": "mutual-aid",
+    "updated": "2025-12-13"
   },
   {
     "name": "bediger4000/self-replicating-programs",
