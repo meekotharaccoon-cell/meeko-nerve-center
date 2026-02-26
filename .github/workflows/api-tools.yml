@@ -1,0 +1,41 @@
+name: 🌐 All API Tools
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 6am UTC daily
+  workflow_dispatch:
+
+jobs:
+  run-all:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crypto Jobs
+        run: python mycelium/crypto_jobs.py
+        continue-on-error: true
+
+      - name: Art + Cause Generator
+        run: python mycelium/art_cause_generator.py
+        continue-on-error: true
+
+      - name: World Intelligence
+        run: python mycelium/world_intelligence.py
+        continue-on-error: true
+
+      - name: Open Library
+        run: python mycelium/open_library_reader.py
+        continue-on-error: true
+
+      - name: Music Intelligence
+        run: python mycelium/music_intelligence.py
+        continue-on-error: true
+
+      - name: Commit everything
+        run: |
+          git config user.name "meeko-api-tools"
+          git config user.email "tools@meeko-nerve-center"
+          git add data/ knowledge/ content/
+          git diff --cached --quiet || git commit -m "data: all API tools [$(date -u +%Y-%m-%d)]" && git push
