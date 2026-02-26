@@ -34,12 +34,39 @@
         "SHARE"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 4,
+      "gen": 4,
+      "at": "2026-02-26T17:35:10.070093",
+      "built": "consolidate",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 5,
+      "gen": 5,
+      "at": "2026-02-26T17:39:07.977624",
+      "built": "map_connections",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
     "index_lessons",
     "gen_changelog",
-    "scan_assets"
+    "scan_assets",
+    "consolidate",
+    "map_connections"
   ],
-  "gen": 4
+  "gen": 6
 }
