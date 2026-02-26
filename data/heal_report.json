@@ -1,0 +1,105 @@
+{
+  "generated": "2026-02-25T21:42:51.658660Z",
+  "healed_today": 1,
+  "needs_human": 7,
+  "total_healed": 1,
+  "open_issues": 7,
+  "healed": [
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "file_not_found",
+      "category": "filesystem",
+      "diagnosis": "diagnostics/ directory was missing",
+      "auto_fixed": true,
+      "fix_desc": "Created diagnostics/",
+      "status": "healed"
+    }
+  ],
+  "needs_human_list": [
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in evolve.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\evolve.py\", line 234\n    \"\"\"\n    ^^^\nSyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 95-96: truncated \\UXXXXXXXX escape",
+      "fallback": "Fix the syntax error in mycelium/evolve.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/evolve.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in grant_outreach.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\grant_outreach.py\", line 36\n    GRANT DATABASE\n          ^^^^^^^^\nSyntaxError: invalid syntax",
+      "fallback": "Fix the syntax error in mycelium/grant_outreach.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/grant_outreach.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in identity_vault.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\identity_vault.py\", line 59\n    VAULT SETUP\n          ^^^^^\nSyntaxError: invalid syntax",
+      "fallback": "Fix the syntax error in mycelium/identity_vault.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/identity_vault.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in network_node.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\network_node.py\", line 52\n    SYSTEM INFO\n           ^^^^\nSyntaxError: invalid syntax",
+      "fallback": "Fix the syntax error in mycelium/network_node.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/network_node.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in ORCHESTRATOR.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\ORCHESTRATOR.py\", line 59\n    DATA BUS \u2014 shared state between all modules\n             ^\nSyntaxError: invalid character '\u2014' (U+2014)",
+      "fallback": "Fix the syntax error in mycelium/ORCHESTRATOR.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/ORCHESTRATOR.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in wiring_hub.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\wiring_hub.py\", line 91\n    LAYER CHECKS\n          ^^^^^^\nSyntaxError: invalid syntax",
+      "fallback": "Fix the syntax error in mycelium/wiring_hub.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/wiring_hub.py"
+    },
+    {
+      "workflow": "local",
+      "date": "2026-02-25",
+      "error_type": "syntax_error",
+      "category": "code",
+      "diagnosis": "Syntax error in youtube_manager.py",
+      "auto_fixed": false,
+      "fix_desc": "File \"C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\mycelium\\youtube_manager.py\", line 249\n    print(f'\\n[yt] Updating descriptions {\\'(DRY RUN) \\' if dry_run else \\'\\'}...')\n                                           ^\nSyntaxError: unexpected character after line continuation character",
+      "fallback": "Fix the syntax error in mycelium/youtube_manager.py at the indicated line.",
+      "status": "needs_human",
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/mycelium/youtube_manager.py"
+    }
+  ]
+}
