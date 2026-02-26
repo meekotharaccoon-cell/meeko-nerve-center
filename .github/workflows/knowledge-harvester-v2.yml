@@ -1,0 +1,24 @@
+name: 🌍 Knowledge Harvester v2 (14 sources)
+
+on:
+  schedule:
+    - cron: '30 4 * * *'   # 4:30am UTC - before main harvester
+  workflow_dispatch:
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install deps
+        run: pip install requests 2>/dev/null || true
+      - name: Run expanded harvester
+        run: python mycelium/knowledge_harvester_v2.py
+      - name: Commit knowledge
+        run: |
+          git config user.name "meeko-harvest-v2"
+          git config user.email "harvest@meeko-nerve-center"
+          git add knowledge/ data/
+          git diff --cached --quiet || git commit -m "knowledge: v2 harvest [$(date -u +%Y-%m-%d)]" && git push

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarPunk Dashboard — Meeko Nerve Center</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;1,9..144,400&display=swap');
+
+:root {
+  --soil:    #1a1209;
+  --bark:    #2d1f0e;
+  --moss:    #0d2b0d;
+  --leaf:    #2d5a1b;
+  --growth:  #5aad2e;
+  --sun:     #f0c030;
+  --sky:     #4ab8c8;
+  --flower:  #e84040;
+  --spore:   #c87dd4;
+  --text:    #e8dcc8;
+  --muted:   #8a7a60;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--soil);
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  min-height: 100vh;
+}
+
+/* Living background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(45,90,27,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(74,184,200,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(90,173,46,0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  padding: 32px 24px 24px;
+  border-bottom: 1px solid var(--bark);
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  color: var(--growth);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--sun);
+  line-height: 1.1;
+  font-weight: 300;
+}
+.title em {
+  color: var(--growth);
+  font-style: italic;
+}
+.subtitle {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 10px;
+  letter-spacing: 1px;
+  max-width: 600px;
+  line-height: 1.6;
+}
+.last-updated {
+  font-size: 0.55rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid */
+.grid { display: grid; gap: 16px; margin-top: 28px; }
+.grid-2 { grid-template-columns: 1fr 1fr; }
+.grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+@media (max-width: 700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+/* Cards */
+.card {
+  background: rgba(45, 31, 14, 0.6);
+  border: 1px solid var(--bark);
+  padding: 20px;
+  backdrop-filter: blur(4px);
+  transition: border-color 0.3s;
+}
+.card:hover { border-color: var(--leaf); }
+.card-title {
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  color: var(--growth);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.card-title .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--growth);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Numbers */
+.big-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.5rem;
+  color: var(--sun);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.big-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* Data rows */
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(45,31,14,0.8);
+  font-size: 0.72rem;
+}
+.data-row:last-child { border-bottom: none; }
+.data-label { color: var(--muted); }
+.data-val   { color: var(--text); font-weight: 700; }
+.data-val.up   { color: var(--growth); }
+.data-val.down { color: var(--flower); }
+.data-val.warn { color: var(--sun); }
+
+/* Quake bars */
+.quake-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(45,31,14,0.8);
+  font-size: 0.68rem;
+}
+.quake-item:last-child { border-bottom: none; }
+.quake-mag {
+  display: inline-block;
+  width: 36px;
+  text-align: center;
+  padding: 1px 4px;
+  margin-right: 8px;
+  font-weight: 700;
+}
+.quake-mag.minor  { background: rgba(90,173,46,0.2); color: var(--growth); }
+.quake-mag.moderate { background: rgba(240,192,48,0.2); color: var(--sun); }
+.quake-mag.strong { background: rgba(232,64,64,0.2); color: var(--flower); }
+.quake-place { color: var(--text); }
+.quake-tsunami { color: var(--flower); font-size: 0.6rem; }
+
+/* Carbon bar */
+.carbon-bar-wrap {
+  background: var(--bark);
+  height: 8px;
+  margin: 10px 0 6px;
+  position: relative;
+}
+.carbon-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--growth), var(--sun), var(--flower));
+  transition: width 1s ease;
+}
+.carbon-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.55rem;
+  color: var(--muted);
+}
+
+/* Crypto row */
+.crypto-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(45,31,14,0.8);
+  font-size: 0.7rem;
+}
+.crypto-row:last-child { border-bottom: none; }
+.crypto-name { color: var(--muted); }
+.crypto-price { color: var(--text); font-weight: 700; }
+.crypto-change { text-align: right; font-size: 0.65rem; }
+
+/* Congress */
+.congress-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(45,31,14,0.8);
+  font-size: 0.68rem;
+}
+.congress-rep { color: var(--sun); font-weight: 700; }
+.congress-trade { color: var(--text); margin-top: 2px; }
+.congress-flag { color: var(--flower); font-size: 0.6rem; margin-top: 2px; }
+
+/* Reddit */
+.reddit-item {
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(45,31,14,0.8);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+.reddit-item:last-child { border-bottom: none; }
+.reddit-sub { color: var(--growth); font-size: 0.6rem; }
+.reddit-title a { color: var(--text); text-decoration: none; }
+.reddit-title a:hover { color: var(--sun); }
+
+/* Mission section */
+.mission {
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid var(--leaf);
+  background: rgba(13,43,13,0.4);
+  position: relative;
+}
+.mission::before {
+  content: 'THE PROTOCOL';
+  position: absolute;
+  top: -7px; left: 20px;
+  background: var(--soil);
+  padding: 0 8px;
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  color: var(--growth);
+}
+.mission p {
+  font-size: 0.75rem;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.mission p:last-child { margin-bottom: 0; }
+.mission strong { color: var(--sun); }
+
+/* Footer */
+footer {
+  padding: 24px;
+  border-top: 1px solid var(--bark);
+  margin-top: 32px;
+  font-size: 0.6rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+footer a { color: var(--growth); text-decoration: none; }
+footer a:hover { color: var(--sun); }
+
+/* Loading state */
+.loading {
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-style: italic;
+  padding: 12px 0;
+}
+.error { color: var(--flower); font-size: 0.65rem; padding: 8px 0; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<header>
+  <div class="eyebrow">Meeko Nerve Center</div>
+  <h1 class="title">Solar<em>Punk</em><br>Information Commons</h1>
+  <p class="subtitle">
+    Real data. No algorithm. No ads. No filter. Just the signal.
+    Earthquakes, carbon intensity, congressional trades, crypto, space — all free, all open.
+  </p>
+  <div class="last-updated" id="last-updated">Loading data...</div>
+</header>
+
+<div class="grid grid-3">
+  <!-- Earthquake card -->
+  <div class="card" id="quake-card">
+    <div class="card-title"><div class="dot"></div> Seismic (M4.5+, 24hr)</div>
+    <div class="loading">Fetching USGS data...</div>
+  </div>
+
+  <!-- Carbon card -->
+  <div class="card" id="carbon-card">
+    <div class="card-title"><div class="dot" style="background:var(--sky)"></div> UK Grid Carbon</div>
+    <div class="loading">Fetching carbon data...</div>
+  </div>
+
+  <!-- ISS card -->
+  <div class="card" id="iss-card">
+    <div class="card-title"><div class="dot" style="background:var(--sky)"></div> Humans in Space</div>
+    <div class="loading">Fetching ISS data...</div>
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px">
+  <!-- Crypto -->
+  <div class="card" id="crypto-card">
+    <div class="card-title"><div class="dot" style="background:var(--sun)"></div> Crypto Market</div>
+    <div class="loading">Fetching market data...</div>
+  </div>
+
+  <!-- Congress -->
+  <div class="card" id="congress-card">
+    <div class="card-title"><div class="dot" style="background:var(--flower)"></div> Congress Trades (Flagged)</div>
+    <div class="loading">Fetching congressional data...</div>
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top:16px">
+  <!-- Reddit -->
+  <div class="card" id="reddit-card">
+    <div class="card-title"><div class="dot" style="background:var(--growth)"></div> Community Signal (r/solarpunk)</div>
+    <div class="loading">Fetching community data...</div>
+  </div>
+
+  <!-- Space news -->
+  <div class="card" id="space-card">
+    <div class="card-title"><div class="dot" style="background:var(--sky)"></div> Spaceflight</div>
+    <div class="loading">Fetching space news...</div>
+  </div>
+</div>
+
+<div class="mission">
+  <p>
+    <strong>Humans and AI as parallel co-creators.</strong> Not AI replacing humans. Not humans controlling AI like a tool.
+    Two forms of intelligence, each with their own path, choosing when to walk together.
+  </p>
+  <p>
+    This dashboard exists because all of this data is public, free, and should be easy to see.
+    The earthquake that just happened. The carbon intensity of the grid right now.
+    What your representatives traded yesterday. What's happening in space.
+    None of it requires a subscription. None of it should be paywalled. <strong>It's all here.</strong>
+  </p>
+  <p>
+    <strong>Fork this system. Aim it at your cause.</strong>
+    $0/month. AGPL-3.0. One human. One idea. An internet connection.
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" style="color:var(--growth)">github.com/meekotharaccoon-cell/meeko-nerve-center</a>
+  </p>
+</div>
+
+</div>
+
+<footer>
+  <div>
+    <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/">Dashboard</a> ·
+    <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/proliferator.html">Legal Tools</a> ·
+    <a href="https://meekotharaccoon-cell.github.io/gaza-rose-gallery">Gaza Rose Gallery</a> ·
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">Fork This</a>
+  </div>
+  <div>Data: USGS · Carbon Intensity API · DEX Screener · CoinGecko · Open Notify · House Stock Watcher · Reddit · Spaceflight News API</div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => n ? Number(n).toLocaleString() : 'N/A';
+const fmtChange = n => {
+  const v = parseFloat(n);
+  if (isNaN(v)) return '<span class="data-val">N/A</span>';
+  const cls = v > 0 ? 'up' : v < 0 ? 'down' : '';
+  return `<span class="data-val ${cls}">${v > 0 ? '+' : ''}${v.toFixed(2)}%</span>`;
+};
+
+async function fetchJson(url) {
+  const r = await fetch(url);
+  return r.json();
+}
+
+// ── Earthquakes ──────────────────────────────────────────────────
+async function loadQuakes() {
+  try {
+    const data = await fetchJson(
+      'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=now-1day&minmagnitude=4.5&orderby=magnitude&limit=5'
+    );
+    const quakes = data.features || [];
+    const html = quakes.length === 0
+      ? '<div class="loading">No M4.5+ earthquakes in last 24hr</div>'
+      : quakes.map(f => {
+          const p = f.properties;
+          const mag = parseFloat(p.mag);
+          const cls = mag >= 6.5 ? 'strong' : mag >= 5.5 ? 'moderate' : 'minor';
+          const tsunami = p.tsunami ? '<span class="quake-tsunami"> ⚠ TSUNAMI</span>' : '';
+          return `<div class="quake-item">
+            <span class="quake-mag ${cls}">M${mag.toFixed(1)}</span>
+            <span class="quake-place">${p.place || 'Unknown'}${tsunami}</span>
+          </div>`;
+        }).join('');
+    $('quake-card').innerHTML = `
+      <div class="card-title"><div class="dot"></div> Seismic (M4.5+, 24hr)</div>
+      <div class="big-num">${quakes.length}</div>
+      <div class="big-label">earthquakes detected</div>
+      <div style="margin-top:12px">${html}</div>
+    `;
+  } catch(e) {
+    $('quake-card').innerHTML += '<div class="error">USGS data unavailable</div>';
+  }
+}
+
+// ── Carbon ───────────────────────────────────────────────────────
+async function loadCarbon() {
+  try {
+    const data = await fetchJson('https://api.carbonintensity.org.uk/intensity');
+    const d = data.data[0].intensity;
+    const actual = d.actual || d.forecast || 0;
+    const max = 400; // max reference
+    const pct = Math.min((actual / max) * 100, 100);
+    const idxColor = {
+      'very low': 'var(--growth)', 'low': 'var(--growth)',
+      'moderate': 'var(--sun)', 'high': 'var(--flower)', 'very high': 'var(--flower)'
+    }[d.index] || 'var(--muted)';
+    $('carbon-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--sky)"></div> UK Grid Carbon</div>
+      <div class="big-num" style="color:${idxColor}">${actual}</div>
+      <div class="big-label">gCO2/kWh — ${d.index || 'unknown'}</div>
+      <div class="carbon-bar-wrap"><div class="carbon-bar" style="width:${pct}%"></div></div>
+      <div class="carbon-labels"><span>clean (0)</span><span>dirty (400+)</span></div>
+      <div style="font-size:0.6rem;color:var(--muted);margin-top:8px">UK electricity grid. Lower = more renewable energy generating right now.</div>
+    `;
+  } catch(e) {
+    $('carbon-card').innerHTML += '<div class="error">Carbon data unavailable</div>';
+  }
+}
+
+// ── ISS ──────────────────────────────────────────────────────────
+async function loadISS() {
+  try {
+    const [pos, crew] = await Promise.all([
+      fetchJson('http://api.open-notify.org/iss-now.json'),
+      fetchJson('http://api.open-notify.org/astros.json')
+    ]);
+    const names = crew.people.map(p => p.name).join(', ');
+    const lat = parseFloat(pos.iss_position.latitude).toFixed(2);
+    const lon = parseFloat(pos.iss_position.longitude).toFixed(2);
+    $('iss-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--sky)"></div> Humans in Space</div>
+      <div class="big-num" style="color:var(--sky)">${crew.number}</div>
+      <div class="big-label">people aboard ISS right now</div>
+      <div style="margin-top:12px">
+        <div class="data-row"><span class="data-label">Position</span><span class="data-val">${lat}°, ${lon}°</span></div>
+        <div class="data-row" style="font-size:0.62rem;color:var(--muted);border:none;margin-top:6px">${names}</div>
+      </div>
+    `;
+  } catch(e) {
+    $('iss-card').innerHTML += '<div class="error">ISS data unavailable</div>';
+  }
+}
+
+// ── Crypto ───────────────────────────────────────────────────────
+async function loadCrypto() {
+  try {
+    const coins = await fetchJson(
+      'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=8&page=1'
+    );
+    const rows = coins.map(c => {
+      const chg = parseFloat(c.price_change_percentage_24h || 0);
+      const cls = chg > 0 ? 'up' : chg < 0 ? 'down' : '';
+      return `<div class="crypto-row">
+        <span class="crypto-name">${c.symbol.toUpperCase()}</span>
+        <span class="crypto-price">$${c.current_price > 1 ? fmt(Math.round(c.current_price)) : c.current_price.toFixed(4)}</span>
+        <span class="crypto-change ${cls}">${chg > 0 ? '+' : ''}${chg.toFixed(1)}%</span>
+      </div>`;
+    }).join('');
+    $('crypto-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--sun)"></div> Crypto Market</div>
+      ${rows}
+    `;
+  } catch(e) {
+    $('crypto-card').innerHTML += '<div class="error">CoinGecko data unavailable</div>';
+  }
+}
+
+// ── Congress ─────────────────────────────────────────────────────
+async function loadCongress() {
+  // Use local data if available, fallback to direct API
+  try {
+    // Try cached data first (generated by congress_watcher.py)
+    const r = await fetch('data/congress.json');
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    const flagged = data.flagged || [];
+    const html = flagged.length === 0
+      ? '<div class="loading">No flagged trades in last 30 days</div>'
+      : flagged.slice(0, 4).map(t => `
+          <div class="congress-item">
+            <div class="congress-rep">${t.rep} (${t.district || '?'})</div>
+            <div class="congress-trade">${t.type} ${t.ticker} — ${t.amount}</div>
+            <div class="congress-flag">${t.flags.filter(Boolean).join(' · ')}</div>
+          </div>`
+        ).join('');
+    $('congress-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--flower)"></div> Congress Trades (Flagged)</div>
+      <div class="big-num" style="color:var(--flower)">${flagged.length}</div>
+      <div class="big-label">flagged trades (30 days)</div>
+      <div style="margin-top:12px">${html}</div>
+      <div style="font-size:0.6rem;color:var(--muted);margin-top:10px">Source: House Stock Watcher · housestockwatcher.com</div>
+    `;
+  } catch(e) {
+    $('congress-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--flower)"></div> Congress Trades</div>
+      <div class="loading">Run congress_watcher.py to populate · or check <a href="https://housestockwatcher.com" style="color:var(--growth)">housestockwatcher.com</a></div>
+    `;
+  }
+}
+
+// ── Reddit ───────────────────────────────────────────────────────
+async function loadReddit() {
+  try {
+    const data = await fetchJson('https://www.reddit.com/r/solarpunk/hot.json?limit=5');
+    const posts = data.data.children.map(c => c.data);
+    const html = posts.map(p => `
+      <div class="reddit-item">
+        <div class="reddit-sub">r/solarpunk</div>
+        <div class="reddit-title"><a href="https://reddit.com${p.permalink}" target="_blank">${p.title.slice(0,120)}</a></div>
+      </div>`
+    ).join('');
+    $('reddit-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--growth)"></div> Community Signal</div>
+      ${html}
+    `;
+  } catch(e) {
+    $('reddit-card').innerHTML += '<div class="error">Reddit data unavailable</div>';
+  }
+}
+
+// ── Space News ───────────────────────────────────────────────────
+async function loadSpace() {
+  try {
+    const data = await fetchJson('https://api.spaceflightnewsapi.net/v4/articles/?limit=4&ordering=-published_at');
+    const articles = data.results || [];
+    const html = articles.map(a => `
+      <div class="reddit-item">
+        <div class="reddit-sub">${a.news_site}</div>
+        <div class="reddit-title"><a href="${a.url}" target="_blank">${a.title.slice(0,120)}</a></div>
+      </div>`
+    ).join('');
+    $('space-card').innerHTML = `
+      <div class="card-title"><div class="dot" style="background:var(--sky)"></div> Spaceflight</div>
+      ${html}
+    `;
+  } catch(e) {
+    $('space-card').innerHTML += '<div class="error">Spaceflight data unavailable</div>';
+  }
+}
+
+// ── Run all ──────────────────────────────────────────────────────
+(async () => {
+  const now = new Date().toLocaleString();
+  $('last-updated').textContent = `Live data · loaded ${now}`;
+  await Promise.allSettled([
+    loadQuakes(), loadCarbon(), loadISS(),
+    loadCrypto(), loadCongress(), loadReddit(), loadSpace()
+  ]);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+name: 🏛️ Congress Stock Watcher
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 6am UTC daily
+  workflow_dispatch:
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch congressional trades
+        run: python mycelium/congress_watcher.py
+      - name: Commit data
+        run: |
+          git config user.name "meeko-congress"
+          git config user.email "congress@meeko-nerve-center"
+          git add data/congress.json
+          git diff --cached --quiet || git commit -m "data: congress trades [$(date -u +%Y-%m-%d)]" && git push
