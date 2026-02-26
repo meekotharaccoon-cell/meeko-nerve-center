@@ -1,0 +1,155 @@
+# 🎬 YouTube Shorts Scripts — 2026-02-26
+*3 scripts ready to record · Primary focus: Congo (DRC)*
+
+**How to use:** Pick any one of these. Film it on your phone.
+Vertical video (hold phone portrait). Upload to YouTube Shorts.
+YouTube pays AdSense on Shorts. Every view = revenue toward the mission.
+
+---
+
+
+## SHORT 1: Crisis Awareness — Congo (DRC)
+*Topic: Congo (DRC) humanitarian crisis*
+*Length: 45–60 seconds*
+*Style: Direct to camera, serious tone, facts only*
+
+---
+
+### SCRIPT
+
+[HOOK — first 3 seconds, no intro]
+“The largest humanitarian crisis in Africa. You've probably never seen it on the news.”
+
+[PAUSE 1 second]
+
+“Over 7 million people are displaced in Eastern Congo.”
+
+“The conflict has been ongoing for 25 years.”
+
+“Children are being recruited as soldiers.”
+
+[PAUSE]
+
+“The International Rescue Committee. is one of the most trusted organizations working on this.”
+
+“The International Rescue Committee is on the ground. Link in bio.”
+
+[OUTRO — look at camera]
+“Follow. Share. This only gets coverage if people demand it.”
+
+---
+
+### PRODUCTION NOTES
+- Film vertical (9:16) on your phone
+- No music needed — silence is more powerful here
+- Plain background or blurred
+- Subtitles strongly recommended (most people watch muted)
+- Upload to YouTube Shorts, TikTok, Instagram Reels simultaneously
+
+### TAGS/DESCRIPTION
+#Congo #DRC #EasternCongo #HumanitarianCrisis #Africa #Shorts #YouShouldKnow
+
+Description: Over 7 million people are displaced in Eastern Congo. The International Rescue Committee is on the ground. Link in bio.
+Link: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
+
+
+---
+
+
+## SHORT 2: Tech Explainer
+*Topic: How this autonomous AI system works*
+*Length: 50–60 seconds*
+*Style: Screen recording + voiceover, OR talking head*
+
+---
+
+### SCRIPT
+
+[HOOK]
+“I built an AI that runs itself. It costs zero dollars a month. Here’s how.”
+
+[BEAT]
+
+“Every morning at 5am, it wakes up and reads the internet.”
+“GitHub. Wikipedia. NASA. HackerNews. arXiv.”
+“All free. All public. No API keys.”
+
+[BEAT]
+
+“Then it decides what to do today based on what worked yesterday.”
+“That’s the feedback loop.”
+
+[BEAT]
+
+“If something breaks, a separate workflow wakes up, reads the error,
+figures out the fix, and applies it automatically.”
+“It literally fixes its own code.”
+
+[BEAT]
+
+“The whole thing is on GitHub. Free. Open source. Fork it.”
+“Link in bio.”
+
+---
+
+### PRODUCTION NOTES
+- Screen record your GitHub Actions tab running live
+- OR just talk to camera — the words are strong enough
+- Tech audiences love seeing the actual terminal output
+- Post to: YouTube Shorts, LinkedIn, Twitter/X
+
+### TAGS/DESCRIPTION
+#AI #OpenSource #GitHub #Automation #ZeroCost #Shorts #BuildInPublic
+
+Description: A self-healing autonomous AI system that runs at $0/month.
+Full source: https://github.com/meekotharaccoon-cell/meeko-nerve-center
+
+
+---
+
+
+## SHORT 3: Call to Fork
+*Topic: How anyone can run their own version*
+*Length: 45 seconds*
+*Style: Screen share showing the fork button*
+
+---
+
+### SCRIPT
+
+[HOOK]
+“What if your computer could automatically raise money for any cause you care about?”
+
+[BEAT]
+
+“This repo is a template for exactly that.”
+“Fork it. Change three lines. Point it at your cause.”
+“It costs nothing to run.”
+
+[SHOW: GitHub repo page, fork button]
+
+“It’ll post content, track what works, fix its own errors, and draft the emails you need to send.”
+
+[BEAT]
+
+“Right now it’s aimed at Gaza, Sudan, and Congo.”
+“But it could be climate. Housing. Mutual aid. Anything.”
+
+[OUTRO]
+“Link in bio. Fork it. Make it yours.”
+
+---
+
+### PRODUCTION NOTES
+- Screen record: go to github.com/meekotharaccoon-cell/meeko-nerve-center
+  and show clicking the Fork button while you talk
+- This works great as a loop — end where you started
+
+### TAGS/DESCRIPTION
+#GitHub #OpenSource #ForGood #AI #Automation #HowTo #Shorts
+
+Description: Fork this autonomous AI system and aim it at any cause.
+https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md
+
+
+---
