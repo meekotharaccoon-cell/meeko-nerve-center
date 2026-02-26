@@ -1,0 +1,27 @@
+name: 💡 Idea Engine (Self-Generating)
+
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 3am UTC daily - runs before everything else
+  workflow_dispatch:
+
+jobs:
+  think:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate + Test Ideas
+        run: python mycelium/idea_engine.py
+
+      - name: Wire Working Ideas
+        run: python mycelium/idea_wirer.py
+
+      - name: Commit idea graph
+        run: |
+          git config user.name "meeko-idea-engine"
+          git config user.email "ideas@meeko-nerve-center"
+          git add data/ideas.json data/idea_results.json knowledge/ideas/ mycelium/idea_spawns/
+          git diff --cached --quiet || git commit -m "ideas: engine cycle [$(date -u +%Y-%m-%d %H:%M)]" && git push
