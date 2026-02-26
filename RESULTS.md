@@ -7,8 +7,8 @@
 
 | Metric | Value | Updated |
 |--------|-------|---------|
-| GitHub Forks | 0 | 2026-02-25 (seeded) |
-| GitHub Stars | — | auto-updates daily |
+| GitHub Forks | 0 | 2026-02-26 08:08 UTC |
+| GitHub Stars | 0 | 2026-02-26 08:08 UTC |
 | Workflows Active | 23 | static |
 | Repos Live | 10 | static |
 | Artworks in Gallery | 56 | static |
@@ -27,4 +27,4 @@ Examples of what goes here:
 - `YYYY-MM-DD` — First person builds their own system from this
 
 ---
-*Seeded manually · auto-updated daily by fork-tracker.yml*
+*Auto-generated 2026-02-26 08:08 UTC by fork-tracker.yml*
