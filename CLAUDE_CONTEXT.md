@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-25 21:22 UTC — first local harvest run*
+*Auto-updated by the system. Last update: 2026-02-26 03:06 UTC — feat: Notion bridge + Telegram bot + RSS feeds + HuggingFace bridge + CONNECTIONS.md*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
