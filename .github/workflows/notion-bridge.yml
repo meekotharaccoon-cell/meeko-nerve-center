@@ -1,0 +1,16 @@
+name: 📝 Notion Bridge
+
+on:
+  schedule:
+    - cron: '45 7 * * *'   # 7:45am UTC - after email drafter
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync to Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python mycelium/notion_bridge.py

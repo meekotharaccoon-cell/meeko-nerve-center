@@ -1,0 +1,16 @@
+name: 🤗 HuggingFace Bridge
+
+on:
+  schedule:
+    - cron: '30 10 * * *'  # after RSS generator
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync to HuggingFace
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/huggingface_bridge.py

@@ -1,0 +1,36 @@
+name: 📱 Telegram Morning Briefing
+
+on:
+  schedule:
+    - cron: '50 7 * * *'   # 7:50am UTC - last thing before you wake up
+  workflow_dispatch:
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send morning briefing
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python mycelium/telegram_bot.py
+
+---
+name: 📱 Telegram Poll (respond to commands)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # every 15 minutes - check for your commands
+  workflow_dispatch:
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Poll for commands
+        env:
+          TELEGRAM_TOKEN:   ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python mycelium/telegram_bot.py --poll

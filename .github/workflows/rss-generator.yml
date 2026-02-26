@@ -1,0 +1,22 @@
+name: 📰 RSS Feed Generator
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # 10am UTC daily - after all content is written
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate RSS feeds
+        run: python mycelium/rss_generator.py
+      - name: Commit feeds
+        run: |
+          git config user.name  "meeko-rss"
+          git config user.email "rss@meeko-nerve-center"
+          git add public/
+          git diff --cached --quiet || git commit -m "feed: RSS update [$(date -u +%Y-%m-%d)]" && git push
