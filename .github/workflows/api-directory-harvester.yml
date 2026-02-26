@@ -1,0 +1,22 @@
+name: 🔍 API Directory Harvester
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'   # Every Monday 5am UTC — weekly API discovery
+  workflow_dispatch:
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Discover free APIs
+        run: python mycelium/api_directory_harvester.py
+      - name: Commit discoveries
+        run: |
+          git config user.name "meeko-api-hunter"
+          git config user.email "apis@meeko-nerve-center"
+          git add knowledge/apis/ data/api_opportunities.json
+          git diff --cached --quiet || git commit -m "knowledge: API directory scan [$(date -u +%Y-%m-%d)]" && git push
