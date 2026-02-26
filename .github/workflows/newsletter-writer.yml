@@ -1,0 +1,22 @@
+name: 📬 Newsletter Writer
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'   # Every Monday 9am UTC
+  workflow_dispatch:
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write weekly newsletter
+        run: python mycelium/newsletter_writer.py
+      - name: Commit
+        run: |
+          git config user.name "meeko-content"
+          git config user.email "content@meeko-nerve-center"
+          git add content/newsletter/
+          git diff --cached --quiet || git commit -m "📬 newsletter [$(date -u +%Y-W%W)]" && git push
