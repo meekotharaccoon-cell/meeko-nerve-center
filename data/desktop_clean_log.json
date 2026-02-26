@@ -5,6 +5,18 @@
       "moved": 0,
       "moved_files": [],
       "errors": []
+    },
+    {
+      "at": "2026-02-26T22:32:36.801828+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260226_173116",
+          "to": "BACKUPS\\BACKUP_20260226_173116",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
     }
   ]
 }

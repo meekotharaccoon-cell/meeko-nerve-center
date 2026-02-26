@@ -11,10 +11,22 @@
         "FIRST"
       ],
       "duration_s": 32
+    },
+    {
+      "run": 2,
+      "gen": 2,
+      "at": "2026-02-26T17:32:36.130426",
+      "built": "gen_changelog",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
-    "index_lessons"
+    "index_lessons",
+    "gen_changelog"
   ],
-  "gen": 2
+  "gen": 3
 }
