@@ -1,0 +1,17 @@
+{
+  "date": "2026-02-26",
+  "messages": [
+    "$10 USD = 3.093321 Israeli Shekels today",
+    "$10 USD = 47.951591 Egyptian Pounds today",
+    "$10 USD = 0.709 Jordanian Dinars today",
+    "$25 USD = roughly 77 shekels \u2014 one week of groceries for a family in Gaza"
+  ],
+  "rates": {
+    "ILS": 3.093321,
+    "EGP": 47.951591,
+    "JOD": 0.709,
+    "EUR": 0.847304,
+    "GBP": 0.738487
+  },
+  "source": "open.er-api.com"
+}

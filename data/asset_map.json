@@ -1,0 +1,435 @@
+{
+  "generated": "2026-02-26T22:29:10.249773+00:00",
+  "assets": {
+    "C:\\Users\\meeko\\Desktop\\ultimateai_knowledge.db": {
+      "exists": true,
+      "size_kb": 48,
+      "modified": "2026-02-17T20:07:37.053051",
+      "tables": [
+        "knowledge",
+        "sqlite_sequence",
+        "knowledge_fts",
+        "knowledge_fts_data",
+        "knowledge_fts_idx",
+        "knowledge_fts_docsize",
+        "knowledge_fts_config"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\MYCELIUM_KNOWLEDGE_BASE.json": {
+      "exists": true,
+      "size_kb": 6,
+      "modified": "2026-02-26T16:01:35.697023",
+      "keys": [
+        "system",
+        "version",
+        "generated",
+        "mission",
+        "github_organism",
+        "local_stack",
+        "github_secrets_needed",
+        "email_contacts_verified",
+        "email_wrong_addresses",
+        "revenue_streams_active"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\ultimateai_events.jsonl": null,
+    "C:\\Users\\meeko\\Desktop\\ultimateai_pip_map.json": {
+      "exists": true,
+      "size_kb": 0,
+      "modified": "2026-02-14T16:58:51.184314",
+      "keys": [
+        "my_internal_module"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\GUMROAD_PRODUCT_LISTINGS.txt": {
+      "exists": true,
+      "size_kb": 11,
+      "modified": "2026-02-18T02:15:26.492221",
+      "lines": 286,
+      "preview": "\u00ef\u00bb\u00bf======================================================================\nMEEKO MYCELIUM - COMPLETE GUMROAD PRODUCT LISTINGS\nCopy each section into Gumroad when creating products\n====================="
+    },
+    "C:\\Users\\meeko\\Desktop\\AllDependencies.txt": {
+      "exists": true,
+      "size_kb": 0,
+      "modified": "2026-02-14T14:19:34.466310",
+      "lines": 1,
+      "preview": ""
+    },
+    "C:\\Users\\meeko\\Desktop\\MEEKO_MYCELIUM_SYSTEM_GUIDE.pdf": {
+      "exists": true,
+      "size_kb": 15,
+      "modified": "2026-02-18T01:49:26.684774"
+    },
+    "C:\\Users\\meeko\\Desktop\\docker-compose.yml": {
+      "exists": true,
+      "size_kb": 0,
+      "modified": "2026-02-16T14:51:06.005833"
+    },
+    "C:\\Users\\meeko\\Desktop\\system_report.txt": null
+  },
+  "directories": {
+    "C:\\Users\\meeko\\Desktop\\INVESTMENT_HQ": {
+      "exists": true,
+      "total_files": 20,
+      "py_files": 5,
+      "py_names": [
+        "ai_analyst.py",
+        "approval_portal.py",
+        "exchange_connector.py",
+        "free_data.py",
+        "trade_journal.py"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\TRADING_SYSTEM": {
+      "exists": true,
+      "total_files": 12,
+      "py_files": 5,
+      "py_names": [
+        "ai_analyst.py",
+        "tax_ledger.py",
+        "trading_bridge.py",
+        "trading_dashboard.py",
+        "watchlist_monitor.py"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\SOLARPUNK_AUTONOMOUS": {
+      "exists": true,
+      "total_files": 2953,
+      "py_files": 112,
+      "py_names": [
+        "autonomous_marketing.py",
+        "autonomous_revenue.py",
+        "config_editor.py",
+        "deploy_all.py",
+        "fix_json_local.py",
+        "full_revenue.py",
+        "github_deployer.py",
+        "github_revenue.py",
+        "multi_platform_bot.py",
+        "orchestrator.py"
+      ]
+    },
+    "C:\\Users\\meeko\\Desktop\\PRODUCTS": {
+      "exists": true,
+      "total_files": 0,
+      "py_files": 0,
+      "py_names": []
+    }
+  },
+  "local_scripts": [
+    {
+      "name": "agent.py",
+      "size_kb": 0,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "AGENT_ROLE.py",
+      "size_kb": 6,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "AUTONOMOUS_AGENT.py",
+      "size_kb": 30,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "BENEFITS_SCANNER.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "build_guide_pdf.py",
+      "size_kb": 17,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "BUILD_MCP_CONFIG.py",
+      "size_kb": 5,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "CLEANUP_AND_BRIDGE.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "create_gumroad_listings.py",
+      "size_kb": 10,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DAILY_LAUNCH.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DO_WHAT_YOU_CAN.py",
+      "size_kb": 16,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "fix_pcrf.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "fix_syntax.py",
+      "size_kb": 1,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "GRAND_SETUP_WIZARD.py",
+      "size_kb": 47,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "IDENTITY_VAULT_SETUP.py",
+      "size_kb": 17,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "IGNITE.py",
+      "size_kb": 36,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LAUNCH_EVERYTHING.py",
+      "size_kb": 26,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LEGAL_ENGINE.py",
+      "size_kb": 32,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LIVE_DASHBOARD.py",
+      "size_kb": 40,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LOCAL_GITHUB_BRIDGE.py",
+      "size_kb": 5,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "mycelium.py",
+      "size_kb": 0,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "REVENUE_ENGINE.py",
+      "size_kb": 25,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "SETUP_WIZARD.py",
+      "size_kb": 49,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "SYSTEM_HEALTH_CHECK.py",
+      "size_kb": 11,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "upgrade_check.py",
+      "size_kb": 2,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "upgrade_check_pause.py",
+      "size_kb": 2,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "vault_reader.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    }
+  ],
+  "orphan_scripts": [
+    {
+      "name": "agent.py",
+      "size_kb": 0,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "AGENT_ROLE.py",
+      "size_kb": 6,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "AUTONOMOUS_AGENT.py",
+      "size_kb": 30,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "BENEFITS_SCANNER.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "build_guide_pdf.py",
+      "size_kb": 17,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "BUILD_MCP_CONFIG.py",
+      "size_kb": 5,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "CLEANUP_AND_BRIDGE.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "create_gumroad_listings.py",
+      "size_kb": 10,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DAILY_LAUNCH.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DO_WHAT_YOU_CAN.py",
+      "size_kb": 16,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "fix_pcrf.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "fix_syntax.py",
+      "size_kb": 1,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "GRAND_SETUP_WIZARD.py",
+      "size_kb": 47,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "IDENTITY_VAULT_SETUP.py",
+      "size_kb": 17,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "IGNITE.py",
+      "size_kb": 36,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LAUNCH_EVERYTHING.py",
+      "size_kb": 26,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LEGAL_ENGINE.py",
+      "size_kb": 32,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LIVE_DASHBOARD.py",
+      "size_kb": 40,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LOCAL_GITHUB_BRIDGE.py",
+      "size_kb": 5,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "mycelium.py",
+      "size_kb": 0,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "REVENUE_ENGINE.py",
+      "size_kb": 25,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "SETUP_WIZARD.py",
+      "size_kb": 49,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "SYSTEM_HEALTH_CHECK.py",
+      "size_kb": 11,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "upgrade_check.py",
+      "size_kb": 2,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "upgrade_check_pause.py",
+      "size_kb": 2,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "vault_reader.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    }
+  ]
+}

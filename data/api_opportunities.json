@@ -1,0 +1,233 @@
+{
+  "date": "2026-02-26",
+  "top_mission_apis": [
+    {
+      "name": "USGS Earthquakes",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "category": "Science",
+      "auth": "no",
+      "free": true,
+      "mission_score": 13
+    },
+    {
+      "name": "Free Dictionary",
+      "description": "Definitions, phonetics, pronounciations, parts of speech, examples, synonyms",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://dictionaryapi.dev/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Colorado Information Marketplace",
+      "description": "Colorado State Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.colorado.gov/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "District of Columbia Open Data",
+      "description": "Contains D.C. government public datasets, including crime, GIS, financial data, and so on",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "http://opendata.dc.gov/pages/using-apis",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, ACT",
+      "description": "Australian Capital Territory Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.data.act.gov.au/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Argentina",
+      "description": "Argentina Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://datos.gob.ar/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Australia",
+      "description": "Australian Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.data.gov.au/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Austria",
+      "description": "Austria Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.data.gv.at/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Belgium",
+      "description": "Belgium Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.gov.be/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Cyprus",
+      "description": "Cyprus Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.gov.cy/?language=en",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Czech Republic",
+      "description": "Czech Republic Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.gov.cz/english/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Denmark",
+      "description": "Denmark Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.opendata.dk/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Finland",
+      "description": "Finland Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.avoindata.fi/en",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Germany",
+      "description": "Germany Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.govdata.de/daten/-/details/govdata-metadatenkatalog",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Ireland",
+      "description": "Ireland Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.gov.ie/pages/developers",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Italy",
+      "description": "Italy Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.dati.gov.it/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Lithuania",
+      "description": "Lithuania Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.gov.lt/public/api/1",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Mexico",
+      "description": "Mexican Statistical Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://www.inegi.org.mx/datos/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Mexico",
+      "description": "Mexico Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://datos.gob.mx/",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    },
+    {
+      "name": "Open Government, Netherlands",
+      "description": "Netherlands Government Open Data",
+      "category": "Index",
+      "auth": "No",
+      "https": true,
+      "url": "https://data.overheid.nl/en/ondersteuning/data-publiceren/api",
+      "free": true,
+      "source": "public-apis/public-apis",
+      "mission_score": 12
+    }
+  ],
+  "free_noauth_count": 677,
+  "categories": [
+    "Science",
+    "Government",
+    "APILayer APIs",
+    "Jobs",
+    "Art",
+    "Crypto",
+    "Environment",
+    "Index"
+  ]
+}

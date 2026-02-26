@@ -1,7 +1,18 @@
-# WIRED — Auto-Built Connections
-> Built by idea_builder.py — connections the system wired itself
-> Run `python mycelium/idea_engine.py && python mycelium/idea_builder.py` to populate.
+# WIRED � Auto-Built Connections
+> 3 ideas implemented by the system itself
+> Last updated: 2026-02-26
 
-This file tracks every idea the system implemented on its own.
-No human intervention required. No 'Idea!' prompt needed.
-The system sees what it has, finds what connects, builds the bridge.
+## Exchange rate context on donation pages: $10 USD = X ILS/EGP today
+Category: revenue | Mission: 8/10
+APIs: ExchangeRate-API
+Learning: Built and wired on 2026-02-26
+
+## Auto-generate Etsy SEO tags from Open Food Facts + Art data for Gaza Rose listings
+Category: revenue | Mission: 7/10
+APIs: Open Food Facts, ARTIC, Met Museum
+Learning: Built and wired on 2026-02-26
+
+## Spaceflight launch calendar -> content timing: post hope content on launch days
+Category: intelligence | Mission: 7/10
+APIs: SpaceX, Spaceflight News
+Learning: Built and wired on 2026-02-26

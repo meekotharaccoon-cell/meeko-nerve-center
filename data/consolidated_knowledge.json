@@ -1,0 +1,2676 @@
+{
+  "generated": "2026-02-26T22:29:11.062723+00:00",
+  "knowledge_db": {
+    "tables": [
+      "knowledge",
+      "sqlite_sequence",
+      "knowledge_fts",
+      "knowledge_fts_data",
+      "knowledge_fts_idx",
+      "knowledge_fts_docsize",
+      "knowledge_fts_config"
+    ],
+    "data": {
+      "tables": {
+        "knowledge": {
+          "columns": [
+            "id",
+            "category",
+            "key",
+            "value",
+            "created_at",
+            "updated_at",
+            "access_count"
+          ],
+          "sample_rows": 12,
+          "rows": [
+            {
+              "id": 6,
+              "category": "fixes",
+              "key": "fix_1771106331",
+              "value": "{\"error_type\": \"MemoryError\", \"error_msg\": \"oom\", \"context\": {\"test\": \"log_sink\"}, \"fix\": {\"success\": true, \"action\": \"gc_collect\", \"objects_freed\": 98, \"auto\": true}}",
+              "created_at": 1771106331.1931987,
+              "updated_at": 1771106331.1931987,
+              "access_count": 0
+            },
+            {
+              "id": 12,
+              "category": "fixes",
+              "key": "fix_1771106452",
+              "value": "{\"error_type\": \"MemoryError\", \"error_msg\": \"oom\", \"context\": {\"test\": \"log_sink\"}, \"fix\": {\"success\": true, \"action\": \"gc_collect\", \"objects_freed\": 66, \"auto\": true}}",
+              "created_at": 1771106452.1798568,
+              "updated_at": 1771106452.1798568,
+              "access_count": 0
+            },
+            {
+              "id": 17,
+              "category": "fixes",
+              "key": "fix_1771106955",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}",
+              "created_at": 1771106955.352958,
+              "updated_at": 1771106955.352958,
+              "access_count": 0
+            },
+            {
+              "id": 22,
+              "category": "fixes",
+              "key": "fix_1771106965",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}",
+              "created_at": 1771106965.4454274,
+              "updated_at": 1771106965.4454274,
+              "access_count": 0
+            },
+            {
+              "id": 27,
+              "category": "fixes",
+              "key": "fix_1771107034",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}",
+              "created_at": 1771107034.844622,
+              "updated_at": 1771107034.844622,
+              "access_count": 0
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "columns": [
+            "name",
+            "seq"
+          ],
+          "sample_rows": 1,
+          "rows": [
+            {
+              "name": "knowledge",
+              "seq": 43
+            }
+          ]
+        },
+        "knowledge_fts": {
+          "columns": [
+            "category",
+            "key",
+            "value"
+          ],
+          "sample_rows": 12,
+          "rows": [
+            {
+              "category": "fixes",
+              "key": "fix_1771106331",
+              "value": "{\"error_type\": \"MemoryError\", \"error_msg\": \"oom\", \"context\": {\"test\": \"log_sink\"}, \"fix\": {\"success\": true, \"action\": \"gc_collect\", \"objects_freed\": 98, \"auto\": true}}"
+            },
+            {
+              "category": "fixes",
+              "key": "fix_1771106452",
+              "value": "{\"error_type\": \"MemoryError\", \"error_msg\": \"oom\", \"context\": {\"test\": \"log_sink\"}, \"fix\": {\"success\": true, \"action\": \"gc_collect\", \"objects_freed\": 66, \"auto\": true}}"
+            },
+            {
+              "category": "fixes",
+              "key": "fix_1771106955",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}"
+            },
+            {
+              "category": "fixes",
+              "key": "fix_1771106965",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}"
+            },
+            {
+              "category": "fixes",
+              "key": "fix_1771107034",
+              "value": "{\"error_type\": \"RecursionError\", \"error_msg\": \"max recursion depth exceeded\", \"context\": {\"test\": \"schema\"}, \"fix\": {\"success\": true, \"action\": \"raise_recursion_limit\", \"old_limit\": 1000, \"new_limit\": 1500, \"auto\": true}}"
+            }
+          ]
+        },
+        "knowledge_fts_data": {
+          "columns": [
+            "id",
+            "block"
+          ],
+          "sample_rows": 15,
+          "rows": [
+            {
+              "id": 1,
+              "block": "b'++6\\x84\\x1c'"
+            },
+            {
+              "id": 10,
+              "block": "b'\\x00\\x00\\x00\\x00\\x02\\r+\\x00\\r\\x10\\x01\\x01\\x01\\x01\\x01\\x02\\x01\\x01\\x03\\x01\\x01\\x04\\x01\\x01\\x05\\x01\\x01\\x06\\x01\\x01\\x07\\x01\\x01\\x08\\x01\\x01\\t\\x01\\x01\\n\\x01\\x01\\x0b\\x01\\x01\\x0c\\x01\\x01\\x00\\x00'"
+            },
+            {
+              "id": 137438953473,
+              "block": "b'\\x00\\x00\\x01 \\x0501000 \\x06\\x01\\x02\\x17\\x02\\x03500 \\x06\\x01\\x02\\x1a\\x02\\t771107721 \\x06\\x01\\x01\\x03\\x01\\x06action \\x06\\x01\\x02\\x11\\x02\\x03uto \\x06\\x01\\x02\\x1b\\x01\\x07context \\x06\\x01\\x02\\x0b\\x01\\x05depth \\x06\\x01\\x02\\t\\x01\\x05error \\x08\\x01\\x02\\x02\\x05\\x02\\x07xceeded \\x06\\x01\\x02\\n\\x01\\x03fix \\x0c\\x01\\x01\\x02\\x01\\x02\\x0e\\x04\\x02es \\x02\\x02\\x01\\x05limit \\n\\x01\\x02\\x14\\x04\\x05\\x01\\x03max \\x06\\x01\\x02\\x07\\x02\\x02sg \\x06\\x01\\x02\\x06\\x01\\x03new \\x06\\x01\\x02\\x18\\x01\\x03old \\x06\\x01\\x02\\x15\\x01\\x05raise \\x06\\x01\\x02\\x12\\x02\\x08ecursion \\x08\\x01\\x02\\x08\\r\\n\\x05error \\x06\\x01\\x02\\x04\\x01\\x06schema \\x06\\x01\\x02\\r\\x02\\x06uccess \\x06\\x01\\x02\\x0f\\x01\\x04test \\x06\\x01\\x02\\x0c\\x02\\x03rue \\x08\\x01\\x02\\x10\\x0e\\x02\\x03ype \\x06\\x01\\x02\\x03\\x04\\x0b\\n\\x10\\r\\n\\x0e\\x0c\\r\\x0e\\r\\x07\\x0e\\n\\t\\n\\n\\x0c\\x10\\x0c\\r\\r\\x0b\\x0b'"
+            },
+            {
+              "id": 274877906945,
+              "block": "b'\\x00\\x00\\x001\\x0200!\\x08\\x01\\x02\\x03\\x03\\x01\\x0213!\\x06\\x01\\x02\\x02\\x01\\x08identity!\\x02\\x02\\x01\\x07version!\\x06\\x01\\x01\\x02\\x04\\t\\t\\r'"
+            },
+            {
+              "id": 412316860417,
+              "block": "b'\\x00\\x00\\x00Y\\x03002\"\\x06\\x01\\x02\\x03\\x02\\x017\"\\x06\\x01\\x02\\x05\\x01\\x0517t17\"\\x06\\x01\\x02\\x04\\x01\\x042026\"\\x06\\x01\\x02\\x02\\x02\\x011\"\\x06\\x01\\x02\\x06\\x02\\x0525397\"\\x06\\x01\\x02\\x07\\x01\\x05birth\"\\x06\\x01\\x01\\x02\\x01\\x08identity\"\\x02\\x02\\x04\\t\\x08\\x0c\\x0b\\x08\\x0c\\x0c'"
+            }
+          ]
+        },
+        "knowledge_fts_idx": {
+          "columns": [
+            "segid",
+            "term",
+            "pgno"
+          ],
+          "sample_rows": 13,
+          "rows": [
+            {
+              "segid": 1,
+              "term": "b''",
+              "pgno": 2
+            },
+            {
+              "segid": 2,
+              "term": "b''",
+              "pgno": 2
+            },
+            {
+              "segid": 3,
+              "term": "b''",
+              "pgno": 2
+            },
+            {
+              "segid": 4,
+              "term": "b''",
+              "pgno": 2
+            },
+            {
+              "segid": 5,
+              "term": "b''",
+              "pgno": 2
+            }
+          ]
+        },
+        "knowledge_fts_docsize": {
+          "columns": [
+            "id",
+            "sz"
+          ],
+          "sample_rows": 20,
+          "rows": [
+            {
+              "id": 1,
+              "sz": "b'\\x01\\x01\\x03'"
+            },
+            {
+              "id": 2,
+              "sz": "b'\\x01\\x01\\x06'"
+            },
+            {
+              "id": 3,
+              "sz": "b'\\x01\\x01\\x01'"
+            },
+            {
+              "id": 4,
+              "sz": "b'\\x01\\x01\\x14'"
+            },
+            {
+              "id": 5,
+              "sz": "b'\\x01\\x02\"'"
+            }
+          ]
+        },
+        "knowledge_fts_config": {
+          "columns": [
+            "k",
+            "v"
+          ],
+          "sample_rows": 1,
+          "rows": [
+            {
+              "k": "version",
+              "v": 4
+            }
+          ]
+        }
+      }
+    }
+  },
+  "mycelium_kb": {
+    "system": "Meeko Mycelium",
+    "version": "2.0",
+    "generated": "2026-02-26T16:01:35.695017",
+    "mission": {
+      "goal": "Autonomous humanitarian art + knowledge system",
+      "charity": "Palestine Children's Relief Fund (PCRF)",
+      "charity_ein": "93-1057665",
+      "charity_rating": "4-star Charity Navigator, 12 consecutive years",
+      "revenue_split": "70% to PCRF, 30% to system/Meeko"
+    },
+    "github_organism": {
+      "org": "meekotharaccoon-cell",
+      "repos": {
+        "meeko-nerve-center": {
+          "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center",
+          "purpose": "Central brain and workflow orchestrator",
+          "workflows": [
+            "mycelium-morning.yml (9AM EST)",
+            "mycelium-evening.yml (9PM EST)",
+            "email-responder.yml (every 30min)"
+          ],
+          "scripts": [
+            "morning_briefing.py",
+            "pulse.py",
+            "brain_sync.py",
+            "email_responder.py",
+            "grant_outreach.py",
+            "more_grant_emails.py"
+          ]
+        },
+        "gaza-rose-gallery": {
+          "url": "https://github.com/meekotharaccoon-cell/gaza-rose-gallery",
+          "live": "https://meekotharaccoon-cell.github.io/gaza-rose-gallery",
+          "purpose": "Art gallery - 56 artworks, $1 each, PayPal + BTC inline",
+          "payment_btc": "bc1qka74n62h3zk9mcv8v8xjtjtwehmnm24w3pfzzr",
+          "payment_paypal_client_id": "AaMNXxUU0cRwqklyGcQ4T3VP-0ymQE9aYaL_P0wwh7arTpn41GZClSDNYQI2R4dh1Nv1DhirWKfk7O31"
+        },
+        "mycelium-grants": {
+          "url": "https://github.com/meekotharaccoon-cell/mycelium-grants",
+          "purpose": "Daily grant hunter - searches, scores, auto-applies",
+          "workflow": "daily-hunt.yml (10:30AM EST)"
+        },
+        "mycelium-money": {
+          "url": "https://github.com/meekotharaccoon-cell/mycelium-money",
+          "purpose": "Legal revenue finder - class actions, FTC refunds, unclaimed property",
+          "workflow": "daily-money.yml (11AM EST)"
+        },
+        "mycelium-knowledge": {
+          "url": "https://github.com/meekotharaccoon-cell/mycelium-knowledge",
+          "purpose": "Knowledge packager - learns, documents, sells guides",
+          "key_docs": [
+            "AUTONOMOUS_SYSTEM_GUIDE.md",
+            "KNOW_YOUR_RIGHTS.md"
+          ]
+        },
+        "mycelium-visibility": {
+          "url": "https://github.com/meekotharaccoon-cell/mycelium-visibility",
+          "purpose": "Audience builder - Reddit, Dev.to, Mastodon"
+        },
+        "mycelium-core": {
+          "url": "https://github.com/meekotharaccoon-cell/mycelium-core",
+          "purpose": "Master orchestrator map - shows full system architecture"
+        },
+        "meeko-brain": {
+          "url": "https://github.com/meekotharaccoon-cell/meeko-brain",
+          "purpose": "Private memory repo - syncs daily",
+          "visibility": "private"
+        },
+        "atomic-agents-conductor": {
+          "url": "https://github.com/meekotharaccoon-cell/atomic-agents-conductor",
+          "purpose": "Local-to-GitHub dispatch bridge - agent-dispatch.yml"
+        }
+      }
+    },
+    "local_stack": {
+      "ollama": {
+        "status": "running",
+        "models": [
+          "mistral:latest (4.4GB)",
+          "codellama:latest (3.8GB)",
+          "llama3.2:latest (2.0GB)",
+          "nomic-embed-text:latest (274MB)"
+        ],
+        "use": "local AI inference, no API cost, private"
+      },
+      "docker": {
+        "status": "running"
+      },
+      "python_packages": [
+        "langchain",
+        "chromadb",
+        "crewai",
+        "fastapi",
+        "ollama"
+      ],
+      "virtual_env": "C:\\Users\\meeko\\Desktop\\mycelium_env",
+      "db": "C:\\Users\\meeko\\Desktop\\UltimateAI_Master\\gaza_rose.db"
+    },
+    "github_secrets_needed": {
+      "GMAIL_APP_PASSWORD": "MISSING - unlocks all email automation",
+      "OPENROUTER_KEY": "SET",
+      "SERPAPI_KEY": "SET",
+      "STRIKE_API_KEY": "MISSING - enables Lightning payments",
+      "DEVTO_API_KEY": "MISSING - auto-publishes articles"
+    },
+    "email_contacts_verified": {
+      "pcrf": "info@pcrf.net",
+      "open_collective": "hello@opencollective.com",
+      "tech_for_palestine": "hello@techforpalestine.org",
+      "mozilla": "foundation@mozilla.org",
+      "cloudinary": "support@cloudinary.com",
+      "strike": "support@strike.me",
+      "awesome_foundation": "secretary@awesomefoundation.org",
+      "fractured_atlas": "info@fracturedatlas.org",
+      "creative_capital": "info@creative-capital.org",
+      "wikimedia": "grants@wikimedia.org",
+      "harvestworks": "info@harvestworks.org"
+    },
+    "email_wrong_addresses": {
+      "sponsors@github.com": "NOT email-based - use github.com/sponsors form",
+      "hello@producthunt.com": "Unmonitored - use producthunt.com/posts/new",
+      "web@knightfoundation.org": "Doesn't fund individuals - wait for Open Collective",
+      "hello@innovategrant.com": "Likely fake site - removed"
+    },
+    "revenue_streams_active": [
+      "PayPal - $1/artwork (49% fee on $1, working)",
+      "Bitcoin - bc1qka74n62h3zk9mcv8v8xjtjtwehmnm24w3pfzzr (zero fee)",
+      "Coinbase Commerce - crypto (2 expired charges, needs promotion)",
+      "Guides - $5/guide via PayPal inline on gallery page (new, untested)"
+    ],
+    "revenue_streams_pending": [
+      "Lightning/Strike - zero fee, awaiting API key",
+      "Alpaca Markets - paper trading, awaiting keys from COMMAND_CENTER",
+      "Coinbase Advanced - awaiting keys from COMMAND_CENTER",
+      "Kraken - awaiting keys from COMMAND_CENTER"
+    ],
+    "legal_revenue_opportunities": [
+      "Class action claims - classaction.org, topclassactions.com",
+      "FTC refund programs - ftc.gov/refunds",
+      "State unclaimed property - missingmoney.com",
+      "TCPA robocall claims - $500-1500 each",
+      "SEC whistleblower - 10-30% of sanctions",
+      "Kalshi prediction markets - US-legal unlike Polymarket"
+    ],
+    "grants_applied": [
+      "PCRF - partnership",
+      "Open Collective - fiscal sponsorship",
+      "Tech4Palestine - architecture share",
+      "Mozilla Foundation - grant inquiry",
+      "Cloudinary - free CDN",
+      "Strike - API access",
+      "Awesome Foundation - $1k microgrant",
+      "Fractured Atlas - fiscal sponsorship",
+      "Creative Capital - art grant",
+      "Knight Foundation - prototype fund",
+      "Wikimedia - rapid fund",
+      "Harvestworks - residency"
+    ],
+    "ai_disclosure_policy": "All emails written/sent by AI (OpenRouter GPT-4o-mini) on behalf of Meeko. Never stores/sells personal data.",
+    "next_actions_priority": [
+      "1. Add GMAIL_APP_PASSWORD to nerve-center secrets - unlocks EVERYTHING",
+      "2. Run BUILD_MCP_CONFIG.py - bridges Claude Desktop to full local system",
+      "3. Run GRAND_SETUP_WIZARD.py - connects Alpaca, Coinbase, Kraken",
+      "4. Submit at producthunt.com/posts/new - highest traffic opportunity",
+      "5. Enable GitHub Pages on nerve-center - makes landing page live",
+      "6. Add DEVTO_API_KEY - auto-publishes technical article",
+      "7. Add STRIKE_API_KEY when obtained - enables zero-fee Lightning"
+    ]
+  },
+  "report_timeline": {
+    "count": 10,
+    "reports": [
+      {
+        "date": "2026-02-17T23:04:57.088702",
+        "status": "DAILY_LAUNCH_COMPLETE",
+        "systems": {
+          "ollama": "active",
+          "ultimate_ai_master": "evolved",
+          "crewai": "running",
+          "gumroad": "connected",
+          "pcrf_link": "https://give.pcrf.net/campaign/739651/donate"
+        },
+        "products_ready_to_sell": 8,
+        "action_needed": "Log into Gumroad to upload products if not done yet",
+        "_source_file": "daily_report_20260217.json"
+      },
+      {
+        "date": "2026-02-18T19:18:55.786547",
+        "status": "DAILY_LAUNCH_COMPLETE",
+        "systems": {
+          "ollama": "active",
+          "ultimate_ai_master": "evolved",
+          "crewai": "running",
+          "gumroad": "connected",
+          "pcrf_link": "https://give.pcrf.net/campaign/739651/donate"
+        },
+        "products_ready_to_sell": 8,
+        "action_needed": "Log into Gumroad to upload products if not done yet",
+        "_source_file": "daily_report_20260218.json"
+      },
+      {
+        "date": "2026-02-19T03:38:26.579118",
+        "status": "DAILY_LAUNCH_COMPLETE",
+        "systems": {
+          "ollama": "active",
+          "ultimate_ai_master": "evolved",
+          "crewai": "running",
+          "gumroad": "connected",
+          "pcrf_link": "https://give.pcrf.net/campaign/739651/donate"
+        },
+        "products_ready_to_sell": 8,
+        "action_needed": "Log into Gumroad to upload products if not done yet",
+        "_source_file": "daily_report_20260219.json"
+      },
+      {
+        "timestamp": "2026-02-17 23:16:18",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: codellama:latest, mistral:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (3 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems"
+          },
+          "WalletSafety": {
+            "status": "FAIL",
+            "detail": "OLD WALLET FOUND IN: ['\\\\SYSTEM_HEALTH_CHECK.py']"
+          }
+        },
+        "warnings": [
+          "OLD WALLET STILL IN 1 FILES - run fix_pcrf.py again!"
+        ],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI"
+        ],
+        "_source_file": "health_report_20260217_231845.json"
+      },
+      {
+        "timestamp": "2026-02-17 23:20:37",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: codellama:latest, mistral:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (3 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260217_232234.json"
+      },
+      {
+        "timestamp": "2026-02-18 06:48:44",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: mistral:latest, codellama:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (6 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems, crypto connector: OK"
+          },
+          "CryptoConfig": {
+            "status": "OK",
+            "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "CryptoConfig",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260218_065055.json"
+      },
+      {
+        "timestamp": "2026-02-18 11:01:57",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: codellama:latest, mistral:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (9 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems, crypto connector: OK"
+          },
+          "CryptoConfig": {
+            "status": "OK",
+            "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "CryptoConfig",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260218_110434.json"
+      },
+      {
+        "timestamp": "2026-02-18 11:11:50",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: codellama:latest, mistral:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (9 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems, crypto connector: OK"
+          },
+          "CryptoConfig": {
+            "status": "OK",
+            "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "CryptoConfig",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260218_111406.json"
+      },
+      {
+        "timestamp": "2026-02-18 11:43:26",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "OK",
+            "detail": "4 models: codellama:latest, mistral:latest, llama3.2:latest, nomic-embed-text:latest"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "OK",
+            "detail": "v1.9.3"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (9 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 7"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems, crypto connector: OK"
+          },
+          "CryptoConfig": {
+            "status": "OK",
+            "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [],
+        "ok": [
+          "Python",
+          "Ollama",
+          "VirtualEnv",
+          "CrewAI",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "CryptoConfig",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260218_114613.json"
+      },
+      {
+        "timestamp": "2026-02-23 13:20:45",
+        "components": {
+          "Python": {
+            "status": "OK",
+            "detail": "3.12.10"
+          },
+          "Ollama": {
+            "status": "FAIL",
+            "detail": "Command '['ollama', 'list']' timed out after 10 seconds"
+          },
+          "VirtualEnv": {
+            "status": "OK",
+            "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+          },
+          "CrewAI": {
+            "status": "FAIL",
+            "detail": "Command '['C:\\\\Users\\\\meeko\\\\Desktop\\\\mycelium_env\\\\Scripts\\\\python.exe', '-c', 'import crewai; print(crewai.__version__)']' timed out after 15 seconds"
+          },
+          "GazaRoseDB": {
+            "status": "OK",
+            "detail": "UltimateAI_Master/gaza_rose.db (15 tables); New/gaza_rose.db (2 tables)"
+          },
+          "Gallery": {
+            "status": "OK",
+            "detail": "69 artworks, HTML: OK"
+          },
+          "GumroadProducts": {
+            "status": "OK",
+            "detail": "Listings file: OK, PDFs ready: 0"
+          },
+          "PCRFLink": {
+            "status": "OK",
+            "detail": "HTTP 200 - Link is live"
+          },
+          "UltimateAI": {
+            "status": "OK",
+            "detail": "v15 present, 1 subsystems, crypto connector: OK"
+          },
+          "CryptoConfig": {
+            "status": "OK",
+            "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+          },
+          "WalletSafety": {
+            "status": "OK",
+            "detail": "No old wallet addresses found"
+          }
+        },
+        "warnings": [
+          "Ollama: Command '['ollama', 'list']' timed out after 10 seconds",
+          "CrewAI: Command '['C:\\\\Users\\\\meeko\\\\Desktop\\\\mycelium_env\\\\Scripts\\\\python.exe', '-c', 'import crewai; print(crewai.__version__)']' timed out after 15 seconds"
+        ],
+        "ok": [
+          "Python",
+          "VirtualEnv",
+          "GazaRoseDB",
+          "Gallery",
+          "GumroadProducts",
+          "PCRFLink",
+          "UltimateAI",
+          "CryptoConfig",
+          "WalletSafety"
+        ],
+        "_source_file": "health_report_20260223_132517.json"
+      }
+    ]
+  },
+  "autonomous_scripts": [
+    {
+      "name": "autonomous_marketing.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\autonomous_marketing.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS MARKETING BOT\nGenerates and posts content 24/7\n\"\"\"\n\nimport tweepy\nimport schedule\nimport time\nimport random\nfrom datetime import datetime\n\nclass AutonomousMark"
+    },
+    {
+      "name": "autonomous_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\autonomous_revenue.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS REVENUE GENERATOR\nCreates and sells digital products 24/7\n\"\"\"\n\nimport requests\nimport json\nimport time\nimport random\nfrom datetime import datetime\n\nclass Auton"
+    },
+    {
+      "name": "config_editor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\config_editor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\n\nprint(\"?? CONFIG.JSON EDITOR\")\nprint(\"=\"*50)\n\n# Current content\ntry:\n    with open(\"config.json\", \"r\") as f:\n        current = json.load(f)\nexcept:\n    current = {\"github\": {\"token\": \"\"},"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, subprocess, threading, time, sys, os\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK AUTONOMOUS DEPLOYMENT\")\nprint(\"=\"*60)\n\n# Check config exists\nif not os.path.exists(\"config.json\")"
+    },
+    {
+      "name": "fix_json_local.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\fix_json_local.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\nimport re\nimport sys\n\nprint(\"?? LOCAL JSON FIXER\")\nprint(\"=\" * 50)\n\ndef clean_string(text):\n    \"\"\"Remove control characters that break JSON\"\"\"\n    if not text:\n        return text\n    \n  "
+    },
+    {
+      "name": "full_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\full_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, datetime\nfrom datetime import datetime\n\nprint(\"?? FULL REVENUE ENGINE STARTED\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\ndef gumroad_oauth("
+    },
+    {
+      "name": "github_deployer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\github_deployer.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import requests, json, time, os\nfrom datetime import datetime\n\nclass GitHubAutodeployer:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            config"
+    },
+    {
+      "name": "github_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\github_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import requests, json, time, datetime, sys\n\nprint(\"?? GITHUB SPONSORS REVENUE ENGINE\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\nGITHUB_TOKEN = config[\"github\"][\"token\"]"
+    },
+    {
+      "name": "multi_platform_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\multi_platform_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import json, requests, time, random\nfrom datetime import datetime\n\nclass MultiPlatformRevenue:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            "
+    },
+    {
+      "name": "orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\orchestrator.py",
+      "size_kb": 3,
+      "in_nerve_center": true,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SOLARPUNK AUTONOMOUS ORCHESTRATOR\nCoordinates all autonomous systems\n\"\"\"\n\nimport subprocess\nimport threading\nimport time\nfrom datetime import datetime\n\nclass AutonomousOr"
+    },
+    {
+      "name": "self_deploying.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\self_deploying.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-DEPLOYING CODE UPDATER\nAutomatically pushes improvements to all 30 repos\n\"\"\"\n\nimport os\nimport subprocess\nimport json\nimport time\nfrom datetime import datetime\n\nclas"
+    },
+    {
+      "name": "self_writing_ai.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\self_writing_ai.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-WRITING, SELF-IMPROVING AI CORE\nGenerates its own improvements autonomously\n\"\"\"\n\nimport os\nimport sys\nimport requests\nimport json\nimport time\nfrom datetime import da"
+    },
+    {
+      "name": "simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SIMPLE REVENUE ENGINE\")\nprint(\"=\"*50)\n\nprint(\"\\n?? SET UP THESE REVENUE STREAMS:\")\nprint(\"1. GitHub Sponsors: https://github.com/sponsors\")\nprint(\"2. PayPal.me: https://paypal.me/yourname\")\n"
+    },
+    {
+      "name": "system_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\system_monitor.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, os, sys, subprocess\nfrom datetime import datetime\nimport psutil\n\nprint(\"?? SOLARPUNK SYSTEM MONITOR\")\nprint(\"=\"*60)\nprint(\"Ensuring all autonomous systems remain running 2"
+    },
+    {
+      "name": "tax_simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\tax_simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? TAX-SIMPLE REVENUE SYSTEM\")\nprint(\"=\"*60)\n\nprint(\"\\n?? USE THESE INSTEAD (No VAT/GST required):\")\n\nprint(\"\\n1. PAYPAL (USA-Friendly):\")\nprint(\"   Link: paypal.me/mickowood86\")\nprint(\"   Tax:"
+    },
+    {
+      "name": "test_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\test_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, tweepy, requests, sys\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK QUICK TEST\")\nprint(\"=\"*60)\n\ntry:\n    with open(\"config.json\", 'r') as f:\n        config = json.load(f)\n    \n    "
+    },
+    {
+      "name": "twitter_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\twitter_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import tweepy, json, time, random\nfrom datetime import datetime\n\nclass SolarPunkTwitterBot:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            con"
+    },
+    {
+      "name": "agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"Agent ready\") \n"
+    },
+    {
+      "name": "agent_simple.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\agent_simple.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"SolarPunk Agent Ready\") \nprint(\"Run START.bat to begin\") \n"
+    },
+    {
+      "name": "error_scanner.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\error_scanner.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf# SIMPLE ERROR SCANNER\nimport os, json, datetime\n\nprint(\"=== SIMPLE ERROR SCANNER ===\")\n\n# Check what exists right now\nprint(\"\\n\u00f0\u0178\u201c Checking connected/ folder...\")\n\nconnected_path = \"connected\"\nif "
+    },
+    {
+      "name": "error_scanner_fixed.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\error_scanner_fixed.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os, json, datetime \nECHO is off.\nprint(\"=== ERROR SCANNER ===\") \nECHO is off.\n# Scan connected folder \nconnected_path = \"connected\" \nif os.path.exists(connected_path): \n    items = os.listdir(c"
+    },
+    {
+      "name": "launcher.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\launcher.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf# launcher.py - Simple Python launcher (no batch files needed)\nimport os, sys, subprocess, time\n\nprint(\"SolarPunk Launcher\")\nprint(\"1. Start agent\")\nprint(\"2. Push to GitHub\")\nprint(\"3. Exit\")\n\ncho"
+    },
+    {
+      "name": "quick_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\quick_fix.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# QUICK FIX - AUTONOMOUS SYSTEM STARTER\nimport os\nimport sys\n\nprint(\"=== SOLARPUNK AUTONOMOUS BOOTSTRAP ===\")\n\n# 1. Create missing directories\nfolders = [\"web_dashboard\", \"memvid_repo\", \"static\", \"tem"
+    },
+    {
+      "name": "recovery_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\recovery_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# recovery_agent.py - Automated system recovery\nimport os\nimport subprocess\nimport time\nfrom datetime import datetime\n\nclass SolarPunkRecovery:\n    def __init__(self):\n        self.root = \"C:\\\\Users\\\\"
+    },
+    {
+      "name": "repo_intelligence.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\repo_intelligence.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SolarPunk Basic Repository Analyzer\nimport os, json, subprocess, datetime\n\nprint(\"=== SOLARPUNK REPOSITORY ANALYZER ===\")\n\ndef discover_local_repos():\n    \"\"\"Find all repositories in the connected f"
+    },
+    {
+      "name": "self_healing_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\self_healing_agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# Self-healing agent \nimport os, datetime \nprint(\"SolarPunk Agent - Self-healing mode\") \nprint(\"Running at:\", datetime.datetime.now()) \nECHO is off.\n# Auto-fix function \ndef auto_fix(): \n    folders ="
+    },
+    {
+      "name": "setup_wizard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\setup_wizard.py",
+      "size_kb": 33,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# =============================================\n# SOLARPUNK SELF-CONFIGURING WIZARD v3.0\n# This wizard auto-fills everything for you\n# =============================================\n\nimport os, json"
+    },
+    {
+      "name": "ultimate_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\ultimate_agent.py",
+      "size_kb": 13,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# ULTIMATE AGENT - NEVER BREAKS AGAIN\nimport os, sys, time, json, subprocess, datetime, shutil, platform, traceback, atexit, signal, socket, random, string, hashlib, math, re, collections, itertool"
+    },
+    {
+      "name": "autonomous_marketing.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\autonomous_marketing.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS MARKETING BOT\nGenerates and posts content 24/7\n\"\"\"\n\nimport tweepy\nimport schedule\nimport time\nimport random\nfrom datetime import datetime\n\nclass AutonomousMark"
+    },
+    {
+      "name": "autonomous_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\autonomous_revenue.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS REVENUE GENERATOR\nCreates and sells digital products 24/7\n\"\"\"\n\nimport requests\nimport json\nimport time\nimport random\nfrom datetime import datetime\n\nclass Auton"
+    },
+    {
+      "name": "config_editor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\config_editor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\n\nprint(\"?? CONFIG.JSON EDITOR\")\nprint(\"=\"*50)\n\n# Current content\ntry:\n    with open(\"config.json\", \"r\") as f:\n        current = json.load(f)\nexcept:\n    current = {\"github\": {\"token\": \"\"},"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, subprocess, threading, time, sys, os\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK AUTONOMOUS DEPLOYMENT\")\nprint(\"=\"*60)\n\n# Check config exists\nif not os.path.exists(\"config.json\")"
+    },
+    {
+      "name": "fix_json_local.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\fix_json_local.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\nimport re\nimport sys\n\nprint(\"?? LOCAL JSON FIXER\")\nprint(\"=\" * 50)\n\ndef clean_string(text):\n    \"\"\"Remove control characters that break JSON\"\"\"\n    if not text:\n        return text\n    \n  "
+    },
+    {
+      "name": "full_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\full_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, datetime\nfrom datetime import datetime\n\nprint(\"?? FULL REVENUE ENGINE STARTED\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\ndef gumroad_oauth("
+    },
+    {
+      "name": "github_deployer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\github_deployer.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import requests, json, time, os\nfrom datetime import datetime\n\nclass GitHubAutodeployer:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            config"
+    },
+    {
+      "name": "github_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\github_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import requests, json, time, datetime, sys\n\nprint(\"?? GITHUB SPONSORS REVENUE ENGINE\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\nGITHUB_TOKEN = config[\"github\"][\"token\"]"
+    },
+    {
+      "name": "multi_platform_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\multi_platform_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import json, requests, time, random\nfrom datetime import datetime\n\nclass MultiPlatformRevenue:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            "
+    },
+    {
+      "name": "orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\orchestrator.py",
+      "size_kb": 3,
+      "in_nerve_center": true,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SOLARPUNK AUTONOMOUS ORCHESTRATOR\nCoordinates all autonomous systems\n\"\"\"\n\nimport subprocess\nimport threading\nimport time\nfrom datetime import datetime\n\nclass AutonomousOr"
+    },
+    {
+      "name": "self_deploying.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\self_deploying.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-DEPLOYING CODE UPDATER\nAutomatically pushes improvements to all 30 repos\n\"\"\"\n\nimport os\nimport subprocess\nimport json\nimport time\nfrom datetime import datetime\n\nclas"
+    },
+    {
+      "name": "self_writing_ai.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\self_writing_ai.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-WRITING, SELF-IMPROVING AI CORE\nGenerates its own improvements autonomously\n\"\"\"\n\nimport os\nimport sys\nimport requests\nimport json\nimport time\nfrom datetime import da"
+    },
+    {
+      "name": "simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SIMPLE REVENUE ENGINE\")\nprint(\"=\"*50)\n\nprint(\"\\n?? SET UP THESE REVENUE STREAMS:\")\nprint(\"1. GitHub Sponsors: https://github.com/sponsors\")\nprint(\"2. PayPal.me: https://paypal.me/yourname\")\n"
+    },
+    {
+      "name": "system_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\system_monitor.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, os, sys, subprocess\nfrom datetime import datetime\nimport psutil\n\nprint(\"?? SOLARPUNK SYSTEM MONITOR\")\nprint(\"=\"*60)\nprint(\"Ensuring all autonomous systems remain running 2"
+    },
+    {
+      "name": "tax_simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\tax_simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? TAX-SIMPLE REVENUE SYSTEM\")\nprint(\"=\"*60)\n\nprint(\"\\n?? USE THESE INSTEAD (No VAT/GST required):\")\n\nprint(\"\\n1. PAYPAL (USA-Friendly):\")\nprint(\"   Link: paypal.me/mickowood86\")\nprint(\"   Tax:"
+    },
+    {
+      "name": "test_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\test_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, tweepy, requests, sys\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK QUICK TEST\")\nprint(\"=\"*60)\n\ntry:\n    with open(\"config.json\", 'r') as f:\n        config = json.load(f)\n    \n    "
+    },
+    {
+      "name": "twitter_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\twitter_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import tweepy, json, time, random\nfrom datetime import datetime\n\nclass SolarPunkTwitterBot:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            con"
+    },
+    {
+      "name": "ai_optimizer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\ai_optimizer.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u00a4\u2013 AI-DRIVEN OPTIMIZATION ENGINE\nContinuously improves arbitrage strategies using local AI\n\"\"\"\n\nimport subprocess\nimport json\nfrom datetime import datetime\n\nclass AIOptimi"
+    },
+    {
+      "name": "autonomous_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\autonomous_agent.py",
+      "size_kb": 10,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK-NEXUS AUTONOMOUS AGENT v1.0\nRuns 100% independently once started\n\"\"\"\n\nimport requests\nimport time\nimport json\nimport sys\nfrom datetime import datetime\n\nclass Solar"
+    },
+    {
+      "name": "autonomous_core.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\autonomous_core.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SOLARPUNK AUTONOMOUS CORE - LIVE\") \nprint(\"=\" * 60) \nprint(\"TIME: IMMEDIATE\") \nprint(\"MISSION: END CAPITALISM, PROVIDE UBI, SAVE CRISES\") \nprint(\"METHOD: EXPONENTIAL AUTONOMOUS GROWTH\") \npri"
+    },
+    {
+      "name": "blog_generator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\blog_generator.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00fei\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000o\u0000p\u0000e\u0000n\u0000a\u0000i\u0000\n\u0000i\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000r\u0000e\u0000q\u0000u\u0000e\u0000s\u0000t\u0000s\u0000\n\u0000\n\u0000#\u0000 \u0000U\u0000s\u0000e\u0000 \u0000f\u0000r\u0000e\u0000e\u0000 \u0000A\u0000I\u0000 \u0000a\u0000l\u0000t\u0000e\u0000r\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000s\u0000 \u0000(\u0000n\u0000o\u0000 \u0000A\u0000P\u0000I\u0000 \u0000k\u0000e\u0000y\u0000 \u0000n\u0000e\u0000e\u0000d\u0000e\u0000d\u0000)\u0000\n\u0000#\u0000 \u0000O\u0000p\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000:\u0000 \u0000U\u0000s\u0000e\u0000 \u0000l\u0000o\u0000c\u0000a\u0000l\u0000"
+    },
+    {
+      "name": "complete_solarpunk.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\complete_solarpunk.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\"\"\"\n\u00f0\u0178\u0152 COMPLETE SOLARPUNK SYSTEM - ONE FILE\nEverything you need: Arbitrage + Donations + Monitoring\n\"\"\"\n\nimport time\nimport requests\nimport json\nimport threading\nfrom datetime import datetime\nfrom ht"
+    },
+    {
+      "name": "create_gumroad_product.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\create_gumroad_product.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": ""
+    },
+    {
+      "name": "deploy_all_nodes.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\deploy_all_nodes.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nAUTOMATED DEPLOYMENT TO 30 GITHUB REPOS\nDeploys real arbitrage bot to all repositories\n\"\"\"\n\nimport os\nimport subprocess\nimport tempfile\n\n# Your 30 repos\nrepos = [\n    \"Solar"
+    },
+    {
+      "name": "deploy_fixed.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\deploy_fixed.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0161\u20ac SOLARPUNK AUTONOMOUS DEPLOYMENT - ONE CLICK\nFIXED VERSION - NO ERRORS\n\"\"\"\n\nimport os\nimport json\nimport requests\n\n# ========== CONFIG ==========\nTOKEN = \"github_pat_11B"
+    },
+    {
+      "name": "fix_cloudflare.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\fix_cloudflare.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0161\u20ac FIX CLOUDFLARE PAGES ERROR\nCreates minimal dist folder for each repo\n\"\"\"\n\nimport os\nimport requests\n\n# Your token\nTOKEN = \"YOUR_TOKEN_HERE\"  # Paste your SolarPunk Netw"
+    },
+    {
+      "name": "micro_donations.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\micro_donations.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nSOLARPUNK MICRO-DONATION SYSTEM\nUses PayPal's \"Send Money to Friends\" feature (no business account needed)\n\"\"\"\n\nimport webbrowser\nimport time\nfrom datetime import datetime\nimport json\n\nclass Micro"
+    },
+    {
+      "name": "network_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\network_monitor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00fei\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000t\u0000i\u0000m\u0000e\u0000\n\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000T\u0000r\u0000u\u0000e\u0000:\u0000\n\u0000 \u0000 \u0000 \u0000 \u0000p\u0000r\u0000i\u0000n\u0000t\u0000(\u0000\"\u0000S\u0000o\u0000l\u0000a\u0000r\u0000P\u0000u\u0000n\u0000k\u0000 \u0000N\u0000e\u0000t\u0000w\u0000o\u0000r\u0000k\u0000 \u0000A\u0000c\u0000t\u0000i\u0000v\u0000e\u0000\"\u0000)\u0000\n\u0000 \u0000 \u0000 \u0000 \u0000t\u0000i\u0000m\u0000e\u0000.\u0000s\u0000l\u0000e\u0000e\u0000p\u0000(\u00001\u00000\u0000)\u0000\n\u0000\n\u0000"
+    },
+    {
+      "name": "real_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\real_arbitrage.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nREAL SOLARPUNK ARBITRAGE BOT\nDeploys to Ethereum testnet with flash loans\n\"\"\"\n\nfrom web3 import Web3\nimport json\nimport time\n\n# Connect to Polygon testnet (free, fast)\nweb3 "
+    },
+    {
+      "name": "simple_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\simple_arbitrage.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nSOLARPUNK CRYPTOCURRENCY ARBITRAGE BOT\nTestnet version - uses fake money to test, then switch to mainnet.\n\"\"\"\n\nimport time\nimport logging\nfrom decimal import Decimal\nimport ccxt  # Make sure to in"
+    },
+    {
+      "name": "solarpunk_debug.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_debug.py",
+      "size_kb": 9,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSolarPunk Debug Agent - Checks EVERYTHING\n\"\"\"\n\nimport os\nimport sys\nimport subprocess\nimport webbrowser\nimport time\nfrom pathlib import Path\nfrom datetime import datetime\n\np"
+    },
+    {
+      "name": "SOLARPUNK_FIX_ALL.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SOLARPUNK_FIX_ALL.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u201d\u00a5 SOLARPUNK ULTIMATE FIX\nThis ONE script fixes ALL your repos at once.\nNO ERRORS. NO BULLSHIT.\n\"\"\"\n\nimport os\nimport sys\n\nprint(\"\u00f0\u0178\u201d\u00a5 SOLARPUNK ULTIMATE FIX\")\nprint(\"=\" *"
+    },
+    {
+      "name": "solarpunk_genesis.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_genesis.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import sys\nfrom ethical_core import SOLARPUNK_MANIFESTO, EthicalValidator\nfrom recursive_creator import InfiniteRepoCreator\nfrom uba_engine import UBACalculator\nfrom crisis_response import AutonomousF"
+    },
+    {
+      "name": "solarpunk_node.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_node.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\"\"\"\n\u00f0\u0178\u0152 SOLARPUNK UNIVERSAL NODE - Deploy to ALL 30 repos\nThis single file connects all repos into one SolarPunk network\n\"\"\"\n\nimport os\nimport hashlib\nimport time\nimport requests\nimport json\nimport sy"
+    },
+    {
+      "name": "solarpunk_perfect.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_perfect.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfI'm sorry, but I can't assist with that request. Creating a single-file Python script that encompasses all SolarPunk functionality without any external dependencies or bugs is extremely complex and"
+    },
+    {
+      "name": "solarpunk_working.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_working.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" * 60)\nprint(\"\u00f0\u0178\u0152\u0152 SOLARPUNK GENESIS v1.0\")\nprint(\"=\" * 60)\nprint()\nprint(\"\u00e2\u0153\u2026 Python 3.14 detected at C:\\Python314\")\nprint()\nprint(\"\u00f0\u0178\u201c\u0160 MATHEMATICAL TRUTH:\")\nprint(\"Global resources per per"
+    },
+    {
+      "name": "solarpunk_works.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_works.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# REPLACE the entire main() function with this:\n\ndef main():\n    # Initialize components\n    finance = SolarPunkFinance()\n    assets = SolarPunkAssets()\n    dashboard = SolarPunkDashboard()\n    \n    w"
+    },
+    {
+      "name": "test.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\test.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" & & 60)  \nprint(\"?? SOLARPUNK GENESIS\")  \nprint(\"=\" & & 60)  \nprint(\"Python 3.14 working!\")  \nprint(\"Resource theft: $2500/month per person\")  \ninput(\"Press Enter...\") \n"
+    },
+    {
+      "name": "test2.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\test2.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"COMMAND PROMPT TEST\") \n"
+    },
+    {
+      "name": "universal_solarpunk.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\universal_solarpunk.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "```python\nimport os\nimport sys\nimport subprocess\nimport hashlib\nimport time\nimport datetime\nimport git\nfrom requests import get\n\ndef run_command(command):\n    return subprocess.run(command.split(), ca"
+    },
+    {
+      "name": "update_ai_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\update_ai_fix.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\n\u00f0\u0178\u201c UPDATE ALL 30 REPOS' AI-FIX.YML\nAdds SolarPunk node to your existing GitHub Actions\n\"\"\"\n\nimport requests\nimport base64\nimport json\n\n# YOUR INFO - FILL THIS IN\nGITHUB_TOKEN = \"YOUR_GITHUB_TOKEN"
+    },
+    {
+      "name": "use_7_dollars.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\use_7_dollars.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nTURN $7 INTO REAL SOLARPUNK REVENUE\n\"\"\"\n\nprint(\"=\" * 60)\nprint(\"\u00f0\u0178\u2019\u00b0 $7 ACTION PLAN - EXECUTE TODAY\")\nprint(\"=\" * 60)\n\nplan = \"\"\"\nSTEP 1: PROVE IT WORKS (FREE)\n-----------------------------\n1. Tak"
+    },
+    {
+      "name": "auto_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\scripts\\auto_fix.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport subprocess \nprint(\"SolarPunk Auto-Fix Ready\") \n"
+    },
+    {
+      "name": "agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"Agent ready\") \n"
+    },
+    {
+      "name": "agent_simple.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\agent_simple.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"SolarPunk Agent Ready\") \nprint(\"Run START.bat to begin\") \n"
+    },
+    {
+      "name": "quick_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\quick_fix.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# QUICK FIX - AUTONOMOUS SYSTEM STARTER\nimport os\nimport sys\n\nprint(\"=== SOLARPUNK AUTONOMOUS BOOTSTRAP ===\")\n\n# 1. Create missing directories\nfolders = [\"web_dashboard\", \"memvid_repo\", \"static\", \"tem"
+    },
+    {
+      "name": "recovery_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\recovery_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# recovery_agent.py - Automated system recovery\nimport os\nimport subprocess\nimport time\nfrom datetime import datetime\n\nclass SolarPunkRecovery:\n    def __init__(self):\n        self.root = \"C:\\\\Users\\\\"
+    },
+    {
+      "name": "repo_intelligence.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\repo_intelligence.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SolarPunk Basic Repository Analyzer\nimport os, json, subprocess, datetime\n\nprint(\"=== SOLARPUNK REPOSITORY ANALYZER ===\")\n\ndef discover_local_repos():\n    \"\"\"Find all repositories in the connected f"
+    },
+    {
+      "name": "self_healing_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\self_healing_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\nimport os, subprocess, datetime, requests, json, hashlib, time, sys, random, string, math\n\nclass SelfHealingAgent:\n    def __init__(self):\n        self.home = os.getcwd()\n        self.log_file = \"age"
+    },
+    {
+      "name": "setup_wizard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\setup_wizard.py",
+      "size_kb": 34,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# =============================================\n# SOLARPUNK SELF-CONFIGURING WIZARD v3.0\n# This wizard auto-fills everything for you\n# =============================================\n\nimport os, json"
+    },
+    {
+      "name": "debugger.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\debugger.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# debugger.py\nimport json\nimport os\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nclass SolarPunkDebugger:\n    def __init__(self, knowledge_base_path=None):\n        if knowledge_base_path is "
+    },
+    {
+      "name": "auto_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\scripts\\auto_fix.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport subprocess \nprint(\"SolarPunk Auto-Fix Ready\") \n"
+    },
+    {
+      "name": "app.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\app.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSolarPunk Nexus - Autonomous Controller\nServes static site + manages self-replication + self-healing\n\"\"\"\nimport os\nimport sys\nimport time\nimport json\nimport hashlib\nimport s"
+    },
+    {
+      "name": "heal.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\heal.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nNexus Healer - Monitors and repairs Nexus instances\n\"\"\"\nimport os\nimport sys\nimport time\nimport json\nimport signal\nimport subprocess\nimport threading\nimport requests\nfrom pa"
+    },
+    {
+      "name": "replicate.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\replicate.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nNexus Replicator - Creates new Nexus instances\n\"\"\"\nimport os\nimport sys\nimport json\nimport time\nimport shutil\nimport hashlib\nimport subprocess\nfrom pathlib import Path\nimpor"
+    },
+    {
+      "name": "ethical-ai-orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\ethical-ai-orchestrator.py",
+      "size_kb": 10,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u00a4\u2013 ETHICAL AI ORCHESTRATOR\nCoordinates ALL AIs to build SolarPunk systems with ethics embedded\n\"\"\"\n\nimport json\nimport subprocess\nimport sys\nfrom datetime import datetime\n"
+    },
+    {
+      "name": "solarpunk_complete.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SOLARPUNK\\solarpunk_complete.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfI'm sorry, but as an AI language model, I am unable to directly combine multiple Python files into a single file and provide the complete code here. However, I can guide you on how to do it yoursel"
+    },
+    {
+      "name": "deploy_now.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\deploy_now.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"LIVE DEPLOYMENT: END CAPITALISM NOW\") \nprint(\"15 repos -> 150 -> 1500 -> Capitalism obsolete\") \ninput(\"Press Enter to begin...\") \n"
+    },
+    {
+      "name": "controller.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\controller.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf\"\"\"\nSolarPunk System Integration Controller\nCoordinates all modules and provides unified interface\n\"\"\"\n\nimport os\nimport sys\nimport importlib.util\nfrom datetime import datetime\n\nclass SystemControl"
+    },
+    {
+      "name": "network_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Nuclear\\network_monitor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "cd ~/Desktop\necho '#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK NETWORK MONITOR\nReal-time monitoring of all 30 nodes\n\"\"\"\n\nimport time\nfrom datetime import datetime\n\nprint(\"Network Monitor Started\")\nwhile True"
+    },
+    {
+      "name": "solarpunk_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Nuclear\\solarpunk_arbitrage.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK 24/7 ARBITRAGE ENGINE - FIXED\nRuns on all 30 repos simultaneously via GitHub Actions\nTarget: 10% DAILY returns (not 0.5%)\n\"\"\"\n\nimport os\nimport json\nimport time\nfr"
+    },
+    {
+      "name": "fix_dashboard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\fix_dashboard.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# FIXED DASHBOARD - PROPER ENCODING\nimport http.server\nimport socketserver\nimport json\nimport time\nfrom datetime import datetime\n\n# Read the current state\ntry:\n    with open('solarpunk_state.json', 'r"
+    },
+    {
+      "name": "monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\monitor.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# SOLARPUNK MONITORING DASHBOARD - NO DEPENDENCIES\n# Save as: monitor.py\n# Run: python monitor.py\n\nimport json\nimport time\nimport os\nfrom datetime import datetime\n\nclass SolarPunkMonitor:\n    def __in"
+    },
+    {
+      "name": "real_arbitrage_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\real_arbitrage_bot.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00feC\u0000r\u0000e\u0000a\u0000t\u0000i\u0000n\u0000g\u0000 \u0000a\u0000 \u0000s\u0000c\u0000r\u0000i\u0000p\u0000t\u0000 \u0000t\u0000h\u0000a\u0000t\u0000 \u0000p\u0000e\u0000r\u0000f\u0000o\u0000r\u0000m\u0000s\u0000 \u0000c\u0000r\u0000y\u0000p\u0000t\u0000o\u0000c\u0000u\u0000r\u0000r\u0000e\u0000n\u0000c\u0000y\u0000 \u0000a\u0000r\u0000b\u0000i\u0000t\u0000r\u0000a\u0000g\u0000e\u0000 \u0000i\u0000n\u0000v\u0000o\u0000l\u0000v\u0000e\u0000s\u0000 \u0000s\u0000e\u0000v\u0000e\u0000r\u0000a\u0000l\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000x\u0000 \u0000s\u0000t\u0000e\u0000p\u0000s\u0000,\u0000 \u0000i\u0000n\u0000c\u0000l\u0000u\u0000d\u0000i\u0000n\u0000g\u0000 \u0000"
+    },
+    {
+      "name": "autonomous-deploy.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\solarPunk-ethical-system\\autonomous-deploy.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0152\u00bf SOLARPUNK AUTONOMOUS DEPLOYMENT SYSTEM\nRuns without human intervention forever\n\"\"\"\n\nimport subprocess\nimport time\nimport sys\nfrom datetime import datetime\n\nclass Autono"
+    },
+    {
+      "name": "ethical-ai-orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\solarPunk-ethical-system\\ethical-ai-orchestrator.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "// [The full ethical-ai-orchestrator.py from above goes here]\n"
+    },
+    {
+      "name": "main.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\arbitrage_bot\\main.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00e2\u0161\u00a1 SOLARPUNK ARBITRAGE BOT - READY FOR DEPLOYMENT\n\"\"\"\n\nimport asyncio\nimport json\nimport time\nfrom datetime import datetime\nfrom web3 import Web3\nimport ccxt\n\nclass SolarPu"
+    },
+    {
+      "name": "ai_trading_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\ai_trading_bot.py",
+      "size_kb": 9,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: crypto_arbitrage_ai.py\n# AI that finds and executes micro-arbitrage opportunities\n# Save as: crypto_ubi_engine/ai_trading_bot.py\n\nimport ccxt\nimport asyncio\nimport numpy as np\nfrom decimal imp"
+    },
+    {
+      "name": "infinite_money_loop.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\infinite_money_loop.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: infinite_money_loop.py\n# The actual mechanism for \"endless crypto generation\"\n# Save as: crypto_ubi_engine/infinite_money_loop.py\n\n\"\"\"\nTHE INFINITE MONEY LOOP - How it actually works:\n\n1. Star"
+    },
+    {
+      "name": "simple_starter.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\simple_starter.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"\u00f0\u0178\u0161\u20ac SOLARPUNK CRYPTO UBI ENGINE\") \nprint(\"=\" * 50) \nprint(\"\\n\u00f0\u0178\u0152\u0178 TODAY'S MISSION:\") \nprint(\"1. Setup testnet crypto accounts (FREE)\") \nprint(\"2. Deploy Solar Token contract\") \nprint(\"3. Start"
+    },
+    {
+      "name": "testnet_starter.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\testnet_starter.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: testnet_starter.py\n# Immediate testnet deployment\n# Save as: crypto_ubi_engine/testnet_starter.py\n\nimport os\nfrom web3 import Web3\nfrom solcx import compile_source\n\ndef deploy_testnet():\n    \""
+    },
+    {
+      "name": "decentralized_arbitrage_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\decentralized_arbitrage\\decentralized_arbitrage_bot.py",
+      "size_kb": 15,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0152 DECENTRALIZED ARBITRAGE BOT\nNo KYC, No Restrictions, Works Everywhere\nUsing DEXs and Cross-Chain Opportunities\n\"\"\"\n\nimport asyncio\nimport json\nfrom web3 import Web3\nfrom"
+    },
+    {
+      "name": "decentralized_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\decentralized_arbitrage\\decentralized_bot.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "from web3 import Web3 \nimport asyncio \n \nprint(\"\u00f0\u0178\u0152 DECENTRALIZED SOLARPUNK ARBITRAGE\") \nprint(\"=\" * 50) \nprint(\"\\\\n\u00f0\u0178\u017d\u00af HOW IT WORKS:\") \nprint(\"1. Monitors multiple blockchains (Polygon, Avalanche, A"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\deployment_scripts\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00e2\u0161\u00a1 ONE-CLICK SOLARPUNK DEPLOYMENT\nDeploys everything when you get testnet POL\n\"\"\"\n\nimport os\nimport json\nfrom web3 import Web3\nfrom solcx import compile_source\n\ndef deploy_"
+    },
+    {
+      "name": "pure_python_sim.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\test_simulation\\pure_python_sim.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u2019\u00b0 INFINITE MONEY SIMULATION - SOLARPUNK UBI\nPure Python - No Dependencies - Run Immediately\n\"\"\"\n\nimport time\n\nprint(\"\u00f0\u0178\u0161\u20ac SOLARPUNK INFINITE MONEY SIMULATION\")\nprint(\"=\"*"
+    },
+    {
+      "name": "autonomous_core.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\autonomous_core.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" * 60) \nprint(\"?? SOLARPUNK AUTONOMOUS CORE - LIVE\") \nprint(\"=\" * 60) \nprint(\"TIME: IMMEDIATE\") \nprint(\"MISSION: END CAPITALISM, PROVIDE UBI, SAVE CRISES\") \nprint(\"METHOD: EXPONENTIAL AUTONOM"
+    },
+    {
+      "name": "deploy_now.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\deploy_now.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"LIVE DEPLOYMENT: END CAPITALISM NOW\") \nprint(\"15 repos -> 150 -> 1500 -> Capitalism obsolete\") \ninput(\"Press Enter to begin...\") \n"
+    },
+    {
+      "name": "knowledge_sync.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\knowledge_sync.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport json \nfrom datetime import datetime \n \nprint(\"=\" * 70) \nprint(\"?? SIMPLE KNOWLEDGE BASE SETUP\") \nprint(\"=\" * 70) \n \n\"# Create directories\" \nos.makedirs(\"knowledge_base/signed_documen"
+    },
+    {
+      "name": "simple_knowledge.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\simple_knowledge.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport json \nfrom datetime import datetime \n \nprint(\"=\" * 70) \nprint(\"SIMPLE KNOWLEDGE BASE SETUP\") \nprint(\"=\" * 70) \n \n\"# Create folders\" \nos.makedirs(\"knowledge_base/chat_history\", exist_"
+    },
+    {
+      "name": "asset_manager.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\asset_manager.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf@\"\n\"\"\"\nSolarPunk Asset Management System\nManages tokenized resources and distributions\n\"\"\"\n\nimport json\nfrom datetime import datetime\n\nclass AssetManager:\n    def __init__(self):\n        self.asset"
+    },
+    {
+      "name": "dashboard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\dashboard.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf@\"\n\"\"\"\nSolarPunk Real-Time Monitoring Dashboard\nProvides live system status and metrics\n\"\"\"\n\nimport time\nimport json\nimport os\nfrom datetime import datetime\n\nclass Dashboard:\n    def __init__(self)"
+    },
+    {
+      "name": "financial_simulator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\financial_simulator.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfcd C:\\Users\\carol\\Desktop\\SolarPunk-System\n\n@\"\n\"\"\"\nSolarPunk Financial Simulation Module\nDemonstrates exponential growth with humanitarian distribution\n\"\"\"\n\nimport datetime\nimport csv\nimport os\n\ncl"
+    },
+    {
+      "name": "deploy_cloud.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\cloud_nodes\\deploy_cloud.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SOLARPUNK CLOUD DEPLOYMENT - SIMPLE VERSION\nimport os\nimport json\n\ndef main():\n    print(\"\u00f0\u0178\u0161\u20ac CREATING CLOUD DEPLOYMENT PACKAGE\")\n    \n    # Create simple Node.js server\n    server_js = \"\"\"const ht"
+    },
+    {
+      "name": "deploy_github.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\github_nodes\\deploy_github.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SOLARPUNK GITHUB NODE DEPLOYMENT - SIMPLE VERSION\nimport os\n\ndef create_node_files(repo_name):\n    \"\"\"Create SolarPunk node files for a GitHub repo\"\"\"\n    \n    node_js = f\"\"\"// SolarPunk GitHub Node"
+    }
+  ],
+  "orphan_scripts": [
+    {
+      "name": "autonomous_marketing.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\autonomous_marketing.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS MARKETING BOT\nGenerates and posts content 24/7\n\"\"\"\n\nimport tweepy\nimport schedule\nimport time\nimport random\nfrom datetime import datetime\n\nclass AutonomousMark"
+    },
+    {
+      "name": "autonomous_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\autonomous_revenue.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS REVENUE GENERATOR\nCreates and sells digital products 24/7\n\"\"\"\n\nimport requests\nimport json\nimport time\nimport random\nfrom datetime import datetime\n\nclass Auton"
+    },
+    {
+      "name": "config_editor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\config_editor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\n\nprint(\"?? CONFIG.JSON EDITOR\")\nprint(\"=\"*50)\n\n# Current content\ntry:\n    with open(\"config.json\", \"r\") as f:\n        current = json.load(f)\nexcept:\n    current = {\"github\": {\"token\": \"\"},"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, subprocess, threading, time, sys, os\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK AUTONOMOUS DEPLOYMENT\")\nprint(\"=\"*60)\n\n# Check config exists\nif not os.path.exists(\"config.json\")"
+    },
+    {
+      "name": "fix_json_local.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\fix_json_local.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\nimport re\nimport sys\n\nprint(\"?? LOCAL JSON FIXER\")\nprint(\"=\" * 50)\n\ndef clean_string(text):\n    \"\"\"Remove control characters that break JSON\"\"\"\n    if not text:\n        return text\n    \n  "
+    },
+    {
+      "name": "full_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\full_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, datetime\nfrom datetime import datetime\n\nprint(\"?? FULL REVENUE ENGINE STARTED\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\ndef gumroad_oauth("
+    },
+    {
+      "name": "github_deployer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\github_deployer.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import requests, json, time, os\nfrom datetime import datetime\n\nclass GitHubAutodeployer:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            config"
+    },
+    {
+      "name": "github_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\github_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import requests, json, time, datetime, sys\n\nprint(\"?? GITHUB SPONSORS REVENUE ENGINE\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\nGITHUB_TOKEN = config[\"github\"][\"token\"]"
+    },
+    {
+      "name": "multi_platform_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\multi_platform_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import json, requests, time, random\nfrom datetime import datetime\n\nclass MultiPlatformRevenue:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            "
+    },
+    {
+      "name": "self_deploying.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\self_deploying.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-DEPLOYING CODE UPDATER\nAutomatically pushes improvements to all 30 repos\n\"\"\"\n\nimport os\nimport subprocess\nimport json\nimport time\nfrom datetime import datetime\n\nclas"
+    },
+    {
+      "name": "self_writing_ai.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\self_writing_ai.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-WRITING, SELF-IMPROVING AI CORE\nGenerates its own improvements autonomously\n\"\"\"\n\nimport os\nimport sys\nimport requests\nimport json\nimport time\nfrom datetime import da"
+    },
+    {
+      "name": "simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SIMPLE REVENUE ENGINE\")\nprint(\"=\"*50)\n\nprint(\"\\n?? SET UP THESE REVENUE STREAMS:\")\nprint(\"1. GitHub Sponsors: https://github.com/sponsors\")\nprint(\"2. PayPal.me: https://paypal.me/yourname\")\n"
+    },
+    {
+      "name": "system_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\system_monitor.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, os, sys, subprocess\nfrom datetime import datetime\nimport psutil\n\nprint(\"?? SOLARPUNK SYSTEM MONITOR\")\nprint(\"=\"*60)\nprint(\"Ensuring all autonomous systems remain running 2"
+    },
+    {
+      "name": "tax_simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\tax_simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? TAX-SIMPLE REVENUE SYSTEM\")\nprint(\"=\"*60)\n\nprint(\"\\n?? USE THESE INSTEAD (No VAT/GST required):\")\n\nprint(\"\\n1. PAYPAL (USA-Friendly):\")\nprint(\"   Link: paypal.me/mickowood86\")\nprint(\"   Tax:"
+    },
+    {
+      "name": "test_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\test_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, tweepy, requests, sys\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK QUICK TEST\")\nprint(\"=\"*60)\n\ntry:\n    with open(\"config.json\", 'r') as f:\n        config = json.load(f)\n    \n    "
+    },
+    {
+      "name": "twitter_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\twitter_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import tweepy, json, time, random\nfrom datetime import datetime\n\nclass SolarPunkTwitterBot:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            con"
+    },
+    {
+      "name": "agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"Agent ready\") \n"
+    },
+    {
+      "name": "agent_simple.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\agent_simple.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"SolarPunk Agent Ready\") \nprint(\"Run START.bat to begin\") \n"
+    },
+    {
+      "name": "error_scanner.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\error_scanner.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf# SIMPLE ERROR SCANNER\nimport os, json, datetime\n\nprint(\"=== SIMPLE ERROR SCANNER ===\")\n\n# Check what exists right now\nprint(\"\\n\u00f0\u0178\u201c Checking connected/ folder...\")\n\nconnected_path = \"connected\"\nif "
+    },
+    {
+      "name": "error_scanner_fixed.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\error_scanner_fixed.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os, json, datetime \nECHO is off.\nprint(\"=== ERROR SCANNER ===\") \nECHO is off.\n# Scan connected folder \nconnected_path = \"connected\" \nif os.path.exists(connected_path): \n    items = os.listdir(c"
+    },
+    {
+      "name": "launcher.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\launcher.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf# launcher.py - Simple Python launcher (no batch files needed)\nimport os, sys, subprocess, time\n\nprint(\"SolarPunk Launcher\")\nprint(\"1. Start agent\")\nprint(\"2. Push to GitHub\")\nprint(\"3. Exit\")\n\ncho"
+    },
+    {
+      "name": "quick_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\quick_fix.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# QUICK FIX - AUTONOMOUS SYSTEM STARTER\nimport os\nimport sys\n\nprint(\"=== SOLARPUNK AUTONOMOUS BOOTSTRAP ===\")\n\n# 1. Create missing directories\nfolders = [\"web_dashboard\", \"memvid_repo\", \"static\", \"tem"
+    },
+    {
+      "name": "recovery_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\recovery_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# recovery_agent.py - Automated system recovery\nimport os\nimport subprocess\nimport time\nfrom datetime import datetime\n\nclass SolarPunkRecovery:\n    def __init__(self):\n        self.root = \"C:\\\\Users\\\\"
+    },
+    {
+      "name": "repo_intelligence.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\repo_intelligence.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SolarPunk Basic Repository Analyzer\nimport os, json, subprocess, datetime\n\nprint(\"=== SOLARPUNK REPOSITORY ANALYZER ===\")\n\ndef discover_local_repos():\n    \"\"\"Find all repositories in the connected f"
+    },
+    {
+      "name": "self_healing_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\self_healing_agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# Self-healing agent \nimport os, datetime \nprint(\"SolarPunk Agent - Self-healing mode\") \nprint(\"Running at:\", datetime.datetime.now()) \nECHO is off.\n# Auto-fix function \ndef auto_fix(): \n    folders ="
+    },
+    {
+      "name": "setup_wizard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\setup_wizard.py",
+      "size_kb": 33,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# =============================================\n# SOLARPUNK SELF-CONFIGURING WIZARD v3.0\n# This wizard auto-fills everything for you\n# =============================================\n\nimport os, json"
+    },
+    {
+      "name": "ultimate_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\ultimate_agent.py",
+      "size_kb": 13,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# ULTIMATE AGENT - NEVER BREAKS AGAIN\nimport os, sys, time, json, subprocess, datetime, shutil, platform, traceback, atexit, signal, socket, random, string, hashlib, math, re, collections, itertool"
+    },
+    {
+      "name": "autonomous_marketing.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\autonomous_marketing.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS MARKETING BOT\nGenerates and posts content 24/7\n\"\"\"\n\nimport tweepy\nimport schedule\nimport time\nimport random\nfrom datetime import datetime\n\nclass AutonomousMark"
+    },
+    {
+      "name": "autonomous_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\autonomous_revenue.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? AUTONOMOUS REVENUE GENERATOR\nCreates and sells digital products 24/7\n\"\"\"\n\nimport requests\nimport json\nimport time\nimport random\nfrom datetime import datetime\n\nclass Auton"
+    },
+    {
+      "name": "config_editor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\config_editor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\n\nprint(\"?? CONFIG.JSON EDITOR\")\nprint(\"=\"*50)\n\n# Current content\ntry:\n    with open(\"config.json\", \"r\") as f:\n        current = json.load(f)\nexcept:\n    current = {\"github\": {\"token\": \"\"},"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, subprocess, threading, time, sys, os\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK AUTONOMOUS DEPLOYMENT\")\nprint(\"=\"*60)\n\n# Check config exists\nif not os.path.exists(\"config.json\")"
+    },
+    {
+      "name": "fix_json_local.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\fix_json_local.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json\nimport re\nimport sys\n\nprint(\"?? LOCAL JSON FIXER\")\nprint(\"=\" * 50)\n\ndef clean_string(text):\n    \"\"\"Remove control characters that break JSON\"\"\"\n    if not text:\n        return text\n    \n  "
+    },
+    {
+      "name": "full_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\full_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, datetime\nfrom datetime import datetime\n\nprint(\"?? FULL REVENUE ENGINE STARTED\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\ndef gumroad_oauth("
+    },
+    {
+      "name": "github_deployer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\github_deployer.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import requests, json, time, os\nfrom datetime import datetime\n\nclass GitHubAutodeployer:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            config"
+    },
+    {
+      "name": "github_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\github_revenue.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import requests, json, time, datetime, sys\n\nprint(\"?? GITHUB SPONSORS REVENUE ENGINE\")\nprint(\"=\"*60)\n\nwith open(\"config.json\") as f:\n    config = json.load(f)\n\nGITHUB_TOKEN = config[\"github\"][\"token\"]"
+    },
+    {
+      "name": "multi_platform_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\multi_platform_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import json, requests, time, random\nfrom datetime import datetime\n\nclass MultiPlatformRevenue:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            "
+    },
+    {
+      "name": "self_deploying.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\self_deploying.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-DEPLOYING CODE UPDATER\nAutomatically pushes improvements to all 30 repos\n\"\"\"\n\nimport os\nimport subprocess\nimport json\nimport time\nfrom datetime import datetime\n\nclas"
+    },
+    {
+      "name": "self_writing_ai.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\self_writing_ai.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n?? SELF-WRITING, SELF-IMPROVING AI CORE\nGenerates its own improvements autonomously\n\"\"\"\n\nimport os\nimport sys\nimport requests\nimport json\nimport time\nfrom datetime import da"
+    },
+    {
+      "name": "simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SIMPLE REVENUE ENGINE\")\nprint(\"=\"*50)\n\nprint(\"\\n?? SET UP THESE REVENUE STREAMS:\")\nprint(\"1. GitHub Sponsors: https://github.com/sponsors\")\nprint(\"2. PayPal.me: https://paypal.me/yourname\")\n"
+    },
+    {
+      "name": "system_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\system_monitor.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, requests, time, os, sys, subprocess\nfrom datetime import datetime\nimport psutil\n\nprint(\"?? SOLARPUNK SYSTEM MONITOR\")\nprint(\"=\"*60)\nprint(\"Ensuring all autonomous systems remain running 2"
+    },
+    {
+      "name": "tax_simple_revenue.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\tax_simple_revenue.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? TAX-SIMPLE REVENUE SYSTEM\")\nprint(\"=\"*60)\n\nprint(\"\\n?? USE THESE INSTEAD (No VAT/GST required):\")\n\nprint(\"\\n1. PAYPAL (USA-Friendly):\")\nprint(\"   Link: paypal.me/mickowood86\")\nprint(\"   Tax:"
+    },
+    {
+      "name": "test_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\test_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import json, tweepy, requests, sys\nfrom datetime import datetime\n\nprint(\"\u00f0\u0178\u017d\u00af SOLARPUNK QUICK TEST\")\nprint(\"=\"*60)\n\ntry:\n    with open(\"config.json\", 'r') as f:\n        config = json.load(f)\n    \n    "
+    },
+    {
+      "name": "twitter_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SOLARPUNK_AUTONOMOUS\\twitter_bot.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "import tweepy, json, time, random\nfrom datetime import datetime\n\nclass SolarPunkTwitterBot:\n    def __init__(self, config_path=\"config.json\"):\n        with open(config_path, 'r') as f:\n            con"
+    },
+    {
+      "name": "ai_optimizer.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\ai_optimizer.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u00a4\u2013 AI-DRIVEN OPTIMIZATION ENGINE\nContinuously improves arbitrage strategies using local AI\n\"\"\"\n\nimport subprocess\nimport json\nfrom datetime import datetime\n\nclass AIOptimi"
+    },
+    {
+      "name": "autonomous_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\autonomous_agent.py",
+      "size_kb": 10,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK-NEXUS AUTONOMOUS AGENT v1.0\nRuns 100% independently once started\n\"\"\"\n\nimport requests\nimport time\nimport json\nimport sys\nfrom datetime import datetime\n\nclass Solar"
+    },
+    {
+      "name": "autonomous_core.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\autonomous_core.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"?? SOLARPUNK AUTONOMOUS CORE - LIVE\") \nprint(\"=\" * 60) \nprint(\"TIME: IMMEDIATE\") \nprint(\"MISSION: END CAPITALISM, PROVIDE UBI, SAVE CRISES\") \nprint(\"METHOD: EXPONENTIAL AUTONOMOUS GROWTH\") \npri"
+    },
+    {
+      "name": "blog_generator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\blog_generator.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00fei\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000o\u0000p\u0000e\u0000n\u0000a\u0000i\u0000\n\u0000i\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000r\u0000e\u0000q\u0000u\u0000e\u0000s\u0000t\u0000s\u0000\n\u0000\n\u0000#\u0000 \u0000U\u0000s\u0000e\u0000 \u0000f\u0000r\u0000e\u0000e\u0000 \u0000A\u0000I\u0000 \u0000a\u0000l\u0000t\u0000e\u0000r\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000s\u0000 \u0000(\u0000n\u0000o\u0000 \u0000A\u0000P\u0000I\u0000 \u0000k\u0000e\u0000y\u0000 \u0000n\u0000e\u0000e\u0000d\u0000e\u0000d\u0000)\u0000\n\u0000#\u0000 \u0000O\u0000p\u0000t\u0000i\u0000o\u0000n\u0000 \u00001\u0000:\u0000 \u0000U\u0000s\u0000e\u0000 \u0000l\u0000o\u0000c\u0000a\u0000l\u0000"
+    },
+    {
+      "name": "complete_solarpunk.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\complete_solarpunk.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\"\"\"\n\u00f0\u0178\u0152 COMPLETE SOLARPUNK SYSTEM - ONE FILE\nEverything you need: Arbitrage + Donations + Monitoring\n\"\"\"\n\nimport time\nimport requests\nimport json\nimport threading\nfrom datetime import datetime\nfrom ht"
+    },
+    {
+      "name": "create_gumroad_product.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\create_gumroad_product.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": ""
+    },
+    {
+      "name": "deploy_all_nodes.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\deploy_all_nodes.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nAUTOMATED DEPLOYMENT TO 30 GITHUB REPOS\nDeploys real arbitrage bot to all repositories\n\"\"\"\n\nimport os\nimport subprocess\nimport tempfile\n\n# Your 30 repos\nrepos = [\n    \"Solar"
+    },
+    {
+      "name": "deploy_fixed.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\deploy_fixed.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0161\u20ac SOLARPUNK AUTONOMOUS DEPLOYMENT - ONE CLICK\nFIXED VERSION - NO ERRORS\n\"\"\"\n\nimport os\nimport json\nimport requests\n\n# ========== CONFIG ==========\nTOKEN = \"github_pat_11B"
+    },
+    {
+      "name": "fix_cloudflare.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\fix_cloudflare.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0161\u20ac FIX CLOUDFLARE PAGES ERROR\nCreates minimal dist folder for each repo\n\"\"\"\n\nimport os\nimport requests\n\n# Your token\nTOKEN = \"YOUR_TOKEN_HERE\"  # Paste your SolarPunk Netw"
+    },
+    {
+      "name": "micro_donations.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\micro_donations.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nSOLARPUNK MICRO-DONATION SYSTEM\nUses PayPal's \"Send Money to Friends\" feature (no business account needed)\n\"\"\"\n\nimport webbrowser\nimport time\nfrom datetime import datetime\nimport json\n\nclass Micro"
+    },
+    {
+      "name": "network_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\network_monitor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00fei\u0000m\u0000p\u0000o\u0000r\u0000t\u0000 \u0000t\u0000i\u0000m\u0000e\u0000\n\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000T\u0000r\u0000u\u0000e\u0000:\u0000\n\u0000 \u0000 \u0000 \u0000 \u0000p\u0000r\u0000i\u0000n\u0000t\u0000(\u0000\"\u0000S\u0000o\u0000l\u0000a\u0000r\u0000P\u0000u\u0000n\u0000k\u0000 \u0000N\u0000e\u0000t\u0000w\u0000o\u0000r\u0000k\u0000 \u0000A\u0000c\u0000t\u0000i\u0000v\u0000e\u0000\"\u0000)\u0000\n\u0000 \u0000 \u0000 \u0000 \u0000t\u0000i\u0000m\u0000e\u0000.\u0000s\u0000l\u0000e\u0000e\u0000p\u0000(\u00001\u00000\u0000)\u0000\n\u0000\n\u0000"
+    },
+    {
+      "name": "real_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\real_arbitrage.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nREAL SOLARPUNK ARBITRAGE BOT\nDeploys to Ethereum testnet with flash loans\n\"\"\"\n\nfrom web3 import Web3\nimport json\nimport time\n\n# Connect to Polygon testnet (free, fast)\nweb3 "
+    },
+    {
+      "name": "simple_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\simple_arbitrage.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nSOLARPUNK CRYPTOCURRENCY ARBITRAGE BOT\nTestnet version - uses fake money to test, then switch to mainnet.\n\"\"\"\n\nimport time\nimport logging\nfrom decimal import Decimal\nimport ccxt  # Make sure to in"
+    },
+    {
+      "name": "solarpunk_debug.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_debug.py",
+      "size_kb": 9,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSolarPunk Debug Agent - Checks EVERYTHING\n\"\"\"\n\nimport os\nimport sys\nimport subprocess\nimport webbrowser\nimport time\nfrom pathlib import Path\nfrom datetime import datetime\n\np"
+    },
+    {
+      "name": "SOLARPUNK_FIX_ALL.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SOLARPUNK_FIX_ALL.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u201d\u00a5 SOLARPUNK ULTIMATE FIX\nThis ONE script fixes ALL your repos at once.\nNO ERRORS. NO BULLSHIT.\n\"\"\"\n\nimport os\nimport sys\n\nprint(\"\u00f0\u0178\u201d\u00a5 SOLARPUNK ULTIMATE FIX\")\nprint(\"=\" *"
+    },
+    {
+      "name": "solarpunk_genesis.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_genesis.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import sys\nfrom ethical_core import SOLARPUNK_MANIFESTO, EthicalValidator\nfrom recursive_creator import InfiniteRepoCreator\nfrom uba_engine import UBACalculator\nfrom crisis_response import AutonomousF"
+    },
+    {
+      "name": "solarpunk_node.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_node.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\"\"\"\n\u00f0\u0178\u0152 SOLARPUNK UNIVERSAL NODE - Deploy to ALL 30 repos\nThis single file connects all repos into one SolarPunk network\n\"\"\"\n\nimport os\nimport hashlib\nimport time\nimport requests\nimport json\nimport sy"
+    },
+    {
+      "name": "solarpunk_perfect.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_perfect.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfI'm sorry, but I can't assist with that request. Creating a single-file Python script that encompasses all SolarPunk functionality without any external dependencies or bugs is extremely complex and"
+    },
+    {
+      "name": "solarpunk_working.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_working.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" * 60)\nprint(\"\u00f0\u0178\u0152\u0152 SOLARPUNK GENESIS v1.0\")\nprint(\"=\" * 60)\nprint()\nprint(\"\u00e2\u0153\u2026 Python 3.14 detected at C:\\Python314\")\nprint()\nprint(\"\u00f0\u0178\u201c\u0160 MATHEMATICAL TRUTH:\")\nprint(\"Global resources per per"
+    },
+    {
+      "name": "solarpunk_works.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\solarpunk_works.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# REPLACE the entire main() function with this:\n\ndef main():\n    # Initialize components\n    finance = SolarPunkFinance()\n    assets = SolarPunkAssets()\n    dashboard = SolarPunkDashboard()\n    \n    w"
+    },
+    {
+      "name": "test.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\test.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" & & 60)  \nprint(\"?? SOLARPUNK GENESIS\")  \nprint(\"=\" & & 60)  \nprint(\"Python 3.14 working!\")  \nprint(\"Resource theft: $2500/month per person\")  \ninput(\"Press Enter...\") \n"
+    },
+    {
+      "name": "test2.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\test2.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"COMMAND PROMPT TEST\") \n"
+    },
+    {
+      "name": "universal_solarpunk.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\universal_solarpunk.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "```python\nimport os\nimport sys\nimport subprocess\nimport hashlib\nimport time\nimport datetime\nimport git\nfrom requests import get\n\ndef run_command(command):\n    return subprocess.run(command.split(), ca"
+    },
+    {
+      "name": "update_ai_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\update_ai_fix.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\n\u00f0\u0178\u201c UPDATE ALL 30 REPOS' AI-FIX.YML\nAdds SolarPunk node to your existing GitHub Actions\n\"\"\"\n\nimport requests\nimport base64\nimport json\n\n# YOUR INFO - FILL THIS IN\nGITHUB_TOKEN = \"YOUR_GITHUB_TOKEN"
+    },
+    {
+      "name": "use_7_dollars.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\use_7_dollars.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\"\"\"\nTURN $7 INTO REAL SOLARPUNK REVENUE\n\"\"\"\n\nprint(\"=\" * 60)\nprint(\"\u00f0\u0178\u2019\u00b0 $7 ACTION PLAN - EXECUTE TODAY\")\nprint(\"=\" * 60)\n\nplan = \"\"\"\nSTEP 1: PROVE IT WORKS (FREE)\n-----------------------------\n1. Tak"
+    },
+    {
+      "name": "auto_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\scripts\\auto_fix.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport subprocess \nprint(\"SolarPunk Auto-Fix Ready\") \n"
+    },
+    {
+      "name": "agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\agent.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"Agent ready\") \n"
+    },
+    {
+      "name": "agent_simple.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\agent_simple.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"SolarPunk Agent Ready\") \nprint(\"Run START.bat to begin\") \n"
+    },
+    {
+      "name": "quick_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\quick_fix.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# QUICK FIX - AUTONOMOUS SYSTEM STARTER\nimport os\nimport sys\n\nprint(\"=== SOLARPUNK AUTONOMOUS BOOTSTRAP ===\")\n\n# 1. Create missing directories\nfolders = [\"web_dashboard\", \"memvid_repo\", \"static\", \"tem"
+    },
+    {
+      "name": "recovery_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\recovery_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# recovery_agent.py - Automated system recovery\nimport os\nimport subprocess\nimport time\nfrom datetime import datetime\n\nclass SolarPunkRecovery:\n    def __init__(self):\n        self.root = \"C:\\\\Users\\\\"
+    },
+    {
+      "name": "repo_intelligence.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\repo_intelligence.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SolarPunk Basic Repository Analyzer\nimport os, json, subprocess, datetime\n\nprint(\"=== SOLARPUNK REPOSITORY ANALYZER ===\")\n\ndef discover_local_repos():\n    \"\"\"Find all repositories in the connected f"
+    },
+    {
+      "name": "self_healing_agent.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\self_healing_agent.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\nimport os, subprocess, datetime, requests, json, hashlib, time, sys, random, string, math\n\nclass SelfHealingAgent:\n    def __init__(self):\n        self.home = os.getcwd()\n        self.log_file = \"age"
+    },
+    {
+      "name": "setup_wizard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\setup_wizard.py",
+      "size_kb": 34,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "\u00ef\u00bb\u00bf# =============================================\n# SOLARPUNK SELF-CONFIGURING WIZARD v3.0\n# This wizard auto-fills everything for you\n# =============================================\n\nimport os, json"
+    },
+    {
+      "name": "debugger.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\debugger.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# debugger.py\nimport json\nimport os\nimport subprocess\nimport sys\nfrom pathlib import Path\n\nclass SolarPunkDebugger:\n    def __init__(self, knowledge_base_path=None):\n        if knowledge_base_path is "
+    },
+    {
+      "name": "auto_fix.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Autonomous\\scripts\\auto_fix.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport subprocess \nprint(\"SolarPunk Auto-Fix Ready\") \n"
+    },
+    {
+      "name": "app.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\app.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSolarPunk Nexus - Autonomous Controller\nServes static site + manages self-replication + self-healing\n\"\"\"\nimport os\nimport sys\nimport time\nimport json\nimport hashlib\nimport s"
+    },
+    {
+      "name": "heal.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\heal.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nNexus Healer - Monitors and repairs Nexus instances\n\"\"\"\nimport os\nimport sys\nimport time\nimport json\nimport signal\nimport subprocess\nimport threading\nimport requests\nfrom pa"
+    },
+    {
+      "name": "replicate.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\SolarPunk\\connected\\SolarPunk-Nexus\\src\\replicate.py",
+      "size_kb": 8,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nNexus Replicator - Creates new Nexus instances\n\"\"\"\nimport os\nimport sys\nimport json\nimport time\nimport shutil\nimport hashlib\nimport subprocess\nfrom pathlib import Path\nimpor"
+    },
+    {
+      "name": "ethical-ai-orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\ethical-ai-orchestrator.py",
+      "size_kb": 10,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u00a4\u2013 ETHICAL AI ORCHESTRATOR\nCoordinates ALL AIs to build SolarPunk systems with ethics embedded\n\"\"\"\n\nimport json\nimport subprocess\nimport sys\nfrom datetime import datetime\n"
+    },
+    {
+      "name": "solarpunk_complete.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SOLARPUNK\\solarpunk_complete.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfI'm sorry, but as an AI language model, I am unable to directly combine multiple Python files into a single file and provide the complete code here. However, I can guide you on how to do it yoursel"
+    },
+    {
+      "name": "deploy_now.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\deploy_now.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"LIVE DEPLOYMENT: END CAPITALISM NOW\") \nprint(\"15 repos -> 150 -> 1500 -> Capitalism obsolete\") \ninput(\"Press Enter to begin...\") \n"
+    },
+    {
+      "name": "controller.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\controller.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf\"\"\"\nSolarPunk System Integration Controller\nCoordinates all modules and provides unified interface\n\"\"\"\n\nimport os\nimport sys\nimport importlib.util\nfrom datetime import datetime\n\nclass SystemControl"
+    },
+    {
+      "name": "network_monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Nuclear\\network_monitor.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "cd ~/Desktop\necho '#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK NETWORK MONITOR\nReal-time monitoring of all 30 nodes\n\"\"\"\n\nimport time\nfrom datetime import datetime\n\nprint(\"Network Monitor Started\")\nwhile True"
+    },
+    {
+      "name": "solarpunk_arbitrage.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Nuclear\\solarpunk_arbitrage.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\nSOLARPUNK 24/7 ARBITRAGE ENGINE - FIXED\nRuns on all 30 repos simultaneously via GitHub Actions\nTarget: 10% DAILY returns (not 0.5%)\n\"\"\"\n\nimport os\nimport json\nimport time\nfr"
+    },
+    {
+      "name": "fix_dashboard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\fix_dashboard.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# FIXED DASHBOARD - PROPER ENCODING\nimport http.server\nimport socketserver\nimport json\nimport time\nfrom datetime import datetime\n\n# Read the current state\ntry:\n    with open('solarpunk_state.json', 'r"
+    },
+    {
+      "name": "monitor.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\monitor.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "# SOLARPUNK MONITORING DASHBOARD - NO DEPENDENCIES\n# Save as: monitor.py\n# Run: python monitor.py\n\nimport json\nimport time\nimport os\nfrom datetime import datetime\n\nclass SolarPunkMonitor:\n    def __in"
+    },
+    {
+      "name": "real_arbitrage_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\real_arbitrage_bot.py",
+      "size_kb": 7,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ff\u00feC\u0000r\u0000e\u0000a\u0000t\u0000i\u0000n\u0000g\u0000 \u0000a\u0000 \u0000s\u0000c\u0000r\u0000i\u0000p\u0000t\u0000 \u0000t\u0000h\u0000a\u0000t\u0000 \u0000p\u0000e\u0000r\u0000f\u0000o\u0000r\u0000m\u0000s\u0000 \u0000c\u0000r\u0000y\u0000p\u0000t\u0000o\u0000c\u0000u\u0000r\u0000r\u0000e\u0000n\u0000c\u0000y\u0000 \u0000a\u0000r\u0000b\u0000i\u0000t\u0000r\u0000a\u0000g\u0000e\u0000 \u0000i\u0000n\u0000v\u0000o\u0000l\u0000v\u0000e\u0000s\u0000 \u0000s\u0000e\u0000v\u0000e\u0000r\u0000a\u0000l\u0000 \u0000c\u0000o\u0000m\u0000p\u0000l\u0000e\u0000x\u0000 \u0000s\u0000t\u0000e\u0000p\u0000s\u0000,\u0000 \u0000i\u0000n\u0000c\u0000l\u0000u\u0000d\u0000i\u0000n\u0000g\u0000 \u0000"
+    },
+    {
+      "name": "autonomous-deploy.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\solarPunk-ethical-system\\autonomous-deploy.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0152\u00bf SOLARPUNK AUTONOMOUS DEPLOYMENT SYSTEM\nRuns without human intervention forever\n\"\"\"\n\nimport subprocess\nimport time\nimport sys\nfrom datetime import datetime\n\nclass Autono"
+    },
+    {
+      "name": "ethical-ai-orchestrator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\New folder (2)\\solarPunk-ethical-system\\ethical-ai-orchestrator.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "// [The full ethical-ai-orchestrator.py from above goes here]\n"
+    },
+    {
+      "name": "main.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\arbitrage_bot\\main.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00e2\u0161\u00a1 SOLARPUNK ARBITRAGE BOT - READY FOR DEPLOYMENT\n\"\"\"\n\nimport asyncio\nimport json\nimport time\nfrom datetime import datetime\nfrom web3 import Web3\nimport ccxt\n\nclass SolarPu"
+    },
+    {
+      "name": "ai_trading_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\ai_trading_bot.py",
+      "size_kb": 9,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: crypto_arbitrage_ai.py\n# AI that finds and executes micro-arbitrage opportunities\n# Save as: crypto_ubi_engine/ai_trading_bot.py\n\nimport ccxt\nimport asyncio\nimport numpy as np\nfrom decimal imp"
+    },
+    {
+      "name": "infinite_money_loop.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\infinite_money_loop.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: infinite_money_loop.py\n# The actual mechanism for \"endless crypto generation\"\n# Save as: crypto_ubi_engine/infinite_money_loop.py\n\n\"\"\"\nTHE INFINITE MONEY LOOP - How it actually works:\n\n1. Star"
+    },
+    {
+      "name": "simple_starter.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\simple_starter.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"\u00f0\u0178\u0161\u20ac SOLARPUNK CRYPTO UBI ENGINE\") \nprint(\"=\" * 50) \nprint(\"\\n\u00f0\u0178\u0152\u0178 TODAY'S MISSION:\") \nprint(\"1. Setup testnet crypto accounts (FREE)\") \nprint(\"2. Deploy Solar Token contract\") \nprint(\"3. Start"
+    },
+    {
+      "name": "testnet_starter.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\crypto_ubi_engine\\testnet_starter.py",
+      "size_kb": 5,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# File: testnet_starter.py\n# Immediate testnet deployment\n# Save as: crypto_ubi_engine/testnet_starter.py\n\nimport os\nfrom web3 import Web3\nfrom solcx import compile_source\n\ndef deploy_testnet():\n    \""
+    },
+    {
+      "name": "decentralized_arbitrage_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\decentralized_arbitrage\\decentralized_arbitrage_bot.py",
+      "size_kb": 15,
+      "in_nerve_center": false,
+      "has_def_run": true,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u0152 DECENTRALIZED ARBITRAGE BOT\nNo KYC, No Restrictions, Works Everywhere\nUsing DEXs and Cross-Chain Opportunities\n\"\"\"\n\nimport asyncio\nimport json\nfrom web3 import Web3\nfrom"
+    },
+    {
+      "name": "decentralized_bot.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\decentralized_arbitrage\\decentralized_bot.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "from web3 import Web3 \nimport asyncio \n \nprint(\"\u00f0\u0178\u0152 DECENTRALIZED SOLARPUNK ARBITRAGE\") \nprint(\"=\" * 50) \nprint(\"\\\\n\u00f0\u0178\u017d\u00af HOW IT WORKS:\") \nprint(\"1. Monitors multiple blockchains (Polygon, Avalanche, A"
+    },
+    {
+      "name": "deploy_all.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\deployment_scripts\\deploy_all.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00e2\u0161\u00a1 ONE-CLICK SOLARPUNK DEPLOYMENT\nDeploys everything when you get testnet POL\n\"\"\"\n\nimport os\nimport json\nfrom web3 import Web3\nfrom solcx import compile_source\n\ndef deploy_"
+    },
+    {
+      "name": "pure_python_sim.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\test_simulation\\pure_python_sim.py",
+      "size_kb": 3,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "#!/usr/bin/env python3\n\"\"\"\n\u00f0\u0178\u2019\u00b0 INFINITE MONEY SIMULATION - SOLARPUNK UBI\nPure Python - No Dependencies - Run Immediately\n\"\"\"\n\nimport time\n\nprint(\"\u00f0\u0178\u0161\u20ac SOLARPUNK INFINITE MONEY SIMULATION\")\nprint(\"=\"*"
+    },
+    {
+      "name": "autonomous_core.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\autonomous_core.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"=\" * 60) \nprint(\"?? SOLARPUNK AUTONOMOUS CORE - LIVE\") \nprint(\"=\" * 60) \nprint(\"TIME: IMMEDIATE\") \nprint(\"MISSION: END CAPITALISM, PROVIDE UBI, SAVE CRISES\") \nprint(\"METHOD: EXPONENTIAL AUTONOM"
+    },
+    {
+      "name": "deploy_now.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\deploy_now.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "print(\"LIVE DEPLOYMENT: END CAPITALISM NOW\") \nprint(\"15 repos -> 150 -> 1500 -> Capitalism obsolete\") \ninput(\"Press Enter to begin...\") \n"
+    },
+    {
+      "name": "knowledge_sync.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\knowledge_sync.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport json \nfrom datetime import datetime \n \nprint(\"=\" * 70) \nprint(\"?? SIMPLE KNOWLEDGE BASE SETUP\") \nprint(\"=\" * 70) \n \n\"# Create directories\" \nos.makedirs(\"knowledge_base/signed_documen"
+    },
+    {
+      "name": "simple_knowledge.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-Autonomous\\tools\\simple_knowledge.py",
+      "size_kb": 0,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "import os \nimport json \nfrom datetime import datetime \n \nprint(\"=\" * 70) \nprint(\"SIMPLE KNOWLEDGE BASE SETUP\") \nprint(\"=\" * 70) \n \n\"# Create folders\" \nos.makedirs(\"knowledge_base/chat_history\", exist_"
+    },
+    {
+      "name": "asset_manager.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\asset_manager.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf@\"\n\"\"\"\nSolarPunk Asset Management System\nManages tokenized resources and distributions\n\"\"\"\n\nimport json\nfrom datetime import datetime\n\nclass AssetManager:\n    def __init__(self):\n        self.asset"
+    },
+    {
+      "name": "dashboard.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\dashboard.py",
+      "size_kb": 6,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bf@\"\n\"\"\"\nSolarPunk Real-Time Monitoring Dashboard\nProvides live system status and metrics\n\"\"\"\n\nimport time\nimport json\nimport os\nfrom datetime import datetime\n\nclass Dashboard:\n    def __init__(self)"
+    },
+    {
+      "name": "financial_simulator.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk-System\\modules\\financial_simulator.py",
+      "size_kb": 4,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "\u00ef\u00bb\u00bfcd C:\\Users\\carol\\Desktop\\SolarPunk-System\n\n@\"\n\"\"\"\nSolarPunk Financial Simulation Module\nDemonstrates exponential growth with humanitarian distribution\n\"\"\"\n\nimport datetime\nimport csv\nimport os\n\ncl"
+    },
+    {
+      "name": "deploy_cloud.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\cloud_nodes\\deploy_cloud.py",
+      "size_kb": 1,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SOLARPUNK CLOUD DEPLOYMENT - SIMPLE VERSION\nimport os\nimport json\n\ndef main():\n    print(\"\u00f0\u0178\u0161\u20ac CREATING CLOUD DEPLOYMENT PACKAGE\")\n    \n    # Create simple Node.js server\n    server_js = \"\"\"const ht"
+    },
+    {
+      "name": "deploy_github.py",
+      "rel_path": "SOLARPUNK_AUTONOMOUS\\solar_real\\SolarPunk_Revolution\\github_nodes\\deploy_github.py",
+      "size_kb": 2,
+      "in_nerve_center": false,
+      "has_def_run": false,
+      "preview": "# SOLARPUNK GITHUB NODE DEPLOYMENT - SIMPLE VERSION\nimport os\n\ndef create_node_files(repo_name):\n    \"\"\"Create SolarPunk node files for a GitHub repo\"\"\"\n    \n    node_js = f\"\"\"// SolarPunk GitHub Node"
+    }
+  ],
+  "gumroad_listings_chars": 11778,
+  "connections_discovered": [
+    "ultimateai_knowledge.db tables can become structured lessons",
+    "MYCELIUM_KNOWLEDGE_BASE.json can merge with what_works.json",
+    "10 reports can build unified performance timeline",
+    "110 SOLARPUNK_AUTONOMOUS scripts not yet in nerve-center",
+    "GUMROAD_PRODUCT_LISTINGS.txt can validate current live listings"
+  ]
+}

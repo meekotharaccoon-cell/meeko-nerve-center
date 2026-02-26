@@ -1,0 +1,386 @@
+[
+  {
+    "title": "Pair USGS earthquake data with Red Cross / UN OCHA aid response links",
+    "category": "content",
+    "apis": [
+      "USGS Earthquakes",
+      "Red Cross (web)"
+    ],
+    "inputs": [
+      "knowledge/usgs/"
+    ],
+    "outputs": [
+      "content/queue/disaster_aid.json"
+    ],
+    "mission": 10,
+    "feasibility": 8,
+    "test": "check_file_exists",
+    "test_target": "knowledge/usgs/",
+    "alternative": "Use Wikipedia recent disasters page",
+    "id": "e489e52d4e2b",
+    "status": "passed",
+    "result": "Directory exists with 1 files",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Auto-generate weekly carbon report from UK grid data with SolarPunk framing",
+    "category": "content",
+    "apis": [
+      "Carbon Intensity API"
+    ],
+    "inputs": [
+      "knowledge/carbon/"
+    ],
+    "outputs": [
+      "content/queue/carbon_weekly.json"
+    ],
+    "mission": 8,
+    "feasibility": 9,
+    "test": "fetch_url",
+    "test_target": "https://api.carbonintensity.org.uk/intensity",
+    "alternative": "Use ElectricityMap API (free tier)",
+    "id": "9e2cabab92cb",
+    "status": "passed",
+    "result": "HTTP 200 \u2014 184 bytes",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Wikipedia pageview spikes -> identify trending topics -> generate timely content",
+    "category": "content",
+    "apis": [
+      "Wikipedia Pageviews"
+    ],
+    "inputs": [
+      "knowledge/world/latest.md"
+    ],
+    "outputs": [
+      "content/queue/trending_today.json"
+    ],
+    "mission": 7,
+    "feasibility": 10,
+    "test": "fetch_url",
+    "test_target": "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/2026/02/25",
+    "alternative": "Use Reddit hot posts as trending signal",
+    "id": "0aff465effad",
+    "status": "passed",
+    "result": "HTTP 200 \u2014 512 bytes",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Museum art + earthquake location pairing: art from affected region + aid link",
+    "category": "content",
+    "apis": [
+      "USGS",
+      "Metropolitan Museum",
+      "ARTIC"
+    ],
+    "inputs": [
+      "knowledge/usgs/",
+      "data/art_pairs.json"
+    ],
+    "outputs": [
+      "content/queue/art_disaster.json"
+    ],
+    "mission": 10,
+    "feasibility": 7,
+    "test": "check_file_exists",
+    "test_target": "data/art_pairs.json",
+    "alternative": "Use Wikimedia Commons free images instead",
+    "id": "5acf2f7b3849",
+    "status": "passed",
+    "result": "File exists (35093 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "ISS crew + space news -> weekly hope post (humans doing amazing things)",
+    "category": "content",
+    "apis": [
+      "Open Notify",
+      "Spaceflight News"
+    ],
+    "inputs": [
+      "knowledge/spaceflight/"
+    ],
+    "outputs": [
+      "content/queue/hope_weekly.json"
+    ],
+    "mission": 7,
+    "feasibility": 10,
+    "test": "fetch_url",
+    "test_target": "http://api.open-notify.org/astros.json",
+    "alternative": "Use NASA APOD (Astronomy Picture of the Day)",
+    "id": "6472871413d9",
+    "status": "passed",
+    "result": "HTTP 200 \u2014 512 bytes",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "World Bank child mortality data -> context for Gaza children posts",
+    "category": "content",
+    "apis": [
+      "World Bank"
+    ],
+    "inputs": [
+      "data/world_state.json"
+    ],
+    "outputs": [
+      "content/queue/child_data.json"
+    ],
+    "mission": 10,
+    "feasibility": 8,
+    "test": "check_file_exists",
+    "test_target": "data/world_state.json",
+    "alternative": "Use UNICEF open data API",
+    "id": "fe843d6a85d5",
+    "status": "passed",
+    "result": "File exists (4996 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Crypto jobs digest -> weekly newsletter -> Ko-fi membership content",
+    "category": "revenue",
+    "apis": [
+      "Jobicy",
+      "Remotive"
+    ],
+    "inputs": [
+      "data/jobs_today.json"
+    ],
+    "outputs": [
+      "content/newsletter/crypto_jobs_weekly.md"
+    ],
+    "mission": 6,
+    "feasibility": 9,
+    "test": "check_file_exists",
+    "test_target": "data/jobs_today.json",
+    "alternative": "Scrape We Work Remotely public page",
+    "id": "4de9dfe19af1",
+    "status": "passed",
+    "result": "File exists (71371 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "Exchange rate context on donation pages: $10 USD = X ILS/EGP today",
+    "category": "revenue",
+    "apis": [
+      "ExchangeRate-API"
+    ],
+    "inputs": [
+      "data/world_state.json"
+    ],
+    "outputs": [
+      "public/donate_context.json"
+    ],
+    "mission": 8,
+    "feasibility": 10,
+    "test": "fetch_url",
+    "test_target": "https://open.er-api.com/v6/latest/USD",
+    "alternative": "Use CoinGecko fiat rates",
+    "id": "a901bb104f18",
+    "status": "wired",
+    "result": "HTTP 200 \u2014 512 bytes",
+    "learning": "Built and wired on 2026-02-26",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Auto-generate Etsy SEO tags from Open Food Facts + Art data for Gaza Rose listings",
+    "category": "revenue",
+    "apis": [
+      "Open Food Facts",
+      "ARTIC",
+      "Met Museum"
+    ],
+    "inputs": [
+      "data/art_pairs.json"
+    ],
+    "outputs": [
+      "data/etsy_tags.json"
+    ],
+    "mission": 7,
+    "feasibility": 8,
+    "test": "check_file_exists",
+    "test_target": "data/art_pairs.json",
+    "alternative": "Generate tags from humanitarian_content.py keywords",
+    "id": "ce67102348b6",
+    "status": "passed",
+    "result": "File exists (35093 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "Spaceflight launch calendar -> content timing: post hope content on launch days",
+    "category": "intelligence",
+    "apis": [
+      "SpaceX",
+      "Spaceflight News"
+    ],
+    "inputs": [
+      "data/world_state.json"
+    ],
+    "outputs": [
+      "data/content_calendar.json"
+    ],
+    "mission": 7,
+    "feasibility": 9,
+    "test": "fetch_url",
+    "test_target": "https://api.spacexdata.com/v5/launches/upcoming",
+    "alternative": "Use NASA launch schedule page",
+    "id": "fab80d8359a8",
+    "status": "passed",
+    "result": "HTTP 200 \u2014 512 bytes",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "arXiv AI papers -> extract tools/methods -> update system capabilities weekly",
+    "category": "intelligence",
+    "apis": [
+      "arXiv"
+    ],
+    "inputs": [
+      "knowledge/arxiv/latest.md"
+    ],
+    "outputs": [
+      "knowledge/intelligence/ai_capabilities.md"
+    ],
+    "mission": 7,
+    "feasibility": 9,
+    "test": "check_file_exists",
+    "test_target": "knowledge/arxiv/latest.md",
+    "alternative": "Use HuggingFace papers page",
+    "id": "39fc3d55b0d6",
+    "status": "passed",
+    "result": "File exists (15192 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "Music + earthquake: surface protest songs from affected country after quake",
+    "category": "connection",
+    "apis": [
+      "USGS",
+      "MusicBrainz"
+    ],
+    "inputs": [
+      "knowledge/usgs/",
+      "data/music.json"
+    ],
+    "outputs": [
+      "content/queue/music_solidarity.json"
+    ],
+    "mission": 9,
+    "feasibility": 7,
+    "test": "check_file_exists",
+    "test_target": "data/music.json",
+    "alternative": "Use iTunes Search for country-specific music",
+    "id": "8e000beed7c5",
+    "status": "passed",
+    "result": "File exists (7140 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "Remote job in NGO/nonprofit -> pair with Gaza Rose donation ask -> post together",
+    "category": "connection",
+    "apis": [
+      "Jobicy",
+      "Remotive"
+    ],
+    "inputs": [
+      "data/jobs_today.json"
+    ],
+    "outputs": [
+      "content/queue/job_plus_cause.json"
+    ],
+    "mission": 8,
+    "feasibility": 9,
+    "test": "check_file_exists",
+    "test_target": "data/jobs_today.json",
+    "alternative": "Source NGO jobs from Idealist (web)",
+    "id": "ee37fa7b178d",
+    "status": "passed",
+    "result": "File exists (71371 bytes)",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "id": "7fb9ed08451a",
+    "title": "Use USAspending.gov contracts instead",
+    "category": "content",
+    "apis": [],
+    "inputs": [
+      "content/queue/congress_daily.json"
+    ],
+    "outputs": [],
+    "mission": 9,
+    "feasibility": 8,
+    "status": "passed",
+    "result": "Directory exists with 55 files",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "test": "check_file_exists",
+    "test_target": "",
+    "alternative": null,
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "id": "c5f0cd5d7fb4",
+    "title": "Search Project Gutenberg directly",
+    "category": "content",
+    "apis": [],
+    "inputs": [
+      "content/queue/book_amplify.json"
+    ],
+    "outputs": [],
+    "mission": 9,
+    "feasibility": 8,
+    "status": "passed",
+    "result": "Directory exists with 55 files",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "test": "check_file_exists",
+    "test_target": "",
+    "alternative": null,
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "id": "ff40bc7e64a3",
+    "title": "Use Wikimedia Commons + Project Gutenberg",
+    "category": "connection",
+    "apis": [],
+    "inputs": [
+      "content/queue/culture_cause.json"
+    ],
+    "outputs": [],
+    "mission": 9,
+    "feasibility": 7,
+    "status": "passed",
+    "result": "Directory exists with 55 files",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "test": "check_file_exists",
+    "test_target": "",
+    "alternative": null,
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  }
+]

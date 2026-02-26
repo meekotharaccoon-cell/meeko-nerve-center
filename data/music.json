@@ -1,0 +1,185 @@
+{
+  "date": "2026-02-26",
+  "artists": [
+    {
+      "name": "Palestine",
+      "country": "SE",
+      "tags": [],
+      "score": 100,
+      "url": "https://musicbrainz.org/artist/30495e98-4b64-442a-bf8d-5871cbef9ea5",
+      "query": "Palestine"
+    },
+    {
+      "name": "Charlemagne Palestine",
+      "country": "",
+      "tags": [],
+      "score": 96,
+      "url": "https://musicbrainz.org/artist/2d3b6fec-f3ab-452d-98c7-510a1a1ac1e6",
+      "query": "Palestine"
+    },
+    {
+      "name": "Various Artists",
+      "country": "",
+      "tags": [
+        "rock",
+        "trance",
+        "electronic",
+        "soundtrack",
+        "classical"
+      ],
+      "score": 93,
+      "url": "https://musicbrainz.org/artist/89ad4ac3-39f7-470e-963a-56509c546377",
+      "query": "Palestine"
+    },
+    {
+      "name": "Palestine Strings",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/d59d9c0b-b4ea-42b5-84a6-93da9b82a331",
+      "query": "Palestine"
+    },
+    {
+      "name": "Heartists for Palestine",
+      "country": "",
+      "tags": [],
+      "score": 77,
+      "url": "https://musicbrainz.org/artist/c62cce8d-e83d-4173-8f71-7ed7d3f46482",
+      "query": "Palestine"
+    },
+    {
+      "name": "Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 100,
+      "url": "https://musicbrainz.org/artist/9f6314ea-13e6-402c-a01f-99622715edc4",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/8713ed1e-53e0-42cd-8f15-91f257a76b32",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity Hymn",
+      "country": "US",
+      "tags": [
+        "ambient"
+      ],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/9f7cdd4f-cab8-4d73-b17f-f187d476e4fb",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity Choir",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/c635bc43-535b-4d9b-b920-7417a9786997",
+      "query": "solidarity"
+    },
+    {
+      "name": "King Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/5ff86ee3-8ba4-468c-a0fe-285694c1c98f",
+      "query": "solidarity"
+    }
+  ],
+  "tracks": [
+    {
+      "title": "Change Is Gonna Come (Mono)",
+      "artist": "Otis Redding",
+      "album": "Protest Music",
+      "genre": "R&B/Soul",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a3/67/bd/a367bd99-05ce-4e51-fcaa-831e7500f0b5/mzaf_17777742451523782684.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/change-is-gonna-come-mono/1234494917?i=1234494934&uo=4",
+      "query": "protest music"
+    },
+    {
+      "title": "Get Up, Stand Up",
+      "artist": "Cubanismo",
+      "album": "Protest Music",
+      "genre": "Latin",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview117/v4/36/78/72/36787211-a996-dc13-d24f-2f6a4f1cf3e3/mzaf_3090701568320754478.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/get-up-stand-up/1234494917?i=1234495127&uo=4",
+      "query": "protest music"
+    },
+    {
+      "title": "The Times They Are A-Changin'",
+      "artist": "Richie Havens",
+      "album": "Protest Music",
+      "genre": "Rock",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/7b/5a/9f/7b5a9f4d-6f44-a7cd-b64e-3dd58f2f8517/mzaf_13011708374082216559.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/the-times-they-are-a-changin/1234494917?i=1234494937&uo=4",
+      "query": "protest music"
+    },
+    {
+      "title": "War Pigs",
+      "artist": "Faith No More",
+      "album": "Protest Music",
+      "genre": "Rock",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a5/19/05/a5190597-c756-b871-86b7-04cee0006211/mzaf_4337474423888967960.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/war-pigs/1234494917?i=1234495132&uo=4",
+      "query": "protest music"
+    },
+    {
+      "title": "Universal Prisoner",
+      "artist": "Les McCann & Eddie Harris",
+      "album": "Protest Music",
+      "genre": "R&B/Soul",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview111/v4/e5/63/3a/e5633a05-df74-b02b-a775-d163d22b2a04/mzaf_6628158916951466966.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/universal-prisoner/1234494917?i=1234495128&uo=4",
+      "query": "protest music"
+    },
+    {
+      "title": "Unfolding the Silent Peace",
+      "artist": "Relax \u03b1 Wave",
+      "album": "Chillout Sounds to Clear Your Mind and Truly Rest",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/a4/40/98a440b5-dd49-2fe7-fdd8-27db78884875/mzaf_11120630227924121873.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/unfolding-the-silent-peace/1877279328?i=1877279336&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Silent Paths to Peace Moods",
+      "artist": "Relax \u03b1 Wave",
+      "album": "Chillout Sounds to Clear Your Mind and Truly Rest",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/ff/4c/abff4ced-63ea-a832-5ca6-c60ae76c566a/mzaf_9355462852333870298.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/silent-paths-to-peace-moods/1877279328?i=1877279330&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "peace",
+      "artist": "clay house",
+      "album": "lullaby - EP",
+      "genre": "Electronic",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f6/2d/7a/f62d7a97-e202-b831-b20f-0f655e99d2a3/mzaf_3401350033649059112.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/peace/1592574140?i=1592574141&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Peace",
+      "artist": "Bethel Music & We The Kingdom",
+      "album": "Peace",
+      "genre": "Christian",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ab/4d/8f/ab4d8fc6-77da-88c6-b4fc-ae711c466250/mzaf_4238890132942651286.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/peace/1748012530?i=1748012842&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Warm Tides of Evening Air",
+      "artist": "Dream House",
+      "album": "Feel the 1/f Fluctuations \u2014 Between Silence and Peace",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/c7/4d/9bc74d15-6a9e-5d41-b158-aee3c51cc89f/mzaf_15378828003826287149.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/warm-tides-of-evening-air/1878117442?i=1878117443&uo=4",
+      "query": "world music peace"
+    }
+  ]
+}

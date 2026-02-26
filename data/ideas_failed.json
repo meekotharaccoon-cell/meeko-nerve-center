@@ -1,0 +1,104 @@
+[
+  {
+    "title": "Daily \"What Congress bought today\" post from stock watcher data",
+    "category": "content",
+    "apis": [
+      "House Stock Watcher"
+    ],
+    "inputs": [
+      "data/congress.json"
+    ],
+    "outputs": [
+      "content/queue/congress_daily.json"
+    ],
+    "mission": 9,
+    "feasibility": 9,
+    "test": "check_file_exists",
+    "test_target": "data/congress.json",
+    "alternative": "Use USAspending.gov contracts instead",
+    "id": "8f5c438a1025",
+    "status": "failed",
+    "result": "Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\data\\congress.json",
+    "learning": "Failed on 2026-02-26: Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\data\\congress.json. Alternative queued: Use USAspending.gov contracts instead",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Free book on Palestine available on Archive.org -> amplify it weekly",
+    "category": "content",
+    "apis": [
+      "Open Library",
+      "Internet Archive"
+    ],
+    "inputs": [
+      "knowledge/books/latest.md"
+    ],
+    "outputs": [
+      "content/queue/book_amplify.json"
+    ],
+    "mission": 9,
+    "feasibility": 9,
+    "test": "check_file_exists",
+    "test_target": "knowledge/books/latest.md",
+    "alternative": "Search Project Gutenberg directly",
+    "id": "8892631055b4",
+    "status": "failed",
+    "result": "Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\knowledge\\books\\latest.md",
+    "learning": "Failed on 2026-02-26: Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\knowledge\\books\\latest.md. Alternative queued: Search Project Gutenberg directly",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  },
+  {
+    "title": "Cross-reference congress stock trades with USAspending contracts: same companies?",
+    "category": "intelligence",
+    "apis": [
+      "House Stock Watcher",
+      "USAspending"
+    ],
+    "inputs": [
+      "data/congress.json",
+      "data/world_state.json"
+    ],
+    "outputs": [
+      "knowledge/intelligence/congress_contracts.json"
+    ],
+    "mission": 10,
+    "feasibility": 7,
+    "test": "check_file_exists",
+    "test_target": "data/congress.json",
+    "alternative": "Use OpenSecrets data (web scrape)",
+    "id": "37cc0b2dc9cf",
+    "status": "failed",
+    "result": "Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\data\\congress.json",
+    "learning": "Failed on 2026-02-26: Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\data\\congress.json. Alternative queued: Use OpenSecrets data (web scrape)",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "title": "Free book + museum art from same region + cause message = rich cultural post",
+    "category": "connection",
+    "apis": [
+      "Open Library",
+      "Met Museum",
+      "ARTIC"
+    ],
+    "inputs": [
+      "knowledge/books/latest.md",
+      "data/art_pairs.json"
+    ],
+    "outputs": [
+      "content/queue/culture_cause.json"
+    ],
+    "mission": 9,
+    "feasibility": 8,
+    "test": "check_file_exists",
+    "test_target": "knowledge/books/latest.md",
+    "alternative": "Use Wikimedia Commons + Project Gutenberg",
+    "id": "7f8f803fe4d6",
+    "status": "failed",
+    "result": "Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\knowledge\\books\\latest.md",
+    "learning": "Failed on 2026-02-26: Not found: C:\\Users\\meeko\\Desktop\\meeko-nerve-center\\knowledge\\books\\latest.md. Alternative queued: Use Wikimedia Commons + Project Gutenberg",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-26T20:44:10.730850"
+  }
+]
