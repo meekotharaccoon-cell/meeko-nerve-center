@@ -22,11 +22,24 @@
         "SECRETS"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 3,
+      "gen": 3,
+      "at": "2026-02-26T17:34:31.826837",
+      "built": "scan_assets",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
     "index_lessons",
-    "gen_changelog"
+    "gen_changelog",
+    "scan_assets"
   ],
-  "gen": 3
+  "gen": 4
 }
