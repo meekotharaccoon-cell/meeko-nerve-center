@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 02:05 UTC — auto: gen 8*
+*Auto-updated by the system. Last update: 2026-02-27 06:12 UTC — feat: donation engine + wallet display + kofi webhook + exchange rates — all secrets wired in*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
