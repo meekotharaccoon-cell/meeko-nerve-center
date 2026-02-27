@@ -36,6 +36,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # ── SELF-MAINTENANCE ─────────────────────────────────
+      - name: Error Self-Healing
+        run: python mycelium/error_self_healing.py
+        continue-on-error: true
+
+      # ── DATA COLLECTION ──────────────────────────────────
       - name: Idea Engine
         run: python mycelium/idea_engine.py
         continue-on-error: true
@@ -64,6 +70,11 @@ jobs:
         run: python mycelium/crypto_jobs.py
         continue-on-error: true
 
+      - name: Content Performance
+        run: python mycelium/content_performance.py
+        continue-on-error: true
+
+      # ── CONTENT GENERATION ───────────────────────────────
       - name: Art + Cause
         run: python mycelium/art_cause_generator.py
         continue-on-error: true
@@ -92,6 +103,7 @@ jobs:
         run: python mycelium/language_engine.py
         continue-on-error: true
 
+      # ── SELF-EVOLUTION ────────────────────────────────────
       - name: Self-Evolution Engine
         run: python mycelium/self_evolution.py
         continue-on-error: true
@@ -100,10 +112,12 @@ jobs:
         run: python mycelium/autonomy_audit.py
         continue-on-error: true
 
+      # ── CROSS-CONNECTIONS ─────────────────────────────────
       - name: Cross Engine
         run: python mycelium/cross_engine.py
         continue-on-error: true
 
+      # ── PUBLISHING ────────────────────────────────────────
       - name: Social Engine
         run: python mycelium/social_engine.py
         continue-on-error: true
@@ -112,6 +126,7 @@ jobs:
         run: python mycelium/outreach_sender.py
         continue-on-error: true
 
+      # ── COMMUNICATIONS ────────────────────────────────────
       - name: Gmail Engine
         run: python mycelium/gmail_engine.py
         continue-on-error: true
@@ -120,6 +135,7 @@ jobs:
         run: python mycelium/email_responder.py
         continue-on-error: true
 
+      # ── HOUSEKEEPING ──────────────────────────────────────
       - name: Privacy Scrubber
         run: python mycelium/privacy_scrubber.py
         continue-on-error: true
