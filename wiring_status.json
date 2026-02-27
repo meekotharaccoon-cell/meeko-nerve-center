@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-27T01:43:27.857720Z",
+  "generated_at": "2026-02-27T03:24:14.120711Z",
   "generator": "github-actions",
   "services": [
     {
@@ -29,8 +29,8 @@
     },
     {
       "service": "Ko-fi",
-      "status": "missing",
-      "note": "add KOFI_TOKEN to GitHub Secrets"
+      "status": "connected",
+      "note": "secret present"
     },
     {
       "service": "Lightning/Strike",
