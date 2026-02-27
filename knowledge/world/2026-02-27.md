@@ -1,21 +1,26 @@
 # World Intelligence Digest — 2026-02-27
 
-## New Solana Pools (GeckoTerminal)
+## Crypto Market
 
-- AIX / SOL | Vol 24h: $239.7334742507 | https://www.geckoterminal.com/solana/pools/22GRACwmt9Uq3NTjbJfpPnfcw8G1WTqeDRfRZUciBL5h
-- Ranmaru / SOL | Vol 24h: $120.0009977301 | https://www.geckoterminal.com/solana/pools/2q5T5FG8atqrWjYGEUA1oENTU3d4TRezCEgcsopjEv2U
-- BNBClaw / SOL | Vol 24h: $327.3601926288 | https://www.geckoterminal.com/solana/pools/2yKkFA8qYPhcg38xqmHusuy9ewjhFsV3VbdZCbAwP83g
+- BTC: $65,310.0 (-3.3%)
+- SOL: $81.41 (-5.5%)
 
-## Next SpaceX Launch: USSF-44 on 2022-11-01
+## New Solana Pools
 
-## Trending on Wikipedia (content signal)
+- Kitsu / SOL | Vol 24h: $0.002443383099 | https://www.geckoterminal.com/solana/pools/J1MmLhpRVKvqxM2UnkR5mmBXHqmXiU2Ybp6rHLB8VWvF
+- BULZI / SOL | Vol 24h: $4.0193764271 | https://www.geckoterminal.com/solana/pools/8rXbm5dSBVP343XkB5SZ2LA1K6o6WyHHuha4q4Xh7vPe
+- Geoffrey / SOL | Vol 24h: $78.8647559987 | https://www.geckoterminal.com/solana/pools/338hXRofzrVusAtJ1YrRe5rpQkoJyfLaEBxV2NtTdbbh
 
-- .xxx (345,657 views)
+## Next SpaceX: USSF-44 on 2022-11-01
+
+## Trending on Wikipedia
+
 - Rashmika Mandanna (237,118 views)
 - Vijay Deverakonda (209,407 views)
 - Scream 7 (168,828 views)
 - Soham murders (161,204 views)
+- Jeffrey Epstein (147,859 views)
 
-## World Bank Snapshot
+## World Bank
 
 - child_mortality: 53.8062516481712 (Africa Eastern and Southern, 2023)

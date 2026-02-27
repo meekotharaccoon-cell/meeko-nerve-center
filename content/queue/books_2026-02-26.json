@@ -2,6 +2,13 @@
   {
     "platform": "mastodon",
     "type": "reading_list",
-    "text": "Free books on Palestine, climate justice, and open tech:\n\n\u2022 *Ecclesiastical history* \u2014 Eusebius of Caesarea, Bishop of Caesarea\n  Read free: https://archive.org/details/ecclesiasticalhi01euseuoft\n\u2022 *Bible* \u2014 Bible\n  Read free: https://archive.org/details/holybiblesoarran01unse\n\u2022 *The Innocents Abroad* \u2014 Mark Twain\n  Read free: https://archive.org/details/dli.ministry.03219\n\u2022 *Humanitarian Aid Work* \u2014 Carlos Martin Beristain\n  Read free: https://archive.org/details/humanitarianaidw0000mart\n\u2022 *Open source* \u2014 Fadi P. Deek, James A. McHugh\n  Read free: https://archive.org/details/opensourcetechno0000deek\n\n#Books #FreeCulture #Palestine #ClimateJustice #OpenAccess"
+    "text": "Free books on Palestine, climate justice, and open tech:\n\n\u2022 *Ecclesiastical history* \u2014 Eusebius of Caesarea, Bishop of Caesarea\n  Read free: https://archive.org/details/ecclesiasticalhi01euseuoft\n\u2022 *Bible* \u2014 Bible\n  Read free: https://archive.org/details/holybiblesoarran01unse\n\u2022 *The Innocents Abroad* \u2014 Mark Twain\n  Read free: https://archive.org/details/dli.ministry.03219\n\u2022 *Humanitarian Aid Work* \u2014 Carlos Martin Beristain\n  Read free: https://archive.org/details/humanitarianaidw0000mart\n\u2022 *Open source* \u2014 Fadi P. Deek, James A. McHugh\n  Read free: https://archive.org/details/opensourcetechno0000deek\n\n#Books #FreeCulture #Palestine #ClimateJustice #OpenAccess",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   }
 ]

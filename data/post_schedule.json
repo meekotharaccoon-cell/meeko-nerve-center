@@ -1,0 +1,22 @@
+{
+  "updated": "2026-02-27",
+  "current_hour": 19,
+  "optimal_windows": {
+    "mastodon": [
+      9,
+      12,
+      18
+    ],
+    "bluesky": [
+      10,
+      14,
+      19
+    ],
+    "all": [
+      9,
+      12,
+      18
+    ]
+  },
+  "in_window_now": true
+}

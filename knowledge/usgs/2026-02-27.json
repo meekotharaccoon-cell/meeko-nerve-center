@@ -3,10 +3,18 @@
   "count": 10,
   "quakes": [
     {
+      "place": "Drake Passage",
+      "mag": 5.3,
+      "time": "2026-02-27T18:31",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0v7"
+    },
+    {
       "place": "26 km SE of T\u0101ki, India",
       "mag": 5.3,
       "time": "2026-02-27T07:52",
-      "alert": null,
+      "alert": "yellow",
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0pc"
     },
@@ -19,12 +27,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0n7"
     },
     {
-      "place": "273 km SE of Kuril\u2019sk, Russia",
+      "place": "61 km NNW of Hirara, Japan",
       "mag": 5,
-      "time": "2026-02-26T17:04",
+      "time": "2026-02-27T14:48",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ig"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0qv"
     },
     {
       "place": "13 km NNW of San Bartolo, Peru",
@@ -33,6 +41,14 @@
       "alert": null,
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0m0"
+    },
+    {
+      "place": "Southwest Indian Ridge",
+      "mag": 4.9,
+      "time": "2026-02-27T16:17",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0sh"
     },
     {
       "place": "107 km E of Tual, Indonesia",
@@ -51,14 +67,6 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0nl"
     },
     {
-      "place": "51 km NW of Hirara, Japan",
-      "mag": 4.9,
-      "time": "2026-02-26T18:51",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0jt"
-    },
-    {
       "place": "42 km NNW of Hirara, Japan",
       "mag": 4.8,
       "time": "2026-02-27T06:11",
@@ -67,20 +75,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0nu"
     },
     {
-      "place": "52 km NNW of Hirara, Japan",
-      "mag": 4.7,
-      "time": "2026-02-26T23:06",
+      "place": "16 km NNW of Shamakhi, Azerbaijan",
+      "mag": 4.8,
+      "time": "2026-02-27T11:52",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0lv"
-    },
-    {
-      "place": "south of the Fiji Islands",
-      "mag": 4.7,
-      "time": "2026-02-26T15:29",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0gu"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0q7"
     }
   ]
 }

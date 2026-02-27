@@ -12,7 +12,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -27,7 +34,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -42,7 +56,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Sudan",
@@ -57,7 +78,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -72,7 +100,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Gaza",
@@ -87,7 +122,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -102,7 +144,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -117,7 +166,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Gaza",
@@ -132,7 +188,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -147,7 +210,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -162,7 +232,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Sudan",
@@ -177,7 +254,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Gaza",
@@ -192,7 +276,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -207,7 +298,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Sudan",
@@ -222,7 +320,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -237,7 +342,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Gaza",
@@ -252,7 +364,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Sudan",
@@ -267,7 +386,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -282,7 +408,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -297,7 +430,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -312,7 +452,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -327,7 +474,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Sudan",
@@ -342,7 +496,14 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   },
   {
     "crisis": "Congo (DRC)",
@@ -357,6 +518,13 @@
     ],
     "generated": "2026-02-26",
     "status": "queued",
-    "strategy": "rule-based"
+    "strategy": "rule-based",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   }
 ]

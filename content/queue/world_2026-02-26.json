@@ -2,6 +2,13 @@
   {
     "platform": "mastodon",
     "type": "world_signal",
-    "text": "What the world is reading today:\n\u2022 Robert Carradine\n\u2022 .xxx\n\u2022 Martin Short\n\u2022 Nemesio Oseguera Cervantes\n\u2022 Alysa Liu\n\nSource: Wikipedia \u2014 2026-02-26\n#OpenData #WorldSignal"
+    "text": "What the world is reading today:\n\u2022 Robert Carradine\n\u2022 .xxx\n\u2022 Martin Short\n\u2022 Nemesio Oseguera Cervantes\n\u2022 Alysa Liu\n\nSource: Wikipedia \u2014 2026-02-26\n#OpenData #WorldSignal",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   }
 ]
