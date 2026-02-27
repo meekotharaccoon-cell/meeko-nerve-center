@@ -33,6 +33,9 @@ jobs:
       MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
       YOUTUBE_API_KEY:      ${{ secrets.YOUTUBE_API_KEY }}
       GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
+      DISCORD_BOT_TOKEN:    ${{ secrets.DISCORD_BOT_TOKEN }}
+      DISCORD_CHANNEL_ID:   ${{ secrets.DISCORD_CHANNEL_ID }}
+      DISCORD_GUILD_ID:     ${{ secrets.DISCORD_GUILD_ID }}
       FORCE_AUDIT:          "false"
     steps:
       - uses: actions/checkout@v4
@@ -73,6 +76,10 @@ jobs:
 
       - name: Crypto Jobs
         run: python mycelium/crypto_jobs.py
+        continue-on-error: true
+
+      - name: Crypto Signals
+        run: python mycelium/crypto_signals.py
         continue-on-error: true
 
       - name: Content Performance
@@ -138,6 +145,10 @@ jobs:
         run: python mycelium/autonomy_audit.py
         continue-on-error: true
 
+      - name: Portable Deployment
+        run: python mycelium/portable_deployment.py
+        continue-on-error: true
+
       # ── CROSS-CONNECTIONS ─────────────────────────────────
       - name: Cross Engine
         run: python mycelium/cross_engine.py
@@ -150,6 +161,10 @@ jobs:
 
       - name: Outreach Sender
         run: python mycelium/outreach_sender.py
+        continue-on-error: true
+
+      - name: Discord Engine
+        run: python mycelium/discord_engine.py
         continue-on-error: true
 
       # ── RELATIONSHIP MANAGEMENT ───────────────────────────
@@ -170,6 +185,11 @@ jobs:
         run: python mycelium/email_responder.py
         continue-on-error: true
 
+      # ── DAILY INTELLIGENCE REPORT ────────────────────────
+      - name: Daily Status v2
+        run: python mycelium/daily_status_v2.py
+        continue-on-error: true
+
       # ── HOUSEKEEPING ──────────────────────────────────────
       - name: Privacy Scrubber
         run: python mycelium/privacy_scrubber.py
@@ -179,5 +199,5 @@ jobs:
         run: |
           git config user.name "meeko-daily-cycle"
           git config user.email "daily@meeko-nerve-center"
-          git add data/ knowledge/ content/ public/ mycelium/ .github/workflows/ WIRED.md
+          git add data/ knowledge/ content/ public/ mycelium/ .github/workflows/ setup/ WIRED.md DEPLOY.md MANIFESTO.md .replit replit.nix railway.json
           git diff --cached --quiet || git commit -m "daily: full cycle [$(date -u +%Y-%m-%d %H:%M)]" && git push
