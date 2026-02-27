@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Donation Wallets</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: monospace; background: #0d1a0d; color: #c8e0c0; padding: 2rem 1rem; }
+    h2 { color: #7eb87e; margin-bottom: 1.5rem; font-size: 1.3rem; }
+    .wallet-card {
+      background: #1a2a1a;
+      border: 1px solid #2a4a2a;
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .wallet-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+    .network { font-weight: bold; color: #9ed89e; font-size: 1.1rem; }
+    .price { font-size: 0.9rem; }
+    .wallet-note { font-size: 0.8rem; color: #6a8a6a; margin-bottom: 0.8rem; }
+    .qr { display: block; margin: 0.5rem 0; border-radius: 6px; }
+    .addr {
+      font-size: 0.7rem;
+      color: #5a7a5a;
+      word-break: break-all;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: #0a150a;
+      border-radius: 4px;
+    }
+    .actions { display: flex; gap: 0.5rem; margin: 0.5rem 0; flex-wrap: wrap; }
+    .actions button, .actions a {
+      background: #2a4a2a;
+      color: #9ed89e;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .apps { font-size: 0.75rem; color: #4a6a4a; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h2>🪙 Crypto Donation Wallets</h2>
+  
+    <div class="wallet-card">
+      <div class="wallet-header">
+        <span class="network">Solana</span>
+        
+      </div>
+      <div class="wallet-note">Fast transactions, low fees. Great for smaller donations.</div>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v" alt="Solana QR Code" class="qr">
+      <div class="addr" id="addr-SOL">2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v</div>
+      <div class="actions">
+        <button onclick="copyAddr('2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v', 'SOL')">📋 Copy Address</button>
+        <a href="https://explorer.solana.com/address/2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v" target="_blank">🔍 Explorer</a>
+      </div>
+      <div class="apps">Works with: Phantom, Solflare, Coinbase</div>
+    </div>
+    <div class="wallet-card">
+      <div class="wallet-header">
+        <span class="network">Ethereum</span>
+        
+      </div>
+      <div class="wallet-note">Also accepts USDC, USDT, and other ERC-20 tokens.</div>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D" alt="Ethereum QR Code" class="qr">
+      <div class="addr" id="addr-ETH">0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D</div>
+      <div class="actions">
+        <button onclick="copyAddr('0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D', 'ETH')">📋 Copy Address</button>
+        <a href="https://etherscan.io/address/0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D" target="_blank">🔍 Explorer</a>
+      </div>
+      <div class="apps">Works with: MetaMask, Coinbase, Rainbow</div>
+    </div>
+  <script>
+    function copyAddr(addr, sym) {
+      navigator.clipboard.writeText(addr);
+      const el = document.getElementById('addr-' + sym);
+      el.style.color = '#7eb87e';
+      setTimeout(() => el.style.color = '#5a7a5a', 2000);
+    }
+  </script>
+</body>
+</html>

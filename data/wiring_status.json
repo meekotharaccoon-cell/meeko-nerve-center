@@ -1,1 +1,15 @@
-{"meta":{"generated":"bootstrap","note":"Will be overwritten by heartbeat"},"connections":{"space_data":false,"email_layer":false,"local_ollama":false,"github_live":true,"payments_live":false},"local":{},"github":{},"space":{}}
+{
+  "meta": {
+    "generated": "bootstrap",
+    "note": "Will be overwritten by heartbeat"
+  },
+  "connections": {
+    "space_data": false,
+    "local_ollama": false,
+    "github_live": true,
+    "payments_live": false
+  },
+  "local": {},
+  "github": {},
+  "space": {}
+}

@@ -1,17 +1,27 @@
 {
-  "date": "2026-02-26",
-  "messages": [
-    "$10 USD = 3.093321 Israeli Shekels today",
-    "$10 USD = 47.951591 Egyptian Pounds today",
-    "$10 USD = 0.709 Jordanian Dinars today",
-    "$25 USD = roughly 77 shekels \u2014 one week of groceries for a family in Gaza"
-  ],
+  "date": "2026-02-27",
   "rates": {
-    "ILS": 3.093321,
-    "EGP": 47.951591,
+    "EUR": 0.8474,
+    "GBP": 0.7403,
+    "ILS": 3.1197,
     "JOD": 0.709,
-    "EUR": 0.847304,
-    "GBP": 0.738487
+    "EGP": 47.9241,
+    "TRY": 43.9564,
+    "CAD": 1.3679,
+    "AUD": 1.4078,
+    "SAR": 3.75,
+    "AED": 3.6725
   },
-  "source": "open.er-api.com"
+  "messages": [
+    "$5 = 16 Israeli Shekels",
+    "$10 = 31 Israeli Shekels",
+    "$25 = 78 Shekels \u2014 roughly a week of groceries in Gaza",
+    "$10 = 479 Egyptian Pounds",
+    "$10 = \u20ac8.47",
+    "$10 = \u00a37.4"
+  ],
+  "wallets": {
+    "solana": "2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
+    "ethereum": "0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D"
+  }
 }

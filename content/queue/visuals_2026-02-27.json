@@ -1,0 +1,30 @@
+[
+  {
+    "platform": "instagram",
+    "type": "visual_cause",
+    "image_url": "https://picsum.photos/seed/garden-flowers/800/600",
+    "theme": "flowers",
+    "caption": "[Add cause message for flowers theme \u2014 or let hf_brain.py generate one]"
+  },
+  {
+    "platform": "instagram",
+    "type": "visual_cause",
+    "image_url": "https://picsum.photos/seed/solarpunk-hope/800/600",
+    "theme": "hope",
+    "caption": "[Add cause message for hope theme \u2014 or let hf_brain.py generate one]"
+  },
+  {
+    "platform": "instagram",
+    "type": "visual_cause",
+    "image_url": "https://picsum.photos/seed/community-people/800/600",
+    "theme": "community",
+    "caption": "[Add cause message for community theme \u2014 or let hf_brain.py generate one]"
+  },
+  {
+    "platform": "instagram",
+    "type": "visual_cause",
+    "image_url": "https://picsum.photos/seed/solidarity-hands/800/600",
+    "theme": "justice",
+    "caption": "[Add cause message for justice theme \u2014 or let hf_brain.py generate one]"
+  }
+]

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support the Mission</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #1a2a1a;
+      color: #e8e0d0;
+      padding: 2rem 1rem;
+    }
+    h1 { font-size: 1.6rem; color: #9ed89e; margin-bottom: 0.5rem; }
+    .sub { color: #8a9a7a; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .pcrf-note {
+      background: #2a3a2a;
+      border-left: 3px solid #7eb87e;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: #b8d0b0;
+    }
+    .context-rates {
+      font-size: 0.85rem;
+      color: #6a8a6a;
+      margin-bottom: 1.5rem;
+    }
+    .context-rates ul { list-style: none; line-height: 2; }
+    .channels { display: grid; gap: 1rem; }
+    .channel {
+      background: #243024;
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid #3a5a3a;
+    }
+    .channel h3 { font-size: 1rem; color: #9ed89e; margin-bottom: 0.5rem; }
+    .channel .note { font-size: 0.8rem; color: #6a8a6a; margin-bottom: 0.8rem; }
+    .channel a, .channel button {
+      display: inline-block;
+      background: #3a6a3a;
+      color: #c8e8c8;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .wallet-addr {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: #8aaa8a;
+      margin: 0.5rem 0;
+      word-break: break-all;
+    }
+    .wallet-qr { display: block; margin: 0.5rem 0; border-radius: 6px; }
+    .copied { color: #7eb87e !important; }
+  </style>
+</head>
+<body>
+  <h1>🌿 Support the Mission</h1>
+  <div class="sub">Every contribution funds Palestinian children and open source liberation tools.</div>
+  
+  <div class="pcrf-note">
+    🏵 <strong>Gaza Rose Art:</strong> 70% of every sale goes directly to PCRF (Palestinian Children's Relief Fund).<br>
+    <a href="https://pcrf.net" target="_blank" style="color:#9ed89e">pcrf.net</a>
+  </div>
+  
+  <div class="context-rates">
+    <strong>Your donation today:</strong>
+    <ul><li>$5 = 16 Israeli Shekels</li><li>$10 = 31 Israeli Shekels</li><li>$25 = 78 Shekels — roughly a week of groceries in Gaza</li></ul>
+  </div>
+  
+  <div class="channels">
+    <div class="channel">
+      <h3>💌 Ko-fi — Easiest</h3>
+      <div class="note">Card, PayPal, one-time or monthly. Most accessible.</div>
+      <a href="https://ko-fi.com" target="_blank">Support on Ko-fi →</a>
+    </div>
+    
+    <div class="channel">
+      <h3>🏺 Gaza Rose Art — 70% to PCRF</h3>
+      <div class="note">Buy art. Fund Palestinian children directly.</div>
+      <a href="https://gumroad.com" target="_blank">See Gaza Rose Gallery →</a>
+    </div>
+    
+      <div class="wallet">
+        <div class="wallet-label">SOL (Solana)</div>
+        <div class="wallet-addr">2eSY3s96m9YC8D9UeMmV...</div>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v" alt="Solana QR" class="wallet-qr">
+        <button onclick="copyAddr('2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v')">Copy Address</button>
+      </div>
+    
+      <div class="wallet">
+        <div class="wallet-label">ETH / USDC (Ethereum)</div>
+        <div class="wallet-addr">0xeA0C219BF26021adD3...</div>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D" alt="Ethereum QR" class="wallet-qr">
+        <button onclick="copyAddr('0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D')">Copy Address</button>
+      </div>
+  </div>
+  
+  <script>
+    function copyAddr(addr) {
+      navigator.clipboard.writeText(addr).then(() => {
+        event.target.textContent = '✓ Copied!';
+        event.target.classList.add('copied');
+        setTimeout(() => {
+          event.target.textContent = 'Copy Address';
+          event.target.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

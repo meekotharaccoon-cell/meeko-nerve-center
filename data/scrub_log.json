@@ -1,0 +1,45 @@
+{
+  "scrubs": [
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/wiring_status.json",
+      "reason": "Sensitive keys found and removed: ['email']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/jobs_today.json",
+      "reason": "Sensitive keys found and removed: ['location']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/briefing_data.json",
+      "reason": "Sensitive keys found and removed: ['email']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/consolidated_knowledge.json",
+      "reason": "Sensitive keys found and removed: ['email', 'password', 'token', 'secret', 'address']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/draft_emails.json",
+      "reason": "Sensitive keys found and removed: ['email']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/system_state.json",
+      "reason": "Sensitive keys found and removed: ['secret']",
+      "when": "2026-02-27T06:29:07.375063"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/jobs_today.json",
+      "reason": "Sensitive keys found and removed: ['location']",
+      "when": "2026-02-27T09:07:23.278157"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/outreach_queue.json",
+      "reason": "Sensitive keys found and removed: ['email', 'tracking']",
+      "when": "2026-02-27T09:07:23.278157"
+    }
+  ],
+  "total_scrubbed": 8
+}

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-27T10:35:27.354718+00:00",
+  "generated": "2026-02-27T10:35:34.337266+00:00",
   "scripts": [
     "api_directory_harvester.py",
     "appointment_guardian.py",
@@ -51,6 +51,7 @@
     "open_library_reader.py",
     "ORCHESTRATOR.py",
     "outreach_emails.py",
+    "outreach_sender.py",
     "privacy_scrubber.py",
     "publish_devto.py",
     "pulse.py",
@@ -132,6 +133,7 @@
     "mailer_pro.py",
     "monetization_tracker.py",
     "network_node.py",
+    "outreach_sender.py",
     "system_consolidator.py"
   ],
   "missing_capabilities": [
