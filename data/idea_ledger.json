@@ -568,14 +568,14 @@
       "outputs": [],
       "mission": 5,
       "feasibility": 7,
-      "status": "untested",
-      "result": null,
-      "learning": "Auto-generated alternative to: Correlate BTC price changes with Wikipedia trending topics (market sentiment signal)",
+      "status": "passed",
+      "result": "Directory exists with 59 files",
+      "learning": "Confirmed viable on 2026-02-27. Ready to wire into daily cycle.",
       "test": "check_file_exists",
       "test_target": "",
       "alternative": null,
       "created": "2026-02-27T00:34:39.461120",
-      "tested": null
+      "tested": "2026-02-27T06:06:29.335776"
     }
   },
   "runs": [
@@ -599,11 +599,18 @@
       "passed": 2,
       "failed": 1,
       "new_alternatives": 1
+    },
+    {
+      "date": "2026-02-27",
+      "tested": 1,
+      "passed": 1,
+      "failed": 0,
+      "new_alternatives": 0
     }
   ],
   "stats": {
-    "tested": 23,
-    "passed": 18,
+    "tested": 24,
+    "passed": 19,
     "failed": 5,
     "dead_ends": 0
   }

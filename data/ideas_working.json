@@ -427,5 +427,25 @@
     "alternative": null,
     "created": "2026-02-26T21:05:50.272969",
     "tested": "2026-02-27T00:34:39.461120"
+  },
+  {
+    "id": "b654ffaeb076",
+    "title": "Use Reddit r/bitcoin sentiment instead",
+    "category": "intelligence",
+    "apis": [],
+    "inputs": [
+      "knowledge/intelligence/btc_sentiment.json"
+    ],
+    "outputs": [],
+    "mission": 5,
+    "feasibility": 7,
+    "status": "passed",
+    "result": "Directory exists with 59 files",
+    "learning": "Confirmed viable on 2026-02-27. Ready to wire into daily cycle.",
+    "test": "check_file_exists",
+    "test_target": "",
+    "alternative": null,
+    "created": "2026-02-27T00:34:39.461120",
+    "tested": "2026-02-27T06:06:29.335776"
   }
 ]
