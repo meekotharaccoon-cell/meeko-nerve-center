@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 16:13 UTC — feat: full email autonomy (reply to all, inform dont involve) + autonomy audit engine*
+*Auto-updated by the system. Last update: 2026-02-27 16:15 UTC — feat: wire autonomy audit into daily cycle (runs Sundays, closures highest-impact gap each week)*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
