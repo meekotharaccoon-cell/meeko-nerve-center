@@ -1,10 +1,10 @@
-name: \U0001f30d Daily Full Cycle
+name: Daily Full Cycle
 
 on:
   schedule:
-    - cron: '0 3 * * *'   # 3am UTC — idea engine
-    - cron: '0 6 * * *'   # 6am — all API tools
-    - cron: '0 7 * * *'   # 7am — AI brain + visuals + language
+    - cron: '0 3 * * *'
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,69 +13,75 @@ jobs:
     permissions:
       contents: write
     env:
-      HF_TOKEN:          ${{ secrets.HF_TOKEN }}
-      TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
-      TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
-      EXCHANGE_RATE_API: ${{ secrets.EXCHANGE_RATE_API }}
-      SOLANA_WALLET:     ${{ secrets.SOLANA_WALLET }}
-      ETHEREUM_WALLET:   ${{ secrets.ETHEREUM_WALLET }}
-      KOFI_TOKEN:        ${{ secrets.KOFI_TOKEN }}
+      HF_TOKEN:             ${{ secrets.HF_TOKEN }}
+      TELEGRAM_TOKEN:       ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID:     ${{ secrets.TELEGRAM_CHAT_ID }}
+      EXCHANGE_RATE_API:    ${{ secrets.EXCHANGE_RATE_API }}
+      SOLANA_WALLET:        ${{ secrets.SOLANA_WALLET }}
+      ETHEREUM_WALLET:      ${{ secrets.ETHEREUM_WALLET }}
+      KOFI_TOKEN:           ${{ secrets.KOFI_TOKEN }}
+      GMAIL_ADDRESS:        ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: \U0001f9e0 Idea Engine
+      - name: Idea Engine
         run: python mycelium/idea_engine.py
         continue-on-error: true
 
-      - name: \U0001f528 Idea Builder
+      - name: Idea Builder
         run: python mycelium/idea_builder.py
         continue-on-error: true
 
-      - name: \U0001f33e Knowledge Harvest
+      - name: Knowledge Harvest
         run: python mycelium/knowledge_harvester_v2.py
         continue-on-error: true
 
-      - name: \U0001f4e1 World Intelligence
+      - name: World Intelligence
         run: python mycelium/world_intelligence.py
         continue-on-error: true
 
-      - name: \U0001f4b0 Donation Engine
+      - name: Donation Engine
         run: python mycelium/donation_engine.py
         continue-on-error: true
 
-      - name: \U0001fa99 Crypto Wallets
+      - name: Crypto Wallets
         run: python mycelium/crypto_wallet_display.py
         continue-on-error: true
 
-      - name: \U0001f4bc Crypto Jobs
+      - name: Crypto Jobs
         run: python mycelium/crypto_jobs.py
         continue-on-error: true
 
-      - name: \U0001f3a8 Art + Cause
+      - name: Art + Cause
         run: python mycelium/art_cause_generator.py
         continue-on-error: true
 
-      - name: \U0001f4da Open Library
+      - name: Open Library
         run: python mycelium/open_library_reader.py
         continue-on-error: true
 
-      - name: \U0001f3b5 Music Intelligence
+      - name: Music Intelligence
         run: python mycelium/music_intelligence.py
         continue-on-error: true
 
-      - name: \U0001f916 HF Brain
+      - name: HF Brain
         run: python mycelium/hf_brain.py
         continue-on-error: true
 
-      - name: \U0001f5bc\ufe0f Visual Content
+      - name: Visual Content
         run: python mycelium/visual_content.py
         continue-on-error: true
 
-      - name: \U0001f4d6 Language Engine
+      - name: Language Engine
         run: python mycelium/language_engine.py
         continue-on-error: true
 
-      - name: \U0001f512 Privacy Scrubber
+      - name: Gmail Engine
+        run: python mycelium/gmail_engine.py
+        continue-on-error: true
+
+      - name: Privacy Scrubber
         run: python mycelium/privacy_scrubber.py
         continue-on-error: true
 
