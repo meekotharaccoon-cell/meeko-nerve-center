@@ -32,6 +32,7 @@ jobs:
       MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
       YOUTUBE_API_KEY:      ${{ secrets.YOUTUBE_API_KEY }}
       GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
+      FORCE_AUDIT:          "false"
     steps:
       - uses: actions/checkout@v4
 
@@ -93,6 +94,10 @@ jobs:
 
       - name: Self-Evolution Engine
         run: python mycelium/self_evolution.py
+        continue-on-error: true
+
+      - name: Autonomy Audit
+        run: python mycelium/autonomy_audit.py
         continue-on-error: true
 
       - name: Cross Engine
