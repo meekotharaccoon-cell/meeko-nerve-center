@@ -22,6 +22,13 @@ jobs:
       KOFI_TOKEN:           ${{ secrets.KOFI_TOKEN }}
       GMAIL_ADDRESS:        ${{ secrets.GMAIL_ADDRESS }}
       GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
+      BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
+      BLUESKY_PASSWORD:     ${{ secrets.BLUESKY_PASSWORD }}
+      MASTODON_KEY:         ${{ secrets.MASTODON_KEY }}
+      MASTODON_SECRET:      ${{ secrets.MASTODON_SECRET }}
+      MASTODON_TOKEN:       ${{ secrets.MASTODON_TOKEN }}
+      MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
+      YOUTUBE_API_KEY:      ${{ secrets.YOUTUBE_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -73,8 +80,20 @@ jobs:
         run: python mycelium/visual_content.py
         continue-on-error: true
 
+      - name: Video Engine
+        run: python mycelium/video_engine.py
+        continue-on-error: true
+
       - name: Language Engine
         run: python mycelium/language_engine.py
+        continue-on-error: true
+
+      - name: Social Engine
+        run: python mycelium/social_engine.py
+        continue-on-error: true
+
+      - name: Outreach Sender
+        run: python mycelium/outreach_sender.py
         continue-on-error: true
 
       - name: Gmail Engine

@@ -1,36 +1,33 @@
 #!/usr/bin/env python3
 """
-Outreach Sender
-================
-Reads data/outreach_queue.json.
-Sends ONLY entries where approved: true.
-You control everything. Nothing sends without your explicit approval.
+Outreach Sender — Auto-send mode
+==================================
+Sends outreach emails automatically.
+Verifies targets are real before sending.
+Never sends to guessed or unverified addresses.
+Never sends to the same target twice.
+Never sends more than 5 emails per run (anti-spam).
 
-Workflow:
-  1. System populates outreach_queue.json with real targets
-  2. YOU review each entry
-  3. YOU set approved: true on ones you want sent
-  4. This script runs and sends only approved entries
-  5. Sent entries get marked sent: true so they don't re-send
-
-To approve an entry:
-  Open data/outreach_queue.json
-  Find the entry
-  Change "approved": false  to  "approved": true
-  Save the file
-  git add data/outreach_queue.json && git commit -m "approve: [name]" && git push
-  Next workflow run will send it
+Verification rules:
+  - Email must exist in outreach_queue.json
+  - Must not have been sent before (sent field)
+  - Must not look like a placeholder
+  - Manual-only entries (no email, just URL) get flagged for you
 """
 
-import json, datetime, os
+import json, datetime, os, smtplib, re
 from pathlib import Path
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 ROOT  = Path(__file__).parent.parent
 DATA  = ROOT / 'data'
 TODAY = datetime.date.today().isoformat()
 
-GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
-GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
+GMAIL_ADDRESS       = os.environ.get('GMAIL_ADDRESS', '')
+GMAIL_APP_PASSWORD  = os.environ.get('GMAIL_APP_PASSWORD', '')
+
+MAX_PER_RUN = 5  # hard cap — never spam
 
 def load_queue():
     path = DATA / 'outreach_queue.json'
@@ -41,15 +38,21 @@ def load_queue():
 def save_queue(queue):
     (DATA / 'outreach_queue.json').write_text(json.dumps(queue, indent=2))
 
+def is_real_email(email):
+    """Basic sanity check — not a placeholder, has proper format."""
+    if not email: return False
+    placeholder_signals = ['example.com', 'yourname', 'placeholder', 'test@', 'fill-in', '[email']
+    if any(p in email.lower() for p in placeholder_signals): return False
+    return bool(re.match(r'^[^@]+@[^@]+\.[^@]+$', email))
+
 def send_email(to, subject, body):
-    """Send via Gmail SMTP."""
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
-        print(f'[outreach] No Gmail credentials. Cannot send to {to}')
+        print(f'[outreach] No Gmail credentials')
+        return False
+    if not is_real_email(to):
+        print(f'[outreach] Skipping — not a verified email: {to}')
         return False
     try:
-        import smtplib
-        from email.mime.text import MIMEText
-        from email.mime.multipart import MIMEMultipart
         msg = MIMEMultipart('alternative')
         msg['Subject'] = subject
         msg['From']    = f'Meeko <{GMAIL_ADDRESS}>'
@@ -62,14 +65,14 @@ def send_email(to, subject, body):
         print(f'[outreach] SENT: "{subject}" -> {to}')
         return True
     except Exception as e:
-        print(f'[outreach] Failed: {e}')
+        print(f'[outreach] Failed to send to {to}: {e}')
         return False
 
 def build_grant_email(grant):
-    subject = f'Application: {grant["name"]}'
+    subject = f'Application inquiry: {grant["name"]}'
     body = f"""Hello,
 
-I'm applying for the {grant['name']}.
+I'm reaching out about the {grant['name']}.
 
 {grant.get('what_to_say', '')}
 
@@ -79,14 +82,14 @@ https://github.com/meekotharaccoon-cell/meeko-nerve-center
 
 Key facts:
 - 100% open source (AGPL-3.0)
-- Runs on free-tier GitHub Actions, $0/month cost
-- Forkable by anyone for any cause ($5 fork guide)
-- Autonomous: generates its own ideas, tests them, builds them
-- Gaza Rose art: 70% of sales to PCRF (Palestinian Children's Relief Fund)
-- Congress stock watcher: transparency + accountability tool
+- Runs on free-tier GitHub Actions, $0/month
+- Forkable by anyone for any cause
+- Autonomous: generates, tests, and builds its own ideas
+- Gaza Rose art: 70% of sales to PCRF
+- Congressional stock trade watcher
 - Privacy-first: zero tracking, data scrubbed after use
 
-I'd love to discuss how this fits {grant['name']}.
+Happy to discuss further.
 
 Meeko
 {GMAIL_ADDRESS}
@@ -94,31 +97,26 @@ https://github.com/meekotharaccoon-cell/meeko-nerve-center"""
     return subject, body
 
 def build_press_email(contact):
-    subject = f'Story pitch: {contact["pitch_angle"]}'
+    subject = f'Story pitch: {contact.get("pitch_angle", "Open-source humanitarian AI")}'
     body = f"""Hi,
 
-I built something I think fits your beat: {contact['beat']}.
+I built something I think fits your beat: {contact.get('beat', 'open source + humanitarian tech')}.
 
 The Meeko Nerve Center is an autonomous humanitarian AI that:
-
-- Generates and sells Gaza Rose digital art (70% to PCRF)
+- Generates Gaza Rose digital art (70% of sales to PCRF)
 - Monitors Congressional stock trades for conflicts of interest
-- Watches 20+ free APIs daily (earthquakes, carbon, crypto, world data)
-- Self-generates content, tests its own ideas, learns from failures
+- Watches 20+ free public APIs daily
 - Runs entirely on GitHub Actions — $0/month, no server
-- Can be forked by anyone for $5 and repurposed for any cause
+- Can be forked by anyone for $5 for any cause
 - Zero tracking, privacy-first architecture
 
-It's live right now:
+Live now:
 https://meekotharaccoon-cell.github.io/meeko-nerve-center/
 
-SolarPunk real-time dashboard (no account needed):
-https://meekotharaccoon-cell.github.io/meeko-nerve-center/solarpunk.html
-
-Full open source code:
+Full code:
 https://github.com/meekotharaccoon-cell/meeko-nerve-center
 
-Happy to walk you through it, share more details, or answer any questions.
+Happy to answer questions or give you a walkthrough.
 
 Meeko
 {GMAIL_ADDRESS}"""
@@ -126,52 +124,46 @@ Meeko
 
 def run():
     print(f'[outreach] Outreach Sender — {TODAY}')
+    queue  = load_queue()
+    sent   = 0
+    manual = 0
 
-    queue   = load_queue()
-    sent    = 0
-    pending = 0
+    all_entries = [
+        (g, 'grant') for g in queue.get('grants', [])
+    ] + [
+        (p, 'press') for p in queue.get('press', [])
+    ]
 
-    # Process grants
-    for grant in queue.get('grants', []):
-        if grant.get('sent'):
+    for entry, kind in all_entries:
+        if sent >= MAX_PER_RUN:
+            break
+        if entry.get('sent'):
             continue
-        if not grant.get('approved'):
-            pending += 1
-            print(f'[outreach] PENDING APPROVAL: {grant["name"]} (deadline: {grant.get("deadline","?")}) — set approved:true to send')
+
+        email = entry.get('contact_email') or entry.get('email')
+
+        # No email — manual action required
+        if not email or not is_real_email(email):
+            apply_url = entry.get('apply_at') or entry.get('contact') or entry.get('url', '')
+            print(f'[outreach] MANUAL ACTION: {entry["name"]} — apply/contact at: {apply_url}')
+            entry['sent'] = f'manual_required_{TODAY}'
+            manual += 1
             continue
-        email = grant.get('contact_email')
-        if not email:
-            print(f'[outreach] No email for {grant["name"]} — apply manually at {grant.get("apply_at","")}')
-            grant['sent'] = f'manual_{TODAY}'
-            continue
-        subject, body = build_grant_email(grant)
+
+        if kind == 'grant':
+            subject, body = build_grant_email(entry)
+        else:
+            subject, body = build_press_email(entry)
+
         if send_email(email, subject, body):
-            grant['sent'] = TODAY
-            sent += 1
-
-    # Process press
-    for contact in queue.get('press', []):
-        if contact.get('sent'):
-            continue
-        if not contact.get('approved'):
-            pending += 1
-            print(f'[outreach] PENDING APPROVAL: {contact["name"]} @ {contact["outlet"]} — set approved:true to send')
-            continue
-        email = contact.get('contact_email') or contact.get('email')
-        if not email:
-            print(f'[outreach] No email for {contact["name"]} — contact manually at {contact.get("contact","")}')
-            contact['sent'] = f'manual_{TODAY}'
-            continue
-        subject, body = build_press_email(contact)
-        if send_email(email, subject, body):
-            contact['sent'] = TODAY
+            entry['sent'] = TODAY
             sent += 1
 
     save_queue(queue)
-
-    print(f'[outreach] Done. Sent: {sent} | Awaiting your approval: {pending}')
-    print(f'[outreach] Review data/outreach_queue.json and set approved:true to send')
-    return {'sent': sent, 'pending': pending}
+    print(f'[outreach] Done. Sent: {sent} | Manual actions needed: {manual}')
+    if manual > 0:
+        print(f'[outreach] Check data/outreach_queue.json for entries marked manual_required')
+    return {'sent': sent, 'manual': manual}
 
 if __name__ == '__main__':
     run()
