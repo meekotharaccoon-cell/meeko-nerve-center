@@ -53,6 +53,41 @@
       "moved": 0,
       "moved_files": [],
       "errors": []
+    },
+    {
+      "at": "2026-02-27T03:56:31.689830+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-27T07:39:08.716968+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-27T07:39:08.807746+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-27T10:35:27.295630+00:00",
+      "moved": 2,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260227_024020",
+          "to": "BACKUPS\\BACKUP_20260227_024020",
+          "reason": "backup directory"
+        },
+        {
+          "file": "Discord PTB.lnk",
+          "to": "Shortcuts\\Discord PTB.lnk",
+          "reason": "shortcut"
+        }
+      ],
+      "errors": []
     }
   ]
 }

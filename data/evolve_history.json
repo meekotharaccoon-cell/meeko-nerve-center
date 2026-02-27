@@ -100,17 +100,55 @@
         "DEVTO"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 9,
+      "gen": 9,
+      "at": "2026-02-26T22:56:30.954441",
+      "built": "audit_data",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 10,
+      "gen": 10,
+      "at": "2026-02-27T02:39:07.910767",
+      "built": "clean_desktop",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 11,
+      "gen": 11,
+      "at": "2026-02-27T05:35:26.450400",
+      "built": "index_lessons",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
-    "index_lessons",
-    "gen_changelog",
-    "scan_assets",
-    "consolidate",
-    "map_connections",
-    "signal_tracker",
-    "seo_ping",
-    "verify_workflows"
+    "index_lessons"
   ],
-  "gen": 9
+  "gen": 12
 }
