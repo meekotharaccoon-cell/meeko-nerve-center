@@ -89,6 +89,10 @@ jobs:
         run: python mycelium/language_engine.py
         continue-on-error: true
 
+      - name: Self-Evolution Engine
+        run: python mycelium/self_evolution.py
+        continue-on-error: true
+
       - name: Cross Engine
         run: python mycelium/cross_engine.py
         continue-on-error: true
@@ -113,5 +117,5 @@ jobs:
         run: |
           git config user.name "meeko-daily-cycle"
           git config user.email "daily@meeko-nerve-center"
-          git add data/ knowledge/ content/ public/ mycelium/IDEAS.md WIRED.md
+          git add data/ knowledge/ content/ public/ mycelium/ .github/workflows/ WIRED.md
           git diff --cached --quiet || git commit -m "daily: full cycle [$(date -u +%Y-%m-%d %H:%M)]" && git push
