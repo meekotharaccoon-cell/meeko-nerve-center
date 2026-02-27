@@ -1,10 +1,11 @@
 {
-  "updated": "2026-02-27 06:12 UTC",
-  "last_commit": "feat: donation engine + wallet display + kofi webhook + exchange rates \u2014 all secrets wired in",
-  "last_commit_date": "2026-02-27 01:12:44 -0500",
-  "tracked_files": 235,
+  "updated": "2026-02-27 11:24 UTC",
+  "last_commit": "feat: social engine (Bluesky+Mastodon), video engine (CogVideoX/LTX), auto outreach, full workflow",
+  "last_commit_date": "2026-02-27 06:24:09 -0500",
+  "tracked_files": 250,
   "system": "meeko-nerve-center",
   "status": "ACTIVE",
+  "gmail_secret": "MISSING",
   "local_bridge": "NOT_YET_RUN",
   "mcp_config": "NOT_YET_RUN"
 }
