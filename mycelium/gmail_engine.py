@@ -3,29 +3,9 @@
 Gmail Engine
 =============
 Automated email via Gmail SMTP + App Password.
-No third-party service. No monthly fee. Your Gmail. Your control.
-
-Use cases:
-  1. SYSTEM STATUS EMAIL     - daily digest to yourself
-  2. DONOR THANK-YOUS        - when Ko-fi events come in
-  3. PRESS OUTREACH          - Gaza Rose to journalists/bloggers
-  4. FORK NOTIFICATIONS      - when someone forks the repo
-  5. NEWSLETTER              - weekly digest to subscribers
-  6. ALERTS                  - when idea engine finds something important
-
-Privacy:
-  - Recipient emails used ONLY to send the email
-  - Not stored beyond the send operation
-  - Subscriber list (if any) lives in data/subscribers.json
-    and is scrubbed on request
-  - NEVER shared, sold, or passed to third parties
-
-Requires:
-  - GMAIL_ADDRESS     your Gmail address
-  - GMAIL_APP_PASSWORD  16-char app password from myaccount.google.com/apppasswords
 """
 
-import json, datetime, os, smtplib
+import json, datetime, os, smtplib, html, re
 from pathlib import Path
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -36,33 +16,73 @@ DATA  = ROOT / 'data'
 KB    = ROOT / 'knowledge'
 
 TODAY = datetime.date.today().isoformat()
+DAY_OF_YEAR = datetime.date.today().timetuple().tm_yday
 
-GMAIL_ADDRESS     = os.environ.get('GMAIL_ADDRESS', '')
+GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
 GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
 
 SMTP_HOST = 'smtp.gmail.com'
 SMTP_PORT = 587
 
-# ── Core send function ────────────────────────────────────────────────────────
+# ── Utilities ─────────────────────────────────────────────────────────────────
+
+def clean_html_entities(text):
+    """Decode HTML entities fully, including double-encoded ones like &amp;#8211;"""
+    if not text:
+        return text
+    # Unescape twice to handle double-encoding (&amp;#8211; -> &#8211; -> –)
+    cleaned = html.unescape(html.unescape(str(text)))
+    return cleaned
+
+def fetch_json(url, timeout=10):
+    try:
+        req = urllib_request.Request(url, headers={'User-Agent': 'meeko-gmail/1.0'})
+        with urllib_request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read())
+    except:
+        return None
+
+def get_live_crypto():
+    """Fetch crypto prices directly if world_state has an empty array."""
+    # Try CoinGecko
+    cg = fetch_json('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,solana&vs_currencies=usd&include_24hr_change=true')
+    if cg:
+        result = {}
+        if 'bitcoin' in cg:
+            result['BTC'] = {
+                'price': round(float(cg['bitcoin'].get('usd', 0)), 2),
+                'change_24h': round(float(cg['bitcoin'].get('usd_24h_change', 0)), 2),
+            }
+        if 'solana' in cg:
+            result['SOL'] = {
+                'price': round(float(cg['solana'].get('usd', 0)), 2),
+                'change_24h': round(float(cg['solana'].get('usd_24h_change', 0)), 2),
+            }
+        return result
+    # Binance fallback
+    result = {}
+    for sym, pair in [('BTC','BTCUSDT'), ('SOL','SOLUSDT')]:
+        d = fetch_json(f'https://api.binance.com/api/v3/ticker/24hr?symbol={pair}')
+        if d:
+            result[sym] = {
+                'price': round(float(d.get('lastPrice', 0)), 2),
+                'change_24h': round(float(d.get('priceChangePercent', 0)), 2),
+            }
+    return result
+
+# ── Core send ─────────────────────────────────────────────────────────────────
 
 def send_email(to, subject, body_text, body_html=None, from_name='Meeko Nerve Center'):
-    """
-    Send an email via Gmail SMTP.
-    Returns True if sent, False if failed.
-    """
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
-        print('[gmail] No credentials. Set GMAIL_ADDRESS and GMAIL_APP_PASSWORD secrets.')
+        print('[gmail] No credentials.')
         return False
-
     msg = MIMEMultipart('alternative')
     msg['Subject'] = subject
     msg['From']    = f'{from_name} <{GMAIL_ADDRESS}>'
     msg['To']      = to
-
     msg.attach(MIMEText(body_text, 'plain'))
     if body_html:
         msg.attach(MIMEText(body_html, 'html'))
-
     try:
         with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
             server.ehlo()
@@ -75,13 +95,9 @@ def send_email(to, subject, body_text, body_html=None, from_name='Meeko Nerve Ce
         print(f'[gmail] Send failed: {e}')
         return False
 
-# ── Email templates ───────────────────────────────────────────────────────────
+# ── Daily status ──────────────────────────────────────────────────────────────
 
 def send_daily_status():
-    """
-    Send yourself a daily system status digest.
-    Pulls from knowledge digests and data files.
-    """
     if not GMAIL_ADDRESS:
         return False
 
@@ -93,24 +109,54 @@ def send_daily_status():
         insight = insight_path.read_text().split('\n', 2)[-1][:500]
         sections += ['\n🧠 AI INSIGHT', insight]
 
-    # World state snapshot
+    # Market: crypto prices
     world_path = DATA / 'world_state.json'
-    if world_path.exists():
-        try:
+    sections.append('\n📡 MARKET')
+    crypto_data = {}
+    try:
+        if world_path.exists():
             world = json.loads(world_path.read_text())
-            crypto = world.get('crypto', [])
-            btc = next((c for c in crypto if c['symbol'] == 'BTC'), None)
-            sol = next((c for c in crypto if c['symbol'] == 'SOL'), None)
-            lines = ['\n📡 MARKET']
-            if btc: lines.append(f'  BTC: ${btc["price"]:,} ({btc["change_24h"]:+.1f}%)')
-            if sol: lines.append(f'  SOL: ${sol["price"]} ({sol["change_24h"]:+.1f}%)')
-            wiki = world.get('wikipedia_trending', [])
-            if wiki: lines.append(f'  Trending: {wiki[0]["title"]} ({wiki[0]["views"]:,} views)')
-            sections += lines
-        except:
-            pass
+            crypto_list = world.get('crypto', [])
 
-    # Congress flags
+            # If world_state has actual data, use it
+            if crypto_list:
+                btc = next((c for c in crypto_list if c.get('symbol') == 'BTC'), None)
+                sol = next((c for c in crypto_list if c.get('symbol') == 'SOL'), None)
+                if btc:
+                    crypto_data['BTC'] = {'price': btc['price'], 'change_24h': btc['change_24h']}
+                if sol:
+                    crypto_data['SOL'] = {'price': sol['price'], 'change_24h': sol['change_24h']}
+
+        # If world_state crypto was empty, fetch live right now
+        if not crypto_data:
+            print('[gmail] world_state crypto empty — fetching live')
+            crypto_data = get_live_crypto()
+
+        if crypto_data.get('BTC'):
+            b = crypto_data['BTC']
+            sections.append(f"  BTC: ${b['price']:,.2f} ({b['change_24h']:+.2f}%)")
+        if crypto_data.get('SOL'):
+            s = crypto_data['SOL']
+            sections.append(f"  SOL: ${s['price']:,.2f} ({s['change_24h']:+.2f}%)")
+
+        # Wikipedia trending — filtered
+        DOMAIN_EXT = re.compile(r'^\.\w{2,6}$')
+        SKIP_WORDS = ['erotic', 'pornograph', 'xxx', 'sexual', 'nude', 'onlyfans', 'adult film']
+        if world_path.exists():
+            wiki = world.get('wikipedia_trending', [])
+            clean_wiki = [
+                a for a in wiki
+                if not DOMAIN_EXT.match(a.get('title', ''))
+                and not any(w in a.get('title', '').lower() for w in SKIP_WORDS)
+            ]
+            if clean_wiki:
+                top = clean_wiki[0]
+                sections.append(f"  Trending: {top['title']} ({top['views']:,} views)")
+
+    except Exception as e:
+        sections.append(f'  (Market data unavailable: {e})')
+
+    # Congress
     congress_path = DATA / 'congress.json'
     if congress_path.exists():
         try:
@@ -123,47 +169,69 @@ def send_daily_status():
         except:
             pass
 
-    # Ideas status
+    # Ideas — compute live from ledger, not stale stats object
     ledger_path = DATA / 'idea_ledger.json'
     if ledger_path.exists():
         try:
             ledger = json.loads(ledger_path.read_text())
-            stats = ledger.get('stats', {})
-            sections.append(f'\n💡 IDEAS: {stats.get("tested",0)} tested | {stats.get("passed",0)} passed | {stats.get("failed",0)} failed')
-        except:
-            pass
+            ideas  = ledger.get('ideas', {})
 
-    # Jobs
+            # ideas can be a dict (id->obj) or a list — handle both
+            if isinstance(ideas, dict):
+                idea_list = list(ideas.values())
+            else:
+                idea_list = ideas
+
+            total  = len(idea_list)
+            passed = sum(1 for i in idea_list if i.get('status') in ('passed','wired'))
+            failed = sum(1 for i in idea_list if i.get('status') == 'failed')
+
+            # Count what happened specifically TODAY
+            today_tested = sum(1 for i in idea_list if (i.get('tested') or '')[:10] == TODAY)
+            today_passed = sum(1 for i in idea_list if (i.get('tested') or '')[:10] == TODAY and i.get('status') in ('passed','wired'))
+
+            if today_tested > 0:
+                sections.append(f'\n💡 IDEAS: {total} total | {passed} passed | {failed} failed')
+                sections.append(f'   Today: {today_tested} tested, {today_passed} passed')
+            else:
+                sections.append(f'\n💡 IDEAS: {total} total | {passed} passed | {failed} failed')
+                sections.append(f'   (No new tests today — engine generated no new ideas this run)')
+        except Exception as e:
+            sections.append(f'\n💡 IDEAS: (error reading ledger: {e})')
+
+    # Jobs — rotate by day, decode HTML entities
     jobs_path = DATA / 'jobs_today.json'
     if jobs_path.exists():
         try:
             jobs = json.loads(jobs_path.read_text())
             crypto_jobs = jobs.get('crypto_jobs', [])
             if crypto_jobs:
-                sections.append(f'\n💼 TOP CRYPTO JOB: {crypto_jobs[0]["title"]} @ {crypto_jobs[0]["company"]}')
-                sections.append(f'  {crypto_jobs[0].get("url","")}')
-        except:
-            pass
+                # Rotate: use day-of-year mod len so it changes daily
+                idx = DAY_OF_YEAR % len(crypto_jobs)
+                job = crypto_jobs[idx]
+                title   = clean_html_entities(job.get('title', ''))
+                company = clean_html_entities(job.get('company', ''))
+                url     = job.get('url', '')
+                sections.append(f'\n💼 TOP CRYPTO JOB: {title} @ {company}')
+                sections.append(f'  {url}')
+        except Exception as e:
+            sections.append(f'\n💼 JOBS: (error: {e})')
 
     sections.append('\n' + '=' * 50)
     sections.append('Meeko Nerve Center — github.com/meekotharaccoon-cell/meeko-nerve-center')
-    sections.append('Unsubscribe: just reply "stop" and I will.')
+    sections.append('Reply "stop" to unsubscribe.')
 
     body = '\n'.join(sections)
-
     return send_email(
-        to      = GMAIL_ADDRESS,  # send to yourself
-        subject = f'🌿 Nerve Center Status — {TODAY}',
+        to        = GMAIL_ADDRESS,
+        subject   = f'🌿 Nerve Center — {TODAY}',
         body_text = body,
     )
 
-def send_donor_thankyou(donor_email, amount, currency='USD', message=''):
-    """
-    Send a personal thank-you to a Ko-fi donor.
-    Called when kofi_webhook.py processes a donation event.
-    """
-    pcrf = round(amount * 0.70, 2)
+# ── Donor thank-you ───────────────────────────────────────────────────────────
 
+def send_donor_thankyou(donor_email, amount, currency='USD', message=''):
+    pcrf = round(amount * 0.70, 2)
     text = f"""Hey,
 
 Seriously — thank you.
@@ -171,21 +239,17 @@ Seriously — thank you.
 Your ${amount:.2f} {currency} just became ${pcrf:.2f} going directly to
 Palestinian children through PCRF (Palestinian Children's Relief Fund).
 
-That's not a metaphor. That's real money to real kids.
+{'You said: "' + message + '"' + chr(10) + chr(10) if message and message != '[private message]' else ''}If you ever want to see exactly where it goes: pcrf.net
 
-{'You said: "' + message + '"' + chr(10) + chr(10) if message and message != '[private message]' else ''}
-If you ever want to see exactly where it goes: pcrf.net
-
-The Gaza Rose gallery is here if you want to share it:
+The Gaza Rose gallery:
 https://meekotharaccoon-cell.github.io/meeko-nerve-center/
 
-And if you want to go deeper — the whole system is open source:
+Full open-source system:
 https://github.com/meekotharaccoon-cell/meeko-nerve-center
 
 You didn't have to do this. Thanks for being YOU.
 
 Meeko"""
-
     return send_email(
         to        = donor_email,
         subject   = 'Thank you — really.',
@@ -193,11 +257,9 @@ Meeko"""
         from_name = 'Meeko'
     )
 
+# ── Press pitch ───────────────────────────────────────────────────────────────
+
 def send_press_pitch(journalist_email, journalist_name, outlet):
-    """
-    Press outreach for Gaza Rose + Nerve Center.
-    Personalized pitch to journalists and bloggers.
-    """
     text = f"""Hi {journalist_name},
 
 I built something I think your readers at {outlet} would care about.
@@ -211,20 +273,13 @@ The Gaza Rose is an open-source AI system that:
   - Self-generates content, tests its own ideas, and learns from failures
   - Can be forked by anyone for $5 and repurposed for any cause
 
-It's live now:
-https://meekotharaccoon-cell.github.io/meeko-nerve-center/
+Live now: https://meekotharaccoon-cell.github.io/meeko-nerve-center/
+Open source: https://github.com/meekotharaccoon-cell/meeko-nerve-center
 
-The SolarPunk dashboard (all real-time public data, no account needed):
-https://meekotharaccoon-cell.github.io/meeko-nerve-center/solarpunk.html
-
-The full system is AGPL-3.0 open source:
-https://github.com/meekotharaccoon-cell/meeko-nerve-center
-
-Happy to answer any questions or give you a full walkthrough.
+Happy to answer any questions.
 
 Meeko
 {GMAIL_ADDRESS}"""
-
     return send_email(
         to        = journalist_email,
         subject   = f'Open-source AI that funds Palestinian children — story for {outlet}?',
@@ -232,124 +287,84 @@ Meeko
         from_name = 'Meeko'
     )
 
+# ── Fork notification ─────────────────────────────────────────────────────────
+
 def send_fork_notification(forker_github, fork_url):
-    """
-    Welcome email when someone forks the repo.
-    NOTE: GitHub doesn't give us forker emails directly.
-    This runs if we have a way to get their email (e.g. they fill a form).
-    """
-    text = f"""Hey {forker_github},
+    text = f"""New fork detected.
 
-You just forked the Meeko Nerve Center. That's incredible.
+Forker: {forker_github}
+Fork URL: {fork_url}
 
-Your fork: {fork_url}
-
-A few things to get you started:
-
-1. Read START_HERE.md in your repo — it's the fastest path to running
-2. Add your secrets in Settings → Secrets → Actions
-   (TELEGRAM_TOKEN, GMAIL_ADDRESS, GMAIL_APP_PASSWORD at minimum)
-3. The $5 fork guide walks you through customizing it for your own mission
-
-If you get stuck, open an issue on the original repo:
-https://github.com/meekotharaccoon-cell/meeko-nerve-center/issues
-
-What cause are you building for? I'd genuinely love to know.
-
-Meeko"""
-
+The network is growing."""
     return send_email(
-        to        = GMAIL_ADDRESS,  # send to self as notification (we don't have forker email)
-        subject   = f'🌿 New fork: {forker_github} — {fork_url}',
+        to        = GMAIL_ADDRESS,
+        subject   = f'🌿 New fork: {forker_github}',
         body_text = text,
-        from_name = 'Meeko Nerve Center'
     )
 
-def send_weekly_newsletter(subscriber_emails):
-    """
-    Weekly newsletter to subscribers.
-    Pulls from the latest knowledge digests.
-    """
-    # Build newsletter body from latest knowledge
-    sections = [
-        f'MEEKO NERVE CENTER — Weekly Signal',
-        f'Week of {TODAY}',
-        '',
-        'What the system learned this week:',
-        '',
-    ]
+# ── Weekly newsletter ─────────────────────────────────────────────────────────
 
-    # AI insight
+def send_weekly_newsletter(subscriber_emails):
+    sections = [
+        'MEEKO NERVE CENTER — Weekly Signal',
+        f'Week of {TODAY}', '', 'What the system learned this week:', '',
+    ]
     insight_path = KB / 'ai_insights' / 'latest.md'
     if insight_path.exists():
         insight = insight_path.read_text().split('\n', 2)[-1][:300]
-        sections += ['🧠 AI INSIGHT THIS WEEK', insight, '']
-
-    # Word of the week
+        sections += ['🧠 AI INSIGHT', insight, '']
     word_path = KB / 'language' / 'word_of_day.json'
     if word_path.exists():
         try:
-            word_data = json.loads(word_path.read_text()).get('word', {})
-            if word_data:
-                sections += [
-                    f'📖 WORD OF THE WEEK: {word_data["word"].upper()}',
-                    word_data.get('definition', ''),
-                    ''
-                ]
+            wd = json.loads(word_path.read_text()).get('word', {})
+            if wd:
+                sections += [f'📖 WORD: {wd["word"].upper()}', wd.get('definition',''), '']
         except:
             pass
-
-    # Top crypto job
     jobs_path = DATA / 'jobs_today.json'
     if jobs_path.exists():
         try:
             jobs = json.loads(jobs_path.read_text())
-            top_job = (jobs.get('crypto_jobs') or jobs.get('top_50', [{}]))[0]
-            if top_job:
+            cj = jobs.get('crypto_jobs', [])
+            if cj:
+                idx = DAY_OF_YEAR % len(cj)
+                j = cj[idx]
                 sections += [
-                    f'💼 REMOTE JOB OF THE WEEK',
-                    f'{top_job.get("title","")} @ {top_job.get("company","")}',
-                    top_job.get('url', ''),
-                    ''
+                    '💼 JOB OF THE WEEK',
+                    f"{clean_html_entities(j.get('title',''))} @ {clean_html_entities(j.get('company',''))}",
+                    j.get('url',''), ''
                 ]
         except:
             pass
-
     sections += [
         '─' * 40,
-        '🌹 Gaza Rose art — 70% to PCRF',
+        '🌹 Gaza Rose — 70% to PCRF',
         'https://meekotharaccoon-cell.github.io/meeko-nerve-center/',
         '',
         'Fork the system: github.com/meekotharaccoon-cell/meeko-nerve-center',
         'Unsubscribe: reply "stop"',
     ]
-
     body = '\n'.join(sections)
     sent = 0
-
     for email in subscriber_emails:
         if send_email(to=email, subject=f'🌿 Nerve Center Weekly — {TODAY}', body_text=body):
             sent += 1
-
-    print(f'[gmail] Newsletter sent to {sent}/{len(subscriber_emails)} subscribers')
+    print(f'[gmail] Newsletter sent to {sent}/{len(subscriber_emails)}')
     return sent
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run():
     print(f'[gmail] Gmail Engine — {TODAY}')
-
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
-        print('[gmail] Credentials not set. Secrets needed: GMAIL_ADDRESS, GMAIL_APP_PASSWORD')
+        print('[gmail] Credentials missing.')
         return
 
-    # Send daily status to yourself
-    print('[gmail] Sending daily status email...')
+    print('[gmail] Sending daily status...')
     ok = send_daily_status()
     if ok:
-        print(f'[gmail] Daily status sent to {GMAIL_ADDRESS}')
+        print(f'[gmail] Status sent to {GMAIL_ADDRESS}')
 
-    # Check for Ko-fi donations to thank
     kofi_path = DATA / 'kofi_events.json'
     if kofi_path.exists():
         try:
@@ -367,7 +382,7 @@ def run():
             if today_events:
                 kofi_path.write_text(json.dumps({'events': events}, indent=2))
         except Exception as e:
-            print(f'[gmail] Ko-fi thank-you error: {e}')
+            print(f'[gmail] Ko-fi error: {e}')
 
 if __name__ == '__main__':
     run()
