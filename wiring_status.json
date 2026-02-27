@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-27T10:35:43.971554Z",
+  "generated_at": "2026-02-27T11:58:23.098220Z",
   "generator": "github-actions",
   "services": [
     {
@@ -9,8 +9,8 @@
     },
     {
       "service": "Mastodon",
-      "status": "missing",
-      "note": "add MASTODON_TOKEN to GitHub Secrets"
+      "status": "connected",
+      "note": "secret present"
     },
     {
       "service": "Bluesky",
