@@ -2,60 +2,6 @@
   "date": "2026-02-27",
   "artists": [
     {
-      "name": "Palestine",
-      "country": "SE",
-      "tags": [],
-      "score": 100,
-      "url": "https://musicbrainz.org/artist/30495e98-4b64-442a-bf8d-5871cbef9ea5",
-      "query": "Palestine"
-    },
-    {
-      "name": "Charlemagne Palestine",
-      "country": "",
-      "tags": [],
-      "score": 96,
-      "url": "https://musicbrainz.org/artist/2d3b6fec-f3ab-452d-98c7-510a1a1ac1e6",
-      "query": "Palestine"
-    },
-    {
-      "name": "Various Artists",
-      "country": "",
-      "tags": [
-        "rock",
-        "trance",
-        "electronic",
-        "soundtrack",
-        "classical"
-      ],
-      "score": 94,
-      "url": "https://musicbrainz.org/artist/89ad4ac3-39f7-470e-963a-56509c546377",
-      "query": "Palestine"
-    },
-    {
-      "name": "Palestine Strings",
-      "country": "",
-      "tags": [],
-      "score": 86,
-      "url": "https://musicbrainz.org/artist/d59d9c0b-b4ea-42b5-84a6-93da9b82a331",
-      "query": "Palestine"
-    },
-    {
-      "name": "Heartists for Palestine",
-      "country": "",
-      "tags": [],
-      "score": 77,
-      "url": "https://musicbrainz.org/artist/c62cce8d-e83d-4173-8f71-7ed7d3f46482",
-      "query": "Palestine"
-    },
-    {
-      "name": "Resistance",
-      "country": "BE",
-      "tags": [],
-      "score": 100,
-      "url": "https://musicbrainz.org/artist/84c5e826-d615-4491-9d53-e9c9bb063375",
-      "query": "resistance"
-    },
-    {
       "name": "Underground Resistance",
       "country": "US",
       "tags": [
@@ -64,8 +10,16 @@
         "electronic",
         "american"
       ],
-      "score": 99,
+      "score": 100,
       "url": "https://musicbrainz.org/artist/8dcd24c7-bf87-4f32-8e3f-7a79b3f25a85",
+      "query": "resistance"
+    },
+    {
+      "name": "Resistance",
+      "country": "BE",
+      "tags": [],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/84c5e826-d615-4491-9d53-e9c9bb063375",
       "query": "resistance"
     },
     {

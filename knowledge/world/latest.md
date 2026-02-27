@@ -2,11 +2,19 @@
 
 ## New Solana Pools (GeckoTerminal)
 
-- Jellybean / USDC | Vol 24h: $0.09674189756 | https://www.geckoterminal.com/solana/pools/y7Mx1T7cAq6iL7yTvVXTa1yfUiz5pCncKmJXcxVLeDa
-- ELON MUSK / SOL | Vol 24h: $1741.08886239 | https://www.geckoterminal.com/solana/pools/7DkMHNZmZYp2NRXF7MTQXXbDp5awixXMUyYU67oFpDFW
-- MOMO / SOL | Vol 24h: $1387.3041987814 | https://www.geckoterminal.com/solana/pools/9rhEJhhghyfne1gqsaKDyJTrovuaW5g4bn1ujNyFaLXQ
+- NotDivided / SOL | Vol 24h: $0.008629444984 | https://www.geckoterminal.com/solana/pools/Apocq3ZicADkqyyZUxcpe9itR41DPN7YBAGRwFsHpqv2
+- RoboScan / SOL | Vol 24h: $0.08629383823 | https://www.geckoterminal.com/solana/pools/EffRgsDqvM4PNnKMuD4pnQWYJJcjha3V7DLGXurr9sK5
+- RoboScan / SOL | Vol 24h: $0.08629383823 | https://www.geckoterminal.com/solana/pools/AiLo6ajfeLMXJVXy99BBtaAGSbtzDjNE1bKjcW9Durk2
 
 ## Next SpaceX Launch: USSF-44 on 2022-11-01
+
+## Trending on Wikipedia (content signal)
+
+- .xxx (345,657 views)
+- Rashmika Mandanna (237,118 views)
+- Vijay Deverakonda (209,407 views)
+- Scream 7 (168,828 views)
+- Soham murders (161,204 views)
 
 ## World Bank Snapshot
 
