@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 11:24 UTC — feat: social engine (Bluesky+Mastodon), video engine (CogVideoX/LTX), auto outreach, full workflow*
+*Auto-updated by the system. Last update: 2026-02-27 11:50 UTC — feat: diagnostics script — full health check on every system component*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
