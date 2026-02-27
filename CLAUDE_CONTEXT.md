@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 21:26 UTC — feat: add PUBLIC PRESENCE phase — dashboard + SEO engines wired into cycle*
+*Auto-updated by the system. Last update: 2026-02-27 22:03 UTC — feat: Reddit engine, HuggingFace Space, ingestion engine v2 (handles 200k+ files in batches)*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
