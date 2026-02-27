@@ -1,0 +1,56 @@
+{
+  "date": "2026-02-27",
+  "exchange_rates": {
+    "EUR": 0.8474,
+    "GBP": 0.7403,
+    "ILS": 3.1197,
+    "JOD": 0.709,
+    "EGP": 47.9241,
+    "TRY": 43.9564,
+    "CAD": 1.3679,
+    "AUD": 1.4078,
+    "SAR": 3.75,
+    "AED": 3.6725
+  },
+  "context_messages": [
+    "$5 = 16 Israeli Shekels",
+    "$10 = 31 Israeli Shekels",
+    "$25 = 78 Shekels \u2014 roughly a week of groceries in Gaza",
+    "$10 = 479 Egyptian Pounds",
+    "$10 = \u20ac8.47",
+    "$10 = \u00a37.4"
+  ],
+  "channels": {
+    "kofi": {
+      "url": "https://ko-fi.com/",
+      "label": "Support on Ko-fi",
+      "accepts": [
+        "USD",
+        "EUR",
+        "GBP",
+        "card"
+      ],
+      "note": "Most accessible for most people"
+    },
+    "solana": {
+      "address": "2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
+      "label": "Donate in SOL",
+      "network": "Solana",
+      "note": "Fast, cheap fees",
+      "qr_url": "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v"
+    },
+    "ethereum": {
+      "address": "0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D",
+      "label": "Donate in ETH/USDC",
+      "network": "Ethereum",
+      "note": "Widely supported",
+      "qr_url": "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D"
+    },
+    "gumroad": {
+      "url": "https://gumroad.com/",
+      "label": "Buy Gaza Rose Art",
+      "note": "70% goes directly to PCRF"
+    }
+  },
+  "pcrf_note": "70% of Gaza Rose proceeds go to the Palestinian Children's Relief Fund (PCRF). See pcrf.net"
+}

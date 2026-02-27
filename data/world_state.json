@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-26",
+  "date": "2026-02-27",
   "world_bank": {
     "child_mortality": {
       "value": 53.8062516481712,
@@ -7,103 +7,157 @@
       "year": "2023"
     }
   },
-  "usaspending": {},
+  "usaspending": {
+    "top_agencies": [
+      {
+        "name": "400 Years of African-American History Commission",
+        "budget": 0.0,
+        "percent_total": 0.0
+      },
+      {
+        "name": "Access Board",
+        "budget": 6829369.75,
+        "percent_total": 5.792551450475855e-07
+      },
+      {
+        "name": "Administrative Conference of the U.S.",
+        "budget": 1412089.53,
+        "percent_total": 1.197709533182512e-07
+      },
+      {
+        "name": "Advisory Council on Historic Preservation",
+        "budget": 11955604.94,
+        "percent_total": 1.01405340861085e-06
+      },
+      {
+        "name": "African Development Foundation",
+        "budget": 35605583.35,
+        "percent_total": 3.020003031452228e-06
+      },
+      {
+        "name": "Agency for International Development",
+        "budget": 20056056800.15,
+        "percent_total": 0.0017011195053326118
+      },
+      {
+        "name": "American Battle Monuments Commission",
+        "budget": 255675170.98,
+        "percent_total": 2.1685918858191286e-05
+      },
+      {
+        "name": "Appalachian Regional Commission",
+        "budget": 12616188.93,
+        "percent_total": 1.0700829821953764e-06
+      },
+      {
+        "name": "Armed Forces Retirement Home",
+        "budget": 262580831.68,
+        "percent_total": 2.2271644867597632e-05
+      },
+      {
+        "name": "Barry Goldwater Scholarship and Excellence In Education Foundation",
+        "budget": 39917015.23,
+        "percent_total": 3.3856911096255002e-06
+      }
+    ],
+    "date": "2026-02-27"
+  },
   "solana_new_pools": [
     {
-      "name": "00 / USDC",
-      "price_usd": "0.00039229621907396168306672368364544182060179536",
-      "volume_24h": "1004.503422428",
-      "created": "2026-02-26T20:27:42Z",
-      "dex": "orca",
-      "url": "https://www.geckoterminal.com/solana/pools/UBJthAv1w21EFPhxGJzEuZov9T9ygJuNQZNGsoLQK42"
+      "name": "Jellybean / USDC",
+      "price_usd": "0.00501391510692385335771481720220696649799396484662883182636513556",
+      "volume_24h": "0.09674189756",
+      "created": "2026-02-27T06:27:14Z",
+      "dex": "meteora",
+      "url": "https://www.geckoterminal.com/solana/pools/y7Mx1T7cAq6iL7yTvVXTa1yfUiz5pCncKmJXcxVLeDa"
     },
     {
-      "name": "SBBDATSOTU\"WR / SOL",
-      "price_usd": "0.00000258116288718421086014668202538399437554577787496015952500508328",
-      "volume_24h": "173.0992361218",
-      "created": "2026-02-26T20:27:40Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/3cDjJeYirHEYdHudSji5YRSwb3a6qqEDQ5WwQDkhoDc9"
+      "name": "ELON MUSK / SOL",
+      "price_usd": "0.0000088712397946639669126954111598737024266943951058171476065148615",
+      "volume_24h": "1741.08886239",
+      "created": "2026-02-27T06:27:11Z",
+      "dex": "pumpswap",
+      "url": "https://www.geckoterminal.com/solana/pools/7DkMHNZmZYp2NRXF7MTQXXbDp5awixXMUyYU67oFpDFW"
     },
     {
-      "name": "00 / USDC",
-      "price_usd": "0.00194270732771549621089043465722810123348587162",
-      "volume_24h": "1004.4072548806",
-      "created": "2026-02-26T20:27:39Z",
-      "dex": "orca",
-      "url": "https://www.geckoterminal.com/solana/pools/3nbkHHP3Tud3BwgYw9uBSDXvRuCv8YVhJEB8jQsNH9Qt"
-    },
-    {
-      "name": "Kiki / SOL",
-      "price_usd": "0.00000693078255077070372924929379455120837399457633704278697898099639",
-      "volume_24h": "67.4215898104",
-      "created": "2026-02-26T20:27:35Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/GorhY3CKARWS3oPhubpkCt5SnKf3RrcKNN1bCu9ZVgaG"
-    },
-    {
-      "name": "Cluw / SOL",
-      "price_usd": "0.000295807441458758370189645168314589471163670572214683510087440998",
-      "volume_24h": "0.4063764112",
-      "created": "2026-02-26T20:27:35Z",
-      "dex": "meteora-damm-v2",
-      "url": "https://www.geckoterminal.com/solana/pools/3CHZjazN23bugQx4xzZ6sqv5dmYh9K83hU9pZ83sVnhj"
-    },
-    {
-      "name": "SMILE / SOL",
-      "price_usd": "0.0000017307689085267456298569529676539724194864313800744974303520834",
-      "volume_24h": "0.02570157395",
-      "created": "2026-02-26T20:27:28Z",
+      "name": "MOMO / SOL",
+      "price_usd": "0.000347698237455207531441917181747680284993017574692126687150663648",
+      "volume_24h": "1387.3041987814",
+      "created": "2026-02-27T06:27:10Z",
       "dex": "meteora-dbc",
-      "url": "https://www.geckoterminal.com/solana/pools/APVwqnTYGZoqFt8PW6fnGThxZrzMnSeeKESivSUewTGc"
+      "url": "https://www.geckoterminal.com/solana/pools/9rhEJhhghyfne1gqsaKDyJTrovuaW5g4bn1ujNyFaLXQ"
     },
     {
-      "name": "slop / SOL",
-      "price_usd": "0.00000521288205083846092501465016719352341707243012213223104370467461",
-      "volume_24h": "3973.5241399936",
-      "created": "2026-02-26T20:27:28Z",
+      "name": "Lenni / SOL",
+      "price_usd": "0.00000283919189387529391369358201383579816786857975392789224952039304",
+      "volume_24h": "14.8738885082",
+      "created": "2026-02-27T06:27:07Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/92Wn4d3KSkCC278LRW1CjW7ECNabTbmXzvDWsnLvDbmp"
+      "url": "https://www.geckoterminal.com/solana/pools/AvaCtWNWnthwLzY7rJpui1nZTiBKrsBphiiMyXMTgsay"
     },
     {
-      "name": "LAUNCH / SOL",
-      "price_usd": "0.00000242359323609685985269384210399529187017814734752423058462735824",
-      "volume_24h": "1181.4365110094",
-      "created": "2026-02-26T20:27:25Z",
+      "name": "Test3 / SOL",
+      "price_usd": "0.00000243146888464389665031792445254591104736185886820731443144324928",
+      "volume_24h": "0.8586361013",
+      "created": "2026-02-27T06:27:06Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/5CqEbkH9znjhh67y281zb24eiN9nDMRmTcXXtcMnC6Dk"
+      "url": "https://www.geckoterminal.com/solana/pools/DZi5eMKjBuHzKisq3xyH9jad6rZKwAreuyPy9xN5ZmQ4"
     },
     {
-      "name": "ZC / SOL",
-      "price_usd": "0.000003342104823842949212041084285579635859492724007184177950286431",
-      "volume_24h": "1278.9794640125",
-      "created": "2026-02-26T20:27:25Z",
-      "dex": "meteora-dbc",
-      "url": "https://www.geckoterminal.com/solana/pools/2zKLYuBRR3uEtermCQpqY7WcrzZPuUh7J4UkFfavR6v5"
+      "name": "Jack / SOL",
+      "price_usd": "0.0004144768400387171077568847890886035976942836",
+      "volume_24h": "5051.1745458665",
+      "created": "2026-02-27T06:27:05Z",
+      "dex": "raydium-clmm",
+      "url": "https://www.geckoterminal.com/solana/pools/DzGmmfC1HSXqxhwyZPK6LR4SExiRuhA7r3H1zn557FVh"
     },
     {
-      "name": "PapaJohns / SOL",
-      "price_usd": "0.00000243425822178940880083250458126182742934120459814794705266903116",
-      "volume_24h": "0.008457179621",
-      "created": "2026-02-26T20:27:21Z",
+      "name": "Silvia / SOL",
+      "price_usd": "0.00000246377430951121947817651859274756211748670222316625917415906376",
+      "volume_24h": "1324.8306506637",
+      "created": "2026-02-27T06:26:58Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/AL6m6B1hNZg2hv21jKueNHwquaaZzVjTWTojJ7jyvYGZ"
+      "url": "https://www.geckoterminal.com/solana/pools/CgHWtswjuYFJ55uXtiKQWsMZqbUKaoFPWYDzz9g2tsyF"
+    },
+    {
+      "name": "Shadow / SOL",
+      "price_usd": "0.0000088098282934127033896110114496027653144329626632080512092849216",
+      "volume_24h": "35.9274093897",
+      "created": "2026-02-27T06:26:56Z",
+      "dex": "pumpswap",
+      "url": "https://www.geckoterminal.com/solana/pools/GrDrNBKjtvFM17YdpN5TFEFisRuezomFuSSNNLERWjWG"
+    },
+    {
+      "name": "SURVIVOR / SOL",
+      "price_usd": "0.0000122984613997001776306156455608977847300459732078056476200832552",
+      "volume_24h": "1859.3154790096",
+      "created": "2026-02-27T06:26:51Z",
+      "dex": "pumpswap",
+      "url": "https://www.geckoterminal.com/solana/pools/GnPXMb3YrGxBi6XgJE6o36bzHKS3G5SKAeCiem1cWMCh"
+    },
+    {
+      "name": "Neo / SOL",
+      "price_usd": "0.00000255819039788165160296397297669399432603812419538499677563045203",
+      "volume_24h": "145.297349405",
+      "created": "2026-02-27T06:26:48Z",
+      "dex": "pump-fun",
+      "url": "https://www.geckoterminal.com/solana/pools/89sGBEGcnbSzLTmmzAdsGMfaraKq28hddMn9fwJXuQmP"
     }
   ],
   "crypto": [],
   "exchange_rates": {
     "base": "USD",
     "rates": {
-      "EUR": 0.847304,
-      "GBP": 0.738487,
-      "ILS": 3.093321,
+      "EUR": 0.847295,
+      "GBP": 0.740207,
+      "ILS": 3.119728,
       "JOD": 0.709,
-      "EGP": 47.951591,
-      "TRY": 43.888876,
-      "CAD": 1.368172,
-      "AUD": 1.406749
+      "EGP": 47.924115,
+      "TRY": 43.930759,
+      "CAD": 1.3679,
+      "AUD": 1.407768
     },
-    "date": "2026-02-26"
+    "date": "2026-02-27"
   },
   "spacex": {
     "latest": {
@@ -118,46 +172,5 @@
     }
   },
   "food": {},
-  "wikipedia_trending": [
-    {
-      "title": "Robert Carradine",
-      "views": 395060
-    },
-    {
-      "title": ".xxx",
-      "views": 319247
-    },
-    {
-      "title": "Martin Short",
-      "views": 210595
-    },
-    {
-      "title": "Nemesio Oseguera Cervantes",
-      "views": 210060
-    },
-    {
-      "title": "Alysa Liu",
-      "views": 171867
-    },
-    {
-      "title": "Erotic photography",
-      "views": 167704
-    },
-    {
-      "title": "Eileen Gu",
-      "views": 142724
-    },
-    {
-      "title": "Deaths in 2026",
-      "views": 138183
-    },
-    {
-      "title": "David Carradine",
-      "views": 128261
-    },
-    {
-      "title": "Jeffrey Epstein",
-      "views": 126898
-    }
-  ]
+  "wikipedia_trending": []
 }

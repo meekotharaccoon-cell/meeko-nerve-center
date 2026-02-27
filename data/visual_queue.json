@@ -1,0 +1,78 @@
+{
+  "date": "2026-02-27",
+  "images": [
+    {
+      "type": "picsum",
+      "theme": "hope",
+      "url": "https://picsum.photos/seed/solarpunk-hope/800/600",
+      "embed": "https://picsum.photos/seed/solarpunk-hope/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "hope content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "earth",
+      "url": "https://picsum.photos/seed/earth-green/800/600",
+      "embed": "https://picsum.photos/seed/earth-green/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "earth content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "community",
+      "url": "https://picsum.photos/seed/community-people/800/600",
+      "embed": "https://picsum.photos/seed/community-people/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "community content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "flowers",
+      "url": "https://picsum.photos/seed/garden-flowers/800/600",
+      "embed": "https://picsum.photos/seed/garden-flowers/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "flowers content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "technology",
+      "url": "https://picsum.photos/seed/open-source-tech/800/600",
+      "embed": "https://picsum.photos/seed/open-source-tech/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "technology content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "space",
+      "url": "https://picsum.photos/seed/cosmos-stars/800/600",
+      "embed": "https://picsum.photos/seed/cosmos-stars/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "space content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "justice",
+      "url": "https://picsum.photos/seed/solidarity-hands/800/600",
+      "embed": "https://picsum.photos/seed/solidarity-hands/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "justice content posts"
+    },
+    {
+      "type": "picsum",
+      "theme": "water",
+      "url": "https://picsum.photos/seed/clean-water/800/600",
+      "embed": "https://picsum.photos/seed/clean-water/800/600",
+      "credit": "Photo via Picsum Photos (CC0)",
+      "suitable_for": "water content posts"
+    },
+    {
+      "type": "flux_generated",
+      "theme": "gaza_rose_ai",
+      "prompt": "Hands of many different skin tones holding seeds, botanical illustration style, warm colors",
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/public/images/flux_2026-02-27.png",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/images/flux_2026-02-27.png",
+      "credit": "AI-generated via FLUX.1-schnell (HuggingFace)"
+    }
+  ],
+  "total": 9
+}

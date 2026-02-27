@@ -1,0 +1,34 @@
+{
+  "date": "2026-02-27",
+  "wallets": [
+    {
+      "network": "Solana",
+      "symbol": "SOL",
+      "address": "2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
+      "price_usd": 0,
+      "qr_url": "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
+      "explorer": "https://explorer.solana.com/address/2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
+      "apps": [
+        "Phantom",
+        "Solflare",
+        "Coinbase"
+      ],
+      "note": "Fast transactions, low fees. Great for smaller donations."
+    },
+    {
+      "network": "Ethereum",
+      "symbol": "ETH",
+      "address": "0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D",
+      "price_usd": 0,
+      "qr_url": "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D",
+      "explorer": "https://etherscan.io/address/0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D",
+      "apps": [
+        "MetaMask",
+        "Coinbase",
+        "Rainbow"
+      ],
+      "note": "Also accepts USDC, USDT, and other ERC-20 tokens."
+    }
+  ],
+  "note": "Public wallet addresses for receiving donations. Never share private keys."
+}

@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-26",
+  "date": "2026-02-27",
   "artists": [
     {
       "name": "Palestine",
@@ -27,7 +27,7 @@
         "soundtrack",
         "classical"
       ],
-      "score": 93,
+      "score": 94,
       "url": "https://musicbrainz.org/artist/89ad4ac3-39f7-470e-963a-56509c546377",
       "query": "Palestine"
     },
@@ -46,6 +46,51 @@
       "score": 77,
       "url": "https://musicbrainz.org/artist/c62cce8d-e83d-4173-8f71-7ed7d3f46482",
       "query": "Palestine"
+    },
+    {
+      "name": "Resistance",
+      "country": "BE",
+      "tags": [],
+      "score": 100,
+      "url": "https://musicbrainz.org/artist/84c5e826-d615-4491-9d53-e9c9bb063375",
+      "query": "resistance"
+    },
+    {
+      "name": "Underground Resistance",
+      "country": "US",
+      "tags": [
+        "techno",
+        "detroit techno",
+        "electronic",
+        "american"
+      ],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/8dcd24c7-bf87-4f32-8e3f-7a79b3f25a85",
+      "query": "resistance"
+    },
+    {
+      "name": "Resistance",
+      "country": "",
+      "tags": [],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/7b77740b-07d2-45ac-acee-d80d8f6f7f7e",
+      "query": "resistance"
+    },
+    {
+      "name": "RESISTANCE",
+      "country": "JP",
+      "tags": [],
+      "score": 98,
+      "url": "https://musicbrainz.org/artist/3731cc67-4a9f-43fd-bca4-86a1b01a5fdd",
+      "query": "resistance"
+    },
+    {
+      "name": "Resistance",
+      "country": "DE",
+      "tags": [],
+      "score": 97,
+      "url": "https://musicbrainz.org/artist/fff5a78f-1fae-4be9-97fb-faef9ffeb873",
+      "query": "resistance"
     },
     {
       "name": "Solidarity",
@@ -137,30 +182,12 @@
       "query": "protest music"
     },
     {
-      "title": "Unfolding the Silent Peace",
-      "artist": "Relax \u03b1 Wave",
-      "album": "Chillout Sounds to Clear Your Mind and Truly Rest",
+      "title": "Meadow of Mindful Peace",
+      "artist": "Relaxing BGM Project",
+      "album": "Luxury Healing Time for All Five Senses \u2014 Spa BGM",
       "genre": "Worldwide",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/a4/40/98a440b5-dd49-2fe7-fdd8-27db78884875/mzaf_11120630227924121873.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/unfolding-the-silent-peace/1877279328?i=1877279336&uo=4",
-      "query": "world music peace"
-    },
-    {
-      "title": "Silent Paths to Peace Moods",
-      "artist": "Relax \u03b1 Wave",
-      "album": "Chillout Sounds to Clear Your Mind and Truly Rest",
-      "genre": "Worldwide",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/ff/4c/abff4ced-63ea-a832-5ca6-c60ae76c566a/mzaf_9355462852333870298.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/silent-paths-to-peace-moods/1877279328?i=1877279330&uo=4",
-      "query": "world music peace"
-    },
-    {
-      "title": "peace",
-      "artist": "clay house",
-      "album": "lullaby - EP",
-      "genre": "Electronic",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f6/2d/7a/f62d7a97-e202-b831-b20f-0f655e99d2a3/mzaf_3401350033649059112.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/peace/1592574140?i=1592574141&uo=4",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ec/61/f4/ec61f400-b23d-f705-25f3-d39a3721e799/mzaf_8672300547599060118.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/meadow-of-mindful-peace/1875906197?i=1875906213&uo=4",
       "query": "world music peace"
     },
     {
@@ -179,6 +206,24 @@
       "genre": "Worldwide",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9b/c7/4d/9bc74d15-6a9e-5d41-b158-aee3c51cc89f/mzaf_15378828003826287149.plus.aac.p.m4a",
       "url": "https://music.apple.com/us/album/warm-tides-of-evening-air/1878117442?i=1878117443&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Soothing Shadows Drift By",
+      "artist": "Dream House",
+      "album": "Feel the 1/f Fluctuations \u2014 Between Silence and Peace",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/13/29/77/13297765-dfb7-677e-0fa6-eede824a99fa/mzaf_114773755481529533.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/soothing-shadows-drift-by/1878117442?i=1878117879&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Soft Hues of Quiet Dusk",
+      "artist": "Dream House",
+      "album": "Feel the 1/f Fluctuations \u2014 Between Silence and Peace",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/e4/92/9ee49273-5b9c-58ee-a0f4-84da9e52b993/mzaf_8960560060439190009.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/soft-hues-of-quiet-dusk/1878117442?i=1878117882&uo=4",
       "query": "world music peace"
     }
   ]

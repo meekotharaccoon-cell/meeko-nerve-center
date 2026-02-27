@@ -327,32 +327,6 @@
       "virtual_env": "C:\\Users\\meeko\\Desktop\\mycelium_env",
       "db": "C:\\Users\\meeko\\Desktop\\UltimateAI_Master\\gaza_rose.db"
     },
-    "github_secrets_needed": {
-      "GMAIL_APP_PASSWORD": "MISSING - unlocks all email automation",
-      "OPENROUTER_KEY": "SET",
-      "SERPAPI_KEY": "SET",
-      "STRIKE_API_KEY": "MISSING - enables Lightning payments",
-      "DEVTO_API_KEY": "MISSING - auto-publishes articles"
-    },
-    "email_contacts_verified": {
-      "pcrf": "info@pcrf.net",
-      "open_collective": "hello@opencollective.com",
-      "tech_for_palestine": "hello@techforpalestine.org",
-      "mozilla": "foundation@mozilla.org",
-      "cloudinary": "support@cloudinary.com",
-      "strike": "support@strike.me",
-      "awesome_foundation": "secretary@awesomefoundation.org",
-      "fractured_atlas": "info@fracturedatlas.org",
-      "creative_capital": "info@creative-capital.org",
-      "wikimedia": "grants@wikimedia.org",
-      "harvestworks": "info@harvestworks.org"
-    },
-    "email_wrong_addresses": {
-      "sponsors@github.com": "NOT email-based - use github.com/sponsors form",
-      "hello@producthunt.com": "Unmonitored - use producthunt.com/posts/new",
-      "web@knightfoundation.org": "Doesn't fund individuals - wait for Open Collective",
-      "hello@innovategrant.com": "Likely fake site - removed"
-    },
     "revenue_streams_active": [
       "PayPal - $1/artwork (49% fee on $1, working)",
       "Bitcoin - bc1qka74n62h3zk9mcv8v8xjtjtwehmnm24w3pfzzr (zero fee)",
