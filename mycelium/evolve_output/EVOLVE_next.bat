@@ -1,15 +1,15 @@
 @echo off
-REM EVOLVE.bat Generation 8
-REM Last evolved: 2026-02-26 21:05
-REM Last built: [OK] Ping search engines with updated sitemap
+REM EVOLVE.bat Generation 9
+REM Last evolved: 2026-02-26 22:24
+REM Last built: [OK] Count + verify all GitHub Actions workflows
 REM Written by the system itself. Fork: https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork
 
-title SolarPunk Mycelium Gen 8 evolving...
+title SolarPunk Mycelium Gen 9 evolving...
 color 0A
 echo.
 echo  ==================================================
-echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 8
-echo   Last built: Ping search engines with updated sitemap
+echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 9
+echo   Last built: Count + verify all GitHub Actions workflows
 echo  ==================================================
 echo.
 set REPO=%USERPROFILE%\Desktop\meeko-nerve-center
@@ -20,11 +20,11 @@ echo.
 python mycelium\evolve.py
 echo.
 git add -A
-git commit -m "auto: gen 8" 2>nul
+git commit -m "auto: gen 9" 2>nul
 git push origin main 2>nul
 echo.
 echo  ==================================================
-echo   ENHANCEMENTS Gen 8
+echo   ENHANCEMENTS Gen 9
 echo  ==================================================
 echo.
 echo   [SECRETS] Add GitHub Secrets to unlock locked workflows
@@ -40,7 +40,7 @@ echo   [DEVTO] Publish Dev.to article — mycelium/devto_article.md is ready
 echo     - Go to dev.to > New Post > paste it
 echo.
 echo   System: https://github.com/meekotharaccoon-cell/meeko-nerve-center
-echo   Generation 8 complete.
+echo   Generation 9 complete.
 echo  ==================================================
 echo.
 pause
