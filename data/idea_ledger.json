@@ -242,11 +242,11 @@
       "test_target": "https://api.geckoterminal.com/api/v2/networks/solana/new_pools?page=1",
       "alternative": "Use DEX Screener trending instead",
       "id": "7cebe7964ca3",
-      "status": "untested",
-      "result": null,
-      "learning": null,
+      "status": "passed",
+      "result": "HTTP 200 \u2014 512 bytes",
+      "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
       "created": "2026-02-26T20:44:10.730850",
-      "tested": null
+      "tested": "2026-02-27T00:34:39.461120"
     },
     "a901bb104f18": {
       "title": "Exchange rate context on donation pages: $10 USD = X ILS/EGP today",
@@ -344,11 +344,11 @@
       "test_target": "https://api.coincap.io/v2/assets/bitcoin",
       "alternative": "Use Reddit r/bitcoin sentiment instead",
       "id": "4a4b9c208987",
-      "status": "untested",
-      "result": null,
-      "learning": null,
+      "status": "failed",
+      "result": "<urlopen error [Errno 11001] getaddrinfo failed>",
+      "learning": "Failed on 2026-02-26: <urlopen error [Errno 11001] getaddrinfo failed>. Alternative queued: Use Reddit r/bitcoin sentiment instead",
       "created": "2026-02-26T20:44:10.730850",
-      "tested": null
+      "tested": "2026-02-27T00:34:39.461120"
     },
     "fab80d8359a8": {
       "title": "Spaceflight launch calendar -> content timing: post hope content on launch days",
@@ -548,13 +548,33 @@
       "outputs": [],
       "mission": 10,
       "feasibility": 6,
-      "status": "untested",
-      "result": null,
-      "learning": "Auto-generated alternative to: Cross-reference congress stock trades with USAspending contracts: same companies?",
+      "status": "passed",
+      "result": "Directory exists with 58 files",
+      "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
       "test": "check_file_exists",
       "test_target": "",
       "alternative": null,
       "created": "2026-02-26T21:05:50.272969",
+      "tested": "2026-02-27T00:34:39.461120"
+    },
+    "b654ffaeb076": {
+      "id": "b654ffaeb076",
+      "title": "Use Reddit r/bitcoin sentiment instead",
+      "category": "intelligence",
+      "apis": [],
+      "inputs": [
+        "knowledge/intelligence/btc_sentiment.json"
+      ],
+      "outputs": [],
+      "mission": 5,
+      "feasibility": 7,
+      "status": "untested",
+      "result": null,
+      "learning": "Auto-generated alternative to: Correlate BTC price changes with Wikipedia trending topics (market sentiment signal)",
+      "test": "check_file_exists",
+      "test_target": "",
+      "alternative": null,
+      "created": "2026-02-27T00:34:39.461120",
       "tested": null
     }
   },
@@ -572,12 +592,19 @@
       "passed": 9,
       "failed": 1,
       "new_alternatives": 1
+    },
+    {
+      "date": "2026-02-26",
+      "tested": 3,
+      "passed": 2,
+      "failed": 1,
+      "new_alternatives": 1
     }
   ],
   "stats": {
-    "tested": 20,
-    "passed": 16,
-    "failed": 4,
+    "tested": 23,
+    "passed": 18,
+    "failed": 5,
     "dead_ends": 0
   }
 }

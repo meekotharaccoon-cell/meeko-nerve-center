@@ -75,6 +75,32 @@
     "tested": "2026-02-26T21:05:50.272969"
   },
   {
+    "title": "Correlate BTC price changes with Wikipedia trending topics (market sentiment signal)",
+    "category": "intelligence",
+    "apis": [
+      "CoinCap",
+      "Wikipedia Pageviews"
+    ],
+    "inputs": [
+      "data/world_state.json",
+      "knowledge/crypto/"
+    ],
+    "outputs": [
+      "knowledge/intelligence/btc_sentiment.json"
+    ],
+    "mission": 5,
+    "feasibility": 8,
+    "test": "fetch_url",
+    "test_target": "https://api.coincap.io/v2/assets/bitcoin",
+    "alternative": "Use Reddit r/bitcoin sentiment instead",
+    "id": "4a4b9c208987",
+    "status": "failed",
+    "result": "<urlopen error [Errno 11001] getaddrinfo failed>",
+    "learning": "Failed on 2026-02-26: <urlopen error [Errno 11001] getaddrinfo failed>. Alternative queued: Use Reddit r/bitcoin sentiment instead",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-27T00:34:39.461120"
+  },
+  {
     "title": "Free book + museum art from same region + cause message = rich cultural post",
     "category": "connection",
     "apis": [

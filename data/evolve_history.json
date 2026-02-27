@@ -59,6 +59,33 @@
         "REDDIT"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 6,
+      "gen": 6,
+      "at": "2026-02-26T19:34:59.473219",
+      "built": "signal_tracker",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 7,
+      "gen": 7,
+      "at": "2026-02-26T21:05:28.764146",
+      "built": "seo_ping",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO"
+      ],
+      "duration_s": 1
     }
   ],
   "built": [
@@ -66,7 +93,9 @@
     "gen_changelog",
     "scan_assets",
     "consolidate",
-    "map_connections"
+    "map_connections",
+    "signal_tracker",
+    "seo_ping"
   ],
-  "gen": 6
+  "gen": 8
 }

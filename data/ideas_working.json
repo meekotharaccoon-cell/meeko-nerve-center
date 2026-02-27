@@ -174,6 +174,31 @@
     "tested": "2026-02-26T21:05:50.272969"
   },
   {
+    "title": "GeckoTerminal new Solana pool alerts -> Telegram -> Phantom buy signal",
+    "category": "revenue",
+    "apis": [
+      "GeckoTerminal",
+      "Telegram Bot"
+    ],
+    "inputs": [
+      "data/world_state.json"
+    ],
+    "outputs": [
+      "telegram_alert"
+    ],
+    "mission": 5,
+    "feasibility": 8,
+    "test": "fetch_url",
+    "test_target": "https://api.geckoterminal.com/api/v2/networks/solana/new_pools?page=1",
+    "alternative": "Use DEX Screener trending instead",
+    "id": "7cebe7964ca3",
+    "status": "passed",
+    "result": "HTTP 200 \u2014 512 bytes",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "created": "2026-02-26T20:44:10.730850",
+    "tested": "2026-02-27T00:34:39.461120"
+  },
+  {
     "title": "Exchange rate context on donation pages: $10 USD = X ILS/EGP today",
     "category": "revenue",
     "apis": [
@@ -217,9 +242,9 @@
     "test_target": "data/art_pairs.json",
     "alternative": "Generate tags from humanitarian_content.py keywords",
     "id": "ce67102348b6",
-    "status": "passed",
+    "status": "wired",
     "result": "File exists (35093 bytes)",
-    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "learning": "Built and wired on 2026-02-26",
     "created": "2026-02-26T20:44:10.730850",
     "tested": "2026-02-26T21:05:50.272969"
   },
@@ -242,9 +267,9 @@
     "test_target": "https://api.spacexdata.com/v5/launches/upcoming",
     "alternative": "Use NASA launch schedule page",
     "id": "fab80d8359a8",
-    "status": "passed",
+    "status": "wired",
     "result": "HTTP 200 \u2014 512 bytes",
-    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "learning": "Built and wired on 2026-02-26",
     "created": "2026-02-26T20:44:10.730850",
     "tested": "2026-02-26T21:05:50.272969"
   },
@@ -382,5 +407,25 @@
     "alternative": null,
     "created": "2026-02-26T20:44:10.730850",
     "tested": "2026-02-26T21:05:50.272969"
+  },
+  {
+    "id": "280eed915c86",
+    "title": "Use OpenSecrets data (web scrape)",
+    "category": "intelligence",
+    "apis": [],
+    "inputs": [
+      "knowledge/intelligence/congress_contracts.json"
+    ],
+    "outputs": [],
+    "mission": 10,
+    "feasibility": 6,
+    "status": "passed",
+    "result": "Directory exists with 58 files",
+    "learning": "Confirmed viable on 2026-02-26. Ready to wire into daily cycle.",
+    "test": "check_file_exists",
+    "test_target": "",
+    "alternative": null,
+    "created": "2026-02-26T21:05:50.272969",
+    "tested": "2026-02-27T00:34:39.461120"
   }
 ]
