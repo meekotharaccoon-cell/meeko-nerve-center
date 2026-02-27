@@ -2,219 +2,199 @@
 """
 Privacy Scrubber
 ================
-Hard data scrub: once data has served its final purpose, it's gone.
-Nothing passes through more hands/friction than absolutely necessary.
+Hard scrub of sensitive/transient data after it has served its purpose.
 
-Rules (absolute, no exceptions):
-  1. Temporary data (API responses, routing info) -> scrub after use
-  2. PII (email, IP, name, location) -> never stored, or scrubbed within 1 cycle
-  3. Crypto keys / secrets -> never written to disk, never logged
-  4. Old knowledge digests -> keep 7 days, then purge
-  5. Content queue -> processed items purged after 24h
-  6. Job data -> personal identifying info stripped on ingest
-  7. QR scan data -> used for routing only, never persisted
+Philosophy:
+  - Data exists only as long as it needs to
+  - After its final destination purpose: gone. Forever.
+  - Nothing passes through more hands than absolutely necessary
+  - Every scrub is logged (the FACT of scrubbing, not the data itself)
+  - This is not a security feature bolted on. It is the architecture.
 
-What is NOT scrubbed (intentionally kept):
-  - knowledge/ digests (last 7 days) - system memory
-  - data/ JSON state files - system needs these
-  - IDEA LEDGER - learning must persist
-  - WIRED.md, IDEAS.md - system documentation
-  - art, books, music catalogs - public domain, no PII
+What gets scrubbed:
+  - Consent session logs (after user decides yes/no)
+  - Temporary API response caches older than their TTL
+  - Any file tagged for scrubbing in scrub_queue.json
+  - Raw personally-identifiable-looking data in data/ before it propagates
+
+What NEVER gets collected:
+  - IP addresses
+  - Device fingerprints
+  - Browser data
+  - Location (beyond what the user explicitly shares)
+  - Names, emails without explicit consent
+  - Behavioral tracking of any kind
 
 Outputs:
-  - data/scrub_log.json     what was scrubbed and when (no content, just paths)
-  - PRIVACY.md              public privacy commitment
+  - data/scrub_log.json   audit log (what was scrubbed, when, why — NOT the data)
+  - data/scrub_queue.json files waiting to be scrubbed
 """
 
-import json, datetime, shutil
+import json, datetime, os, hashlib
 from pathlib import Path
 
-ROOT  = Path(__file__).parent.parent
-DATA  = ROOT / 'data'
-KB    = ROOT / 'knowledge'
-CONT  = ROOT / 'content' / 'queue'
+ROOT = Path(__file__).parent.parent
+DATA = ROOT / 'data'
 
-TODAY = datetime.date.today()
+TODAY = datetime.date.today().isoformat()
 NOW   = datetime.datetime.utcnow().isoformat()
 
-# How many days to keep each data type
-RETENTION = {
-    'knowledge/*/':      7,   # daily digests kept 7 days
-    'content/queue/':    1,   # content queue items: 24 hours
-    'data/jobs_today.json': 1, # job listings: refresh daily
-    'data/art_pairs.json':  7, # art pairs: weekly refresh
-    'data/music.json':      7,
-    'data/books.json':      7,
-}
-
-# Files that are NEVER scrubbed (system-critical)
-NEVER_SCRUB = {
-    'data/idea_ledger.json',
-    'data/ideas_working.json',
-    'data/ideas_failed.json',
-    'data/world_state.json',
-    'data/congress.json',
-    'data/dex_state.json',
-    'data/qr_campaigns.json',
-    'data/etsy_tags.json',
-    'data/content_calendar.json',
-    'data/donation_context.json',
-    'wiring_status.json',
-}
-
-# PII patterns to detect and flag in any data file
-PII_PATTERNS = [
-    r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b',  # email
-    r'\b(?:\d{1,3}\.){3}\d{1,3}\b',  # IP address
-    r'\b\d{3}-\d{2}-\d{4}\b',         # SSN pattern
-    r'\b4[0-9]{12}(?:[0-9]{3})?\b',   # Visa card
-    r'\b5[1-5][0-9]{14}\b',           # MC card
+# Files/patterns that should be scrubbed after N days
+SCRUB_RULES = [
+    # Pattern, max age in days, reason
+    ('data/session_*.json',      0,  'Session data: scrub immediately after use'),
+    ('data/consent_*.json',      0,  'Consent records: only the decision matters, not who'),
+    ('data/jobs_today.json',     1,  'Job listings: replaced daily, no reason to keep'),
+    ('data/music.json',          7,  'Music data: refreshed weekly'),
+    ('data/books.json',          7,  'Book data: refreshed weekly'),
+    ('knowledge/apis/*.json',    30, 'API catalogs: keep 30 days then roll'),
 ]
 
-def scrub_old_files(directory, max_days, log):
-    """Remove files older than max_days from a directory."""
-    if not directory.exists():
-        return
-    cutoff = TODAY - datetime.timedelta(days=max_days)
-    scrubbed = 0
-    for f in directory.iterdir():
-        if not f.is_file(): continue
-        # Skip non-date files (like latest.md, latest.json)
-        if 'latest' in f.name: continue
-        # Try to parse date from filename
+# Data keys that should NEVER appear in committed files
+SENSITIVE_PATTERNS = [
+    'ip_address', 'ipAddress', 'user_agent', 'userAgent',
+    'email', 'phone', 'ssn', 'password', 'token', 'secret',
+    'credit_card', 'creditCard', 'address', 'location',
+    'device_id', 'deviceId', 'fingerprint', 'cookie',
+    'session_id', 'sessionId', 'tracking',
+]
+
+def load_scrub_log():
+    path = DATA / 'scrub_log.json'
+    if path.exists():
         try:
-            file_date = datetime.date.fromisoformat(f.name[:10])
-            if file_date < cutoff:
-                f.unlink()
-                log.append({'action': 'scrubbed', 'path': str(f.relative_to(ROOT)), 'reason': f'older than {max_days} days', 'time': NOW})
-                scrubbed += 1
-        except ValueError:
-            pass  # Not a date-named file, skip
-    return scrubbed
-
-def strip_pii_from_json(filepath, log):
-    """Read a JSON file and zero out any PII fields."""
-    import re
-    if not filepath.exists(): return
-    try:
-        content = filepath.read_text()
-        original = content
-        for pattern in PII_PATTERNS:
-            content = re.sub(pattern, '[SCRUBBED]', content)
-        if content != original:
-            filepath.write_text(content)
-            log.append({'action': 'pii_scrubbed', 'path': str(filepath.relative_to(ROOT)), 'time': NOW})
-            print(f'[scrub] PII found and removed: {filepath.name}')
-    except Exception as e:
-        print(f'[scrub] Error scanning {filepath.name}: {e}')
-
-def build_privacy_doc():
-    """Public-facing privacy commitment."""
-    doc = '''# PRIVACY COMMITMENT
-> Last updated: {today}
-> This is not a legal document. It\'s a promise.
-
-## The Short Version
-
-We collect the minimum possible.
-We keep it the minimum time necessary.
-We delete it the moment it\'s no longer needed.
-You can always say no.
-
-## What We Never Do
-
-- No selling data. Ever. To anyone.
-- No third-party analytics (no Google Analytics, no Facebook Pixel, nothing)
-- No fingerprinting or "anonymous" tracking
-- No storing IP addresses beyond immediate routing
-- No email lists unless you explicitly opt in
-- No sharing with "partners" (we don\'t have commercial partners)
-- No data passing through more hands than absolutely necessary
-
-## What We Keep and Why
-
-| Data | Why | How Long |
-|------|-----|----------|
-| Knowledge digests | System memory (no PII) | 7 days |
-| Crypto/market data | Trading signals | 1 day |
-| Content queue | Publishing pipeline | 24 hours |
-| Idea ledger | System learning | Permanent (no PII) |
-| QR campaigns | Campaign tracking | No scan data kept |
-
-## QR Code Scans
-
-When you scan a QR code:
-- Source param (`?src=`) is processed client-side in your browser only
-- Nothing is sent to any server beyond what a normal webpage visit sends
-- No scan database exists
-- If you click "No thanks": zero data is recorded. Not even the visit.
-
-## The "No" Is Always Respected
-
-If you decline anything — a QR scan, an email ask, a fork invitation — the response is always:
-**"Yeah, no problem! Thanks for being YOU."**
-
-And then it\'s done. No follow-up. No "are you sure?". No dark patterns.
-
-## Automated Scrubbing
-
-`mycelium/privacy_scrubber.py` runs daily and:
-- Removes knowledge digests older than 7 days
-- Clears content queue items older than 24 hours
-- Scans all data files for PII patterns and zeroes them out
-- Logs what was scrubbed (path only, no content)
-
-## Questions
-
-Open an issue at github.com/meekotharaccoon-cell/meeko-nerve-center
-or email meekotharaccoon@gmail.com
-
-*Built by a human who\'s tired of being the product.*
-'''.format(today=TODAY.isoformat())
-    (ROOT / 'PRIVACY.md').write_text(doc)
-    print('[scrub] PRIVACY.md written')
-
-def run():
-    print(f'[scrub] Privacy Scrubber — {TODAY}')
-    log = []
-    total_scrubbed = 0
-
-    # Scrub old knowledge digests (keep 7 days)
-    for subdir in KB.iterdir() if KB.exists() else []:
-        if subdir.is_dir():
-            n = scrub_old_files(subdir, 7, log)
-            if n: total_scrubbed += n
-
-    # Scrub old content queue items (keep 1 day)
-    if CONT.exists():
-        n = scrub_old_files(CONT, 1, log)
-        if n: total_scrubbed += (n or 0)
-
-    # Scan all data files for PII
-    if DATA.exists():
-        for f in DATA.iterdir():
-            if f.suffix == '.json' and f.name not in NEVER_SCRUB:
-                strip_pii_from_json(f, log)
-
-    # Write scrub log
-    existing_log = []
-    log_path = DATA / 'scrub_log.json'
-    if log_path.exists():
-        try:
-            existing_log = json.loads(log_path.read_text())
-            # Keep only last 30 days of log entries
-            cutoff = (TODAY - datetime.timedelta(days=30)).isoformat()
-            existing_log = [e for e in existing_log if e.get('time', '') >= cutoff]
+            return json.loads(path.read_text())
         except:
             pass
-    existing_log.extend(log)
-    log_path.write_text(json.dumps(existing_log[-200:], indent=2))  # cap at 200 entries
+    return {'scrubs': [], 'total_scrubbed': 0}
 
-    # Update privacy doc
-    build_privacy_doc()
+def save_scrub_log(log):
+    (DATA / 'scrub_log.json').write_text(json.dumps(log, indent=2))
 
-    print(f'[scrub] Complete: {total_scrubbed} files scrubbed, {len(log)} actions logged')
-    return {'scrubbed': total_scrubbed, 'actions': len(log)}
+def scrub_file(path, reason):
+    """Overwrite file with zeros then delete. Proper scrub."""
+    try:
+        p = Path(path)
+        if not p.exists(): return False
+        size = p.stat().st_size
+        # Overwrite with null bytes first (prevent recovery)
+        p.write_bytes(b'\x00' * size)
+        p.unlink()
+        return True
+    except Exception as e:
+        print(f'[scrub] Failed to scrub {path}: {e}')
+        return False
+
+def scan_for_sensitive_data(filepath):
+    """Scan a JSON file for sensitive key names. Returns list of found keys."""
+    try:
+        text = Path(filepath).read_text()
+        found = [k for k in SENSITIVE_PATTERNS if k.lower() in text.lower()]
+        return found
+    except:
+        return []
+
+def scrub_sensitive_from_json(filepath):
+    """Remove sensitive keys from a JSON file in place."""
+    try:
+        data = json.loads(Path(filepath).read_text())
+        changed = False
+        
+        def clean(obj):
+            nonlocal changed
+            if isinstance(obj, dict):
+                keys_to_remove = [k for k in obj if any(p.lower() in k.lower() for p in SENSITIVE_PATTERNS)]
+                for k in keys_to_remove:
+                    del obj[k]
+                    changed = True
+                for v in obj.values():
+                    clean(v)
+            elif isinstance(obj, list):
+                for item in obj:
+                    clean(item)
+        
+        clean(data)
+        if changed:
+            Path(filepath).write_text(json.dumps(data, indent=2))
+        return changed
+    except:
+        return False
+
+def run():
+    print(f'[scrub] Privacy Scrubber — {NOW}')
+    
+    log = load_scrub_log()
+    scrubbed_count = 0
+    
+    # 1. Process scrub queue
+    queue_path = DATA / 'scrub_queue.json'
+    if queue_path.exists():
+        try:
+            queue = json.loads(queue_path.read_text())
+            for item in queue.get('queue', []):
+                path  = item.get('path', '')
+                reason = item.get('reason', 'queued for scrub')
+                if scrub_file(path, reason):
+                    log['scrubs'].append({'path': path, 'reason': reason, 'when': NOW})
+                    scrubbed_count += 1
+                    print(f'[scrub] Scrubbed: {path}')
+            # Clear the queue
+            queue_path.write_text(json.dumps({'queue': [], 'last_cleared': NOW}, indent=2))
+        except Exception as e:
+            print(f'[scrub] Queue error: {e}')
+    
+    # 2. Scan data/ for sensitive keys that slipped through
+    data_files = list(DATA.glob('*.json'))
+    for f in data_files:
+        sensitive = scan_for_sensitive_data(f)
+        if sensitive:
+            cleaned = scrub_sensitive_from_json(f)
+            if cleaned:
+                log['scrubs'].append({
+                    'path': str(f),
+                    'reason': f'Sensitive keys found and removed: {sensitive}',
+                    'when': NOW,
+                })
+                scrubbed_count += 1
+                print(f'[scrub] Cleaned sensitive data from {f.name}: {sensitive}')
+    
+    # 3. Age-based scrubs (rolling cleanup)
+    cutoff_1day  = datetime.date.today() - datetime.timedelta(days=1)
+    cutoff_7day  = datetime.date.today() - datetime.timedelta(days=7)
+    cutoff_30day = datetime.date.today() - datetime.timedelta(days=30)
+    
+    for pattern, max_days, reason in SCRUB_RULES:
+        if max_days == 0: continue  # handled by queue
+        cutoff = datetime.date.today() - datetime.timedelta(days=max_days)
+        for f in ROOT.glob(pattern):
+            try:
+                mtime = datetime.date.fromtimestamp(f.stat().st_mtime)
+                if mtime < cutoff:
+                    if scrub_file(f, reason):
+                        log['scrubs'].append({'path': str(f), 'reason': reason, 'when': NOW})
+                        scrubbed_count += 1
+                        print(f'[scrub] Age-scrubbed: {f.name} ({mtime})')
+            except:
+                pass
+    
+    log['total_scrubbed'] += scrubbed_count
+    save_scrub_log(log)
+    
+    print(f'[scrub] Done. {scrubbed_count} items scrubbed this run. Total ever: {log["total_scrubbed"]}')
+    
+    return {'scrubbed': scrubbed_count, 'total_ever': log['total_scrubbed']}
+
+def queue_for_scrub(path, reason='served its purpose'):
+    """External API: queue a file for scrubbing on next run."""
+    queue_path = DATA / 'scrub_queue.json'
+    try:
+        queue = json.loads(queue_path.read_text()) if queue_path.exists() else {'queue': []}
+    except:
+        queue = {'queue': []}
+    
+    queue['queue'].append({'path': str(path), 'reason': reason, 'queued': NOW})
+    queue_path.write_text(json.dumps(queue, indent=2))
+    print(f'[scrub] Queued for scrub: {path}')
 
 if __name__ == '__main__':
     run()

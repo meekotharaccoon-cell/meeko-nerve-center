@@ -2,107 +2,110 @@
 """
 QR Propagator
 ==============
-Consent-first physical propagation of the SolarPunk system.
+Consent-first physical-to-digital bridge.
+
+The idea:
+  Any physical object (card, sticker, print, merch, zine)
+  gets a QR code. Someone scans it.
+  They land on a consent page.
+  They say Yes  -> system begins propagating (fork guide, download, etc.)
+  They say No   -> "Yeah, no problem! Thanks for being YOU." Full stop.
+  ALL data scrubbed immediately after either path completes.
 
 Philosophy:
-  - A QR code on anything physical (card, sticker, poster, zine)
-  - Scan it -> landing page with clear, honest ask
-  - YES  -> system begins downloading/forking with their blessing
-  - NO   -> "Yeah, no problem! Thanks for being YOU" -> done, nothing kept
-
-Privacy rules (absolute):
-  - No data collected before consent
-  - After use: scrub everything immediately
-  - Nothing passes through more hands than necessary
-  - Scan IP: used to route, then deleted
-  - Email (if given): used once for welcome, then deleted
-  - No analytics. No tracking. No "anonymous" fingerprinting.
+  - Minimum friction, maximum respect
+  - Never pass data through more hands than necessary
+  - A 'No' is just as valid as a 'Yes'
+  - The system grows by invitation, never by capture
 
 Outputs:
-  - public/qr/            QR code images (one per campaign)
-  - public/consent.html   The consent landing page
-  - data/qr_campaigns.json Campaign registry (no PII)
-  - PROPAGATION.md        Human-readable propagation guide
+  - public/qr/          QR code images (PNG) for printing
+  - public/consent.html Landing page with consent flow
+  - data/qr_manifest.json  What QR codes exist and what they point to
 
-QR codes use free no-auth API: api.qrserver.com
+QR API used: api.qrserver.com (free, no auth, returns PNG)
 """
 
 import json, datetime, hashlib
 from pathlib import Path
 from urllib import request as urllib_request
-from urllib.parse import urlencode
 
 ROOT   = Path(__file__).parent.parent
-DATA   = ROOT / 'data'
 PUBLIC = ROOT / 'public'
+DATA   = ROOT / 'data'
 
-for d in [DATA, PUBLIC / 'qr']:
-    d.mkdir(parents=True, exist_ok=True)
+(PUBLIC / 'qr').mkdir(parents=True, exist_ok=True)
 
-TODAY   = datetime.date.today().isoformat()
-BASE_URL = 'https://meekotharaccoon-cell.github.io/meeko-nerve-center'
+TODAY = datetime.date.today().isoformat()
 
-# Campaign types - each has a landing URL and purpose
-CAMPAIGNS = [
+# QR destinations - each physical object type gets its own QR
+QR_DESTINATIONS = [
     {
-        'id':      'solarpunk-card',
-        'name':    'SolarPunk Business Card',
-        'url':     f'{BASE_URL}/consent.html?src=card',
-        'purpose': 'Share the SolarPunk dashboard and fork invitation',
-        'physical': 'Business card, postcard, or bookmark',
+        'id':       'fork_guide',
+        'label':    'Fork Guide Card',
+        'purpose':  'Someone scanned a physical card about the $5 fork guide',
+        'url':      'https://meekotharaccoon-cell.github.io/meeko-nerve-center/consent.html?src=fork_guide',
+        'action':   'Download the $5 fork guide and start your own system',
     },
     {
-        'id':      'gaza-rose-art',
-        'name':    'Gaza Rose Art Print',
-        'url':     f'{BASE_URL}/consent.html?src=art',
-        'purpose': 'Art print QR -> Gaza Rose gallery + PCRF donation',
-        'physical': 'Physical or digital art print',
+        'id':       'gaza_rose',
+        'label':    'Gaza Rose Art Print',
+        'purpose':  'Someone scanned a Gaza Rose art print or postcard',
+        'url':      'https://meekotharaccoon-cell.github.io/meeko-nerve-center/consent.html?src=gaza_rose',
+        'action':   'See the Gaza Rose gallery and support Palestinian children',
     },
     {
-        'id':      'fork-guide',
-        'name':    'Fork Guide Physical Copy',
-        'url':     f'{BASE_URL}/consent.html?src=guide',
-        'purpose': 'Fork guide -> invite to fork and build their own system',
-        'physical': 'Printed fork guide or zine',
+        'id':       'solarpunk',
+        'label':    'SolarPunk Dashboard Sticker',
+        'purpose':  'Someone scanned a SolarPunk sticker',
+        'url':      'https://meekotharaccoon-cell.github.io/meeko-nerve-center/consent.html?src=solarpunk',
+        'action':   'See the live SolarPunk Information Commons dashboard',
     },
     {
-        'id':      'solarpunk-sticker',
-        'name':    'SolarPunk Sticker',
-        'url':     f'{BASE_URL}/consent.html?src=sticker',
-        'purpose': 'Sticker -> SolarPunk dashboard + system invitation',
-        'physical': 'Sticker on laptop, water bottle, etc.',
+        'id':       'nerve_center',
+        'label':    'Nerve Center Business Card',
+        'purpose':  'Someone scanned the main nerve center card',
+        'url':      'https://meekotharaccoon-cell.github.io/meeko-nerve-center/consent.html?src=nerve_center',
+        'action':   'Fork the entire Meeko Nerve Center system',
     },
 ]
 
-def generate_qr(url, filename, size=300):
-    """Generate QR code using free no-auth API."""
-    qr_url = f'https://api.qrserver.com/v1/create-qr-code/?{urlencode({"size": f"{size}x{size}", "data": url, "format": "png", "ecc": "H"})}'
+QR_API = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&format=png&data='
+
+def generate_qr(destination):
+    """Download QR code image for a destination URL."""
+    url = QR_API + urllib_request.quote(destination['url'])
+    out = PUBLIC / 'qr' / f"{destination['id']}.png"
+    
     try:
-        req = urllib_request.Request(qr_url, headers={'User-Agent': 'meeko-nerve-center/2.0'})
-        with urllib_request.urlopen(req, timeout=10) as r:
-            data = r.read()
-            path = PUBLIC / 'qr' / filename
-            path.write_bytes(data)
-            print(f'[qr] Generated: {filename} ({len(data)} bytes)')
-            return str(path), qr_url
+        req = urllib_request.Request(url, headers={'User-Agent': 'meeko-nerve-center/2.0'})
+        with urllib_request.urlopen(req, timeout=15) as r:
+            out.write_bytes(r.read())
+        print(f'[qr] Generated: {out.name} -> {destination["url"]}')
+        return str(out)
     except Exception as e:
-        print(f'[qr] Failed to generate {filename}: {e}')
-        return None, qr_url
+        print(f'[qr] Failed {destination["id"]}: {e}')
+        return None
 
 def build_consent_page():
-    """The consent landing page. Honest. Simple. Respectful."""
+    """Build the consent landing page.
+    
+    This is the most important page in the system.
+    It is the ONLY place where a human decision gate exists.
+    Yes = proceed. No = full stop + graceful thank you + data scrub.
+    """
     html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hey — Meeko Nerve Center</title>
+  <title>Hey! Quick question.</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'IBM Plex Mono', monospace, sans-serif;
-      background: #1a1a0f;
-      color: #e8e0c8;
+      font-family: 'Georgia', serif;
+      background: #1a1a2e;
+      color: #e8e0d5;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -112,203 +115,181 @@ def build_consent_page():
     .card {
       max-width: 480px;
       width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(120,200,80,0.3);
+      background: #16213e;
       border-radius: 16px;
       padding: 2.5rem;
-      text-align: center;
+      border: 1px solid #0f3460;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
-    .icon { font-size: 3rem; margin-bottom: 1rem; }
-    h1 { font-size: 1.4rem; color: #a8d878; margin-bottom: 1rem; }
-    p { color: #c8c0a0; line-height: 1.7; margin-bottom: 1rem; font-size: 0.95rem; }
-    .what-is-this {
-      background: rgba(120,200,80,0.08);
-      border-left: 3px solid #78c850;
-      padding: 1rem;
-      text-align: left;
-      border-radius: 0 8px 8px 0;
-      margin: 1.5rem 0;
-      font-size: 0.88rem;
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7eb8a4;
+      margin-bottom: 1rem;
     }
-    .what-is-this li { margin: 0.4rem 0 0.4rem 1rem; color: #b8d898; }
+    h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: #f0e6d3;
+    }
+    .context {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #b8a898;
+      margin-bottom: 2rem;
+    }
+    .what-happens {
+      background: #0f3460;
+      border-radius: 10px;
+      padding: 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #c8d8e8;
+    }
+    .what-happens strong { color: #7eb8a4; }
     .privacy-note {
       font-size: 0.8rem;
-      color: #888;
-      margin: 1rem 0;
-      font-style: italic;
+      color: #6a8a7a;
+      margin-bottom: 2rem;
+      line-height: 1.6;
     }
-    .btn-yes {
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      background: linear-gradient(135deg, #78c850, #4a9830);
-      color: #0a1a05;
+    .buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
       border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin: 1rem 0 0.5rem;
-      text-decoration: none;
-      transition: transform 0.1s;
-    }
-    .btn-yes:hover { transform: translateY(-2px); }
-    .btn-no {
-      display: block;
-      width: 100%;
-      padding: 0.8rem;
-      background: transparent;
-      color: #888;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      font-size: 0.95rem;
-      cursor: pointer;
-      text-decoration: none;
+      font-family: inherit;
       transition: all 0.2s;
     }
-    .btn-no:hover { color: #ccc; border-color: rgba(255,255,255,0.3); }
-    .thank-you { display: none; }
-    .thank-you h2 { color: #a8d878; font-size: 1.3rem; margin-bottom: 1rem; }
-    .thank-you p { color: #c8c0a0; }
+    .btn-yes {
+      background: #7eb8a4;
+      color: #1a1a2e;
+      font-weight: bold;
+    }
+    .btn-yes:hover { background: #9ecab8; transform: translateY(-1px); }
+    .btn-no {
+      background: transparent;
+      color: #b8a898;
+      border: 1px solid #3a4a5a;
+    }
+    .btn-no:hover { border-color: #7eb8a4; color: #c8d8c8; }
+    .response { display: none; text-align: center; padding: 2rem 0; }
+    .response h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .response p { color: #b8a898; line-height: 1.7; }
+    .scrub-note {
+      font-size: 0.75rem;
+      color: #4a6a5a;
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
-  <div class="card" id="consent-card">
-    <div class="icon">🌱</div>
-    <h1>Hey. You scanned the thing.</h1>
-    <p>This is the Meeko Nerve Center — an open-source, self-replicating humanitarian AI system.
-Built by one human. Runs for free. Works while they sleep.</p>
-    <div class="what-is-this">
-      <strong style="color:#a8d878">What this actually is:</strong>
-      <ul>
-        <li>Live data: earthquakes, climate, space, congress trades</li>
-        <li>Gaza Rose art — 70% of sales to Palestinian children</li>
-        <li>A system anyone can fork and run for free</li>
-        <li>No VC money. No ads. No surveillance.</li>
-      </ul>
+  <div class="card">
+    <div id="question">
+      <div class="eyebrow">Meeko Nerve Center</div>
+      <h1>Hey. Can I show you something?</h1>
+      <div class="context" id="context-text">
+        You scanned a QR code on something physical.<br>
+        Before anything happens, I want to ask you directly.
+      </div>
+      <div class="what-happens">
+        <strong>If you say yes:</strong><br>
+        <span id="action-text">You\'ll be taken to the Meeko Nerve Center — an open, free, self-replicating humanitarian AI system. No account needed.</span>
+      </div>
+      <div class="privacy-note">
+        ⚪️ Your scan data is used only to get you where you\'re going.<br>
+        ⚪️ We don\'t track you, store your device info, or share anything.<br>
+        ⚪️ After you choose, any session data is scrubbed. Gone. Forever.
+      </div>
+      <div class="buttons">
+        <button class="btn btn-yes" onclick="handleYes()">Yeah, show me →</button>
+        <button class="btn btn-no" onclick="handleNo()">No thanks</button>
+      </div>
     </div>
-    <p>You can look around, fork it, donate, or just leave. All of those are fine.</p>
-    <p class="privacy-note">🔒 We collect nothing before you say yes.
-If you say no, nothing is recorded. Not even this visit.</p>
-    <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/solarpunk.html" class="btn-yes">
-      ✅ Yeah, take me there
-    </a>
-    <button class="btn-no" onclick="showDecline()">
-      No thanks
-    </button>
-  </div>
-
-  <div class="card thank-you" id="thank-you-card">
-    <div class="icon">🤍</div>
-    <h2>Yeah, no problem!<br>Thanks for being YOU.</h2>
-    <p>Seriously. The fact that you scanned it at all is enough.<br>
-You don\'t owe us anything. Go be excellent.</p>
-    <p style="margin-top:1.5rem; font-size:0.85rem; color:#666">
-      (Nothing was recorded. This page will close when you leave.)
-    </p>
+    <div class="response" id="yes-response">
+      <h2>Let\'s go. ἳf</h2>
+      <p>Taking you there now...</p>
+      <p class="scrub-note">✓ Session data scrubbed.</p>
+    </div>
+    <div class="response" id="no-response">
+      <h2>Yeah, no problem!</h2>
+      <p style="font-size:1.3rem; margin-bottom:1rem;">Thanks for being <strong>YOU</strong>.</p>
+      <p>Seriously. The world is better with you in it, exactly as you are.</p>
+      <p class="scrub-note">✓ Session data scrubbed. Nothing stored.</p>
+    </div>
   </div>
 
   <script>
-    function showDecline() {
-      document.getElementById(\'consent-card\').style.display = \'none\';
-      document.getElementById(\'thank-you-card\').style.display = \'block\';
-      // Nothing to scrub — nothing was ever collected
+    // Read source from URL param
+    const params = new URLSearchParams(window.location.search);
+    const src = params.get(\'src\') || \'nerve_center\';
+    
+    const destinations = {
+      fork_guide:   { action: \'Download the $5 fork guide and start your own system\', url: \'https://meekotharaccoon-cell.github.io/meeko-nerve-center/\' },
+      gaza_rose:    { action: \'See the Gaza Rose gallery and support Palestinian children\', url: \'https://meekotharaccoon-cell.github.io/meeko-nerve-center/\' },
+      solarpunk:    { action: \'See the live SolarPunk Information Commons dashboard\', url: \'https://meekotharaccoon-cell.github.io/meeko-nerve-center/solarpunk.html\' },
+      nerve_center: { action: \'Fork the entire Meeko Nerve Center — free, open, yours\', url: \'https://github.com/meekotharaccoon-cell/meeko-nerve-center\' },
+    };
+    
+    const dest = destinations[src] || destinations.nerve_center;
+    document.getElementById(\'action-text\').textContent = dest.action;
+    
+    function scrubSession() {
+      // Clear everything we can from the browser
+      try { sessionStorage.clear(); } catch(e) {}
+      try { localStorage.clear(); } catch(e) {}
+      // Remove URL params
+      history.replaceState(null, \'\', window.location.pathname);
     }
-
-    // Track source param for analytics-free routing
-    const src = new URLSearchParams(window.location.search).get(\'src\');
-    if (src) {
-      // Used only to show context-appropriate message, never stored
-      const msgs = {
-        \'art\':    \'You found this through the Gaza Rose art.\',
-        \'card\':   \'You found this through a physical card.\',
-        \'guide\':  \'You found this through the fork guide.\',
-        \'sticker\': \'You found this through a sticker.\',
-      };
-      const msg = msgs[src];
-      if (msg) {
-        const p = document.createElement(\'p\');
-        p.style.cssText = \'font-size:0.85rem;color:#888;margin-top:0.5rem\';
-        p.textContent = msg;
-        document.querySelector(\'.icon\').after(p);
-      }
+    
+    function handleYes() {
+      document.getElementById(\'question\').style.display = \'none\';
+      document.getElementById(\'yes-response\').style.display = \'block\';
+      scrubSession();
+      setTimeout(() => { window.location.href = dest.url; }, 1200);
+    }
+    
+    function handleNo() {
+      document.getElementById(\'question\').style.display = \'none\';
+      document.getElementById(\'no-response\').style.display = \'block\';
+      scrubSession();
+      // Nothing else happens. Full stop. Graceful exit.
     }
   </script>
 </body>
 </html>'''
-    path = PUBLIC / 'consent.html'
-    path.write_text(html)
-    print(f'[qr] consent.html written ({len(html)} bytes)')
-    return path
+    
+    (PUBLIC / 'consent.html').write_text(html)
+    print('[qr] consent.html built')
 
 def run():
     print(f'[qr] QR Propagator — {TODAY}')
-    print('[qr] Philosophy: consent first, graceful decline, zero data after use')
-
-    # Build consent page
-    build_consent_page()
-
-    # Generate QR codes for each campaign
-    campaigns_out = []
-    for camp in CAMPAIGNS:
-        filename = f"{camp['id']}.png"
-        path, api_url = generate_qr(camp['url'], filename)
-        campaigns_out.append({
-            **camp,
-            'qr_file':   f'public/qr/{filename}',
-            'qr_url':    api_url,
+    
+    manifest = {'date': TODAY, 'qr_codes': []}
+    
+    for dest in QR_DESTINATIONS:
+        path = generate_qr(dest)
+        manifest['qr_codes'].append({
+            **dest,
+            'qr_image': f'public/qr/{dest["id"]}.png',
             'generated': TODAY,
         })
-
-    # Save campaign registry (no PII ever stored here)
-    (DATA / 'qr_campaigns.json').write_text(json.dumps({
-        'date':      TODAY,
-        'campaigns': campaigns_out,
-        'privacy':   'No PII stored. No analytics. Scan data deleted after routing.',
-    }, indent=2))
-
-    # Write propagation guide
-    lines = [
-        '# PROPAGATION — Physical QR Code System',
-        '',
-        '## Philosophy',
-        'Every QR code is an invitation, not a trap.',
-        'Consent before everything. Graceful "no" always.',
-        'Data scrubbed the moment it has served its only purpose.',
-        '',
-        '## Campaigns',
-        '',
-    ]
-    for c in campaigns_out:
-        lines += [
-            f"### {c['name']}",
-            f"Physical use: {c['physical']}",
-            f"Purpose: {c['purpose']}",
-            f"QR file: {c['qr_file']}",
-            f"Landing: {c['url']}",
-            '',
-        ]
-    lines += [
-        '## Privacy Guarantee',
-        '',
-        '- No data collected before consent',
-        '- "No" response: zero data recorded, not even the visit',
-        '- "Yes" response: only routing data used, then deleted',
-        '- No third-party analytics',
-        '- No fingerprinting',
-        '- Source param (`?src=`) used client-side only, never sent to server',
-        '',
-        '## The "No" Response',
-        '',
-        'Every decline gets: **"Yeah, no problem! Thanks for being YOU."**',
-        'Because someone scanning a QR code is already a gift.',
-        'They don\'t owe us anything beyond that.',
-    ]
-    (ROOT / 'PROPAGATION.md').write_text('\n'.join(lines))
-
-    print(f'[qr] {len(campaigns_out)} campaigns generated')
-    print(f'[qr] consent.html ready at: {BASE_URL}/consent.html')
-    return campaigns_out
+    
+    (DATA / 'qr_manifest.json').write_text(json.dumps(manifest, indent=2))
+    build_consent_page()
+    
+    print(f'[qr] {len(manifest["qr_codes"])} QR codes generated')
+    print(f'[qr] Consent page: public/consent.html')
+    print(f'[qr] Print-ready QR images: public/qr/')
+    
+    return manifest
 
 if __name__ == '__main__':
     run()

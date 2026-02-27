@@ -2,162 +2,189 @@
 """
 Language Engine
 ================
-Free Dictionary API -> language intelligence for the system.
+Free Dictionary API (dictionaryapi.dev) — no auth, no cost.
 
 Use cases:
-  - Verify words used in generated content are real
-  - Build vocabulary for specific causes (Gaza, SolarPunk, climate)
-  - Generate "word of the day" content (high engagement)
-  - Accessibility: define technical/activist terms for new audiences
-  - Etymology research: find the roots of key mission words
+  1. WORD OF THE DAY — pick a powerful word related to the mission
+     (solidarity, resistance, mycelium, commons, sovereignty...)
+     Get its full definition, phonetics, etymology
+     Generate a post: 'Word the world needs today: [word]'
 
-API: dictionaryapi.dev (free, no auth)
-https://api.dictionaryapi.dev/api/v2/entries/en/<word>
+  2. CONTENT ENRICHMENT — look up key words in generated content
+     to make sure they're used correctly and add depth
+
+  3. GLOSSARY BUILDER — build a growing glossary of mission-relevant terms
+     (humanitarian, SolarPunk, mutual aid, open source, etc.)
+     For the fork guide, README, content
+
+  4. LANGUAGE ACCESSIBILITY — when content uses complex terms,
+     auto-fetch plain definitions to include for wider audiences
 
 Outputs:
-  - data/vocabulary.json        mission vocabulary with definitions
-  - content/queue/word_*.json   word-of-the-day content posts
-  - knowledge/language/latest.md language intelligence digest
+  - knowledge/language/word_of_day.json
+  - knowledge/language/glossary.json     growing mission glossary
+  - content/queue/word_post_*.json       daily word post
 """
 
-import json, datetime
+import json, datetime, random
 from pathlib import Path
 from urllib import request as urllib_request
 
-ROOT  = Path(__file__).parent.parent
-DATA  = ROOT / 'data'
-KB    = ROOT / 'knowledge'
-CONT  = ROOT / 'content' / 'queue'
+ROOT = Path(__file__).parent.parent
+KB   = ROOT / 'knowledge'
+DATA = ROOT / 'data'
+CONT = ROOT / 'content' / 'queue'
 
 for d in [KB / 'language', CONT]:
     d.mkdir(parents=True, exist_ok=True)
 
 TODAY = datetime.date.today().isoformat()
 
-# Core vocabulary of the mission
-# These are words that matter — for content, for accessibility, for framing
-MISSION_VOCABULARY = [
-    # SolarPunk canon
-    'solarpunk', 'mutual', 'solidarity', 'commons', 'decentralized',
-    'regenerative', 'resilience', 'abundance', 'symbiosis',
-    # Humanitarian
-    'humanitarian', 'displacement', 'sovereignty', 'dignity', 'refugee',
-    'resistance', 'liberation', 'occupation', 'ceasefire', 'aid',
-    # Tech/crypto
-    'transparency', 'open-source', 'protocol', 'consensus', 'immutable',
-    'decentralized', 'proliferate', 'autonomy',
-    # Power/politics
-    'accountability', 'corruption', 'sanction', 'leverage', 'complicit',
+# Words that carry the mission — rotate through these
+MISSION_WORDS = [
+    # SolarPunk / Ecology
+    'mycelium', 'symbiosis', 'commons', 'resilience', 'rewilding',
+    'sovereignty', 'regenerative', 'mutualism',
+    # Justice / Solidarity  
+    'solidarity', 'resistance', 'liberation', 'dignity', 'sanctuary',
+    'testimony', 'bearing witness', 'persistence',
+    # Technology / Open Source
+    'protocol', 'decentralized', 'transparent', 'open', 'fork',
+    'propagate', 'network', 'signal',
+    # Hope
+    'flourish', 'bloom', 'persevere', 'endure', 'root',
+    'grow', 'tend', 'cultivate',
 ]
 
-def fetch_definition(word):
-    """Get definition from free Dictionary API."""
-    url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{urllib_request.quote(word)}'
+DICT_API = 'https://api.dictionaryapi.dev/api/v2/entries/en/'
+
+def lookup(word):
     try:
-        req = urllib_request.Request(url, headers={'User-Agent': 'meeko-nerve-center/2.0'})
+        req = urllib_request.Request(
+            DICT_API + urllib_request.quote(word),
+            headers={'User-Agent': 'meeko-nerve-center/2.0'}
+        )
         with urllib_request.urlopen(req, timeout=10) as r:
             data = json.loads(r.read())
-            if not data or not isinstance(data, list): return None
-
-            entry = data[0]
-            result = {
-                'word':     entry.get('word', word),
-                'phonetic': entry.get('phonetic', ''),
-                'origin':   entry.get('origin', ''),
-                'meanings': [],
-            }
-
-            for meaning in entry.get('meanings', [])[:2]:  # max 2 parts of speech
-                defs = meaning.get('definitions', [])[:1]  # max 1 definition each
-                if defs:
-                    result['meanings'].append({
-                        'part': meaning.get('partOfSpeech', ''),
-                        'def':  defs[0].get('definition', ''),
-                        'example': defs[0].get('example', ''),
-                        'synonyms': defs[0].get('synonyms', [])[:5],
-                    })
-
-            return result
+            if data and isinstance(data, list):
+                return data[0]
     except Exception as e:
-        return None
+        print(f'[lang] lookup error for {word}: {e}')
+    return None
 
-def pick_word_of_day():
-    """Pick today\'s word based on date (consistent, not random)."""
-    day_index = datetime.date.today().timetuple().tm_yday
-    return MISSION_VOCABULARY[day_index % len(MISSION_VOCABULARY)]
+def extract_definition(entry):
+    """Get the cleanest definition from a dictionary entry."""
+    if not entry: return None
+    meanings = entry.get('meanings', [])
+    if not meanings: return None
+    
+    # Prefer nouns and verbs over exclamations
+    preferred = ['noun', 'verb', 'adjective']
+    for pos in preferred:
+        for m in meanings:
+            if m.get('partOfSpeech') == pos:
+                defs = m.get('definitions', [])
+                if defs:
+                    return {
+                        'word':          entry.get('word'),
+                        'phonetic':      entry.get('phonetic', ''),
+                        'origin':        entry.get('origin', ''),
+                        'part_of_speech': pos,
+                        'definition':    defs[0].get('definition', ''),
+                        'example':       defs[0].get('example', ''),
+                        'synonyms':      defs[0].get('synonyms', [])[:5],
+                    }
+    
+    # Fallback: first definition of any type
+    m = meanings[0]
+    defs = m.get('definitions', [])
+    if defs:
+        return {
+            'word':          entry.get('word'),
+            'phonetic':      entry.get('phonetic', ''),
+            'origin':        entry.get('origin', ''),
+            'part_of_speech': m.get('partOfSpeech', ''),
+            'definition':    defs[0].get('definition', ''),
+            'example':       defs[0].get('example', ''),
+            'synonyms':      defs[0].get('synonyms', [])[:5],
+        }
+    return None
 
 def build_word_post(word_data):
-    """Generate a word-of-the-day social post."""
-    if not word_data or not word_data.get('meanings'): return None
+    """Build a social post around a word."""
+    w = word_data
+    phonetic = f' {w["phonetic"]}' if w.get('phonetic') else ''
+    origin   = f'\n\n{w["origin"]}' if w.get('origin') else ''
+    example  = f'\n\n"{w["example"]}"' if w.get('example') else ''
+    
+    post = f"""Word the world needs today:
 
-    word    = word_data['word']
-    phonetic = word_data.get('phonetic', '')
-    origin  = word_data.get('origin', '')
-    meaning = word_data['meanings'][0]
+{w['word'].upper()}{phonetic}
+/{w['part_of_speech']}/
 
-    lines = [f'📚 Word: **{word}**']
-    if phonetic: lines.append(f'{phonetic}')
-    lines.append(f'')
-    lines.append(f"{meaning['part']}: {meaning['def']}")
-    if meaning.get('example'):
-        lines.append(f'\"{ meaning["example"] }\"')
-    if origin:
-        lines.append(f'\nOrigin: {origin[:100]}')
-    lines.append(f'\n#Language #WordOfTheDay #{word.capitalize()} #SolarPunk')
+{w['definition']}{example}{origin}
 
-    return '\n'.join(lines)
+This is what we\'re building toward.\n\n#WordOfTheDay #{w['word'].title()} #SolarPunk #Liberation"""
+    
+    return post
+
+def load_glossary():
+    path = KB / 'language' / 'glossary.json'
+    if path.exists():
+        try: return json.loads(path.read_text())
+        except: pass
+    return {'terms': {}, 'last_updated': TODAY}
 
 def run():
-    print(f'[language] Language Engine — {TODAY}')
-
-    vocabulary = {}
-    fetched = 0
-
-    # Load existing vocabulary
-    vocab_path = DATA / 'vocabulary.json'
-    if vocab_path.exists():
-        try: vocabulary = json.loads(vocab_path.read_text())
-        except: pass
-
-    # Fetch definitions for words we don\'t have yet
-    for word in MISSION_VOCABULARY:
-        if word in vocabulary: continue  # already have it
-        defn = fetch_definition(word)
-        if defn:
-            vocabulary[word] = defn
-            fetched += 1
-            print(f'[language] Defined: {word}')
-
-    # Save vocabulary
-    (DATA / 'vocabulary.json').write_text(json.dumps(vocabulary, indent=2))
-    print(f'[language] Vocabulary: {len(vocabulary)} words ({fetched} new today)')
-
-    # Word of the day
-    wod = pick_word_of_day()
-    word_data = vocabulary.get(wod)
-    if not word_data:
-        word_data = fetch_definition(wod)
-        if word_data: vocabulary[wod] = word_data
-
-    post_text = build_word_post(word_data)
-    if post_text:
-        post = [{'platform': 'mastodon', 'type': 'word_of_day', 'text': post_text, 'word': wod}]
-        (CONT / f'word_{TODAY}.json').write_text(json.dumps(post, indent=2))
-        print(f'[language] Word of the day: {wod}')
-
-    # Digest
-    lines = [f'# Language Intelligence — {TODAY}', '',
-             f'{len(vocabulary)} words in mission vocabulary', '',
-             f'## Word of the Day: {wod}', '']
-    if word_data and word_data.get('meanings'):
-        lines.append(f"{word_data['meanings'][0]['def']}")
-    if word_data and word_data.get('origin'):
-        lines.append(f'\nOrigin: {word_data["origin"]}')
-
-    (KB / 'language' / f'{TODAY}.md').write_text('\n'.join(lines))
-    (KB / 'language' / 'latest.md').write_text('\n'.join(lines))
-
-    return {'vocabulary_size': len(vocabulary), 'word_of_day': wod}
+    print(f'[lang] Language Engine — {TODAY}')
+    
+    glossary = load_glossary()
+    new_terms = 0
+    
+    # Look up 5 mission words to build the glossary
+    words_to_lookup = random.sample(MISSION_WORDS, min(5, len(MISSION_WORDS)))
+    
+    for word in words_to_lookup:
+        if word in glossary['terms']:
+            continue  # Already have it
+        
+        entry = lookup(word)
+        if entry:
+            definition = extract_definition(entry)
+            if definition:
+                glossary['terms'][word] = definition
+                new_terms += 1
+                print(f'[lang] Added: {word} — {definition["definition"][:60]}...')
+    
+    glossary['last_updated'] = TODAY
+    (KB / 'language' / 'glossary.json').write_text(json.dumps(glossary, indent=2))
+    
+    # Pick word of the day
+    # Prefer words not yet in glossary, or rotate through all
+    all_words = MISSION_WORDS
+    today_word_name = all_words[int(datetime.date.today().toordinal()) % len(all_words)]
+    
+    entry = lookup(today_word_name)
+    word_data = extract_definition(entry) if entry else None
+    
+    if word_data:
+        (KB / 'language' / 'word_of_day.json').write_text(json.dumps({
+            'date': TODAY,
+            'word': word_data,
+        }, indent=2))
+        
+        post_text = build_word_post(word_data)
+        (CONT / f'word_post_{TODAY}.json').write_text(json.dumps([{
+            'platform': 'mastodon',
+            'type': 'word_of_day',
+            'text': post_text,
+        }], indent=2))
+        
+        print(f'[lang] Word of the day: {today_word_name}')
+        print(f'[lang] Post generated.')
+    
+    print(f'[lang] Glossary: {len(glossary["terms"])} terms ({new_terms} new today)')
+    return {'word_of_day': today_word_name, 'glossary_size': len(glossary['terms']), 'new_terms': new_terms}
 
 if __name__ == '__main__':
     run()

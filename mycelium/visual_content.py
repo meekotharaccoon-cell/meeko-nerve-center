@@ -2,178 +2,169 @@
 """
 Visual Content Engine
 ======================
-Free images for every content post.
+Picsum Photos (free, no auth) + HuggingFace FLUX image gen.
 
-Sources:
-  1. Picsum Photos   - random beautiful photography (no auth, zero cost)
-     https://picsum.photos/{width}/{height}  -> random photo URL
-     https://picsum.photos/seed/{seed}/{w}/{h} -> consistent seeded image
+Picsum Photos: https://picsum.photos
+  - Returns beautiful random photos
+  - Can seed for consistent images: https://picsum.photos/seed/gaza-rose/800/600
+  - Can get specific images by ID
+  - All CC0 / public domain
+  - Perfect for:
+    - Post backgrounds
+    - Social media visual variety
+    - Dashboard placeholder art
+    - Any content that needs a beautiful image fast
 
-  2. Museum Art      - public domain (already in art_cause_generator.py)
-
-  3. FLUX via HF     - AI-generated Gaza Rose variations (if HF_TOKEN set)
-
-Use cases:
-  - Every social post gets a visual
-  - Thumbnail generation for YouTube
-  - Art+Cause posts paired with Picsum backgrounds
-  - SolarPunk dashboard ambient imagery
+HuggingFace FLUX (with HF_TOKEN):
+  - Generate actual custom images from prompts
+  - Gaza Rose imagery, SolarPunk scenes, etc.
+  - Free tier via HuggingFace Inference Providers
 
 Outputs:
-  - data/visual_queue.json    list of image URLs ready to use in posts
-  - public/visuals.json       public manifest of available images
-  - content/queue/visuals_*.json  visual assignments for today\'s posts
+  - data/visual_queue.json    images ready for posts
+  - public/images/            downloaded images for the site
+  - content/queue/visuals_*.json  visual content posts
 """
 
-import json, datetime, random, hashlib
+import json, datetime, os, random
 from pathlib import Path
 from urllib import request as urllib_request
 
-ROOT  = Path(__file__).parent.parent
-DATA  = ROOT / 'data'
-CONT  = ROOT / 'content' / 'queue'
-PUBLIC = ROOT / 'public'
+ROOT   = Path(__file__).parent.parent
+DATA   = ROOT / 'data'
+PUBLIC = ROOT / 'public' / 'images'
+CONT   = ROOT / 'content' / 'queue'
+PUBLIC.mkdir(parents=True, exist_ok=True)
 
-for d in [DATA, CONT, PUBLIC]:
-    d.mkdir(parents=True, exist_ok=True)
+TODAY     = datetime.date.today().isoformat()
+HF_TOKEN  = os.environ.get('HF_TOKEN', '')
 
-TODAY = datetime.date.today().isoformat()
-
-# Picsum dimensions for different use cases
-DIMENSIONS = {
-    'instagram':  (1080, 1080),
-    'youtube_thumb': (1280, 720),
-    'twitter':    (1200, 675),
-    'mastodon':   (1200, 630),
-    'story':      (1080, 1920),
-    'banner':     (1500, 500),
+# Picsum seeded images — consistent beautiful photos for recurring content types
+PICSUM_SEEDS = {
+    'hope':          'solarpunk-hope',
+    'earth':         'earth-green',
+    'community':     'community-people', 
+    'flowers':       'garden-flowers',
+    'technology':    'open-source-tech',
+    'space':         'cosmos-stars',
+    'justice':       'solidarity-hands',
+    'water':         'clean-water',
 }
 
-# Seeds for consistent images (seed = same image every time)
-SEED_MAP = {
-    'solarpunk':      'solarpunk-forest',
-    'space':          'space-stars',
-    'earthquake':     'earth-geology',
-    'crypto':         'tech-abstract',
-    'congress':       'capitol-architecture',
-    'art_cause':      'museum-gallery',
-    'jobs':           'remote-work',
-    'books':          'library-reading',
-    'music':          'concert-crowd',
-    'food':           'market-produce',
-    'climate':        'wind-turbines',
-    'general':        TODAY,  # today\'s date = fresh image each day
-}
+# FLUX prompts for AI-generated images (when HF_TOKEN available)
+FLUX_PROMPTS = [
+    'A single red rose growing through cracked concrete, soft golden light, solarpunk aesthetic, hopeful',
+    'Hands of many different skin tones holding seeds, botanical illustration style, warm colors',
+    'Open source code flowing like a river through a green forest, digital art, solarpunk',
+    'A community garden in an urban setting at dusk, solar panels visible, diverse people, warm light',
+    'Abstract: a rose made of circuit board patterns, glowing softly, teal and earth tones',
+]
 
-def picsum_url(width, height, seed=None, grayscale=False):
-    """Generate a Picsum Photos URL. No auth needed."""
-    base = 'https://picsum.photos'
-    if seed:
-        url = f'{base}/seed/{seed}/{width}/{height}'
-    else:
-        url = f'{base}/{width}/{height}'
-    if grayscale:
-        url += '?grayscale'
-    return url
+def fetch_picsum(seed, width=800, height=600):
+    """Get a consistent beautiful photo by seed. Returns image URL (no download needed)."""
+    url = f'https://picsum.photos/seed/{seed}/{width}/{height}'
+    return url  # Picsum URLs are direct embed-ready
 
-def verify_picsum(url, timeout=5):
-    """Check if Picsum URL resolves (it redirects to actual image)."""
+def get_picsum_info(image_id):
+    """Get metadata for a specific Picsum image."""
     try:
-        req = urllib_request.Request(url, method='HEAD', headers={'User-Agent': 'meeko-nerve-center/2.0'})
-        with urllib_request.urlopen(req, timeout=timeout) as r:
-            return r.status in (200, 301, 302)
+        req = urllib_request.Request(
+            f'https://picsum.photos/id/{image_id}/info',
+            headers={'User-Agent': 'meeko-nerve-center/2.0'}
+        )
+        with urllib_request.urlopen(req, timeout=10) as r:
+            return json.loads(r.read())
     except:
-        return False
+        return None
 
-def generate_visual_manifest():
-    """Generate a full manifest of available visuals for today."""
-    visuals = {}
-
-    for theme, seed in SEED_MAP.items():
-        visuals[theme] = {}
-        for platform, (w, h) in DIMENSIONS.items():
-            visuals[theme][platform] = {
-                'url':   picsum_url(w, h, seed=seed),
-                'width': w,
-                'height': h,
-                'seed':  seed,
+def generate_flux_image(prompt):
+    """Generate image with HuggingFace FLUX. Returns image bytes or None."""
+    if not HF_TOKEN:
+        return None
+    
+    payload = json.dumps({'inputs': prompt}).encode()
+    
+    try:
+        req = urllib_request.Request(
+            'https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell',
+            data=payload,
+            headers={
+                'Authorization': f'Bearer {HF_TOKEN}',
+                'Content-Type': 'application/json',
             }
+        )
+        with urllib_request.urlopen(req, timeout=60) as r:
+            return r.read()  # PNG bytes
+    except Exception as e:
+        print(f'[visuals] FLUX error: {e}')
+        return None
 
-    return visuals
-
-def assign_visuals_to_content():
-    """Read today\'s content queue and assign images to each post."""
-    assignments = []
-    queue_dir = CONT
-    if not queue_dir.exists():
-        return assignments
-
-    # Theme detection from post content
-    def detect_theme(text):
-        text_lower = (text or '').lower()
-        if any(k in text_lower for k in ['solarpunk', 'carbon', 'climate', 'grid']): return 'solarpunk'
-        if any(k in text_lower for k in ['space', 'launch', 'iss', 'astronaut']): return 'space'
-        if any(k in text_lower for k in ['earthquake', 'quake', 'disaster']): return 'earthquake'
-        if any(k in text_lower for k in ['crypto', 'bitcoin', 'btc', 'sol', 'eth']): return 'crypto'
-        if any(k in text_lower for k in ['congress', 'representative', 'trade', 'stock']): return 'congress'
-        if any(k in text_lower for k in ['art', 'museum', 'painting', 'gaza rose']): return 'art_cause'
-        if any(k in text_lower for k in ['job', 'remote', 'hire', 'work']): return 'jobs'
-        if any(k in text_lower for k in ['book', 'read', 'library']): return 'books'
-        if any(k in text_lower for k in ['music', 'artist', 'song']): return 'music'
-        return 'general'
-
-    for queue_file in queue_dir.iterdir():
-        if not queue_file.suffix == '.json': continue
-        if 'visuals' in queue_file.name: continue
-        try:
-            posts = json.loads(queue_file.read_text())
-            if not isinstance(posts, list): continue
-            for post in posts:
-                text = post.get('text', '') + ' ' + post.get('type', '')
-                theme = detect_theme(text)
-                platform = post.get('platform', 'mastodon')
-                w, h = DIMENSIONS.get(platform, (1200, 630))
-                assignments.append({
-                    'source_file': queue_file.name,
-                    'post_type':   post.get('type', 'unknown'),
-                    'platform':    platform,
-                    'theme':       theme,
-                    'image_url':   picsum_url(w, h, seed=SEED_MAP.get(theme, TODAY)),
-                    'width':  w,
-                    'height': h,
-                })
-        except:
-            continue
-
-    return assignments
+def build_visual_queue():
+    """Build a queue of images ready for social posts."""
+    queue = []
+    
+    # Picsum images (always available, no token needed)
+    for theme, seed in PICSUM_SEEDS.items():
+        url = fetch_picsum(seed)
+        queue.append({
+            'type':    'picsum',
+            'theme':   theme,
+            'url':     url,
+            'embed':   url,  # Direct embed URL
+            'credit':  'Photo via Picsum Photos (CC0)',
+            'suitable_for': f'{theme} content posts',
+        })
+    
+    print(f'[visuals] {len(queue)} Picsum images queued')
+    
+    # FLUX generated images (if HF_TOKEN available)
+    if HF_TOKEN:
+        print('[visuals] Generating FLUX image...')
+        prompt = random.choice(FLUX_PROMPTS)
+        img_bytes = generate_flux_image(prompt)
+        if img_bytes:
+            img_path = PUBLIC / f'flux_{TODAY}.png'
+            img_path.write_bytes(img_bytes)
+            queue.append({
+                'type':    'flux_generated',
+                'theme':   'gaza_rose_ai',
+                'prompt':  prompt,
+                'path':    str(img_path),
+                'url':     f'https://meekotharaccoon-cell.github.io/meeko-nerve-center/images/flux_{TODAY}.png',
+                'credit':  'AI-generated via FLUX.1-schnell (HuggingFace)',
+            })
+            print(f'[visuals] FLUX image generated: flux_{TODAY}.png')
+    else:
+        print('[visuals] No HF_TOKEN — skipping FLUX generation. Picsum images ready.')
+    
+    return queue
 
 def run():
-    print(f'[visual] Visual Content Engine — {TODAY}')
-
-    # Generate full visual manifest
-    manifest = generate_visual_manifest()
-    (DATA / 'visual_queue.json').write_text(json.dumps({'date': TODAY, 'visuals': manifest}, indent=2))
-    (PUBLIC / 'visuals.json').write_text(json.dumps({'date': TODAY, 'visuals': manifest}, indent=2))
-
-    # Assign visuals to today\'s content
-    assignments = assign_visuals_to_content()
-    if assignments:
-        (CONT / f'visuals_{TODAY}.json').write_text(json.dumps(assignments, indent=2))
-        print(f'[visual] {len(assignments)} visual assignments created')
-
-    # Quick spot check
-    test_url = picsum_url(800, 600, seed='solarpunk-forest')
-    works = verify_picsum(test_url)
-    print(f'[visual] Picsum test: {test_url}')
-    print(f'[visual] Picsum reachable: {works}')
-
-    # Sample URLs for reference
-    print('[visual] Sample URLs:')
-    print(f'  Instagram square: {picsum_url(1080, 1080, seed=TODAY)}')
-    print(f'  YouTube thumb:    {picsum_url(1280, 720, seed="space-stars")}')
-    print(f'  SolarPunk theme:  {picsum_url(1200, 630, seed="solarpunk-forest")}')
-
-    return {'manifest': manifest, 'assignments': len(assignments)}
+    print(f'[visuals] Visual Content Engine — {TODAY}')
+    
+    queue = build_visual_queue()
+    
+    output = {'date': TODAY, 'images': queue, 'total': len(queue)}
+    (DATA / 'visual_queue.json').write_text(json.dumps(output, indent=2))
+    
+    # Build content posts pairing images with messages
+    posts = []
+    cause_themes = ['flowers', 'hope', 'community', 'justice']
+    for theme in cause_themes:
+        img = next((i for i in queue if i['theme'] == theme), None)
+        if img:
+            posts.append({
+                'platform':  'instagram',
+                'type':      'visual_cause',
+                'image_url': img['url'],
+                'theme':     theme,
+                'caption':   f'[Add cause message for {theme} theme — or let hf_brain.py generate one]',
+            })
+    
+    (CONT / f'visuals_{TODAY}.json').write_text(json.dumps(posts, indent=2))
+    
+    print(f'[visuals] Done. {len(queue)} images, {len(posts)} content posts ready.')
+    return output
 
 if __name__ == '__main__':
     run()
