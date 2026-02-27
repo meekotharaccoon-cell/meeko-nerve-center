@@ -5,6 +5,8 @@ on:
     - cron: '0 3 * * *'
     - cron: '0 6 * * *'
     - cron: '0 7 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
@@ -107,6 +109,10 @@ jobs:
 
       - name: Gmail Engine
         run: python mycelium/gmail_engine.py
+        continue-on-error: true
+
+      - name: Email Responder
+        run: python mycelium/email_responder.py
         continue-on-error: true
 
       - name: Privacy Scrubber
