@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-27T10:35:34.337266+00:00",
+  "generated": "2026-02-27T12:00:04.637980+00:00",
   "scripts": [
     "api_directory_harvester.py",
     "appointment_guardian.py",
@@ -11,11 +11,13 @@
     "community_outreach.py",
     "congress_watcher.py",
     "connection_mapper.py",
+    "cross_engine.py",
     "cross_poster.py",
     "crypto_jobs.py",
     "crypto_wallet_display.py",
     "desktop_cleaner.py",
     "dex_monitor.py",
+    "diagnostics.py",
     "donation_engine.py",
     "email_drafter.py",
     "email_responder.py",
@@ -60,12 +62,14 @@
     "self_healer.py",
     "seo_submitter.py",
     "signal_tracker.py",
+    "social_engine.py",
     "space_bridge.py",
     "system_consolidator.py",
     "tech_outreach.py",
     "telegram_bot.py",
     "unified_emailer.py",
     "update_state.py",
+    "video_engine.py",
     "visual_content.py",
     "wiring_hub.py",
     "world_intelligence.py",
@@ -133,7 +137,6 @@
     "mailer_pro.py",
     "monetization_tracker.py",
     "network_node.py",
-    "outreach_sender.py",
     "system_consolidator.py"
   ],
   "missing_capabilities": [

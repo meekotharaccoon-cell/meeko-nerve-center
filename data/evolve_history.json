@@ -160,11 +160,27 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 13,
+      "gen": 13,
+      "at": "2026-02-27T07:00:03.641553",
+      "built": "scan_assets",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 1
     }
   ],
   "built": [
     "index_lessons",
-    "gen_changelog"
+    "gen_changelog",
+    "scan_assets"
   ],
-  "gen": 13
+  "gen": 14
 }
