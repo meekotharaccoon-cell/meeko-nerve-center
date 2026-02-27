@@ -2,11 +2,11 @@
 
 ## Artists
 
+- **Palestine** SE | 
+- **Charlemagne Palestine**  | 
+- **Various Artists**  | rock, trance, electronic
+- **Palestine Strings**  | 
+- **Heartists for Palestine**  | 
 - **Underground Resistance** US | techno, detroit techno, electronic
 - **Resistance** BE | 
 - **Resistance**  | 
-- **RESISTANCE** JP | 
-- **Resistance** DE | 
-- **Solidarity**  | 
-- **Solidarity**  | 
-- **Solidarity Hymn** US | ambient

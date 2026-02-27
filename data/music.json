@@ -2,6 +2,52 @@
   "date": "2026-02-27",
   "artists": [
     {
+      "name": "Palestine",
+      "country": "SE",
+      "tags": [],
+      "score": 100,
+      "url": "https://musicbrainz.org/artist/30495e98-4b64-442a-bf8d-5871cbef9ea5",
+      "query": "Palestine"
+    },
+    {
+      "name": "Charlemagne Palestine",
+      "country": "",
+      "tags": [],
+      "score": 96,
+      "url": "https://musicbrainz.org/artist/2d3b6fec-f3ab-452d-98c7-510a1a1ac1e6",
+      "query": "Palestine"
+    },
+    {
+      "name": "Various Artists",
+      "country": "",
+      "tags": [
+        "rock",
+        "trance",
+        "electronic",
+        "soundtrack",
+        "classical"
+      ],
+      "score": 94,
+      "url": "https://musicbrainz.org/artist/89ad4ac3-39f7-470e-963a-56509c546377",
+      "query": "Palestine"
+    },
+    {
+      "name": "Palestine Strings",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/d59d9c0b-b4ea-42b5-84a6-93da9b82a331",
+      "query": "Palestine"
+    },
+    {
+      "name": "Heartists for Palestine",
+      "country": "",
+      "tags": [],
+      "score": 77,
+      "url": "https://musicbrainz.org/artist/c62cce8d-e83d-4173-8f71-7ed7d3f46482",
+      "query": "Palestine"
+    },
+    {
       "name": "Underground Resistance",
       "country": "US",
       "tags": [
@@ -45,48 +91,6 @@
       "score": 97,
       "url": "https://musicbrainz.org/artist/fff5a78f-1fae-4be9-97fb-faef9ffeb873",
       "query": "resistance"
-    },
-    {
-      "name": "Solidarity",
-      "country": "",
-      "tags": [],
-      "score": 100,
-      "url": "https://musicbrainz.org/artist/9f6314ea-13e6-402c-a01f-99622715edc4",
-      "query": "solidarity"
-    },
-    {
-      "name": "Solidarity",
-      "country": "",
-      "tags": [],
-      "score": 99,
-      "url": "https://musicbrainz.org/artist/8713ed1e-53e0-42cd-8f15-91f257a76b32",
-      "query": "solidarity"
-    },
-    {
-      "name": "Solidarity Hymn",
-      "country": "US",
-      "tags": [
-        "ambient"
-      ],
-      "score": 86,
-      "url": "https://musicbrainz.org/artist/9f7cdd4f-cab8-4d73-b17f-f187d476e4fb",
-      "query": "solidarity"
-    },
-    {
-      "name": "Solidarity Choir",
-      "country": "",
-      "tags": [],
-      "score": 86,
-      "url": "https://musicbrainz.org/artist/c635bc43-535b-4d9b-b920-7417a9786997",
-      "query": "solidarity"
-    },
-    {
-      "name": "King Solidarity",
-      "country": "",
-      "tags": [],
-      "score": 86,
-      "url": "https://musicbrainz.org/artist/5ff86ee3-8ba4-468c-a0fe-285694c1c98f",
-      "query": "solidarity"
     }
   ],
   "tracks": [

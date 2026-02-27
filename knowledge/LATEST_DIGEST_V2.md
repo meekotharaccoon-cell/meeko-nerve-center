@@ -2,20 +2,17 @@
 
 ## Earthquakes (M4.5+, last 24hr)
 
+- M5.3 — 26 km SE of Tāki, India (2026-02-27)
 - M5.2 — 55 km NNW of Hirara, Japan (2026-02-27)
-- M5.1 — 84 km SE of Severo-Kuril’sk, Russia (2026-02-26)
 - M5 — 273 km SE of Kuril’sk, Russia (2026-02-26)
 
-## UK Grid Carbon: 108 gCO2/kWh (moderate)
+## UK Grid Carbon: 159 gCO2/kWh (moderate)
 Lower numbers = more renewable energy on the grid.
 
 ## Space
 
+- [ArianeGroup Test Fires Greta Engine and Secures New ESA Contract](https://europeanspaceflight.com/arianegroup-test-fires-greta-engine-and-secures-new-esa-contract/)
 - [Chesapeake Bay Locked in Ice](https://science.nasa.gov/earth/earth-observatory/chesapeake-bay-locked-in-ice/)
-- [NASA Safety Panel Warns of “High Risk” for Artemis III](https://spacepolicyonline.com/news/nasa-safety-panel-warns-of-high-risk-for-artemis-iii/)
 
-## Crypto: BTC $67,579 (-1.2%)
-ETH $2,031.86 (-1.8%)
-
-## 12 humans currently in space
-Oleg Kononenko, Nikolai Chub, Tracy Caldwell Dyson, Matthew Dominick
+## Crypto: BTC $67,887 (-0.3%)
+ETH $2,033.68 (-1.3%)

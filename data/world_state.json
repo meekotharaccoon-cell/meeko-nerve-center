@@ -64,84 +64,84 @@
   },
   "solana_new_pools": [
     {
-      "name": "NotDivided / SOL",
-      "price_usd": "0.00000244288351445683546896109533910830079707762985401663420340518103",
-      "volume_24h": "0.008629444984",
-      "created": "2026-02-27T07:59:59Z",
+      "name": "BAGSTORE / SOL",
+      "price_usd": "0.000002501809209463248919064932586422642026858346980366227431072581",
+      "volume_24h": "51.148727678",
+      "created": "2026-02-27T09:05:54Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/Apocq3ZicADkqyyZUxcpe9itR41DPN7YBAGRwFsHpqv2"
+      "url": "https://www.geckoterminal.com/solana/pools/36NsfNKmHXS1vHsfVevBonyy4DvH4fMBPbnz1drWAcoD"
     },
     {
-      "name": "RoboScan / SOL",
-      "price_usd": "0.00000244293116125145166615308572527039638026591478391594732738305736",
-      "volume_24h": "0.08629383823",
-      "created": "2026-02-27T07:59:58Z",
+      "name": "AICOIN / SOL",
+      "price_usd": "0.0000043452904059754853849346152005302997343347031001031066548521076",
+      "volume_24h": "853.2819619963",
+      "created": "2026-02-27T09:05:43Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/EffRgsDqvM4PNnKMuD4pnQWYJJcjha3V7DLGXurr9sK5"
+      "url": "https://www.geckoterminal.com/solana/pools/FxYLQayKPGb3J253H8tikyGB2Dc5uAZwogxPZ81dMPTV"
     },
     {
-      "name": "RoboScan / SOL",
-      "price_usd": "0.00000244293116125145166615308572527039638026591478391594732738305736",
-      "volume_24h": "0.08629383823",
-      "created": "2026-02-27T07:59:57Z",
+      "name": "PEWBOT / SOL",
+      "price_usd": "0.0000263442776991518769447355025431184673818286447215897296939055448",
+      "volume_24h": "445.9965789121",
+      "created": "2026-02-27T09:05:43Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/AiLo6ajfeLMXJVXy99BBtaAGSbtzDjNE1bKjcW9Durk2"
+      "url": "https://www.geckoterminal.com/solana/pools/8keGYUYcfrSyTMxHb1mfvuLYXwzEpGag7myy8p8Ux5CX"
     },
     {
-      "name": "RoboScan / SOL",
-      "price_usd": "0.00000244293363472256121764431669346176044443754418485496954037646929",
-      "volume_24h": "0.08629392561",
-      "created": "2026-02-27T07:59:57Z",
+      "name": "CTX / SOL",
+      "price_usd": "0.00000249440836606301048817216956571971699252575311446101149255802524",
+      "volume_24h": "43.84839588",
+      "created": "2026-02-27T09:05:38Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/6uw36cpiJeZpZNLHaqXhRoRjsVy7tiPQcxzJzmhrgq7v"
+      "url": "https://www.geckoterminal.com/solana/pools/2vcWJpGdLzsV4BB2kfQaumGLGYkYTji6M6ysUy25DFMD"
     },
     {
-      "name": "Constitution / SOL",
-      "price_usd": "0.0000112610179543685801668635950212285444929491123359421646806036836",
-      "volume_24h": "133.3996795403",
-      "created": "2026-02-27T07:59:53Z",
+      "name": "cat / SOL",
+      "price_usd": "0.0000034864733666511036769784858075277018366009123229664901833499948",
+      "volume_24h": "1082.6562139271",
+      "created": "2026-02-27T09:05:37Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/AhbbsqaAJhRQxihfiUR7j5ZBpSmzQ4M9nTt8o1xYCK9C"
+      "url": "https://www.geckoterminal.com/solana/pools/8a15kFZsVD2UaUCqBNTANTxqGcLrNC1xPude5JCXhCYv"
     },
     {
-      "name": "HOUSE / SOL",
-      "price_usd": "0.00000244293147658379166054258952410039657237975838168200772333218264",
-      "volume_24h": "0.08629384937",
-      "created": "2026-02-27T07:59:51Z",
+      "name": "NCT / SOL",
+      "price_usd": "0.00000217319522903392070704117114265217616469035737690528639244129632",
+      "volume_24h": "86.2148788806",
+      "created": "2026-02-27T09:05:37Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/2cyMraeRxWPPk5GgUzZVmEzWqcEd33Lytuqvo91cVKQt"
+      "url": "https://www.geckoterminal.com/solana/pools/2Fxo42P9D6zBX3GWGxSwwgFeZn1uUyaBnShTyKQj5MwC"
     },
     {
-      "name": "LOOOOOK / SOL",
-      "price_usd": "0.00000244282662604710756216953877393287900151535833860125322434120345",
-      "volume_24h": "0.006552860581",
-      "created": "2026-02-27T07:59:44Z",
+      "name": "lobster / SOL",
+      "price_usd": "0.00000252488369553289713445651887476336147758243336107205640651956404",
+      "volume_24h": "769.1918493775",
+      "created": "2026-02-27T09:05:33Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/5MXTDfu9yY7mTK4EqWJ79vpzznEWE3uimvKPUcgp9AWy"
+      "url": "https://www.geckoterminal.com/solana/pools/CqwoHZxUGo7Bj8kCQJEwynQPrzMK64w5Sj5beYqTiwWj"
     },
     {
-      "name": "LOOOOOK / SOL",
-      "price_usd": "0.0000024428173687734893837170109660071076171959549949927484980062725",
-      "volume_24h": "0.006552835748",
-      "created": "2026-02-27T07:59:44Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/9VFXPArzW1VKqjqMwE25odXQJP7qGv7tkYsoTNSSDGGC"
+      "name": "Pikachu / SOL",
+      "price_usd": "0.00000856828469513849992390212395596889948595524529119872518067212068",
+      "volume_24h": "0.5105276197",
+      "created": "2026-02-27T09:05:27Z",
+      "dex": "pumpswap",
+      "url": "https://www.geckoterminal.com/solana/pools/ABSKKw9H8WD69pWJHa6gqSgXxog2qmwe4EivBV96A7jC"
     },
     {
-      "name": "LOOOOOK / SOL",
-      "price_usd": "0.00000244282662528968533691781157032705135466519055096164723808501165",
-      "volume_24h": "0.006552860579",
-      "created": "2026-02-27T07:59:44Z",
+      "name": "Yakuza / SOL",
+      "price_usd": "0.0000027672139233755062992323057015469304560932754086237495327650848",
+      "volume_24h": "0.008763863321",
+      "created": "2026-02-27T09:05:24Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/Crm4BozCEgEgwxsX6gGYraB6rXWLWrMAueFffZD4j12R"
+      "url": "https://www.geckoterminal.com/solana/pools/BRzb7tMhE1jPgWN2eWerBaGfy39gu1re4nibwwj6CiXx"
     },
     {
-      "name": "1776 / SOL",
-      "price_usd": "0.00000054591251833335876217076714237710696318053165653877886647560215",
-      "volume_24h": "0.8801954839",
-      "created": "2026-02-27T07:59:42Z",
+      "name": "PSA10 / SOL",
+      "price_usd": "0.00000337349869344418486049991172147508282645207114954665895433531384",
+      "volume_24h": "2014.1581425963",
+      "created": "2026-02-27T09:05:21Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/ChcFk1B5dTWx2mFogTkgGX6SKd6VV8yDoXybpxPguWWa"
+      "url": "https://www.geckoterminal.com/solana/pools/FRJWmXQLpak9QBtmWLGJi6ktqb6FWRLjgnn2XXfM6v38"
     }
   ],
   "crypto": [],
