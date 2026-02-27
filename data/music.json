@@ -91,6 +91,48 @@
       "score": 97,
       "url": "https://musicbrainz.org/artist/fff5a78f-1fae-4be9-97fb-faef9ffeb873",
       "query": "resistance"
+    },
+    {
+      "name": "Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 100,
+      "url": "https://musicbrainz.org/artist/9f6314ea-13e6-402c-a01f-99622715edc4",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/8713ed1e-53e0-42cd-8f15-91f257a76b32",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity Hymn",
+      "country": "US",
+      "tags": [
+        "ambient"
+      ],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/9f7cdd4f-cab8-4d73-b17f-f187d476e4fb",
+      "query": "solidarity"
+    },
+    {
+      "name": "Solidarity Choir",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/c635bc43-535b-4d9b-b920-7417a9786997",
+      "query": "solidarity"
+    },
+    {
+      "name": "King Solidarity",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/5ff86ee3-8ba4-468c-a0fe-285694c1c98f",
+      "query": "solidarity"
     }
   ],
   "tracks": [
@@ -131,22 +173,13 @@
       "query": "protest music"
     },
     {
-      "title": "Universal Prisoner",
-      "artist": "Les McCann & Eddie Harris",
+      "title": "Chain Gang",
+      "artist": "Otis Redding",
       "album": "Protest Music",
       "genre": "R&B/Soul",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview111/v4/e5/63/3a/e5633a05-df74-b02b-a775-d163d22b2a04/mzaf_6628158916951466966.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/universal-prisoner/1234494917?i=1234495128&uo=4",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/de/b4/80/deb4803e-1ce9-384a-5900-d665c7422379/mzaf_5475769226011058168.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/chain-gang/1234494917?i=1234495121&uo=4",
       "query": "protest music"
-    },
-    {
-      "title": "Meadow of Mindful Peace",
-      "artist": "Relaxing BGM Project",
-      "album": "Luxury Healing Time for All Five Senses \u2014 Spa BGM",
-      "genre": "Worldwide",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ec/61/f4/ec61f400-b23d-f705-25f3-d39a3721e799/mzaf_8672300547599060118.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/meadow-of-mindful-peace/1875906197?i=1875906213&uo=4",
-      "query": "world music peace"
     },
     {
       "title": "Peace",
@@ -182,6 +215,15 @@
       "genre": "Worldwide",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/e4/92/9ee49273-5b9c-58ee-a0f4-84da9e52b993/mzaf_8960560060439190009.plus.aac.p.m4a",
       "url": "https://music.apple.com/us/album/soft-hues-of-quiet-dusk/1878117442?i=1878117882&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Murmur of the Midnight Breeze",
+      "artist": "Dream House",
+      "album": "Feel the 1/f Fluctuations \u2014 Between Silence and Peace",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2b/5a/33/2b5a33a0-bafc-6bdb-243a-be7eb1434fa9/mzaf_9019704946319731506.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/murmur-of-the-midnight-breeze/1878117442?i=1878118061&uo=4",
       "query": "world music peace"
     }
   ]

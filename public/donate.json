@@ -1,16 +1,6 @@
 {
   "date": "2026-02-27",
   "exchange_rates": {
-<<<<<<< HEAD
-    "EUR": 0.847295,
-    "GBP": 0.740207,
-    "ILS": 3.119728,
-    "JOD": 0.709,
-    "EGP": 47.924115,
-    "TRY": 43.930759,
-    "CAD": 1.3679,
-    "AUD": 1.407768,
-=======
     "EUR": 0.8474,
     "GBP": 0.7403,
     "ILS": 3.1197,
@@ -19,7 +9,6 @@
     "TRY": 43.9564,
     "CAD": 1.3679,
     "AUD": 1.4078,
->>>>>>> 7efcc9eb07222dd7f7ab02c235bf03f7e48caa5e
     "SAR": 3.75,
     "AED": 3.6725
   },
@@ -44,20 +33,6 @@
       "note": "Most accessible for most people"
     },
     "solana": {
-<<<<<<< HEAD
-      "address": "",
-      "label": "Donate in SOL",
-      "network": "Solana",
-      "note": "Fast, cheap fees",
-      "qr_url": ""
-    },
-    "ethereum": {
-      "address": "",
-      "label": "Donate in ETH/USDC",
-      "network": "Ethereum",
-      "note": "Widely supported",
-      "qr_url": ""
-=======
       "address": "2eSY3s96m9YC8D9UeMmVMAEq5rYcZz1DUbaSy9RedG2v",
       "label": "Donate in SOL",
       "network": "Solana",
@@ -70,7 +45,6 @@
       "network": "Ethereum",
       "note": "Widely supported",
       "qr_url": "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=ethereum:0xeA0C219BF26021adD39DD0cC1fCF8167116DB48D"
->>>>>>> 7efcc9eb07222dd7f7ab02c235bf03f7e48caa5e
     },
     "gumroad": {
       "url": "https://gumroad.com/",

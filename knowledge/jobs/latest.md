@@ -1,6 +1,6 @@
 # Remote Jobs Digest — 2026-02-27
 
-Total: 155 | Crypto/Web3: 4 | Mission: 32
+Total: 156 | Crypto/Web3: 4 | Mission: 32
 
 ## Top Crypto/Web3 Jobs
 

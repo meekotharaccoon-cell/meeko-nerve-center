@@ -27,20 +27,20 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ig"
     },
     {
+      "place": "13 km NNW of San Bartolo, Peru",
+      "mag": 4.9,
+      "time": "2026-02-26T23:21",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0m0"
+    },
+    {
       "place": "107 km E of Tual, Indonesia",
       "mag": 4.9,
       "time": "2026-02-27T05:45",
       "alert": null,
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0nq"
-    },
-    {
-      "place": "51 km NW of Hirara, Japan",
-      "mag": 4.9,
-      "time": "2026-02-26T18:51",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0jt"
     },
     {
       "place": "70 km SW of Atka, Alaska",
@@ -51,20 +51,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0nl"
     },
     {
-      "place": "73 km SSW of Ollag\u00fce, Chile",
+      "place": "51 km NW of Hirara, Japan",
       "mag": 4.9,
-      "time": "2026-02-26T09:07",
+      "time": "2026-02-26T18:51",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ew"
-    },
-    {
-      "place": "13 km NNW of San Bartolo, Peru",
-      "mag": 4.9,
-      "time": "2026-02-26T23:21",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0m0"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0jt"
     },
     {
       "place": "42 km NNW of Hirara, Japan",
@@ -81,6 +73,14 @@
       "alert": null,
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0lv"
+    },
+    {
+      "place": "south of the Fiji Islands",
+      "mag": 4.7,
+      "time": "2026-02-26T15:29",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0gu"
     }
   ]
 }

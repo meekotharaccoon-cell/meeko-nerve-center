@@ -21,7 +21,8 @@
       ],
       "what_to_say": "The Meeko Nerve Center is an autonomous humanitarian AI that monitors Congressional stock trades, generates Palestine solidarity content, funds Palestinian children through art sales, and can be forked by anyone for $5. It runs entirely on free-tier GitHub Actions with zero monthly cost. It is the opposite of extractive AI \u2014 it gives power back to individuals and causes.",
       "apply_at": "https://www.mozillafoundation.org/en/what-we-do/grantmaking/incubator/democracy-ai-cohort/",
-      "note": "DO THIS FIRST. 17 days left. This is $50k minimum."
+      "note": "DO THIS FIRST. 17 days left. This is $50k minimum.",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "tech_for_palestine_incubator",
@@ -41,7 +42,8 @@
       ],
       "what_to_say": "Gaza Rose is an open-source autonomous AI system that generates Palestine solidarity art, sells it, and sends 70% directly to PCRF. It also monitors Congressional stock trades, surfaces free Palestinian books and music, and can be forked by any advocate for $5. We want to join T4P to connect with the ecosystem, get mentorship on scaling impact, and contribute our fork-model to other T4P projects.",
       "apply_at": "https://techforpalestine.org/incubator",
-      "note": "Rolling admission. Apply this week. This gets you into the T4P ecosystem which is where your real community is."
+      "note": "Rolling admission. Apply this week. This gets you into the T4P ecosystem which is where your real community is.",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "mozilla_fellows_2026",
@@ -59,7 +61,8 @@
       ],
       "what_to_say": "Building open-source autonomous AI for humanitarian causes. Zero tracking, privacy-first architecture. Forkable by anyone globally for any cause.",
       "apply_at": "https://foundation.mozilla.org/en/fellowships/",
-      "note": "Good backup to the Incubator cohort. Apply after T4P and Mozilla Incubator."
+      "note": "Good backup to the Incubator cohort. Apply after T4P and Mozilla Incubator.",
+      "sent": "manual_required_2026-02-27"
     }
   ],
   "press": [
@@ -73,7 +76,8 @@
       "twitter": "@tksshawa",
       "website": "https://www.tkshawa.com",
       "why": "Literally wrote about open-source intelligence for Palestinian liberation. This is his exact beat.",
-      "pitch_angle": "Open-source AI that autonomously funds Palestinian children \u2014 built by one person, costs $0/month, forkable by anyone"
+      "pitch_angle": "Open-source AI that autonomously funds Palestinian children \u2014 built by one person, costs $0/month, forkable by anyone",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "electronic_intifada",
@@ -84,7 +88,8 @@
       "beat": "Palestine solidarity, tech, activism",
       "contact": "https://electronicintifada.net/contact",
       "why": "Palestinian-run publication focused on exactly this intersection of tech + Palestine advocacy",
-      "pitch_angle": "Autonomous AI built in solidarity \u2014 Gaza Rose funds PCRF, system watches Congress, forkable for any cause"
+      "pitch_angle": "Autonomous AI built in solidarity \u2014 Gaza Rose funds PCRF, system watches Congress, forkable for any cause",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "stanford_ssir",
@@ -95,7 +100,8 @@
       "beat": "Social innovation, humanitarian tech",
       "contact": "https://ssir.org/about/contact",
       "why": "Already published 'Technology Against Genocide' about T4P. Your system is a natural follow-up story.",
-      "pitch_angle": "One-person humanitarian AI: zero cost, self-replicating, open source, funding Palestinian children autonomously"
+      "pitch_angle": "One-person humanitarian AI: zero cost, self-replicating, open source, funding Palestinian children autonomously",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "techcrunch_humanitarian",
@@ -106,7 +112,8 @@
       "beat": "Open source, startups, social impact",
       "contact": "https://techcrunch.com/about/contact-us/",
       "why": "Covered Tech for Palestine launch. Covers open source + humanitarian stories.",
-      "pitch_angle": "Show HN-style: autonomous humanitarian AI on GitHub Actions, $0/month, forkable, funds PCRF"
+      "pitch_angle": "Show HN-style: autonomous humanitarian AI on GitHub Actions, $0/month, forkable, funds PCRF",
+      "sent": "manual_required_2026-02-27"
     },
     {
       "id": "wired_open_source",
@@ -117,7 +124,8 @@
       "beat": "Tech + society, open source, AI ethics",
       "contact": "https://www.wired.com/about/feedback/",
       "why": "WIRED covers exactly this: AI that serves people instead of corporations",
-      "pitch_angle": "The anti-big-tech AI: open source, self-replicating, humanitarian, costs nothing to run"
+      "pitch_angle": "The anti-big-tech AI: open source, self-replicating, humanitarian, costs nothing to run",
+      "sent": "manual_required_2026-02-27"
     }
   ]
 }

@@ -2,9 +2,9 @@
 
 ## New Solana Pools (GeckoTerminal)
 
-- BAGSTORE / SOL | Vol 24h: $51.148727678 | https://www.geckoterminal.com/solana/pools/36NsfNKmHXS1vHsfVevBonyy4DvH4fMBPbnz1drWAcoD
-- AICOIN / SOL | Vol 24h: $853.2819619963 | https://www.geckoterminal.com/solana/pools/FxYLQayKPGb3J253H8tikyGB2Dc5uAZwogxPZ81dMPTV
-- PEWBOT / SOL | Vol 24h: $445.9965789121 | https://www.geckoterminal.com/solana/pools/8keGYUYcfrSyTMxHb1mfvuLYXwzEpGag7myy8p8Ux5CX
+- AIX / SOL | Vol 24h: $239.7334742507 | https://www.geckoterminal.com/solana/pools/22GRACwmt9Uq3NTjbJfpPnfcw8G1WTqeDRfRZUciBL5h
+- Ranmaru / SOL | Vol 24h: $120.0009977301 | https://www.geckoterminal.com/solana/pools/2q5T5FG8atqrWjYGEUA1oENTU3d4TRezCEgcsopjEv2U
+- BNBClaw / SOL | Vol 24h: $327.3601926288 | https://www.geckoterminal.com/solana/pools/2yKkFA8qYPhcg38xqmHusuy9ewjhFsV3VbdZCbAwP83g
 
 ## Next SpaceX Launch: USSF-44 on 2022-11-01
 
