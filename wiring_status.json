@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-27T05:06:23.358421Z",
+  "generated_at": "2026-02-27T06:24:00.789900Z",
   "generator": "github-actions",
   "services": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "service": "Solana/Phantom",
-      "status": "missing",
-      "note": "add SOLANA_WALLET to GitHub Secrets"
+      "status": "connected",
+      "note": "secret present"
     },
     {
       "service": "GitHub Actions",
