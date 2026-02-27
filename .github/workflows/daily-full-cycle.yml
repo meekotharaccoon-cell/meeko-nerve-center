@@ -37,6 +37,10 @@ jobs:
       - uses: actions/checkout@v4
 
       # ── SELF-MAINTENANCE ─────────────────────────────────
+      - name: System Health Check
+        run: python mycelium/system_health_alerting.py
+        continue-on-error: true
+
       - name: Error Self-Healing
         run: python mycelium/error_self_healing.py
         continue-on-error: true
@@ -124,6 +128,15 @@ jobs:
 
       - name: Outreach Sender
         run: python mycelium/outreach_sender.py
+        continue-on-error: true
+
+      # ── RELATIONSHIP MANAGEMENT ───────────────────────────
+      - name: Donor Follow-up Sequence
+        run: python mycelium/donor_followup_sequence.py
+        continue-on-error: true
+
+      - name: Press Follow-up
+        run: python mycelium/press_followup.py
         continue-on-error: true
 
       # ── COMMUNICATIONS ────────────────────────────────────
