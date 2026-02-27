@@ -22,6 +22,7 @@ jobs:
       SOLANA_WALLET:        ${{ secrets.SOLANA_WALLET }}
       ETHEREUM_WALLET:      ${{ secrets.ETHEREUM_WALLET }}
       KOFI_TOKEN:           ${{ secrets.KOFI_TOKEN }}
+      GUMROAD_TOKEN:        ${{ secrets.GUMROAD_TOKEN }}
       GMAIL_ADDRESS:        ${{ secrets.GMAIL_ADDRESS }}
       GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
       BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
@@ -78,6 +79,10 @@ jobs:
         run: python mycelium/content_performance.py
         continue-on-error: true
 
+      - name: Social Scheduling
+        run: python mycelium/social_scheduling.py
+        continue-on-error: true
+
       # ── CONTENT GENERATION ───────────────────────────────
       - name: Art + Cause
         run: python mycelium/art_cause_generator.py
@@ -105,6 +110,23 @@ jobs:
 
       - name: Language Engine
         run: python mycelium/language_engine.py
+        continue-on-error: true
+
+      - name: Wikipedia Contribution
+        run: python mycelium/wikipedia_contribution.py
+        continue-on-error: true
+
+      # ── MONETIZATION ─────────────────────────────────────
+      - name: Ko-fi Page Update
+        run: python mycelium/kofi_page_update.py
+        continue-on-error: true
+
+      - name: Gumroad Listing Update
+        run: python mycelium/gumroad_listing_update.py
+        continue-on-error: true
+
+      - name: Grant Application Submission
+        run: python mycelium/grant_application_submission.py
         continue-on-error: true
 
       # ── SELF-EVOLUTION ────────────────────────────────────
