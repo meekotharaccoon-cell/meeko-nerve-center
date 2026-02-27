@@ -1,9 +1,8 @@
-name: 🌍 Daily Full Cycle
+name: \U0001f30d Daily Full Cycle
 
 on:
   schedule:
     - cron: '0 3 * * *'   # 3am UTC — idea engine
-    - cron: '30 4 * * *'  # 4:30am — knowledge harvest
     - cron: '0 6 * * *'   # 6am — all API tools
     - cron: '0 7 * * *'   # 7am — AI brain + visuals + language
   workflow_dispatch:
@@ -14,63 +13,70 @@ jobs:
     permissions:
       contents: write
     env:
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      HF_TOKEN:          ${{ secrets.HF_TOKEN }}
+      TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID:  ${{ secrets.TELEGRAM_CHAT_ID }}
+      EXCHANGE_RATE_API: ${{ secrets.EXCHANGE_RATE_API }}
+      SOLANA_WALLET:     ${{ secrets.SOLANA_WALLET }}
+      ETHEREUM_WALLET:   ${{ secrets.ETHEREUM_WALLET }}
+      KOFI_TOKEN:        ${{ secrets.KOFI_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: 🧠 Idea Engine
+      - name: \U0001f9e0 Idea Engine
         run: python mycelium/idea_engine.py
         continue-on-error: true
 
-      - name: 🔨 Idea Builder
+      - name: \U0001f528 Idea Builder
         run: python mycelium/idea_builder.py
         continue-on-error: true
 
-      - name: 🌾 Knowledge Harvest v2
+      - name: \U0001f33e Knowledge Harvest
         run: python mycelium/knowledge_harvester_v2.py
         continue-on-error: true
 
-      - name: 📡 World Intelligence
+      - name: \U0001f4e1 World Intelligence
         run: python mycelium/world_intelligence.py
         continue-on-error: true
 
-      - name: 💼 Crypto Jobs
+      - name: \U0001f4b0 Donation Engine
+        run: python mycelium/donation_engine.py
+        continue-on-error: true
+
+      - name: \U0001fa99 Crypto Wallets
+        run: python mycelium/crypto_wallet_display.py
+        continue-on-error: true
+
+      - name: \U0001f4bc Crypto Jobs
         run: python mycelium/crypto_jobs.py
         continue-on-error: true
 
-      - name: 🎨 Art + Cause
+      - name: \U0001f3a8 Art + Cause
         run: python mycelium/art_cause_generator.py
         continue-on-error: true
 
-      - name: 📚 Open Library
+      - name: \U0001f4da Open Library
         run: python mycelium/open_library_reader.py
         continue-on-error: true
 
-      - name: 🎵 Music Intelligence
+      - name: \U0001f3b5 Music Intelligence
         run: python mycelium/music_intelligence.py
         continue-on-error: true
 
-      - name: 🤖 HF Brain (AI Content)
+      - name: \U0001f916 HF Brain
         run: python mycelium/hf_brain.py
         continue-on-error: true
 
-      - name: 🖼️ Visual Content
+      - name: \U0001f5bc\ufe0f Visual Content
         run: python mycelium/visual_content.py
         continue-on-error: true
 
-      - name: 📖 Language Engine
+      - name: \U0001f4d6 Language Engine
         run: python mycelium/language_engine.py
         continue-on-error: true
 
-      - name: 🔒 Privacy Scrubber
+      - name: \U0001f512 Privacy Scrubber
         run: python mycelium/privacy_scrubber.py
-        continue-on-error: true
-
-      - name: 📦 QR Propagator (weekly)
-        if: github.event.schedule == '0 7 * * 1'  # Mondays only
-        run: python mycelium/qr_propagator.py
         continue-on-error: true
 
       - name: Commit everything
