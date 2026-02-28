@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-02-28T00:14:37.584816Z",
+  "run_at": "2026-02-28T08:55:50.588146Z",
   "passed": 40,
   "warned": 0,
   "failed": 5,
@@ -163,7 +163,7 @@
       "category": "workflows",
       "name": "Total workflows",
       "status": "info",
-      "detail": "48 .yml files",
+      "detail": "52 .yml files",
       "fix": ""
     },
     {

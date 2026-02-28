@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-27",
+  "date": "2026-02-28",
   "world_bank": {
     "child_mortality": {
       "value": 53.8062516481712,
@@ -60,175 +60,175 @@
         "percent_total": 3.3856911096255002e-06
       }
     ],
-    "date": "2026-02-27"
+    "date": "2026-02-28"
   },
   "solana_new_pools": [
     {
-      "name": "Kitsu / SOL",
-      "price_usd": "0.000020701330851496376516833312793808698396559531295482637062984093",
-      "volume_24h": "0.002443383099",
-      "created": "2026-02-27T19:47:02Z",
-      "dex": "pumpswap",
-      "url": "https://www.geckoterminal.com/solana/pools/J1MmLhpRVKvqxM2UnkR5mmBXHqmXiU2Ybp6rHLB8VWvF"
+      "name": "NKM / SOL",
+      "price_usd": "0.00000193543144680733712951493724001291263049280530773331507192224781",
+      "volume_24h": "137.0408594702",
+      "created": "2026-02-28T09:12:52Z",
+      "dex": "pump-fun",
+      "url": "https://www.geckoterminal.com/solana/pools/R7jP2QVovcnsfosgmmace4UPyBEqPeaehKs3dtm2GNN"
     },
     {
-      "name": "BULZI / SOL",
-      "price_usd": "0.00000426978555448148663856822134863736346381020363336381094255568452",
-      "volume_24h": "4.0193764271",
-      "created": "2026-02-27T19:46:58Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/8rXbm5dSBVP343XkB5SZ2LA1K6o6WyHHuha4q4Xh7vPe"
+      "name": "FREE / SOL",
+      "price_usd": "0.000221849941589355331910508928525642467846530220771098819159565714",
+      "volume_24h": "21.3893148258",
+      "created": "2026-02-28T09:12:49Z",
+      "dex": "meteora-damm-v2",
+      "url": "https://www.geckoterminal.com/solana/pools/2GLxp6CdSj4JuedX5MgvvTuMZdXWPPvWeV8KCH9f3skB"
     },
     {
-      "name": "Geoffrey / SOL",
-      "price_usd": "0.0000024120988400867533128030861403962401311073589355610501995580817",
-      "volume_24h": "78.8647559987",
-      "created": "2026-02-27T19:46:57Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/338hXRofzrVusAtJ1YrRe5rpQkoJyfLaEBxV2NtTdbbh"
+      "name": "INVEST / SOL",
+      "price_usd": "0.000279915792810427358264764905419096678475942984049758609710081407",
+      "volume_24h": "11.369281297",
+      "created": "2026-02-28T09:12:47Z",
+      "dex": "meteora-damm-v2",
+      "url": "https://www.geckoterminal.com/solana/pools/6qTRHfdYeT2SpzSY5Tmq2RFvMakif7SFKixCKmJjf9XZ"
     },
     {
-      "name": "penguin2.0 / SOL",
-      "price_usd": "0.00000244796137084601002347925320518563984970367233684357859615898425",
-      "volume_24h": "184.8913195544",
-      "created": "2026-02-27T19:46:56Z",
+      "name": "FLOOD / SOL",
+      "price_usd": "0.00000218405028660270700569561868643070164927764509703359039254315352",
+      "volume_24h": "3.8991486029",
+      "created": "2026-02-28T09:12:47Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/8KBXCsvWvX9oGCo1zBUZygMp8iphCdtPGknpue56qdPH"
+      "url": "https://www.geckoterminal.com/solana/pools/B9oFg5P5NewASneuZmLRz7JUdHKCsVAA3FbkZXL6SnVS"
     },
     {
-      "name": "CLAUDEGUY / SOL",
-      "price_usd": "0.00000275665999265642691272275531404103069894569670351548157221510169",
-      "volume_24h": "309.9652974918",
-      "created": "2026-02-27T19:46:55Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/7Zd2L1NFTLwAFbK9taVBhMHX4Y66SYxy1LHbKk1DS7xZ"
+      "name": "Trump / SOL",
+      "price_usd": "0.000194843707202931249826888193707268756145814744382844291920916933",
+      "volume_24h": "1166.0618350166",
+      "created": "2026-02-28T09:12:40Z",
+      "dex": "meteora-dbc",
+      "url": "https://www.geckoterminal.com/solana/pools/E7L2EU6jsVtzob27Hrs5VinyCkirZewvzJAypZnDqLnk"
     },
     {
-      "name": "brainmaxx / SOL",
-      "price_usd": "0.00000689211557901388247029442410221286878771522679248534889684644005",
-      "volume_24h": "318.3337934915",
-      "created": "2026-02-27T19:46:55Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/XajctZePmc5iAnDHuFEZV5AFSiryH6qKgaxw7jFnk3Z"
+      "name": "Trump / USD1",
+      "price_usd": "0.000004048055352952687793186828363752186220992194118239752900478225",
+      "volume_24h": "76.2091593887",
+      "created": "2026-02-28T09:12:40Z",
+      "dex": "raydium-launchlab",
+      "url": "https://www.geckoterminal.com/solana/pools/34U7CRLrnAiPbaJbBu5myK7GV3NGvKX8aeP79jSjF6gx"
     },
     {
-      "name": "Geoffrey / SOL",
-      "price_usd": "0.00000235922941812760649765543424687638266002027182181049163463743345",
-      "volume_24h": "90.1662314048",
-      "created": "2026-02-27T19:46:53Z",
+      "name": "AWC / SOL",
+      "price_usd": "0.00000263048266354811415694580807404506136896328662769967657590948816",
+      "volume_24h": "72.1506620387",
+      "created": "2026-02-28T09:12:37Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/DdCSoLKWj94UxJ1QGLkm9LSP6GWxrzthbqxXg3jsiL8b"
+      "url": "https://www.geckoterminal.com/solana/pools/9PiKyuEsYLLQrNKMg7xN7KBEGH9mbE6KVL7gtcdiswHi"
     },
     {
-      "name": "ADAM / SOL",
-      "price_usd": "0.0000022814131707055475771734076847563959252562487639490347214335585",
-      "volume_24h": "1761.4553677202",
-      "created": "2026-02-27T19:46:45Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/7pDEMgb3HZf6Mv7DPHQC9edPSjNqqLAJ24mpf1f4mkud"
+      "name": "INVEST / SOL",
+      "price_usd": "0.000321628525637985265823464331876011763027738729169914413485678315",
+      "volume_24h": "1282.9458212797",
+      "created": "2026-02-28T09:12:34Z",
+      "dex": "meteora-dbc",
+      "url": "https://www.geckoterminal.com/solana/pools/2qZsWMHqBn3HnwgqrhGr3H2U98P7LxSFLZXQMy5KR7NF"
     },
     {
-      "name": "nothing / SOL",
-      "price_usd": "0.0000023513693253986452268834243514091951144183057145347302622164225",
-      "volume_24h": "728.7817941913",
-      "created": "2026-02-27T19:46:45Z",
+      "name": "ORL / SOL",
+      "price_usd": "0.00000263657646603248601826384144430352756709281720570904131216407856",
+      "volume_24h": "1474.8856734541",
+      "created": "2026-02-28T09:12:33Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/7Z2yJ5YigUJYNbbzTnFL2FJ4Y6vci7dmsTgfKpumsEUU"
+      "url": "https://www.geckoterminal.com/solana/pools/H1uQuEQXorgARVorkzYDEcs9ziMrTSvwxcL3kcFrKBJZ"
     },
     {
-      "name": "PokeEarn / SOL",
-      "price_usd": "0.00000390664906655441610857370179056832922650035199251873474394680244",
-      "volume_24h": "1165.5971150159",
-      "created": "2026-02-27T19:46:45Z",
+      "name": "distraction / SOL",
+      "price_usd": "0.00000221261633277820211270142993900517332737585037880624453397382708",
+      "volume_24h": "4.0206196668",
+      "created": "2026-02-28T09:12:33Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/2WAPBqoEQp3LHZa6dLC49uFn9FSwBPAPpaWHMuxXASxe"
+      "url": "https://www.geckoterminal.com/solana/pools/7EChHoEbHarVfeny1cAMPqWkjLv8w9B3yu1oCPRfzH7c"
     }
   ],
   "crypto": [
     {
       "name": "Bitcoin",
       "symbol": "BTC",
-      "price": 65310.0,
-      "change_24h": -3.29,
-      "volume_24h": 43052868711
+      "price": 63601.0,
+      "change_24h": -6.42,
+      "volume_24h": 45437213081
     },
     {
       "name": "Ethereum",
       "symbol": "ETH",
-      "price": 1917.75,
-      "change_24h": -5.36,
-      "volume_24h": 21199334104
+      "price": 1853.73,
+      "change_24h": -8.9,
+      "volume_24h": 22902436922
     },
     {
       "name": "Solana",
       "symbol": "SOL",
-      "price": 81.41,
-      "change_24h": -5.47,
-      "volume_24h": 3922458715
+      "price": 78.03,
+      "change_24h": -10.98,
+      "volume_24h": 4621543561
     },
     {
       "name": "Binancecoin",
       "symbol": "BNB",
-      "price": 608.86,
-      "change_24h": -2.42,
-      "volume_24h": 1258196754
+      "price": 591.73,
+      "change_24h": -5.91,
+      "volume_24h": 1207396263
     },
     {
       "name": "Ripple",
       "symbol": "XRP",
-      "price": 1.35,
-      "change_24h": -3.89,
-      "volume_24h": 3118492627
+      "price": 1.28,
+      "change_24h": -10.08,
+      "volume_24h": 3651603584
     },
     {
       "name": "Cardano",
       "symbol": "ADA",
-      "price": 0.2754,
-      "change_24h": -4.18,
-      "volume_24h": 491685574
+      "price": 0.2613,
+      "change_24h": -10.68,
+      "volume_24h": 580716370
     },
     {
       "name": "Avalanche",
       "symbol": "AVAX",
-      "price": 8.88,
-      "change_24h": -4.37,
-      "volume_24h": 323582199
+      "price": 8.47,
+      "change_24h": -9.71,
+      "volume_24h": 363218151
     },
     {
       "name": "Polkadot",
       "symbol": "DOT",
-      "price": 1.59,
-      "change_24h": 2.02,
-      "volume_24h": 321894066
+      "price": 1.48,
+      "change_24h": -8.28,
+      "volume_24h": 316001198
     },
     {
       "name": "Chainlink",
       "symbol": "LINK",
-      "price": 8.66,
-      "change_24h": -4.8,
-      "volume_24h": 315635577
+      "price": 8.26,
+      "change_24h": -10.14,
+      "volume_24h": 372843058
     },
     {
       "name": "Uniswap",
       "symbol": "UNI",
-      "price": 3.73,
-      "change_24h": -2.38,
-      "volume_24h": 209191287
+      "price": 3.59,
+      "change_24h": -7.49,
+      "volume_24h": 216856374
     }
   ],
   "exchange_rates": {
     "base": "USD",
     "rates": {
-      "EUR": 0.847295,
-      "GBP": 0.740207,
-      "ILS": 3.119728,
+      "EUR": 0.846769,
+      "GBP": 0.741795,
+      "ILS": 3.137619,
       "JOD": 0.709,
-      "EGP": 47.924115,
-      "TRY": 43.930759,
-      "CAD": 1.3679,
-      "AUD": 1.407768
+      "EGP": 47.935967,
+      "TRY": 43.9511,
+      "CAD": 1.364385,
+      "AUD": 1.406338
     },
-    "date": "2026-02-27"
+    "date": "2026-02-28"
   },
   "spacex": {
     "latest": {
@@ -242,47 +242,80 @@
       "date": "2022-11-01"
     }
   },
-  "food": {},
+  "food": {
+    "products": [
+      {
+        "name": "Pain De Mie Bio",
+        "brands": "La Boulang\u00e8re,La Boulang\u00e8re Bio",
+        "country": "France,Switzerland",
+        "nutri": "c"
+      },
+      {
+        "name": "Pain de mie american sandwich complet sans sucres ajout\u00e9s 600g",
+        "brands": "Harrys",
+        "country": "France",
+        "nutri": "b"
+      },
+      {
+        "name": "Pain de mie Bio grandes tranches c\u00e9r\u00e9ales & graines 500g",
+        "brands": "La boulang\u00e8re bio",
+        "country": "France",
+        "nutri": "c"
+      },
+      {
+        "name": "100% mie complet 500g",
+        "brands": "Harrys",
+        "country": "Belgium, France, Luxembourg, Martinique, R\u00e9union, Switzerland, en:french-polynesia",
+        "nutri": "b"
+      },
+      {
+        "name": "wasa",
+        "brands": "Barilla,Wasa",
+        "country": "France,Guadeloupe,Italy,Switzerland",
+        "nutri": "a"
+      }
+    ]
+  },
   "wikipedia_trending": [
     {
+      "title": "Scream 7",
+      "views": 218540
+    },
+    {
       "title": "Rashmika Mandanna",
-      "views": 237118
+      "views": 214091
+    },
+    {
+      "title": "Neil Sedaka",
+      "views": 206446
+    },
+    {
+      "title": "Resident Evil Requiem",
+      "views": 185038
     },
     {
       "title": "Vijay Deverakonda",
-      "views": 209407
-    },
-    {
-      "title": "Scream 7",
-      "views": 168828
+      "views": 184649
     },
     {
       "title": "Soham murders",
-      "views": 161204
+      "views": 180144
+    },
+    {
+      "title": "2026 Gorton and Denton by-election",
+      "views": 164961
     },
     {
       "title": "Jeffrey Epstein",
-      "views": 147859
+      "views": 155374
     },
     {
-      "title": "Alysa Liu",
-      "views": 140826
+      "title": "Bridgerton",
+      "views": 153394
     },
     {
-      "title": "Deaths in 2026",
-      "views": 133660
-    },
-    {
-      "title": "Nemesio Oseguera Cervantes",
-      "views": 120518
-    },
-    {
-      "title": "Robert Carradine",
-      "views": 120473
-    },
-    {
-      "title": "Men's T20 World Cup",
-      "views": 120175
+      "title": "Gorton and Denton",
+      "views": 138070
     }
   ]
 }

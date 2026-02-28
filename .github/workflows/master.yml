@@ -1,0 +1,46 @@
+name: Master Trigger
+# ONE workflow to rule them all.
+# Runs the full daily cycle. Everything else is either
+# triggered by this or runs on its own schedule.
+# Manual trigger: Actions tab -> Master Trigger -> Run workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_ingestion:
+        description: 'Also run parallel ingestion?'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['true', 'false']
+
+jobs:
+  trigger-all:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Trigger daily full cycle
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/daily-full-cycle.yml/dispatches \
+            -d '{"ref":"main"}'
+          echo "Daily cycle triggered."
+
+      - name: Trigger parallel ingestion (if requested)
+        if: ${{ github.event.inputs.run_ingestion == 'true' }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/parallel-ingest.yml/dispatches \
+            -d '{"ref":"main"}'
+          echo "Parallel ingestion triggered."
+
+      - name: Done
+        run: echo "All workflows triggered. Check Actions tab for progress."
