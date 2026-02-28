@@ -4,18 +4,15 @@
 
 - M5.4 — 43 km NW of Hirara, Japan (2026-02-28)
 - M5.4 — 137 km SSW of Kokopo, Papua New Guinea (2026-02-28)
-- M5.3 — Drake Passage (2026-02-27)
+- M5.4 — 80 km ESE of Sarangani, Philippines (2026-02-28)
 
-## UK Grid Carbon: 152 gCO2/kWh (moderate)
+## UK Grid Carbon: 194 gCO2/kWh (high)
 Lower numbers = more renewable energy on the grid.
 
 ## Space
 
-- [NASA Makes a “Course Correction” for the Artemis Program](https://spacepolicyonline.com/news/nasa-makes-a-course-correction-for-the-artemis-program/)
-- [Firefly Eyes Late February for Return to Flight](https://www.spacescout.info/2026/02/firefly-eyes-late-february-for-return-to-flight/)
+- [NASA on ‘aggressive’ schedule to complete SLS repairs for April launch](https://spacenews.com/nasa-on-aggressive-schedule-to-complete-sls-repairs-for-april-launch/)
+- [Firefly Alpha FLTA007 “Stairway to Seven” set for launch from California coast](https://www.nasaspaceflight.com/2026/02/firefly-flta007-launch/)
 
-## Crypto: BTC $63,639 (-6.4%)
-ETH $1,854.49 (-9.0%)
-
-## 12 humans currently in space
-Oleg Kononenko, Nikolai Chub, Tracy Caldwell Dyson, Matthew Dominick
+## Crypto: BTC $65,138 (-0.6%)
+ETH $1,901.82 (-0.9%)
