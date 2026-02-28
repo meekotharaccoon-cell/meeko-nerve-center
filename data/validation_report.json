@@ -55,15 +55,15 @@
     }
   ],
   "confidence": {
-    "github_pages": 74,
-    "system_health_alerting": 95,
-    "idea_engine": 95,
-    "world_intelligence": 95,
-    "content_performance": 15,
-    "art_generation": 95,
-    "signal_accuracy": 95,
-    "github_actions": 95,
-    "social_queue": 95
+    "github_pages": 79,
+    "system_health_alerting": 96,
+    "idea_engine": 96,
+    "world_intelligence": 96,
+    "content_performance": 12,
+    "art_generation": 96,
+    "signal_accuracy": 96,
+    "github_actions": 96,
+    "social_queue": 96
   },
   "failures": 1,
   "passes": 8
