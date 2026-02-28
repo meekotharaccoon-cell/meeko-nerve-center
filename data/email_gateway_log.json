@@ -4,60 +4,6 @@
       "date": "2026-02-28",
       "from": "notifications@github.com",
       "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
       "action": "deploy_guide_sent"
     },
     {
@@ -1198,6 +1144,60 @@
       "date": "2026-02-28",
       "from": "team@netlify.com",
       "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] Good news! Your projects have been r",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "You <> Sarah (Co-Founder at Nextdoor)",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "Meeko <> Sarah (Co-Founder at Nextdoor)",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "Ship smarter with Opus 4.6",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "support@freeup.net",
+      "subject": "This Simple Step Prevents Freelancer Headaches",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "Windows@notificationemails.microsoft.com",
+      "subject": "Ready to get personal?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "associates@amazon.com",
+      "subject": "Welcome to Amazon Associates! Start earning now.",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "pinbot@legal.pinterest.com",
+      "subject": "You're back on Pinterest",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] Good news! Your pro",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "Re: Re: Re: You <> Alli (Founder of Drybar)",
       "action": "fallback_help"
     }
   ],
