@@ -3,42 +3,6 @@
     {
       "date": "2026-02-28",
       "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Parallel\r\n Ingestion (8",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle - main ",
       "action": "fallback_help"
     },
@@ -1168,6 +1132,72 @@
       "date": "2026-02-28",
       "from": "hello@ma.linktr.ee",
       "subject": "Make it yours \ud83c\udfa8",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@news.railway.app",
+      "subject": "Chat with your Canvas, DB Metrics, Network flows",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@notify.railway.app",
+      "subject": "Trial Plan Alert",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "Windows@infomails.microsoft.com",
+      "subject": "From work to play, Windows 11 unlocks smoother days",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "You <>  Andy (Investor in SpaceX)",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@Ko-fi.com",
+      "subject": "Join the community that truly gets you",
+      "action": "subscribed"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "welcome@openrouter.ai",
+      "subject": "Welcome to OpenRouter",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "nickbaumann@info.cline.bot",
+      "subject": "Welcome to Cline",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "store-news@amazon.com",
+      "subject": "Selecting products 101",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@info.digitalocean.com",
+      "subject": "Learn what you can accomplish with DigitalOcean",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] Good news! Your projects have been re-enabled on MeekoThaRaccoon\u2019s tea",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] Good news! Your projects have been re-enabled on MeekoThaRaccoon\u2019s tea",
       "action": "fallback_help"
     }
   ],
