@@ -13,29 +13,29 @@
       9
     ]
   },
-  "market_breadth": 0.2,
+  "market_breadth": 0.24,
   "market_mood": "BEARISH",
   "trending": [
     "PAXG",
     "POWER",
     "BTC",
-    "SOL",
     "VVV",
-    "XAUT",
-    "PENGU"
+    "PENGU",
+    "SOL",
+    "ROBO"
   ],
   "top_movers": [
-    "HYPE +5.9%",
-    "PAXG +3.4%",
+    "HYPE +7.0%",
+    "PAXG +3.5%",
     "XAUT +2.2%",
-    "M +2.0%",
-    "ASTER +1.1%"
+    "M +2.1%",
+    "ASTER +0.7%"
   ],
   "worst_movers": [
-    "ZEC -6.2%",
-    "SUI -4.9%",
-    "BCH -4.6%",
-    "WLFI -4.6%",
-    "AAVE -4.5%"
+    "ZEC -6.0%",
+    "WLFI -5.2%",
+    "SUI -5.2%",
+    "BCH -5.0%",
+    "AAVE -4.9%"
   ]
 }

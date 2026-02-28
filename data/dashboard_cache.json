@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T17:43:57.885913",
+  "generated_at": "2026-02-28T17:56:18.893754",
   "date": "2026-02-28",
   "system": {
     "engines_total": 143,
@@ -26,12 +26,12 @@
     "total_workflows": 54,
     "failing": 14,
     "color": "YELLOW",
-    "last_check": "2026-02-28T17:43:16.556327"
+    "last_check": "2026-02-28T17:55:26.801967"
   },
   "market": {
     "fear_greed": 11,
     "fear_greed_label": "Extreme Fear",
-    "top_signal": "ZEC",
+    "top_signal": "BCH",
     "top_confidence": 83
   },
   "press": {

@@ -2,18 +2,35 @@
   "date": "2026-02-28",
   "signals": [
     {
+      "symbol": "BCH",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 83,
+      "reasons": [
+        "oversold (-5.0%) in extreme fear",
+        "extreme oversold 7d",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 443.94,
+      "change_24h": -5.00762,
+      "change_7d": -22.570499506284776,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-02-28"
+    },
+    {
       "symbol": "ZEC",
       "type": "CRYPTO",
       "action": "CONSIDER_BUY",
       "confidence": 83,
       "reasons": [
-        "oversold (-6.2%) in extreme fear",
+        "oversold (-6.0%) in extreme fear",
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 208.59,
-      "change_24h": -6.15779,
-      "change_7d": -19.481241680116103,
+      "price": 208.71,
+      "change_24h": -5.95733,
+      "change_7d": -19.43419319253281,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -27,9 +44,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 65079,
-      "change_24h": -0.52395,
-      "change_7d": -5.165659986950052,
+      "price": 65148,
+      "change_24h": -0.63134,
+      "change_7d": -5.066325815926835,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -43,25 +60,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 80.88,
-      "change_24h": -0.77372,
-      "change_7d": -6.5886520955013,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "XAUT",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 77,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 5333.14,
-      "change_24h": 2.17461,
-      "change_7d": 4.562521435241559,
+      "price": 81.06,
+      "change_24h": -0.4062,
+      "change_7d": -6.390256797620647,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -75,25 +76,41 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5426.21,
-      "change_24h": 3.39075,
-      "change_7d": 5.505204658778489,
+      "price": 5434.11,
+      "change_24h": 3.50551,
+      "change_7d": 5.658828181322974,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
     },
     {
-      "symbol": "BCH",
+      "symbol": "SUI",
       "type": "CRYPTO",
       "action": "CONSIDER_BUY",
-      "confidence": 73,
+      "confidence": 75,
       "reasons": [
-        "extreme oversold 7d",
+        "oversold (-5.2%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 443.67,
-      "change_24h": -4.64338,
-      "change_7d": -22.616841666987924,
+      "price": 0.857296,
+      "change_24h": -5.16184,
+      "change_7d": -10.502244656677467,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-02-28"
+    },
+    {
+      "symbol": "WLFI",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 75,
+      "reasons": [
+        "oversold (-5.2%) in extreme fear",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 0.108091,
+      "change_24h": -5.20488,
+      "change_7d": -10.219946695108657,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -106,9 +123,9 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1898.05,
-      "change_24h": -1.17499,
-      "change_7d": -4.514890628089761,
+      "price": 1901.23,
+      "change_24h": -1.55974,
+      "change_7d": -4.354700961236301,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -122,8 +139,8 @@
         "EXTREME FEAR: historically good entry"
       ],
       "price": 1.0,
-      "change_24h": 0.01354,
-      "change_7d": 0.04319583313896493,
+      "change_24h": 0.01454,
+      "change_7d": 0.049128600459561765,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -136,24 +153,9 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 602.5,
-      "change_24h": -1.07566,
-      "change_7d": -4.029555582147613,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "XRP",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 70,
-      "reasons": [
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 1.32,
-      "change_24h": -2.05011,
-      "change_7d": -8.484359255407755,
+      "price": 603.77,
+      "change_24h": -1.2337,
+      "change_7d": -3.8276010231486577,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"

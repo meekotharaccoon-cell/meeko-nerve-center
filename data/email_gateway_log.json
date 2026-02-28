@@ -1115,6 +1115,30 @@
       "from": "hi@intro.co",
       "subject": "Re: Re: Meeko <> Travis (Founder of Hydroflask)",
       "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "marketing@engage.canva.com",
+      "subject": "Last call: Close your organization's budget gap",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "Learn how teams actually ship with AI",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "support@freeup.net",
+      "subject": "Most People Skip This Step",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "Re: Re: Re: Meeko <> Travis (Founder of Hydroflask)",
+      "action": "fallback_help"
     }
   ],
   "human_emails_total": 1,
