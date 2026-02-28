@@ -1,0 +1,103 @@
+{
+  "date": "2026-02-28",
+  "timestamp": "2026-02-28T12:22:01.999500",
+  "total": 54,
+  "passing": 32,
+  "failing": 15,
+  "running": 6,
+  "retried": 13,
+  "health_pct": 59,
+  "color": "RED",
+  "failures": [
+    {
+      "name": "\ud83d\udd0e Asset Scanner",
+      "file": "asset-scan.yml",
+      "id": 22517876436,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436"
+    },
+    {
+      "name": "\ud83c\udfdb\ufe0f Congress Stock Watcher",
+      "file": "congress-watcher.yml",
+      "id": 22515836194,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22515836194"
+    },
+    {
+      "name": "Daily Full Cycle",
+      "file": "daily-full-cycle.yml",
+      "id": 22518118896,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518118896"
+    },
+    {
+      "name": "\ud83c\udf31 Evolution Engine",
+      "file": "evolve.yml",
+      "id": 22517606939,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517606939"
+    },
+    {
+      "name": ".github/workflows/feedback-loop.yml",
+      "file": "feedback-loop.yml",
+      "id": 22520639686,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520639686"
+    },
+    {
+      "name": "\ud83c\udf0d Full Daily Cycle",
+      "file": "full-daily.yml",
+      "id": 22516512890,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22516512890"
+    },
+    {
+      "name": "\ud83e\udde0 Knowledge Harvester",
+      "file": "knowledge-harvester.yml",
+      "id": 22514772634,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22514772634"
+    },
+    {
+      "name": "\ud83e\udde0 Orchestrator \u2014 Full Cycle",
+      "file": "orchestrator-daily.yml",
+      "id": 22517984675,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675"
+    },
+    {
+      "name": "\ud83d\udcf0 RSS Feed Generator",
+      "file": "rss-generator.yml",
+      "id": 22519282370,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22519282370"
+    },
+    {
+      "name": "\ud83d\udcca Signal Tracker",
+      "file": "signal-tracker.yml",
+      "id": 22302482287,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22302482287"
+    },
+    {
+      "name": "\ud83d\udef8 Space Bridge \u2014 Report",
+      "file": "space-bridge-daily.yml",
+      "id": 22509220456,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456"
+    },
+    {
+      "name": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update",
+      "file": "wiring-hub-daily.yml",
+      "id": 22518056673,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518056673"
+    },
+    {
+      "name": "\ud83d\udd0c Wiring Status Generator",
+      "file": "wiring-status-generator.yml",
+      "id": 22520639856,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520639856"
+    },
+    {
+      "name": "\ud83d\udcfa YouTube Manager",
+      "file": "youtube-manager.yml",
+      "id": 22509111934,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509111934"
+    },
+    {
+      "name": "\ud83c\udfac YouTube Shorts Writer",
+      "file": "youtube-shorts-writer.yml",
+      "id": 22517557202,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517557202"
+    }
+  ]
+}

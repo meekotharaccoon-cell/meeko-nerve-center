@@ -1,0 +1,139 @@
+[
+  {
+    "id": "mozilla_tech_fund",
+    "funder": "Mozilla Foundation",
+    "program": "Mozilla Technology Fund",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund/",
+    "amount": "$50,000 - $150,000",
+    "cycle": "annual",
+    "typical_deadline_month": 3,
+    "fit_score": 9,
+    "fit_reasons": [
+      "open source",
+      "accountability",
+      "trustworthy AI",
+      "civic tech"
+    ],
+    "key_language": [
+      "trustworthy AI",
+      "internet health",
+      "open source",
+      "accountability"
+    ],
+    "status": "drafted",
+    "draft_date": "2026-02-28"
+  },
+  {
+    "id": "knight_prototype",
+    "funder": "Knight Foundation",
+    "program": "Prototype Fund",
+    "url": "https://knightfoundation.org/prototype/",
+    "amount": "$35,000",
+    "cycle": "rolling",
+    "typical_deadline_month": null,
+    "fit_score": 8,
+    "fit_reasons": [
+      "journalism",
+      "civic tech",
+      "democracy",
+      "accountability"
+    ],
+    "key_language": [
+      "informed communities",
+      "democracy",
+      "media",
+      "civic engagement"
+    ],
+    "status": "researching"
+  },
+  {
+    "id": "nlnet_ngi",
+    "funder": "NLnet Foundation",
+    "program": "NGI Zero Core",
+    "url": "https://nlnet.nl/core/",
+    "amount": "up to EUR 50,000",
+    "cycle": "quarterly",
+    "typical_deadline_month": null,
+    "fit_score": 9,
+    "fit_reasons": [
+      "open source",
+      "internet infrastructure",
+      "privacy",
+      "human rights"
+    ],
+    "key_language": [
+      "open internet",
+      "privacy",
+      "security",
+      "open standards"
+    ],
+    "status": "researching"
+  },
+  {
+    "id": "prototype_fund_de",
+    "funder": "Prototype Fund (Germany)",
+    "program": "Prototype Fund Round",
+    "url": "https://prototypefund.de/en/",
+    "amount": "EUR 47,500",
+    "cycle": "biannual",
+    "typical_deadline_month": 4,
+    "fit_score": 8,
+    "fit_reasons": [
+      "open source",
+      "civic tech",
+      "social good",
+      "software infrastructure"
+    ],
+    "key_language": [
+      "common good",
+      "open source",
+      "civic society",
+      "digital infrastructure"
+    ],
+    "status": "researching"
+  },
+  {
+    "id": "open_society_eti",
+    "funder": "Open Society Foundations",
+    "program": "Emerging Technology Initiative",
+    "url": "https://www.opensocietyfoundations.org/grants",
+    "amount": "$25,000 - $100,000",
+    "cycle": "rolling",
+    "typical_deadline_month": null,
+    "fit_score": 9,
+    "fit_reasons": [
+      "human rights",
+      "accountability",
+      "democracy",
+      "Palestine"
+    ],
+    "key_language": [
+      "human rights",
+      "accountability",
+      "transparency",
+      "civil society"
+    ],
+    "status": "researching"
+  },
+  {
+    "id": "digital_defender",
+    "funder": "Digital Defender Partnership",
+    "program": "Digital Security Grant",
+    "url": "https://www.digitaldefenders.org/",
+    "amount": "up to $50,000",
+    "cycle": "rolling",
+    "typical_deadline_month": null,
+    "fit_score": 7,
+    "fit_reasons": [
+      "digital rights",
+      "human rights defenders",
+      "open source tools"
+    ],
+    "key_language": [
+      "digital security",
+      "human rights defenders",
+      "civil society"
+    ],
+    "status": "researching"
+  }
+]
