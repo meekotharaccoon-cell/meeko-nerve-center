@@ -1,0 +1,1149 @@
+{
+  "date": "2026-02-28",
+  "timestamp": "2026-02-28T22:48:29.999411",
+  "summary": {
+    "ok": 13,
+    "fixed": 1,
+    "warnings": 81,
+    "failures": 33,
+    "total": 128,
+    "health_pct": 11
+  },
+  "auto_fixes": [
+    {
+      "action": "created_file",
+      "file": "email_reply_dedup.json"
+    }
+  ],
+  "results": [
+    {
+      "check": "syntax:ORCHESTRATOR.py",
+      "status": "fail",
+      "detail": "ORCHESTRATOR.py: line 59 \u2014 invalid character '\u2014' (U+2014)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:autonomous_git.py",
+      "status": "fail",
+      "detail": "autonomous_git.py: line 85 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:coalition_builder.py",
+      "status": "fail",
+      "detail": "coalition_builder.py: line 287 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:connection_mapper.py",
+      "status": "fail",
+      "detail": "connection_mapper.py: line 182 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:cross_node_intelligence.py",
+      "status": "fail",
+      "detail": "cross_node_intelligence.py: line 168 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:error_self_healing.py",
+      "status": "fail",
+      "detail": "error_self_healing.py: line 365 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:gen_status.py",
+      "status": "fail",
+      "detail": "gen_status.py: line 49 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:grant_auto_submitter.py",
+      "status": "fail",
+      "detail": "grant_auto_submitter.py: line 244 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:grant_intelligence.py",
+      "status": "fail",
+      "detail": "grant_intelligence.py: line 185 \u2014 unterminated string literal (detected at line 185)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:hf_brain.py",
+      "status": "fail",
+      "detail": "hf_brain.py: line 139 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:identity_vault.py",
+      "status": "fail",
+      "detail": "identity_vault.py: line 59 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:morning_briefing.py",
+      "status": "fail",
+      "detail": "morning_briefing.py: line 73 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:network_node.py",
+      "status": "fail",
+      "detail": "network_node.py: line 52 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:portable_deployment.py",
+      "status": "fail",
+      "detail": "portable_deployment.py: line 169 \u2014 invalid character '\u2705' (U+2705)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:self_healer_v2.py",
+      "status": "fail",
+      "detail": "self_healer_v2.py: line 103 \u2014 unterminated string literal (detected at line 103)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:sovereign_research.py",
+      "status": "fail",
+      "detail": "sovereign_research.py: line 309 \u2014 unmatched ')'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:wiring_hub.py",
+      "status": "fail",
+      "detail": "wiring_hub.py: line 91 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:youtube_manager.py",
+      "status": "fail",
+      "detail": "youtube_manager.py: line 249 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:MASTER_CONTROLLER.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:api-directory-harvester.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:api-tools.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:asset-scan.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:changelog.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:community-outreach.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:congress-watcher.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:cross-poster.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:daily-full-cycle.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:daily-promoter.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:dex-monitor.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:diagnostics.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:email-drafter.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:email-gateway.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:email-responder.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:evolve.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:feedback-loop.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:fork-tracker.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:full-daily.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:gallery-health-check.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:heartbeat.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:huggingface-bridge.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:humanitarian-content.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:idea-engine.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:jekyll-gh-pages.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:knowledge-harvester-v2.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:knowledge-harvester.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:master.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:meeko-brain-daily.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:mycelium-evening.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:mycelium-hello.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:mycelium-morning.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:newsletter-writer.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:notion-bridge.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:orchestrator-daily.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:pages.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:parallel-ingest.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:perpetual-builder.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:rss-generator.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:self-healer.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:send-grants.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:send-outreach.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:seo-submitter.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:signal-tracker.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:space-bridge-daily.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:sync-docs.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:telegram-briefing.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:update-state.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:weekly-growth.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:wiring-hub-daily.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:wiring-status-generator.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:youtube-manager.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow:youtube-shorts-writer.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow script refs",
+      "status": "ok",
+      "detail": "All script references valid",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "schedules disabled",
+      "status": "ok",
+      "detail": "26/53 workflows have schedules disabled (email safety)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:workflow_health.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:email_gateway_log.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:email_reply_dedup.json",
+      "status": "fixed",
+      "detail": "Created missing file with empty scaffold",
+      "fixable": true,
+      "fix_applied": true
+    },
+    {
+      "check": "data:grant_database.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:idea_ledger.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:evolution_log.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:briefing_state.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "data:open_loops.json",
+      "status": "ok",
+      "detail": "",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:COINBASE_COMMERCE_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:DISCORD_WEBHOOK",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:GUMROAD_FLOWERS_URL",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:GUMROAD_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:INDEXNOW_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:KOFI_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:MASTODON_SERVER",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:MY_LAT",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:MY_LON",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:NOTION_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:OPENROUTER_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:PAYPAL_CLIENT_ID",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:PAYPAL_CLIENT_SECRET",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:SERPAPI_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:SOLANA_WALLET",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:STRIKE_API_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:STRIPE_SECRET",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:TELEGRAM_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:YOUTUBE_API_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:YOUTUBE_CHANNEL_ID",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:YOUTUBE_CLIENT_ID",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:YOUTUBE_CLIENT_SECRET",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:YOUTUBE_REFRESH_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "gumroad secrets",
+      "status": "warn",
+      "detail": "Gumroad secrets not in env (set in GitHub Settings)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "huggingface",
+      "status": "fail",
+      "detail": "LLM unreachable: HTTP Error 402: Payment Required",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "gumroad",
+      "status": "warn",
+      "detail": "GUMROAD_ID/SECRET not in env (set as GitHub secrets)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "email_gateway_v3",
+      "status": "ok",
+      "detail": "All safety checks present in v3 gateway",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "email_dedup",
+      "status": "ok",
+      "detail": "0 recent reply records",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow_health",
+      "status": "warn",
+      "detail": "70% healthy, 14 failing, color=YELLOW",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:asset-scan.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:congress-watcher.yml",
+      "status": "fail",
+      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22515836194",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:daily-full-cycle.yml",
+      "status": "fail",
+      "detail": "Daily Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22526954021",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:evolve.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf31 Evolution Engine \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525799552",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:feedback-loop.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd04 Feedback Loop \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:full-daily.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf0d Full Daily Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22516512890",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:jekyll-gh-pages.yml",
+      "status": "fail",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22530042869",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:orchestrator-daily.yml",
+      "status": "fail",
+      "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:rss-generator.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcf0 RSS Feed Generator \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22519282370",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:signal-tracker.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcca Signal Tracker \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22302482287",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:space-bridge-daily.yml",
+      "status": "fail",
+      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:wiring-hub-daily.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518056673",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:youtube-manager.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcfa YouTube Manager \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509111934",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:youtube-shorts-writer.yml",
+      "status": "fail",
+      "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517557202",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "crypto_signals",
+      "status": "ok",
+      "detail": "10 signals, last updated 2026-02-28",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "crypto_email_disabled",
+      "status": "ok",
+      "detail": "BTC/SOL price email disabled per user request. Data in dashboard only.",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "social_last_post",
+      "status": "warn",
+      "detail": "Last social post: never",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "art_generated",
+      "status": "warn",
+      "detail": "0 Gaza Rose art pieces generated",
+      "fixable": false,
+      "fix_applied": false
+    }
+  ],
+  "action_required": [
+    {
+      "check": "syntax:ORCHESTRATOR.py",
+      "status": "fail",
+      "detail": "ORCHESTRATOR.py: line 59 \u2014 invalid character '\u2014' (U+2014)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:autonomous_git.py",
+      "status": "fail",
+      "detail": "autonomous_git.py: line 85 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:coalition_builder.py",
+      "status": "fail",
+      "detail": "coalition_builder.py: line 287 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:connection_mapper.py",
+      "status": "fail",
+      "detail": "connection_mapper.py: line 182 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:cross_node_intelligence.py",
+      "status": "fail",
+      "detail": "cross_node_intelligence.py: line 168 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:error_self_healing.py",
+      "status": "fail",
+      "detail": "error_self_healing.py: line 365 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:gen_status.py",
+      "status": "fail",
+      "detail": "gen_status.py: line 49 \u2014 f-string: expecting '}'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:grant_auto_submitter.py",
+      "status": "fail",
+      "detail": "grant_auto_submitter.py: line 244 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:grant_intelligence.py",
+      "status": "fail",
+      "detail": "grant_intelligence.py: line 185 \u2014 unterminated string literal (detected at line 185)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:hf_brain.py",
+      "status": "fail",
+      "detail": "hf_brain.py: line 139 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:identity_vault.py",
+      "status": "fail",
+      "detail": "identity_vault.py: line 59 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:morning_briefing.py",
+      "status": "fail",
+      "detail": "morning_briefing.py: line 73 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:network_node.py",
+      "status": "fail",
+      "detail": "network_node.py: line 52 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:portable_deployment.py",
+      "status": "fail",
+      "detail": "portable_deployment.py: line 169 \u2014 invalid character '\u2705' (U+2705)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:self_healer_v2.py",
+      "status": "fail",
+      "detail": "self_healer_v2.py: line 103 \u2014 unterminated string literal (detected at line 103)",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:sovereign_research.py",
+      "status": "fail",
+      "detail": "sovereign_research.py: line 309 \u2014 unmatched ')'",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:wiring_hub.py",
+      "status": "fail",
+      "detail": "wiring_hub.py: line 91 \u2014 invalid syntax",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "syntax:youtube_manager.py",
+      "status": "fail",
+      "detail": "youtube_manager.py: line 249 \u2014 f-string expression part cannot include a backslash",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "huggingface",
+      "status": "fail",
+      "detail": "LLM unreachable: HTTP Error 402: Payment Required",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:asset-scan.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:congress-watcher.yml",
+      "status": "fail",
+      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22515836194",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:daily-full-cycle.yml",
+      "status": "fail",
+      "detail": "Daily Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22526954021",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:evolve.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf31 Evolution Engine \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525799552",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:feedback-loop.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd04 Feedback Loop \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:full-daily.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf0d Full Daily Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22516512890",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:jekyll-gh-pages.yml",
+      "status": "fail",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22530042869",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:orchestrator-daily.yml",
+      "status": "fail",
+      "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:rss-generator.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcf0 RSS Feed Generator \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22519282370",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:signal-tracker.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcca Signal Tracker \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22302482287",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:space-bridge-daily.yml",
+      "status": "fail",
+      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:wiring-hub-daily.yml",
+      "status": "fail",
+      "detail": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518056673",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:youtube-manager.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcfa YouTube Manager \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509111934",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:youtube-shorts-writer.yml",
+      "status": "fail",
+      "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517557202",
+      "fixable": false,
+      "fix_applied": false
+    }
+  ]
+}

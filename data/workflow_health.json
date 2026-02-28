@@ -1,13 +1,13 @@
 {
   "date": "2026-02-28",
-  "timestamp": "2026-02-28T18:59:49.095177",
+  "timestamp": "2026-02-28T22:48:15.288161",
   "total": 54,
-  "passing": 37,
-  "failing": 13,
-  "running": 3,
-  "retried": 3,
-  "health_pct": 68,
-  "color": "RED",
+  "passing": 38,
+  "failing": 14,
+  "running": 1,
+  "retried": 11,
+  "health_pct": 70,
+  "color": "YELLOW",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
@@ -22,13 +22,19 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22515836194"
     },
     {
+      "name": "Daily Full Cycle",
+      "file": "daily-full-cycle.yml",
+      "id": 22526954021,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22526954021"
+    },
+    {
       "name": "\ud83c\udf31 Evolution Engine",
       "file": "evolve.yml",
       "id": 22525799552,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525799552"
     },
     {
-      "name": ".github/workflows/feedback-loop.yml",
+      "name": "\ud83d\udd04 Feedback Loop",
       "file": "feedback-loop.yml",
       "id": 22525484891,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891"
@@ -42,8 +48,8 @@
     {
       "name": ".github/workflows/jekyll-gh-pages.yml",
       "file": "jekyll-gh-pages.yml",
-      "id": 22525484954,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484954"
+      "id": 22530042869,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22530042869"
     },
     {
       "name": "\ud83e\udde0 Orchestrator \u2014 Full Cycle",
