@@ -1,0 +1,70 @@
+{
+  "date": "2026-02-28",
+  "results": [
+    {
+      "check": "github_pages",
+      "ok": false,
+      "detail": "HTTP 200 \u2014 site may be down or not yet enabled",
+      "action": "Enable GitHub Pages: repo \u2192 Settings \u2192 Pages \u2192 main branch \u2192 /public"
+    },
+    {
+      "check": "system_health_alerting",
+      "ok": true,
+      "detail": "last updated 0d ago",
+      "action": null
+    },
+    {
+      "check": "idea_engine",
+      "ok": true,
+      "detail": "last updated 0d ago",
+      "action": null
+    },
+    {
+      "check": "world_intelligence",
+      "ok": true,
+      "detail": "last updated 0d ago",
+      "action": null
+    },
+    {
+      "check": "content_performance",
+      "ok": false,
+      "detail": "file missing"
+    },
+    {
+      "check": "art_generation",
+      "ok": true,
+      "detail": "1 total images, 1 in last 7 days",
+      "action": null
+    },
+    {
+      "check": "signal_accuracy",
+      "ok": true,
+      "detail": "no old signals to backcheck yet"
+    },
+    {
+      "check": "github_actions",
+      "ok": true,
+      "detail": "Latest: Perpetual Builder \u2014 None",
+      "failures": 3
+    },
+    {
+      "check": "social_queue",
+      "ok": true,
+      "detail": "20 posts queued in last 3 days (20 total)",
+      "action": null
+    }
+  ],
+  "confidence": {
+    "github_pages": 60,
+    "system_health_alerting": 80,
+    "idea_engine": 80,
+    "world_intelligence": 80,
+    "content_performance": 60,
+    "art_generation": 80,
+    "signal_accuracy": 80,
+    "github_actions": 80,
+    "social_queue": 80
+  },
+  "failures": 2,
+  "passes": 7
+}

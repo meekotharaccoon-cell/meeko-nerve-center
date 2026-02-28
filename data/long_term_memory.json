@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "updated": "2026-02-28",
+  "contexts": {},
+  "patterns": [],
+  "failures": [],
+  "wins": [],
+  "signals_accuracy": {},
+  "content_patterns": {},
+  "donor_patterns": {},
+  "press_patterns": {},
+  "grant_patterns": {
+    "total_submitted": 0,
+    "grants": [],
+    "updated": "2026-02-28"
+  },
+  "world_patterns": [],
+  "meta": {
+    "total_ideas_processed": 24,
+    "total_signals_generated": 0,
+    "total_art_generated": 0,
+    "system_age_days": 27,
+    "last_evolution_date": "",
+    "strongest_engines": [],
+    "weakest_engines": []
+  }
+}

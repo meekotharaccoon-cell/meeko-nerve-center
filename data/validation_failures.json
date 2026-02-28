@@ -1,0 +1,7 @@
+{
+  "date": "2026-02-28",
+  "checks": [
+    "github_pages",
+    "content_performance"
+  ]
+}
