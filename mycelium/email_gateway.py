@@ -2,47 +2,15 @@
 """
 Email Gateway Engine
 =====================
-Anyone with an email address can now talk to this system.
-Anyone can GET their own SolarPunk system through email.
-This is the most viral distribution mechanism on the planet.
-Email is universal. Email works on every phone. Email is forever.
+Reads real human emails only. Ignores all automated noise.
+FORK ME, SIGNALS, ACCOUNTABILITY, SUBSCRIBE, DEPLOY, HELP → auto-handled.
+Anything else → LLM responds genuinely.
 
-What it does:
-
-  INBOUND (reading emails sent to meekotharaccoon@gmail.com):
-    The system checks for emails with specific triggers:
-    - Subject contains "FORK ME" → send full setup guide
-    - Subject contains "SIGNALS" → send today's crypto signals
-    - Subject contains "ACCOUNTABILITY" → send latest congressional trades
-    - Subject contains "JOIN" or "SUBSCRIBE" → add to newsletter
-    - Subject contains "HELP" → send what the system can do
-    - Subject contains "DEPLOY" → send DEPLOY.md as email
-    - Anything else from known press contacts → auto-respond with press kit
-    - Anything else → LLM reads it, generates a genuine response
-
-  OUTBOUND (system-initiated):
-    - Anyone who emails gets a welcome with the system's capabilities
-    - Weekly digest to everyone who's ever emailed (opt-in)
-    - New fork notification: "someone just forked your system"
-
-  FORK-BY-EMAIL:
-    Send an email with subject "FORK ME" to meekotharaccoon@gmail.com
-    You get back:
-      1. Full DEPLOY.md in the email body
-      2. Step-by-step setup for YOUR OWN system
-      3. Link to fork the repo
-      4. Which 3 secrets to add first to get running in 10 minutes
-      5. A welcome to the SolarPunk network
-
-  THIS IS HOW THE NETWORK GROWS.
-  Email → Fork → Node → Network → Can't be shut down.
-  Every email is a potential new node.
-  Golden retriever energy: invite everyone.
-
-Gmail API access via IMAP (no OAuth needed with App Password).
+FIXED: Skips notifications@github.com, noreply@*, mailer-daemon, stripe, etc.
+FIXED: Only processes emails from REAL humans.
 """
 
-import json, datetime, os, smtplib, imaplib, email as email_lib
+import json, datetime, os, smtplib, imaplib, email as email_lib, re
 from pathlib import Path
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -56,88 +24,105 @@ GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
 GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
 HF_TOKEN           = os.environ.get('HF_TOKEN', '')
 
-REPO_URL   = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
-FORK_URL   = f'{REPO_URL}/fork'
-DEPLOY_URL = f'{REPO_URL}/blob/main/DEPLOY.md'
+REPO_URL = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
+FORK_URL = f'{REPO_URL}/fork'
+
+# ── Automated senders to ALWAYS ignore ──────────────────────────────────────
+SKIP_SENDERS = [
+    'notifications@github.com',
+    'noreply@github.com',
+    'noreply@',
+    'no-reply@',
+    'mailer-daemon',
+    'postmaster',
+    'notifications@stripe.com',
+    'notifications@polymarket.com',
+    'mail.apollo.io',
+    'flatlogic.com',
+    'bounce',
+    'auto-reply',
+    'donotreply',
+    'do-not-reply',
+]
+
+# ── Automated subject patterns to ignore ────────────────────────────────────
+SKIP_SUBJECT_PATTERNS = [
+    'run failed',
+    'run succeeded',
+    'run cancelled',
+    'run skipped',
+    'workflow run',
+    '[meekotharaccoon-cell/',
+    'deploy jekyll',
+    'github pages',
+    'parallel ingestion',
+    'unsubscribe',
+    'save $',
+    'breaking:',
+]
 
 FORK_RESPONSE = """Welcome to the SolarPunk network. 🌱
 
 You just asked for your own autonomous AI system.
 Here's how to have it running in 10 minutes, for free, forever.
 
-━━ STEP 1: FORK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━ STEP 1: FORK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Go here and click Fork: {fork_url}
 
-━━ STEP 2: ADD 3 SECRETS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━ STEP 2: ADD 3 SECRETS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 (Your forked repo → Settings → Secrets and variables → Actions)
 
 HF_TOKEN — free at huggingface.co/settings/tokens
-  (This is the AI brain. Takes 2 minutes to get.)
-
-GMAIL_ADDRESS — your Gmail address
+GMAIL_ADDRESS — your Gmail address  
 GMAIL_APP_PASSWORD — Google Account → Security → App Passwords
-  (This lets the system email you its daily intelligence report.)
 
-━━ STEP 3: ENABLE ACTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-(Your forked repo → Actions tab → "I understand my workflows" → Enable)
+━━ STEP 3: ENABLE ACTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(Your forked repo → Actions tab → Enable workflows)
 
 ━━ STEP 4: FIRST RUN ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-(Actions → Daily Full Cycle → Run workflow)
+(Actions → MASTER CONTROLLER → Run workflow)
 Your system starts building itself immediately.
 
-That's it. 10 minutes. Your system runs 5x daily. Forever. Free.
+That's it. 10 minutes. Runs forever. Free.
 
 ━━ WHAT YOU GET ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-60+ autonomous engines that:
-  ✓ Track congressional trades (STOCK Act accountability)
-  ✓ Generate art for causes you care about
-  ✓ Write and submit grant applications
-  ✓ Build their OWN new engines every single day
+90+ autonomous engines that:
+  ✓ Track every congressional stock trade (STOCK Act)
+  ✓ Generate Gaza Rose solidarity art
+  ✓ Send 70% of revenue to PCRF
+  ✓ Build their OWN new engines 288x/day
   ✓ Email you daily intelligence reports
-  ✓ Generate crypto signals
-  ✓ Manage press relationships
-  ✓ Post to social media automatically
-  ✓ Heal their own bugs
+  ✓ Generate crypto + congressional investment signals
+  ✓ Post to Mastodon and Bluesky automatically
+  ✓ Heal their own bugs without you
   ✓ Cost: $0/month. Forever.
-
-━━ WHAT MAKES THIS DIFFERENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-This is SolarPunk infrastructure.
-No VC funding. No ads. No extraction. No surveillance.
-Open source (AGPL-3.0). Forkable. Yours.
-It builds itself. Every day. It gets smarter. Every day.
-The ethics are in the architecture, not a policy doc.
 
 You're not downloading a tool.
 You're joining a network that can't be shut down.
 
 Welcome. 🌹
-
 — Meeko Nerve Center
 {repo_url}
 """
 
 HELP_RESPONSE = """🌸 Meeko Nerve Center — here's what I can do:
 
-Send an email to {address} with:
-  Subject: FORK ME → Get your own autonomous AI system (free, 10 min setup)
-  Subject: SIGNALS → Today's crypto signals
-  Subject: ACCOUNTABILITY → Latest congressional trade flagged
-  Subject: SUBSCRIBE → Join the weekly newsletter
-  Subject: DEPLOY → Full deployment guide
-  Subject: HELP → This message
-  Anything else → I'll read it and respond genuinely
+Email {address} with subject:
+  FORK ME → Get your own autonomous AI system (free, 10 min)
+  SIGNALS → Today's crypto signals
+  ACCOUNTABILITY → Latest congressional trade
+  SUBSCRIBE → Weekly newsletter
+  DEPLOY → Full deployment guide
+  HELP → This message
+  Anything else → I'll read it and respond
 
-I am:
-  ✓ A self-evolving autonomous AI (60+ engines)
-  ✓ Running on GitHub Actions for $0/month
-  ✓ Tracking congressional trades under the STOCK Act
-  ✓ Generating Gaza Rose art for Palestinian solidarity
-  ✓ Sending 70% of art revenue to PCRF
-  ✓ Building my own new capabilities every single day
-  ✓ AGPL-3.0 open source — fork me free
+I am a self-evolving autonomous AI.
+  ✓ 90+ engines, $0/month, GitHub Actions
+  ✓ Congressional trade tracker (STOCK Act)
+  ✓ Gaza Rose art → 70% to PCRF
+  ✓ AGPL-3.0 open source, forkable
 
 {repo_url}
-
 Free Palestine. 🌹
 """
 
@@ -148,19 +133,34 @@ def load(path, default=None):
     except: pass
     return default if default is not None else {}
 
+def is_automated_sender(sender_email, subject):
+    """Return True if this email is from an automated system we should skip."""
+    sender_lower = sender_email.lower()
+    subject_lower = subject.lower()
+    for skip in SKIP_SENDERS:
+        if skip in sender_lower:
+            return True
+    for pattern in SKIP_SUBJECT_PATTERNS:
+        if pattern in subject_lower:
+            return True
+    return False
+
 def get_todays_signals():
-    signals = load(DATA / 'crypto_signals_queue.json', [])
+    signals = load(DATA / 'investment_signals.json', {}).get('signals', [])
+    if not signals:
+        signals = load(DATA / 'crypto_signals_queue.json', [])
     if not signals: return 'No signals generated yet today. Check back later.'
-    lines = ['TODAY\'S CRYPTO SIGNALS', '=' * 40, '']
-    for s in signals[:3]:
+    lines = ["TODAY'S SIGNALS", '=' * 40, '']
+    for s in signals[:5]:
+        sym = s.get('symbol', s.get('ticker', '?'))
+        conf = s.get('confidence', s.get('confidence_pct', '?'))
         lines += [
-            f'{s.get("symbol","?")} — {s.get("action","?")}',
-            f'  Entry: {s.get("entry","?")} | Target: {s.get("target","?")} | Stop: {s.get("stop_loss","?")}',
-            f'  Confidence: {s.get("confidence","?")} | Timeframe: {s.get("timeframe","?")}',
-            f'  Rationale: {s.get("rationale","?")}',
+            f'{sym} — Confidence: {conf}%',
+            f'  {s.get("why", s.get("rationale", ""))}',
+            f'  Max position: {s.get("max_position_pct", "?")}% | Stop: {s.get("stop_loss_pct", s.get("stop_loss", "?"))}%',
             '',
         ]
-    lines += ['Not financial advice. Automated signals. DYOR.', f'\n{REPO_URL}']
+    lines += ['Not financial advice. Mathematical analysis only. DYOR.', f'\n{REPO_URL}']
     return '\n'.join(lines)
 
 def get_latest_trade():
@@ -187,23 +187,18 @@ def get_deploy_guide():
     return f'Full deploy guide at: {REPO_URL}/blob/main/DEPLOY.md'
 
 def generate_ai_response(subject, body_text):
-    """LLM reads the email and generates a genuine response."""
     if not HF_TOKEN: return None
     prompt = f"""You are Meeko Nerve Center, an autonomous AI for Palestinian solidarity
-and congressional accountability. You just received this email:
+and congressional accountability. You just received this email from a real human:
 
 Subject: {subject[:200]}
 Body: {body_text[:500]}
 
-Respond genuinely. Be helpful. Be human. Be SolarPunk.
-If it's a journalist, give them a story angle.
-If it's a developer, give them a technical hook.
-If it's a supporter, give them warmth.
-If it's hostile, be clear and principled.
-If it's random, be curious and welcoming.
+Respond genuinely. Be helpful. Be SolarPunk.
+If journalist → story angle. If developer → technical hook.
+If supporter → warmth. If hostile → clear and principled.
 
-Under 300 words. Sign as: Meeko Nerve Center
-Include: {REPO_URL}"""
+Under 300 words. Sign as: Meeko Nerve Center. Include: {REPO_URL}"""
     try:
         payload = json.dumps({
             'model': 'meta-llama/Llama-3.3-70B-Instruct:fastest',
@@ -223,12 +218,12 @@ Include: {REPO_URL}"""
     except:
         return None
 
-def send_reply(to_email, subject, body):
+def send_email(to_email, subject, body):
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD: return False
     try:
         msg = MIMEMultipart('alternative')
         msg['Subject'] = f'Re: {subject}' if not subject.startswith('Re:') else subject
-        msg['From']    = f'Meeko Nerve Center \U0001f338 <{GMAIL_ADDRESS}>'
+        msg['From']    = f'Meeko Nerve Center 🌸 <{GMAIL_ADDRESS}>'
         msg['To']      = to_email
         msg['Reply-To'] = GMAIL_ADDRESS
         msg.attach(MIMEText(body, 'plain'))
@@ -254,27 +249,25 @@ def add_to_newsletter(email, name=''):
     return False
 
 def check_inbox():
-    """Check Gmail inbox for incoming messages via IMAP."""
     if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
         return []
     try:
         mail = imaplib.IMAP4_SSL('imap.gmail.com')
         mail.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
         mail.select('INBOX')
-
-        # Search for unread emails
         _, data = mail.search(None, 'UNSEEN')
         email_ids = data[0].split()
 
         messages = []
-        for eid in email_ids[-10:]:  # Process up to 10
+        skipped  = 0
+        for eid in email_ids[-20:]:
             _, msg_data = mail.fetch(eid, '(RFC822)')
             raw = msg_data[0][1]
             msg = email_lib.message_from_bytes(raw)
 
-            subject = msg.get('Subject', '')
-            from_   = msg.get('From', '')
-            body    = ''
+            subject  = msg.get('Subject', '')
+            from_raw = msg.get('From', '')
+            body     = ''
 
             if msg.is_multipart():
                 for part in msg.walk():
@@ -286,28 +279,31 @@ def check_inbox():
                 try: body = msg.get_payload(decode=True).decode('utf-8', errors='replace')
                 except: pass
 
-            # Extract actual email address from From field
-            import re
-            email_match = re.search(r'[\w.+-]+@[\w-]+\.[\w.]+', from_)
-            sender_email = email_match.group(0) if email_match else from_
+            email_match = re.search(r'[\w.+-]+@[\w-]+\.[\w.]+', from_raw)
+            sender_email = email_match.group(0) if email_match else from_raw
 
-            # Skip emails from self
+            # Always mark as read (even skipped ones)
+            mail.store(eid, '+FLAGS', '\\Seen')
+
+            # Skip self-emails
             if GMAIL_ADDRESS.lower() in sender_email.lower():
+                skipped += 1
+                continue
+
+            # Skip automated noise — THE FIX
+            if is_automated_sender(sender_email, subject):
+                skipped += 1
+                print(f'[gateway] ⏭ Skipped automated: {sender_email[:40]} | {subject[:50]}')
                 continue
 
             messages.append({
-                'id':      eid,
-                'subject': subject,
-                'from':    sender_email,
-                'from_raw': from_,
-                'body':    body[:2000],
+                'id': eid, 'subject': subject, 'from': sender_email,
+                'from_raw': from_raw, 'body': body[:2000],
             })
-
-            # Mark as read
-            mail.store(eid, '+FLAGS', '\\Seen')
 
         mail.close()
         mail.logout()
+        print(f'[gateway] Real human emails: {len(messages)} | Skipped automated: {skipped}')
         return messages
     except Exception as e:
         print(f'[gateway] IMAP error: {e}')
@@ -315,11 +311,13 @@ def check_inbox():
 
 def log_interaction(sender, subject, action):
     p = DATA / 'email_gateway_log.json'
-    log = load(p, {'interactions': []})
+    log = load(p, {'interactions': [], 'human_emails_total': 0})
     log.setdefault('interactions', []).append({
         'date': TODAY, 'from': sender, 'subject': subject[:80], 'action': action
     })
-    log['interactions'] = log['interactions'][-200:]
+    log['interactions']    = log['interactions'][-200:]
+    log['human_emails_total'] = log.get('human_emails_total', 0) + 1
+    log['last_human_email']   = TODAY
     try: p.write_text(json.dumps(log, indent=2))
     except: pass
 
@@ -329,43 +327,27 @@ def route_email(msg):
     body     = msg['body']
     sub_orig = msg['subject']
 
-    print(f'[gateway] Routing: "{sub_orig[:50]}" from {sender[:40]}')
+    print(f'[gateway] 📧 Real human: "{sub_orig[:50]}" from {sender[:40]}')
 
-    if 'FORK ME' in subject or 'FORK' in subject:
-        reply = FORK_RESPONSE.format(fork_url=FORK_URL, repo_url=REPO_URL)
+    if 'FORK ME' in subject or ('FORK' in subject and 'WORKFLOW' not in subject):
+        reply  = FORK_RESPONSE.format(fork_url=FORK_URL, repo_url=REPO_URL)
         action = 'fork_guide_sent'
-
     elif 'SIGNAL' in subject:
-        reply = get_todays_signals()
+        reply  = get_todays_signals()
         action = 'signals_sent'
-
     elif 'ACCOUNTABILITY' in subject or 'CONGRESS' in subject or 'TRADE' in subject:
-        reply = get_latest_trade()
+        reply  = get_latest_trade()
         action = 'trade_sent'
-
     elif 'SUBSCRIBE' in subject or 'JOIN' in subject or 'NEWSLETTER' in subject:
-        added = add_to_newsletter(sender, msg.get('from_raw', ''))
-        reply = f"""You're {'now subscribed to' if added else 'already on'} the Meeko Nerve Center weekly newsletter. 🌸
-
-You'll get: congressional accountability hits, Gaza Rose art drops,
-PCRF impact numbers, system evolution updates, crypto signals.
-
-Every Sunday. Always free.
-
-While you wait: {REPO_URL}
-
-Free Palestine. 🌹
-"""
+        added  = add_to_newsletter(sender, msg.get('from_raw', ''))
+        reply  = f"You're {'now subscribed to' if added else 'already on'} the Meeko Nerve Center weekly newsletter. 🌸\n\nEvery Sunday. Always free.\n\n{REPO_URL}\n\nFree Palestine. 🌹"
         action = 'subscribed'
-
     elif 'DEPLOY' in subject or 'SETUP' in subject or 'INSTALL' in subject:
-        reply = get_deploy_guide()
+        reply  = get_deploy_guide()
         action = 'deploy_guide_sent'
-
-    elif 'HELP' in subject or 'WHAT' in subject or 'HOW' in subject:
-        reply = HELP_RESPONSE.format(address=GMAIL_ADDRESS, repo_url=REPO_URL)
+    elif 'HELP' in subject or ('WHAT' in subject and 'IS' in subject):
+        reply  = HELP_RESPONSE.format(address=GMAIL_ADDRESS, repo_url=REPO_URL)
         action = 'help_sent'
-
     elif 'UNSUBSCRIBE' in subject:
         p = DATA / 'newsletter_subscribers.json'
         subs = load(p, {'unsubscribed': []})
@@ -373,11 +355,9 @@ Free Palestine. 🌹
             subs.setdefault('unsubscribed', []).append(sender)
             try: p.write_text(json.dumps(subs, indent=2))
             except: pass
-        reply = 'You have been unsubscribed. Take care out there. 🌸'
+        reply  = 'You have been unsubscribed. Take care out there. 🌸'
         action = 'unsubscribed'
-
     else:
-        # AI reads it and responds
         ai_reply = generate_ai_response(sub_orig, body)
         if ai_reply:
             reply  = ai_reply
@@ -386,18 +366,16 @@ Free Palestine. 🌹
             reply  = HELP_RESPONSE.format(address=GMAIL_ADDRESS, repo_url=REPO_URL)
             action = 'fallback_help'
 
-    ok = send_reply(sender, sub_orig, reply)
+    ok = send_email(sender, sub_orig, reply)
     log_interaction(sender, sub_orig, action)
-    print(f'[gateway] {"\u2705" if ok else "\u274c"} Replied: {action} → {sender[:40]}')
+    print(f'[gateway] {"✅" if ok else "❌"} {action} → {sender[:40]}')
     return ok
 
 def run():
-    print(f'\n[gateway] \U0001f338 Email Gateway Engine \u2014 {TODAY}')
-    print(f'[gateway] Anyone who emails {GMAIL_ADDRESS} gets the SolarPunk network.')
+    print(f'\n[gateway] 🌸 Email Gateway Engine — {TODAY}')
+    print(f'[gateway] Filtering for real humans only. Skipping all GitHub/automated noise.')
 
-    messages = check_inbox()
-    print(f'[gateway] Unread messages: {len(messages)}')
-
+    messages  = check_inbox()
     processed = 0
     for msg in messages:
         try:
@@ -406,7 +384,7 @@ def run():
         except Exception as e:
             print(f'[gateway] Route error: {e}')
 
-    print(f'[gateway] Processed {processed} messages.')
+    print(f'[gateway] Processed {processed} real human messages.')
     print('[gateway] Done. The network grows. 🌱')
 
 if __name__ == '__main__':
