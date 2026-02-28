@@ -44,7 +44,7 @@
     {
       "check": "github_actions",
       "ok": true,
-      "detail": "Latest: Perpetual Builder \u2014 None",
+      "detail": "Latest: pages build and deployment \u2014 None",
       "failures": 0
     },
     {
@@ -55,15 +55,15 @@
     }
   ],
   "confidence": {
-    "github_pages": 79,
-    "system_health_alerting": 96,
-    "idea_engine": 96,
-    "world_intelligence": 96,
-    "content_performance": 12,
-    "art_generation": 96,
-    "signal_accuracy": 96,
-    "github_actions": 96,
-    "social_queue": 96
+    "github_pages": 83,
+    "system_health_alerting": 97,
+    "idea_engine": 97,
+    "world_intelligence": 97,
+    "content_performance": 10,
+    "art_generation": 97,
+    "signal_accuracy": 97,
+    "github_actions": 97,
+    "social_queue": 97
   },
   "failures": 1,
   "passes": 8
