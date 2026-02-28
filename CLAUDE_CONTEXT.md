@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 22:03 UTC — feat: Reddit engine, HuggingFace Space, ingestion engine v2 (handles 200k+ files in batches)*
+*Auto-updated by the system. Last update: 2026-02-28 00:25 UTC — 🎬 shorts scripts [2026-02-28]*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
