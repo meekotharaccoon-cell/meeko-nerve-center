@@ -1,12 +1,12 @@
 {
   "date": "2026-02-28",
-  "timestamp": "2026-02-28T16:52:41.503386",
+  "timestamp": "2026-02-28T17:19:36.599508",
   "total": 54,
-  "passing": 37,
+  "passing": 34,
   "failing": 14,
-  "running": 2,
+  "running": 5,
   "retried": 12,
-  "health_pct": 68,
+  "health_pct": 62,
   "color": "RED",
   "failures": [
     {
@@ -36,20 +36,14 @@
     {
       "name": ".github/workflows/feedback-loop.yml",
       "file": "feedback-loop.yml",
-      "id": 22520725854,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520725854"
+      "id": 22525303982,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525303982"
     },
     {
       "name": "\ud83c\udf0d Full Daily Cycle",
       "file": "full-daily.yml",
       "id": 22516512890,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22516512890"
-    },
-    {
-      "name": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
-      "file": "jekyll-gh-pages.yml",
-      "id": 22521512866,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22521512866"
     },
     {
       "name": "\ud83e\udde0 Orchestrator \u2014 Full Cycle",
@@ -80,6 +74,12 @@
       "file": "wiring-hub-daily.yml",
       "id": 22518056673,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518056673"
+    },
+    {
+      "name": "\ud83d\udd0c Wiring Status Generator",
+      "file": "wiring-status-generator.yml",
+      "id": 22525304137,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525304137"
     },
     {
       "name": "\ud83d\udcfa YouTube Manager",
