@@ -13,7 +13,7 @@
       9
     ]
   },
-  "market_breadth": 0.22,
+  "market_breadth": 0.2,
   "market_mood": "BEARISH",
   "trending": [
     "PAXG",
@@ -25,17 +25,17 @@
     "PENGU"
   ],
   "top_movers": [
-    "HYPE +6.2%",
+    "HYPE +5.9%",
     "PAXG +3.4%",
     "XAUT +2.2%",
     "M +2.0%",
-    "ASTER +1.6%"
+    "ASTER +1.1%"
   ],
   "worst_movers": [
-    "ZEC -5.9%",
-    "WLFI -4.4%",
-    "SUI -4.3%",
-    "BCH -4.1%",
-    "AAVE -4.1%"
+    "ZEC -6.2%",
+    "SUI -4.9%",
+    "BCH -4.6%",
+    "WLFI -4.6%",
+    "AAVE -4.5%"
   ]
 }
