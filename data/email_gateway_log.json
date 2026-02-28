@@ -3,108 +3,6 @@
     {
       "date": "2026-02-28",
       "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@stripe.com",
-      "subject": "A new secret key has been created for your Stripe account",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
       "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
       "action": "fallback_help"
     },
@@ -1198,6 +1096,108 @@
       "date": "2026-02-28",
       "from": "team@netlify.com",
       "subject": "[Netlify] Good news! Your projects have been re-enabled on MeekoThaRaccoon\u2019s tea",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "MicrosoftAccount@emailnotifications.micr",
+      "subject": "Welcome! Your Microsoft account is here",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "marketing@engage.canva.com",
+      "subject": "What's the cost of ideas left undone?",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@info.digitalocean.com",
+      "subject": "[Getting started on DO] Part 3 of 4: Power Up Your Droplets",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@Ko-fi.com",
+      "subject": "Bye algorithms, hello real support",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "ebay@reply.ebay.com",
+      "subject": "20% off for Presidents\u2019 Day, plus so much more\ud83d\udd25",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@khanacademy.org",
+      "subject": "You\u2019re almost there\u2014claim your \u201cAll Systems Go!\u201d badge! \ud83c\udfc5",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@khanacademy.org",
+      "subject": "[FREE TIPS] Supercharge your lesson plans with AI + Khan Academy mastery content",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@notify.railway.app",
+      "subject": "Trial Plan Alert",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@news.railway.app",
+      "subject": "Deploy to Railway with Claude, Codex, Cursor, and more",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "account-security-noreply@accountprotecti",
+      "subject": "Microsoft account security info was added",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "verify@x.com",
+      "subject": "New login to X from ChromeDesktop on Windows",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "support@freeup.net",
+      "subject": "How to Avoid Costly Freelance Hiring Mistakes",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "contact@mail.replit.com",
+      "subject": "Tomorrow: Mobile Builder Spotlight + Office Hours",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "gm@email.kraken.com",
+      "subject": "\ud83d\uddde\ufe0f BTC Back Below Prior Cycle High, What Comes Next?",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "Re: Re: You <> Alli (Founder of Drybar)",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "no-reply-support@coinbase.com",
+      "subject": "Visit the Coinbase Help Center to contact support - We will not\r\n call you about",
+      "action": "help_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] Good news! Your projects have been r",
       "action": "fallback_help"
     }
   ],
