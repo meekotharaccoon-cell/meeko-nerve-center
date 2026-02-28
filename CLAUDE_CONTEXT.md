@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-28 12:21 UTC — feat: MASTER_CONTROLLER workflow (auto-runs all, retries failures), master_controller.py, self_healer_v2.py (reads own emails, fixes own bugs) — zero human workflow management*
+*Auto-updated by the system. Last update: 2026-02-28 13:30 UTC — 🧠 knowledge update [2026-02-28]*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
