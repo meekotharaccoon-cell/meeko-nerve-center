@@ -1139,6 +1139,36 @@
       "from": "hi@intro.co",
       "subject": "Re: Re: Re: Meeko <> Travis (Founder of Hydroflask)",
       "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "support@gumroad.com",
+      "subject": "New sale of BUILD YOUR OWN LOCAL AI AGENT MYCELIUM for $1",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Take it all the way with Pro \ud83d\ude80",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "canvacreate@engage.canva.com",
+      "subject": "Meet the one behind \u2018The Hundreds\u2019 brand",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "support@freeup.net",
+      "subject": "Hey Michael, You Might Be More Ready Than You Think",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Make it yours \ud83c\udfa8",
+      "action": "fallback_help"
     }
   ],
   "human_emails_total": 1,
