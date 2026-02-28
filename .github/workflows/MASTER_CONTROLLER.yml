@@ -1,0 +1,233 @@
+name: 🌸 MASTER CONTROLLER — SolarPunk Autonomous Brain
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Every 30 minutes: check health, retry failures, chain runs
+    - cron: '0 */6 * * *'   # Every 6 hours: full sequential cycle
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/MASTER_CONTROLLER.yml'
+      - 'mycelium/master_controller.py'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: health_check | full_cycle | retry_failures | emergency_fix'
+        required: false
+        default: 'health_check'
+
+jobs:
+  master_control:
+    name: 🌸 SolarPunk Master Controller
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk-MasterController'
+          git config user.email 'solarpunk@meeko-nerve-center'
+
+      # ── PHASE 1: Read self-emails and fix any flagged issues ──────────────
+      - name: Phase 1 — Self-Email Reader (system reads its own diagnostics)
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/self_healer_v2.py
+        continue-on-error: true
+
+      # ── PHASE 2: Check all workflow statuses + auto-retry failures ────────
+      - name: Phase 2 — Workflow Health Monitor + Auto-Retry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/master_controller.py
+        continue-on-error: true
+
+      # ── PHASE 3: Core intelligence cycle (always runs) ───────────────────
+      - name: Phase 3a — World Intelligence
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/world_intelligence.py
+        continue-on-error: true
+
+      - name: Phase 3b — Congress Watcher
+        env:
+          QUIVER_API_KEY: ${{ secrets.QUIVER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/congress_watcher.py
+        continue-on-error: true
+
+      - name: Phase 3c — Crypto Signals
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/crypto_signal_engine.py
+        continue-on-error: true
+
+      # ── PHASE 4: Investment intelligence ─────────────────────────────────
+      - name: Phase 4 — Investment Intelligence (autonomous market analysis)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/investment_intelligence.py
+        continue-on-error: true
+
+      # ── PHASE 5: Content & distribution ──────────────────────────────────
+      - name: Phase 5a — Art Generation
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: python mycelium/art_cause_generator.py
+        continue-on-error: true
+
+      - name: Phase 5b — Social Posting
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/social_poster.py
+        continue-on-error: true
+
+      - name: Phase 5c — Press + Media
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/news_monitor.py
+        continue-on-error: true
+
+      # ── PHASE 6: Growth & network ─────────────────────────────────────────
+      - name: Phase 6a — Network Spreader
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/network_spreader.py
+        continue-on-error: true
+
+      - name: Phase 6b — Universal Spawner (sister systems)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/universal_spawner.py
+        continue-on-error: true
+
+      - name: Phase 6c — Email Gateway
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/email_gateway.py
+        continue-on-error: true
+
+      # ── PHASE 7: Revenue & relationships ─────────────────────────────────
+      - name: Phase 7a — Financial Loop Closer
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/financial_loop_closer.py
+        continue-on-error: true
+
+      - name: Phase 7b — Donor Lifecycle
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/donor_lifecycle.py
+        continue-on-error: true
+
+      - name: Phase 7c — Grant Intelligence
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/grant_intelligence.py
+        continue-on-error: true
+
+      # ── PHASE 8: Ethical pestering (corps/govs, never individuals) ────────
+      - name: Phase 8 — Ethical Pesterer (targeting evil, not people)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/ethical_pesterer.py
+        continue-on-error: true
+
+      # ── PHASE 9: Self-evolution (perpetual builder last — so it has data) ─
+      - name: Phase 9 — Perpetual Builder (evolve)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/perpetual_builder.py
+        continue-on-error: true
+
+      # ── PHASE 10: Loop closing + dashboard update ─────────────────────────
+      - name: Phase 10a — Loop Closer
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/loop_closer.py
+        continue-on-error: true
+
+      - name: Phase 10b — Dashboard Data Generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/dashboard_data_generator.py
+        continue-on-error: true
+
+      # ── PHASE 11: Sovereign + legal research (weekly) ─────────────────────
+      - name: Phase 11 — Sovereign Entity Research
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/sovereign_research.py
+        continue-on-error: true
+
+      # ── FINAL: Autonomous git commit + push ──────────────────────────────
+      - name: Final — Autonomous Git (commit everything, push, resolve conflicts)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add -A
+          git diff --cached --quiet && echo 'Nothing to commit' && exit 0
+          git commit -m "🌸 SolarPunk cycle complete [$(date +%Y-%m-%d\ %H:%M)] — $(git diff --cached --name-only | wc -l | tr -d ' ') files"
+          git pull --rebase origin main || git merge -X ours origin/main
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true
+
+      - name: Post-Run — Log master controller completion
+        run: echo "🌸 MASTER CONTROLLER CYCLE COMPLETE — $(date)" >> data/master_controller_log.txt
+        continue-on-error: true
