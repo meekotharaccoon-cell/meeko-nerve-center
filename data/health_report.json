@@ -1,0 +1,73 @@
+{
+  "date": "2026-02-27",
+  "score": 50,
+  "engines": [
+    {
+      "engine": "crypto_wallet_display",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "content_performance",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "email_responder",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "autonomy_audit",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "error_self_healing",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "self_evolution",
+      "score": 0,
+      "status": "no output file"
+    },
+    {
+      "engine": "idea_engine",
+      "score": 100,
+      "status": "ran today"
+    },
+    {
+      "engine": "world_intelligence",
+      "score": 100,
+      "status": "ran today"
+    },
+    {
+      "engine": "donation_engine",
+      "score": 100,
+      "status": "ran today"
+    },
+    {
+      "engine": "language_engine",
+      "score": 100,
+      "status": "ran today"
+    },
+    {
+      "engine": "open_library_reader",
+      "score": 100,
+      "status": "ran today"
+    },
+    {
+      "engine": "music_intelligence",
+      "score": 100,
+      "status": "ran today"
+    }
+  ],
+  "alert_threshold": 70,
+  "alerted": true,
+  "workflow": {
+    "conclusion": "skipped",
+    "run_number": 66,
+    "created_at": "2026-02-27"
+  }
+}

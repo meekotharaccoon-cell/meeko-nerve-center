@@ -59,7 +59,22 @@
       "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/system_state.json",
       "reason": "Sensitive keys found and removed: ['secret']",
       "when": "2026-02-27T11:52:58.789943"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/jobs_today.json",
+      "reason": "Sensitive keys found and removed: ['location']",
+      "when": "2026-02-27T19:49:24.309112"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/consolidated_knowledge.json",
+      "reason": "Sensitive keys found and removed: ['email', 'password', 'token', 'secret', 'address']",
+      "when": "2026-02-27T19:49:24.309112"
+    },
+    {
+      "path": "/home/runner/work/meeko-nerve-center/meeko-nerve-center/data/system_state.json",
+      "reason": "Sensitive keys found and removed: ['secret']",
+      "when": "2026-02-27T19:49:24.309112"
     }
   ],
-  "total_scrubbed": 12
+  "total_scrubbed": 15
 }

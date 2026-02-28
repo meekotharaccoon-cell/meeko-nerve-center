@@ -2,20 +2,20 @@
 
 ## Earthquakes (M4.5+, last 24hr)
 
+- M5.3 — Drake Passage (2026-02-27)
 - M5.3 — 26 km SE of Tāki, India (2026-02-27)
 - M5.2 — 55 km NNW of Hirara, Japan (2026-02-27)
-- M5 — 273 km SE of Kuril’sk, Russia (2026-02-26)
 
-## UK Grid Carbon: 156 gCO2/kWh (moderate)
+## UK Grid Carbon: 197 gCO2/kWh (high)
 Lower numbers = more renewable energy on the grid.
 
 ## Space
 
-- [China set for its first one-year human spaceflight mission, confirms Pakistani astronaut flight](https://spacenews.com/china-set-for-its-first-one-year-human-spaceflight-mission-confirms-pakistani-astronaut-flight/)
-- [Earth from Space: Terra Nova Bay, Antarctica](https://www.esa.int/ESA_Multimedia/Images/2026/02/Earth_from_Space_Terra_Nova_Bay_Antarctica)
+- [Harnessing the Sun to Extract Oxygen on the Moon](https://www.nasa.gov/image-article/harnessing-the-sun-to-extract-oxygen-on-the-moon/)
+- [Hyperion author Dan Simmons dies from stroke at 77](https://arstechnica.com/culture/2026/02/hyperion-author-dan-simmons-dies-from-stroke-at-77/)
 
-## Crypto: BTC $66,095 (-2.8%)
-ETH $1,962.23 (-4.5%)
+## Crypto: BTC $65,311 (-3.3%)
+ETH $1,917.14 (-5.4%)
 
 ## 12 humans currently in space
 Oleg Kononenko, Nikolai Chub, Tracy Caldwell Dyson, Matthew Dominick

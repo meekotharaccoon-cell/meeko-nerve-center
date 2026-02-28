@@ -205,6 +205,36 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 16,
+      "gen": 16,
+      "at": "2026-02-27T20:51:48.882535",
+      "built": "signal_tracker",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 17,
+      "gen": 17,
+      "at": "2026-02-28T03:40:27.619550",
+      "built": "seo_ping",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
@@ -212,7 +242,9 @@
     "gen_changelog",
     "scan_assets",
     "consolidate",
-    "map_connections"
+    "map_connections",
+    "signal_tracker",
+    "seo_ping"
   ],
-  "gen": 16
+  "gen": 18
 }

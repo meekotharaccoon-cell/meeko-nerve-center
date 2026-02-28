@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-27 16:20 UTC — refactor: organized cycle into phases — self-maintenance first, heal before anything else runs*
+*Auto-updated by the system. Last update: 2026-02-28 00:25 UTC — 🎬 shorts scripts [2026-02-28]*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 

@@ -2,6 +2,13 @@
   {
     "platform": "mastodon",
     "type": "music",
-    "text": "Music that carries the message:\n\n\u2022 Palestine (SE)\n\u2022 Charlemagne Palestine\n\u2022 Various Artists\n\u2022 Palestine Strings\n\u2022 Heartists for Palestine\n\n#Music #WorldMusic #Palestine #Resistance #SoundForGood"
+    "text": "Music that carries the message:\n\n\u2022 Palestine (SE)\n\u2022 Charlemagne Palestine\n\u2022 Various Artists\n\u2022 Palestine Strings\n\u2022 Heartists for Palestine\n\n#Music #WorldMusic #Palestine #Resistance #SoundForGood",
+    "optimal_send_hour": 9,
+    "send_windows": [
+      9,
+      12,
+      18
+    ],
+    "scheduled_date": "2026-02-27"
   }
 ]

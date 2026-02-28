@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-27T23:51:39.647513+00:00",
+  "generated": "2026-02-28T08:40:27.688034+00:00",
   "assets": {
     "C:\\Users\\meeko\\Desktop\\ultimateai_knowledge.db": null,
     "C:\\Users\\meeko\\Desktop\\MYCELIUM_KNOWLEDGE_BASE.json": null,
@@ -23,16 +23,40 @@
   },
   "local_scripts": [
     {
+      "name": "DAILY_LAUNCH.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
       "name": "prescan.py",
       "size_kb": 1,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "prescan_v2.py",
+      "size_kb": 3,
       "in_repo": false,
       "recommend": "push to repo"
     }
   ],
   "orphan_scripts": [
     {
+      "name": "DAILY_LAUNCH.py",
+      "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
       "name": "prescan.py",
       "size_kb": 1,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "prescan_v2.py",
+      "size_kb": 3,
       "in_repo": false,
       "recommend": "push to repo"
     }

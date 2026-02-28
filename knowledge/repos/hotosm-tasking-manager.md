@@ -1,7 +1,7 @@
 # hotosm/tasking-manager
-*Category: humanitarian · Harvested: 2026-02-26*
+*Category: humanitarian · Harvested: 2026-02-28*
 
-**Stars:** 575  
+**Stars:** 577  
 **Language:** Python  
 **License:** BSD-2-Clause  
 **URL:** https://github.com/hotosm/tasking-manager

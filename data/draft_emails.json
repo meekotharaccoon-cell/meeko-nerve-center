@@ -1,4 +1,48 @@
 {
-  "generated": "2026-02-27",
-  "count": 7
+  "generated": "2026-02-28",
+  "count": 7,
+  "emails": [
+    {
+      "category": "charity_partnership",
+      "priority": "high",
+      "to": "info@pcrf.net",
+      "subject": "Autonomous open-source art platform donating 70% to PCRF \u2014 partnership inquiry"
+    },
+    {
+      "category": "grant",
+      "priority": "high",
+      "to": "foundation@nlnet.nl",
+      "subject": "NGI0 grant inquiry \u2014 autonomous humanitarian AI, AGPL, zero-cost infrastructure"
+    },
+    {
+      "category": "grant",
+      "priority": "medium",
+      "to": "awards@mozillafoundation.org",
+      "subject": "Mozilla Technology Fund inquiry \u2014 open-source autonomous humanitarian AI"
+    },
+    {
+      "category": "press",
+      "priority": "medium",
+      "to": "tips@404media.co",
+      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
+    },
+    {
+      "category": "press",
+      "priority": "medium",
+      "to": "wired@condenast.com",
+      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
+    },
+    {
+      "category": "press",
+      "priority": "medium",
+      "to": "tips@restofworld.org",
+      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
+    },
+    {
+      "category": "community",
+      "priority": "medium",
+      "to": "[paste your community link / Discord / forum post]",
+      "subject": "Built a self-healing autonomous AI system at $0/month \u2014 full source on GitHub"
+    }
+  ]
 }
