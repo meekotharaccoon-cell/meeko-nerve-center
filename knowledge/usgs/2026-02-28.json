@@ -1,0 +1,86 @@
+{
+  "date": "2026-02-28",
+  "count": 10,
+  "quakes": [
+    {
+      "place": "43 km NW of Hirara, Japan",
+      "mag": 5.4,
+      "time": "2026-02-28T05:53",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s103"
+    },
+    {
+      "place": "137 km SSW of Kokopo, Papua New Guinea",
+      "mag": 5.4,
+      "time": "2026-02-28T06:23",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s106"
+    },
+    {
+      "place": "Drake Passage",
+      "mag": 5.3,
+      "time": "2026-02-27T18:31",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0v7"
+    },
+    {
+      "place": "50 km NNW of Hirara, Japan",
+      "mag": 5.1,
+      "time": "2026-02-28T01:49",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0z7"
+    },
+    {
+      "place": "233 km WNW of Gorontalo, Indonesia",
+      "mag": 5.1,
+      "time": "2026-02-28T06:52",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s10h"
+    },
+    {
+      "place": "61 km NNW of Hirara, Japan",
+      "mag": 5,
+      "time": "2026-02-27T14:48",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0qv"
+    },
+    {
+      "place": "Southwest Indian Ridge",
+      "mag": 4.9,
+      "time": "2026-02-27T16:17",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0sh"
+    },
+    {
+      "place": "16 km NNW of Shamakhi, Azerbaijan",
+      "mag": 4.8,
+      "time": "2026-02-27T11:52",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0q7"
+    },
+    {
+      "place": "157 km SE of Lata, Solomon Islands",
+      "mag": 4.8,
+      "time": "2026-02-27T15:45",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0s8"
+    },
+    {
+      "place": "232 km E of Levuka, Fiji",
+      "mag": 4.8,
+      "time": "2026-02-28T05:35",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0zy"
+    }
+  ]
+}
