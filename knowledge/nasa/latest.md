@@ -2,8 +2,8 @@
 
 ## ISS Position
 
-Latitude: -48.1874
-Longitude: -157.7198
+Latitude: 49.0024
+Longitude: -128.7310
 Captured: 2026-02-28
 
 ## People in Space
@@ -21,17 +21,9 @@ Captured: 2026-02-28
 - Li Cong (Tiangong)
 - Ye Guangfu (Tiangong)
 
-## Astronomy Picture of the Day
-
-**Sharpless 249 and the Jellyfish Nebula** (2026-02-27)
-
-Normally faint and elusive, the Jellyfish Nebula is caught in this alluring telescopic field of view. Floating in the interstellar sea, the nebula is anchored right and left by two bright stars, Mu and Eta Geminorum, at the foot of the celestial twins. The Jellyfish Nebula itself is right of center, seen as a brighter arcing ridge of emission with dangling tentacles. In fact, this cosmic jellyfish is part of bubble-shaped supernova remnant IC 443, the expanding debris cloud from a massive star that exploded. Light from the explosion first reached planet Earth over 30,000 years ago. Like its cousin in astrophysical waters the Crab Nebula supernova remnant, the Jellyfish Nebula is known to harbor a neutron star, the ultradense remnant of the collapsed stellar core. An emission nebula catalog
-
-Image: https://apod.nasa.gov/apod/image/2602/JellyfishBeecroft_final1_1024.jpg
-
 ## Near Earth Objects (next 7 days)
 
-Total: 95
+Total: 97
 
 - **(2003 DZ15)** — 88–196m — safe
 - **(2007 DG8)** — 24–54m — safe

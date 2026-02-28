@@ -11,27 +11,27 @@
 
 ## Top GitHub Repos Today
 
-- [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) ⭐275,695 — A list of Free Software network services and web applications which can be hoste
-- [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) ⭐182,076 — AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our
-- [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) ⭐55,134 — The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-
-- [mudler/LocalAI](https://github.com/mudler/LocalAI) ⭐43,117 — :robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hos
-- [nextcloud/server](https://github.com/nextcloud/server) ⭐34,183 — ☁️ Nextcloud server, a safe home for all your data
-- [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) ⭐29,383 — Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:
-- [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) ⭐26,110 — A list of AI autonomous agents
-- [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) ⭐25,153 — Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent 
-- [yjs/yjs](https://github.com/yjs/yjs) ⭐21,301 — Shared data types for building collaborative software
-- [amark/gun](https://github.com/amark/gun) ⭐18,923 — An open source cybersecurity protocol for syncing decentralized graph data.
+- [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) ⭐275,779 — A list of Free Software network services and web applications which can be hoste
+- [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) ⭐182,099 — AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our
+- [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) ⭐55,175 — The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-
+- [mudler/LocalAI](https://github.com/mudler/LocalAI) ⭐43,132 — :robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hos
+- [nextcloud/server](https://github.com/nextcloud/server) ⭐34,185 — ☁️ Nextcloud server, a safe home for all your data
+- [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) ⭐29,387 — Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:
+- [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) ⭐26,134 — A list of AI autonomous agents
+- [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) ⭐25,191 — Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent 
+- [yjs/yjs](https://github.com/yjs/yjs) ⭐21,304 — Shared data types for building collaborative software
+- [amark/gun](https://github.com/amark/gun) ⭐18,925 — An open source cybersecurity protocol for syncing decentralized graph data.
 
 ## Today in HackerNews
 
-- [I am directing the Department of War to designate Anthropic a supply-chain risk](https://twitter.com/secwar/status/2027507717469049070)
-- [OpenAI raises $110B on $730B pre-money valuation](https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/)
-- [Qt45: A small polymerase ribozyme that can synthesize itself](https://www.science.org/doi/10.1126/science.adt2760)
+- [OpenAI – How to delete your account](https://help.openai.com/en/articles/6378407-how-to-delete-your-account)
+- [The Future of AI](https://lucijagregov.com/2026/02/26/the-future-of-ai/)
+- [We Will Not Be Divided](https://notdivided.org)
+- [Unsloth Dynamic 2.0 GGUFs](https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs)
+- [Don't trust AI agents](https://nanoclaw.dev/blog/nanoclaw-security-model)
+- [OpenAI agrees with Dept. of War to deploy models in their classified network](https://twitter.com/sama/status/2027578652477821175)
+- [The Eternal Promise: A History of Attempts to Eliminate Programmers](https://www.ivanturkovic.com/2026/01/22/history-software-simplification-cobol-ai-hype/)
 - [A new California law says all operating systems need to have age verification](https://www.pcgamer.com/software/operating-systems/a-new-california-law-says-all-operating-systems-including-linux-need-to-have-some-form-of-age-verification-at-account-setup/)
-- [Emuko: Fast RISC-V emulator written in Rust, boots Linux](https://github.com/wkoszek/emuko)
-- [Show HN: I built a site where you hire yourself instead of applying for jobs](https://hired.wtf)
-- [NASA announces overhaul of Artemis program amid safety concerns, delays](https://www.cbsnews.com/news/nasa-artemis-moon-program-overhaul/)
-- [A better streams API is possible for JavaScript](https://blog.cloudflare.com/a-better-web-streams-api/)
 
 ## New Papers
 

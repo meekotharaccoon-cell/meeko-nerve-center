@@ -4,37 +4,37 @@
 
 | Repo | Stars | Language | Topic |
 |------|-------|----------|-------|
-| [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | ⭐275,695 | unknown | free-software |
-| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | ⭐182,076 | Python | autonomous-agents |
-| [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) | ⭐55,134 | JavaScript | local-llm |
-| [mudler/LocalAI](https://github.com/mudler/LocalAI) | ⭐43,117 | Go | decentralized |
-| [nextcloud/server](https://github.com/nextcloud/server) | ⭐34,183 | PHP | free-software |
-| [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | ⭐29,383 | C++ | free-software |
-| [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | ⭐26,110 | unknown | autonomous-agents |
-| [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) | ⭐25,153 | Python | autonomous-agents |
-| [yjs/yjs](https://github.com/yjs/yjs) | ⭐21,301 | JavaScript | decentralized |
-| [amark/gun](https://github.com/amark/gun) | ⭐18,923 | JavaScript | decentralized |
-| [mikeroyal/Self-Hosting-Guide](https://github.com/mikeroyal/Self-Hosting-Guide) | ⭐18,772 | Dockerfile | decentralized |
-| [lichess-org/lila](https://github.com/lichess-org/lila) | ⭐17,840 | Scala | free-software |
-| [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | ⭐17,214 | Python | autonomous-agents |
-| [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | ⭐15,597 | TypeScript | autonomous-agents |
-| [gotify/server](https://github.com/gotify/server) | ⭐14,678 | Go | free-software |
-| [arwes/arwes](https://github.com/arwes/arwes) | ⭐7,477 | TypeScript | solarpunk |
-| [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research) | ⭐4,052 | Python | local-llm |
-| [langroid/langroid](https://github.com/langroid/langroid) | ⭐3,914 | Python | local-llm |
-| [adamcohenhillel/ADeus](https://github.com/adamcohenhillel/ADeus) | ⭐3,397 | TypeScript | open-source-ai |
-| [deta/surf](https://github.com/deta/surf) | ⭐3,237 | TypeScript | local-llm |
-| [travisvn/openai-edge-tts](https://github.com/travisvn/openai-edge-tts) | ⭐1,627 | Python | local-llm |
+| [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) | ⭐275,779 | unknown | free-software |
+| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | ⭐182,099 | Python | autonomous-agents |
+| [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm) | ⭐55,175 | JavaScript | local-llm |
+| [mudler/LocalAI](https://github.com/mudler/LocalAI) | ⭐43,132 | Go | decentralized |
+| [nextcloud/server](https://github.com/nextcloud/server) | ⭐34,185 | PHP | free-software |
+| [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot) | ⭐29,387 | C++ | free-software |
+| [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents) | ⭐26,134 | unknown | autonomous-agents |
+| [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) | ⭐25,191 | Python | autonomous-agents |
+| [yjs/yjs](https://github.com/yjs/yjs) | ⭐21,304 | JavaScript | decentralized |
+| [amark/gun](https://github.com/amark/gun) | ⭐18,925 | JavaScript | decentralized |
+| [mikeroyal/Self-Hosting-Guide](https://github.com/mikeroyal/Self-Hosting-Guide) | ⭐18,778 | Dockerfile | decentralized |
+| [lichess-org/lila](https://github.com/lichess-org/lila) | ⭐17,841 | Scala | free-software |
+| [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI) | ⭐17,218 | Python | autonomous-agents |
+| [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | ⭐16,192 | TypeScript | autonomous-agents |
+| [gotify/server](https://github.com/gotify/server) | ⭐14,679 | Go | free-software |
+| [arwes/arwes](https://github.com/arwes/arwes) | ⭐7,478 | TypeScript | solarpunk |
+| [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research) | ⭐4,054 | Python | local-llm |
+| [langroid/langroid](https://github.com/langroid/langroid) | ⭐3,916 | Python | local-llm |
+| [adamcohenhillel/ADeus](https://github.com/adamcohenhillel/ADeus) | ⭐3,398 | TypeScript | open-source-ai |
+| [deta/surf](https://github.com/deta/surf) | ⭐3,242 | TypeScript | local-llm |
+| [travisvn/openai-edge-tts](https://github.com/travisvn/openai-edge-tts) | ⭐1,631 | Python | local-llm |
 | [bonfire-networks/bonfire-app](https://github.com/bonfire-networks/bonfire-app) | ⭐885 | Elixir | mutual-aid |
-| [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw) | ⭐698 | unknown | open-source-ai |
+| [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw) | ⭐705 | unknown | open-source-ai |
 | [WofWca/jumpcutter](https://github.com/WofWca/jumpcutter) | ⭐561 | TypeScript | agpl |
 | [jacobwb/hashover-next](https://github.com/jacobwb/hashover-next) | ⭐420 | PHP | agpl |
-| [oxylabs/ai-scraper-py](https://github.com/oxylabs/ai-scraper-py) | ⭐380 | unknown | open-source-ai |
+| [oxylabs/ai-scraper-py](https://github.com/oxylabs/ai-scraper-py) | ⭐384 | unknown | open-source-ai |
 | [RolandR/place-atlas](https://github.com/RolandR/place-atlas) | ⭐285 | JavaScript | agpl |
 | [Asqatasun/Asqatasun](https://github.com/Asqatasun/Asqatasun) | ⭐243 | Java | agpl |
 | [garylab/MakeMoneyWithAI](https://github.com/garylab/MakeMoneyWithAI) | ⭐218 | Python | open-source-ai |
 | [mapswipe/mapswipe](https://github.com/mapswipe/mapswipe) | ⭐166 | JavaScript | humanitarian |
-| [ksm26/Multi-AI-Agent-Systems-with-crewAI](https://github.com/ksm26/Multi-AI-Agent-Systems-with-crewAI) | ⭐150 | Jupyter Notebook | open-source-ai |
+| [ksm26/Multi-AI-Agent-Systems-with-crewAI](https://github.com/ksm26/Multi-AI-Agent-Systems-with-crewAI) | ⭐151 | Jupyter Notebook | open-source-ai |
 | [ahdinosaur/intertwingled](https://github.com/ahdinosaur/intertwingled) | ⭐138 | JavaScript | solarpunk |
 | [PolarisTeam/PolarisServer](https://github.com/PolarisTeam/PolarisServer) | ⭐125 | C# | agpl |
 | [hotosm/fAIr](https://github.com/hotosm/fAIr) | ⭐124 | TypeScript | humanitarian |
@@ -56,119 +56,119 @@
 ## Full Details
 
 ### [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted)
-**Stars:** 275,695 · **Language:** unknown · **Topic:** free-software
+**Stars:** 275,779 · **Language:** unknown · **Topic:** free-software
 > A list of Free Software network services and web applications which can be hosted on your own servers
 Updated: 2026-02-28
 
 ### [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT)
-**Stars:** 182,076 · **Language:** Python · **Topic:** autonomous-agents
+**Stars:** 182,099 · **Language:** Python · **Topic:** autonomous-agents
 > AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
-**Stars:** 55,134 · **Language:** JavaScript · **Topic:** local-llm
+**Stars:** 55,175 · **Language:** JavaScript · **Topic:** local-llm
 > The all-in-one Desktop & Docker AI application with built-in RAG, AI agents, No-code agent builder, MCP compatibility,  and more.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [mudler/LocalAI](https://github.com/mudler/LocalAI)
-**Stars:** 43,117 · **Language:** Go · **Topic:** decentralized
+**Stars:** 43,132 · **Language:** Go · **Topic:** decentralized
 > :robot: The free, Open Source alternative to OpenAI, Claude and others. Self-hosted and local-first. Drop-in replacement,  running on consumer-grade hardware. No GPU required. Runs gguf, transformers,
 Updated: 2026-02-28
 
 ### [nextcloud/server](https://github.com/nextcloud/server)
-**Stars:** 34,183 · **Language:** PHP · **Topic:** free-software
+**Stars:** 34,185 · **Language:** PHP · **Topic:** free-software
 > ☁️ Nextcloud server, a safe home for all your data
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [flameshot-org/flameshot](https://github.com/flameshot-org/flameshot)
-**Stars:** 29,383 · **Language:** C++ · **Topic:** free-software
+**Stars:** 29,387 · **Language:** C++ · **Topic:** free-software
 > Powerful yet simple to use screenshot software :desktop_computer: :camera_flash:
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [e2b-dev/awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents)
-**Stars:** 26,110 · **Language:** unknown · **Topic:** autonomous-agents
+**Stars:** 26,134 · **Language:** unknown · **Topic:** autonomous-agents
 > A list of AI autonomous agents
 Updated: 2026-02-28
 
 ### [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek)
-**Stars:** 25,153 · **Language:** Python · **Topic:** autonomous-agents
+**Stars:** 25,191 · **Language:** Python · **Topic:** autonomous-agents
 > Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin9938
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [yjs/yjs](https://github.com/yjs/yjs)
-**Stars:** 21,301 · **Language:** JavaScript · **Topic:** decentralized
+**Stars:** 21,304 · **Language:** JavaScript · **Topic:** decentralized
 > Shared data types for building collaborative software
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [amark/gun](https://github.com/amark/gun)
-**Stars:** 18,923 · **Language:** JavaScript · **Topic:** decentralized
+**Stars:** 18,925 · **Language:** JavaScript · **Topic:** decentralized
 > An open source cybersecurity protocol for syncing decentralized graph data.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [mikeroyal/Self-Hosting-Guide](https://github.com/mikeroyal/Self-Hosting-Guide)
-**Stars:** 18,772 · **Language:** Dockerfile · **Topic:** decentralized
+**Stars:** 18,778 · **Language:** Dockerfile · **Topic:** decentralized
 > Self-Hosting Guide. Learn all about  locally hosting (on premises & private web servers) and managing software applications by yourself or your organization. Including Cloud, LLMs, WireGuard, Automati
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [lichess-org/lila](https://github.com/lichess-org/lila)
-**Stars:** 17,840 · **Language:** Scala · **Topic:** free-software
+**Stars:** 17,841 · **Language:** Scala · **Topic:** free-software
 > ♞ lichess.org: the forever free, adless and open source chess server ♞
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [TransformerOptimus/SuperAGI](https://github.com/TransformerOptimus/SuperAGI)
-**Stars:** 17,214 · **Language:** Python · **Topic:** autonomous-agents
+**Stars:** 17,218 · **Language:** Python · **Topic:** autonomous-agents
 > <⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & run useful autonomous agents quickly and reliably.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [ruvnet/ruflo](https://github.com/ruvnet/ruflo)
-**Stars:** 15,597 · **Language:** TypeScript · **Topic:** autonomous-agents
+**Stars:** 16,192 · **Language:** TypeScript · **Topic:** autonomous-agents
 > 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade archite
 Updated: 2026-02-28
 
 ### [gotify/server](https://github.com/gotify/server)
-**Stars:** 14,678 · **Language:** Go · **Topic:** free-software
+**Stars:** 14,679 · **Language:** Go · **Topic:** free-software
 > A simple server for sending and receiving messages in real-time per WebSocket. (Includes a sleek web-ui)
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [arwes/arwes](https://github.com/arwes/arwes)
-**Stars:** 7,477 · **Language:** TypeScript · **Topic:** solarpunk
+**Stars:** 7,478 · **Language:** TypeScript · **Topic:** solarpunk
 > Futuristic Sci-Fi UI Web Framework.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [LearningCircuit/local-deep-research](https://github.com/LearningCircuit/local-deep-research)
-**Stars:** 4,052 · **Language:** Python · **Topic:** local-llm
+**Stars:** 4,054 · **Language:** Python · **Topic:** local-llm
 > Local Deep Research achieves ~95% on SimpleQA benchmark (tested with GPT-4.1-mini). Supports local and cloud LLMs (Ollama, Google, Anthropic, ...). Searches 10+ sources - arXiv, PubMed, web, and your 
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [langroid/langroid](https://github.com/langroid/langroid)
-**Stars:** 3,914 · **Language:** Python · **Topic:** local-llm
+**Stars:** 3,916 · **Language:** Python · **Topic:** local-llm
 > Harness LLMs with Multi-Agent Programming
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [adamcohenhillel/ADeus](https://github.com/adamcohenhillel/ADeus)
-**Stars:** 3,397 · **Language:** TypeScript · **Topic:** open-source-ai
+**Stars:** 3,398 · **Language:** TypeScript · **Topic:** open-source-ai
 > An open source AI wearable device that captures what you say and hear in the real world and then transcribes and stores it on your own server. You can then chat with Adeus using the app, and it will h
-Updated: 2026-02-23
+Updated: 2026-02-28
 
 ### [deta/surf](https://github.com/deta/surf)
-**Stars:** 3,237 · **Language:** TypeScript · **Topic:** local-llm
+**Stars:** 3,242 · **Language:** TypeScript · **Topic:** local-llm
 > Personal AI Notebooks. Organize files & webpages and generate notes from them. Open source, local & open data, open model choice (incl. local).
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [travisvn/openai-edge-tts](https://github.com/travisvn/openai-edge-tts)
-**Stars:** 1,627 · **Language:** Python · **Topic:** local-llm
+**Stars:** 1,631 · **Language:** Python · **Topic:** local-llm
 > Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [bonfire-networks/bonfire-app](https://github.com/bonfire-networks/bonfire-app)
 **Stars:** 885 · **Language:** Elixir · **Topic:** mutual-aid
 > Bonfire - tend to your digital life in community. Customise and host your own online space and control your experience at the most granular level.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [SamurAIGPT/awesome-openclaw](https://github.com/SamurAIGPT/awesome-openclaw)
-**Stars:** 698 · **Language:** unknown · **Topic:** open-source-ai
+**Stars:** 705 · **Language:** unknown · **Topic:** open-source-ai
 > A curated list of OpenClaw resources, tools, skills, tutorials & articles. OpenClaw (formerly Moltbot / Clawdbot) — open-source self-hosted AI agent for WhatsApp, Telegram, Discord & 50+ integrations.
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [WofWca/jumpcutter](https://github.com/WofWca/jumpcutter)
 **Stars:** 561 · **Language:** TypeScript · **Topic:** agpl
@@ -181,9 +181,9 @@ Updated: 2026-02-27
 Updated: 2026-02-20
 
 ### [oxylabs/ai-scraper-py](https://github.com/oxylabs/ai-scraper-py)
-**Stars:** 380 · **Language:** unknown · **Topic:** open-source-ai
+**Stars:** 384 · **Language:** unknown · **Topic:** open-source-ai
 > AI Scraper is a powerful scraping tool and scrape agent built to automate data extraction with unmatched precision. Ideal for scalable AI scraping tasks across diverse web sources, this tool simplifie
-Updated: 2026-02-27
+Updated: 2026-02-28
 
 ### [RolandR/place-atlas](https://github.com/RolandR/place-atlas)
 **Stars:** 285 · **Language:** JavaScript · **Topic:** agpl
@@ -206,9 +206,9 @@ Updated: 2026-02-27
 Updated: 2026-02-13
 
 ### [ksm26/Multi-AI-Agent-Systems-with-crewAI](https://github.com/ksm26/Multi-AI-Agent-Systems-with-crewAI)
-**Stars:** 150 · **Language:** Jupyter Notebook · **Topic:** open-source-ai
+**Stars:** 151 · **Language:** Jupyter Notebook · **Topic:** open-source-ai
 > Master the art of designing and organizing AI agents. Learn to automate complex, multi-step business processes by creating specialized AI agent teams using the open-source library crewAI.
-Updated: 2026-02-26
+Updated: 2026-02-28
 
 ### [ahdinosaur/intertwingled](https://github.com/ahdinosaur/intertwingled)
 **Stars:** 138 · **Language:** JavaScript · **Topic:** solarpunk
