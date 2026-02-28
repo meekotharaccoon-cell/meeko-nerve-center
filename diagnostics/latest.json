@@ -1,8 +1,8 @@
 {
-  "run_at": "2026-02-28T08:55:50.588146Z",
-  "passed": 40,
+  "run_at": "2026-02-28T18:01:29.862015Z",
+  "passed": 39,
   "warned": 0,
-  "failed": 5,
+  "failed": 6,
   "secrets": 7,
   "results": [
     {
@@ -100,7 +100,7 @@
       "category": "knowledge",
       "name": "Total knowledge files",
       "status": "info",
-      "detail": "58 .md files",
+      "detail": "64 .md files",
       "fix": ""
     },
     {
@@ -149,21 +149,21 @@
       "category": "knowledge",
       "name": "knowledge/digest/",
       "status": "pass",
-      "detail": "6 files",
+      "detail": "7 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "LATEST_DIGEST.md",
       "status": "pass",
-      "detail": "3,646 bytes",
+      "detail": "3,481 bytes",
       "fix": ""
     },
     {
       "category": "workflows",
       "name": "Total workflows",
       "status": "info",
-      "detail": "52 .yml files",
+      "detail": "53 .yml files",
       "fix": ""
     },
     {
@@ -323,8 +323,8 @@
     {
       "category": "network",
       "name": "ISS / Open-Notify",
-      "status": "pass",
-      "detail": "HTTP 200",
+      "status": "fail",
+      "detail": "<urlopen error timed out>",
       "fix": ""
     },
     {
