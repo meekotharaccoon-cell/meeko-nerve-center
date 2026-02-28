@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-28 00:25 UTC — 🎬 shorts scripts [2026-02-28]*
+*Auto-updated by the system. Last update: 2026-02-28 02:33 UTC — feat: top 5 system self-wants — output validator, long-term memory, peer network, self-documentation, financial intelligence*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
