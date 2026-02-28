@@ -1,0 +1,41 @@
+{
+  "date": "2026-02-28",
+  "fear_greed": {
+    "value": 11,
+    "label": "Extreme Fear",
+    "history": [
+      11,
+      13,
+      11,
+      11,
+      8,
+      5,
+      9
+    ]
+  },
+  "market_breadth": 0.2,
+  "market_mood": "BEARISH",
+  "trending": [
+    "BTC",
+    "PAXG",
+    "PENGU",
+    "SOL",
+    "ROBO",
+    "POWER",
+    "HYPE"
+  ],
+  "top_movers": [
+    "PAXG +3.3%",
+    "FIGR_HELOC +3.1%",
+    "M +2.8%",
+    "XAUT +2.1%",
+    "LEO +0.5%"
+  ],
+  "worst_movers": [
+    "ZEC -7.8%",
+    "AAVE -7.3%",
+    "SUI -6.2%",
+    "WLFI -5.9%",
+    "ADA -5.9%"
+  ]
+}

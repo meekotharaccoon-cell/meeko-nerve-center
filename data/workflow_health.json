@@ -1,13 +1,13 @@
 {
   "date": "2026-02-28",
-  "timestamp": "2026-02-28T12:22:01.999500",
+  "timestamp": "2026-02-28T13:51:55.195612",
   "total": 54,
-  "passing": 32,
-  "failing": 15,
-  "running": 6,
-  "retried": 13,
-  "health_pct": 59,
-  "color": "RED",
+  "passing": 38,
+  "failing": 14,
+  "running": 1,
+  "retried": 12,
+  "health_pct": 70,
+  "color": "YELLOW",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
@@ -24,8 +24,8 @@
     {
       "name": "Daily Full Cycle",
       "file": "daily-full-cycle.yml",
-      "id": 22518118896,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518118896"
+      "id": 22521996175,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22521996175"
     },
     {
       "name": "\ud83c\udf31 Evolution Engine",
@@ -36,8 +36,8 @@
     {
       "name": ".github/workflows/feedback-loop.yml",
       "file": "feedback-loop.yml",
-      "id": 22520639686,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520639686"
+      "id": 22520725854,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520725854"
     },
     {
       "name": "\ud83c\udf0d Full Daily Cycle",
@@ -46,10 +46,10 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22516512890"
     },
     {
-      "name": "\ud83e\udde0 Knowledge Harvester",
-      "file": "knowledge-harvester.yml",
-      "id": 22514772634,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22514772634"
+      "name": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
+      "file": "jekyll-gh-pages.yml",
+      "id": 22521512866,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22521512866"
     },
     {
       "name": "\ud83e\udde0 Orchestrator \u2014 Full Cycle",
@@ -80,12 +80,6 @@
       "file": "wiring-hub-daily.yml",
       "id": 22518056673,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22518056673"
-    },
-    {
-      "name": "\ud83d\udd0c Wiring Status Generator",
-      "file": "wiring-status-generator.yml",
-      "id": 22520639856,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520639856"
     },
     {
       "name": "\ud83d\udcfa YouTube Manager",
