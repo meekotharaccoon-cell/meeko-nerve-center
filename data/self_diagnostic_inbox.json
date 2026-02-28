@@ -53,6 +53,40 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525303982",
       "detected": "2026-02-28",
       "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/feedback-loop.yml",
+      "file": "feedback-loop.yml",
+      "run_id": 22525484891,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "detected": "2026-02-28",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/jekyll-gh-pages.yml",
+      "file": "jekyll-gh-pages.yml",
+      "run_id": 22525484954,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484954",
+      "detected": "2026-02-28",
+      "resolved": false
+    },
+    {
+      "type": "workflow_health",
+      "description": "System health RED: 66% (14 failing)",
+      "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
+      "date": "2026-02-28",
+      "resolved": false,
+      "source": "loop_closer"
+    },
+    {
+      "type": "unresolved_diagnostics",
+      "description": "8 unresolved diagnostic issues",
+      "action": "self_healer_v2.py will process these next cycle",
+      "date": "2026-02-28",
+      "resolved": false,
+      "source": "loop_closer"
     }
   ],
   "resolved": []
