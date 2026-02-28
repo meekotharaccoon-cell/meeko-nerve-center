@@ -1,5 +1,5 @@
 # publiclab/plots2
-*Category: humanitarian · Harvested: 2026-02-26*
+*Category: humanitarian · Harvested: 2026-02-28*
 
 **Stars:** 1,006  
 **Language:** Ruby  
