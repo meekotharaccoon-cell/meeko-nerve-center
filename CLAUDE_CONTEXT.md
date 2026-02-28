@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-28 13:30 UTC — 🧠 knowledge update [2026-02-28]*
+*Auto-updated by the system. Last update: 2026-02-28 17:18 UTC — 🔧 Wire diagnostic_emailer into Phase 0 of MASTER_CONTROLLER*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
