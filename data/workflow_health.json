@@ -1,13 +1,13 @@
 {
   "date": "2026-02-28",
-  "timestamp": "2026-02-28T13:51:55.195612",
+  "timestamp": "2026-02-28T14:49:15.425342",
   "total": 54,
-  "passing": 38,
+  "passing": 36,
   "failing": 14,
-  "running": 1,
+  "running": 2,
   "retried": 12,
-  "health_pct": 70,
-  "color": "YELLOW",
+  "health_pct": 66,
+  "color": "RED",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
