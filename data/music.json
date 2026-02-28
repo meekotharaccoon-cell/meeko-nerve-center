@@ -1,13 +1,51 @@
 {
-  "date": "2026-02-27",
+  "date": "2026-02-28",
   "artists": [
     {
-      "name": "Resistance",
-      "country": "BE",
+      "name": "Palestine",
+      "country": "SE",
       "tags": [],
       "score": 100,
-      "url": "https://musicbrainz.org/artist/84c5e826-d615-4491-9d53-e9c9bb063375",
-      "query": "resistance"
+      "url": "https://musicbrainz.org/artist/30495e98-4b64-442a-bf8d-5871cbef9ea5",
+      "query": "Palestine"
+    },
+    {
+      "name": "Charlemagne Palestine",
+      "country": "",
+      "tags": [],
+      "score": 96,
+      "url": "https://musicbrainz.org/artist/2d3b6fec-f3ab-452d-98c7-510a1a1ac1e6",
+      "query": "Palestine"
+    },
+    {
+      "name": "Various Artists",
+      "country": "",
+      "tags": [
+        "rock",
+        "trance",
+        "electronic",
+        "soundtrack",
+        "classical"
+      ],
+      "score": 94,
+      "url": "https://musicbrainz.org/artist/89ad4ac3-39f7-470e-963a-56509c546377",
+      "query": "Palestine"
+    },
+    {
+      "name": "Palestine Strings",
+      "country": "",
+      "tags": [],
+      "score": 86,
+      "url": "https://musicbrainz.org/artist/d59d9c0b-b4ea-42b5-84a6-93da9b82a331",
+      "query": "Palestine"
+    },
+    {
+      "name": "Heartists for Palestine",
+      "country": "",
+      "tags": [],
+      "score": 77,
+      "url": "https://musicbrainz.org/artist/c62cce8d-e83d-4173-8f71-7ed7d3f46482",
+      "query": "Palestine"
     },
     {
       "name": "Underground Resistance",
@@ -18,8 +56,16 @@
         "electronic",
         "american"
       ],
-      "score": 99,
+      "score": 100,
       "url": "https://musicbrainz.org/artist/8dcd24c7-bf87-4f32-8e3f-7a79b3f25a85",
+      "query": "resistance"
+    },
+    {
+      "name": "Resistance",
+      "country": "BE",
+      "tags": [],
+      "score": 99,
+      "url": "https://musicbrainz.org/artist/84c5e826-d615-4491-9d53-e9c9bb063375",
       "query": "resistance"
     },
     {
@@ -127,22 +173,13 @@
       "query": "protest music"
     },
     {
-      "title": "Universal Prisoner",
-      "artist": "Les McCann & Eddie Harris",
+      "title": "Chain Gang",
+      "artist": "Otis Redding",
       "album": "Protest Music",
       "genre": "R&B/Soul",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview111/v4/e5/63/3a/e5633a05-df74-b02b-a775-d163d22b2a04/mzaf_6628158916951466966.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/universal-prisoner/1234494917?i=1234495128&uo=4",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/de/b4/80/deb4803e-1ce9-384a-5900-d665c7422379/mzaf_5475769226011058168.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/chain-gang/1234494917?i=1234495121&uo=4",
       "query": "protest music"
-    },
-    {
-      "title": "Meadow of Mindful Peace",
-      "artist": "Relaxing BGM Project",
-      "album": "Luxury Healing Time for All Five Senses \u2014 Spa BGM",
-      "genre": "Worldwide",
-      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ec/61/f4/ec61f400-b23d-f705-25f3-d39a3721e799/mzaf_8672300547599060118.plus.aac.p.m4a",
-      "url": "https://music.apple.com/us/album/meadow-of-mindful-peace/1875906197?i=1875906213&uo=4",
-      "query": "world music peace"
     },
     {
       "title": "Peace",
@@ -178,6 +215,15 @@
       "genre": "Worldwide",
       "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9e/e4/92/9ee49273-5b9c-58ee-a0f4-84da9e52b993/mzaf_8960560060439190009.plus.aac.p.m4a",
       "url": "https://music.apple.com/us/album/soft-hues-of-quiet-dusk/1878117442?i=1878117882&uo=4",
+      "query": "world music peace"
+    },
+    {
+      "title": "Murmur of the Midnight Breeze",
+      "artist": "Dream House",
+      "album": "Feel the 1/f Fluctuations \u2014 Between Silence and Peace",
+      "genre": "Worldwide",
+      "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/2b/5a/33/2b5a33a0-bafc-6bdb-243a-be7eb1434fa9/mzaf_9019704946319731506.plus.aac.p.m4a",
+      "url": "https://music.apple.com/us/album/murmur-of-the-midnight-breeze/1878117442?i=1878118061&uo=4",
       "query": "world music peace"
     }
   ]

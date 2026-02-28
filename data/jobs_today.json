@@ -1,11 +1,12 @@
 {
-  "date": "2026-02-27",
-  "total": 155,
+  "date": "2026-02-28",
+  "total": 158,
   "crypto_jobs": [
     {
       "id": 139577,
       "title": "Business Partnership Manager &amp;#8211; Payment",
       "company": "Binance",
+      "location": "Poland",
       "type": [
         "Full-Time"
       ],
@@ -28,6 +29,7 @@
       "id": 139850,
       "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
       "company": "Experian",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -50,6 +52,7 @@
       "id": 139835,
       "title": "Software Architect",
       "company": "OrthoVirginia",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -72,6 +75,7 @@
       "id": 139588,
       "title": "APM Strategy &amp;#038; Reliability SME &amp;#8211; Digital Implementation Services",
       "company": "GE Vernova",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -96,6 +100,7 @@
       "id": "2088613",
       "title": "Sr/Staff AI Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "AI / ML",
       "salary": "$165k - $300k",
@@ -146,6 +151,7 @@
       "id": "2088611",
       "title": "Product, Platform & Enterprise Front End Sr/Staff Software Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$165k - $300k",
@@ -200,6 +206,7 @@
       "id": "2088612",
       "title": "Product, Platform & Enterprise Full Stack Sr/Staff Software Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$165,000 - $300,000",
@@ -254,6 +261,7 @@
       "id": "2088624",
       "title": "Senior Python Backend Developer",
       "company": "SKYCATCHFIRE",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$100k - $150k",
@@ -288,6 +296,7 @@
       "id": 139655,
       "title": "Deputy Head of Engineering (Node.js / Next.js)",
       "company": "Ruby Labs",
+      "location": "Ukraine",
       "type": [
         "Full-Time"
       ],
@@ -310,6 +319,7 @@
       "id": 139598,
       "title": "CRAII / Senior CRA",
       "company": "ICON plc",
+      "location": "Australia",
       "type": [
         "Full-Time"
       ],
@@ -332,6 +342,7 @@
       "id": 139041,
       "title": "Senior Backend Engineer &amp;#8211; Grafana k6 | Spain | Remote",
       "company": "Grafana Labs",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -354,6 +365,7 @@
       "id": "2088631",
       "title": "Full-Stack Developer (6 months, extendable)",
       "company": "Fluence International, Inc.",
+      "location": "Remote",
       "type": "contract",
       "industry": "Software Development",
       "salary": "$3,5k\u2013$5k/month",
@@ -397,6 +409,7 @@
       "id": 139948,
       "title": "Forward-Deployed Engineer",
       "company": "Ruby Labs",
+      "location": "Ukraine",
       "type": [
         "Full-Time"
       ],
@@ -419,6 +432,7 @@
       "id": "2088637",
       "title": "Red Team Specialist (Offensive Security)",
       "company": "Lumitekno Kreasi Global",
+      "location": "Remote",
       "type": "full_time",
       "industry": "DevOps / Sysadmin",
       "salary": "$65K - $80K",
@@ -444,6 +458,7 @@
       "id": 139850,
       "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
       "company": "Experian",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -466,6 +481,7 @@
       "id": 139786,
       "title": "Backend Engineer &amp;#8211; AI Integration",
       "company": "Docplanner",
+      "location": "Italy",
       "type": [
         "Full-Time"
       ],
@@ -488,6 +504,7 @@
       "id": 139957,
       "title": "Senior Analyst, Site Contracts and Budgets &amp;#8211; Spain &amp;#8211; FSP",
       "company": "Parexel",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -510,6 +527,7 @@
       "id": "1956455",
       "title": "iOS Developer",
       "company": "nooro",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$60k-$130k (depending on experience)",
@@ -546,6 +564,7 @@
       "id": 139917,
       "title": "Senior Developer",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -568,6 +587,7 @@
       "id": 139548,
       "title": "Lead Solution Architect- Networking",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -590,6 +610,7 @@
       "id": 139651,
       "title": "Ai-Ops Engineer bei lector.ai",
       "company": "JUST ADD AI",
+      "location": "Germany",
       "type": [
         "Full-Time"
       ],
@@ -612,6 +633,7 @@
       "id": 139545,
       "title": "Medical Claims Negotiator II-Appeals",
       "company": "Claritev",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -634,6 +656,7 @@
       "id": "1680495",
       "title": "Office Assistant",
       "company": "Coalition Technologies ",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Marketing",
       "salary": "$31,2k- $52k",
@@ -673,6 +696,7 @@
       "id": 139918,
       "title": "Developer",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -697,6 +721,7 @@
       "id": "2088613",
       "title": "Sr/Staff AI Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "AI / ML",
       "salary": "$165k - $300k",
@@ -747,6 +772,7 @@
       "id": "2088611",
       "title": "Product, Platform & Enterprise Front End Sr/Staff Software Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$165k - $300k",
@@ -801,6 +827,7 @@
       "id": "2088612",
       "title": "Product, Platform & Enterprise Full Stack Sr/Staff Software Engineer",
       "company": "BNSF Railway",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$165,000 - $300,000",
@@ -855,6 +882,7 @@
       "id": "2088624",
       "title": "Senior Python Backend Developer",
       "company": "SKYCATCHFIRE",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$100k - $150k",
@@ -889,6 +917,7 @@
       "id": 139655,
       "title": "Deputy Head of Engineering (Node.js / Next.js)",
       "company": "Ruby Labs",
+      "location": "Ukraine",
       "type": [
         "Full-Time"
       ],
@@ -911,6 +940,7 @@
       "id": 139577,
       "title": "Business Partnership Manager &amp;#8211; Payment",
       "company": "Binance",
+      "location": "Poland",
       "type": [
         "Full-Time"
       ],
@@ -933,6 +963,7 @@
       "id": 139598,
       "title": "CRAII / Senior CRA",
       "company": "ICON plc",
+      "location": "Australia",
       "type": [
         "Full-Time"
       ],
@@ -955,6 +986,7 @@
       "id": 139041,
       "title": "Senior Backend Engineer &amp;#8211; Grafana k6 | Spain | Remote",
       "company": "Grafana Labs",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -977,6 +1009,7 @@
       "id": "2088631",
       "title": "Full-Stack Developer (6 months, extendable)",
       "company": "Fluence International, Inc.",
+      "location": "Remote",
       "type": "contract",
       "industry": "Software Development",
       "salary": "$3,5k\u2013$5k/month",
@@ -1020,6 +1053,7 @@
       "id": 139948,
       "title": "Forward-Deployed Engineer",
       "company": "Ruby Labs",
+      "location": "Ukraine",
       "type": [
         "Full-Time"
       ],
@@ -1042,6 +1076,7 @@
       "id": "2088637",
       "title": "Red Team Specialist (Offensive Security)",
       "company": "Lumitekno Kreasi Global",
+      "location": "Remote",
       "type": "full_time",
       "industry": "DevOps / Sysadmin",
       "salary": "$65K - $80K",
@@ -1067,6 +1102,7 @@
       "id": 139850,
       "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
       "company": "Experian",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1089,6 +1125,7 @@
       "id": "2070150",
       "title": "Senior DevOps Engineer",
       "company": "Marketerx",
+      "location": "Remote",
       "type": "full_time",
       "industry": "DevOps / Sysadmin",
       "salary": "$130k - $150k",
@@ -1121,6 +1158,7 @@
       "id": 139835,
       "title": "Software Architect",
       "company": "OrthoVirginia",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1143,6 +1181,7 @@
       "id": 139786,
       "title": "Backend Engineer &amp;#8211; AI Integration",
       "company": "Docplanner",
+      "location": "Italy",
       "type": [
         "Full-Time"
       ],
@@ -1165,6 +1204,7 @@
       "id": 139957,
       "title": "Senior Analyst, Site Contracts and Budgets &amp;#8211; Spain &amp;#8211; FSP",
       "company": "Parexel",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -1187,6 +1227,7 @@
       "id": "1919266",
       "title": "Senior Independent AI Engineer / Architect",
       "company": "A.Team",
+      "location": "Remote",
       "type": "contract",
       "industry": "Software Development",
       "salary": "$120 - $170 /hour",
@@ -1214,6 +1255,7 @@
       "id": "2069746",
       "title": "Tech Lead Full-Stack Rails Engineer",
       "company": "Mitre Media",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$170k - $200k",
@@ -1258,6 +1300,7 @@
       "id": "2069747",
       "title": "Tech Lead Databricks Data Engineer",
       "company": "Mitre Media",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$160k - $180k",
@@ -1303,6 +1346,7 @@
       "id": "1956455",
       "title": "iOS Developer",
       "company": "nooro",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Software Development",
       "salary": "$60k-$130k (depending on experience)",
@@ -1339,6 +1383,7 @@
       "id": 139933,
       "title": "Senior Security Engineer (100% remote-friendly within Spain)",
       "company": "Docplanner",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -1361,6 +1406,7 @@
       "id": 139917,
       "title": "Senior Developer",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1383,6 +1429,7 @@
       "id": 139548,
       "title": "Lead Solution Architect- Networking",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1405,6 +1452,7 @@
       "id": 139651,
       "title": "Ai-Ops Engineer bei lector.ai",
       "company": "JUST ADD AI",
+      "location": "Germany",
       "type": [
         "Full-Time"
       ],
@@ -1427,6 +1475,7 @@
       "id": 139647,
       "title": "Senior Platform Security Engineer (100% remote-friendly within Spain)",
       "company": "Docplanner",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -1449,6 +1498,7 @@
       "id": 139545,
       "title": "Medical Claims Negotiator II-Appeals",
       "company": "Claritev",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1471,6 +1521,7 @@
       "id": "1680495",
       "title": "Office Assistant",
       "company": "Coalition Technologies ",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Marketing",
       "salary": "$31,2k- $52k",
@@ -1510,6 +1561,7 @@
       "id": 139934,
       "title": "Senior Security Engineer (100% remote-friendly within Poland)",
       "company": "Docplanner",
+      "location": "Poland",
       "type": [
         "Full-Time"
       ],
@@ -1532,6 +1584,7 @@
       "id": 139918,
       "title": "Developer",
       "company": "World Wide Technology",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1554,6 +1607,7 @@
       "id": 139614,
       "title": "Senior Staff Engineer, AI Customer Operations",
       "company": "Monzo",
+      "location": "UK",
       "type": [
         "Full-Time"
       ],
@@ -1576,6 +1630,7 @@
       "id": 139603,
       "title": "MLOps Engineer \u2013 Portfolio Optimisation and Customer Analytics Platform (Banking)",
       "company": "Madiff",
+      "location": "Anywhere",
       "type": [
         "Full-Time"
       ],
@@ -1598,6 +1653,7 @@
       "id": 139585,
       "title": "Senior Fullstack Developer (m/f/d) Patient Portal",
       "company": "Dedalus",
+      "location": "Germany",
       "type": [
         "Full-Time"
       ],
@@ -1620,6 +1676,7 @@
       "id": 139583,
       "title": "Senior Python Engineer &amp;#8211; AI Testing Project (Freelance, Mindrift)",
       "company": "Mindrift",
+      "location": "Germany",
       "type": [
         "Full-Time"
       ],
@@ -1642,6 +1699,7 @@
       "id": 139932,
       "title": "Healthcare Sales Executive (Provider Vertical) &amp;#8211; REMOTE POSITION",
       "company": "NTT DATA",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1664,6 +1722,7 @@
       "id": 139931,
       "title": "Healthcare Solutions Sales Executive &amp;#8211; IT Services Sales (REMOTE ROLE)",
       "company": "NTT DATA",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1686,6 +1745,7 @@
       "id": 139939,
       "title": "Principal Cloud Database Architect \u2013 AI &amp;#038; Modernisation",
       "company": "Oracle",
+      "location": "UK",
       "type": [
         "Full-Time"
       ],
@@ -1708,6 +1768,7 @@
       "id": 139715,
       "title": "Customer Operations (Auto Claims)",
       "company": "Revecore",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1730,6 +1791,7 @@
       "id": 139544,
       "title": "Temporary NSA Claims Data Coordinator",
       "company": "Claritev",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1752,6 +1814,7 @@
       "id": 139543,
       "title": "Temporary Medical Claims Intake Coordinator",
       "company": "Claritev",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1774,6 +1837,7 @@
       "id": 139264,
       "title": "Customer Operations (Workers Compensation Claims)",
       "company": "Revecore",
+      "location": "USA",
       "type": [
         "Full-Time"
       ],
@@ -1796,6 +1860,7 @@
       "id": "2088635",
       "title": "Order Management and Operations Manager",
       "company": "Exaware",
+      "location": "Remote",
       "type": "full_time",
       "industry": "Project Management",
       "salary": "$50K-$60K",
@@ -1823,6 +1888,7 @@
       "id": "1919265",
       "title": "Senior Independent Software Developer",
       "company": "A.Team",
+      "location": "Remote",
       "type": "contract",
       "industry": "Software Development",
       "salary": "$90 - $150 /hour",
@@ -1849,6 +1915,7 @@
       "id": "2088622",
       "title": "Content Reviewer",
       "company": "TELUS Digital",
+      "location": "Remote",
       "type": "part_time",
       "industry": "All others",
       "salary": "14$/hour",
@@ -1875,6 +1942,7 @@
       "id": "1749306",
       "title": "Copywriter",
       "company": "Coalition Technologies ",
+      "location": "Remote",
       "type": "freelance",
       "industry": "Writing",
       "salary": "$20k -$35k",
@@ -1905,6 +1973,7 @@
       "id": 139935,
       "title": "Senior Software Engineer &amp;#8211; Full Remote or Hybrid",
       "company": "Voyage Priv\u00e9",
+      "location": "France",
       "type": [
         "Full-Time"
       ],
@@ -1927,6 +1996,7 @@
       "id": 139859,
       "title": "Senior Embedded Software Engineer (Remote from Bulgaria, North Macedonia or Poland)",
       "company": "WorkNomads",
+      "location": "Bulgaria,  Poland",
       "type": [
         "Contract"
       ],
@@ -1949,6 +2019,7 @@
       "id": 139853,
       "title": "Senior Software Engineer II &amp;#8211; Data Solutions &amp;#038; Measurement",
       "company": "Cint",
+      "location": "Czechia",
       "type": [
         "Full-Time"
       ],
@@ -1971,6 +2042,7 @@
       "id": 139805,
       "title": "Freelance Automotive Engineering &amp;#038; Python Expert &amp;#8211; AI Trainer",
       "company": "Mindrift",
+      "location": "Italy",
       "type": [
         "Full-Time"
       ],
@@ -1993,6 +2065,7 @@
       "id": 139804,
       "title": "Electrical Engineer with Python &amp;#8211; Freelance AI Trainer",
       "company": "Mindrift",
+      "location": "Romania",
       "type": [
         "Full-Time"
       ],
@@ -2015,6 +2088,7 @@
       "id": 139784,
       "title": "Enterprise Architect",
       "company": "WorkNomads",
+      "location": "Bulgaria",
       "type": [
         "Full-Time"
       ],
