@@ -1,0 +1,21 @@
+{
+  "built": [
+    {
+      "date": "2026-02-28",
+      "name": "unhcr_data_inspector",
+      "title": "UNHCR Refugee Data Inspector",
+      "filename": "mycelium/unhcr_data_inspector.py",
+      "why": "I chose this capability to extend the system's humanitarian accountability mission by providing insights into refugee crises, filling a gap in the system's current data offerings. This capability will help surface important data on refugee populations, which can inform the system's content generation and outreach efforts. By leveraging the UNHCR's open data, the system can deepen its connections to humanitarian issues and promote awareness about refugee crises.",
+      "description": "The UNHCR Data Inspector script will fetch and analyze data from the United Nations High Commissioner for Refugees (UNHCR) open data portal, which provides information on refugee populations, asylum seekers, and stateless persons. The script will extract relevant data points, such as refugee numbers, countries of origin, and host countries, and store them in a JSON file. This data can then be used to generate compelling content, such as infographics, blog posts, or social media updates, to raise awareness about refugee crises and promote solidarity with affected communities.",
+      "apis_used": [
+        "UNHCR Open Data Portal"
+      ],
+      "outputs": [
+        "unhcr_data.json",
+        "refugee_insights.md"
+      ],
+      "code_committed": true,
+      "workflow_updated": false
+    }
+  ]
+}
