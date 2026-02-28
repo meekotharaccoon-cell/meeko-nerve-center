@@ -1,217 +1,40 @@
 name: Daily Full Cycle
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
 
 on:
-  schedule:
-    - cron: '0 3 * * *'
-    - cron: '0 6 * * *'
-    - cron: '0 7 * * *'
-    - cron: '0 12 * * *'
-    - cron: '0 18 * * *'
   workflow_dispatch:
 
 jobs:
-  morning-cycle:
+  full-cycle:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      HF_TOKEN:             ${{ secrets.HF_TOKEN }}
-      TELEGRAM_TOKEN:       ${{ secrets.TELEGRAM_TOKEN }}
-      TELEGRAM_CHAT_ID:     ${{ secrets.TELEGRAM_CHAT_ID }}
-      EXCHANGE_RATE_API:    ${{ secrets.EXCHANGE_RATE_API }}
-      SOLANA_WALLET:        ${{ secrets.SOLANA_WALLET }}
-      ETHEREUM_WALLET:      ${{ secrets.ETHEREUM_WALLET }}
-      KOFI_TOKEN:           ${{ secrets.KOFI_TOKEN }}
-      GUMROAD_TOKEN:        ${{ secrets.GUMROAD_TOKEN }}
-      GMAIL_ADDRESS:        ${{ secrets.GMAIL_ADDRESS }}
-      GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
-      BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
-      BLUESKY_PASSWORD:     ${{ secrets.BLUESKY_PASSWORD }}
-      MASTODON_KEY:         ${{ secrets.MASTODON_KEY }}
-      MASTODON_SECRET:      ${{ secrets.MASTODON_SECRET }}
-      MASTODON_TOKEN:       ${{ secrets.MASTODON_TOKEN }}
-      MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
-      YOUTUBE_API_KEY:      ${{ secrets.YOUTUBE_API_KEY }}
-      GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
-      DISCORD_BOT_TOKEN:    ${{ secrets.DISCORD_BOT_TOKEN }}
-      DISCORD_CHANNEL_ID:   ${{ secrets.DISCORD_CHANNEL_ID }}
-      DISCORD_GUILD_ID:     ${{ secrets.DISCORD_GUILD_ID }}
-      FORCE_AUDIT:          "false"
     steps:
       - uses: actions/checkout@v4
-
-      # ── SELF-MAINTENANCE ─────────────────────────────────
-      - name: System Health Check
-        run: python mycelium/system_health_alerting.py
-        continue-on-error: true
-
-      - name: Error Self-Healing
-        run: python mycelium/error_self_healing.py
-        continue-on-error: true
-
-      # ── INTAKE ────────────────────────────────────────────
-      - name: Folder Ingestion
-        run: python mycelium/folder_ingestion_engine.py
-        continue-on-error: true
-
-      # ── DATA COLLECTION ──────────────────────────────────
-      - name: Idea Engine
-        run: python mycelium/idea_engine.py
-        continue-on-error: true
-
-      - name: Idea Builder
-        run: python mycelium/idea_builder.py
-        continue-on-error: true
-
-      - name: Knowledge Harvest
-        run: python mycelium/knowledge_harvester_v2.py
-        continue-on-error: true
-
-      - name: World Intelligence
-        run: python mycelium/world_intelligence.py
-        continue-on-error: true
-
-      - name: Donation Engine
-        run: python mycelium/donation_engine.py
-        continue-on-error: true
-
-      - name: Crypto Wallets
-        run: python mycelium/crypto_wallet_display.py
-        continue-on-error: true
-
-      - name: Crypto Jobs
-        run: python mycelium/crypto_jobs.py
-        continue-on-error: true
-
-      - name: Crypto Signals
-        run: python mycelium/crypto_signals.py
-        continue-on-error: true
-
-      - name: Content Performance
-        run: python mycelium/content_performance.py
-        continue-on-error: true
-
-      - name: Social Scheduling
-        run: python mycelium/social_scheduling.py
-        continue-on-error: true
-
-      # ── CONTENT GENERATION ───────────────────────────────
-      - name: Art + Cause
-        run: python mycelium/art_cause_generator.py
-        continue-on-error: true
-
-      - name: Open Library
-        run: python mycelium/open_library_reader.py
-        continue-on-error: true
-
-      - name: Music Intelligence
-        run: python mycelium/music_intelligence.py
-        continue-on-error: true
-
-      - name: HF Brain
-        run: python mycelium/hf_brain.py
-        continue-on-error: true
-
-      - name: Visual Content
-        run: python mycelium/visual_content.py
-        continue-on-error: true
-
-      - name: Video Engine
-        run: python mycelium/video_engine.py
-        continue-on-error: true
-
-      - name: Language Engine
-        run: python mycelium/language_engine.py
-        continue-on-error: true
-
-      - name: Wikipedia Contribution
-        run: python mycelium/wikipedia_contribution.py
-        continue-on-error: true
-
-      # ── MONETIZATION ─────────────────────────────────────
-      - name: Ko-fi Page Update
-        run: python mycelium/kofi_page_update.py
-        continue-on-error: true
-
-      - name: Gumroad Listing Update
-        run: python mycelium/gumroad_listing_update.py
-        continue-on-error: true
-
-      - name: Grant Application Submission
-        run: python mycelium/grant_application_submission.py
-        continue-on-error: true
-
-      # ── SELF-EVOLUTION ────────────────────────────────────
-      - name: Self-Evolution Engine
-        run: python mycelium/self_evolution.py
-        continue-on-error: true
-
-      - name: Autonomy Audit
-        run: python mycelium/autonomy_audit.py
-        continue-on-error: true
-
-      - name: Portable Deployment
-        run: python mycelium/portable_deployment.py
-        continue-on-error: true
-
-      # ── PUBLIC PRESENCE ───────────────────────────────────
-      - name: Dashboard Generator
-        run: python mycelium/dashboard_generator.py
-        continue-on-error: true
-
-      - name: SEO Engine
-        run: python mycelium/seo_engine.py
-        continue-on-error: true
-
-      # ── CROSS-CONNECTIONS ─────────────────────────────────
-      - name: Cross Engine
-        run: python mycelium/cross_engine.py
-        continue-on-error: true
-
-      # ── PUBLISHING ────────────────────────────────────────
-      - name: Social Engine
-        run: python mycelium/social_engine.py
-        continue-on-error: true
-
-      - name: Outreach Sender
-        run: python mycelium/outreach_sender.py
-        continue-on-error: true
-
-      - name: Discord Engine
-        run: python mycelium/discord_engine.py
-        continue-on-error: true
-
-      # ── RELATIONSHIP MANAGEMENT ───────────────────────────
-      - name: Donor Follow-up Sequence
-        run: python mycelium/donor_followup_sequence.py
-        continue-on-error: true
-
-      - name: Press Follow-up
-        run: python mycelium/press_followup.py
-        continue-on-error: true
-
-      # ── COMMUNICATIONS ────────────────────────────────────
-      - name: Gmail Engine
-        run: python mycelium/gmail_engine.py
-        continue-on-error: true
-
-      - name: Email Responder
-        run: python mycelium/email_responder.py
-        continue-on-error: true
-
-      # ── DAILY INTELLIGENCE REPORT ────────────────────────
-      - name: Daily Status v2
-        run: python mycelium/daily_status_v2.py
-        continue-on-error: true
-
-      # ── HOUSEKEEPING ──────────────────────────────────────
-      - name: Privacy Scrubber
-        run: python mycelium/privacy_scrubber.py
-        continue-on-error: true
-
-      - name: Commit everything
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
         run: |
-          git config user.name "meeko-daily-cycle"
-          git config user.email "daily@meeko-nerve-center"
-          git add data/ knowledge/ content/ public/ mycelium/ .github/workflows/ setup/ WIRED.md DEPLOY.md MANIFESTO.md .replit replit.nix railway.json solarpunk/ intake/
-          git diff --cached --quiet || git commit -m "daily: full cycle [$(date -u +%Y-%m-%d %H:%M)]" && git push
+          git config user.name 'solarpunk-daily'
+          git config user.email 'daily@meeko-nerve-center'
+          mkdir -p data content
+      - name: Run full cycle
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+        run: python mycelium/perpetual_builder.py
+        continue-on-error: true
+      - name: Commit
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "🌀 daily cycle [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
+        continue-on-error: true

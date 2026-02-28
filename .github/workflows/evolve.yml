@@ -1,49 +1,30 @@
 name: 🌱 Evolution Engine
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
+
 on:
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Dry run (no push)'
-        required: false
-        default: 'false'
 
 jobs:
   evolve:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Run connection mapper
-        run: python mycelium/connection_mapper.py
-
-      - name: Run knowledge indexer
-        run: python mycelium/knowledge_indexer.py
-
-      - name: Run changelog generator
-        run: python mycelium/changelog_generator.py
-
-      - name: Audit system
+      - name: Run evolution
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/perpetual_builder.py
+        continue-on-error: true
+      - name: Commit
         run: |
-          echo "=== Workflows ==="
-          ls .github/workflows/
-          echo "=== Mycelium scripts ==="
-          ls mycelium/*.py
-          echo "=== Data files ==="
-          ls data/ 2>/dev/null || echo 'data/ empty'
-          echo "=== Lessons ==="
-          ls lessons/ 2>/dev/null || echo 'no local lessons dir'
-
-      - name: Commit generated files
-        if: github.event.inputs.dry_run != 'true'
-        run: |
-          git config user.email "solarpunk.mycelium@gmail.com"
-          git config user.name "SolarPunk Mycelium"
+          git config user.name 'evolution-engine'
+          git config user.email 'evolve@meeko-nerve-center'
           git add -A
-          git diff --staged --quiet || git commit -m "🌱 auto: daily evolution $(date -u +%Y-%m-%d)"
-          git push || true
+          git diff --cached --quiet || git commit -m "🌱 evolved [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
+        continue-on-error: true

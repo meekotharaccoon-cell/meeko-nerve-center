@@ -1,7 +1,13 @@
-name: 📬 Send Outreach Emails
-# Manually triggered. Sends via unified_emailer — one log, no duplicates.
+name: 📤 Send Outreach
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
+# This workflow was auto-sending outreach emails to everyone. DISABLED.
+
 on:
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type CONFIRM to actually send (prevents accidental runs)'
+        required: true
 
 jobs:
   outreach:
@@ -11,14 +17,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Send outreach (unified, brain-gated)
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: EMAIL_MODE=hello python mycelium/unified_emailer.py
-      - name: Commit sent log
+      - name: Guard — require manual confirmation
         run: |
-          git config user.email "solarpunk.mycelium@gmail.com"
-          git config user.name "SolarPunk Mycelium"
-          git add data/ || true
-          git diff --staged --quiet || git commit -m "auto: outreach emails sent $(date -u +%Y-%m-%d)"
-          git push || true
+          if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
+            echo "Confirmation not provided. Exiting."
+            exit 1
+          fi
+      - name: Run outreach
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/ethical_pesterer.py
+        continue-on-error: true

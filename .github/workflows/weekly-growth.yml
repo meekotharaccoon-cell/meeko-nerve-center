@@ -1,56 +1,34 @@
-name: 🌱 Weekly Growth — SEED + README + Archive + Outreach
+name: 📈 Weekly Growth
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
+
 on:
   workflow_dispatch:
 
 jobs:
-  grow:
+  growth:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
-
-      - name: Generate SEED.json — organism DNA
-        run: python mycelium/generate_seed.py
-
-      - name: Update Living READMEs — real numbers
+        with:
+          python-version: '3.11'
+      - name: Run growth engines (no email)
         env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python mycelium/living_readme.py
-
-      - name: Archive all live pages to Internet Archive
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
         run: |
-          pages=(
-            "https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html"
-            "https://meekotharaccoon-cell.github.io/meeko-nerve-center/SYSTEM_STATUS.md"
-            "https://meekotharaccoon-cell.github.io/gaza-rose-gallery"
-            "https://meekotharaccoon-cell.github.io/gaza-rose-gallery/claim.html"
-            "https://meekotharaccoon-cell.github.io/mycelium-knowledge"
-            "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/LICENSE"
-            "https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/IMMORTALITY.md"
-          )
-          for url in "${pages[@]}"; do
-            echo "Archiving: $url"
-            curl -s -o /dev/null -w "  Status: %{http_code}\n" \
-              "https://web.archive.org/save/$url" \
-              -H "User-Agent: Mycelium-Archive-Bot/1.0"
-            sleep 8
-          done
-
-      - name: Send weekly tech outreach (brain-gated)
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: EMAIL_MODE=tech python mycelium/unified_emailer.py || true
-
-      - name: Send grant outreach (brain-gated)
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: EMAIL_MODE=grants python mycelium/unified_emailer.py || true
-
-      - name: Commit everything
+          python mycelium/network_spreader.py || true
+          python mycelium/signal_tracker.py || true
+        continue-on-error: true
+      - name: Commit
         run: |
-          git config user.email "meekotharaccoon@gmail.com"
-          git config user.name "Mycelium Growth Engine"
-          git add data/ || true
-          git diff --staged --quiet || git commit -m "🌱 weekly growth — seed + archive + $(date -u +%Y-%m-%d)"
-          git push || true
+          git config user.name 'weekly-growth'
+          git config user.email 'growth@meeko-nerve-center'
+          git add -A
+          git diff --cached --quiet || git commit -m "📈 weekly growth [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
+        continue-on-error: true

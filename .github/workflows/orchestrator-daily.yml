@@ -1,4 +1,5 @@
 name: 🧠 Orchestrator — Full Cycle
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
 
 on:
   workflow_dispatch:
@@ -8,24 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Run Full Cycle
-        run: python mycelium/ORCHESTRATOR.py
+      - name: Run orchestrator
         env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-
-      - name: Commit state
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/master_controller.py
+        continue-on-error: true
+      - name: Commit
         run: |
-          git config user.name "Meeko Mycelium"
-          git config user.email "meekotharaccoon@gmail.com"
-          git add data/
-          git diff --staged --quiet || git commit -m "🧠 orchestrator cycle $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push origin main
+          git config user.name 'orchestrator'
+          git config user.email 'orch@meeko-nerve-center'
+          git add -A
+          git diff --cached --quiet || git commit -m "🧠 orchestrator [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
         continue-on-error: true

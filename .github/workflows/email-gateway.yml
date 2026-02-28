@@ -1,12 +1,8 @@
-name: Email Gateway
-# Every 5 minutes. Maximum frequency.
-# Anyone who emails meekotharaccoon@gmail.com gets the SolarPunk network.
-# Subject: FORK ME -> full setup guide. Instant. Automatic. Forever.
-# This is how nodes multiply. Email -> Fork -> Node -> Network.
+name: 📬 Email Gateway
+# 🚨 SCHEDULES DISABLED — Rebuilt from scratch, see email_gateway.py v3
+# ONLY re-enable after confirming email_gateway.py v3 is working correctly
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,23 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      HF_TOKEN:           ${{ secrets.HF_TOKEN }}
-      GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
-      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-      GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: "\U0001f4e7 Process incoming emails"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Email Gateway (strict inbound-only mode)
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/email_gateway.py
         continue-on-error: true
-
-      - name: Commit gateway log
+      - name: Commit log
         run: |
-          git config user.name "meeko-gateway"
-          git config user.email "gateway@meeko-nerve-center"
-          git pull --rebase origin main || true
-          git add data/
-          git diff --cached --quiet || git commit -m "gateway: $(date -u +'%H:%M') UTC" && git push
+          git config user.name 'email-gateway'
+          git config user.email 'gateway@meeko-nerve-center'
+          git add data/email_gateway_log.json data/email_gateway_stats.json || true
+          git diff --staged --quiet || git commit -m "📬 gateway log [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
         continue-on-error: true

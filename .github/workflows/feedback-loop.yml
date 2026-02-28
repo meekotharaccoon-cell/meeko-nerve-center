@@ -1,12 +1,7 @@
 name: 🔄 Feedback Loop
-
-# FIXED: All steps now have continue-on-error: true so a single
-# script failure doesn't kill the whole workflow.
-# FIXED: Added missing env vars that were causing auth failures.
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,60 +9,38 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Configure git
         run: |
           git config user.name 'solarpunk-feedback-loop'
           git config user.email 'loop@meeko-nerve-center'
-
       - name: Step 1 — Signal Tracker
         env:
-          GITHUB_TOKEN:   ${{ secrets.GITHUB_TOKEN }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_URL:   ${{ secrets.MASTODON_URL }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
           MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
-          GUMROAD_TOKEN:  ${{ secrets.GUMROAD_TOKEN }}
-        run: |
-          mkdir -p data content
-          python mycelium/signal_tracker.py
+        run: python mycelium/signal_tracker.py
         continue-on-error: true
-
       - name: Step 2 — Loop Brain
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/loop_brain.py
         continue-on-error: true
-
       - name: Step 3 — Humanitarian Content
         env:
-          HF_TOKEN:             ${{ secrets.HF_TOKEN }}
-          MASTODON_TOKEN:       ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_URL:         ${{ secrets.MASTODON_URL }}
-          MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
-          BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
-          BLUESKY_PASSWORD:     ${{ secrets.BLUESKY_PASSWORD }}
         run: python mycelium/humanitarian_content.py
         continue-on-error: true
-
-      - name: Step 4 — Unified Briefing (delta-only email)
-        env:
-          GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
-        run: python mycelium/unified_briefing.py
-        continue-on-error: true
-
-      - name: Commit outputs
+      - name: Commit
         run: |
           git add data/ content/ || true
           git diff --cached --quiet && echo 'Nothing to commit' || (
@@ -75,20 +48,4 @@ jobs:
             git pull --rebase origin main &&
             git push origin main
           )
-        continue-on-error: true
-
-      - name: Summary
-        run: |
-          echo '═══════════════════════════════════════════'
-          echo ' FEEDBACK LOOP COMPLETE'
-          cat data/strategy.json 2>/dev/null | python3 -c "
-import json,sys
-try:
-  d=json.load(sys.stdin)
-  print(f\" Crisis: {d.get('primary_crisis','?')}\")
-  print(f\" Channel: {d.get('push_channel','?')}\")
-  print(f\" Reasoning: {str(d.get('reasoning','?'))[:100]}\")
-except: print('  (no strategy data)')
-" || echo '  (strategy.json not found)'
-          echo '═══════════════════════════════════════════'
         continue-on-error: true
