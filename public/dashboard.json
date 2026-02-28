@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T14:49:37.653888",
+  "generated_at": "2026-02-28T15:42:40.984685",
   "date": "2026-02-28",
   "system": {
     "engines_total": 140,
@@ -22,11 +22,11 @@
     "trades_flagged": 0
   },
   "health": {
-    "passing_pct": 66,
+    "passing_pct": 70,
     "total_workflows": 54,
     "failing": 14,
-    "color": "RED",
-    "last_check": "2026-02-28T14:49:15.425342"
+    "color": "YELLOW",
+    "last_check": "2026-02-28T15:42:13.714220"
   },
   "market": {
     "fear_greed": 11,

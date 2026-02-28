@@ -26,6 +26,15 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520725854",
       "detected": "2026-02-28",
       "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/feedback-loop.yml",
+      "file": "feedback-loop.yml",
+      "run_id": 22520725854,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22520725854",
+      "detected": "2026-02-28",
+      "resolved": false
     }
   ],
   "resolved": []

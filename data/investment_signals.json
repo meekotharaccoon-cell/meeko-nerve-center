@@ -7,13 +7,13 @@
       "action": "CONSIDER_BUY",
       "confidence": 83,
       "reasons": [
-        "oversold (-5.6%) in extreme fear",
+        "oversold (-5.8%) in extreme fear",
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 212.08,
-      "change_24h": -5.58067,
-      "change_7d": -18.562693965525835,
+      "price": 210.38,
+      "change_24h": -5.75784,
+      "change_7d": -19.21757502772421,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -27,25 +27,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 64835,
-      "change_24h": -1.561,
-      "change_7d": -4.982043219108544,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "BNB",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 82,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 603.63,
-      "change_24h": -1.39555,
-      "change_7d": -4.70676617116033,
+      "price": 64830,
+      "change_24h": -1.81253,
+      "change_7d": -5.285030752150603,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -59,9 +43,25 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 81.15,
-      "change_24h": -2.14776,
-      "change_7d": -5.195245724919662,
+      "price": 80.79,
+      "change_24h": -2.3624,
+      "change_7d": -5.616853240699672,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-02-28"
+    },
+    {
+      "symbol": "XAUT",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 77,
+      "reasons": [
+        "trending",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 5338.97,
+      "change_24h": 2.28194,
+      "change_7d": 4.6400794855657805,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -75,9 +75,25 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5390.68,
-      "change_24h": 2.90182,
-      "change_7d": 4.963243175780486,
+      "price": 5419.28,
+      "change_24h": 3.24299,
+      "change_7d": 5.477031998156259,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-02-28"
+    },
+    {
+      "symbol": "CC",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 75,
+      "reasons": [
+        "oversold (-5.5%) in extreme fear",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 0.16368,
+      "change_24h": -5.5448,
+      "change_7d": 1.6570971913223647,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -88,12 +104,12 @@
       "action": "CONSIDER_BUY",
       "confidence": 75,
       "reasons": [
-        "oversold (-5.2%) in extreme fear",
+        "oversold (-5.8%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.862041,
-      "change_24h": -5.18486,
-      "change_7d": -10.265845115761516,
+      "price": 0.855624,
+      "change_24h": -5.78491,
+      "change_7d": -11.139071904420291,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -108,8 +124,8 @@
         "EXTREME FEAR: historically good entry"
       ],
       "price": 1.47,
-      "change_24h": 2.20604,
-      "change_7d": 10.717950261912863,
+      "change_24h": 2.66244,
+      "change_7d": 10.137966351443318,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -120,12 +136,12 @@
       "action": "CONSIDER_BUY",
       "confidence": 75,
       "reasons": [
-        "oversold (-6.0%) in extreme fear",
+        "oversold (-5.6%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 108.62,
-      "change_24h": -5.95042,
-      "change_7d": -11.573478019223629,
+      "price": 107.66,
+      "change_24h": -5.64436,
+      "change_7d": -12.180855755814955,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -139,24 +155,9 @@
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 449.2,
-      "change_24h": -3.71467,
-      "change_7d": -21.129640591443717,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "ETH",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 70,
-      "reasons": [
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 1901.21,
-      "change_24h": -2.42246,
-      "change_7d": -3.987891090902019,
+      "price": 445.92,
+      "change_24h": -4.58394,
+      "change_7d": -22.06457702416776,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
