@@ -1,11 +1,13 @@
-name: Perpetual Builder (Every 2 Hours)
-# Runs as often as GitHub Actions allows.
-# Builds one new engine per run. Forever.
-# Golden retriever energy. Relentless. Joyful.
+name: Perpetual Builder
+# GitHub Actions minimum interval: 5 minutes.
+# This runs at the absolute maximum frequency allowed.
+# Every 5 minutes: assess, build, commit, repeat.
+# Golden retriever energy. Relentless. Joyful. Forever.
+# Crazy awesome sci-fi but good dude vibes.
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # Every 2 hours
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -14,40 +16,40 @@ jobs:
     permissions:
       contents: write
     env:
-      HF_TOKEN:             ${{ secrets.HF_TOKEN }}
-      GMAIL_ADDRESS:        ${{ secrets.GMAIL_ADDRESS }}
-      GMAIL_APP_PASSWORD:   ${{ secrets.GMAIL_APP_PASSWORD }}
-      GITHUB_TOKEN:         ${{ secrets.GITHUB_TOKEN }}
-      MASTODON_TOKEN:       ${{ secrets.MASTODON_TOKEN }}
-      MASTODON_BASE_URL:    ${{ secrets.MASTODON_BASE_URL }}
-      BLUESKY_HANDLE:       ${{ secrets.BLUESKY_HANDLE }}
-      BLUESKY_PASSWORD:     ${{ secrets.BLUESKY_PASSWORD }}
+      HF_TOKEN:           ${{ secrets.HF_TOKEN }}
+      GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+      MASTODON_TOKEN:     ${{ secrets.MASTODON_TOKEN }}
+      MASTODON_BASE_URL:  ${{ secrets.MASTODON_BASE_URL }}
+      BLUESKY_HANDLE:     ${{ secrets.BLUESKY_HANDLE }}
+      BLUESKY_PASSWORD:   ${{ secrets.BLUESKY_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build next engine
+      - name: "\U0001f338 Build next engine"
         run: python mycelium/perpetual_builder.py
         continue-on-error: true
 
-      - name: Check email gateway
+      - name: "\U0001f4e7 Check email gateway"
         run: python mycelium/email_gateway.py
         continue-on-error: true
 
-      - name: Run output validator
-        run: python mycelium/output_validator.py
-        continue-on-error: true
-
-      - name: Update long-term memory
+      - name: "\U0001f9e0 Update long-term memory"
         run: python mycelium/long_term_memory.py
         continue-on-error: true
 
-      - name: Commit new engine
+      - name: "\u2705 Output validator"
+        run: python mycelium/output_validator.py
+        continue-on-error: true
+
+      - name: Commit everything new
         run: |
           git config user.name "meeko-perpetual-builder"
           git config user.email "builder@meeko-nerve-center"
           git pull --rebase origin main || true
-          git add mycelium/ data/ .github/workflows/daily-full-cycle.yml
-          git diff --cached --quiet || git commit -m "\U0001f338 auto-built: $(date -u +%Y-%m-%d-%H%M) [perpetual]" && git push
+          git add -A
+          git diff --cached --quiet || git commit -m "\U0001f338 perpetual: $(date -u +'%Y-%m-%d %H:%M') UTC" && git push
         continue-on-error: true

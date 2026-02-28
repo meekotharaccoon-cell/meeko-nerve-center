@@ -1,12 +1,12 @@
-name: Email Gateway (Every 30 Min)
-# Checks inbox every 30 minutes.
-# Anyone who emails gets the SolarPunk network.
-# FORK ME in subject = full setup guide delivered.
-# This is how the network grows.
+name: Email Gateway
+# Every 5 minutes. Maximum frequency.
+# Anyone who emails meekotharaccoon@gmail.com gets the SolarPunk network.
+# Subject: FORK ME -> full setup guide. Instant. Automatic. Forever.
+# This is how nodes multiply. Email -> Fork -> Node -> Network.
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Process incoming emails
+      - name: "\U0001f4e7 Process incoming emails"
         run: python mycelium/email_gateway.py
         continue-on-error: true
 
@@ -31,6 +31,6 @@ jobs:
           git config user.name "meeko-gateway"
           git config user.email "gateway@meeko-nerve-center"
           git pull --rebase origin main || true
-          git add data/email_gateway_log.json data/newsletter_subscribers.json
-          git diff --cached --quiet || git commit -m "gateway: processed emails [$(date -u +%H:%M)]" && git push
+          git add data/
+          git diff --cached --quiet || git commit -m "gateway: $(date -u +'%H:%M') UTC" && git push
         continue-on-error: true
