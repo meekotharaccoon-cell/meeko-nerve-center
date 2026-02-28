@@ -3,30 +3,6 @@
     {
       "date": "2026-02-28",
       "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Parallel\r\n Ingestion (8",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
       "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
       "action": "trade_sent"
     },
@@ -1199,6 +1175,30 @@
       "from": "hi@intro.co",
       "subject": "Re: Re: Re: You <> Alli (Founder of Drybar)",
       "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@cursor.com",
+      "subject": "Cursor GitHub App was uninstalled",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "register@account.tiktok.com",
+      "subject": "360389 is your verification code",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] Go",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "activity@notifications.pinterest.com",
+      "subject": "Need Help?",
+      "action": "help_sent"
     }
   ],
   "human_emails_total": 1,
