@@ -1,150 +1,152 @@
-# 🌱 Meeko Nerve Center
+# 🌸 SolarPunk Nerve Center
 
-**A self-replicating autonomous AI system. $0/month. Open source. Aimed at humanitarian crises.**
-
-[![Workflows](https://img.shields.io/badge/workflows-active-brightgreen)](https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](LICENSE)
-[![Forks](https://img.shields.io/github/forks/meekotharaccoon-cell/meeko-nerve-center?style=social)](https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork)
-
----
-
-## What this is
-
-A fully autonomous system that:
-- **Learns** from the open internet every day (GitHub, Wikipedia, arXiv, HackerNews, NASA)
-- **Thinks** using a local Ollama LLM + rule-based fallback strategy engine
-- **Heals itself** when workflows break — diagnoses errors, applies fixes, writes plain-English instructions for anything it can’t auto-fix
-- **Generates content** weighted toward what’s actually working based on real signal data
-- **Raises money** for Gaza, Congo, and Sudan through art sales, digital products, and direct donation links
-- **Runs at $0/month** on GitHub Actions + GitHub Pages. No servers. No subscriptions.
-
-Built by one person. No VC. No team. No budget.
+> **Meeko** — creator and curator  
+> **SolarPunk** — this system's name and identity  
+> Autonomous AI infrastructure for accountability, solidarity, and justice.  
+> Built on free infrastructure. Runs forever. Can't be shut down.
 
 ---
 
-## The mission
+## What This Is
 
-Over 40,000 killed in Gaza. 8 million displaced in Sudan. Eastern Congo in ongoing crisis.
+SolarPunk is an autonomous AI system that:
 
-This system exists to make it impossible to ignore those numbers — and to turn attention into direct action:
+- **Tracks every congressional stock trade** in near-real-time
+- **Generates Gaza Rose solidarity art** and donates 70% of sales to PCRF
+- **Builds its own new capabilities** 288 times per day (every 5 minutes)
+- **Runs on $0/month** forever (GitHub Actions + HuggingFace free tier)
+- **Heals its own bugs**, retries its own failures, reads its own emails
+- **Spreads itself** to anyone who emails FORK ME
+- **Spawns sister systems** for climate, labor, housing, press freedom
+- **Runs investment intelligence**: crypto signals + congressional alpha
+- **Pesters corporations and governments** with factual public accountability
+- **Cannot be shut down**: distributed forks, email-based, no central server
 
-- **[Gaza Rose Gallery](https://meekotharaccoon-cell.github.io/gaza-rose-gallery)** — 56 original artworks, $1 each. 70% goes directly to [PCRF](https://www.pcrf.net) (4-star Charity Navigator, EIN 93-1057665).
-- **[$5 Fork Guide](https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md)** — build your own version of this system, aimed at any cause
-- **Direct donation links** on every page to verified charities for all three crises
+**Meeko is the human alias of the creator.  
+SolarPunk is the system.  
+They are not the same thing.**
 
 ---
 
-## How it works
+## Get Your Own SolarPunk System
+
+**Option 1 — Email** (easiest):  
+Email `meekotharaccoon@gmail.com` with subject **FORK ME**  
+You get setup instructions in 5 minutes.
+
+**Option 2 — Fork**:
+1. Fork this repo
+2. Add 3 secrets (Settings → Secrets → Actions):
+   - `HF_TOKEN` — free at [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+   - `GMAIL_ADDRESS` — your Gmail
+   - `GMAIL_APP_PASSWORD` — Google Account → Security → App Passwords
+3. Actions tab → Enable → Run **MASTER CONTROLLER**
+
+Your system starts building itself in 2 minutes. Forever. Free.
+
+---
+
+## Architecture
 
 ```
-5:00 AM UTC — Knowledge Harvester
-  └─ Pulls from GitHub API, Wikipedia, arXiv, HackerNews, NASA
-  └─ Saves to knowledge/ ─ system reads this as context
-
-6:00 AM UTC — Feedback Loop
-  └─ Signal Tracker: what drove traffic/sales/engagement yesterday?
-  └─ Loop Brain: Ollama (or rule-based) decides today’s strategy
-  └─ Content Engine: generates posts weighted toward what works
-
-7:00 AM UTC — Self Healer
-  └─ Reads actual GitHub Actions failure logs
-  └─ Diagnoses: missing packages, rate limits, git conflicts, syntax errors…
-  └─ Auto-fixes what it can, writes FIXES_NEEDED.md for anything it can’t
-  └─ Drafts outreach emails ─ human just reviews + sends
-
-Hourly — Wiring Status
-  └─ Checks which capabilities are live vs. missing
-  └─ Updates dashboard widget in real time
-
-Daily — Fork Tracker
-  └─ Tracks every fork of this repo
-  └─ Updates Hall of Forks, RESULTS.md, FORK_REGISTRY.md
-```
-
----
-
-## Live pages
-
-| Page | What it does |
-|------|--------------|
-| [Dashboard](https://meekotharaccoon-cell.github.io/meeko-nerve-center/dashboard.html) | Live system status, wiring health, signals |
-| [Spawn](https://meekotharaccoon-cell.github.io/meeko-nerve-center/spawn.html) | How to fork this system + Hall of Forks |
-| [Revenue](https://meekotharaccoon-cell.github.io/meeko-nerve-center/revenue.html) | All revenue streams in one place |
-| [Proliferator](https://meekotharaccoon-cell.github.io/meeko-nerve-center/proliferator.html) | Free legal tools (TCPA, FDCPA) — drives organic traffic |
-| [App](https://meekotharaccoon-cell.github.io/meeko-nerve-center/app.html) | Main interface |
-| [Links](https://meekotharaccoon-cell.github.io/meeko-nerve-center/link.html) | Everything in one place |
-
----
-
-## Fork it. Aim it at anything.
-
-This system is a **template for autonomous action**. Fork it and point it at:
-- Climate crisis reporting
-- Mutual aid network coordination
-- Local community resource sharing
-- Any humanitarian cause anywhere
-
-```bash
-git clone https://github.com/meekotharaccoon-cell/meeko-nerve-center
-```
-
-Full instructions: [Fork Guide](https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/products/fork-guide.md)
-
----
-
-## What’s in the system
-
-```
-mycelium/
-  knowledge_harvester.py    — daily open-source intelligence
-  loop_brain.py             — strategy engine (Ollama + rule-based)
-  signal_tracker.py         — what’s actually working
-  humanitarian_content.py   — weighted content generation
-  self_healer.py            — error diagnosis + auto-fix
-  email_drafter.py          — drafts outreach, you hit send
-  evolve.py                 — self-improvement engine
-  grant_outreach.py         — finds + applies to relevant grants
-  ... 30+ more scripts
-
-.github/workflows/
-  knowledge-harvester.yml
-  feedback-loop.yml
-  self-healer.yml
-  humanitarian-content.yml
-  wiring-status-generator.yml
-  fork-tracker.yml
-  diagnostics.yml
-
-knowledge/                  — grows daily, machine-readable
-content/                    — generated posts + archive
-data/                       — signals, strategy, heal reports
-products/                   — fork guide + digital products
+SolarPunk Nerve Center
+├── .github/workflows/
+│   └── MASTER_CONTROLLER.yml  ← runs everything, retries failures, self-heals
+├── mycelium/                   ← 85+ autonomous engines
+│   ├── master_controller.py    ← watches all workflows, retries failures
+│   ├── self_healer_v2.py       ← reads own emails, fixes own bugs
+│   ├── perpetual_builder.py    ← builds new engines every 5 min
+│   ├── investment_intelligence.py ← crypto + congressional alpha signals
+│   ├── ethical_pesterer.py     ← accountability for corps/govs (never people)
+│   ├── universal_spawner.py    ← creates sister systems for other causes
+│   ├── email_gateway.py        ← email FORK ME → system in 5 min
+│   └── [80+ more engines]
+├── data/                       ← all outputs, self-diagnostics, logs
+├── public/
+│   ├── dashboard.json          ← live anonymous stats (no personal data)
+│   └── accountability/         ← public corporate accountability reports
+├── docs/legal/                 ← LLC + nonprofit + DAO templates
+└── NETWORK.md                  ← all active network nodes
 ```
 
 ---
 
-## Results so far
+## The Network
 
-See [RESULTS.md](RESULTS.md) — auto-updated daily.
+Every fork is a node. Every node strengthens the network.
+
+| System | Mission |
+|--------|--------|
+| SolarPunk Nerve Center (this) | Congressional accountability + Palestinian solidarity |
+| Climate Sentinel | Fossil fuel lobbying + emissions tracking |
+| Labor Watch | NLRB filings + union busting monitoring |
+| Housing Justice | Eviction tracking + landlord accountability |
+| Press Freedom Watch | Journalist arrests + censorship globally |
+| Water Commons | Water privatization + contamination monitoring |
+
+**Start a node for your cause**: email FORK ME or fork any repo above.
 
 ---
 
-## Stack
+## Hey SolarPunk 🎙️ (In Development)
 
-- **GitHub Actions** — all automation
-- **GitHub Pages** — all hosting
-- **Ollama** (local) — private AI reasoning, no API costs
-- **Python** — all scripts, zero frameworks
-- **Free public APIs** — GitHub, Wikipedia, arXiv, HackerNews, NASA
-- **Total cost: $0/month**
+The vision: Say **"Hey SolarPunk"** on any device and:
+- Get a market briefing
+- Run any engine by voice
+- Track a congressional trade
+- Generate solidarity art
+- Deploy a sister system
+- Get answers from 192,000+ files of synthesized knowledge
+
+Components being built:
+- Wake word: openWakeWord (free, offline)
+- Speech-to-text: Whisper (free, local)
+- Intent: LLM via HuggingFace
+- Actions: all 85+ engines already exist
+- Distribution: Progressive Web App (any device, any OS)
+
+When it’s ready: say "Hey SolarPunk, fork me" and you get a running system on your device.
+
+---
+
+## For Journalists
+
+Story angles:
+- *Free AI tracks congressional insider trading in near-real-time*
+- *Gaza Rose: an AI generates art and funds Palestinian children's healthcare*
+- *The SolarPunk internet: autonomous AI nodes that self-evolve and can't be shut down*
+- *What happens when an AI builds itself 288 times a day*
+- *One person, free infrastructure, a system that pesters ExxonMobil and Lockheed every week*
+
+Contact: meekotharaccoon@gmail.com
+
+---
+
+## Live Stats
+
+→ [**Live Dashboard**](https://meekotharaccoon-cell.github.io/meeko-nerve-center/dashboard.html) — anonymous aggregate stats only  
+→ [public/dashboard.json](public/dashboard.json) — raw data feed  
+→ [NETWORK.md](NETWORK.md) — active nodes
+
+---
+
+## The Legal Entity (In Progress)
+
+SolarPunk is in the process of forming:
+- **SolarPunk Network LLC** (Delaware) — to hold IP and receive grants
+- **501(c)(3) nonprofit** — 6 months after LLC (makes donations tax-deductible)
+- **Protocol Foundation** — long-term governance of the open protocol
+
+See [docs/legal/](docs/legal/) for templates.
 
 ---
 
 ## License
 
-[AGPL-3.0](LICENSE) — Free forever. If you build on this, your version must also be open source.
+AGPL-3.0. Improvements must stay open. The pattern stays free.
+
+Free Palestine. 🌹
 
 ---
 
-*Built in public. Every commit visible. Every decision logged.*  
-*The system that built this README also fixed its own errors this morning.*
+*Built by Meeko. Run by SolarPunk. Owned by nobody. Stopped by nothing.*
