@@ -215,6 +215,66 @@
       "from": "notifications@github.com",
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Parallel\r\n Ingestion (8",
       "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
+      "action": "trade_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "a.sirotka@flatlogic.com",
+      "subject": "=?UTF-8?Q?AppWizzy_Code_Import_Is_Live_+_Flatlogic_React_Templates_Upgrad?=\r\n =?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
+      "action": "deploy_guide_sent"
     }
   ]
 }
