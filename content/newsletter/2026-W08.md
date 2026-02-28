@@ -27,7 +27,7 @@ Here’s a sample of what it found:
 > **arXiv papers:** 18
 > **HackerNews stories:** 25
 > **Sources:** GitHub API, Wikipedia, arXiv, HackerNews, NASA, public repos
-> [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) ⭐275,695 — A list of Free Software network services and web applications which can be hoste
+> [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted) ⭐275,779 — A list of Free Software network services and web applications which can be hoste
 
 ---
 
