@@ -7,13 +7,13 @@
       "action": "CONSIDER_BUY",
       "confidence": 83,
       "reasons": [
-        "oversold (-5.6%) in extreme fear",
+        "oversold (-5.9%) in extreme fear",
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 208.78,
-      "change_24h": -5.55946,
-      "change_7d": -19.40517294638178,
+      "price": 209.08,
+      "change_24h": -5.88443,
+      "change_7d": -19.291810836352134,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -27,9 +27,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 65043,
-      "change_24h": -0.29163,
-      "change_7d": -5.218666913322823,
+      "price": 65098,
+      "change_24h": -0.28513,
+      "change_7d": -5.139004509810938,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -44,24 +44,8 @@
         "EXTREME FEAR: historically good entry"
       ],
       "price": 81.02,
-      "change_24h": -0.40528,
-      "change_7d": -6.43244303445892,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "HYPE",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 77,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 28.94,
-      "change_24h": 6.05277,
-      "change_7d": -3.01402899175744,
+      "change_24h": -0.40542,
+      "change_7d": -6.430746937434814,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -75,9 +59,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5321.04,
-      "change_24h": 1.96611,
-      "change_7d": 4.32538170688857,
+      "price": 5329.21,
+      "change_24h": 2.17461,
+      "change_7d": 4.485561063474592,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -91,9 +75,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5418.18,
-      "change_24h": 3.2626,
-      "change_7d": 5.349146570095888,
+      "price": 5425.5,
+      "change_24h": 3.44646,
+      "change_7d": 5.491466566198036,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -107,9 +91,9 @@
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 443.56,
-      "change_24h": -3.93361,
-      "change_7d": -22.637123533752504,
+      "price": 444.19,
+      "change_24h": -4.14636,
+      "change_7d": -22.52583667093549,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -122,9 +106,9 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1901.07,
-      "change_24h": -0.61265,
-      "change_7d": -4.3627690842557145,
+      "price": 1899.61,
+      "change_24h": -0.79153,
+      "change_7d": -4.436425658993056,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -138,8 +122,8 @@
         "EXTREME FEAR: historically good entry"
       ],
       "price": 1.0,
-      "change_24h": 0.01431,
-      "change_7d": 0.04398721464115264,
+      "change_24h": 0.0109,
+      "change_7d": 0.04239030458792915,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"
@@ -152,9 +136,24 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 602.62,
-      "change_24h": -0.80108,
-      "change_7d": -4.010431061354672,
+      "price": 602.82,
+      "change_24h": -0.8525,
+      "change_7d": -3.9774883048165246,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-02-28"
+    },
+    {
+      "symbol": "XRP",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 70,
+      "reasons": [
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 1.32,
+      "change_24h": -1.93617,
+      "change_7d": -8.47821202348773,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-02-28"

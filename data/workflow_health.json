@@ -1,13 +1,13 @@
 {
   "date": "2026-02-28",
-  "timestamp": "2026-02-28T17:30:32.736581",
+  "timestamp": "2026-02-28T17:38:52.961108",
   "total": 54,
-  "passing": 36,
+  "passing": 38,
   "failing": 14,
-  "running": 3,
+  "running": 1,
   "retried": 11,
-  "health_pct": 66,
-  "color": "RED",
+  "health_pct": 70,
+  "color": "YELLOW",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
@@ -24,8 +24,8 @@
     {
       "name": "Daily Full Cycle",
       "file": "daily-full-cycle.yml",
-      "id": 22521996175,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22521996175"
+      "id": 22525576936,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525576936"
     },
     {
       "name": "\ud83c\udf31 Evolution Engine",

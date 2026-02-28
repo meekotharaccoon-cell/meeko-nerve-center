@@ -87,6 +87,24 @@
       "date": "2026-02-28",
       "resolved": false,
       "source": "loop_closer"
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/feedback-loop.yml",
+      "file": "feedback-loop.yml",
+      "run_id": 22525484891,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "detected": "2026-02-28",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/jekyll-gh-pages.yml",
+      "file": "jekyll-gh-pages.yml",
+      "run_id": 22525484954,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484954",
+      "detected": "2026-02-28",
+      "resolved": false
     }
   ],
   "resolved": []
