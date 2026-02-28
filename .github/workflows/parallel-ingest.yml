@@ -1,0 +1,40 @@
+name: Parallel Ingestion (8 Agents)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
+    - cron: '0 10 * * *'
+    - cron: '0 16 * * *'
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+      fail-fast: false
+    env:
+      HF_TOKEN:           ${{ secrets.HF_TOKEN }}
+      GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+      SHARD_ID:           ${{ matrix.shard }}
+      TOTAL_SHARDS:       "8"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run shard ${{ matrix.shard }}
+        run: python mycelium/parallel_ingestion_coordinator.py
+        continue-on-error: true
+
+      - name: Commit shard results
+        run: |
+          git config user.name "meeko-ingest-shard-${{ matrix.shard }}"
+          git config user.email "ingest@meeko-nerve-center"
+          git pull --rebase origin main || true
+          git add data/ knowledge/ public/images/ingested/
+          git diff --cached --quiet || git commit -m "ingest: shard ${{ matrix.shard }} [${{ matrix.shard }}/8] [$(date -u +%Y-%m-%d)]" && git push
+        continue-on-error: true
