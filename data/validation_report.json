@@ -44,8 +44,8 @@
     {
       "check": "github_actions",
       "ok": true,
-      "detail": "Latest: Perpetual Builder \u2014 None",
-      "failures": 3
+      "detail": "Latest: Daily Full Cycle \u2014 None",
+      "failures": 0
     },
     {
       "check": "social_queue",
@@ -55,15 +55,15 @@
     }
   ],
   "confidence": {
-    "github_pages": 60,
-    "system_health_alerting": 80,
-    "idea_engine": 80,
-    "world_intelligence": 80,
-    "content_performance": 60,
-    "art_generation": 80,
-    "signal_accuracy": 80,
-    "github_actions": 80,
-    "social_queue": 80
+    "github_pages": 48,
+    "system_health_alerting": 84,
+    "idea_engine": 84,
+    "world_intelligence": 84,
+    "content_performance": 48,
+    "art_generation": 84,
+    "signal_accuracy": 84,
+    "github_actions": 84,
+    "social_queue": 84
   },
   "failures": 2,
   "passes": 7
