@@ -515,6 +515,66 @@
       "from": "notifications@github.com",
       "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
       "action": "ai_response"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "deploy_guide_sent"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Daily Full\r\n Cycle - ma",
+      "action": "ai_response"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "ai_response"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
+      "action": "fallback_help"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
+      "action": "fallback_help"
     }
   ]
 }
