@@ -1,7 +1,7 @@
 # n8n-io/n8n
-*Category: automation · Harvested: 2026-02-28*
+*Category: automation · Harvested: 2026-03-01*
 
-**Stars:** 176,837  
+**Stars:** 176,937  
 **Language:** TypeScript  
 **License:** NOASSERTION  
 **URL:** https://github.com/n8n-io/n8n
