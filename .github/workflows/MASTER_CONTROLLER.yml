@@ -1,14 +1,15 @@
-name: 🌸 MASTER CONTROLLER — SolarPunk Autonomous Brain
-# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
-# Re-enable by restoring schedule: cron lines after email_gateway.py is confirmed safe
+name: 🌸 MASTER CONTROLLER — Full Passive Income + Job Agent
 
 on:
+  schedule:
+    - cron: '0 6 * * *'    # 6am UTC daily — FULL CYCLE
+    - cron: '0 18 * * *'   # 6pm UTC daily — EVENING CYCLE
   workflow_dispatch:
     inputs:
       mode:
-        description: 'health_check | full_cycle | retry_failures'
+        description: 'full_cycle | revenue_only | jobs_only | health_check'
         required: false
-        default: 'health_check'
+        default: 'full_cycle'
 
 jobs:
   master_control:
@@ -33,10 +34,9 @@ jobs:
           mkdir -p data content public
 
       # ══════════════════════════════════════════════
-      # PHASE 0 — Read human directives from Notion
-      # You write, system listens. Closes the human loop.
+      # PHASE 0 — Human Directives (YOU steer from Notion)
       # ══════════════════════════════════════════════
-      - name: Phase 0 — Notion Directives Reader
+      - name: Phase 0 — Read Human Directives from Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════
-      # PHASE 1 — Self-heal before anything else
+      # PHASE 1 — Self-heal
       # ══════════════════════════════════════════════
       - name: Phase 1 — Self-Healer
         env:
@@ -56,8 +56,7 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════
-      # PHASE 1.5 — 3D Brain: revenue x reach x impact
-      # Synthesizes before intelligence gathering begins
+      # PHASE 1.5 — 3D Brain (directive-informed synthesis)
       # ══════════════════════════════════════════════
       - name: Phase 1.5 — 3D Brain
         env:
@@ -72,11 +71,9 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════
-      # PHASE 2 — Memory: synthesize ALL sources
-      # data/ + Notion observations + HF performance
-      # Feeds context to every phase that follows
+      # PHASE 2 — Long-Term Memory (all 3 sources)
       # ══════════════════════════════════════════════
-      - name: Phase 2 — Long-Term Memory (v2 — reads Notion + HF)
+      - name: Phase 2 — Long-Term Memory (data + Notion + HF)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
@@ -122,7 +119,7 @@ jobs:
         run: python mycelium/art_cause_generator.py
         continue-on-error: true
 
-      - name: Phase 6b — Social Posting
+      - name: Phase 6b — Social Posting (directive + memory aware)
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
@@ -134,7 +131,7 @@ jobs:
         run: python mycelium/social_poster.py
         continue-on-error: true
 
-      - name: Phase 7 — Network Spreader (NO EMAIL)
+      - name: Phase 7 — Network Spreader
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
@@ -142,13 +139,18 @@ jobs:
         run: python mycelium/network_spreader.py
         continue-on-error: true
 
-      - name: Phase 8 — Grant Intelligence (saves to file only)
+      - name: Phase 8 — Grant Intelligence (memory-informed v3)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python mycelium/grant_intelligence.py
         continue-on-error: true
 
-      - name: Phase 9 — Gumroad Revenue Check
+      # ══════════════════════════════════════════════
+      # PHASE 9 — Revenue: ALL streams simultaneously
+      # ══════════════════════════════════════════════
+      - name: Phase 9a — Gumroad Revenue Check
         env:
           GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
@@ -156,24 +158,60 @@ jobs:
         run: python mycelium/gumroad_tracker.py
         continue-on-error: true
 
-      - name: Phase 10 — Perpetual Builder
+      - name: Phase 9b — Etsy Bridge (NEW — 90M buyers)
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          ETSY_SHOP_ID: ${{ secrets.ETSY_SHOP_ID }}
+          ETSY_ACCESS_TOKEN: ${{ secrets.ETSY_ACCESS_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/etsy_bridge.py
+        continue-on-error: true
+
+      - name: Phase 9c — Revenue Router (route all income automatically)
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+          PHANTOM_WALLET_ADDRESS: ${{ secrets.PHANTOM_WALLET_ADDRESS }}
+          HUMAN_PAYPAL_EMAIL: ${{ secrets.HUMAN_PAYPAL_EMAIL }}
+          PCRF_PAYPAL_EMAIL: ${{ secrets.PCRF_PAYPAL_EMAIL }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+        run: python mycelium/revenue_router.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════
+      # PHASE 10 — Job Agent (system applies for work)
+      # ══════════════════════════════════════════════
+      - name: Phase 10 — Job Agent (NEW — system IS the employee)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          UPWORK_API_KEY: ${{ secrets.UPWORK_API_KEY }}
+          HUMAN_FULL_NAME: ${{ secrets.HUMAN_FULL_NAME }}
+          HUMAN_EMAIL: ${{ secrets.HUMAN_EMAIL }}
+          HUMAN_LOCATION: ${{ secrets.HUMAN_LOCATION }}
+          HUMAN_TIMEZONE: ${{ secrets.HUMAN_TIMEZONE }}
+        run: python mycelium/job_agent.py
+        continue-on-error: true
+
+      - name: Phase 11 — Perpetual Builder
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/perpetual_builder.py
         continue-on-error: true
 
-      - name: Phase 11 — Loop Closer
+      - name: Phase 12 — Loop Closer
         run: python mycelium/loop_closer.py
         continue-on-error: true
 
-      - name: Phase 12 — Dashboard Generator
+      - name: Phase 13 — Dashboard Generator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/dashboard_data_generator.py
         continue-on-error: true
 
-      - name: Phase 13 — Deep Self-Diagnostic
+      - name: Phase 14 — Deep Diagnostic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -181,11 +219,9 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════
-      # PHASE 14 — HF Dataset Logger
-      # Log ALL outputs from this cycle as training data
-      # Closes the learning loop
+      # PHASE 15 — HF Dataset Logger (everything becomes training data)
       # ══════════════════════════════════════════════
-      - name: Phase 14 — HF Dataset Logger (NEW — training data flywheel)
+      - name: Phase 15 — HF Dataset Logger (training data flywheel)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: ${{ secrets.HF_USERNAME }}
@@ -193,10 +229,9 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════
-      # PHASE 15 — Notion Sync
-      # Push everything back to command center
+      # PHASE 16 — Notion Sync (push everything to command center)
       # ══════════════════════════════════════════════
-      - name: Phase 15 — Notion Sync
+      - name: Phase 16 — Notion Sync
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
@@ -204,7 +239,7 @@ jobs:
         run: python mycelium/notion_bridge.py
         continue-on-error: true
 
-      - name: EMAIL GATEWAY — STRICT MODE (inbound only, no spam)
+      - name: Email Gateway (inbound only)
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -212,13 +247,13 @@ jobs:
         run: python mycelium/email_gateway.py
         continue-on-error: true
 
-      - name: Autonomous Git
+      - name: Autonomous Git Commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add -A
           git diff --cached --quiet && echo 'Nothing to commit' && exit 0
-          git commit -m "🌸 cycle [$(date +%Y-%m-%d\ %H:%M)]"
+          git commit -m "🌸 cycle [$(date +%Y-%m-%d\ %H:%M)] — revenue+jobs+grants+content"
           git pull --rebase origin main || true
           git push origin main || git push origin main --force-with-lease
         continue-on-error: true
