@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-28",
+  "date": "2026-03-01",
   "top_mission_apis": [
     {
       "name": "USGS Earthquakes",
@@ -221,13 +221,13 @@
   ],
   "free_noauth_count": 677,
   "categories": [
-    "Index",
-    "Environment",
-    "Science",
-    "Government",
-    "APILayer APIs",
     "Crypto",
+    "Index",
+    "Government",
+    "Environment",
+    "Jobs",
     "Art",
-    "Jobs"
+    "APILayer APIs",
+    "Science"
   ]
 }

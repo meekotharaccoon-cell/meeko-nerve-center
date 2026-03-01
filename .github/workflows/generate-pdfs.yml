@@ -1,0 +1,113 @@
+name: Generate Product PDFs + Gumroad Listings
+
+on:
+  push:
+    paths:
+      - 'products/0*.md'
+  workflow_dispatch:
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install pandoc
+        run: sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended
+      
+      - name: Generate PDFs
+        run: |
+          mkdir -p products/pdf
+          for f in products/[0-9]*.md; do
+            name=$(basename "$f" .md)
+            echo "Generating: $name"
+            pandoc "$f" \
+              -o "products/pdf/${name}.pdf" \
+              -V geometry:margin=1in \
+              -V fontsize=11pt \
+              -V colorlinks=true \
+              2>/dev/null && echo "  ✅ OK" || echo "  ⚠️ WARN: failed for $name"
+          done
+          echo "--- PDF count ---"
+          ls -lh products/pdf/ | wc -l
+          ls -lh products/pdf/
+      
+      - name: Commit PDFs
+        run: |
+          git config user.name "meeko-pdf-engine"
+          git config user.email "pdf@meeko-nerve-center"
+          git add products/pdf/
+          git diff --staged --quiet || git commit -m "auto: product PDFs [$(date -u +%Y-%m-%dT%H:%M)]"
+          git push
+      
+      - name: Post to Gumroad via gumroad_listing_update.py
+        if: env.GUMROAD_SECRET != ''
+        run: |
+          pip install requests --quiet
+          python mycelium/gumroad_listing_update.py
+        env:
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+      
+      - name: Fallback — Direct Gumroad API if listing_update fails
+        if: env.GUMROAD_SECRET != '' && failure()
+        run: |
+          python3 << 'PYEOF'
+          import requests, os, glob
+          TOKEN = os.environ["GUMROAD_SECRET"]
+          H = {"Authorization": f"Bearer {TOKEN}"}
+          
+          PRODUCTS = [
+            {"name": "The $0 AI Stack", "file": "01-the-zero-dollar-ai-stack.pdf",
+             "desc": "Run real AI on your machine, completely free. Ollama + Mistral + ChromaDB + Open WebUI full setup guide. 70% of every sale goes to Palestinian Children's Relief Fund."},
+            {"name": "The Autonomous Email Responder", "file": "02-autonomous-email-responder.pdf",
+             "desc": "Complete Python script: AI reads your inbox and drafts replies in your voice. Gmail setup included. 70% PCRF."},
+            {"name": "The Grant Hunter System", "file": "03-grant-hunter-system.pdf",
+             "desc": "Real grant databases + Python automation that searches, qualifies, and drafts applications. 70% PCRF."},
+            {"name": "The Viral Fork", "file": "04-the-viral-fork.pdf",
+             "desc": "Architecture for a self-replicating GitHub system. One click and anyone gets their own copy. 70% PCRF."},
+            {"name": "Build a Store That Runs Itself", "file": "05-store-that-runs-itself.pdf",
+             "desc": "Gumroad + GitHub Actions + email sequences = a store with zero maintenance. 70% PCRF."},
+            {"name": "The Morning Briefing", "file": "06-the-morning-briefing.pdf",
+             "desc": "40-line Python: weather + news + AI thought emailed to you at 8am every day. 70% PCRF."},
+            {"name": "The Digital Twin", "file": "07-the-digital-twin.pdf",
+             "desc": "A values file (my_brain.py) that gates every automated action your system takes. 70% PCRF."},
+            {"name": "Permanent Internet Presence", "file": "08-permanent-internet-presence.pdf",
+             "desc": "Archive.org + IPFS + Codeberg mirror. Your content survives account bans and server deaths. 70% PCRF."},
+            {"name": "The Prompt That Changed Everything", "file": "09-the-prompt-that-changed-everything.pdf",
+             "desc": "Actual mechanics of how LLMs work + 5 prompt moves that change everything. 70% PCRF."},
+            {"name": "The Ethical AI Business", "file": "10-the-ethical-ai-business.pdf",
+             "desc": "The Cause Commerce framework: useful product + $1 price + 70% to verified cause. Full build guide. 70% PCRF."},
+          ]
+          
+          try:
+            resp = requests.get("https://api.gumroad.com/v2/products", headers=H)
+            existing = {p["name"] for p in resp.json().get("products", [])}
+          except Exception as e:
+            print(f"[gumroad] Error fetching products: {e}")
+            existing = set()
+          
+          for p in PRODUCTS:
+            if p["name"] in existing:
+              print(f"[gumroad] ✅ Exists: {p['name']}")
+              continue
+            pdf = f"products/pdf/{p['file']}"
+            if not os.path.exists(pdf):
+              print(f"[gumroad] ⚠️  No PDF yet: {p['file']}")
+              continue
+            r = requests.post("https://api.gumroad.com/v2/products", headers=H,
+              data={"name": p["name"], "description": p["desc"], "price": 100, "published": True})
+            if r.json().get("success"):
+              pid = r.json()["product"]["id"]
+              with open(pdf, "rb") as f:
+                requests.post(f"https://api.gumroad.com/v2/products/{pid}/files", headers=H, files={"file": f})
+              print(f"[gumroad] 🌸 CREATED: {p['name']}")
+            else:
+              print(f"[gumroad] ❌ Failed: {p['name']} — {r.json()}")
+          PYEOF
+        env:
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}

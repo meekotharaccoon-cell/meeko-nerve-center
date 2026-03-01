@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-28",
+  "date": "2026-03-01",
   "results": [
     {
       "check": "github_pages",
@@ -50,19 +50,19 @@
     {
       "check": "social_queue",
       "ok": true,
-      "detail": "25 posts queued in last 3 days (25 total)",
+      "detail": "31 posts queued in last 3 days (31 total)",
       "action": null
     }
   ],
   "confidence": {
-    "github_pages": 95,
+    "github_pages": 98,
     "system_health_alerting": 98,
     "idea_engine": 98,
     "world_intelligence": 98,
     "content_performance": 2,
     "art_generation": 98,
     "signal_accuracy": 98,
-    "github_actions": 98,
+    "github_actions": 94,
     "social_queue": 98
   },
   "failures": 1,

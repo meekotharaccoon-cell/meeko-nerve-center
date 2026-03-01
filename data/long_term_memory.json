@@ -1,13 +1,29 @@
 {
   "version": 1,
-  "updated": "2026-02-28",
-  "contexts": {},
+  "updated": "2026-03-01",
+  "contexts": {
+    "crypto_signals": "The system has 0 signal accuracy, indicating a need for improvement in crypto signal performance. Recent data is limited, with 28 days of system operation.",
+    "content_engine": "No performance data is available yet to inform content creation, and no human tone preferences have been expressed.",
+    "press_outreach": "The press reply rate is unknown, with no data available to analyze response patterns.",
+    "grant_engine": "No grants have been submitted, and no priorities have been set by the human, providing a blank slate for grant strategy development.",
+    "idea_engine": "The idea engine is one of the strongest, with 24 total ideas generated, but no data on implementation rates or types of ideas that get implemented.",
+    "art_engine": "No data is available on art generation performance or cause alignment, requiring exploration and definition of artistic and causal goals.",
+    "social_poster": "No performance data exists to guide the best posting strategy, leaving room for experimentation and analysis.",
+    "email_engine": "Email patterns that work are unknown due to a lack of data, necessitating the collection of email interaction metrics.",
+    "general": "The system is 28 days old, with strongest engines in github pages, system health alerting, and idea generation. Human intent and strategic focus have not been expressed through directives or observations, providing an open landscape for development. The system's total dataset records are currently empty, indicating a need for data collection and integration to inform future decisions.",
+    "updated": "2026-03-01",
+    "synthesized_from": [
+      "data_files",
+      "notion",
+      "hf_dataset"
+    ]
+  },
   "patterns": [],
   "failures": [],
   "wins": [],
   "signals_accuracy": {
     "overall_accuracy": 0,
-    "updated": "2026-02-28"
+    "updated": "2026-03-01"
   },
   "content_patterns": {},
   "donor_patterns": {},
@@ -15,23 +31,24 @@
   "grant_patterns": {
     "total_submitted": 0,
     "grants": [],
-    "updated": "2026-02-28"
+    "updated": "2026-03-01",
+    "recent": []
   },
   "world_patterns": [],
   "meta": {
     "total_ideas_processed": 24,
     "total_signals_generated": 0,
     "total_art_generated": 0,
-    "system_age_days": 27,
+    "system_age_days": 28,
     "last_evolution_date": "",
     "strongest_engines": [
+      "github_pages",
       "system_health_alerting",
-      "idea_engine",
-      "world_intelligence"
+      "idea_engine"
     ],
     "weakest_engines": [
       "social_queue",
-      "github_pages",
+      "github_actions",
       "content_performance"
     ]
   }

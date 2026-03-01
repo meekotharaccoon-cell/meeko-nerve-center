@@ -2,906 +2,6 @@
   "interactions": [
     {
       "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "trade_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "a.sirotka@flatlogic.com",
-      "subject": "=?UTF-8?Q?AppWizzy_Code_Import_Is_Live_+_Flatlogic_React_Templates_Upgrad?=\r\n =?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Daily Full\r\n Cycle - ma",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_cancelled:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle, Attemp",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Deploy Jekyll\r\n with GitHu",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "noreply@polymarket.com",
-      "subject": "Breaking: U.S. and Israel Strike Iran; Khamenei expected out by July",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hello@mail.apollo.io",
-      "subject": "Save $120 or more on a paid Apollo plan",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/mycelium-grants]_Run_succeeded:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle, Attemp",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/mycelium-grants]_Run_succeeded:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Deploy Jekyll\r\n with GitHu",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hello@mail.apollo.io",
-      "subject": "Re: Save $120 or more on a paid Apollo plan",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Deploy Jekyll\r\n with GitHu",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle, Attemp",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "heythere@m.redbubble.com",
-      "subject": "=?utf-8?B?U2l0ZXdpZGUgU2FsZTogMjUlIE9mZiBBbGwgQXJ0IPCfpKk=?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Lead with your best content",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "mongodbteam@messages.mongodb.com",
-      "subject": "ComingUp: MongoDB and Vector Search in Python with Hands-on\r\n Exercises",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@intro.co",
-      "subject": "Re: Re: Meeko <> Travis (Founder of Hydroflask)",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
       "from": "marketing@engage.canva.com",
       "subject": "Last call: Close your organization's budget gap",
       "action": "fallback_help"
@@ -1823,6 +923,2473 @@
       "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed:\r\n .github/",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "info@mail.apollo.io",
+      "subject": "Live agent support ends in 5 days",
+      "action": "ignored_automated",
+      "reason": "blocked domain: apollo.io"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "noreply@medium.com",
+      "subject": "I Stopped Using ChatGPT for 30 Days. What Happened to My Bra",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notification@service.tiktok.com",
+      "subject": "Apricot Studio \ud83c\udfa7 sent you a message",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "noreply@news.paypal.com",
+      "subject": "What\u2019s on your business wish list?",
+      "action": "ignored_automated",
+      "reason": "blocked domain: paypal.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "info@update.tiktok.com",
+      "subject": "Aaron Parnas posted: NEWS: JD VANCE AND HIS WIFE BOOED AT WI",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed:\r\n .github",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Network-Registry] Run failed:\r\n .",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed:\r\n .github/",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/Murmuration] Run failed:\r\n .github/workflow",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed:\r\n .github",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed:\r\n .github",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed:\r\n .github/",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed: Scanner - ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed: Scanner - ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed: Scanner - ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Network-Registry] Run failed:\r\n .",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed:\r\n .github/",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/Murmuration] Run failed:\r\n .github/workflow",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Registry] Run failed: Deploy and ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents] Run failed:\r\n .github/w",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents-staging] Run failed:\r\n .",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents-demo] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@mail.cursor.com",
+      "subject": "Using Cursor's Agent",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notification@service.tiktok.com",
+      "subject": "Emily May: 2025 was a rough one \ud83d\ude06  #newyear #goal",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "Try Opus 4.6 in Bolt",
+      "action": "replied"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "gm@email.kraken.com",
+      "subject": "\ud83d\uddde\ufe0f Crypto Continues to Trail Equities and Metals",
+      "action": "ignored_automated",
+      "reason": "blocked domain: kraken.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@info.digitalocean.com",
+      "subject": "Data from 1,100+ experts on AI agents and inference",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "pinbot@info.pinterest.com",
+      "subject": "Automate your posting routine with scheduling tools",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@info.digitalocean.com",
+      "subject": "Data from 1,100+ experts on AI agents and inference",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "pinmail@marketing.pinterest.com",
+      "subject": "Meet Gen Z as they\u2019re discovering who they are \ud83d\udd0d\u2728",
+      "action": "replied"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "noreply@solpump.io",
+      "subject": "ClosePartridge4793, Stablecoin betting is live \ud83d\udfe2\ud83d\udd25 | SOLPUMP",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "info@email.manychat.com",
+      "subject": "How much do YouTubers REALLY make? We asked to find out! \ud83e\udd11",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "noreply@medium.com",
+      "subject": "JWST finds nine category-defying objects. Have astronomers f",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "matt@mail.replit.com",
+      "subject": "\u2744\ufe0f January Replit Product Updates",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notification@service.tiktok.com",
+      "subject": "Apricot Studio \ud83c\udfa7 sent you a message",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "Meeko <> Vanessa (Co-Founder of Health-Ade)",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@intro.co",
+      "subject": "You <> Vanessa (Co-Founder of Health-Ade)",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "pinbot@info.pinterest.com",
+      "subject": "Earn $100 with Pinterest Research!",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hi@mail.cursor.com",
+      "subject": "Using Cursor as a team",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Registry] Run failed: Deploy and ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@khanacademy.org",
+      "subject": "See their progress. Celebrate their growth. \ud83c\udfaf",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "hello@news.railway.app",
+      "subject": "Magic domains, deploy-less horizontal scaling, new docs",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "notification@service.tiktok.com",
+      "subject": "carrie is someone who you may know",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-02-28",
+      "from": "team@mail.perplexity.ai",
+      "subject": "We've upgraded Deep Research ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@marketing.base44.com",
+      "subject": "Big Game Energy: Big Updates, Now Live",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Happening Tomorrow: Mobile Builder Spotlight + Office Hours",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "marketing@engage.canva.com",
+      "subject": "Capture the best ideas with whiteboards",
+      "action": "ignored_automated",
+      "reason": "auto prefix: marketing@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@mail.gitlab.com",
+      "subject": "Ready to ship code faster?",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hey@mail.you.com",
+      "subject": "Are You Ready for What AI Brings in 2026?",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Annette sent you a message",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Genera",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Genera",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents] Run failed:\r\n .github/w",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents-staging] Run failed:\r\n .",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/atomic-agents-demo] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/solarpunk-revenue] Run failed: AI Auto-Fix ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/solarpunk-revenue] Run failed: AI Auto-Fix ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/solarpunk-revenue] Run failed: AI Auto-Fix ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: AI Auto-Fix - ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Memvid] Run failed: AI Auto-Fix -",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Autonomous] Run failed: AI Auto-F",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/solarpunk-revenue] Run failed: AI Auto-Fix ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "stinkyfartnugget.com: thank you to @Save Polarbears for the ",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "triquetra@tiktokshop.com",
+      "subject": "Mike, unlock free delivery! \ud83d\ude9a",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Agent] Run failed: Deploy SolarPu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "I Was Never a \u201cReal\u201d Programmer. (And neither Are Vibe Coder",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udcc8 DEX ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The Hidden Web3 Skills That Actually Get You Hired(It\u2019s Not ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@digitalocean.com",
+      "subject": "Core Infrastructure Maintenance",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Happening Tomorrow: Live Build Session \u2014 Refining Your Mobil",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@mail.gitlab.com",
+      "subject": "Create a project in GitLab in 5 minutes",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Expert Advice: Your Shortcut to Success",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Expert Advice: Your Shortcut to Success",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@info.digitalocean.com",
+      "subject": "Let\u2019s get growing: What DigitalOcean can do for your busines",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run cancelled: Deploy to G",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run cancelled: Deploy to G",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy to GitH",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy to GitH",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy to Page",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy - Queue",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy to Page",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy - Queue",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run failed: Deploy to Page",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Node-002] Run cancelled: pages bu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Build failed for optimistic-mindfulness",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Build failed for optimistic-mindfulness",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Deployment crashed for SolarPunk-Registry in optimistic-mind",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Registry] Run failed: Deploy and ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Valentine\u2019s Day is coming. Let\u2019s boost your Shop",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Khan Academy + Blooket + You = Gamified Learning \ud83c\udfae",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "brook \ud83e\udd79\ud83e\udef0\ud83e\udd19: This song brooo",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "triquetra@tiktokshop.com",
+      "subject": "Mike, unlock free delivery! \ud83d\ude9a",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Try Comet and work 10x faster",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The End of Dashboards and Design Systems | Michal Malewicz",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Don\u2019t get stuck\u2014ask the experts.",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Don\u2019t get stuck\u2014ask the experts.",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] A third-party OAuth application has been added to y",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@digitalocean.com",
+      "subject": "DigitalOcean - Here's your receipt",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "\ufe0f and others viewed your profile",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@redbubblemail.com",
+      "subject": "Change to your login details",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Your Google Account was recovered successfully",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@gumroad.com",
+      "subject": "Your authentication token is 430814",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gumroad.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Real-Time Notifications: WebSockets vs SSE vs Firebase (And ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@info.digitalocean.com",
+      "subject": "[Getting started on DO] Part 1 of 4: Launch, Configure, and ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "count rackula \ud83d\udda4 posted: dude it\u2019s not weird i swear",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "victorperton@centreforoptimism.com",
+      "subject": "Is Optimism the World\u2019s Most Valuable Commodity?",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Annette sent you a message",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run cancelled: pages build",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "meekotharaccoon@gmail.com",
+      "subject": "\u26a0\ufe0f 1 validation failure(s) \u2014 Meeko",
+      "action": "ignored_automated",
+      "reason": "self-email"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udcc8 DEX ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "How to Make Money in 2026 with ChatGPT 5.2 | Mansoor A., MBA",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Annette sent you a message",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Top Linker alert \ud83d\udea8",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "marketing@engage.canva.com",
+      "subject": "\ud83d\udc8c Get 20% off Valentine\u2019s prints with Canva Print",
+      "action": "ignored_automated",
+      "reason": "auto prefix: marketing@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thredup@email.thredup.com",
+      "subject": "Inside: 50% off + free shipping on your first order",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@tiktokshop.com",
+      "subject": "Your order is out for delivery!",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Temple City Beats posted: \u201cSalt & Vinegar\u201d is an instrumenta",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "victorperton@centreforoptimism.com",
+      "subject": "Vale Trish Vejby: Author of \"Grief: How Should an Optimist C",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "ebay@reply.ebay.com",
+      "subject": "The perfect match: you and 15% off \ud83d\udc98",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@tiktokshop.com",
+      "subject": "Your order was delivered!",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Still need to set up your classroom? Let\u2019s make it easy. \u2705",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed: pages build an",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed: pages build an",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@cryptohopper.com",
+      "subject": "This is what you have missed",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The 5-Minute Mental Reset That Actually Works | Sam Liberty ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "product@engage.canva.com",
+      "subject": "Save hours with a doc template",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@marketing.base44.com",
+      "subject": "Big Game Apps Competition \ud83c\udfc8 $50,000 total prize pool",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "zeno@updates.resend.com",
+      "subject": "Resend Agent Skills, new Community Program, and New Features",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "You are now subscribed to Raad Mobrem on Intro! #S814662",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "You have access to the world's most in-demand Founders and C",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "You <> Alexis Ohanian (Founder of Reddit)",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Complete your booking with Raad Mobrem",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@update.tiktok.com",
+      "subject": "DJ SoulChild AC posted: ICE just unalived someone on camera ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "gm@email.kraken.com",
+      "subject": "\ud83d\uddde\ufe0f Regulation, HYPE and What\u2019s Next in 2026",
+      "action": "ignored_automated",
+      "reason": "blocked domain: kraken.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "heythere@m.redbubble.com",
+      "subject": "Send love with a greeting card! \ud83d\udc8c\u2728 ",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "heythere@m.redbubble.com",
+      "subject": "Up to 40% off Valentine's gifts they'll love.",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "The Daily Show posted: Considering Grandma made an OnlyFans ",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "google-gemini-noreply@google.com",
+      "subject": "Hey Meeko, welcome to Gemini",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Unlock more from Perplexity",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Why Freelance Developers in Vietnam Are Outearning Silicon V",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Level Up Your Replit Skills \u2014 Optimization & Essential Tools",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@email.openai.com",
+      "subject": "Use ChatGPT to make life easier",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Ready to take the next step? Let\u2019s build your classroom. \ud83d\ude80",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Building a Web Scraper with JavaScript and Puppeteer: A Prac",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@apollo.io",
+      "subject": "Your top recommendations for the week ahead",
+      "action": "ignored_automated",
+      "reason": "blocked domain: apollo.io"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "pinbot@info.pinterest.com",
+      "subject": "Ready to unlock more sales and traffic on Pinterest?",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "marketing@engage.canva.com",
+      "subject": "Here's how organizations saved $2.2M in agency spend",
+      "action": "ignored_automated",
+      "reason": "auto prefix: marketing@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Hot Snarky Nerds: Some of you may be wondering: why are we g",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "One week left: National Civics Bee\u00ae deadline Feb 3",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Your Comet assistant is waiting",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The Nginx Configuration That Handles 10x More Concurrent Use",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "canvacreate@engage.canva.com",
+      "subject": "You have new messages from the team",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Streamline your Linktree",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@pionex.us",
+      "subject": "SSN/TIN verified. Your tax information is approved",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "Join us this week and next for two super helpful sessions \ud83e\udde0",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Nerdy Encounters posted: Why get 1 Oodie... when you can get",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "pinmail@marketing.pinterest.com",
+      "subject": "The 21 emerging trends about to take off \ud83d\ude80",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@freeup.net",
+      "subject": "Hiring help that actually helps: See how FreeUp is different",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "developer@mail.you.com",
+      "subject": "The You Report | Edition: 5 | 01.27.26",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Share Your Replit Apps Securely \u2014 Preview & Feedback Tools",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "triquetra@tiktokshop.com",
+      "subject": "Mike, unlock free delivery! \ud83d\ude9a",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mongodb@team.mongodb.com",
+      "subject": "Help shape MongoDB Atlas in 2026",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Screen time you won\u2019t regret. Try Medium\u2019smobile app.",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "sam@hey.runable.com",
+      "subject": "\ud83e\udd2f AI video clips are a threat to Humanity\u00a0",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Level up your Perplexity game",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@email.manychat.com",
+      "subject": "The top 5 icks from social media users \ud83e\udd2e",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Building a Custom LLM Fine-Tuning Pipeline: Lessons From 3 M",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "pinbot@info.pinterest.com",
+      "subject": "Supercharge your content with top trends for 2026",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] Please download your two-factor recovery codes",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] A personal access token (classic) has been added to",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Are you reading Medium\u2019s best stories?",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Welcome to Khan Academy \u2014 your all-in-one teaching toolkit",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@render.com",
+      "subject": "Build, deploy, and monitor your application in one place",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "verify@x.com",
+      "subject": "New login to X from EdgeDesktop on Windows",
+      "action": "ignored_automated",
+      "reason": "blocked domain: x.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@news.railway.app",
+      "subject": "$100M Series B,  Architecture View, Focused PR Environments",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@shop-us.tiktok.com",
+      "subject": "Triquetra Organic Ki... just shipped",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] A third-party OAuth application has been added to y",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "postmaster@itch.io",
+      "subject": "Welcome to itch.io, please verify your email address",
+      "action": "ignored_automated",
+      "reason": "auto prefix: postmaster@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Apricot Studio \ud83c\udfa7 sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@render.com",
+      "subject": "Your free Render database expires soon: social-media-agency-",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "The browser users never switch from",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "A New \u2018DeepSeek Moment\u2019? Memory, Not Scale | Ignacio de Greg",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "marketing@engage.canva.com",
+      "subject": "Thank you for contributing to a better world",
+      "action": "ignored_automated",
+      "reason": "auto prefix: marketing@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@news.paypal.com",
+      "subject": "No website? No problem with PayPal Payment Links",
+      "action": "ignored_automated",
+      "reason": "blocked domain: paypal.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@news.railway.app",
+      "subject": "Enforce 2FA, CLI command structure, Singapore Buckets",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] A third-party OAuth application has been added to y",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "zeno.rocha@resend.com",
+      "subject": "Welcome to Resend!",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "sam@hey.runable.com",
+      "subject": "Welcome to Runable, World's First General AI Agent For Every",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@render.com",
+      "subject": "deploy failed for Business-autopilot",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] You've used 50% of your credits on MeekoThaRaccoon",
+      "action": "ignored_automated",
+      "reason": "blocked domain: netlify.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] Your password was reset",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "bbno$ posted: missed yall",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "You're in! Let's Bolt(.new) into action \ud83d\ude80",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Neuronal Muse Labz sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "sam@hey.runable.com",
+      "subject": "\ud83d\ude32 Are you still creating boring PPTs?",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "verify@x.com",
+      "subject": "New login to X from EdgeDesktop on Windows",
+      "action": "ignored_automated",
+      "reason": "blocked domain: x.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "bbno$ posted: which is better?",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "verify@x.com",
+      "subject": "New login to X from EdgeDesktop on Windows",
+      "action": "ignored_automated",
+      "reason": "blocked domain: x.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "security@mail.instagram.com",
+      "subject": "Username changed on Instagram",
+      "action": "ignored_automated",
+      "reason": "auto prefix: security@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "sam@hey.runable.com",
+      "subject": "\ud83d\udcbb No code website builders are dead - Here's why?\u00a0",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "2-Step Verification turned on",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@google.com",
+      "subject": "\u2705 Meeko, finish setting up your Apple iPhone with Google",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@google.com",
+      "subject": "Google Verification Code",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@marketing.base44.com",
+      "subject": "Everything just got a little easier",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Linktree features you can\u2019t miss",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "SchlafGut posted: Murmelnde Welpen. #gutenachtgeschichte#tr\u00e4",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@netlify.com",
+      "subject": "[Netlify] You've used 75% of your credits on MeekoThaRaccoon",
+      "action": "ignored_automated",
+      "reason": "blocked domain: netlify.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
     }
   ],
   "human_emails_total": 1,

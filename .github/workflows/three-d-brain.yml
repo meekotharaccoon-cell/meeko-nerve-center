@@ -1,0 +1,41 @@
+name: 🧠 Daily 3D Brain Cycle
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 6am UTC daily — before morning social posts
+  workflow_dispatch:
+
+jobs:
+  three_d_brain:
+    name: 3D Cross-Dimensional Intelligence
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
+        run: |
+          git config user.name 'meeko-3d-brain'
+          git config user.email '3dbrain@meeko-nerve-center'
+          mkdir -p data
+      
+      - name: Run 3D Brain
+        env:
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/three_d_brain.py
+      
+      - name: Save brain state to repo
+        run: |
+          git add data/three_d_brain.json || true
+          git diff --staged --quiet && echo 'No changes' && exit 0
+          git commit -m "🧠 3d-brain state [$(date -u +%Y-%m-%d)]"
+          git push
