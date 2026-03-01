@@ -2,16 +2,24 @@
 
 ## Crypto Market
 
-- BTC: $67,880.0 (+3.0%)
-- SOL: $87.81 (+7.2%)
+- BTC: $67,132.0 (+5.1%)
+- SOL: $86.66 (+9.3%)
 
 ## New Solana Pools
 
-- WW3 / SOL | Vol 24h: $108.4176528958 | https://www.geckoterminal.com/solana/pools/CCpBRE15owgL9t8zMXZfT7MjyAvSAWwgGX7MWBd9BN2u
-- READDD / SOL | Vol 24h: $0.1732850565 | https://www.geckoterminal.com/solana/pools/F77CXPfZkHLPSE5dw5kuVV3PbmzRuSnSPnfEFMknwvd1
-- WAR / SOL | Vol 24h: $3829.611491807 | https://www.geckoterminal.com/solana/pools/CSEQ1DMpQVD9NnoKDACCPzeURWvma1HXVQxBriXqt7ZW
+- Snow / SOL | Vol 24h: $175.2671207681 | https://www.geckoterminal.com/solana/pools/9Th2yUCc72owRJpCixhnZaeJe6i1ZFfvypQ7xzBvedFn
+- PIGNESS / SOL | Vol 24h: $90.4275119051 | https://www.geckoterminal.com/solana/pools/3GJ5XyW6brL18E2yWidcqPQPsV7UcxwENbfzus17LB9S
+- Pigness / SOL | Vol 24h: $267.6046116645 | https://www.geckoterminal.com/solana/pools/G6ystVmsJxpAm2vqXtgAnYynVfC6h3ZduEGjckNyEDym
 
 ## Next SpaceX: USSF-44 on 2022-11-01
+
+## Trending on Wikipedia
+
+- Ali Khamenei (2,738,521 views)
+- 2026 Israeli–United States strikes on Iran (871,288 views)
+- Neil Sedaka (642,139 views)
+- Iran (443,227 views)
+- Ruhollah Khomeini (339,773 views)
 
 ## World Bank
 
