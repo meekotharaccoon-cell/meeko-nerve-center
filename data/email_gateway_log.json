@@ -4,186 +4,6 @@
       "date": "2026-02-28",
       "from": "notifications@github.com",
       "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Perpetual\r\n Builder - m",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "ai_response"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_cancelled:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: Deploy\r\n Jekyll with Gi",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily Full\r\n Cycle, Attemp",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_failed:_?=\r\n =?utf-8?q?=",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Deploy Jekyll\r\n with GitHu",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .github/workflows/feedba",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_skipped:_?=\r\n =?utf-8?q?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run succeeded: Email\r\n Gateway - main ",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "noreply@polymarket.com",
-      "subject": "Breaking: U.S. and Israel Strike Iran; Khamenei expected out by July",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
-      "action": "deploy_guide_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "=?utf-8?q?[meekotharaccoon-cell/meeko-nerve-center]_Run_succeeded:_?= =?utf-8?q?",
       "action": "fallback_help"
     },
     {
@@ -3326,6 +3146,202 @@
       "subject": "[MeekoThaRaccoon/SolarPunk-Proof] Run failed:\r\n .github/work",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "heythere@m.redbubble.com",
+      "subject": "Up to 40% off Valentine's gifts they'll love.",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "The Daily Show posted: Considering Grandma made an OnlyFans ",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "google-gemini-noreply@google.com",
+      "subject": "Hey Meeko, welcome to Gemini",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "thenandnowflora@outlook.com",
+      "subject": "SolarPunk",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Unlock more from Perplexity",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Why Freelance Developers in Vietnam Are Outearning Silicon V",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Level Up Your Replit Skills \u2014 Optimization & Essential Tools",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@email.openai.com",
+      "subject": "Use ChatGPT to make life easier",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Ready to take the next step? Let\u2019s build your classroom. \ud83d\ude80",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Building a Web Scraper with JavaScript and Puppeteer: A Prac",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@apollo.io",
+      "subject": "Your top recommendations for the week ahead",
+      "action": "ignored_automated",
+      "reason": "blocked domain: apollo.io"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "pinbot@info.pinterest.com",
+      "subject": "Ready to unlock more sales and traffic on Pinterest?",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "marketing@engage.canva.com",
+      "subject": "Here's how organizations saved $2.2M in agency spend",
+      "action": "ignored_automated",
+      "reason": "auto prefix: marketing@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Hot Snarky Nerds: Some of you may be wondering: why are we g",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "One week left: National Civics Bee\u00ae deadline Feb 3",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Your Comet assistant is waiting",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The Nginx Configuration That Handles 10x More Concurrent Use",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "canvacreate@engage.canva.com",
+      "subject": "You have new messages from the team",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Streamline your Linktree",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@pionex.us",
+      "subject": "SSN/TIN verified. Your tax information is approved",
+      "action": "ignored_automated",
+      "reason": "auto prefix: no-reply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "ericsimons@stackblitz.com",
+      "subject": "Join us this week and next for two super helpful sessions \ud83e\udde0",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Nerdy Encounters posted: Why get 1 Oodie... when you can get",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "pinmail@marketing.pinterest.com",
+      "subject": "The 21 emerging trends about to take off \ud83d\ude80",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@freeup.net",
+      "subject": "Hiring help that actually helps: See how FreeUp is different",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "developer@mail.you.com",
+      "subject": "The You Report | Edition: 5 | 01.27.26",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "contact@mail.replit.com",
+      "subject": "Share Your Replit Apps Securely \u2014 Preview & Feedback Tools",
+      "action": "ignored_automated",
+      "reason": "auto prefix: contact@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "triquetra@tiktokshop.com",
+      "subject": "Mike, unlock free delivery! \ud83d\ude9a",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mongodb@team.mongodb.com",
+      "subject": "Help shape MongoDB Atlas in 2026",
+      "action": "replied"
     }
   ],
   "human_emails_total": 1,
