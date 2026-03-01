@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-28",
+  "date": "2026-03-01",
   "total": 2,
   "human_required": 1,
   "auto_fixable": 1,
@@ -10,15 +10,15 @@
       "description": "Grant drafted but not submitted: Mozilla Foundation \u2014 Mozilla Technology Fund",
       "action": "Submit at: https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund/",
       "human_required": true,
-      "date_found": "2026-02-28"
+      "date_found": "2026-03-01"
     },
     {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "27 unresolved diagnostic issues",
+      "description": "28 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
-      "date_found": "2026-02-28"
+      "date_found": "2026-03-01"
     }
   ]
 }

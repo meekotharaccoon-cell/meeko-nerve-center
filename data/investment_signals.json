@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-28",
+  "date": "2026-03-01",
   "signals": [
     {
       "symbol": "BTC",
@@ -10,12 +10,12 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 67470,
-      "change_24h": 2.83515,
-      "change_7d": -1.1935209116902352,
+      "price": 66394,
+      "change_24h": 1.82075,
+      "change_7d": -1.794552705385398,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
       "symbol": "ETH",
@@ -26,44 +26,28 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1974.63,
-      "change_24h": 2.73635,
-      "change_7d": -0.11044195653442154,
+      "price": 1981.53,
+      "change_24h": 4.14101,
+      "change_7d": 1.520934930836661,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
-      "symbol": "SOL",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 82,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 84.91,
-      "change_24h": 4.33219,
-      "change_7d": -0.7279611526533651,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-02-28"
-    },
-    {
-      "symbol": "TAO",
+      "symbol": "AAVE",
       "type": "CRYPTO",
       "action": "CONSIDER_BUY",
       "confidence": 80,
       "reasons": [
-        "+5.3% with volume",
+        "+6.0% with volume",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 183.7,
-      "change_24h": 5.32686,
-      "change_7d": 0.6675020602788034,
+      "price": 114.43,
+      "change_24h": 5.97343,
+      "change_7d": -2.7344680572704108,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
       "symbol": "HYPE",
@@ -74,12 +58,28 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 30.94,
-      "change_24h": 14.20475,
-      "change_7d": 4.141571454475673,
+      "price": 31.44,
+      "change_24h": 6.73861,
+      "change_7d": 8.645719936142136,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
+    },
+    {
+      "symbol": "XAUT",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 77,
+      "reasons": [
+        "trending",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 5342.24,
+      "change_24h": 0.15415,
+      "change_7d": 4.444715403664497,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-01"
     },
     {
       "symbol": "PAXG",
@@ -90,15 +90,15 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5381.95,
-      "change_24h": 1.46645,
-      "change_7d": 4.524501340553878,
+      "price": 5404.8,
+      "change_24h": -0.51518,
+      "change_7d": 4.937308261448104,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
-      "symbol": "DOT",
+      "symbol": "LEO",
       "type": "CRYPTO",
       "action": "CONSIDER_BUY",
       "confidence": 75,
@@ -106,12 +106,12 @@
         "7d uptrend confirmed",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1.66,
-      "change_24h": 4.57835,
-      "change_7d": 22.24066602749399,
+      "price": 9.07,
+      "change_24h": 2.74294,
+      "change_7d": 11.061452096798895,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
       "symbol": "BCH",
@@ -122,12 +122,12 @@
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 462.66,
-      "change_24h": 0.6664,
-      "change_7d": -17.96809908482097,
+      "price": 441.74,
+      "change_24h": -0.54036,
+      "change_7d": -22.695344624374233,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
       "symbol": "USDT",
@@ -137,40 +137,40 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1.0,
-      "change_24h": 0.02676,
-      "change_7d": 0.05546727879009315,
+      "price": 0.99995,
+      "change_24h": -0.02669,
+      "change_7d": 0.03095208424936533,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     },
     {
-      "symbol": "XRP",
+      "symbol": "BNB",
       "type": "CRYPTO",
       "action": "CONSIDER_BUY",
       "confidence": 70,
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1.39,
-      "change_24h": 2.34647,
-      "change_7d": -3.687548501172295,
+      "price": 622.96,
+      "change_24h": 2.96804,
+      "change_7d": 1.4618889633997072,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-02-28"
+      "date": "2026-03-01"
     }
   ],
   "fear_greed": {
-    "value": 11,
+    "value": 14,
     "label": "Extreme Fear",
     "history": [
+      14,
       11,
       13,
       11,
       11,
       8,
-      5,
-      9
+      5
     ]
   },
   "synthesis": null

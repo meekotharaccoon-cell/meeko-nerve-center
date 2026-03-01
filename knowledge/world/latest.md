@@ -2,14 +2,14 @@
 
 ## Crypto Market
 
-- BTC: $67,132.0 (+5.1%)
-- SOL: $86.66 (+9.3%)
+- BTC: $66,397.0 (+1.6%)
+- SOL: $84.28 (+3.7%)
 
 ## New Solana Pools
 
-- Snow / SOL | Vol 24h: $175.2671207681 | https://www.geckoterminal.com/solana/pools/9Th2yUCc72owRJpCixhnZaeJe6i1ZFfvypQ7xzBvedFn
-- PIGNESS / SOL | Vol 24h: $90.4275119051 | https://www.geckoterminal.com/solana/pools/3GJ5XyW6brL18E2yWidcqPQPsV7UcxwENbfzus17LB9S
-- Pigness / SOL | Vol 24h: $267.6046116645 | https://www.geckoterminal.com/solana/pools/G6ystVmsJxpAm2vqXtgAnYynVfC6h3ZduEGjckNyEDym
+- PIKA / SOL | Vol 24h: $64.6939125474 | https://www.geckoterminal.com/solana/pools/FMLiBdJy3mtvxdZGSGedMHRTBUDghitm5nwTeSyta8MN
+- 50 cent / SOL | Vol 24h: $1.6640874856 | https://www.geckoterminal.com/solana/pools/FbnsEjJvMiHZbnJqDj2KbLDKq2wqE4X1C8VTH4efSRQD
+- Diagne / SOL | Vol 24h: $66.5661539768 | https://www.geckoterminal.com/solana/pools/Cze1SzFJCHMDuEcX9tYMmcE1vXLdZ6sfBKZYncJXVR9r
 
 ## Next SpaceX: USSF-44 on 2022-11-01
 

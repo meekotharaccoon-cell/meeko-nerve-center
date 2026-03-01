@@ -1,41 +1,41 @@
 {
-  "date": "2026-02-28",
+  "date": "2026-03-01",
   "fear_greed": {
-    "value": 11,
+    "value": 14,
     "label": "Extreme Fear",
     "history": [
+      14,
       11,
       13,
       11,
       11,
       8,
-      5,
-      9
+      5
     ]
   },
-  "market_breadth": 0.74,
+  "market_breadth": 0.7,
   "market_mood": "BULLISH",
   "trending": [
-    "PENGU",
-    "VVV",
-    "PAXG",
     "BTC",
-    "SOL",
+    "PAXG",
+    "GRASS",
+    "PENGU",
+    "ETH",
     "HYPE",
-    "ETH"
+    "XAUT"
   ],
   "top_movers": [
-    "HYPE +14.2%",
-    "TAO +5.3%",
-    "DOT +4.6%",
-    "SOL +4.3%",
-    "UNI +3.7%"
+    "HYPE +6.7%",
+    "AAVE +6.0%",
+    "ZEC +4.8%",
+    "LINK +4.6%",
+    "TAO +4.4%"
   ],
   "worst_movers": [
-    "FIGR_HELOC -1.8%",
-    "TON -0.4%",
-    "CC -0.3%",
-    "USD1 -0.2%",
-    "TRX -0.2%"
+    "TON -2.6%",
+    "CC -1.8%",
+    "FIGR_HELOC -1.1%",
+    "DOT -0.6%",
+    "BCH -0.5%"
   ]
 }

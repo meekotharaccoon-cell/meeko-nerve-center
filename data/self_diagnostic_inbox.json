@@ -240,6 +240,15 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22530042869",
       "detected": "2026-02-28",
       "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/jekyll-gh-pages.yml",
+      "file": "jekyll-gh-pages.yml",
+      "run_id": 22549603942,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22549603942",
+      "detected": "2026-03-01",
+      "resolved": false
     }
   ],
   "resolved": []
