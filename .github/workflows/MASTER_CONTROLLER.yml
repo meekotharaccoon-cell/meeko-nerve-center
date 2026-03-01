@@ -41,6 +41,18 @@ jobs:
         run: python mycelium/self_healer_v2.py
         continue-on-error: true
 
+      - name: Phase 1.5 — 3D Brain (NEW — cross-dimensional intelligence)
+        env:
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/three_d_brain.py
+        continue-on-error: true
+
       - name: Phase 2 — Workflow Health Monitor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -131,11 +143,19 @@ jobs:
         run: python mycelium/dashboard_data_generator.py
         continue-on-error: true
 
-      - name: Phase 12 — Deep Self-Diagnostic (new)
+      - name: Phase 12 — Deep Self-Diagnostic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/deep_diagnostic.py
+        continue-on-error: true
+
+      - name: Phase 13 — Notion Sync (NEW — push state to command center)
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/notion_bridge.py
         continue-on-error: true
 
       - name: EMAIL GATEWAY — STRICT MODE (inbound only, no spam)
