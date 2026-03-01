@@ -1,8 +1,113 @@
 {
-  "generated": "2026-03-01T11:06:31.383791+00:00",
+  "generated": "2026-03-01T16:12:19.779051+00:00",
   "total_commits": 200,
   "weeks": 1,
   "commits": [
+    {
+      "sha": "64772e77",
+      "date": "2026-03-01T11:12:12-05:00",
+      "week": "2026-W09",
+      "subject": "feat: add notion_directives_reader + hf_dataset_logger + wire long_term_memory to Notion \u2014 closing human loop, learning loop, and memory loop simultaneously",
+      "author": "Meeko"
+    },
+    {
+      "sha": "2418388a",
+      "date": "2026-03-01T15:59:55+00:00",
+      "week": "2026-W09",
+      "subject": "\\U0001f338 perpetual: 2026-03-01 15:59 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "ccb651ae",
+      "date": "2026-03-01T15:46:46+00:00",
+      "week": "2026-W09",
+      "subject": "data: dex update [15:46]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "79d6cb3d",
+      "date": "2026-03-01T15:44:15+00:00",
+      "week": "2026-W09",
+      "subject": "chore: update wiring_status.json [2026-03-01T15:44]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "b9828c91",
+      "date": "2026-03-01T15:43:25+00:00",
+      "week": "2026-W09",
+      "subject": "\\U0001f338 perpetual: 2026-03-01 15:43 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "177214d2",
+      "date": "2026-03-01T14:52:40+00:00",
+      "week": "2026-W09",
+      "subject": "data: dex update [14:52]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "a292eb08",
+      "date": "2026-03-01T14:51:32+00:00",
+      "week": "2026-W09",
+      "subject": "chore: update wiring_status.json [2026-03-01T14:51]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "d0743863",
+      "date": "2026-03-01T14:51:08+00:00",
+      "week": "2026-W09",
+      "subject": "\\U0001f338 perpetual: 2026-03-01 14:51 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "b4b53f21",
+      "date": "2026-03-01T13:51:11+00:00",
+      "week": "2026-W09",
+      "subject": "chore: update wiring_status.json [2026-03-01T13:51]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "95eef6e1",
+      "date": "2026-03-01T11:55:39+00:00",
+      "week": "2026-W09",
+      "subject": "\\U0001f338 perpetual: 2026-03-01 11:55 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "63c2e1a6",
+      "date": "2026-03-01T11:39:10+00:00",
+      "week": "2026-W09",
+      "subject": "data: dex update [11:39]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "5c95e68c",
+      "date": "2026-03-01T11:38:53+00:00",
+      "week": "2026-W09",
+      "subject": "chore: update wiring_status.json [2026-03-01T11:38]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "3dbc2925",
+      "date": "2026-03-01T11:07:58+00:00",
+      "week": "2026-W09",
+      "subject": "\ud83e\udde0 auto: system state update 2026-03-01 11:07 UTC",
+      "author": "Meeko Mycelium"
+    },
+    {
+      "sha": "c3f92bcd",
+      "date": "2026-03-01T06:07:51-05:00",
+      "week": "2026-W09",
+      "subject": "feat: add daily 3D brain workflow \u2014 runs every morning at 6am UTC",
+      "author": "Meeko"
+    },
+    {
+      "sha": "98bdb262",
+      "date": "2026-03-01T11:06:31+00:00",
+      "week": "2026-W09",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-01",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "04eff536",
       "date": "2026-03-01T06:06:23-05:00",
@@ -247,111 +352,6 @@
       "week": "2026-W09",
       "subject": "\ud83e\udde0 auto: system state update 2026-03-01 03:32 UTC",
       "author": "Meeko Mycelium"
-    },
-    {
-      "sha": "c4cce2e6",
-      "date": "2026-02-28T22:32:42-05:00",
-      "week": "2026-W09",
-      "subject": "products: add Product 3 \u2014 The Grant Hunter [full content]",
-      "author": "Meeko"
-    },
-    {
-      "sha": "8a6dd86b",
-      "date": "2026-03-01T03:32:04+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T03:32]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "737f3936",
-      "date": "2026-02-28T22:31:56-05:00",
-      "week": "2026-W09",
-      "subject": "products: add Product 2 \u2014 Autonomous Email Responder [full content]",
-      "author": "Meeko"
-    },
-    {
-      "sha": "655222cd",
-      "date": "2026-03-01T03:31:20+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T03:31]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "171b2663",
-      "date": "2026-02-28T22:31:14-05:00",
-      "week": "2026-W09",
-      "subject": "products: add Product 1 \u2014 The $0 AI Stack [full content]",
-      "author": "Meeko"
-    },
-    {
-      "sha": "3b591cc2",
-      "date": "2026-03-01T03:15:41+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T03:15]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "f3269a5b",
-      "date": "2026-02-28T22:15:34-05:00",
-      "week": "2026-W09",
-      "subject": "products: $1 educational product catalog [10 items]",
-      "author": "Meeko"
-    },
-    {
-      "sha": "b4bc2303",
-      "date": "2026-03-01T02:15:48+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T02:15]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "83bb37eb",
-      "date": "2026-03-01T02:11:32+00:00",
-      "week": "2026-W09",
-      "subject": "knowledge: API directory scan [2026-03-01]",
-      "author": "meeko-api-hunter"
-    },
-    {
-      "sha": "f54c123b",
-      "date": "2026-03-01T02:10:46+00:00",
-      "week": "2026-W09",
-      "subject": "data: all API tools [2026-03-01]",
-      "author": "meeko-api-tools"
-    },
-    {
-      "sha": "c39b0537",
-      "date": "2026-03-01T02:09:26+00:00",
-      "week": "2026-W09",
-      "subject": "knowledge: v2 harvest [2026-03-01]",
-      "author": "meeko-harvest-v2"
-    },
-    {
-      "sha": "84d0997c",
-      "date": "2026-02-28T23:58:57+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-02-28 23:58 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "8688c68a",
-      "date": "2026-02-28T23:44:03+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-02-28 23:44 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "8914dd10",
-      "date": "2026-02-28T23:41:12+00:00",
-      "week": "2026-W09",
-      "subject": "data: dex update [23:41]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "2ffa41d3",
-      "date": "2026-02-28T23:39:54+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-02-28T23:39]",
-      "author": "meeko-system"
     }
   ]
 }

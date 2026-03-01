@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-01 11:06 UTC  
+> Last updated: 2026-03-01 16:12 UTC  
 > Total commits tracked: 200
 
 ---
@@ -9,6 +9,7 @@
 ## Week of February 23, 2026
 
 **📚 Knowledge**
+- `64772e77` feat: add notion_directives_reader + hf_dataset_logger + wire long_term_memory to Notion — closing human loop, learning loop, and memory loop simultaneously
 - `a76400ff` 🧠 knowledge update [2026-03-01]
 - `961cb917` knowledge: v2 harvest [2026-03-01]
 - `83bb37eb` knowledge: API directory scan [2026-03-01]
@@ -52,10 +53,13 @@
 - `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
 
 **📝 Documentation**
+- `98bdb262` 📝 auto: changelog 2026-03-01
 - `608a7ff0` 📝 auto: changelog 2026-03-01
 - `856e6adf` feat: top 5 system self-wants — output validator, long-term memory, peer network, self-documentation, financial intelligence
 
 **⚙️ System**
+- `3dbc2925` 🧠 auto: system state update 2026-03-01 11:07 UTC
+- `c3f92bcd` feat: add daily 3D brain workflow — runs every morning at 6am UTC
 - `c130cdc6` products: add Products 6-10 + PDF auto-generator workflow [full content — revenue loop complete]
 - `6346b1c1` products: add Products 6-10 + PDF generator workflow [full content]
 - `ff415db2` 🧠 auto: system state update 2026-03-01 03:33 UTC
@@ -71,9 +75,19 @@
 - `0c1c11ba` 🧠 auto: system state update 2026-02-28 02:33 UTC
 - `18c1bfdc` 🧠 auto: system state update 2026-02-28 00:25 UTC
 - `2de460b0` feat: auto-evolved unhcr_data_inspector — UNHCR Refugee Data Inspector [2026-02-28]
-- `ec51a0e5` 🧠 auto: system state update 2026-02-27 22:03 UTC
 
 **• Other**
+- `2418388a` \U0001f338 perpetual: 2026-03-01 15:59 UTC
+- `ccb651ae` data: dex update [15:46]
+- `79d6cb3d` chore: update wiring_status.json [2026-03-01T15:44]
+- `b9828c91` \U0001f338 perpetual: 2026-03-01 15:43 UTC
+- `177214d2` data: dex update [14:52]
+- `a292eb08` chore: update wiring_status.json [2026-03-01T14:51]
+- `d0743863` \U0001f338 perpetual: 2026-03-01 14:51 UTC
+- `b4b53f21` chore: update wiring_status.json [2026-03-01T13:51]
+- `95eef6e1` \U0001f338 perpetual: 2026-03-01 11:55 UTC
+- `63c2e1a6` data: dex update [11:39]
+- `5c95e68c` chore: update wiring_status.json [2026-03-01T11:38]
 - `04eff536` feat: inject three_d_brain.py as Phase 1.5 + add Notion sync as Phase 13 in MASTER_CONTROLLER
 - `0bbfa9aa` feat: add three_d_brain.py — cross-dimensional intelligence engine (revenue × reach × impact)
 - `cea44a0a` chore: update wiring_status.json [2026-03-01T11:04]
@@ -211,20 +225,6 @@
 - `64c92752` log: evolution entry for unhcr_data_inspector on 2026-02-28
 - `94ff8bce` 📬 newsletter [2026-W08]
 - `8bd09111` 🔬 diagnostics report [2026-02-28T00:14]
-- `3a514fc4` ideas: engine cycle [2026-02-28]
-- `659c483b` data: dex update [23:49]
-- `9d6b6131` chore: update wiring_status.json [2026-02-27T23:48]
-- `ede718a4` data: dex update [22:54]
-- `0401e5d0` chore: update wiring_status.json [2026-02-27T22:54]
-- `ad707603` chore: update wiring_status.json [2026-02-27T22:07]
-- `b8fbd481` feat: audience intelligence, newsletter, viral moment detector, Patreon engine
-- `7246bf9d` feat: Reddit engine, HuggingFace Space, ingestion engine v2 (handles 200k+ files in batches)
-- `2128ea53` data: dex update [21:56]
-- `38130173` chore: update wiring_status.json [2026-02-27T21:54]
-- `d7729889` chore: update wiring_status.json [2026-02-27T21:47]
-- `474bdaca` feat: wire folder ingestion into cycle as first step after maintenance
-- `4d04945a` chore: update wiring_status.json [2026-02-27T21:46]
-- `115f6cc7` feat: folder ingestion engine — scans, classifies, extracts, routes, and reports everything in solarpunk/
 
 ---
 
