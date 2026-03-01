@@ -1,0 +1,111 @@
+name: Generate Product PDFs
+
+on:
+  push:
+    paths:
+      - 'products/**.md'
+  workflow_dispatch:
+
+jobs:
+  build-pdfs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install pandoc
+        run: sudo apt-get install -y pandoc wkhtmltopdf
+      
+      - name: Generate PDFs from product markdown files
+        run: |
+          mkdir -p products/pdf
+          for f in products/[0-9]*.md; do
+            name=$(basename "$f" .md)
+            echo "Generating PDF: $name"
+            pandoc "$f" \
+              -o "products/pdf/${name}.pdf" \
+              --pdf-engine=wkhtmltopdf \
+              -V margin-top=25mm \
+              -V margin-bottom=25mm \
+              -V margin-left=25mm \
+              -V margin-right=25mm \
+              -V fontsize=12pt \
+              --metadata title="Meeko Mycelium" \
+              2>/dev/null || echo "Warning: PDF generation failed for $name"
+          done
+          echo "PDF generation complete"
+          ls -la products/pdf/
+      
+      - name: Commit PDFs to repo
+        run: |
+          git config user.name "meeko-pdf-engine"
+          git config user.email "pdf@meeko-nerve-center"
+          git add products/pdf/
+          git diff --staged --quiet || git commit -m "auto: generate product PDFs [$(date -u +%Y-%m-%dT%H:%M)]"
+          git push
+      
+      - name: Post listings to Gumroad (when token available)
+        if: env.GUMROAD_TOKEN != ''
+        run: |
+          python3 - <<'EOF'
+          import requests, os, glob, json
+          
+          TOKEN = os.environ["GUMROAD_TOKEN"]
+          HEADERS = {"Authorization": f"Bearer {TOKEN}"}
+          
+          products = [
+              {"name": "The $0 AI Stack", "description": "Run real AI on your computer. Free forever. No subscriptions. Complete setup guide for Ollama + Mistral + ChromaDB. 70% to PCRF.", "price": 100, "file": "01-the-zero-dollar-ai-stack.pdf"},
+              {"name": "The Autonomous Email Responder", "description": "Complete Python script + Gmail setup to build an AI that answers emails in your voice. 70% to PCRF.", "price": 100, "file": "02-autonomous-email-responder.pdf"},
+              {"name": "The Grant Hunter System", "description": "Real grant sources, qualification scripts, and application drafting automation. 70% to PCRF.", "price": 100, "file": "03-grant-hunter-system.pdf"},
+              {"name": "The Viral Fork", "description": "Build a self-replicating GitHub system. One click, anyone gets a full working copy. 70% to PCRF.", "price": 100, "file": "04-the-viral-fork.pdf"},
+              {"name": "Build a Store That Runs Itself", "description": "Gumroad + GitHub Actions + post-purchase email sequences. Zero maintenance. 70% to PCRF.", "price": 100, "file": "05-store-that-runs-itself.pdf"},
+              {"name": "The Morning Briefing", "description": "Python script: weather + news + AI thought, emailed to you at 8am daily. Free to run. 70% to PCRF.", "price": 100, "file": "06-the-morning-briefing.pdf"},
+              {"name": "The Digital Twin", "description": "Build a values-and-preferences file that gates every automated action your system takes. 70% to PCRF.", "price": 100, "file": "07-the-digital-twin.pdf"},
+              {"name": "Permanent Internet Presence", "description": "Internet Archive + IPFS + mirroring. Make your work uncensorable. 70% to PCRF.", "price": 100, "file": "08-permanent-internet-presence.pdf"},
+              {"name": "The Prompt That Changed Everything", "description": "The actual mechanics of prompt engineering. Not tricks — understanding. 70% to PCRF.", "price": 100, "file": "09-the-prompt-that-changed-everything.pdf"},
+              {"name": "The Ethical AI Business", "description": "Framework for building AI products that make money, do good, and you can explain to anyone. 70% to PCRF.", "price": 100, "file": "10-the-ethical-ai-business.pdf"},
+          ]
+          
+          # Get existing products to avoid duplicates
+          existing = requests.get("https://api.gumroad.com/v2/products", headers=HEADERS).json()
+          existing_names = [p["name"] for p in existing.get("products", [])]
+          
+          for product in products:
+              if product["name"] in existing_names:
+                  print(f"Already exists: {product['name']}")
+                  continue
+              
+              pdf_path = f"products/pdf/{product['file']}"
+              if not os.path.exists(pdf_path):
+                  print(f"PDF not found: {pdf_path}")
+                  continue
+              
+              # Create listing
+              r = requests.post(
+                  "https://api.gumroad.com/v2/products",
+                  headers=HEADERS,
+                  data={
+                      "name": product["name"],
+                      "description": product["description"],
+                      "price": product["price"],
+                      "published": True
+                  }
+              )
+              result = r.json()
+              if result.get("success"):
+                  product_id = result["product"]["id"]
+                  # Upload PDF
+                  with open(pdf_path, "rb") as f:
+                      requests.post(
+                          f"https://api.gumroad.com/v2/products/{product_id}/files",
+                          headers=HEADERS,
+                          files={"file": f}
+                      )
+                  print(f"Created and uploaded: {product['name']}")
+              else:
+                  print(f"Failed: {result}")
+          EOF
+        env:
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
