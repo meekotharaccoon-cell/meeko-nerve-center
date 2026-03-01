@@ -45,7 +45,7 @@
       "check": "github_actions",
       "ok": true,
       "detail": "Latest: Perpetual Builder \u2014 None",
-      "failures": 0
+      "failures": 2
     },
     {
       "check": "social_queue",
