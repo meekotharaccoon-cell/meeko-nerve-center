@@ -25,13 +25,13 @@
     "system_age_days": 28,
     "last_evolution_date": "",
     "strongest_engines": [
+      "github_pages",
       "system_health_alerting",
-      "idea_engine",
-      "world_intelligence"
+      "idea_engine"
     ],
     "weakest_engines": [
+      "github_actions",
       "social_queue",
-      "github_pages",
       "content_performance"
     ]
   }
