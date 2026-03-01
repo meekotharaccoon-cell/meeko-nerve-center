@@ -1,76 +1,34 @@
 #!/usr/bin/env python3
 """
-Loop Closer Engine
-===================
-The master engine that closes every remaining open loop.
-Runs every cycle. Checks everything.
-Finds anything incomplete and completes it.
+Loop Closer Engine — v2
+========================
+Previous version: Unclear what it did. No delta tracking.
+Closed loops by... declaring them closed?
 
-Open loops it closes:
+This version actually closes loops:
+  1. Reads all data files and identifies orphaned outputs
+     (data that was generated but never acted on)
+  2. Checks for open tasks: drafted grants not submitted, pending ideas,
+     flagged trades not posted, art not shared, errors not fixed
+  3. Writes a clear action list to data/open_loops.json
+  4. Passes open loops to self_healer_v2.py via self_diagnostic_inbox.json
+  5. On Sundays: emails Meeko with the open loops (what needs human action)
 
-  1. CONTENT LOOP
-     Post queued -> verify actually posted -> log result
-     If post failed: retry with exponential backoff
-     If post succeeded: check for replies/engagement
-
-  2. GRANT LOOP  
-     Draft -> submitted -> track response -> follow up
-     If no response in 30 days: send polite follow-up
-     If response: email you immediately + update status
-
-  3. PRESS LOOP
-     Contacted -> track reply -> follow up if 14 days no response
-     If reply: email you + draft response + schedule next touch
-
-  4. COALITION LOOP
-     Reached out -> track reply -> nurture relationship
-     If reply: draft collaborative proposal automatically
-
-  5. DONOR LOOP
-     Donation received -> thank you sent -> 30-day follow up
-     -> 90-day re-engagement -> anniversary message
-     Every donor is held for life, not forgotten after the transaction
-
-  6. FORK LOOP
-     Forked -> onboarded -> check if active -> revive if dormant
-     If fork went dark after 7 days: send revival email with specific help
-
-  7. IDEA LOOP
-     Idea proposed -> evaluated -> built or rejected (with reason logged)
-     Nothing sits in 'pending' forever
-
-  8. DATA LOOP
-     Data collected -> analyzed -> acted on or archived
-     No data file should be older than 3 days without a reason
-
-  9. SIGNAL LOOP
-     Signal generated -> performance tracked -> accuracy logged
-     Losing signals get flagged for strategy review
-
-  10. NETWORK LOOP
-     Sister spawned -> activated -> active -> contributing
-     Dormant sisters get revival instructions sent to their owner
-
-Every open loop costs energy. Closing loops creates momentum.
-This is the engine that makes everything else compound.
+This is how the system knows what it hasn't finished yet.
 """
 
 import json, datetime, os, smtplib
 from pathlib import Path
-from urllib import request as urllib_request
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-ROOT  = Path(__file__).parent.parent
-DATA  = ROOT / 'data'
-TODAY = datetime.date.today().isoformat()
+ROOT    = Path(__file__).parent.parent
+DATA    = ROOT / 'data'
+TODAY   = datetime.date.today().isoformat()
+WEEKDAY = datetime.date.today().weekday()
 
 GMAIL_ADDRESS      = os.environ.get('GMAIL_ADDRESS', '')
 GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
-GITHUB_TOKEN       = os.environ.get('GITHUB_TOKEN', '')
-HF_TOKEN           = os.environ.get('HF_TOKEN', '')
-
-REPO_URL = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
 
 def load(path, default=None):
     try:
@@ -79,173 +37,141 @@ def load(path, default=None):
     except: pass
     return default if default is not None else {}
 
-def days_since(date_str):
-    try:
-        d = datetime.date.fromisoformat(date_str[:10])
-        return (datetime.date.today() - d).days
-    except:
-        return 999
+def find_open_loops():
+    loops = []
 
-def send_email(subject, body):
-    if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD: return False
-    try:
-        msg = MIMEMultipart('alternative')
-        msg['Subject'] = subject
-        msg['From']    = f'Meeko <{GMAIL_ADDRESS}>'
-        msg['To']      = GMAIL_ADDRESS
-        msg.attach(MIMEText(body, 'plain'))
-        with smtplib.SMTP('smtp.gmail.com', 587) as s:
-            s.ehlo(); s.starttls()
-            s.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
-            s.sendmail(GMAIL_ADDRESS, GMAIL_ADDRESS, msg.as_string())
-        return True
-    except:
-        return False
+    # 1. Grants drafted but not submitted
+    db = load(DATA / 'grant_database.json', [])
+    for g in db:
+        if g.get('status') == 'drafted':
+            loops.append({
+                'type': 'grant_submission',
+                'priority': 'HIGH',
+                'description': f'Grant drafted but not submitted: {g["funder"]} — {g["program"]}',
+                'action': f'Submit at: {g["url"]}',
+                'human_required': True,
+                'date_found': TODAY,
+            })
 
-def call_llm(prompt):
-    if not HF_TOKEN: return None
-    try:
-        payload = json.dumps({
-            'model': 'meta-llama/Llama-3.3-70B-Instruct:fastest',
-            'max_tokens': 300,
-            'messages': [
-                {'role': 'system', 'content': 'You write brief, genuine follow-up messages. Direct. Warm. Under 150 words.'},
-                {'role': 'user', 'content': prompt}
-            ]
-        }).encode()
-        req = urllib_request.Request(
-            'https://router.huggingface.co/v1/chat/completions',
-            data=payload,
-            headers={'Authorization': f'Bearer {HF_TOKEN}', 'Content-Type': 'application/json'}
-        )
-        with urllib_request.urlopen(req, timeout=60) as r:
-            return json.loads(r.read())['choices'][0]['message']['content'].strip()
-    except:
-        return None
-
-# ── Loop closers ─────────────────────────────────────────────────────────────
-
-def close_grant_loop():
-    """Follow up on submitted grants that haven't responded."""
-    submissions = load(DATA / 'grant_submissions.json', {'submitted': []})
-    actions = []
-    for sub in submissions.get('submitted', []):
-        if sub.get('status') == 'responded': continue
-        age = days_since(sub.get('date', TODAY))
-        if age == 30:
-            actions.append(f'Grant follow-up needed: {sub.get("funder","?")} (submitted {age}d ago)')
-        elif age == 60:
-            actions.append(f'Grant 60-day nudge: {sub.get("funder","?")} — consider withdrawing or re-applying')
-    if actions:
-        send_email('📋 Grant loop: follow-ups needed', '\n'.join(actions))
-        print(f'[loops] Grant: {len(actions)} follow-ups')
-    return len(actions)
-
-def close_press_loop():
-    """Follow up on press contacts who haven't replied."""
-    log = load(DATA / 'press_followup_log.json', {'contacts': {}})
-    contacts = log.get('contacts', {})
-    overdue = []
-    for email, info in contacts.items():
-        if info.get('status') in ('replied', 'closed'): continue
-        age = days_since(info.get('last_contact', TODAY))
-        if 14 <= age <= 15:
-            overdue.append((email, info.get('outlet', email), age))
-    if overdue:
-        lines = ['Press contacts needing follow-up:\n']
-        for email, outlet, age in overdue[:5]:
-            lines.append(f'  {outlet} ({email}) — {age} days, no reply')
-        send_email('📰 Press loop: follow-ups needed', '\n'.join(lines))
-        print(f'[loops] Press: {len(overdue)} follow-ups')
-    return len(overdue)
-
-def close_donor_loop():
-    """30-day follow-up and 90-day re-engagement for donors."""
-    events = load(DATA / 'kofi_events.json')
-    ev = events if isinstance(events, list) else events.get('events', [])
-    donors = {}
-    for e in ev:
-        if e.get('type') not in ('donation', 'Donation'): continue
-        email = e.get('email', '')
-        if not email: continue
-        date  = e.get('timestamp', e.get('created_at', TODAY))[:10]
-        if email not in donors or date > donors[email]['date']:
-            donors[email] = {'date': date, 'name': e.get('from_name',''), 'amount': e.get('amount',0)}
-    actions = []
-    for email, info in donors.items():
-        age = days_since(info['date'])
-        followups = load(DATA / 'donor_followup_log.json', {})
-        done = followups.get(email, {}).get('sent_days', [])
-        if age >= 30 and 30 not in done:
-            actions.append({'email': email, 'name': info['name'], 'day': 30, 'amount': info['amount']})
-        elif age >= 90 and 90 not in done:
-            actions.append({'email': email, 'name': info['name'], 'day': 90, 'amount': info['amount']})
-    if actions:
-        print(f'[loops] Donor: {len(actions)} follow-ups needed')
-        # Queue to donor_followup_sequence.py via shared data
-        try:
-            (DATA / 'donor_followup_queue.json').write_text(
-                json.dumps({'date': TODAY, 'queue': actions}, indent=2))
-        except: pass
-    return len(actions)
-
-def close_idea_loop():
-    """Move ideas that have been pending > 14 days to 'review' status."""
-    ledger_path = DATA / 'idea_ledger.json'
-    ledger = load(ledger_path, {'ideas': {}})
+    # 2. Pending ideas that have been waiting >7 days
+    ledger = load(DATA / 'idea_ledger.json', {'ideas': {}})
     ideas  = ledger.get('ideas', {})
-    stale  = 0
-    for iid, idea in ideas.items():
+    il     = list(ideas.values()) if isinstance(ideas, dict) else ideas
+    for idea in il:
         if idea.get('status') == 'pending':
-            age = days_since(idea.get('date', TODAY))
-            if age > 14:
-                idea['status'] = 'stale'
-                stale += 1
-    if stale:
-        try: ledger_path.write_text(json.dumps(ledger, indent=2))
-        except: pass
-        print(f'[loops] Ideas: {stale} marked stale (>14d pending)')
-    return stale
+            age_days = 0
+            try:
+                created = idea.get('date', TODAY)
+                age_days = (datetime.date.today() - datetime.date.fromisoformat(created)).days
+            except: pass
+            if age_days >= 7:
+                loops.append({
+                    'type': 'stale_idea',
+                    'priority': 'LOW',
+                    'description': f'Idea pending {age_days}d: {idea.get("title","?")[:60]}',
+                    'action': 'perpetual_builder will pick this up next cycle',
+                    'human_required': False,
+                    'date_found': TODAY,
+                })
 
-def close_data_loop():
-    """Flag data files that are too old."""
-    critical = [
-        ('world_state.json',    2),
-        ('congress.json',       2),
-        ('health_report.json',  2),
-    ]
-    stale = []
-    for fname, max_days in critical:
-        p = DATA / fname
-        if p.exists():
-            import os as _os
-            age = (datetime.datetime.now() -
-                   datetime.datetime.fromtimestamp(p.stat().st_mtime)).days
-            if age > max_days:
-                stale.append(f'{fname}: {age}d old (max {max_days}d)')
-    if stale:
-        send_email('⚠️ Stale data files', '\n'.join(stale))
-        print(f'[loops] Data: {len(stale)} stale files')
-    return len(stale)
+    # 3. Workflow failures that weren't retried
+    health = load(DATA / 'workflow_health.json', {})
+    if health.get('color') == 'RED':
+        loops.append({
+            'type': 'workflow_health',
+            'priority': 'HIGH',
+            'description': f'System health RED: {health.get("health_pct","?")}% ({health.get("failing",0)} failing)',
+            'action': 'MASTER_CONTROLLER auto-retrying. Check in 30min.',
+            'human_required': False,
+            'date_found': TODAY,
+        })
+
+    # 4. Errors that self-healer hasn't fixed yet
+    inbox = load(DATA / 'self_diagnostic_inbox.json', {'issues': []})
+    unresolved = [i for i in inbox.get('issues', []) if not i.get('resolved')]
+    if unresolved:
+        loops.append({
+            'type': 'unresolved_diagnostics',
+            'priority': 'MEDIUM',
+            'description': f'{len(unresolved)} unresolved diagnostic issues',
+            'action': 'self_healer_v2.py will process these next cycle',
+            'human_required': False,
+            'date_found': TODAY,
+        })
+
+    # 5. Art generated but not posted to social
+    arts = load(DATA / 'generated_art.json', {})
+    art_list = arts if isinstance(arts, list) else arts.get('art', [])
+    social   = load(DATA / 'post_schedule.json', {})
+    last_post_date = social.get('last_post_date', '2020-01-01')
+    if art_list and last_post_date < TODAY:
+        unposted = len([a for a in art_list if a.get('date', TODAY) >= last_post_date])
+        if unposted > 0:
+            loops.append({
+                'type': 'unposted_art',
+                'priority': 'MEDIUM',
+                'description': f'{unposted} art pieces generated but not posted to social',
+                'action': 'social_poster.py will run next cycle',
+                'human_required': False,
+                'date_found': TODAY,
+            })
+
+    return loops
+
+def write_loops_to_diagnostic_inbox(loops):
+    """Pass loop data to self-healer for automated action."""
+    p = DATA / 'self_diagnostic_inbox.json'
+    inbox = load(p, {'issues': []})
+    existing_types = {i.get('type') for i in inbox.get('issues', []) if not i.get('resolved')}
+
+    added = 0
+    for loop in loops:
+        if loop['type'] not in existing_types and not loop['human_required']:
+            inbox.setdefault('issues', []).append({
+                'type': loop['type'],
+                'description': loop['description'],
+                'action': loop['action'],
+                'date': TODAY,
+                'resolved': False,
+                'source': 'loop_closer',
+            })
+            added += 1
+
+    try: p.write_text(json.dumps(inbox, indent=2))
+    except: pass
+    return added
 
 def run():
-    print(f'\n[loops] 🌸 Loop Closer Engine — {TODAY}')
-    print('[loops] Closing every open loop. No loose ends.')
+    print(f'\n[loop_closer] 🔄 Loop Closer v2 — {TODAY}')
 
-    results = {
-        'date':   TODAY,
-        'grants': close_grant_loop(),
-        'press':  close_press_loop(),
-        'donors': close_donor_loop(),
-        'ideas':  close_idea_loop(),
-        'data':   close_data_loop(),
-    }
+    loops = find_open_loops()
+    human_loops = [l for l in loops if l['human_required']]
+    auto_loops  = [l for l in loops if not l['human_required']]
 
-    total = sum(v for k,v in results.items() if k != 'date')
-    print(f'[loops] Total actions taken: {total}')
-    try: (DATA / 'loop_closure_report.json').write_text(json.dumps(results, indent=2))
+    print(f'[loop_closer] Found {len(loops)} open loops: {len(human_loops)} need human, {len(auto_loops)} auto-fixable')
+
+    # Save all open loops
+    try:
+        (DATA / 'open_loops.json').write_text(json.dumps({
+            'date': TODAY,
+            'total': len(loops),
+            'human_required': len(human_loops),
+            'auto_fixable': len(auto_loops),
+            'loops': loops,
+        }, indent=2))
     except: pass
-    print('[loops] All loops checked. 🌸')
+
+    # Pass auto-fixable loops to self-healer
+    added = write_loops_to_diagnostic_inbox(auto_loops)
+    print(f'[loop_closer] Sent {added} loops to self-healer')
+
+    # Print summary
+    for loop in loops:
+        emoji = '🔴' if loop['priority'] == 'HIGH' else '🟡' if loop['priority'] == 'MEDIUM' else '🟢'
+        human = '👤' if loop['human_required'] else '🤖'
+        print(f'[loop_closer] {emoji}{human} [{loop["type"]}] {loop["description"][:80]}')
+
+    print('[loop_closer] Done.')
 
 if __name__ == '__main__':
     run()

@@ -1,16 +1,7 @@
 name: 🔄 Feedback Loop
-
-# The full autonomous cycle:
-#   1. signal_tracker  — what worked yesterday
-#   2. loop_brain      — decide what to do today (Ollama locally / rules in cloud)
-#   3. humanitarian_content — generate + post weighted toward what works
-#
-# Runs daily at 6am UTC (1 hour after knowledge harvest).
-# Can also be triggered manually.
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,54 +9,43 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: "Step 1 — Signal Tracker: what worked"
-        env:
-          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
-          MASTODON_TOKEN:     ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_SERVER:    ${{ secrets.MASTODON_URL }}
-          GUMROAD_TOKEN:      ${{ secrets.GUMROAD_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
         run: |
-          mkdir -p data
-          python mycelium/signal_tracker.py || echo "Signal tracker error — continuing"
-
-      - name: "Step 2 — Loop Brain: build strategy"
+          git config user.name 'solarpunk-feedback-loop'
+          git config user.email 'loop@meeko-nerve-center'
+      - name: Step 1 — Signal Tracker
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+        run: python mycelium/signal_tracker.py
+        continue-on-error: true
+      - name: Step 2 — Loop Brain
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/loop_brain.py
-
-      - name: "Step 3 — Humanitarian Content: generate + post"
+        continue-on-error: true
+      - name: Step 3 — Humanitarian Content
         env:
-          MASTODON_TOKEN:        ${{ secrets.MASTODON_TOKEN }}
-          MASTODON_URL:          ${{ secrets.MASTODON_URL }}
-          BLUESKY_HANDLE:        ${{ secrets.BLUESKY_HANDLE }}
-          BLUESKY_APP_PASSWORD:  ${{ secrets.BLUESKY_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: python mycelium/humanitarian_content.py
-
-      - name: Commit all outputs
+        continue-on-error: true
+      - name: Commit
         run: |
-          git config user.name  "meeko-loop"
-          git config user.email "loop@meeko-nerve-center"
-          git add data/ content/
-          git diff --cached --quiet && echo "No changes" || (
-            git commit -m "🔄 feedback loop [$(date -u +%Y-%m-%d)]" && git push
+          git add data/ content/ || true
+          git diff --cached --quiet && echo 'Nothing to commit' || (
+            git commit -m "🔄 feedback loop [$(date -u +%Y-%m-%d)]" &&
+            git pull --rebase origin main &&
+            git push origin main
           )
-
-      - name: Print strategy summary
-        run: |
-          echo ""
-          echo "══════════════════════════════════════════════"
-          echo " TODAY'S LOOP COMPLETE"
-          cat data/strategy.json 2>/dev/null | python3 -c "
-import json,sys
-d=json.load(sys.stdin)
-print(f\" Crisis: {d.get('primary_crisis','?')}\")
-print(f\" Channel: {d.get('push_channel','?')}\")
-print(f\" Method: {d.get('method','?')}\")
-print(f\" Reasoning: {d.get('reasoning','?')[:100]}\")
-" || echo "(strategy.json not found)"
-          echo "══════════════════════════════════════════════"
+        continue-on-error: true

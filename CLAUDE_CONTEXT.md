@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-02-28 09:25 UTC — ideas: engine cycle [] — tested/built*
+*Auto-updated by the system. Last update: 2026-02-28 17:18 UTC — 🔧 Wire diagnostic_emailer into Phase 0 of MASTER_CONTROLLER*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 

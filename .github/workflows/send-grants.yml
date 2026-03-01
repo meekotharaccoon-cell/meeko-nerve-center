@@ -1,7 +1,12 @@
-name: 🌱 Send Grant Outreach Emails
-# Manually triggered. Uses unified_emailer — one log, no duplicates, brain-gated.
+name: 🎯 Send Grants
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
+
 on:
   workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type CONFIRM to send grant emails'
+        required: true
 
 jobs:
   grants:
@@ -11,14 +16,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Send grant emails (unified, brain-gated)
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: EMAIL_MODE=grants python mycelium/unified_emailer.py
-      - name: Commit sent log
+      - name: Guard
         run: |
-          git config user.email "solarpunk.mycelium@gmail.com"
-          git config user.name "SolarPunk Mycelium"
-          git add data/ || true
-          git diff --staged --quiet || git commit -m "auto: grant emails sent $(date -u +%Y-%m-%d)"
-          git push || true
+          if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
+            echo "Not confirmed. Exiting."
+            exit 1
+          fi
+      - name: Run Grant Intelligence
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/grant_intelligence.py
+        continue-on-error: true

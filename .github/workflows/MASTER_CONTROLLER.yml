@@ -1,0 +1,158 @@
+name: 🌸 MASTER CONTROLLER — SolarPunk Autonomous Brain
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
+# Re-enable by restoring schedule: cron lines after email_gateway.py is confirmed safe
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'health_check | full_cycle | retry_failures'
+        required: false
+        default: 'health_check'
+
+jobs:
+  master_control:
+    name: 🌸 SolarPunk Master Controller
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk-MasterController'
+          git config user.email 'solarpunk@meeko-nerve-center'
+          mkdir -p data content public
+
+      - name: Phase 1 — Self-Healer
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/self_healer_v2.py
+        continue-on-error: true
+
+      - name: Phase 2 — Workflow Health Monitor
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/master_controller.py
+        continue-on-error: true
+
+      - name: Phase 3a — World Intelligence
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/world_intelligence.py
+        continue-on-error: true
+
+      - name: Phase 3b — Congress Watcher
+        env:
+          QUIVER_API_KEY: ${{ secrets.QUIVER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/congress_watcher.py
+        continue-on-error: true
+
+      - name: Phase 3c — Crypto Signals
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/crypto_signal_engine.py
+        continue-on-error: true
+
+      - name: Phase 4 — Investment Intelligence
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/investment_intelligence.py
+        continue-on-error: true
+
+      - name: Phase 5a — Art Generation
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: python mycelium/art_cause_generator.py
+        continue-on-error: true
+
+      - name: Phase 5b — Social Posting
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/social_poster.py
+        continue-on-error: true
+
+      - name: Phase 6 — Network Spreader (NO EMAIL)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+        run: python mycelium/network_spreader.py
+        continue-on-error: true
+
+      - name: Phase 7 — Grant Intelligence (NO EMAIL — saves to file only)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/grant_intelligence.py
+        continue-on-error: true
+
+      - name: Phase 8 — Gumroad Revenue Check
+        env:
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+        run: python mycelium/gumroad_tracker.py
+        continue-on-error: true
+
+      - name: Phase 9 — Perpetual Builder
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/perpetual_builder.py
+        continue-on-error: true
+
+      - name: Phase 10 — Loop Closer
+        run: python mycelium/loop_closer.py
+        continue-on-error: true
+
+      - name: Phase 11 — Dashboard Generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/dashboard_data_generator.py
+        continue-on-error: true
+
+      - name: Phase 12 — Deep Self-Diagnostic (new)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/deep_diagnostic.py
+        continue-on-error: true
+
+      - name: EMAIL GATEWAY — STRICT MODE (inbound only, no spam)
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/email_gateway.py
+        continue-on-error: true
+
+      - name: Autonomous Git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add -A
+          git diff --cached --quiet && echo 'Nothing to commit' && exit 0
+          git commit -m "🌸 cycle [$(date +%Y-%m-%d\ %H:%M)]"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true

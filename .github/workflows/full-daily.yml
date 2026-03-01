@@ -1,94 +1,37 @@
 name: 🌍 Full Daily Cycle
+# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
 
 on:
-  schedule:
-    - cron: '0 3 * * *'    # 3am UTC: idea engine
-    - cron: '30 4 * * *'   # 4:30am: knowledge harvest v2
-    - cron: '0 5 * * *'    # 5am: world intelligence + all APIs
-    - cron: '0 6 * * *'    # 6am: content + visual + language + brain
-    - cron: '0 7 * * *'    # 7am: privacy scrub
   workflow_dispatch:
 
 jobs:
-  idea-cycle:
-    name: 🧠 Idea Engine
+  full-daily:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - run: python mycelium/idea_engine.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
+        run: |
+          git config user.name 'solarpunk-full-daily'
+          git config user.email 'daily@meeko-nerve-center'
+          mkdir -p data content
+      - name: Run engines
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+        run: |
+          python mycelium/world_intelligence.py || true
+          python mycelium/social_poster.py || true
+          python mycelium/art_cause_generator.py || true
+      - name: Commit
+        run: |
+          git add -A
+          git diff --cached --quiet || git commit -m "🌍 full daily [$(date -u +%Y-%m-%d)]"
+          git push origin main || true
         continue-on-error: true
-      - run: python mycelium/idea_builder.py
-        continue-on-error: true
-      - run: |
-          git config user.name "meeko-brain"
-          git config user.email "brain@meeko-nerve-center"
-          git add data/ knowledge/ mycelium/IDEAS.md WIRED.md
-          git diff --cached --quiet || git commit -m "ideas: engine cycle [$(date -u +%Y-%m-%d)]" && git push
-
-  world-intelligence:
-    name: 🌎 World Intelligence
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - run: python mycelium/knowledge_harvester_v2.py
-        continue-on-error: true
-      - run: python mycelium/world_intelligence.py
-        continue-on-error: true
-      - run: python mycelium/congress_watcher.py
-        continue-on-error: true
-      - run: |
-          git config user.name "meeko-intelligence"
-          git config user.email "intel@meeko-nerve-center"
-          git add data/ knowledge/
-          git diff --cached --quiet || git commit -m "data: world intelligence [$(date -u +%Y-%m-%d)]" && git push
-
-  content-cycle:
-    name: 🎨 Content + Visuals + Language + AI
-    runs-on: ubuntu-latest
-    needs: world-intelligence
-    permissions:
-      contents: write
-    env:
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - run: python mycelium/crypto_jobs.py
-        continue-on-error: true
-      - run: python mycelium/art_cause_generator.py
-        continue-on-error: true
-      - run: python mycelium/open_library_reader.py
-        continue-on-error: true
-      - run: python mycelium/music_intelligence.py
-        continue-on-error: true
-      - run: python mycelium/visual_content.py
-        continue-on-error: true
-      - run: python mycelium/language_engine.py
-        continue-on-error: true
-      - run: python mycelium/hf_brain.py
-        continue-on-error: true
-      - run: python mycelium/qr_propagator.py
-        continue-on-error: true
-      - run: |
-          git config user.name "meeko-content"
-          git config user.email "content@meeko-nerve-center"
-          git add data/ knowledge/ content/ public/
-          git diff --cached --quiet || git commit -m "content: daily cycle [$(date -u +%Y-%m-%d)]" && git push
-
-  privacy-scrub:
-    name: 🔒 Privacy Scrub
-    runs-on: ubuntu-latest
-    needs: content-cycle
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-      - run: python mycelium/privacy_scrubber.py
-      - run: |
-          git config user.name "meeko-scrubber"
-          git config user.email "privacy@meeko-nerve-center"
-          git add data/scrub_log.json PRIVACY.md
-          git diff --cached --quiet || git commit -m "privacy: daily scrub [$(date -u +%Y-%m-%d)]" && git push

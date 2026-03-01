@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T11:33:48.968308Z",
+  "generated_at": "2026-02-28T22:48:07.082618Z",
   "generator": "github-actions",
   "services": [
     {
@@ -24,8 +24,8 @@
     },
     {
       "service": "Gumroad",
-      "status": "connected",
-      "note": "secret present"
+      "status": "missing",
+      "note": "add GUMROAD_TOKEN to GitHub Secrets"
     },
     {
       "service": "Ko-fi",

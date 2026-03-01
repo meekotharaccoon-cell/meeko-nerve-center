@@ -19,6 +19,14 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s106"
     },
     {
+      "place": "80 km ESE of Sarangani, Philippines",
+      "mag": 5.4,
+      "time": "2026-02-28T17:22",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s135"
+    },
+    {
       "place": "Drake Passage",
       "mag": 5.3,
       "time": "2026-02-27T18:31",
@@ -43,36 +51,20 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s10h"
     },
     {
-      "place": "61 km NNW of Hirara, Japan",
+      "place": "64 km NNW of Hirara, Japan",
+      "mag": 5.1,
+      "time": "2026-02-28T12:56",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s122"
+    },
+    {
+      "place": "26 km N of Kusap\u00edn, Panama",
       "mag": 5,
-      "time": "2026-02-27T14:48",
+      "time": "2026-02-28T17:11",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0qv"
-    },
-    {
-      "place": "Southwest Indian Ridge",
-      "mag": 4.9,
-      "time": "2026-02-27T16:17",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0sh"
-    },
-    {
-      "place": "16 km NNW of Shamakhi, Azerbaijan",
-      "mag": 4.8,
-      "time": "2026-02-27T11:52",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0q7"
-    },
-    {
-      "place": "157 km SE of Lata, Solomon Islands",
-      "mag": 4.8,
-      "time": "2026-02-27T15:45",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0s8"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s132"
     },
     {
       "place": "232 km E of Levuka, Fiji",
@@ -81,6 +73,14 @@
       "alert": null,
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0zy"
+    },
+    {
+      "place": "33 km SW of Acajutla, El Salvador",
+      "mag": 4.6,
+      "time": "2026-02-28T10:21",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s11c"
     }
   ]
 }
