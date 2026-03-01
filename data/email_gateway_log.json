@@ -2,196 +2,6 @@
   "interactions": [
     {
       "date": "2026-02-28",
-      "from": "verify@x.com",
-      "subject": "New login to X from ChromeDesktop on Windows",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "support@freeup.net",
-      "subject": "How to Avoid Costly Freelance Hiring Mistakes",
-      "action": "help_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "contact@mail.replit.com",
-      "subject": "Tomorrow: Mobile Builder Spotlight + Office Hours",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "gm@email.kraken.com",
-      "subject": "\ud83d\uddde\ufe0f BTC Back Below Prior Cycle High, What Comes Next?",
-      "action": "help_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@intro.co",
-      "subject": "Re: Re: You <> Alli (Founder of Drybar)",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "no-reply-support@coinbase.com",
-      "subject": "Visit the Coinbase Help Center to contact support - We will not\r\n call you about",
-      "action": "help_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "team@netlify.com",
-      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] Good news! Your projects have been r",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@intro.co",
-      "subject": "You <> Sarah (Co-Founder at Nextdoor)",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@intro.co",
-      "subject": "Meeko <> Sarah (Co-Founder at Nextdoor)",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "ericsimons@stackblitz.com",
-      "subject": "Ship smarter with Opus 4.6",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "support@freeup.net",
-      "subject": "This Simple Step Prevents Freelancer Headaches",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "Windows@notificationemails.microsoft.com",
-      "subject": "Ready to get personal?",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "associates@amazon.com",
-      "subject": "Welcome to Amazon Associates! Start earning now.",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "pinbot@legal.pinterest.com",
-      "subject": "You're back on Pinterest",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "team@netlify.com",
-      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] Good news! Your pro",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@intro.co",
-      "subject": "Re: Re: Re: You <> Alli (Founder of Drybar)",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hi@cursor.com",
-      "subject": "Cursor GitHub App was uninstalled",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "register@account.tiktok.com",
-      "subject": "360389 is your verification code",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "team@netlify.com",
-      "subject": "[Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] :: Re: [Netlify] Go",
-      "action": "fallback_help"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "activity@notifications.pinterest.com",
-      "subject": "Need Help?",
-      "action": "help_sent"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed:\r\n .github/",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed:\r\n .github/",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed: Self-Heali",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "notifications@github.com",
-      "subject": "[MeekoThaRaccoon/SolarPunk-Conductor] Run failed:\r\n .github/",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hello@Ko-fi.com",
-      "subject": "I\u2019m so glad you joined!",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "contact@mail.replit.com",
-      "subject": "Happening Tomorrow: Live Build Session \u2014 Finishing Touches +",
-      "action": "ignored_automated",
-      "reason": "auto prefix: contact@"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "hello@khanacademy.org",
-      "subject": "When classroom routines shift, you\u2019ve got options.",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "team@info.digitalocean.com",
-      "subject": "Now Available: Claude Opus 4.6 on DigitalOcean",
-      "action": "ignored_automated",
-      "reason": "auto prefix: team@"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "contact@mail.replit.com",
-      "subject": "Get Your App Ready for Real Users",
-      "action": "ignored_automated",
-      "reason": "auto prefix: contact@"
-    },
-    {
-      "date": "2026-02-28",
-      "from": "support@flatlogic.com",
-      "subject": "What kind of product will you launch on Flatlogic?",
-      "action": "ignored_automated",
-      "reason": "blocked domain: flatlogic.com"
-    },
-    {
-      "date": "2026-02-28",
       "from": "notification@service.tiktok.com",
       "subject": "You have 1 new like",
       "action": "ignored_offtopic"
@@ -3414,6 +3224,207 @@
       "date": "2026-03-01",
       "from": "notifications@github.com",
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd78\ufe0f Wir",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Freddie \u22c6\u02d9\u27e1 \ud83c\udf3b reposted: And it\u2019snot really empathy, it\u2019s hyp",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "More followers are in your future \ud83d\udd2e",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Apricot Studio \ud83c\udfa7 just sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@priority.instagram.com",
+      "subject": "thenandnowflora, catch up on moments you've missed",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Apricot Studio \ud83c\udfa7 sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@email.manychat.com",
+      "subject": "Steal this $7M client acquisition system \ud83d\ude08",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "\u23f3 Last chance: Get 26% off Linktree Pro",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "welcome@supabase.com",
+      "subject": "Confirm your email and launch your projects on Supabase!",
+      "action": "reply_failed"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "welcome@supabase.com",
+      "subject": "Welcome to Supabase",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@trymagic.com",
+      "subject": "533059 is your Railway login code",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "All aboard! Welcome to Railway!",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@mail.apollo.io",
+      "subject": "Welcome to Apollo - your sales journey starts here",
+      "action": "ignored_automated",
+      "reason": "blocked domain: mail.apollo.io"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "canvacreate@engage.canva.com",
+      "subject": "See your 2026 fortune, Meeko",
+      "action": "reply_failed"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "\ud83d\udc76\ud83c\udf1fTiny Tots World \u2728\ufe0f sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@freeup.net",
+      "subject": "Still Hiring? Don't Miss This $25 Credit",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: accounts.google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "info@email.manychat.com",
+      "subject": "Manychat's 2026 Creator Report on breaking through the scrol",
+      "action": "ignored_automated",
+      "reason": "auto prefix: info@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "\ud83d\ude80 Your GitHub launch code",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "Sonnenschein 1940 sent you a message",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "meekotharaccoon@gmail.com",
+      "subject": "\ud83d\udea8 2 action(s) ready \u2014 Meeko 2026-03-01",
+      "action": "ignored_automated",
+      "reason": "self-email"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0e Asse",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udfdb\ufe0f Con",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udf31 Evol",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udef8 Spac",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83e\udde0 Orch",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd78\ufe0f Wir",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udfac YouT",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
     }

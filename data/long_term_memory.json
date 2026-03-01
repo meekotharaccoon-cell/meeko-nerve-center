@@ -42,14 +42,15 @@
     "system_age_days": 28,
     "last_evolution_date": "",
     "strongest_engines": [
-      "github_pages",
-      "system_health_alerting",
-      "idea_engine"
+      "product_catalog",
+      "three_d_brain",
+      "email_drafter"
     ],
     "weakest_engines": [
-      "social_queue",
-      "github_actions",
-      "content_performance"
-    ]
+      "product_catalog",
+      "three_d_brain",
+      "email_drafter"
+    ],
+    "total_dataset_records": 12
   }
 }
