@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-01 16:18 UTC  
+> Last updated: 2026-03-01 20:56 UTC  
 > Total commits tracked: 200
 
 ---
@@ -18,16 +18,12 @@
 - `77d24dff` 🧠 knowledge update [2026-02-28]
 - `194f78ca` knowledge: v2 harvest [2026-02-28]
 - `2ea5aa6f` knowledge: API directory scan [2026-02-28]
-- `230b2df5` feat: max frequency (5min), network spreader, knowledge synthesizer, fork onboarding — the network multiplies itself
-- `9884438a` 🧠 knowledge update [2026-02-28]
 
 **🤝 Community**
 - `c4cce2e6` products: add Product 3 — The Grant Hunter [full content]
 - `11b75e8e` 🔧 CRITICAL FIXES: email spam storm, feedback-loop crash, grant blindness, duplicate emails
 - `b34ac3f3` 🔧 FIX: stop duplicate emails, fix grants, add diagnostic emailer, unique-content guard
 - `744aa82f` feat: investment_intelligence (crypto + congressional alpha + Kelly sizing), ethical_pesterer (corps/govs only), news_monitor (press pitching), sovereign_research (LLC/nonprofit/DAO docs), dashboard_data_generator
-- `7a57c522` feat: grant auto-submitter, press release engine, coalition builder, impact storyteller, competitor intelligence
-- `d96f6d19` feat: A/B testing, dependency monitor, backup engine, revenue optimizer, grant intelligence
 
 **📧 Outreach**
 - `6f43b80a` ✉️ email drafts [2026-03-01]
@@ -37,12 +33,9 @@
 - `f53713f0` 🔧 Add unified_briefing + diagnostic_emailer, fix MASTER_CONTROLLER env vars and phases
 - `013aa578` 🔧 Wire diagnostic_emailer into Phase 0 of MASTER_CONTROLLER
 - `2380f921` feat: MASTER_CONTROLLER workflow (auto-runs all, retries failures), master_controller.py, self_healer_v2.py (reads own emails, fixes own bugs) — zero human workflow management
-- `7dc021ab` feat: perpetual builder (builds itself every 2h forever), email gateway (anyone emails = gets SolarPunk system), dedicated workflows
-- `1b1688ff` feat: parallel ingestion (8 agents), master trigger, secret scrubber, phone commands emailer
 
 **📊 Signals**
 - `5b08f72d` chore: fork tracker update [2026-03-01]
-- `26a23f76` chore: fork tracker update [2026-02-28]
 
 **⚖️ Legal**
 - `0dbe7ebd` docs: complete README rewrite — Meeko/SolarPunk distinction, all systems, Hey SolarPunk, journalist angles, legal roadmap
@@ -50,13 +43,24 @@
 **🌹 Art & Gallery**
 - `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
 
+**🚹 Fixes**
+- `5987b153` fix: wallet config checks all possible secret names — works with whatever you already named it
+
 **📝 Documentation**
+- `db03728e` 📝 auto: changelog 2026-03-01
 - `20eea761` 📝 auto: changelog 2026-03-01
 - `98bdb262` 📝 auto: changelog 2026-03-01
 - `608a7ff0` 📝 auto: changelog 2026-03-01
-- `856e6adf` feat: top 5 system self-wants — output validator, long-term memory, peer network, self-documentation, financial intelligence
 
 **⚙️ System**
+- `5fee15e5` feat: multi-chain wallet config (all 9 chains) + setup_wizard_v3 with EVM auto-detection — never turn away money from any blockchain
+- `d64ce872` build: setup_wizard_v2 (uses existing GitHub token) + form_filler + humanitarian_fork_distributor — sending the whole system to Gaza/Sudan/Congo
+- `ba0d55bd` build: setup_wizard auto-detects existing GitHub token + form_filler (fill any form with identity) + humanitarian_fork_distributor (send full system to Gaza/Sudan/Congo)
+- `8880f58e` 🧠 auto: system state update 2026-03-01 20:13 UTC
+- `92411049` build: etsy_bridge + revenue_router + job_agent + setup_wizard — full passive income stack + system as employee + auto-compounding revenue routing
+- `7737929a` audit: autonomy log updated 2026-03-01
+- `666eeb20` audit: autonomy log updated 2026-03-01
+- `3eaff3b4` 🧠 auto: system state update 2026-03-01 18:22 UTC
 - `3dbc2925` 🧠 auto: system state update 2026-03-01 11:07 UTC
 - `c3f92bcd` feat: add daily 3D brain workflow — runs every morning at 6am UTC
 - `c130cdc6` products: add Products 6-10 + PDF auto-generator workflow [full content — revenue loop complete]
@@ -70,12 +74,31 @@
 - `1ddba86e` 🧠 auto: system state update 2026-02-28 09:25 UTC
 - `0f080b14` feat: human touchpoint eliminator, autonomous git, identity engine, loop closer — closing every remaining open loop
 - `79a89f83` feat: universal spawner (clones itself into 5 sister systems), WHAT_ELSE.md (every other use case), cross-node intelligence (nodes talk to each other)
-- `4168d3c1` 🧠 auto: system state update 2026-02-28 02:47 UTC
-- `0c1c11ba` 🧠 auto: system state update 2026-02-28 02:33 UTC
-- `18c1bfdc` 🧠 auto: system state update 2026-02-28 00:25 UTC
-- `2de460b0` feat: auto-evolved unhcr_data_inspector — UNHCR Refugee Data Inspector [2026-02-28]
 
 **• Other**
+- `eb04cb3e` data: dex update [20:53]
+- `664202a2` \U0001f338 perpetual: 2026-03-01 20:53 UTC
+- `1df7f7ac` chore: update wiring_status.json [2026-03-01T20:52]
+- `1ef87e87` chore: update wiring_status.json [2026-03-01T20:46]
+- `adf69109` chore: update wiring_status.json [2026-03-01T20:27]
+- `aaaac20a` chore: update wiring_status.json [2026-03-01T20:24]
+- `d4650a96` activate: MASTER_CONTROLLER now runs daily (6am + 6pm UTC) with all 16 phases including Etsy, revenue router, job agent — full passive income loop enabled
+- `359b306d` chore: update wiring_status.json [2026-03-01T20:12]
+- `03e286f2` \U0001f338 perpetual: 2026-03-01 19:56 UTC
+- `bce2ccb2` data: dex update [19:52]
+- `d6bbfb34` \U0001f338 perpetual: 2026-03-01 19:42 UTC
+- `b41cf1e0` \U0001f338 perpetual: 2026-03-01 19:01 UTC
+- `20ea18bb` data: dex update [19:01]
+- `a7ac1812` chore: update wiring_status.json [2026-03-01T19:00]
+- `deedca77` 🌸 cycle [2026-03-01 18:29]
+- `919ff4ea` 🌸 cycle [2026-03-01 18:26]
+- `59d8dd8d` chore: update wiring_status.json [2026-03-01T18:21]
+- `c1566ae4` \U0001f338 perpetual: 2026-03-01 18:00 UTC
+- `722ab2d2` data: dex update [17:49]
+- `fbb60f70` chore: update wiring_status.json [2026-03-01T17:48]
+- `f570a1fb` \U0001f338 perpetual: 2026-03-01 16:56 UTC
+- `0df0a237` data: dex update [16:55]
+- `39c6789b` chore: update wiring_status.json [2026-03-01T16:54]
 - `ecef9800` wire: directives → three_d_brain synthesis
 - `2418388a` \U0001f338 perpetual: 2026-03-01 15:59 UTC
 - `ccb651ae` data: dex update [15:46]
@@ -204,27 +227,6 @@
 - `4e358c00` chore: update wiring_status.json [2026-02-28T08:13]
 - `16664964` gateway: 08:00 UTC
 - `0d681842` data: dex update [07:54]
-- `63b90c9c` \U0001f338 perpetual: 2026-02-28 07:51 UTC
-- `6d0461e8` gateway: 07:50 UTC
-- `f30ffa42` ideas: engine cycle [2026-02-28]
-- `574a8cc6` data: dex update [07:16]
-- `b8a11fb8` chore: update wiring_status.json [2026-02-28T07:12]
-- `62af2c43` chore: update wiring_status.json [2026-02-28T07:08]
-- `fa8c39cf` chore: update wiring_status.json [2026-02-28T07:06]
-- `d7355c35` ideas: engine cycle [2026-02-28]
-- `3293a0d3` 🌍 content update [2026-02-28]
-- `0755e09e` chore: update wiring_status.json [2026-02-28T05:59]
-- `53a2dc50` ideas: engine cycle [2026-02-28]
-- `28259f75` ideas: engine cycle [] — tested/built
-- `66ce39cf` ideas: engine cycle [2026-02-28]
-- `9c69c4c5` data: dex update [04:36]
-- `db1178f8` chore: update wiring_status.json [2026-02-28T04:35]
-- `3dba4329` chore: update wiring_status.json [2026-02-28T02:38]
-- `222c894d` chore: update wiring_status.json [2026-02-28T02:07]
-- `1ded342a` 🎬 shorts scripts [2026-02-28]
-- `64c92752` log: evolution entry for unhcr_data_inspector on 2026-02-28
-- `94ff8bce` 📬 newsletter [2026-W08]
-- `8bd09111` 🔬 diagnostics report [2026-02-28T00:14]
 
 ---
 
