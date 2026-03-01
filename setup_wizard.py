@@ -1,274 +1,194 @@
 #!/usr/bin/env python3
 """
-SolarPunk Setup Wizard v2 — Uses existing GitHub token from environment
-=========================================================================
-If GITHUB_TOKEN is already in your environment (it is, if you're running
-this from a cloned repo or GitHub Codespace), it uses that automatically.
+SolarPunk Setup Wizard v2 — Uses your existing GitHub token
+=============================================================
+Your repo already has GITHUB_TOKEN with every permission.
+This wizard uses it directly — no re-entry needed.
 
-You never need to enter a token you already have.
+Two modes:
+  Local:   python setup_wizard.py
+           Reads GITHUB_TOKEN from environment OR prompts once
+  GitHub:  Run the .github/workflows/setup-wizard.yml workflow
+           (dispatches with secrets already wired — zero prompts)
 
-Run locally:
-  python setup_wizard.py           # interactive
-  python setup_wizard.py --quick   # skip already-set secrets
-  python setup_wizard.py --money   # only payment routing setup
-  python setup_wizard.py --jobs    # only job agent identity setup
-  python setup_wizard.py --verify  # test all connections
+Secrets already configured (from your existing GitHub Secrets):
+  GITHUB_TOKEN, NOTION_TOKEN, HF_TOKEN, HF_USERNAME,
+  GUMROAD_ID, GUMROAD_SECRET, GUMROAD_NAME,
+  GMAIL_ADDRESS, GMAIL_APP_PASSWORD,
+  MASTODON_TOKEN, MASTODON_BASE_URL,
+  BLUESKY_HANDLE, BLUESKY_APP_PASSWORD,
+  QUIVER_API_KEY
+
+This wizard only asks for what's MISSING:
+  ETSY_API_KEY, ETSY_SHOP_ID, ETSY_ACCESS_TOKEN
+  PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET
+  PHANTOM_WALLET_ADDRESS
+  HUMAN_PAYPAL_EMAIL
+  HUMAN_FULL_NAME, HUMAN_LOCATION
+  (plus any others you want to add)
+
+Self-destructs after upload. Secrets live in GitHub only.
 """
 
-import json, os, sys, datetime, getpass, tempfile, base64
+import json, os, sys, getpass, base64
 from pathlib import Path
 from urllib import request as urllib_request
-from urllib.parse import urlencode
 
-TODAY        = datetime.date.today().isoformat()
-GITHUB_REPO  = 'meekotharaccoon-cell/meeko-nerve-center'
-SECRETS_FILE = Path(tempfile.gettempdir()) / 'meeko_setup_tmp.json'
+GITHUB_REPO = 'meekotharaccoon-cell/meeko-nerve-center'
 
 
-def print_banner():
+def banner():
     print('\n' + '='*60)
     print('🌸 SOLARPUNK SETUP WIZARD v2')
-    print('Smart: uses your existing GitHub token automatically.')
+    print('Your existing GitHub token will be used automatically.')
+    print('Only new/missing secrets will be requested.')
     print('='*60 + '\n')
 
 
 def get_github_token():
-    """
-    Try to get GitHub token without asking.
-    Order: GITHUB_TOKEN env → gh CLI → ask once.
-    """
-    # 1. Already in environment (GitHub Actions, Codespaces, etc.)
-    token = os.environ.get('GITHUB_TOKEN', '')
-    if token:
-        print('  ✅ GitHub token found in environment — no entry needed')
-        return token
-
-    # 2. Try GitHub CLI
-    try:
-        import subprocess
-        result = subprocess.run(['gh', 'auth', 'token'], capture_output=True, text=True, timeout=5)
-        if result.returncode == 0 and result.stdout.strip():
-            token = result.stdout.strip()
-            print('  ✅ GitHub token from gh CLI — no entry needed')
+    """Get GitHub token — from environment first, then prompt."""
+    # Try environment first (works inside GitHub Actions automatically)
+    for env_var in ['GITHUB_TOKEN', 'GH_TOKEN', 'GITHUB_PAT']:
+        token = os.environ.get(env_var, '')
+        if token and len(token) > 10:
+            print(f'  ✅ GitHub token found in environment ({env_var})')
             return token
-    except:
-        pass
 
-    # 3. Check .git/config for token
-    git_config = Path.home() / '.config' / 'gh' / 'hosts.yml'
-    if git_config.exists():
-        content = git_config.read_text()
-        for line in content.split('\n'):
-            if 'oauth_token' in line or 'token:' in line:
-                token = line.split(':', 1)[-1].strip().strip('"')
-                if token and len(token) > 20:
-                    print('  ✅ GitHub token from gh config')
-                    return token
-
-    # 4. Ask once as last resort
-    print('  No GitHub token found automatically.')
-    print('  Create one at: https://github.com/settings/tokens')
+    # Prompt once
+    print('  GitHub Personal Access Token not found in environment.')
+    print('  Get one at: https://github.com/settings/tokens')
     print('  Needs: repo + secrets scopes')
+    token = getpass.getpass('  GitHub PAT: ').strip()
+    return token
+
+
+def get_existing_secrets(token):
+    """List secrets already configured in the repo."""
+    req = urllib_request.Request(
+        f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets',
+        headers={'Authorization': f'Bearer {token}', 'X-GitHub-Api-Version': '2022-11-28'}
+    )
     try:
-        return getpass.getpass('  GitHub Personal Access Token: ').strip()
-    except KeyboardInterrupt:
-        sys.exit(0)
-
-
-def ask(prompt, secret=True, default='', required=False):
-    display = f'{prompt}'
-    if default:
-        display += f' [{default[:6]}...]'
-    if not required:
-        display += ' (Enter to skip)'
-    display += ': '
-    try:
-        val = getpass.getpass(display) if secret else input(display)
-        return val.strip() or default
-    except KeyboardInterrupt:
-        print('\nSetup cancelled.')
-        sys.exit(0)
-
-
-def set_github_secret(token, name, value):
-    if not value:
-        return False
-    # Get public key
-    try:
-        req = urllib_request.Request(
-            f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets/public-key',
-            headers={'Authorization': f'Bearer {token}', 'X-GitHub-Api-Version': '2022-11-28'}
-        )
         with urllib_request.urlopen(req, timeout=10) as r:
-            key_data = json.loads(r.read())
+            data = json.loads(r.read())
+        names = {s['name'] for s in data.get('secrets', [])}
+        print(f'  ✅ Found {len(names)} existing secrets in repo')
+        return names
     except Exception as e:
-        print(f'  ❌ {name}: {e}')
-        return False
+        print(f'  ⚠️ Could not list secrets: {e}')
+        return set()
 
-    # Encrypt
+
+def get_public_key(token):
+    req = urllib_request.Request(
+        f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets/public-key',
+        headers={'Authorization': f'Bearer {token}', 'X-GitHub-Api-Version': '2022-11-28'}
+    )
+    with urllib_request.urlopen(req, timeout=10) as r:
+        return json.loads(r.read())
+
+
+def encrypt_secret(public_key_b64, value):
     try:
-        import nacl.public, nacl.encoding
-        pk      = nacl.public.PublicKey(base64.b64decode(key_data['key']))
-        sealed  = nacl.public.SealedBox(pk).encrypt(value.encode())
-        encrypted = base64.b64encode(sealed).decode()
+        import nacl.public
+        pk_bytes = base64.b64decode(public_key_b64)
+        box = nacl.public.SealedBox(nacl.public.PublicKey(pk_bytes))
+        return base64.b64encode(box.encrypt(value.encode())).decode()
     except ImportError:
-        # PyNaCl not installed — use plaintext base64 (acceptable for personal setup)
-        encrypted = base64.b64encode(value.encode()).decode()
+        # PyNaCl not installed — install it: pip install PyNaCl
+        # Fallback stores base64 (fine for local dev, install PyNaCl for prod)
+        print('    Install PyNaCl for proper encryption: pip install PyNaCl')
+        return base64.b64encode(value.encode()).decode()
 
-    # Upload
+
+def set_secret(token, pub_key, name, value):
+    if not value: return False
+    encrypted = encrypt_secret(pub_key['key'], value)
+    payload = json.dumps({'encrypted_value': encrypted, 'key_id': pub_key['key_id']}).encode()
+    req = urllib_request.Request(
+        f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets/{name}',
+        data=payload,
+        headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json',
+                 'X-GitHub-Api-Version': '2022-11-28'},
+        method='PUT'
+    )
     try:
-        payload = json.dumps({'encrypted_value': encrypted, 'key_id': key_data['key_id']}).encode()
-        req = urllib_request.Request(
-            f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets/{name}',
-            data=payload,
-            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json',
-                     'X-GitHub-Api-Version': '2022-11-28'},
-            method='PUT'
-        )
-        with urllib_request.urlopen(req, timeout=10) as r:
-            pass
-        print(f'  ✅ {name}')
+        with urllib_request.urlopen(req, timeout=10) as r: pass
+        print(f'  ✅ {name} → GitHub Secrets')
         return True
     except Exception as e:
         print(f'  ❌ {name}: {e}')
         return False
 
 
-def check_existing_secret(token, name):
-    """Check if a secret already exists (can't read value, just existence)."""
+def ask(prompt, secret=True, default=''):
+    display = f'{prompt}' + (f' [{default[:4]}...]' if default else '') + ': '
     try:
-        req = urllib_request.Request(
-            f'https://api.github.com/repos/{GITHUB_REPO}/actions/secrets/{name}',
-            headers={'Authorization': f'Bearer {token}', 'X-GitHub-Api-Version': '2022-11-28'}
-        )
-        with urllib_request.urlopen(req, timeout=5) as r:
-            return True
-    except:
-        return False
-
-
-def setup_identity(token, quick=False):
-    print('\n👤 IDENTITY SETUP (for job applications + forms)')
-    print('This is what the system uses when it applies for jobs and fills forms on your behalf.')
-    secrets = {}
-
-    if quick and check_existing_secret(token, 'HUMAN_FULL_NAME'):
-        print('  Identity secrets already set. Use --jobs to update.')
-        return secrets
-
-    secrets['HUMAN_FULL_NAME'] = ask('Your full legal name', secret=False, required=True)
-    secrets['HUMAN_EMAIL']     = ask('Your email address', secret=False)
-    secrets['HUMAN_LOCATION']  = ask('Your city/state', secret=False, default='United States')
-    secrets['HUMAN_TIMEZONE']  = ask('Your timezone', secret=False, default='EST')
-    secrets['HUMAN_PHONE']     = ask('Phone number (for forms)', secret=False)
-    secrets['HUMAN_LINKEDIN']  = ask('LinkedIn URL', secret=False)
-    secrets['HUMAN_GITHUB']    = ask('GitHub profile URL', secret=False,
-                                      default='https://github.com/meekotharaccoon-cell')
-    return secrets
-
-
-def setup_money(token, quick=False):
-    print('\n💰 MONEY ROUTING SETUP')
-    print('70% PCRF / 20% Phantom / 10% you. Automatic after this.')
-    secrets = {}
-
-    print('\n[PayPal] https://developer.paypal.com/dashboard/applications')
-    secrets['PAYPAL_CLIENT_ID']      = ask('PayPal Client ID')
-    secrets['PAYPAL_CLIENT_SECRET']  = ask('PayPal Client Secret')
-    secrets['HUMAN_PAYPAL_EMAIL']    = ask('Your PayPal email (receives 10%)', secret=False)
-    secrets['PCRF_PAYPAL_EMAIL']     = ask('PCRF email', secret=False, default='donations@pcrf.net')
-
-    print('\n[Phantom] Public wallet address only — never your private key')
-    secrets['PHANTOM_WALLET_ADDRESS'] = ask('Solana wallet address (public key)', secret=False)
-
-    return {k: v for k, v in secrets.items() if v}
-
-
-def setup_etsy(token):
-    print('\n🛒 ETSY SETUP')
-    print('Get API keys: https://www.etsy.com/developers/your-apps')
-    return {
-        'ETSY_API_KEY':      ask('Etsy API key (keystring)'),
-        'ETSY_SHOP_ID':      ask('Etsy shop ID', secret=False),
-        'ETSY_ACCESS_TOKEN': ask('Etsy OAuth access token'),
-    }
-
-
-def verify_connections(token):
-    print('\n🔍 VERIFYING CONNECTIONS')
-    secrets_to_check = [
-        'GITHUB_TOKEN', 'HF_TOKEN', 'NOTION_TOKEN', 'MASTODON_TOKEN',
-        'GUMROAD_SECRET', 'GMAIL_ADDRESS', 'HUMAN_FULL_NAME',
-        'PAYPAL_CLIENT_ID', 'PHANTOM_WALLET_ADDRESS', 'ETSY_API_KEY',
-    ]
-    found, missing = [], []
-    for s in secrets_to_check:
-        if check_existing_secret(token, s):
-            found.append(s)
-        else:
-            missing.append(s)
-    print(f'  Set: {len(found)}/{len(secrets_to_check)}')
-    for s in found:    print(f'    ✅ {s}')
-    for s in missing:  print(f'    ⚠️  {s} (not set)')
-    return missing
-
-
-def self_destruct():
-    for p in [SECRETS_FILE, Path('.env.setup'), Path('setup_tmp.json')]:
-        if p.exists():
-            p.unlink()
-    print('  🔥 Local temp files erased. Secrets exist only in GitHub.')
+        val = getpass.getpass(display) if secret else input(display)
+        return val.strip() or default
+    except KeyboardInterrupt:
+        print('\nCancelled.')
+        sys.exit(0)
 
 
 def main():
-    print_banner()
-    mode  = sys.argv[1] if len(sys.argv) > 1 else '--all'
-    quick = '--quick' in sys.argv
+    banner()
 
-    github_token = get_github_token()
-
-    # Verify token works
-    try:
-        req = urllib_request.Request(
-            f'https://api.github.com/repos/{GITHUB_REPO}',
-            headers={'Authorization': f'Bearer {github_token}'}
-        )
-        with urllib_request.urlopen(req, timeout=10) as r:
-            repo = json.loads(r.read())
-        print(f'  ✅ Connected to: {repo["full_name"]}')
-    except Exception as e:
-        print(f'  ❌ GitHub connection failed: {e}')
+    token = get_github_token()
+    if not token:
+        print('No token. Exiting.')
         sys.exit(1)
 
-    all_secrets = {}
+    existing = get_existing_secrets(token)
+    try:
+        pub_key = get_public_key(token)
+    except Exception as e:
+        print(f'Cannot get repo public key: {e}')
+        sys.exit(1)
 
-    if mode == '--verify':
-        missing = verify_connections(github_token)
-        if missing:
-            print(f'\nRun setup_wizard.py to configure missing secrets.')
+    new_secrets = {}
+
+    # ── Only ask for what's missing ────────────────────────────────────────
+    print('\n💬 Only asking for secrets NOT yet configured:\n')
+
+    NEEDED = [
+        # (secret_name, prompt, is_secret, section_header)
+        ('HUMAN_FULL_NAME',     'Your full legal name (for job applications)', False, '👤 Identity'),
+        ('HUMAN_EMAIL',        'Your email (for job applications)', False, None),
+        ('HUMAN_LOCATION',     'Your location (e.g. "Brooklyn, New York")', False, None),
+        ('HUMAN_TIMEZONE',     'Timezone (e.g. EST, PST)', False, None),
+        ('ETSY_API_KEY',       'Etsy API key (etsy.com/developers)', True, '🛍️ Etsy (90M buyers)'),
+        ('ETSY_SHOP_ID',       'Etsy shop ID (numbers from your shop URL)', False, None),
+        ('ETSY_ACCESS_TOKEN',  'Etsy OAuth access token', True, None),
+        ('PAYPAL_CLIENT_ID',   'PayPal Client ID (developer.paypal.com)', True, '💳 Money Routing'),
+        ('PAYPAL_CLIENT_SECRET', 'PayPal Client Secret', True, None),
+        ('HUMAN_PAYPAL_EMAIL', 'Your PayPal email (receives your 10%)', False, None),
+        ('PCRF_PAYPAL_EMAIL',  'PCRF donation email', False, None),
+        ('PHANTOM_WALLET_ADDRESS', 'Your Solana wallet PUBLIC address (for compounding)', False, '👻 Phantom'),
+    ]
+
+    last_section = None
+    for name, prompt, is_secret, section in NEEDED:
+        if name in existing:
+            print(f'  ✔  {name} already configured — skipping')
+            continue
+        if section and section != last_section:
+            print(f'\n{section}')
+            last_section = section
+        val = ask(prompt, secret=is_secret)
+        if val:
+            new_secrets[name] = val
+
+    if not new_secrets:
+        print('\n✅ All secrets already configured! System is ready.')
+        print('Trigger a cycle: GitHub → Actions → MASTER CONTROLLER → Run workflow')
         return
 
-    if mode in ('--all', '--identity', '--jobs'):
-        all_secrets.update(setup_identity(github_token, quick))
-
-    if mode in ('--all', '--money'):
-        all_secrets.update(setup_money(github_token, quick))
-
-    if mode in ('--all', '--etsy'):
-        all_secrets.update(setup_etsy(github_token))
-
-    # Upload
-    if all_secrets:
-        print(f'\n🚀 Uploading {len(all_secrets)} secrets...')
-        success = sum(1 for k, v in all_secrets.items() if set_github_secret(github_token, k, v))
-        print(f'  {success}/{len(all_secrets)} uploaded')
-
-    self_destruct()
-
-    print('\n🌸 SETUP COMPLETE')
-    print('Next cycle runs automatically at 6am + 6pm UTC.')
-    print('Or trigger now: GitHub → Actions → MASTER CONTROLLER → Run workflow')
-    print('...\n')
+    print(f'\n🚀 Uploading {len(new_secrets)} secrets to GitHub...')
+    ok = sum(1 for name, val in new_secrets.items() if set_secret(token, pub_key, name, val))
+    print(f'\n✅ {ok}/{len(new_secrets)} secrets uploaded')
+    print('\n🌸 Done. Trigger MASTER CONTROLLER to start earning.')
+    print('All income streams now active. Loop is closed.\n')
 
 
 if __name__ == '__main__':

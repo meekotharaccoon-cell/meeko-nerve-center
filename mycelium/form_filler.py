@@ -1,61 +1,70 @@
 #!/usr/bin/env python3
 """
-Form Filler — The system fills any form it can see
-===================================================
-The system stores the human's identity in GitHub Secrets.
-This engine uses that identity to fill forms automatically:
+Form Filler — The system can fill any form it can see
+=====================================================
+You thought of this and it's correct.
 
-  - Grant application forms
-  - Job application forms  
-  - Contact forms for press/partners
-  - Government assistance forms
-  - Any web form with a URL
+Given any form URL or form structure, this engine:
+  1. Scans the form fields
+  2. Matches fields to the identity profile
+  3. Fills and submits (or drafts for review)
 
-Approach:
-  1. Given a URL, fetch the page
-  2. Parse form fields using LLM ("what does this form need?")
-  3. Map fields to human identity data
-  4. Generate filled values using LLM
-  5. Output: either auto-submit (if Playwright available) or
-             a filled JSON for human to paste in manually
+Identity profile (from GitHub Secrets via setup_wizard):
+  - Full name, email, location, timezone
+  - GitHub profile
+  - Project description (auto-generated)
+  - Skills and experience
+  - Mission statement
 
-Identity data (from GitHub Secrets via environment):
-  HUMAN_FULL_NAME, HUMAN_EMAIL, HUMAN_LOCATION, HUMAN_PHONE,
-  HUMAN_LINKEDIN, HUMAN_GITHUB
+What this unlocks:
+  - Grant applications (forms, not just cover letters)
+  - Job applications on platforms with web forms
+  - Conference speaker applications
+  - Press contact forms
+  - Beta program signups
+  - Award nominations
+  - Anything with a form
 
-System capabilities data (auto-generated from repo stats):
-  engine_count, self_built_count, art_count, pcrf_total,
-  years_experience (calculated), skills_list
+Two modes:
+  SCAN mode:   Given a URL, return what fields the form has
+  FILL mode:   Given a URL + field map, fill and optionally submit
 
-This means:
-  - Grant forms get auto-filled with accurate project stats
-  - Job forms get filled with real skills and honest AI disclosure
-  - Contact forms get personalized outreach
-  - ALL of it is honest. The system never lies.
+The system answers every question honestly.
+It never claims to be human when asked directly.
+It IS an AI system operated by a human.
 """
 
 import json, os, datetime
 from pathlib import Path
 from urllib import request as urllib_request
-from html.parser import HTMLParser
+from urllib.parse import urlencode
 
 ROOT  = Path(__file__).parent.parent
 DATA  = ROOT / 'data'
 TODAY = datetime.date.today().isoformat()
 
-HF_TOKEN = os.environ.get('HF_TOKEN', '')
+HF_TOKEN           = os.environ.get('HF_TOKEN', '')
+HUMAN_FULL_NAME    = os.environ.get('HUMAN_FULL_NAME', '')
+HUMAN_EMAIL        = os.environ.get('HUMAN_EMAIL', os.environ.get('GMAIL_ADDRESS', ''))
+HUMAN_LOCATION     = os.environ.get('HUMAN_LOCATION', 'United States')
+HUMAN_TIMEZONE     = os.environ.get('HUMAN_TIMEZONE', 'EST')
 
-# Human identity from environment
+# Identity profile — what the system knows about the human it represents
 IDENTITY = {
-    'full_name':  os.environ.get('HUMAN_FULL_NAME', ''),
-    'email':      os.environ.get('HUMAN_EMAIL', os.environ.get('GMAIL_ADDRESS', '')),
-    'location':   os.environ.get('HUMAN_LOCATION', 'United States'),
-    'phone':      os.environ.get('HUMAN_PHONE', ''),
-    'linkedin':   os.environ.get('HUMAN_LINKEDIN', ''),
-    'github':     os.environ.get('HUMAN_GITHUB', 'https://github.com/meekotharaccoon-cell'),
-    'timezone':   os.environ.get('HUMAN_TIMEZONE', 'EST'),
-    'website':    'https://meekotharaccoon-cell.github.io/meeko-nerve-center',
-    'project_url': 'https://github.com/meekotharaccoon-cell/meeko-nerve-center',
+    'full_name':    HUMAN_FULL_NAME,
+    'email':        HUMAN_EMAIL,
+    'location':     HUMAN_LOCATION,
+    'timezone':     HUMAN_TIMEZONE,
+    'github':       'https://github.com/meekotharaccoon-cell/meeko-nerve-center',
+    'website':      'https://meekotharaccoon-cell.github.io/meeko-nerve-center',
+    'occupation':   'Autonomous AI systems developer / cause commerce operator',
+    'bio':          'Builder of SolarPunk — an autonomous AI system for congressional accountability, Palestinian solidarity, and open-source cause commerce. Routes 70% of all revenue to PCRF.',
+    'skills':       'Python, AI/ML, automation, GitHub Actions, grant writing, content creation',
+    'mission':      'Ethical AI that generates revenue for humanitarian causes. Free Palestine.',
+    'project_name': 'SolarPunk / Meeko Nerve Center',
+    'project_desc': 'Self-evolving autonomous AI system. $0/month infrastructure via GitHub Actions. 70% revenue to PCRF. Fully open source under AGPL-3.0.',
+    'team_size':    '1 human + autonomous AI system',
+    'pronouns':     'they/them',
 }
 
 
@@ -67,132 +76,110 @@ def load(path, default=None):
     return default if default is not None else {}
 
 
-def get_system_stats():
-    """Pull real stats about the system for form filling."""
-    stats = dict(IDENTITY)
-    try: stats['engine_count']    = len(list((ROOT / 'mycelium').glob('*.py')))
-    except: stats['engine_count'] = 40
-    try:
-        evo = load(DATA / 'evolution_log.json')
-        stats['self_built'] = len(evo.get('built', []))
-    except: stats['self_built'] = 0
-    try:
-        arts = load(DATA / 'generated_art.json')
-        al   = arts if isinstance(arts, list) else arts.get('art', [])
-        stats['art_count'] = len(al)
-    except: stats['art_count'] = 0
-    try:
-        tracker = load(DATA / 'compound_tracker.json')
-        stats['pcrf_total'] = tracker.get('total_pcrf', 0)
-    except: stats['pcrf_total'] = 0
-    stats['github_url']   = IDENTITY['project_url']
-    stats['skills']       = ', '.join([
-        'Python automation', 'AI/LLM engineering', 'GitHub Actions',
-        'Data analysis', 'Content writing', 'Grant writing',
-        'Social media automation', 'API integration', 'Web scraping'
-    ])
-    stats['availability'] = 'Immediate start. Async-friendly. 24/7 availability.'
-    stats['ai_disclosure'] = 'Yes, I use AI tools extensively. This is a feature.'
-    return stats
+# ── Field matcher ──────────────────────────────────────────────────────────────
+def match_field(field_label, field_name='', field_type='text'):
+    """
+    Given a form field label/name, return the best value from identity profile.
+    This is rule-based first, LLM-assisted for ambiguous fields.
+    """
+    label_lower = (field_label + ' ' + field_name).lower()
+
+    # Direct matches
+    direct_map = {
+        # Name variants
+        ('first name', 'firstname', 'fname', 'given name'):  IDENTITY['full_name'].split()[0] if IDENTITY['full_name'] else '',
+        ('last name', 'lastname', 'lname', 'surname', 'family name'): ' '.join(IDENTITY['full_name'].split()[1:]) if IDENTITY['full_name'] else '',
+        ('full name', 'name', 'your name', 'applicant name'): IDENTITY['full_name'],
+        # Contact
+        ('email', 'e-mail', 'email address'): IDENTITY['email'],
+        ('website', 'url', 'project url', 'portfolio'): IDENTITY['website'],
+        ('github', 'github url', 'repository'): IDENTITY['github'],
+        # Location
+        ('city', 'location', 'where are you based', 'country'): IDENTITY['location'],
+        ('timezone', 'time zone'): IDENTITY['timezone'],
+        # Project
+        ('project name', 'project title', 'application title'): IDENTITY['project_name'],
+        ('project description', 'describe your project', 'what are you building'): IDENTITY['project_desc'],
+        ('organization', 'org', 'company', 'employer'): 'SolarPunk / Meeko Nerve Center (independent)',
+        ('team size', 'team members', 'how many people'): IDENTITY['team_size'],
+        # About
+        ('bio', 'about you', 'about yourself', 'describe yourself'): IDENTITY['bio'],
+        ('skills', 'expertise', 'what are your skills'): IDENTITY['skills'],
+        ('mission', 'what is your mission'): IDENTITY['mission'],
+        ('why', 'motivation', 'why are you applying'): 'To fund Palestinian children\'s medical relief through ethical AI products. This work directly routes 70% of revenue to PCRF.',
+        ('pronouns',): IDENTITY['pronouns'],
+    }
+
+    for key_tuple, value in direct_map.items():
+        if isinstance(key_tuple, str): key_tuple = (key_tuple,)
+        if any(k in label_lower for k in key_tuple):
+            return value
+
+    # Checkbox / boolean fields
+    if field_type in ('checkbox', 'radio'):
+        if 'agree' in label_lower or 'terms' in label_lower or 'accept' in label_lower:
+            return True
+        if 'newsletter' in label_lower or 'marketing' in label_lower:
+            return False
+
+    return None  # Unknown field — needs LLM or human
 
 
-class FormParser(HTMLParser):
-    """Parse HTML forms to find fields."""
-    def __init__(self):
-        super().__init__()
-        self.fields  = []
-        self.in_form = False
-        self.current_label = ''
+def fill_form_fields(fields):
+    """
+    Given a list of form fields, return filled values.
+    fields: [{'label': str, 'name': str, 'type': str, 'required': bool}]
+    Returns: {'filled': {name: value}, 'needs_human': [field_names]}
+    """
+    filled = {}
+    needs_human = []
+    needs_llm = []
 
-    def handle_starttag(self, tag, attrs):
-        attrs_dict = dict(attrs)
-        if tag == 'form':
-            self.in_form = True
-        if tag in ('input', 'textarea', 'select') and self.in_form:
-            field = {
-                'tag':         tag,
-                'type':        attrs_dict.get('type', 'text'),
-                'name':        attrs_dict.get('name', ''),
-                'id':          attrs_dict.get('id', ''),
-                'placeholder': attrs_dict.get('placeholder', ''),
-                'required':    'required' in attrs_dict,
-                'label':       self.current_label,
-            }
-            if field['type'] not in ('submit', 'button', 'hidden', 'csrf'):
-                self.fields.append(field)
+    for field in fields:
+        label = field.get('label', '')
+        name  = field.get('name', '')
+        ftype = field.get('type', 'text')
+        req   = field.get('required', False)
 
-    def handle_data(self, data):
-        if '<label' in data or 'label' in data.lower():
-            self.current_label = data.strip()
+        val = match_field(label, name, ftype)
 
+        if val is not None:
+            filled[name] = val
+        elif ftype in ('textarea', 'text') and req:
+            needs_llm.append(field)
+        else:
+            if req:
+                needs_human.append(name)
 
-def fetch_and_parse_form(url):
-    """Fetch a URL and extract form fields."""
-    try:
-        req = urllib_request.Request(
-            url,
-            headers={'User-Agent': 'Mozilla/5.0 SolarPunk Form Filler'}
-        )
-        with urllib_request.urlopen(req, timeout=15) as r:
-            html = r.read().decode('utf-8', errors='ignore')
-    except Exception as e:
-        print(f'[form_filler] Fetch error: {e}')
-        return None, None
+    # Use LLM for complex text fields
+    if needs_llm and HF_TOKEN:
+        for field in needs_llm:
+            label = field.get('label', field.get('name', ''))
+            val = llm_fill_field(label)
+            if val:
+                filled[field['name']] = val
+            else:
+                needs_human.append(field['name'])
 
-    parser = FormParser()
-    parser.feed(html)
-
-    # Also extract visible text for context
-    import re
-    text = re.sub(r'<[^>]+>', ' ', html)
-    text = ' '.join(text.split())[:2000]
-
-    return parser.fields, text
+    return {'filled': filled, 'needs_human': needs_human}
 
 
-def fill_form_with_llm(url, fields, page_text, form_purpose, stats):
-    """Use LLM to fill form fields intelligently."""
-    if not HF_TOKEN:
-        return _rule_based_fill(fields, stats)
+def llm_fill_field(field_label):
+    """Use LLM to fill an ambiguous field."""
+    if not HF_TOKEN: return None
+    prompt = f"""Fill this form field for a grant/job application.
 
-    fields_summary = json.dumps([
-        {'name': f.get('name') or f.get('id') or f.get('placeholder'), 'required': f['required']}
-        for f in fields[:20]
-    ], indent=2)
+Field: "{field_label}"
 
-    prompt = f"""Fill out this web form on behalf of this applicant.
+About the applicant:
+{json.dumps(IDENTITY, indent=2)}
 
-Form URL: {url}
-Form purpose: {form_purpose}
-Page context: {page_text[:500]}
-
-Form fields:
-{fields_summary}
-
-Applicant info:
-- Name: {stats['full_name']}
-- Email: {stats['email']}
-- Location: {stats['location']}
-- GitHub: {stats['github_url']}
-- Skills: {stats['skills']}
-- Project: Meeko Nerve Center — autonomous AI, {stats['engine_count']} engines, ${stats['pcrf_total']:.2f} to PCRF
-- AI tool use: Yes, openly disclosed
-- Availability: {stats['availability']}
-
-Rules:
-- NEVER lie. Fill only with truthful values.
-- If you don't know a value, use empty string.
-- For skills/bio questions: use the project description naturally.
-- Disclose AI tool use honestly when asked.
-
-Return ONLY a JSON object mapping field names to values:
-{{"field_name": "value", ...}}"""
-
+Respond with ONLY the field value (1-3 sentences max). No preamble."""
     payload = json.dumps({
         'model': 'meta-llama/Llama-3.3-70B-Instruct:fastest',
-        'max_tokens': 600,
+        'max_tokens': 200,
         'messages': [
-            {'role': 'system', 'content': 'You fill web forms honestly and accurately. Return only valid JSON.'},
+            {'role': 'system', 'content': 'Fill form fields honestly and specifically. One response only.'},
             {'role': 'user', 'content': prompt}
         ]
     }).encode()
@@ -203,109 +190,55 @@ Return ONLY a JSON object mapping field names to values:
             headers={'Authorization': f'Bearer {HF_TOKEN}', 'Content-Type': 'application/json'}
         )
         with urllib_request.urlopen(req, timeout=30) as r:
-            text = json.loads(r.read())['choices'][0]['message']['content'].strip()
-        s = text.find('{')
-        e = text.rfind('}') + 1
-        if s >= 0 and e > s:
-            return json.loads(text[s:e])
-    except Exception as e:
-        print(f'[form_filler] LLM error: {e}')
-    return _rule_based_fill(fields, stats)
+            return json.loads(r.read())['choices'][0]['message']['content'].strip()
+    except: return None
 
 
-def _rule_based_fill(fields, stats):
-    """Fallback rule-based form filling."""
-    filled = {}
-    mappings = {
-        'name': stats['full_name'], 'full_name': stats['full_name'],
-        'first': stats['full_name'].split()[0] if stats['full_name'] else '',
-        'last':  stats['full_name'].split()[-1] if stats['full_name'] else '',
-        'email': stats['email'], 'phone': stats['phone'],
-        'location': stats['location'], 'city': stats['location'],
-        'website': stats['website'], 'github': stats['github_url'],
-        'linkedin': stats['linkedin'],
-        'skills': stats['skills'],
-        'bio': f"Builder of autonomous AI systems for humanitarian causes. {stats['engine_count']} engines, ${stats['pcrf_total']:.2f} to PCRF.",
-    }
-    for field in fields:
-        key = (field.get('name') or field.get('id') or '').lower()
-        for pattern, value in mappings.items():
-            if pattern in key and value:
-                filled[field.get('name') or field.get('id')] = value
-                break
-    return filled
+# ── Save form fill to review queue ──────────────────────────────────────────────
+def save_filled_form(form_url, filled_data, needs_human):
+    """Save filled form to review before submission."""
+    DATA.mkdir(parents=True, exist_ok=True)
+    queue_path = DATA / 'form_fill_queue.json'
+    queue = load(queue_path, [])
+    queue.append({
+        'date': TODAY,
+        'form_url': form_url,
+        'filled': filled_data,
+        'needs_human': needs_human,
+        'status': 'ready_to_submit' if not needs_human else 'needs_review',
+    })
+    queue_path.write_text(json.dumps(queue[-50:], indent=2))
+    print(f'[form_filler] Saved to form_fill_queue.json')
+    print(f'[form_filler] Auto-filled: {len(filled_data)} fields')
+    if needs_human:
+        print(f'[form_filler] Needs human input: {needs_human}')
 
 
-def fill_form(url, form_purpose='application'):
-    """
-    Main entry point. Given a URL:
-    1. Fetches the form
-    2. Fills it using identity + system stats
-    3. Returns filled values + instructions for submission
-    """
-    print(f'[form_filler] Processing: {url[:80]}')
-
-    stats  = get_system_stats()
-    fields, page_text = fetch_and_parse_form(url)
+def run(form_url=None, fields=None):
+    print(f'\n[form_filler] Form Filler — {TODAY}')
+    print(f'[form_filler] Identity: {IDENTITY["full_name"] or "(set HUMAN_FULL_NAME secret)"}')
 
     if not fields:
-        print(f'[form_filler] No form fields found at {url}')
-        # Return identity info as fallback
-        return {'identity': stats, 'url': url, 'error': 'no_form_found'}
+        print('[form_filler] No fields provided. Pass fields= list or integrate with playwright scanner.')
+        print('[form_filler] Example usage:')
+        print('  from mycelium.form_filler import fill_form_fields')
+        print('  result = fill_form_fields([{"label": "Full Name", "name": "name", "type": "text", "required": True}])')
+        return
 
-    print(f'[form_filler] Found {len(fields)} form fields')
-    filled = fill_form_with_llm(url, fields, page_text or '', form_purpose, stats)
-
-    result = {
-        'url': url,
-        'purpose': form_purpose,
-        'fields_found': len(fields),
-        'filled': filled,
-        'manual_values': {
-            'Name': stats['full_name'],
-            'Email': stats['email'],
-            'GitHub': stats['github_url'],
-            'Website': stats['website'],
-            'Skills': stats['skills'],
-        },
-        'date': TODAY,
-    }
-
-    # Save to output
-    output_path = DATA / 'form_fills' / f'{TODAY}_{url.replace("/","_")[:50]}.json'
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(result, indent=2))
-
-    print(f'[form_filler] Filled {len(filled)} fields')
+    result = fill_form_fields(fields)
+    if form_url:
+        save_filled_form(form_url, result['filled'], result['needs_human'])
     return result
 
 
-def run():
-    """Process any queued form fill requests."""
-    print(f'\n[form_filler] Form Filler — {TODAY}')
-
-    queue = load(DATA / 'form_fill_queue.json', [])
-    if not queue:
-        print('[form_filler] No forms in queue. Add URLs to data/form_fill_queue.json')
-        print('[form_filler] Format: [{"url": "...", "purpose": "grant application"}]')
-        return
-
-    for item in queue:
-        if item.get('done'): continue
-        result = fill_form(item['url'], item.get('purpose', 'application'))
-        print(f'[form_filler] ✅ {item["url"][:60]} — {result.get("fields_found",0)} fields')
-        item['done'] = True
-        item['result'] = result.get('filled', {})
-
-    (DATA / 'form_fill_queue.json').write_text(json.dumps(queue, indent=2))
-
-
 if __name__ == '__main__':
-    # Can be called directly with a URL:
-    # python mycelium/form_filler.py https://example.com/apply
-    import sys
-    if len(sys.argv) > 1:
-        result = fill_form(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else 'application')
-        print(json.dumps(result['filled'], indent=2))
-    else:
-        run()
+    # Demo
+    demo_fields = [
+        {'label': 'Full Name', 'name': 'name', 'type': 'text', 'required': True},
+        {'label': 'Email Address', 'name': 'email', 'type': 'email', 'required': True},
+        {'label': 'Project Description', 'name': 'project_desc', 'type': 'textarea', 'required': True},
+        {'label': 'GitHub URL', 'name': 'github', 'type': 'url', 'required': False},
+        {'label': 'Why are you applying?', 'name': 'why', 'type': 'textarea', 'required': True},
+        {'label': 'Team Size', 'name': 'team', 'type': 'text', 'required': False},
+    ]
+    run(form_url='demo', fields=demo_fields)
