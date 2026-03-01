@@ -4,51 +4,69 @@ Multi-Chain Wallet Configuration
 =================================
 Accepts every blockchain. Never turns away money.
 
-Wallet hierarchy (from your Phantom setup):
-  • Solana         — fastest, lowest fees, best for micropayments
-  • Ethereum        — most widely used, highest liquidity
-  • Base            — ETH L2, near-zero fees, fast
-  • Polygon         — ETH L2, very cheap, high volume
-  • Bitcoin Taproot — bc1p... modern, efficient, private
-  • Bitcoin SegWit  — bc1q... most compatible, widest support
-  • Sui             — high performance, growing ecosystem
-  • Monad           — EVM-compatible, emerging
-  • HyperEVM Lite   — Hyperliquid ecosystem
+Checks multiple possible secret names for each wallet so it works
+regardless of what you named it in GitHub Secrets. If you already
+have ETH_WALLET or PHANTOM_WALLET_ADDRESS set, this finds it.
 
-Strategy:
-  PRIMARY:   Solana (SOL/USDC) — instant, $0.001 fees, used by most platforms
-  SECONDARY: Base (USDC) — ETH ecosystem but cheap, Coinbase native
-  TERTIARY:  Bitcoin SegWit — widest compatibility, most recognized
-  REST:      All others accepted, auto-displayed based on what's available
+Your 9 wallets from Phantom:
+  Solana, Ethereum, Base, Polygon, Bitcoin Taproot,
+  Bitcoin SegWit, Sui, Monad, HyperEVM Lite
 
-For the compound/reinvestment split:
-  • Route to Solana by default (cheapest compounding)
-  • ETH/Base for EVM ecosystem interactions
-  • Bitcoin holds as long-term store
+EVM chains (Ethereum/Base/Polygon/Monad/HyperEVM) share one 0x... address.
+Set one, the rest auto-fill.
 
 NEVER store private keys here. Public addresses only.
 """
 
 import os
 
-# ── Load from environment (set via setup_wizard.py) ───────────────────────
+
+def _get(*env_names):
+    """Try multiple env var names, return first match."""
+    for name in env_names:
+        val = os.environ.get(name, '').strip()
+        if val:
+            return val
+    return ''
+
+
+# ── Load wallets — checks every reasonable secret name ────────────────────────
 WALLETS = {
-    'solana':         os.environ.get('WALLET_SOLANA', ''),
-    'ethereum':       os.environ.get('WALLET_ETHEREUM', ''),
-    'base':           os.environ.get('WALLET_BASE', ''),          # same address as ETH usually
-    'polygon':        os.environ.get('WALLET_POLYGON', ''),       # same address as ETH usually
-    'monad':          os.environ.get('WALLET_MONAD', ''),         # same address as ETH usually
-    'hyperevm':       os.environ.get('WALLET_HYPEREVM', ''),      # same address as ETH usually
-    'bitcoin_taproot':  os.environ.get('WALLET_BTC_TAPROOT', ''),  # bc1p...
-    'bitcoin_segwit':   os.environ.get('WALLET_BTC_SEGWIT', ''),   # bc1q...
-    'sui':            os.environ.get('WALLET_SUI', ''),
+    'solana': _get(
+        'WALLET_SOLANA', 'SOL_WALLET', 'SOLANA_WALLET', 'SOLANA_ADDRESS',
+    ),
+    'ethereum': _get(
+        'WALLET_ETHEREUM', 'ETH_WALLET', 'ETHEREUM_WALLET', 'ETHEREUM_ADDRESS',
+        'PHANTOM_WALLET_ADDRESS',  # older setup_wizard used this
+    ),
+    'base': _get(
+        'WALLET_BASE', 'BASE_WALLET',
+    ),
+    'polygon': _get(
+        'WALLET_POLYGON', 'MATIC_WALLET', 'POLYGON_WALLET',
+    ),
+    'monad': _get(
+        'WALLET_MONAD', 'MONAD_WALLET',
+    ),
+    'hyperevm': _get(
+        'WALLET_HYPEREVM', 'HYPEREVM_WALLET', 'HYPE_WALLET',
+    ),
+    'bitcoin_taproot': _get(
+        'WALLET_BTC_TAPROOT', 'BTC_TAPROOT', 'BITCOIN_TAPROOT',
+    ),
+    'bitcoin_segwit': _get(
+        'WALLET_BTC_SEGWIT', 'BTC_SEGWIT', 'BITCOIN_SEGWIT', 'BTC_WALLET',
+    ),
+    'sui': _get(
+        'WALLET_SUI', 'SUI_WALLET', 'SUI_ADDRESS',
+    ),
 }
 
-# EVM chains share the same address format (0x...)
-# If WALLET_ETHEREUM is set, auto-populate all EVM chains that aren't explicitly set
-_eth = WALLETS.get('ethereum', '')
+# EVM chains share the same 0x... address.
+# If ethereum is set, auto-fill any EVM chain that isn't explicitly configured.
+_eth = WALLETS['ethereum']
 for _chain in ('base', 'polygon', 'monad', 'hyperevm'):
-    if not WALLETS.get(_chain) and _eth:
+    if not WALLETS[_chain] and _eth:
         WALLETS[_chain] = _eth
 
 
@@ -63,7 +81,7 @@ CHAIN_META = {
         'priority': 1,
     },
     'base': {
-        'name': 'Base', 'symbol': 'ETH', 'stablecoin': 'USDC',
+        'name': 'Base', 'symbol': 'ETH/USDC', 'stablecoin': 'USDC',
         'avg_fee_usd': 0.01, 'finality_sec': 2,
         'best_for': 'Coinbase users, cheap ETH ecosystem, USDC',
         'explorer': 'https://basescan.org/address/{address}',
@@ -79,9 +97,9 @@ CHAIN_META = {
         'priority': 3,
     },
     'polygon': {
-        'name': 'Polygon', 'symbol': 'MATIC/POL', 'stablecoin': 'USDC',
+        'name': 'Polygon', 'symbol': 'POL', 'stablecoin': 'USDC',
         'avg_fee_usd': 0.01, 'finality_sec': 2,
-        'best_for': 'gaming, NFTs, high-volume micropayments',
+        'best_for': 'high-volume micropayments, Global South',
         'explorer': 'https://polygonscan.com/address/{address}',
         'qr_prefix': 'ethereum:{address}@137',
         'priority': 4,
@@ -134,45 +152,66 @@ def get_active_wallets():
     """Return all wallets that have an address configured."""
     return {chain: addr for chain, addr in WALLETS.items() if addr}
 
+
 def get_primary_wallet():
-    """Return the best wallet for routing. Prefers Solana for low fees."""
+    """Return best wallet for routing. Prefers Solana (lowest fees)."""
     for chain in ('solana', 'base', 'polygon', 'ethereum', 'bitcoin_segwit'):
         if WALLETS.get(chain):
             return chain, WALLETS[chain]
     return None, None
 
+
 def get_payment_page_data():
-    """
-    Return structured data for a payment/donation page.
-    Shows all active wallets sorted by priority.
-    """
+    """Structured data for payment/donation page. All active wallets by priority."""
     active = get_active_wallets()
     chains = []
     for chain, addr in active.items():
         meta = CHAIN_META.get(chain, {})
         chains.append({
-            'chain': chain,
-            'name': meta.get('name', chain),
-            'symbol': meta.get('symbol', ''),
-            'address': addr,
+            'chain':    chain,
+            'name':     meta.get('name', chain),
+            'symbol':   meta.get('symbol', ''),
+            'address':  addr,
             'explorer': meta.get('explorer', '').replace('{address}', addr),
-            'qr': meta.get('qr_prefix', '').replace('{address}', addr),
-            'fee': meta.get('avg_fee_usd', 0),
+            'qr':       meta.get('qr_prefix', '').replace('{address}', addr),
+            'fee':      meta.get('avg_fee_usd', 0),
             'best_for': meta.get('best_for', ''),
             'priority': meta.get('priority', 99),
         })
     chains.sort(key=lambda x: x['priority'])
     return chains
 
+
 def format_wallet_list_for_post():
-    """Format wallet list for a social post or email."""
+    """Short wallet list for social posts and emails."""
     active = get_active_wallets()
     if not active:
         return 'Wallets not yet configured.'
-    lines = ['Accepting on all chains:']
+    lines = ['Accepting crypto on all chains:']
     for chain in sorted(active.keys(), key=lambda c: CHAIN_META.get(c, {}).get('priority', 99)):
         meta = CHAIN_META.get(chain, {})
         addr = active[chain]
         short = addr[:6] + '...' + addr[-4:] if len(addr) > 12 else addr
         lines.append(f'  {meta.get("name", chain)} ({meta.get("symbol", "")}): {short}')
     return '\n'.join(lines)
+
+
+def diagnostics():
+    """Print which wallets are configured and from which secret names."""
+    print('\n[wallets] Configured wallets:')
+    active = get_active_wallets()
+    if not active:
+        print('  None configured yet. Run setup_wizard.py to add wallet addresses.')
+        return
+    for chain, addr in sorted(active.items(), key=lambda x: CHAIN_META.get(x[0], {}).get('priority', 99)):
+        meta = CHAIN_META.get(chain, {})
+        short = addr[:8] + '...' + addr[-6:] if len(addr) > 16 else addr
+        print(f'  ✅ {meta.get("name", chain):20s} {short}')
+    print(f'\n  Total: {len(active)}/9 chains active')
+    primary_chain, primary_addr = get_primary_wallet()
+    if primary_chain:
+        print(f'  Primary routing chain: {primary_chain}')
+
+
+if __name__ == '__main__':
+    diagnostics()
