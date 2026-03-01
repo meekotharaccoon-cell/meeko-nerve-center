@@ -43,8 +43,8 @@
     },
     {
       "check": "github_actions",
-      "ok": true,
-      "detail": "Latest: Perpetual Builder \u2014 None",
+      "ok": false,
+      "detail": "Latest: \ud83e\ude79 Self Healer \u2014 skipped",
       "failures": 0
     },
     {
@@ -62,9 +62,9 @@
     "content_performance": 2,
     "art_generation": 98,
     "signal_accuracy": 98,
-    "github_actions": 98,
+    "github_actions": 78,
     "social_queue": 98
   },
-  "failures": 1,
-  "passes": 8
+  "failures": 2,
+  "passes": 7
 }

@@ -2860,6 +2860,211 @@
       "subject": "[MeekoThaRaccoon/SolarPunk-Nexus] Run cancelled: pages build",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Node-002] Run cancelled: pages bu",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Build failed for optimistic-mindfulness",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Build failed for optimistic-mindfulness",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@notify.railway.app",
+      "subject": "Deployment crashed for SolarPunk-Registry in optimistic-mind",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk-Registry] Run failed: Deploy and ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Valentine\u2019s Day is coming. Let\u2019s boost your Shop",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hello@khanacademy.org",
+      "subject": "Khan Academy + Blooket + You = Gamified Learning \ud83c\udfae",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hello@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "brook \ud83e\udd79\ud83e\udef0\ud83e\udd19: This song brooo",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "triquetra@tiktokshop.com",
+      "subject": "Mike, unlock free delivery! \ud83d\ude9a",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@mail.perplexity.ai",
+      "subject": "Try Comet and work 10x faster",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "The End of Dashboards and Design Systems | Michal Malewicz",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Don\u2019t get stuck\u2014ask the experts.",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "hi@intro.co",
+      "subject": "Don\u2019t get stuck\u2014ask the experts.",
+      "action": "ignored_automated",
+      "reason": "auto prefix: hi@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@github.com",
+      "subject": "[GitHub] A third-party OAuth application has been added to y",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@digitalocean.com",
+      "subject": "DigitalOcean - Here's your receipt",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "\ufe0f and others viewed your profile",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "support@redbubblemail.com",
+      "subject": "Change to your login details",
+      "action": "ignored_automated",
+      "reason": "auto prefix: support@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Your Google Account was recovered successfully",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "no-reply@accounts.google.com",
+      "subject": "Security alert",
+      "action": "ignored_automated",
+      "reason": "blocked domain: google.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@gumroad.com",
+      "subject": "Your authentication token is 430814",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gumroad.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "noreply@medium.com",
+      "subject": "Real-Time Notifications: WebSockets vs SSE vs Firebase (And ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: noreply@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "team@info.digitalocean.com",
+      "subject": "[Getting started on DO] Part 1 of 4: Launch, Configure, and ",
+      "action": "ignored_automated",
+      "reason": "auto prefix: team@"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notification@service.tiktok.com",
+      "subject": "count rackula \ud83d\udda4 posted: dude it\u2019s not weird i swear",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "victorperton@centreforoptimism.com",
+      "subject": "Is Optimism the World\u2019s Most Valuable Commodity?",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run failed: pages buil",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-01",
+      "from": "notifications@github.com",
+      "subject": "[MeekoThaRaccoon/SolarPunk_Alpha_Bot] Run cancelled: pages b",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
     }
   ],
   "human_emails_total": 1,
