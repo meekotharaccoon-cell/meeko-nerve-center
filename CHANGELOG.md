@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-01 16:12 UTC  
+> Last updated: 2026-03-01 16:18 UTC  
 > Total commits tracked: 200
 
 ---
@@ -20,7 +20,6 @@
 - `2ea5aa6f` knowledge: API directory scan [2026-02-28]
 - `230b2df5` feat: max frequency (5min), network spreader, knowledge synthesizer, fork onboarding — the network multiplies itself
 - `9884438a` 🧠 knowledge update [2026-02-28]
-- `e0347e1f` knowledge: API directory scan [2026-02-28]
 
 **🤝 Community**
 - `c4cce2e6` products: add Product 3 — The Grant Hunter [full content]
@@ -40,7 +39,6 @@
 - `2380f921` feat: MASTER_CONTROLLER workflow (auto-runs all, retries failures), master_controller.py, self_healer_v2.py (reads own emails, fixes own bugs) — zero human workflow management
 - `7dc021ab` feat: perpetual builder (builds itself every 2h forever), email gateway (anyone emails = gets SolarPunk system), dedicated workflows
 - `1b1688ff` feat: parallel ingestion (8 agents), master trigger, secret scrubber, phone commands emailer
-- `60a5a75d` ✉️ email drafts [2026-02-28]
 
 **📊 Signals**
 - `5b08f72d` chore: fork tracker update [2026-03-01]
@@ -53,6 +51,7 @@
 - `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
 
 **📝 Documentation**
+- `20eea761` 📝 auto: changelog 2026-03-01
 - `98bdb262` 📝 auto: changelog 2026-03-01
 - `608a7ff0` 📝 auto: changelog 2026-03-01
 - `856e6adf` feat: top 5 system self-wants — output validator, long-term memory, peer network, self-documentation, financial intelligence
@@ -77,6 +76,7 @@
 - `2de460b0` feat: auto-evolved unhcr_data_inspector — UNHCR Refugee Data Inspector [2026-02-28]
 
 **• Other**
+- `ecef9800` wire: directives → three_d_brain synthesis
 - `2418388a` \U0001f338 perpetual: 2026-03-01 15:59 UTC
 - `ccb651ae` data: dex update [15:46]
 - `79d6cb3d` chore: update wiring_status.json [2026-03-01T15:44]
