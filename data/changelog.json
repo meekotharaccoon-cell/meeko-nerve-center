@@ -1,8 +1,22 @@
 {
-  "generated": "2026-03-01T11:05:50.032473+00:00",
+  "generated": "2026-03-01T11:06:31.383791+00:00",
   "total_commits": 200,
   "weeks": 1,
   "commits": [
+    {
+      "sha": "04eff536",
+      "date": "2026-03-01T06:06:23-05:00",
+      "week": "2026-W09",
+      "subject": "feat: inject three_d_brain.py as Phase 1.5 + add Notion sync as Phase 13 in MASTER_CONTROLLER",
+      "author": "Meeko"
+    },
+    {
+      "sha": "608a7ff0",
+      "date": "2026-03-01T11:05:50+00:00",
+      "week": "2026-W09",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-01",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "0bbfa9aa",
       "date": "2026-03-01T06:05:42-05:00",
@@ -338,20 +352,6 @@
       "week": "2026-W09",
       "subject": "chore: update wiring_status.json [2026-02-28T23:39]",
       "author": "meeko-system"
-    },
-    {
-      "sha": "82461d92",
-      "date": "2026-02-28T22:59:31+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-02-28 22:59 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "791f5659",
-      "date": "2026-02-28T22:51:33+00:00",
-      "week": "2026-W09",
-      "subject": "\ud83d\udcec newsletter [2026-W08]",
-      "author": "meeko-content"
     }
   ]
 }

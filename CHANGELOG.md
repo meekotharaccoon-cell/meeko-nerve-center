@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-01 11:05 UTC  
+> Last updated: 2026-03-01 11:06 UTC  
 > Total commits tracked: 200
 
 ---
@@ -28,7 +28,6 @@
 - `744aa82f` feat: investment_intelligence (crypto + congressional alpha + Kelly sizing), ethical_pesterer (corps/govs only), news_monitor (press pitching), sovereign_research (LLC/nonprofit/DAO docs), dashboard_data_generator
 - `7a57c522` feat: grant auto-submitter, press release engine, coalition builder, impact storyteller, competitor intelligence
 - `d96f6d19` feat: A/B testing, dependency monitor, backup engine, revenue optimizer, grant intelligence
-- `ed19f71b` feat: add PUBLIC PRESENCE phase — dashboard + SEO engines wired into cycle
 
 **📧 Outreach**
 - `6f43b80a` ✉️ email drafts [2026-03-01]
@@ -53,6 +52,7 @@
 - `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
 
 **📝 Documentation**
+- `608a7ff0` 📝 auto: changelog 2026-03-01
 - `856e6adf` feat: top 5 system self-wants — output validator, long-term memory, peer network, self-documentation, financial intelligence
 
 **⚙️ System**
@@ -72,9 +72,9 @@
 - `18c1bfdc` 🧠 auto: system state update 2026-02-28 00:25 UTC
 - `2de460b0` feat: auto-evolved unhcr_data_inspector — UNHCR Refugee Data Inspector [2026-02-28]
 - `ec51a0e5` 🧠 auto: system state update 2026-02-27 22:03 UTC
-- `e78bd636` 🧠 auto: system state update 2026-02-27 21:26 UTC
 
 **• Other**
+- `04eff536` feat: inject three_d_brain.py as Phase 1.5 + add Notion sync as Phase 13 in MASTER_CONTROLLER
 - `0bbfa9aa` feat: add three_d_brain.py — cross-dimensional intelligence engine (revenue × reach × impact)
 - `cea44a0a` chore: update wiring_status.json [2026-03-01T11:04]
 - `9024854b` feed: RSS update [2026-03-01]
