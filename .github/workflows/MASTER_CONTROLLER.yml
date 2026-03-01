@@ -32,6 +32,20 @@ jobs:
           git config user.email 'solarpunk@meeko-nerve-center'
           mkdir -p data content public
 
+      # ══════════════════════════════════════════════
+      # PHASE 0 — Read human directives from Notion
+      # You write, system listens. Closes the human loop.
+      # ══════════════════════════════════════════════
+      - name: Phase 0 — Notion Directives Reader
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/notion_directives_reader.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════
+      # PHASE 1 — Self-heal before anything else
+      # ══════════════════════════════════════════════
       - name: Phase 1 — Self-Healer
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
@@ -41,7 +55,11 @@ jobs:
         run: python mycelium/self_healer_v2.py
         continue-on-error: true
 
-      - name: Phase 1.5 — 3D Brain (NEW — cross-dimensional intelligence)
+      # ══════════════════════════════════════════════
+      # PHASE 1.5 — 3D Brain: revenue x reach x impact
+      # Synthesizes before intelligence gathering begins
+      # ══════════════════════════════════════════════
+      - name: Phase 1.5 — 3D Brain
         env:
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
@@ -53,46 +71,58 @@ jobs:
         run: python mycelium/three_d_brain.py
         continue-on-error: true
 
-      - name: Phase 2 — Workflow Health Monitor
+      # ══════════════════════════════════════════════
+      # PHASE 2 — Memory: synthesize ALL sources
+      # data/ + Notion observations + HF performance
+      # Feeds context to every phase that follows
+      # ══════════════════════════════════════════════
+      - name: Phase 2 — Long-Term Memory (v2 — reads Notion + HF)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python mycelium/long_term_memory.py
+        continue-on-error: true
+
+      - name: Phase 3 — Workflow Health Monitor
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/master_controller.py
         continue-on-error: true
 
-      - name: Phase 3a — World Intelligence
+      - name: Phase 4a — World Intelligence
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/world_intelligence.py
         continue-on-error: true
 
-      - name: Phase 3b — Congress Watcher
+      - name: Phase 4b — Congress Watcher
         env:
           QUIVER_API_KEY: ${{ secrets.QUIVER_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/congress_watcher.py
         continue-on-error: true
 
-      - name: Phase 3c — Crypto Signals
+      - name: Phase 4c — Crypto Signals
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/crypto_signal_engine.py
         continue-on-error: true
 
-      - name: Phase 4 — Investment Intelligence
+      - name: Phase 5 — Investment Intelligence
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/investment_intelligence.py
         continue-on-error: true
 
-      - name: Phase 5a — Art Generation
+      - name: Phase 6a — Art Generation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_USERNAME: ${{ secrets.HF_USERNAME }}
         run: python mycelium/art_cause_generator.py
         continue-on-error: true
 
-      - name: Phase 5b — Social Posting
+      - name: Phase 6b — Social Posting
         env:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
@@ -104,7 +134,7 @@ jobs:
         run: python mycelium/social_poster.py
         continue-on-error: true
 
-      - name: Phase 6 — Network Spreader (NO EMAIL)
+      - name: Phase 7 — Network Spreader (NO EMAIL)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
@@ -112,13 +142,13 @@ jobs:
         run: python mycelium/network_spreader.py
         continue-on-error: true
 
-      - name: Phase 7 — Grant Intelligence (NO EMAIL — saves to file only)
+      - name: Phase 8 — Grant Intelligence (saves to file only)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/grant_intelligence.py
         continue-on-error: true
 
-      - name: Phase 8 — Gumroad Revenue Check
+      - name: Phase 9 — Gumroad Revenue Check
         env:
           GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
@@ -126,31 +156,47 @@ jobs:
         run: python mycelium/gumroad_tracker.py
         continue-on-error: true
 
-      - name: Phase 9 — Perpetual Builder
+      - name: Phase 10 — Perpetual Builder
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/perpetual_builder.py
         continue-on-error: true
 
-      - name: Phase 10 — Loop Closer
+      - name: Phase 11 — Loop Closer
         run: python mycelium/loop_closer.py
         continue-on-error: true
 
-      - name: Phase 11 — Dashboard Generator
+      - name: Phase 12 — Dashboard Generator
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/dashboard_data_generator.py
         continue-on-error: true
 
-      - name: Phase 12 — Deep Self-Diagnostic
+      - name: Phase 13 — Deep Self-Diagnostic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/deep_diagnostic.py
         continue-on-error: true
 
-      - name: Phase 13 — Notion Sync (NEW — push state to command center)
+      # ══════════════════════════════════════════════
+      # PHASE 14 — HF Dataset Logger
+      # Log ALL outputs from this cycle as training data
+      # Closes the learning loop
+      # ══════════════════════════════════════════════
+      - name: Phase 14 — HF Dataset Logger (NEW — training data flywheel)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: python mycelium/hf_dataset_logger.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════
+      # PHASE 15 — Notion Sync
+      # Push everything back to command center
+      # ══════════════════════════════════════════════
+      - name: Phase 15 — Notion Sync
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
