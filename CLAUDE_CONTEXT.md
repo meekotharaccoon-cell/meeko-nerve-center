@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-02 15:45 UTC — fix: GUMROAD_TOKEN mismatch + fallback condition — products will now list*
+*Auto-updated by the system. Last update: 2026-03-02 17:23 UTC — knowledge: API directory scan [2026-03-02]*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
