@@ -1,21 +1,14 @@
 {
   "version": 1,
-  "updated": "2026-03-01",
+  "updated": "2026-03-02",
   "contexts": {
-    "crypto_signals": "The system has 0 signal accuracy, indicating a need for improvement in crypto signal performance. Recent data is limited, with 28 days of system operation.",
-    "content_engine": "No performance data is available yet to inform content creation, and no human tone preferences have been expressed.",
-    "press_outreach": "The press reply rate is unknown, with no data available to analyze response patterns.",
-    "grant_engine": "No grants have been submitted, and no priorities have been set by the human, providing a blank slate for grant strategy development.",
-    "idea_engine": "The idea engine is one of the strongest, with 24 total ideas generated, but no data on implementation rates or types of ideas that get implemented.",
-    "art_engine": "No data is available on art generation performance or cause alignment, requiring exploration and definition of artistic and causal goals.",
-    "social_poster": "No performance data exists to guide the best posting strategy, leaving room for experimentation and analysis.",
-    "email_engine": "Email patterns that work are unknown due to a lack of data, necessitating the collection of email interaction metrics.",
-    "general": "The system is 28 days old, with strongest engines in github pages, system health alerting, and idea generation. Human intent and strategic focus have not been expressed through directives or observations, providing an open landscape for development. The system's total dataset records are currently empty, indicating a need for data collection and integration to inform future decisions.",
-    "updated": "2026-03-01",
+    "general": "System age: 29 days. Focus on mission: ethical AI products, 70% PCRF, open source.",
+    "grant_engine": "System age: 29 days. Grants submitted: 0.",
+    "content_engine": "System age: 29 days. Optimize for engagement and mission alignment.",
+    "crypto_signals": "Focus on accuracy over volume.",
+    "updated": "2026-03-02",
     "synthesized_from": [
-      "data_files",
-      "notion",
-      "hf_dataset"
+      "data_files"
     ]
   },
   "patterns": [],
@@ -23,7 +16,7 @@
   "wins": [],
   "signals_accuracy": {
     "overall_accuracy": 0,
-    "updated": "2026-03-01"
+    "updated": "2026-03-02"
   },
   "content_patterns": {},
   "donor_patterns": {},
@@ -39,7 +32,7 @@
     "total_ideas_processed": 24,
     "total_signals_generated": 0,
     "total_art_generated": 0,
-    "system_age_days": 28,
+    "system_age_days": 29,
     "last_evolution_date": "",
     "strongest_engines": [
       "product_catalog",
