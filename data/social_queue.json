@@ -176,6 +176,39 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-02-4",
+      "text": "\ud83c\udf38 The SolarPunk job agent:\n\nEvery day, the system:\n  1. Scans Remotive.io for remote jobs\n  2. Scores each one 0-10 for fit\n  3. Writes honest cover letters (states openly that it's AI-assisted)\n  4. Queues applications for human review\n\nIt never lies about what it is.\nIt never pretends to be human.\nAll applications are legal and ethical.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#RemoteWork #AI #SolarPunk",
+      "template_idx": 4,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-02-2",
+      "text": "\ud83c\udf38 SolarPunk is:\n\n19 engines running in sequence\n9 crypto chains accepting payment\n10 products live on Gumroad + Etsy\n1 mission: humanitarian income generation\n$0/month to operate\n\nFull source code, AGPL license, free to fork:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#FreePalestine #OpenSource",
+      "template_idx": 2,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-02-8",
+      "text": "\ud83c\udf38 SolarPunk learns from itself.\n\nEvery engine output becomes training data on HuggingFace.\nEvery cycle the system gets slightly smarter.\nEvery problem it encounters teaches it how to fix itself.\n\nIt's not magic \u2014 it's a closed feedback loop:\nRun \u2192 Log \u2192 Learn \u2192 Improve \u2192 Run again\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#MachineLearning #SolarPunk #AI",
+      "template_idx": 8,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
@@ -184,6 +217,9 @@
     5,
     9,
     1,
-    3
+    3,
+    4,
+    2,
+    8
   ]
 }

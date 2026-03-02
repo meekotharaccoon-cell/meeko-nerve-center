@@ -1,7 +1,7 @@
 {
   "date": "2026-03-02",
-  "total": 3,
-  "human_required": 1,
+  "total": 4,
+  "human_required": 2,
   "auto_fixable": 2,
   "loops": [
     {
@@ -13,9 +13,17 @@
       "date_found": "2026-03-02"
     },
     {
+      "type": "grant_submission",
+      "priority": "HIGH",
+      "description": "Grant drafted but not submitted: NLnet Foundation \u2014 NGI Zero Core",
+      "action": "Submit at: https://nlnet.nl/core/",
+      "human_required": true,
+      "date_found": "2026-03-02"
+    },
+    {
       "type": "workflow_health",
       "priority": "HIGH",
-      "description": "System health RED: 64% (19 failing)",
+      "description": "System health RED: 62% (21 failing)",
       "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
       "human_required": false,
       "date_found": "2026-03-02"
@@ -23,7 +31,7 @@
     {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "87 unresolved diagnostic issues",
+      "description": "94 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
       "date_found": "2026-03-02"
