@@ -1,36 +1,32 @@
-name: 🕸️ Wiring Hub — Data Bus Update
+# PUSH TRIGGER REMOVED - was causing feedback loops.
+# Every MASTER_CONTROLLER commit touching mycelium/wiring_hub.py
+# would trigger this workflow, which commits, which triggers it again.
+# Now manual-only.
+
+name: Wiring Hub - Data Bus Update
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'mycelium/wiring_hub.py'
 
 jobs:
   update-wiring:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Update data bus
-        run: python mycelium/wiring_hub.py
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit data bus updates
+        run: python mycelium/wiring_hub.py
+      - name: Commit
         run: |
           git config --global user.email "wiring-hub@meeko-mycelium.local"
           git config --global user.name "Wiring Hub"
           git add data/ || true
-          git diff --staged --quiet || git commit -m "🕸️ wiring hub: data bus update $(date -u +%Y-%m-%dT%H:%M)Z"
+          git diff --staged --quiet || git commit -m "wiring hub: data bus update $(date -u +%Y-%m-%dT%H:%M)Z"
           git push || true
