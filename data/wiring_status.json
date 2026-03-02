@@ -1,15 +1,71 @@
 {
   "meta": {
-    "generated": "bootstrap",
-    "note": "Will be overwritten by heartbeat"
+    "timestamp": "2026-03-02T16:11:13.398773Z",
+    "generator": "wiring_hub.py",
+    "version": "2.0",
+    "organism": "meeko-mycelium"
+  },
+  "local": {
+    "services": {
+      "ollama": false,
+      "websocket": false,
+      "wizard": false,
+      "mqtt": false
+    },
+    "ollama_models": []
+  },
+  "github": {
+    "status": "live",
+    "forks": 0,
+    "stars": 1,
+    "watchers": 1,
+    "open_issues": 0,
+    "last_push": "2026-03-02T16:09:14Z",
+    "size_kb": 2667
+  },
+  "space": {
+    "iss_live": {
+      "lat": "8.9799",
+      "lon": "70.9625",
+      "timestamp": 1772467872
+    }
+  },
+  "network": {
+    "hostname": "runnervmnay03",
+    "local_ip": "10.1.1.103",
+    "tailscale_ip": null,
+    "tailscale_active": false
+  },
+  "payments": {
+    "gallery": {
+      "status": 200,
+      "live": true
+    },
+    "revenue": {
+      "status": 200,
+      "live": true
+    },
+    "proliferator": {
+      "status": 200,
+      "live": true
+    }
+  },
+  "system_state": {
+    "updated": "2026-03-02 15:45 UTC",
+    "last_commit": "fix: GUMROAD_TOKEN mismatch + fallback condition \u2014 products will now list",
+    "last_commit_date": "2026-03-02 10:45:00 -0500",
+    "tracked_files": 415,
+    "system": "meeko-nerve-center",
+    "status": "ACTIVE",
+    "gmail_secret": "MISSING",
+    "local_bridge": "NOT_YET_RUN",
+    "mcp_config": "NOT_YET_RUN"
   },
   "connections": {
-    "space_data": false,
-    "local_ollama": false,
-    "github_live": true,
-    "payments_live": false
-  },
-  "local": {},
-  "github": {},
-  "space": {}
+    "local_to_github": false,
+    "space_data_fresh": true,
+    "network_global": false,
+    "payments_live": true,
+    "email_layer": false
+  }
 }

@@ -1,7 +1,13 @@
 {
-  "generated": "bootstrap",
+  "timestamp": "2026-03-02T16:11:13.398773Z",
   "ollama_running": false,
-  "models": [],
+  "ollama_models": [],
   "github_forks": 0,
-  "github_stars": 0
+  "github_stars": 1,
+  "payments_live": true,
+  "email_enabled": false,
+  "iss_lat": "8.9799",
+  "iss_lon": "70.9625",
+  "tailscale": false,
+  "local_ip": "10.1.1.103"
 }
