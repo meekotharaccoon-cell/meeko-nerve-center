@@ -1,8 +1,106 @@
 {
-  "generated": "2026-03-02T15:54:40.763651+00:00",
+  "generated": "2026-03-02T19:05:55.293569+00:00",
   "total_commits": 200,
   "weeks": 2,
   "commits": [
+    {
+      "sha": "079da022",
+      "date": "2026-03-02T14:05:44-05:00",
+      "week": "2026-W10",
+      "subject": "feat: discord-bot.yml \u2014 workflow wiring DIS_APP_ID/KEY to discord_bridge.py",
+      "author": "Meeko"
+    },
+    {
+      "sha": "1b2e97de",
+      "date": "2026-03-02T19:05:41+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T19:05]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "98776c32",
+      "date": "2026-03-02T14:05:31-05:00",
+      "week": "2026-W10",
+      "subject": "feat: Discord bridge \u2014 DIS_APP_ID/PUBLIC_KEY now connected to system",
+      "author": "Meeko"
+    },
+    {
+      "sha": "45a8f911",
+      "date": "2026-03-02T18:06:10+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-02 18:06 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "0687efcc",
+      "date": "2026-03-02T17:32:35+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T17:32]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "d8b2009b",
+      "date": "2026-03-02T17:23:15+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 auto: system state update 2026-03-02 17:23 UTC",
+      "author": "Meeko Mycelium"
+    },
+    {
+      "sha": "ad9ce5db",
+      "date": "2026-03-02T17:18:53+00:00",
+      "week": "2026-W10",
+      "subject": "knowledge: API directory scan [2026-03-02]",
+      "author": "meeko-api-hunter"
+    },
+    {
+      "sha": "9bd7951b",
+      "date": "2026-03-02T17:18:14+00:00",
+      "week": "2026-W10",
+      "subject": "data: all API tools [2026-03-02]",
+      "author": "meeko-api-tools"
+    },
+    {
+      "sha": "4b66175a",
+      "date": "2026-03-02T16:14:26+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udf38 cycle [2026-03-02 16:14] \u2014 all 21 phases fired",
+      "author": "SolarPunk-MasterController"
+    },
+    {
+      "sha": "76d86906",
+      "date": "2026-03-02T16:11:13+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udc93 heartbeat: 2026-03-02 16:11 UTC",
+      "author": "Meeko Heartbeat"
+    },
+    {
+      "sha": "72358487",
+      "date": "2026-03-02T16:09:14+00:00",
+      "week": "2026-W10",
+      "subject": "knowledge: API directory scan [2026-03-02]",
+      "author": "meeko-api-hunter"
+    },
+    {
+      "sha": "c3977713",
+      "date": "2026-03-02T16:07:31+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-02 16:07 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "84148aaf",
+      "date": "2026-03-02T16:06:17+00:00",
+      "week": "2026-W10",
+      "subject": "knowledge: v2 harvest [2026-03-02]",
+      "author": "meeko-harvest-v2"
+    },
+    {
+      "sha": "92178fed",
+      "date": "2026-03-02T15:54:40+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-02",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "122d5fea",
       "date": "2026-03-02T10:54:29-05:00",
@@ -254,104 +352,6 @@
       "week": "2026-W10",
       "subject": "fix: gen_status nested f-string quotes (SyntaxError line 49)",
       "author": "Meeko"
-    },
-    {
-      "sha": "0e3863b2",
-      "date": "2026-03-02T07:24:24+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T07:24]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "385895fd",
-      "date": "2026-03-02T02:24:15-05:00",
-      "week": "2026-W10",
-      "subject": "fix: remove push trigger from wiring-hub-daily.yml (was causing commit feedback loops)",
-      "author": "Meeko"
-    },
-    {
-      "sha": "fa15c5fc",
-      "date": "2026-03-02T07:23:38+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 auto: system state update 2026-03-02 07:23 UTC",
-      "author": "Meeko Mycelium"
-    },
-    {
-      "sha": "fe9bea8d",
-      "date": "2026-03-02T02:23:28-05:00",
-      "week": "2026-W10",
-      "subject": "fix: wiring_hub uncommented section dividers (SyntaxError line 91)",
-      "author": "Meeko"
-    },
-    {
-      "sha": "4095d60e",
-      "date": "2026-03-02T06:56:51+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T06:56]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "200e619d",
-      "date": "2026-03-02T01:56:42-05:00",
-      "week": "2026-W10",
-      "subject": "feat: START_SOLARPUNK.bat - one file to run everything and watch for first dollar",
-      "author": "Meeko"
-    },
-    {
-      "sha": "84d23ea3",
-      "date": "2026-03-02T06:06:43+00:00",
-      "week": "2026-W10",
-      "subject": "ideas: engine cycle [] \u2014 tested/built",
-      "author": "meeko-idea-engine"
-    },
-    {
-      "sha": "144e884f",
-      "date": "2026-03-02T05:08:22+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T05:08]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "23892431",
-      "date": "2026-03-02T03:45:07+00:00",
-      "week": "2026-W10",
-      "subject": "ideas: engine cycle [] \u2014 tested/built",
-      "author": "meeko-idea-engine"
-    },
-    {
-      "sha": "2aa5c4c0",
-      "date": "2026-03-02T02:27:38+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udc93 heartbeat: 2026-03-02 02:27 UTC",
-      "author": "Meeko Heartbeat"
-    },
-    {
-      "sha": "edf7a9f8",
-      "date": "2026-03-02T02:24:24+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 orchestrator [2026-03-02]",
-      "author": "orchestrator"
-    },
-    {
-      "sha": "7a593a9c",
-      "date": "2026-03-02T02:20:47+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf38 cycle [2026-03-02 02:20] \u2014 all 21 phases fired",
-      "author": "SolarPunk-MasterController"
-    },
-    {
-      "sha": "7aef6ed1",
-      "date": "2026-03-02T02:17:38+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf38 cycle [2026-03-02 02:17] \u2014 all 21 phases fired",
-      "author": "SolarPunk-MasterController"
-    },
-    {
-      "sha": "e14c9ef2",
-      "date": "2026-03-02T02:08:40+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf0d content update [2026-03-02]",
-      "author": "meeko-content"
     }
   ]
 }

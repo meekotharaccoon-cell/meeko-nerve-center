@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-02 15:54 UTC  
+> Last updated: 2026-03-02 19:05 UTC  
 > Total commits tracked: 200
 
 ---
@@ -9,15 +9,23 @@
 ## Week of March 2, 2026
 
 **📚 Knowledge**
+- `ad9ce5db` knowledge: API directory scan [2026-03-02]
+- `72358487` knowledge: API directory scan [2026-03-02]
+- `84148aaf` knowledge: v2 harvest [2026-03-02]
 - `eb018bc0` knowledge: API directory scan [2026-03-02]
 - `f996e77b` knowledge: v2 harvest [2026-03-02]
 - `be60830f` knowledge: v2 harvest [2026-03-02]
+
+**📡 Social**
+- `079da022` feat: discord-bot.yml — workflow wiring DIS_APP_ID/KEY to discord_bridge.py
+- `98776c32` feat: Discord bridge — DIS_APP_ID/PUBLIC_KEY now connected to system
 
 **📊 Signals**
 - `122d5fea` fix: crypto_signal_engine.py -> crypto_signals.py (wrong filename, Phase 5c)
 - `6bdefa0f` chore: fork tracker update [2026-03-02]
 
 **🌹 Art & Gallery**
+- `76d86906` 💓 heartbeat: 2026-03-02 16:11 UTC
 - `ebe0ca1f` fix: GUMROAD_TOKEN mismatch + fallback condition — products will now list
 - `200e619d` feat: START_SOLARPUNK.bat - one file to run everything and watch for first dollar
 - `2aa5c4c0` 💓 heartbeat: 2026-03-02 02:27 UTC
@@ -34,9 +42,11 @@
 - `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
 
 **📝 Documentation**
+- `92178fed` 📝 auto: changelog 2026-03-02
 - `2f43a475` 📝 auto: changelog 2026-03-02
 
 **⚙️ System**
+- `d8b2009b` 🧠 auto: system state update 2026-03-02 17:23 UTC
 - `131da4e9` 🧠 auto: system state update 2026-03-02 15:45 UTC
 - `0aec208b` auto: gen 23
 - `c75bac6a` 🧠 auto: system state update 2026-03-02 07:26 UTC
@@ -46,6 +56,12 @@
 - `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
 
 **• Other**
+- `1b2e97de` chore: update wiring_status.json [2026-03-02T19:05]
+- `45a8f911` \U0001f338 perpetual: 2026-03-02 18:06 UTC
+- `0687efcc` chore: update wiring_status.json [2026-03-02T17:32]
+- `9bd7951b` data: all API tools [2026-03-02]
+- `4b66175a` 🌸 cycle [2026-03-02 16:14] — all 21 phases fired
+- `c3977713` \U0001f338 perpetual: 2026-03-02 16:07 UTC
 - `855e269f` 🧠 3d-brain state [2026-03-02]
 - `7ea2401e` 🌸 cycle [2026-03-02 14:59] — all 21 phases fired
 - `ec0ea9ec` data: dex update [14:32]
@@ -104,7 +120,6 @@
 - `6f43b80a` ✉️ email drafts [2026-03-01]
 - `737f3936` products: add Product 2 — Autonomous Email Responder [full content]
 - `00caa3a2` 🔧 Complete email system rebuild (v3 strict), deep self-diagnostic, Gumroad tracker
-- `53bc9770` 🚨 EMERGENCY: Disable ALL scheduled workflows — email system rebuild in progress
 
 **📊 Signals**
 - `5b08f72d` chore: fork tracker update [2026-03-01]
@@ -230,19 +245,6 @@
 - `68f8b1c4` chore: update wiring_status.json [2026-02-28T22:48]
 - `d46b82c7` chore: update wiring_status.json [2026-02-28T22:07]
 - `1d677626` chore: update wiring_status.json [2026-02-28T22:04]
-- `ec1f1ad6` \U0001f338 perpetual: 2026-02-28 21:55 UTC
-- `622cc090` \U0001f338 perpetual: 2026-02-28 21:41 UTC
-- `069bc27a` data: dex update [21:39]
-- `6e1ebdeb` chore: update wiring_status.json [2026-02-28T21:39]
-- `5dc2035a` \U0001f338 perpetual: 2026-02-28 21:01 UTC
-- `791cdc3a` data: dex update [20:50]
-- `8a8b0eff` chore: update wiring_status.json [2026-02-28T20:49]
-- `28e2f208` \U0001f338 perpetual: 2026-02-28 19:53 UTC
-- `9e4df50e` data: dex update [19:39]
-- `9209dab7` \U0001f338 perpetual: 2026-02-28 19:38 UTC
-- `2d0bfd6a` chore: update wiring_status.json [2026-02-28T19:38]
-- `62d9accf` 🌸 SolarPunk cycle [2026-02-28 19:00] — 14 files
-- `fcd70ef1` data: dex update [18:59]
 
 ---
 
