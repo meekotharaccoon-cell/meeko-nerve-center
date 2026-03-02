@@ -45,17 +45,17 @@
       "check": "github_actions",
       "ok": true,
       "detail": "Latest: Perpetual Builder \u2014 None",
-      "failures": 3
+      "failures": 4
     },
     {
       "check": "social_queue",
       "ok": true,
-      "detail": "33 posts queued in last 3 days (33 total)",
+      "detail": "35 posts queued in last 3 days (35 total)",
       "action": null
     }
   ],
   "confidence": {
-    "github_pages": 40,
+    "github_pages": 32,
     "system_health_alerting": 98,
     "idea_engine": 98,
     "world_intelligence": 98,
