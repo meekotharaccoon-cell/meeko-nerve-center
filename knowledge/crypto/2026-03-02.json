@@ -4,82 +4,82 @@
     {
       "name": "Bitcoin",
       "symbol": "BTC",
-      "price": 66530,
-      "change_24h": -2.22544,
-      "market_cap": 1330787249726,
-      "volume": 43389588314
+      "price": 65911,
+      "change_24h": -1.87757,
+      "market_cap": 1316036072882,
+      "volume": 42778205901
     },
     {
       "name": "Ethereum",
       "symbol": "ETH",
-      "price": 1963.64,
-      "change_24h": -3.68393,
-      "market_cap": 237063512488,
-      "volume": 23044584264
+      "price": 1938.42,
+      "change_24h": -3.40892,
+      "market_cap": 233612271179,
+      "volume": 20328202457
     },
     {
       "name": "Tether",
       "symbol": "USDT",
-      "price": 0.999975,
-      "change_24h": -0.04953,
-      "market_cap": 183630134587,
-      "volume": 72229916712
+      "price": 0.999856,
+      "change_24h": -0.02246,
+      "market_cap": 183624483984,
+      "volume": 69087262991
     },
     {
       "name": "BNB",
       "symbol": "BNB",
-      "price": 622.32,
-      "change_24h": -0.41153,
-      "market_cap": 84814846062,
-      "volume": 1303727154
+      "price": 616.25,
+      "change_24h": -1.45071,
+      "market_cap": 83929444917,
+      "volume": 1187096229
     },
     {
       "name": "XRP",
       "symbol": "XRP",
-      "price": 1.37,
-      "change_24h": -3.39032,
-      "market_cap": 83588157274,
-      "volume": 3115195552
+      "price": 1.35,
+      "change_24h": -3.66658,
+      "market_cap": 82321951537,
+      "volume": 2741263989
     },
     {
       "name": "USDC",
       "symbol": "USDC",
-      "price": 0.999902,
-      "change_24h": -0.00125,
-      "market_cap": 75190558938,
-      "volume": 5224093970
+      "price": 0.999876,
+      "change_24h": -0.01162,
+      "market_cap": 75122269314,
+      "volume": 8759951466
     },
     {
       "name": "Solana",
       "symbol": "SOL",
-      "price": 84.64,
-      "change_24h": -3.36693,
-      "market_cap": 48201288441,
-      "volume": 4874609528
+      "price": 82.92,
+      "change_24h": -4.28936,
+      "market_cap": 47208317643,
+      "volume": 4391197631
     },
     {
       "name": "TRON",
       "symbol": "TRX",
-      "price": 0.281814,
-      "change_24h": -0.48734,
-      "market_cap": 26698654562,
-      "volume": 393098568
+      "price": 0.281504,
+      "change_24h": -0.13099,
+      "market_cap": 26666928832,
+      "volume": 381654631
     },
     {
       "name": "Figure Heloc",
       "symbol": "FIGR_HELOC",
       "price": 1.029,
-      "change_24h": 0.0,
+      "change_24h": null,
       "market_cap": 15908254518,
       "volume": 286520
     },
     {
       "name": "Dogecoin",
       "symbol": "DOGE",
-      "price": 0.093397,
-      "change_24h": -3.20937,
-      "market_cap": 15775262731,
-      "volume": 1322559960
+      "price": 0.091717,
+      "change_24h": -3.37314,
+      "market_cap": 15482859335,
+      "volume": 1114190419
     }
   ]
 }
