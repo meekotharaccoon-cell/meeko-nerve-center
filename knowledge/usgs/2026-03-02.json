@@ -1,0 +1,86 @@
+{
+  "date": "2026-03-02",
+  "count": 10,
+  "quakes": [
+    {
+      "place": "Fiji region",
+      "mag": 6.3,
+      "time": "2026-03-01T05:44",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s16b"
+    },
+    {
+      "place": "21 km SW of Ibusuki, Japan",
+      "mag": 5.5,
+      "time": "2026-03-01T09:00",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s17q"
+    },
+    {
+      "place": "north of Ascension Island",
+      "mag": 5.2,
+      "time": "2026-03-01T18:36",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s19x"
+    },
+    {
+      "place": "43 km NNE of Calama, Chile",
+      "mag": 5.1,
+      "time": "2026-03-01T20:03",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ak"
+    },
+    {
+      "place": "northern Mid-Atlantic Ridge",
+      "mag": 5.1,
+      "time": "2026-03-01T16:41",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s19b"
+    },
+    {
+      "place": "133 km SE of Vilyuchinsk, Russia",
+      "mag": 5,
+      "time": "2026-03-01T19:38",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ad"
+    },
+    {
+      "place": "South Sandwich Islands region",
+      "mag": 4.9,
+      "time": "2026-03-01T03:41",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s15y"
+    },
+    {
+      "place": "South Sandwich Islands region",
+      "mag": 4.9,
+      "time": "2026-03-01T19:41",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1af"
+    },
+    {
+      "place": "2 km E of Arboledas, Colombia",
+      "mag": 4.9,
+      "time": "2026-03-01T10:12",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s17z"
+    },
+    {
+      "place": "113 km SE of Hihifo, Tonga",
+      "mag": 4.9,
+      "time": "2026-03-01T06:38",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s173"
+    }
+  ]
+}
