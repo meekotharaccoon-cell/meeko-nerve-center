@@ -1,6 +1,6 @@
 {
   "date": "2026-03-02",
-  "timestamp": "2026-03-02T01:38:18.972974",
+  "timestamp": "2026-03-02T02:17:23.267247",
   "summary": {
     "ok": 13,
     "fixed": 0,
@@ -931,7 +931,7 @@
     {
       "check": "failing:community-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842635",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264164",
       "fixable": false,
       "fix_applied": false
     },
@@ -943,23 +943,16 @@
       "fix_applied": false
     },
     {
-      "check": "failing:daily-full-cycle.yml",
-      "status": "fail",
-      "detail": "Daily Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22526954021",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "failing:email-drafter.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843088",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-gateway.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842972",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264345",
       "fixable": false,
       "fix_applied": false
     },
@@ -973,7 +966,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843211",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263767",
       "fixable": false,
       "fix_applied": false
     },
@@ -987,7 +980,7 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843331",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050",
       "fixable": false,
       "fix_applied": false
     },
@@ -1001,14 +994,14 @@
     {
       "check": "failing:send-grants.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842720",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264235",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842833",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263917",
       "fixable": false,
       "fix_applied": false
     },
@@ -1044,6 +1037,13 @@
       "check": "failing:youtube-shorts-writer.yml",
       "status": "fail",
       "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22539984700",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:dynamic/pages/pages-build-deployment",
+      "status": "fail",
+      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558523608",
       "fixable": false,
       "fix_applied": false
     },
@@ -1227,7 +1227,7 @@
     {
       "check": "failing:community-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842635",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264164",
       "fixable": false,
       "fix_applied": false
     },
@@ -1239,23 +1239,16 @@
       "fix_applied": false
     },
     {
-      "check": "failing:daily-full-cycle.yml",
-      "status": "fail",
-      "detail": "Daily Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22526954021",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "failing:email-drafter.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843088",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-gateway.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842972",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264345",
       "fixable": false,
       "fix_applied": false
     },
@@ -1269,7 +1262,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843211",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263767",
       "fixable": false,
       "fix_applied": false
     },
@@ -1283,7 +1276,7 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843331",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050",
       "fixable": false,
       "fix_applied": false
     },
@@ -1297,14 +1290,14 @@
     {
       "check": "failing:send-grants.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842720",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264235",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842833",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263917",
       "fixable": false,
       "fix_applied": false
     },
@@ -1340,6 +1333,13 @@
       "check": "failing:youtube-shorts-writer.yml",
       "status": "fail",
       "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22539984700",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:dynamic/pages/pages-build-deployment",
+      "status": "fail",
+      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558523608",
       "fixable": false,
       "fix_applied": false
     }
