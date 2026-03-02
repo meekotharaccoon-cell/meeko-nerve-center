@@ -1,6 +1,9 @@
 {
   "date": "2026-03-02",
-  "position": null,
+  "position": {
+    "longitude": "130.5633",
+    "latitude": "47.4059"
+  },
   "crew": [
     {
       "craft": "ISS",
