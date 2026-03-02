@@ -136,6 +136,57 @@
       "moved": 0,
       "moved_files": [],
       "errors": []
+    },
+    {
+      "at": "2026-03-01T12:00:02.678953+00:00",
+      "moved": 3,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260228_181234",
+          "to": "BACKUPS\\BACKUP_20260228_181234",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260228_224811",
+          "to": "BACKUPS\\BACKUP_20260228_224811",
+          "reason": "backup directory"
+        },
+        {
+          "file": "daily_report_20260228.json",
+          "to": "Reports\\daily_report_20260228.json",
+          "reason": "report file"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-03-01T18:21:38.836009+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-03-01T18:21:38.954435+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-03-02T01:55:13.209788+00:00",
+      "moved": 2,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260301_133146",
+          "to": "BACKUPS\\BACKUP_20260301_133146",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260301_205500",
+          "to": "BACKUPS\\BACKUP_20260301_205500",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
     }
   ]
 }

@@ -1,8 +1,24 @@
 {
-  "generated": "2026-02-28T23:03:42.073347+00:00",
+  "generated": "2026-03-02T01:55:13.197834+00:00",
   "assets": {
     "C:\\Users\\meeko\\Desktop\\ultimateai_knowledge.db": null,
-    "C:\\Users\\meeko\\Desktop\\MYCELIUM_KNOWLEDGE_BASE.json": null,
+    "C:\\Users\\meeko\\Desktop\\MYCELIUM_KNOWLEDGE_BASE.json": {
+      "exists": true,
+      "size_kb": 6,
+      "modified": "2026-03-01T20:55:00.430862",
+      "keys": [
+        "system",
+        "version",
+        "generated",
+        "mission",
+        "github_organism",
+        "local_stack",
+        "github_secrets_needed",
+        "email_contacts_verified",
+        "email_wrong_addresses",
+        "revenue_streams_active"
+      ]
+    },
     "C:\\Users\\meeko\\Desktop\\ultimateai_events.jsonl": null,
     "C:\\Users\\meeko\\Desktop\\ultimateai_pip_map.json": null,
     "C:\\Users\\meeko\\Desktop\\GUMROAD_PRODUCT_LISTINGS.txt": null,
@@ -23,8 +39,26 @@
   },
   "local_scripts": [
     {
+      "name": "CLEANUP_AND_BRIDGE.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
       "name": "DAILY_LAUNCH.py",
       "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DO_WHAT_YOU_CAN.py",
+      "size_kb": 16,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LOCAL_GITHUB_BRIDGE.py",
+      "size_kb": 5,
       "in_repo": false,
       "recommend": "push to repo"
     },
@@ -37,8 +71,26 @@
   ],
   "orphan_scripts": [
     {
+      "name": "CLEANUP_AND_BRIDGE.py",
+      "size_kb": 19,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
       "name": "DAILY_LAUNCH.py",
       "size_kb": 3,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "DO_WHAT_YOU_CAN.py",
+      "size_kb": 16,
+      "in_repo": false,
+      "recommend": "push to repo"
+    },
+    {
+      "name": "LOCAL_GITHUB_BRIDGE.py",
+      "size_kb": 5,
       "in_repo": false,
       "recommend": "push to repo"
     },
