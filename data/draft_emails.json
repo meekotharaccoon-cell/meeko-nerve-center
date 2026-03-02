@@ -1,48 +1,49 @@
 {
   "generated": "2026-03-01",
-  "count": 7,
+  "note": "These are DRAFTS only. Do NOT auto-send. Human reviews and sends manually.",
+  "count": 6,
   "emails": [
     {
       "category": "charity_partnership",
       "priority": "high",
       "to": "info@pcrf.net",
-      "subject": "Autonomous open-source art platform donating 70% to PCRF \u2014 partnership inquiry"
+      "subject": "Autonomous open-source platform donating 70% of revenue to PCRF — partnership inquiry",
+      "status": "draft"
     },
     {
       "category": "grant",
       "priority": "high",
       "to": "foundation@nlnet.nl",
-      "subject": "NGI0 grant inquiry \u2014 autonomous humanitarian AI, AGPL, zero-cost infrastructure"
+      "subject": "NGI0 grant inquiry — autonomous humanitarian AI, AGPL, zero-cost infrastructure",
+      "status": "draft"
     },
     {
       "category": "grant",
       "priority": "medium",
       "to": "awards@mozillafoundation.org",
-      "subject": "Mozilla Technology Fund inquiry \u2014 open-source autonomous humanitarian AI"
+      "subject": "Mozilla Technology Fund inquiry — open-source autonomous humanitarian AI",
+      "status": "draft"
     },
     {
       "category": "press",
-      "priority": "medium",
+      "priority": "high",
       "to": "tips@404media.co",
-      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
+      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month",
+      "status": "draft"
     },
     {
       "category": "press",
-      "priority": "medium",
-      "to": "wired@condenast.com",
-      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
+      "priority": "high",
+      "to": "tips@wired.com",
+      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month",
+      "status": "draft"
     },
     {
       "category": "press",
       "priority": "medium",
       "to": "tips@restofworld.org",
-      "subject": "Story tip: Self-healing autonomous AI raises money for Gaza at $0/month"
-    },
-    {
-      "category": "community",
-      "priority": "medium",
-      "to": "[paste your community link / Discord / forum post]",
-      "subject": "Built a self-healing autonomous AI system at $0/month \u2014 full source on GitHub"
+      "subject": "Story tip: Open-source autonomous AI for humanitarian income generation",
+      "status": "draft"
     }
   ]
 }
