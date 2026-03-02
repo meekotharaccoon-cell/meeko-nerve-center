@@ -1,14 +1,20 @@
 {
   "date": "2026-03-02",
-  "timestamp": "2026-03-02T08:01:37.135764",
+  "timestamp": "2026-03-02T14:58:30.096373",
   "total": 57,
-  "passing": 35,
+  "passing": 37,
   "failing": 18,
-  "running": 3,
+  "running": 1,
   "retried": 10,
-  "health_pct": 61,
+  "health_pct": 64,
   "color": "RED",
   "failures": [
+    {
+      "name": "\ud83c\udf10 All API Tools",
+      "file": "api-tools.yml",
+      "id": 22566742231,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566742231"
+    },
     {
       "name": "\ud83d\udd0e Asset Scanner",
       "file": "asset-scan.yml",
@@ -18,8 +24,8 @@
     {
       "name": ".github/workflows/community-outreach.yml",
       "file": "community-outreach.yml",
-      "id": 22565881218,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881218"
+      "id": 22580176438,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580176438"
     },
     {
       "name": "\ud83c\udfdb\ufe0f Congress Stock Watcher",
@@ -34,22 +40,16 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22560480390"
     },
     {
-      "name": "\ud83d\udcc8 DEX Monitor",
-      "file": "dex-monitor.yml",
-      "id": 22566584779,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566584779"
-    },
-    {
       "name": ".github/workflows/email-drafter.yml",
       "file": "email-drafter.yml",
-      "id": 22565881549,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881549"
+      "id": 22580176750,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580176750"
     },
     {
       "name": ".github/workflows/email-gateway.yml",
       "file": "email-gateway.yml",
-      "id": 22565880627,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880627"
+      "id": 22580178051,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580178051"
     },
     {
       "name": "\ud83c\udf31 Evolution Engine",
@@ -60,8 +60,8 @@
     {
       "name": ".github/workflows/feedback-loop.yml",
       "file": "feedback-loop.yml",
-      "id": 22565881368,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881368"
+      "id": 22580178382,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580178382"
     },
     {
       "name": "\ud83c\udf0d Full Daily Cycle",
@@ -72,8 +72,8 @@
     {
       "name": ".github/workflows/jekyll-gh-pages.yml",
       "file": "jekyll-gh-pages.yml",
-      "id": 22565881077,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881077"
+      "id": 22580177779,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580177779"
     },
     {
       "name": "\ud83e\udde0 Knowledge Harvester",
@@ -84,14 +84,14 @@
     {
       "name": ".github/workflows/send-grants.yml",
       "file": "send-grants.yml",
-      "id": 22565880795,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880795"
+      "id": 22580177019,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580177019"
     },
     {
       "name": ".github/workflows/send-outreach.yml",
       "file": "send-outreach.yml",
-      "id": 22565880925,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880925"
+      "id": 22580177368,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580177368"
     },
     {
       "name": "\ud83d\udcca Signal Tracker",
@@ -112,10 +112,10 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509111934"
     },
     {
-      "name": "\ud83c\udfac YouTube Shorts Writer",
-      "file": "youtube-shorts-writer.yml",
-      "id": 22539984700,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22539984700"
+      "name": "pages-build-deployment",
+      "file": "dynamic/pages/pages-build-deployment",
+      "id": 22580545782,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22580545782"
     }
   ]
 }

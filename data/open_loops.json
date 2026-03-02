@@ -15,7 +15,7 @@
     {
       "type": "workflow_health",
       "priority": "HIGH",
-      "description": "System health RED: 61% (18 failing)",
+      "description": "System health RED: 64% (18 failing)",
       "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
       "human_required": false,
       "date_found": "2026-03-02"
@@ -23,7 +23,7 @@
     {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "73 unresolved diagnostic issues",
+      "description": "80 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
       "date_found": "2026-03-02"

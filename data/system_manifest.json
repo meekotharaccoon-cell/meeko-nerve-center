@@ -622,69 +622,12 @@
     }
   },
   "data_flow": {
-    "data/grant_database.json": {
+    "data/congress_trades.json": {
       "written_by": [
-        "grant_intelligence"
-      ],
-      "read_by": [],
-      "exists_on_disk": true
-    },
-    "data/fork_distribution_queue.json": {
-      "written_by": [
-        "humanitarian_fork_distributor"
+        "congress_watcher"
       ],
       "read_by": [],
       "exists_on_disk": false
-    },
-    "data/etsy_sales.json": {
-      "written_by": [
-        "etsy_bridge"
-      ],
-      "read_by": [
-        "revenue_router"
-      ],
-      "exists_on_disk": true
-    },
-    "data/visual_queue.json": {
-      "written_by": [
-        "art_cause_generator"
-      ],
-      "read_by": [],
-      "exists_on_disk": true
-    },
-    "data/email_reply_dedup.json": {
-      "written_by": [
-        "email_gateway"
-      ],
-      "read_by": [
-        "email_gateway"
-      ],
-      "exists_on_disk": true
-    },
-    "data/social_stats.json": {
-      "written_by": [
-        "social_poster"
-      ],
-      "read_by": [],
-      "exists_on_disk": false
-    },
-    "data/three_d_brain.json": {
-      "written_by": [
-        "three_d_brain"
-      ],
-      "read_by": [
-        "grant_intelligence"
-      ],
-      "exists_on_disk": true
-    },
-    "data/connections.json": {
-      "written_by": [
-        "network_spreader"
-      ],
-      "read_by": [
-        "network_spreader"
-      ],
-      "exists_on_disk": true
     },
     "data/self_improvement_queue.json": {
       "written_by": [
@@ -695,6 +638,13 @@
       ],
       "exists_on_disk": false
     },
+    "data/jobs_today.json": {
+      "written_by": [
+        "job_agent"
+      ],
+      "read_by": [],
+      "exists_on_disk": true
+    },
     "data/social_queue.json": {
       "written_by": [
         "social_content_engine"
@@ -702,17 +652,37 @@
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/network_spread_log.json": {
+    "data/three_d_brain.json": {
       "written_by": [
-        "network_spreader"
+        "three_d_brain"
+      ],
+      "read_by": [
+        "grant_intelligence"
+      ],
+      "exists_on_disk": true
+    },
+    "data/art_pairs.json": {
+      "written_by": [
+        "art_cause_generator"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/errors.json": {
-      "written_by": [],
+    "data/world_state.json": {
+      "written_by": [
+        "world_intelligence"
+      ],
       "read_by": [
-        "self_healer_v2"
+        "social_poster"
+      ],
+      "exists_on_disk": true
+    },
+    "data/email_reply_dedup.json": {
+      "written_by": [
+        "email_gateway"
+      ],
+      "read_by": [
+        "email_gateway"
       ],
       "exists_on_disk": true
     },
@@ -728,18 +698,55 @@
       ],
       "exists_on_disk": true
     },
-    "data/hf_dataset_log.jsonl": {
+    "data/evolve_history.json": {
       "written_by": [
-        "hf_dataset_logger"
+        "perpetual_builder"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/heal_log.md": {
+    "data/network_spread_log.json": {
       "written_by": [
-        "self_healer_v2"
+        "network_spreader"
       ],
       "read_by": [],
+      "exists_on_disk": true
+    },
+    "data/social_stats.json": {
+      "written_by": [
+        "social_poster"
+      ],
+      "read_by": [],
+      "exists_on_disk": false
+    },
+    "data/system_manifest.json": {
+      "written_by": [],
+      "read_by": [
+        "social_content_engine"
+      ],
+      "exists_on_disk": true
+    },
+    "data/connections.json": {
+      "written_by": [
+        "network_spreader"
+      ],
+      "read_by": [
+        "network_spreader"
+      ],
+      "exists_on_disk": true
+    },
+    "data/financial_report.json": {
+      "written_by": [
+        "revenue_router"
+      ],
+      "read_by": [],
+      "exists_on_disk": true
+    },
+    "data/errors.json": {
+      "written_by": [],
+      "read_by": [
+        "self_healer_v2"
+      ],
       "exists_on_disk": true
     },
     "data/compound_tracker.json": {
@@ -749,18 +756,41 @@
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/job_applications.json": {
+    "data/fork_requests.json": {
+      "written_by": [],
+      "read_by": [
+        "humanitarian_fork_distributor"
+      ],
+      "exists_on_disk": false
+    },
+    "data/email_gateway_log.json": {
       "written_by": [
-        "job_agent"
+        "email_gateway"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/investment_signals.json": {
+    "data/market_context.json": {
       "written_by": [
         "crypto_signal_engine"
       ],
       "read_by": [],
+      "exists_on_disk": true
+    },
+    "data/bottleneck_report.json": {
+      "written_by": [
+        "self_improver"
+      ],
+      "read_by": [],
+      "exists_on_disk": false
+    },
+    "data/etsy_sales.json": {
+      "written_by": [
+        "etsy_bridge"
+      ],
+      "read_by": [
+        "revenue_router"
+      ],
       "exists_on_disk": true
     },
     "data/gumroad_sales.json": {
@@ -774,37 +804,44 @@
       ],
       "exists_on_disk": true
     },
-    "data/jobs_today.json": {
+    "data/visual_queue.json": {
       "written_by": [
-        "job_agent"
+        "art_cause_generator"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/bottleneck_report.json": {
+    "data/investment_signals.json": {
       "written_by": [
-        "self_improver"
-      ],
-      "read_by": [],
-      "exists_on_disk": false
-    },
-    "data/email_gateway_log.json": {
-      "written_by": [
-        "email_gateway"
+        "crypto_signal_engine"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/financial_report.json": {
+    "data/grant_database.json": {
       "written_by": [
-        "revenue_router"
+        "grant_intelligence"
       ],
       "read_by": [],
       "exists_on_disk": true
     },
-    "data/evolve_history.json": {
+    "data/heal_report.json": {
       "written_by": [
-        "perpetual_builder"
+        "self_healer_v2"
+      ],
+      "read_by": [],
+      "exists_on_disk": true
+    },
+    "data/validation_failures.json": {
+      "written_by": [],
+      "read_by": [
+        "self_healer_v2"
+      ],
+      "exists_on_disk": true
+    },
+    "data/heal_log.md": {
+      "written_by": [
+        "self_healer_v2"
       ],
       "read_by": [],
       "exists_on_disk": true
@@ -820,25 +857,23 @@
       ],
       "exists_on_disk": false
     },
-    "data/world_state.json": {
+    "data/hf_dataset_log.jsonl": {
       "written_by": [
-        "world_intelligence"
+        "hf_dataset_logger"
       ],
-      "read_by": [
-        "social_poster"
-      ],
+      "read_by": [],
       "exists_on_disk": true
     },
-    "data/validation_failures.json": {
-      "written_by": [],
-      "read_by": [
-        "self_healer_v2"
-      ],
-      "exists_on_disk": true
-    },
-    "data/heal_report.json": {
+    "data/fork_distribution_queue.json": {
       "written_by": [
-        "self_healer_v2"
+        "humanitarian_fork_distributor"
+      ],
+      "read_by": [],
+      "exists_on_disk": false
+    },
+    "data/job_applications.json": {
+      "written_by": [
+        "job_agent"
       ],
       "read_by": [],
       "exists_on_disk": true
@@ -854,41 +889,6 @@
         "social_content_engine"
       ],
       "exists_on_disk": true
-    },
-    "data/art_pairs.json": {
-      "written_by": [
-        "art_cause_generator"
-      ],
-      "read_by": [],
-      "exists_on_disk": true
-    },
-    "data/congress_trades.json": {
-      "written_by": [
-        "congress_watcher"
-      ],
-      "read_by": [],
-      "exists_on_disk": false
-    },
-    "data/market_context.json": {
-      "written_by": [
-        "crypto_signal_engine"
-      ],
-      "read_by": [],
-      "exists_on_disk": true
-    },
-    "data/system_manifest.json": {
-      "written_by": [],
-      "read_by": [
-        "social_content_engine"
-      ],
-      "exists_on_disk": true
-    },
-    "data/fork_requests.json": {
-      "written_by": [],
-      "read_by": [
-        "humanitarian_fork_distributor"
-      ],
-      "exists_on_disk": false
     }
   },
   "broken_connections": [

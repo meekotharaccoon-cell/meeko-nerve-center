@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-02T08:02:00.765790",
+  "generated_at": "2026-03-02T14:58:52.240337",
   "date": "2026-03-02",
   "system": {
-    "engines_total": 159,
+    "engines_total": 160,
     "self_built": 1,
     "cycles_per_day": 288,
     "uptime_since": "2025-01-01",
@@ -22,17 +22,17 @@
     "trades_flagged": 0
   },
   "health": {
-    "passing_pct": 61,
+    "passing_pct": 64,
     "total_workflows": 57,
     "failing": 18,
     "color": "RED",
-    "last_check": "2026-03-02T08:01:37.135764"
+    "last_check": "2026-03-02T14:58:30.096373"
   },
   "market": {
     "fear_greed": 10,
     "fear_greed_label": "Extreme Fear",
-    "top_signal": "BTC",
-    "top_confidence": 82
+    "top_signal": "NEAR",
+    "top_confidence": 100
   },
   "press": {
     "articles": 0,
