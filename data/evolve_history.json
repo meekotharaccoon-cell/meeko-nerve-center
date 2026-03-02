@@ -295,10 +295,26 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 22,
+      "gen": 22,
+      "at": "2026-03-02T07:00:03.555861",
+      "built": "gen_changelog",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
-    "index_lessons"
+    "index_lessons",
+    "gen_changelog"
   ],
-  "gen": 22
+  "gen": 23
 }

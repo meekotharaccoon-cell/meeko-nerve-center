@@ -1,15 +1,15 @@
 @echo off
-REM EVOLVE.bat Generation 22
-REM Last evolved: 2026-03-01 20:55
-REM Last built: [WARN] Rebuild knowledge library index
+REM EVOLVE.bat Generation 23
+REM Last evolved: 2026-03-02 07:00
+REM Last built: [WARN] Regenerate changelog from full git history
 REM Written by the system itself. Fork: https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork
 
-title SolarPunk Mycelium Gen 22 evolving...
+title SolarPunk Mycelium Gen 23 evolving...
 color 0A
 echo.
 echo  ==================================================
-echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 22
-echo   Last built: Rebuild knowledge library index
+echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 23
+echo   Last built: Regenerate changelog from full git history
 echo  ==================================================
 echo.
 set REPO=%USERPROFILE%\Desktop\meeko-nerve-center
@@ -20,11 +20,11 @@ echo.
 python mycelium\evolve.py
 echo.
 git add -A
-git commit -m "auto: gen 22" 2>nul
+git commit -m "auto: gen 23" 2>nul
 git push origin main 2>nul
 echo.
 echo  ==================================================
-echo   ENHANCEMENTS Gen 22
+echo   ENHANCEMENTS Gen 23
 echo  ==================================================
 echo.
 echo   [SECRETS] Add GitHub Secrets to unlock locked workflows
@@ -42,7 +42,7 @@ echo   [DOMAIN] Consider solarpunkmycelium.org (~$8/yr) for email deliverability
 echo     - porkbun.com or namecheap.com
 echo.
 echo   System: https://github.com/meekotharaccoon-cell/meeko-nerve-center
-echo   Generation 22 complete.
+echo   Generation 23 complete.
 echo  ==================================================
 echo.
 pause
