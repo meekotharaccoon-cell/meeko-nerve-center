@@ -1,8 +1,53 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-01 20:56 UTC  
+> Last updated: 2026-03-02 07:27 UTC  
 > Total commits tracked: 200
+
+---
+
+## Week of March 2, 2026
+
+**📚 Knowledge**
+- `be60830f` knowledge: v2 harvest [2026-03-02]
+
+**🌹 Art & Gallery**
+- `200e619d` feat: START_SOLARPUNK.bat - one file to run everything and watch for first dollar
+- `2aa5c4c0` 💓 heartbeat: 2026-03-02 02:27 UTC
+
+**🚹 Fixes**
+- `c32f221c` fix: morning_briefing nested f-string quotes (SyntaxError line 73)
+- `deb6f4a5` fix: hf_brain backslash-in-fstring (SyntaxError line 139), pre-assign nl variable
+- `ee9545f3` fix: gen_status nested f-string quotes (SyntaxError line 49)
+- `385895fd` fix: remove push trigger from wiring-hub-daily.yml (was causing commit feedback loops)
+- `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
+
+**⚙️ System**
+- `c75bac6a` 🧠 auto: system state update 2026-03-02 07:26 UTC
+- `53bf9e76` 🧠 auto: system state update 2026-03-02 07:25 UTC
+- `fa15c5fc` 🧠 auto: system state update 2026-03-02 07:23 UTC
+- `ef43fca7` 🧠 auto: system state update 2026-03-02 02:03 UTC
+- `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
+
+**• Other**
+- `0e3863b2` chore: update wiring_status.json [2026-03-02T07:24]
+- `4095d60e` chore: update wiring_status.json [2026-03-02T06:56]
+- `84d23ea3` ideas: engine cycle [] — tested/built
+- `144e884f` chore: update wiring_status.json [2026-03-02T05:08]
+- `23892431` ideas: engine cycle [] — tested/built
+- `edf7a9f8` 🧠 orchestrator [2026-03-02]
+- `7a593a9c` 🌸 cycle [2026-03-02 02:20] — all 21 phases fired
+- `7aef6ed1` 🌸 cycle [2026-03-02 02:17] — all 21 phases fired
+- `e14c9ef2` 🌍 content update [2026-03-02]
+- `ab7e463b` 📬 newsletter [2026-W09]
+- `54424b0c` 🔬 diagnostics report [2026-03-02T02:04]
+- `769b109b` 🧠 3d-brain state [2026-03-02]
+- `41551c2e` chore: update wiring_status.json [2026-03-02T01:55]
+- `bbadf5c3` 🌸 cycle [2026-03-02 01:38] — all 21 phases fired
+- `cc36dbb1` chore: update wiring_status.json [2026-03-02T01:34]
+- `38654075` chore: update wiring_status.json [2026-03-02T01:30]
+- `b85c1f84` chore: update wiring_status.json [2026-03-02T01:06]
+- `bd49cf04` \U0001f338 perpetual: 2026-03-02 00:00 UTC
 
 ---
 
@@ -15,30 +60,24 @@
 - `83bb37eb` knowledge: API directory scan [2026-03-01]
 - `c39b0537` knowledge: v2 harvest [2026-03-01]
 - `fef594b9` knowledge: v2 harvest [2026-02-28]
-- `77d24dff` 🧠 knowledge update [2026-02-28]
-- `194f78ca` knowledge: v2 harvest [2026-02-28]
-- `2ea5aa6f` knowledge: API directory scan [2026-02-28]
 
 **🤝 Community**
 - `c4cce2e6` products: add Product 3 — The Grant Hunter [full content]
 - `11b75e8e` 🔧 CRITICAL FIXES: email spam storm, feedback-loop crash, grant blindness, duplicate emails
 - `b34ac3f3` 🔧 FIX: stop duplicate emails, fix grants, add diagnostic emailer, unique-content guard
-- `744aa82f` feat: investment_intelligence (crypto + congressional alpha + Kelly sizing), ethical_pesterer (corps/govs only), news_monitor (press pitching), sovereign_research (LLC/nonprofit/DAO docs), dashboard_data_generator
 
 **📧 Outreach**
+- `4be40887` fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER
+- `2aceb5ba` fix: all email issues — phantom address removed, Wired corrected, blocked domains expanded, old engine retired, self-email loop closed + system manifest + social content engine
 - `6f43b80a` ✉️ email drafts [2026-03-01]
 - `737f3936` products: add Product 2 — Autonomous Email Responder [full content]
 - `00caa3a2` 🔧 Complete email system rebuild (v3 strict), deep self-diagnostic, Gumroad tracker
 - `53bc9770` 🚨 EMERGENCY: Disable ALL scheduled workflows — email system rebuild in progress
 - `f53713f0` 🔧 Add unified_briefing + diagnostic_emailer, fix MASTER_CONTROLLER env vars and phases
 - `013aa578` 🔧 Wire diagnostic_emailer into Phase 0 of MASTER_CONTROLLER
-- `2380f921` feat: MASTER_CONTROLLER workflow (auto-runs all, retries failures), master_controller.py, self_healer_v2.py (reads own emails, fixes own bugs) — zero human workflow management
 
 **📊 Signals**
 - `5b08f72d` chore: fork tracker update [2026-03-01]
-
-**⚖️ Legal**
-- `0dbe7ebd` docs: complete README rewrite — Meeko/SolarPunk distinction, all systems, Hey SolarPunk, journalist angles, legal roadmap
 
 **🌹 Art & Gallery**
 - `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
@@ -47,12 +86,16 @@
 - `5987b153` fix: wallet config checks all possible secret names — works with whatever you already named it
 
 **📝 Documentation**
+- `b5122053` wire: self_improver + form_filler + humanitarian_fork_distributor + readme_updater into MASTER_CONTROLLER — README is now last thing written, first thing read
+- `e896cfc4` build: readme_updater (live stats, first read = last written) + phone_controller (a-Shell iOS) + phone_setup.sh + self_improver + SOLARPUNK_FOR_EVERYONE.md
+- `0f036966` 📝 auto: changelog 2026-03-01
 - `db03728e` 📝 auto: changelog 2026-03-01
 - `20eea761` 📝 auto: changelog 2026-03-01
 - `98bdb262` 📝 auto: changelog 2026-03-01
 - `608a7ff0` 📝 auto: changelog 2026-03-01
 
 **⚙️ System**
+- `27fc536b` auto: gen 22
 - `5fee15e5` feat: multi-chain wallet config (all 9 chains) + setup_wizard_v3 with EVM auto-detection — never turn away money from any blockchain
 - `d64ce872` build: setup_wizard_v2 (uses existing GitHub token) + form_filler + humanitarian_fork_distributor — sending the whole system to Gaza/Sudan/Congo
 - `ba0d55bd` build: setup_wizard auto-detects existing GitHub token + form_filler (fill any form with identity) + humanitarian_fork_distributor (send full system to Gaza/Sudan/Congo)
@@ -69,13 +112,17 @@
 - `0b7a0590` products: add Product 4 — The Viral Fork [full content]
 - `5d279b58` 🧠 auto: system state update 2026-03-01 03:32 UTC
 - `844a1f02` 🧠 auto: system state update 2026-02-28 17:18 UTC
-- `c95727df` 🧠 auto: system state update 2026-02-28 13:30 UTC
-- `73addc90` 🧠 auto: system state update 2026-02-28 12:21 UTC
-- `1ddba86e` 🧠 auto: system state update 2026-02-28 09:25 UTC
-- `0f080b14` feat: human touchpoint eliminator, autonomous git, identity engine, loop closer — closing every remaining open loop
-- `79a89f83` feat: universal spawner (clones itself into 5 sister systems), WHAT_ELSE.md (every other use case), cross-node intelligence (nodes talk to each other)
 
 **• Other**
+- `650fdfe9` data: dex update [23:47]
+- `8ca71d18` \U0001f338 perpetual: 2026-03-01 23:46 UTC
+- `f020b507` chore: update wiring_status.json [2026-03-01T23:45]
+- `58360d19` data: dex update [22:53]
+- `e27aa85d` chore: update wiring_status.json [2026-03-01T22:52]
+- `93566774` \U0001f338 perpetual: 2026-03-01 21:58 UTC
+- `0210761a` data: dex update [21:44]
+- `b9ed7e57` chore: update wiring_status.json [2026-03-01T21:42]
+- `0345e96f` \U0001f338 perpetual: 2026-03-01 21:42 UTC
 - `eb04cb3e` data: dex update [20:53]
 - `664202a2` \U0001f338 perpetual: 2026-03-01 20:53 UTC
 - `1df7f7ac` chore: update wiring_status.json [2026-03-01T20:52]
@@ -192,41 +239,6 @@
 - `0cefae19` \U0001f338 perpetual: 2026-02-28 14:59 UTC
 - `c711ec2f` 🌸 SolarPunk cycle complete [2026-02-28 14:49] — 11 files
 - `e8de701e` gateway: 14:49 UTC
-- `71b1471b` data: dex update [14:48]
-- `90790e3c` chore: update wiring_status.json [2026-02-28T14:48]
-- `806263ad` \U0001f338 perpetual: 2026-02-28 14:45 UTC
-- `abd64644` gateway: 14:01 UTC
-- `cbe9c6d9` 🌸 SolarPunk cycle complete [2026-02-28 13:52] — 11 files
-- `2f5d8abd` data: dex update [13:49]
-- `098bf913` chore: update wiring_status.json [2026-02-28T13:48]
-- `c5ce21a5` chore: update wiring_status.json [2026-02-28T12:27]
-- `d819ad11` chore: update wiring_status.json [2026-02-28T12:26]
-- `5abe5c9a` 🌸 SolarPunk cycle complete [2026-02-28 12:22] — 15 files
-- `03ef415f` gateway: 12:00 UTC
-- `9f3d4f98` gateway: 11:53 UTC
-- `2d6a7c8b` data: dex update [11:36]
-- `fc4f0585` chore: update wiring_status.json [2026-02-28T11:33]
-- `641f414c` gateway: 10:59 UTC
-- `811fb9c8` \U0001f338 perpetual: 2026-02-28 10:53 UTC
-- `8f153915` data: dex update [10:50]
-- `8d9e54aa` chore: update wiring_status.json [2026-02-28T10:49]
-- `2f35f898` \U0001f338 perpetual: 2026-02-28 09:59 UTC
-- `efea5e2a` gateway: 09:59 UTC
-- `378b3c4b` data: dex update [09:50]
-- `d8e3f4c7` chore: update wiring_status.json [2026-02-28T09:49]
-- `350be41c` ideas: engine cycle [] — tested/built
-- `85e147db` data: all API tools [2026-02-28]
-- `4083ea18` data: dex update [08:56]
-- `e2e986b5` chore: update wiring_status.json [2026-02-28T08:56]
-- `7e300752` 🔬 diagnostics report [2026-02-28T08:55]
-- `90b9e8bd` \U0001f338 perpetual: 2026-02-28 08:55 UTC
-- `b7835a2a` \U0001f338 perpetual: 2026-02-28 08:52 UTC
-- `968e9c58` chore: update wiring_status.json [2026-02-28T08:27]
-- `4c20940b` feat: account setup wizard, financial loop closer, donor lifecycle, intelligence loop — approaching zero human touchpoints
-- `9af50e91` chore: update wiring_status.json [2026-02-28T08:22]
-- `4e358c00` chore: update wiring_status.json [2026-02-28T08:13]
-- `16664964` gateway: 08:00 UTC
-- `0d681842` data: dex update [07:54]
 
 ---
 
