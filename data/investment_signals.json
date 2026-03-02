@@ -11,9 +11,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 32.0,
-      "change_24h": 3.13546,
-      "change_7d": 15.709388094425126,
+      "price": 31.86,
+      "change_24h": 2.70158,
+      "change_7d": 15.222615484404537,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -27,9 +27,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 66091,
-      "change_24h": -2.64267,
-      "change_7d": -0.9939820616353403,
+      "price": 66134,
+      "change_24h": -2.57946,
+      "change_7d": -0.9296960975889836,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -43,9 +43,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 1945.48,
-      "change_24h": -4.88916,
-      "change_7d": 0.8319223294901522,
+      "price": 1946.32,
+      "change_24h": -4.84832,
+      "change_7d": 0.8752189842460866,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -59,9 +59,9 @@
         "oversold (-5.3%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.275326,
-      "change_24h": -5.32844,
-      "change_7d": 6.225520856408486,
+      "price": 0.2752,
+      "change_24h": -5.26146,
+      "change_7d": 6.176923075935081,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -75,9 +75,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5302.08,
-      "change_24h": 0.35994,
-      "change_7d": 3.3684086773937096,
+      "price": 5303.57,
+      "change_24h": 0.38812,
+      "change_7d": 3.397432719490818,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -91,9 +91,9 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.168049,
-      "change_24h": -2.6674,
-      "change_7d": 4.012886124996168,
+      "price": 0.167922,
+      "change_24h": -2.74063,
+      "change_7d": 3.934631965080025,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -104,12 +104,28 @@
       "action": "CONSIDER_BUY",
       "confidence": 75,
       "reasons": [
-        "oversold (-5.3%) in extreme fear",
+        "oversold (-5.2%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.155194,
-      "change_24h": -5.31061,
-      "change_7d": 1.2444783382745974,
+      "price": 0.155123,
+      "change_24h": -5.16516,
+      "change_7d": 1.198033303186564,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-02"
+    },
+    {
+      "symbol": "ZEC",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 75,
+      "reasons": [
+        "oversold (-5.4%) in extreme fear",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 217.43,
+      "change_24h": -5.35527,
+      "change_7d": -6.444096323882192,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -124,8 +140,8 @@
         "EXTREME FEAR: historically good entry"
       ],
       "price": 5.6e-06,
-      "change_24h": -5.57492,
-      "change_7d": -8.84618121402482,
+      "change_24h": -5.62328,
+      "change_7d": -8.892863780361743,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"
@@ -136,28 +152,12 @@
       "action": "CONSIDER_BUY",
       "confidence": 75,
       "reasons": [
-        "oversold (-6.2%) in extreme fear",
+        "oversold (-6.5%) in extreme fear",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.108526,
-      "change_24h": -6.22623,
-      "change_7d": -4.4434662368227675,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-03-02"
-    },
-    {
-      "symbol": "TON",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 75,
-      "reasons": [
-        "oversold (-7.2%) in extreme fear",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 1.2,
-      "change_24h": -7.18106,
-      "change_7d": -8.57101546131263,
+      "price": 0.108458,
+      "change_24h": -6.47426,
+      "change_7d": -4.503749984943647,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
       "date": "2026-03-02"

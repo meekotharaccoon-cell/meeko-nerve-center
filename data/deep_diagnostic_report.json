@@ -1,6 +1,6 @@
 {
   "date": "2026-03-02",
-  "timestamp": "2026-03-02T02:17:23.267247",
+  "timestamp": "2026-03-02T02:20:12.856828",
   "summary": {
     "ok": 13,
     "fixed": 0,
@@ -1043,7 +1043,7 @@
     {
       "check": "failing:dynamic/pages/pages-build-deployment",
       "status": "fail",
-      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558523608",
+      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558709800",
       "fixable": false,
       "fix_applied": false
     },
@@ -1339,7 +1339,7 @@
     {
       "check": "failing:dynamic/pages/pages-build-deployment",
       "status": "fail",
-      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558523608",
+      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558709800",
       "fixable": false,
       "fix_applied": false
     }
