@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T14:58:52.240337",
+  "generated_at": "2026-03-02T16:14:08.887128",
   "date": "2026-03-02",
   "system": {
     "engines_total": 160,
@@ -24,16 +24,11 @@
   "health": {
     "passing_pct": 64,
     "total_workflows": 57,
-    "failing": 18,
+    "failing": 19,
     "color": "RED",
-    "last_check": "2026-03-02T14:58:30.096373"
+    "last_check": "2026-03-02T16:13:44.022504"
   },
-  "market": {
-    "fear_greed": 10,
-    "fear_greed_label": "Extreme Fear",
-    "top_signal": "NEAR",
-    "top_confidence": 100
-  },
+  "market": {},
   "press": {
     "articles": 0,
     "pitches_sent": 0,

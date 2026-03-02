@@ -2,202 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-01",
-      "from": "support@freeup.net",
-      "subject": "Celebrating Our Incredible Year Together at FreeUp Marketpla",
-      "action": "ignored_automated",
-      "reason": "auto prefix: support@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Freddie \u22c6\u02d9\u27e1 \ud83c\udf3b reposted: Decided to sing a song written after",
-      "action": "ignored_dedup"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "KateLynn Newberry posted: follow me for more life advice  #g",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Clark Kent sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "product@engage.canva.com",
-      "subject": "Resize your post for all platforms",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "seller-marketing@shop-us.tiktok.com",
-      "subject": "JLab on TikTok Shop: For Every You",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@society6.com",
-      "subject": "Design Your 2026 With Intention \ud83e\udd42",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "messy.aura_jess posted: what metal song explains your curren",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@email.openai.com",
-      "subject": "Write faster with ChatGPT",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "L\u2019Ombre Raconte just sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "DeeGee posted: This was almost a week ago, but it still stin",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@update.tiktok.com",
-      "subject": "Shaghana Doyle posted: Just more proof, this was all about t",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@solpump.io",
-      "subject": "Your SolPump account is ready | SOLPUMP",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@update.tiktok.com",
-      "subject": "Shaghana Doyle posted: HUH ( don\u2019t worry I\u2019mfine)",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "ScrollShock \ud83c\uddff\ud83c\udde6 \ud83e\udef6\ud83c\udffc\ud83e\udda8\ud83d\udca8 just sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@solpump.io",
-      "subject": "Hey ClosePartridge4793, Have you claimed your Sol Airdrop? |",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily ",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/atomic-agents] Run failed:\r\n .github/w",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/atomic-agents-demo] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/atomic-agents-staging] Run failed:\r\n .",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Your digital product is ready to shine",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@email.manychat.com",
-      "subject": "Attention is a knife fight, and you forgot your shoes \ud83d\udd2a\ud83d\udc40",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Get up to 19% \ud83d\udc40",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Got a digital download? Start selling it.",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "store-news@amazon.com",
-      "subject": "A Reminder on Boosting Policy and Social Media Guidance for ",
-      "action": "reply_failed"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "\u307e\u3041 just sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "canvacreate@engage.canva.com",
-      "subject": "Grow your brand in one unforgettable day at Canva Create",
-      "action": "reply_failed"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "account-security-noreply@accountprotecti",
-      "subject": "Your single-use code",
-      "action": "reply_failed"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "nox vulpine posted: goggles are mandatory                   ",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "marketing@engage.canva.com",
-      "subject": "Prompted Ep. 5: How Anthropic designs trustworthy AI",
-      "action": "ignored_automated",
-      "reason": "auto prefix: marketing@"
-    },
-    {
-      "date": "2026-03-01",
       "from": "notification@service.tiktok.com",
       "subject": "bea: Whyd he finish the song lol",
       "action": "ignored_offtopic"
@@ -3384,6 +3188,207 @@
       "subject": "Tomorrow: Build Lead Magnets & Drive Sales with Replit",
       "action": "ignored_automated",
       "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "ebay@reply.ebay.com",
+      "subject": "If the 90s can make a come back, so can you \ud83d\udd19",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Chat with Your Friends and Earn Credits!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "no-reply@pionex.us",
+      "subject": "\ud83d\udd25 Trade $ZBCN Before Kraken - Share $100,000 Bonus + iPhone ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: pionex.us"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Original picks you won\u2019t want to miss",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Say hello to new recommendations",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "canvadesignschool@engage.canva.com",
+      "subject": "Follow the path for new skills \ud83d\udc40",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "ttsmarketplace@email.tiktok.com",
+      "subject": "Meeko Tha Racc... - There's new a flash sale at a shop you'v",
+      "action": "replied"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Suede for fall? Obviously.",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Want more sales? Instagram Summit by Manychat can help. \ud83e\udd11",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notification@service.tiktok.com",
+      "subject": "ImJustGroovy posted: The meme revolution is here!\ud83d\udca5 $DANK is ",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "ttsmarketplace@email.tiktok.com",
+      "subject": "Meeko Tha Raccoon \ud83e\udd9d, Save $50 on PS5 Today\ud83c\udfae Free Shipping & ",
+      "action": "ignored_dedup"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Fall favorites, now on sale",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Are creators the smartest marketers alive?",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "The highlight of your week is here",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "canvaworldtour@engage.canva.com",
+      "subject": "Imagination takes the stage soon \ud83c\udf89 #CanvaWorldTour",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Evolve a Creation with Friends for Free Credits!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "ebay@reply.ebay.com",
+      "subject": "You need the app. Get the best finds first \ud83d\udcf1",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Small-shop picks too good to skip",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Don't miss Instagram Summit by Manychat Virtual",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "canvadesignschool@engage.canva.com",
+      "subject": "Explore Canva's integrations and apps",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notification@service.tiktok.com",
+      "subject": "official_imjustgroovy posted: Master Bot is a scam DO NOT BU",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "The morning was \ud83d\udd25\u2014and the best is still to come!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Workwear that just works",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udf10 All ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0e Asse",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0e Asse",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udfdb\ufe0f Con",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udf31 Evol",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udf39 Gaza",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udef8 Spac",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
     }
   ],
   "human_emails_total": 1,
