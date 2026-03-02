@@ -6,16 +6,6 @@
 
 ## Congo (DRC)
 
-**[punchy]** status: queued
-```
-$1. One dollar.
-Original art. 70% to Congo (DRC) relief.
-Zero middlemen. Zero corporate cut.
-https://meekotharaccoon-cell.github.io/gaza-rose-gallery
-
-#DRC #Congo #EasternCongo #DirectAction
-```
-
 **[gallery]** status: queued
 ```
 56 original artworks. $1 each. Support this system — proceeds fund humanitarian causes.
@@ -26,18 +16,18 @@ Every sale funds Congo (DRC) relief directly — no middlemen.
 #DRC #Congo #EasternCongo #Art #OpenSource
 ```
 
-## Gaza
-
 **[fork]** status: queued
 ```
 A self-replicating autonomous AI. $0/month to run.
 Anyone can fork it and aim it at any cause.
 
-Current mission: Gaza.
+Current mission: Congo (DRC).
 Fork it: https://github.com/meekotharaccoon-cell/meeko-nerve-center
 
-#Gaza #Palestine #PCRF #FOSS #Solarpunk
+#DRC #Congo #EasternCongo #FOSS #Solarpunk
 ```
+
+## Gaza
 
 **[info]** status: queued
 ```
@@ -53,25 +43,39 @@ Today in open-source: [I made MCP cheaper](https://kanyilmaz.me/2026/02/23/cli-v
 #Gaza #Palestine #PCRF
 ```
 
+**[awareness]** status: queued
+```
+Gaza: Over 40,000 killed. 2 million displaced. Ongoing siege.
+
+This is happening now. Direct action:
+Palestine Children's Relief Fund (PCRF) — 4-star Charity Navigator
+https://www.pcrf.net
+
+#Gaza #Palestine #PCRF #DirectAction
+```
+
 ## Sudan
 
-**[punchy]** status: queued
+**[info]** status: queued
 ```
-$1. One dollar.
-Original art. 70% to Sudan relief.
-Zero middlemen. Zero corporate cut.
-https://meekotharaccoon-cell.github.io/gaza-rose-gallery
+Sudan crisis: Sudan civil war — 8M+ displaced, largest displacement crisis in the world.
 
-#Sudan #SudanCrisis #Darfur #DirectAction
+How to help:
+· UNHCR Sudan · Save the Children Sudan: https://www.unhcr.org/sudan
+· Buy $1 art → Support this system — proceeds fund humanitarian causes: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
+· Fork this system: github.com/meekotharaccoon-cell
+
+Today in open-source: [I made MCP cheaper](https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html)
+
+#Sudan #SudanCrisis #Darfur
 ```
 
-**[fork]** status: queued
+**[gallery]** status: queued
 ```
-A self-replicating autonomous AI. $0/month to run.
-Anyone can fork it and aim it at any cause.
+56 original artworks. $1 each. Support this system — proceeds fund humanitarian causes.
 
-Current mission: Sudan.
-Fork it: https://github.com/meekotharaccoon-cell/meeko-nerve-center
+Every sale funds Sudan relief directly — no middlemen.
+→ $1 art, 70% to relief: https://meekotharaccoon-cell.github.io/gaza-rose-gallery
 
-#Sudan #SudanCrisis #Darfur #FOSS #Solarpunk
+#Sudan #SudanCrisis #Darfur #Art #OpenSource
 ```
