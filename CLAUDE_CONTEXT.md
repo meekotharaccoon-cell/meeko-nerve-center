@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-02 17:23 UTC — knowledge: API directory scan [2026-03-02]*
+*Auto-updated by the system. Last update: 2026-03-02 19:06 UTC — feat: email_optin_guard.py — global dedup + Yes/No consent layer for all outbound email*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
