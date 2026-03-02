@@ -19,14 +19,6 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1en"
     },
     {
-      "place": "43 km NNE of Calama, Chile",
-      "mag": 5.1,
-      "time": "2026-03-01T20:03",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ak"
-    },
-    {
       "place": "central Mid-Atlantic Ridge",
       "mag": 5.1,
       "time": "2026-03-02T03:15",
@@ -43,14 +35,6 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1df"
     },
     {
-      "place": "Kermadec Islands, New Zealand",
-      "mag": 4.9,
-      "time": "2026-03-02T19:23",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1hn"
-    },
-    {
       "place": "Volcano Islands, Japan region",
       "mag": 4.9,
       "time": "2026-03-02T04:07",
@@ -59,12 +43,28 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1d3"
     },
     {
-      "place": "125 km NE of Lospalos, Timor Leste",
+      "place": "0 km SE of Cadagmayan Norte, Philippines",
       "mag": 4.9,
-      "time": "2026-03-02T17:40",
+      "time": "2026-03-02T10:13",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1gx"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ek"
+    },
+    {
+      "place": "46 km NNW of Hirara, Japan",
+      "mag": 4.9,
+      "time": "2026-03-02T11:41",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ev"
+    },
+    {
+      "place": "52 km NNW of Hirara, Japan",
+      "mag": 4.9,
+      "time": "2026-03-02T15:59",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ft"
     },
     {
       "place": "57 km NNW of Hirara, Japan",
@@ -75,12 +75,12 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1gu"
     },
     {
-      "place": "0 km SE of Cadagmayan Norte, Philippines",
+      "place": "125 km NE of Lospalos, Timor Leste",
       "mag": 4.9,
-      "time": "2026-03-02T10:13",
+      "time": "2026-03-02T17:40",
       "alert": null,
       "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1ek"
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1gx"
     }
   ]
 }

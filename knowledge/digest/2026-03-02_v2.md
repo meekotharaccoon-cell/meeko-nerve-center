@@ -4,18 +4,18 @@
 
 - M6 — Volcano Islands, Japan region (2026-03-02)
 - M5.6 — 65 km NW of Hirara, Japan (2026-03-02)
-- M5.1 — 43 km NNE of Calama, Chile (2026-03-01)
+- M5.1 — central Mid-Atlantic Ridge (2026-03-02)
 
-## UK Grid Carbon: 139 gCO2/kWh (moderate)
+## UK Grid Carbon: 114 gCO2/kWh (moderate)
 Lower numbers = more renewable energy on the grid.
 
 ## Space
 
-- [Collaborating Through Data: Inside the PSI Users Group](https://science.nasa.gov/science-research/biological-physical-sciences/collaborating-through-data-inside-the-psi-users-group/)
-- [Sunglint on Atlantic Ocean](https://www.nasa.gov/image-article/sunglint-on-atlantic-ocean/)
+- [Deutsche Telekom aims to bring Starlink Mobile V2 to Europe in 2028](https://spacenews.com/deutsche-telekom-aims-to-bring-starlink-mobile-v2-to-europe-in-2028/)
+- [Launch Preview: Japan to launch Kairos as Falcon 9 launches Starlink missions](https://www.nasaspaceflight.com/2026/03/launch-preview-030226/)
 
-## Crypto: BTC $68,893 (+4.6%)
-ETH $2,036.05 (+3.8%)
+## Crypto: BTC $69,073 (+5.2%)
+ETH $2,040.43 (+5.5%)
 
 ## 12 humans currently in space
 Oleg Kononenko, Nikolai Chub, Tracy Caldwell Dyson, Matthew Dominick
