@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-02 07:25 UTC — fix: gen_status nested f-string quotes (SyntaxError line 49)*
+*Auto-updated by the system. Last update: 2026-03-02 07:26 UTC — fix: hf_brain backslash-in-fstring (SyntaxError line 139), pre-assign nl variable*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
