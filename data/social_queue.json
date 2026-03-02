@@ -1,0 +1,43 @@
+{
+  "updated": "2026-03-02",
+  "queue": [
+    {
+      "id": "2026-03-02-1",
+      "text": "\ud83c\udf38 How does SolarPunk work?\n\n1. You write plain English in Notion (your priorities)\n2. The system reads it every 12 hours\n3. It sells products, hunts grants, applies for jobs, posts on social media\n4. Routes 70% of revenue to PCRF (Palestinian children's relief)\n5. Updates its own README with live stats\n6. Then does it again\n\nYou do nothing. It runs itself.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Automation #AI #SolarPunk",
+      "template_idx": 1,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-02-9",
+      "text": "\ud83c\udf38 SolarPunk costs exactly $0/month.\n\nInfrastructure:\n  \u2022 GitHub Actions free tier (2,000 min/month included)\n  \u2022 HuggingFace free tier (inference API)\n  \u2022 Notion free tier (command center)\n  \u2022 Gmail (inbound-only email gateway)\n  \u2022 Gumroad + Etsy (free to list, they take %)\n\nEvery component chosen specifically because it's free.\nSo anyone, anywhere can run it.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#SolarPunk #OpenSource #ZeroCost",
+      "template_idx": 9,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-02-4",
+      "text": "\ud83c\udf38 The SolarPunk job agent:\n\nEvery day, the system:\n  1. Scans Remotive.io for remote jobs\n  2. Scores each one 0-10 for fit\n  3. Writes honest cover letters (states openly that it's AI-assisted)\n  4. Queues applications for human review\n\nIt never lies about what it is.\nIt never pretends to be human.\nAll applications are legal and ethical.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#RemoteWork #AI #SolarPunk",
+      "template_idx": 4,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    }
+  ],
+  "used_indices": [
+    1,
+    9,
+    4
+  ]
+}

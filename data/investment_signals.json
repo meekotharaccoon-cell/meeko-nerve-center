@@ -1,6 +1,23 @@
 {
-  "date": "2026-03-01",
+  "date": "2026-03-02",
   "signals": [
+    {
+      "symbol": "HYPE",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 87,
+      "reasons": [
+        "7d uptrend confirmed",
+        "trending",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 32.28,
+      "change_24h": 5.93655,
+      "change_7d": 13.245821524050577,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-02"
+    },
     {
       "symbol": "BTC",
       "type": "CRYPTO",
@@ -10,60 +27,12 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 66398,
-      "change_24h": 1.7973,
-      "change_7d": -1.7886749034241762,
+      "price": 66607,
+      "change_24h": -0.03842,
+      "change_7d": -0.22159304523704212,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
-    },
-    {
-      "symbol": "ETH",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 82,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 1981.2,
-      "change_24h": 4.05275,
-      "change_7d": 1.5040311979541607,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-03-01"
-    },
-    {
-      "symbol": "AAVE",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 80,
-      "reasons": [
-        "+5.8% with volume",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 114.33,
-      "change_24h": 5.84887,
-      "change_7d": -2.811396554164856,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-03-01"
-    },
-    {
-      "symbol": "HYPE",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 77,
-      "reasons": [
-        "trending",
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 31.44,
-      "change_24h": 7.02856,
-      "change_7d": 8.655970781006005,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
     },
     {
       "symbol": "XAUT",
@@ -74,12 +43,12 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5342.11,
-      "change_24h": 0.15672,
-      "change_7d": 4.442202173754332,
+      "price": 5300.46,
+      "change_24h": -0.19697,
+      "change_7d": 2.9408449978249482,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
     },
     {
       "symbol": "PAXG",
@@ -90,12 +59,28 @@
         "trending",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 5404.09,
-      "change_24h": -0.53126,
-      "change_7d": 4.923591541791137,
+      "price": 5371.86,
+      "change_24h": -0.31391,
+      "change_7d": 3.551676076430183,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
+    },
+    {
+      "symbol": "PI",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 77,
+      "reasons": [
+        "trending",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 0.168647,
+      "change_24h": -1.1287,
+      "change_7d": 4.382877299035542,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-02"
     },
     {
       "symbol": "LEO",
@@ -106,12 +91,28 @@
         "7d uptrend confirmed",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 9.07,
-      "change_24h": 2.73831,
-      "change_7d": 11.06026458349018,
+      "price": 9.23,
+      "change_24h": 2.70198,
+      "change_7d": 11.610939251199802,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
+    },
+    {
+      "symbol": "M",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 75,
+      "reasons": [
+        "7d uptrend confirmed",
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 1.5,
+      "change_24h": 2.97949,
+      "change_7d": 10.472785366554694,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-02"
     },
     {
       "symbol": "BCH",
@@ -122,12 +123,27 @@
         "extreme oversold 7d",
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 441.63,
-      "change_24h": -0.5652,
-      "change_7d": -22.71464921564442,
+      "price": 448.82,
+      "change_24h": -1.29879,
+      "change_7d": -20.509121273720964,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
+    },
+    {
+      "symbol": "ETH",
+      "type": "CRYPTO",
+      "action": "CONSIDER_BUY",
+      "confidence": 70,
+      "reasons": [
+        "EXTREME FEAR: historically good entry"
+      ],
+      "price": 1970.07,
+      "change_24h": 0.05751,
+      "change_7d": 0.6588673983127463,
+      "max_position_pct": 3,
+      "stop_loss_pct": -8,
+      "date": "2026-03-02"
     },
     {
       "symbol": "USDT",
@@ -137,40 +153,25 @@
       "reasons": [
         "EXTREME FEAR: historically good entry"
       ],
-      "price": 0.999967,
-      "change_24h": -0.03256,
-      "change_7d": 0.032667244652196344,
+      "price": 1.0,
+      "change_24h": -0.03109,
+      "change_7d": 0.0331435061386237,
       "max_position_pct": 3,
       "stop_loss_pct": -8,
-      "date": "2026-03-01"
-    },
-    {
-      "symbol": "BNB",
-      "type": "CRYPTO",
-      "action": "CONSIDER_BUY",
-      "confidence": 70,
-      "reasons": [
-        "EXTREME FEAR: historically good entry"
-      ],
-      "price": 622.9,
-      "change_24h": 2.95841,
-      "change_7d": 1.4523990541522274,
-      "max_position_pct": 3,
-      "stop_loss_pct": -8,
-      "date": "2026-03-01"
+      "date": "2026-03-02"
     }
   ],
   "fear_greed": {
-    "value": 14,
+    "value": 10,
     "label": "Extreme Fear",
     "history": [
+      10,
       14,
       11,
       13,
       11,
       11,
-      8,
-      5
+      8
     ]
   },
   "synthesis": null

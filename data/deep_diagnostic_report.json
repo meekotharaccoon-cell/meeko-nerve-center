@@ -1,13 +1,13 @@
 {
-  "date": "2026-03-01",
-  "timestamp": "2026-03-01T18:28:45.786875",
+  "date": "2026-03-02",
+  "timestamp": "2026-03-02T01:38:18.972974",
   "summary": {
-    "ok": 14,
+    "ok": 13,
     "fixed": 0,
-    "warnings": 83,
-    "failures": 31,
-    "total": 128,
-    "health_pct": 11
+    "warnings": 101,
+    "failures": 38,
+    "total": 152,
+    "health_pct": 9
   },
   "auto_fixes": [],
   "results": [
@@ -439,6 +439,13 @@
       "fix_applied": false
     },
     {
+      "check": "workflow:setup-wizard.yml",
+      "status": "warn",
+      "detail": "name 're' is not defined",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "workflow:signal-tracker.yml",
       "status": "warn",
       "detail": "name 're' is not defined",
@@ -525,7 +532,7 @@
     {
       "check": "schedules disabled",
       "status": "ok",
-      "detail": "26/55 workflows have schedules disabled (email safety)",
+      "detail": "28/56 workflows have schedules disabled (email safety)",
       "fixable": false,
       "fix_applied": false
     },
@@ -600,6 +607,27 @@
       "fix_applied": false
     },
     {
+      "check": "secret:ETSY_ACCESS_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:ETSY_API_KEY",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:ETSY_SHOP_ID",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "secret:GUMROAD_FLOWERS_URL",
       "status": "warn",
       "detail": "Referenced in workflow but not confirmed set",
@@ -608,6 +636,41 @@
     },
     {
       "check": "secret:GUMROAD_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:HUMAN_EMAIL",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:HUMAN_FULL_NAME",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:HUMAN_LOCATION",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:HUMAN_PAYPAL_EMAIL",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:HUMAN_TIMEZONE",
       "status": "warn",
       "detail": "Referenced in workflow but not confirmed set",
       "fixable": false,
@@ -677,6 +740,13 @@
       "fix_applied": false
     },
     {
+      "check": "secret:PCRF_PAYPAL_EMAIL",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "secret:SERPAPI_KEY",
       "status": "warn",
       "detail": "Referenced in workflow but not confirmed set",
@@ -706,6 +776,69 @@
     },
     {
       "check": "secret:TELEGRAM_TOKEN",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_BASE",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_BTC_SEGWIT",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_BTC_TAPROOT",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_ETHEREUM",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_HYPEREVM",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_MONAD",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_POLYGON",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_SOLANA",
+      "status": "warn",
+      "detail": "Referenced in workflow but not confirmed set",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "secret:WALLET_SUI",
       "status": "warn",
       "detail": "Referenced in workflow but not confirmed set",
       "fixable": false,
@@ -769,22 +902,22 @@
     },
     {
       "check": "email_gateway_v3",
-      "status": "ok",
-      "detail": "All safety checks present in v3 gateway",
+      "status": "fail",
+      "detail": "Missing safety features: strict mode header, no-autosend rule",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "email_dedup",
       "status": "ok",
-      "detail": "12 recent reply records",
+      "detail": "13 recent reply records",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "workflow_health",
-      "status": "warn",
-      "detail": "72% healthy, 13 failing, color=YELLOW",
+      "status": "fail",
+      "detail": "64% healthy, 18 failing, color=RED",
       "fixable": false,
       "fix_applied": false
     },
@@ -792,6 +925,13 @@
       "check": "failing:asset-scan.yml",
       "status": "fail",
       "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:community-outreach.yml",
+      "status": "fail",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842635",
       "fixable": false,
       "fix_applied": false
     },
@@ -810,6 +950,20 @@
       "fix_applied": false
     },
     {
+      "check": "failing:email-drafter.yml",
+      "status": "fail",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843088",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:email-gateway.yml",
+      "status": "fail",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842972",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "failing:evolve.yml",
       "status": "fail",
       "detail": "\ud83c\udf31 Evolution Engine \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525799552",
@@ -819,7 +973,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": "\ud83d\udd04 Feedback Loop \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843211",
       "fixable": false,
       "fix_applied": false
     },
@@ -833,7 +987,7 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22549603942",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843331",
       "fixable": false,
       "fix_applied": false
     },
@@ -841,6 +995,20 @@
       "check": "failing:orchestrator-daily.yml",
       "status": "fail",
       "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:send-grants.yml",
+      "status": "fail",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842720",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:send-outreach.yml",
+      "status": "fail",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842833",
       "fixable": false,
       "fix_applied": false
     },
@@ -882,7 +1050,7 @@
     {
       "check": "crypto_signals",
       "status": "ok",
-      "detail": "10 signals, last updated 2026-03-01",
+      "detail": "10 signals, last updated 2026-03-02",
       "fixable": false,
       "fix_applied": false
     },
@@ -1036,9 +1204,30 @@
       "fix_applied": false
     },
     {
+      "check": "email_gateway_v3",
+      "status": "fail",
+      "detail": "Missing safety features: strict mode header, no-autosend rule",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "workflow_health",
+      "status": "fail",
+      "detail": "64% healthy, 18 failing, color=RED",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "failing:asset-scan.yml",
       "status": "fail",
       "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:community-outreach.yml",
+      "status": "fail",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842635",
       "fixable": false,
       "fix_applied": false
     },
@@ -1057,6 +1246,20 @@
       "fix_applied": false
     },
     {
+      "check": "failing:email-drafter.yml",
+      "status": "fail",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843088",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:email-gateway.yml",
+      "status": "fail",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842972",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
       "check": "failing:evolve.yml",
       "status": "fail",
       "detail": "\ud83c\udf31 Evolution Engine \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525799552",
@@ -1066,7 +1269,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": "\ud83d\udd04 Feedback Loop \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22525484891",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843211",
       "fixable": false,
       "fix_applied": false
     },
@@ -1080,7 +1283,7 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22549603942",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557843331",
       "fixable": false,
       "fix_applied": false
     },
@@ -1088,6 +1291,20 @@
       "check": "failing:orchestrator-daily.yml",
       "status": "fail",
       "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:send-grants.yml",
+      "status": "fail",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842720",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:send-outreach.yml",
+      "status": "fail",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22557842833",
       "fixable": false,
       "fix_applied": false
     },

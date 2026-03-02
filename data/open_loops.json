@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-01",
-  "total": 2,
+  "date": "2026-03-02",
+  "total": 3,
   "human_required": 1,
-  "auto_fixable": 1,
+  "auto_fixable": 2,
   "loops": [
     {
       "type": "grant_submission",
@@ -10,15 +10,23 @@
       "description": "Grant drafted but not submitted: Mozilla Foundation \u2014 Mozilla Technology Fund",
       "action": "Submit at: https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund/",
       "human_required": true,
-      "date_found": "2026-03-01"
+      "date_found": "2026-03-02"
+    },
+    {
+      "type": "workflow_health",
+      "priority": "HIGH",
+      "description": "System health RED: 64% (18 failing)",
+      "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
+      "human_required": false,
+      "date_found": "2026-03-02"
     },
     {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "29 unresolved diagnostic issues",
+      "description": "36 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
-      "date_found": "2026-03-01"
+      "date_found": "2026-03-02"
     }
   ]
 }
