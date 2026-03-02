@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-02 19:06 UTC — feat: email_optin_guard.py — global dedup + Yes/No consent layer for all outbound email*
+*Auto-updated by the system. Last update: 2026-03-02 19:23 UTC — feat: claude_autonomous.py — self-running Claude replacement that audits + fixes the system*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
