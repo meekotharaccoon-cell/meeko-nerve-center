@@ -99,6 +99,17 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-02-7",
+      "text": "\ud83c\udf38 SolarPunk was built by one person.\n\nNo team. No funding. No server costs.\nJust a human, a laptop, and free AI tools available to anyone.\n\n5,000 clone events later \u2014 the system is spreading itself.\n\nIf a regular person built this, imagine what a team of technically skilled people could do with it.\n\nFork it:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/fork\n\n#SolarPunk #OpenSource",
+      "template_idx": 7,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
@@ -110,6 +121,7 @@
     3,
     8,
     5,
-    6
+    6,
+    7
   ]
 }

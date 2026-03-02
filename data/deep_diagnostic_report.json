@@ -1,23 +1,16 @@
 {
   "date": "2026-03-02",
-  "timestamp": "2026-03-02T02:20:12.856828",
+  "timestamp": "2026-03-02T08:02:00.838285",
   "summary": {
     "ok": 13,
     "fixed": 0,
     "warnings": 101,
-    "failures": 38,
-    "total": 152,
+    "failures": 33,
+    "total": 147,
     "health_pct": 9
   },
   "auto_fixes": [],
   "results": [
-    {
-      "check": "syntax:ORCHESTRATOR.py",
-      "status": "fail",
-      "detail": "ORCHESTRATOR.py: line 59 \u2014 invalid character '\u2014' (U+2014)",
-      "fixable": false,
-      "fix_applied": false
-    },
     {
       "check": "syntax:autonomous_git.py",
       "status": "fail",
@@ -54,13 +47,6 @@
       "fix_applied": false
     },
     {
-      "check": "syntax:gen_status.py",
-      "status": "fail",
-      "detail": "gen_status.py: line 49 \u2014 f-string: expecting '}'",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "syntax:grant_auto_submitter.py",
       "status": "fail",
       "detail": "grant_auto_submitter.py: line 244 \u2014 f-string expression part cannot include a backslash",
@@ -68,23 +54,9 @@
       "fix_applied": false
     },
     {
-      "check": "syntax:hf_brain.py",
-      "status": "fail",
-      "detail": "hf_brain.py: line 139 \u2014 f-string expression part cannot include a backslash",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "syntax:identity_vault.py",
       "status": "fail",
       "detail": "identity_vault.py: line 59 \u2014 invalid syntax",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "syntax:morning_briefing.py",
-      "status": "fail",
-      "detail": "morning_briefing.py: line 73 \u2014 f-string expression part cannot include a backslash",
       "fixable": false,
       "fix_applied": false
     },
@@ -113,13 +85,6 @@
       "check": "syntax:sovereign_research.py",
       "status": "fail",
       "detail": "sovereign_research.py: line 309 \u2014 unmatched ')'",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "syntax:wiring_hub.py",
-      "status": "fail",
-      "detail": "wiring_hub.py: line 91 \u2014 invalid syntax",
       "fixable": false,
       "fix_applied": false
     },
@@ -532,7 +497,7 @@
     {
       "check": "schedules disabled",
       "status": "ok",
-      "detail": "28/56 workflows have schedules disabled (email safety)",
+      "detail": "29/56 workflows have schedules disabled (email safety)",
       "fixable": false,
       "fix_applied": false
     },
@@ -917,42 +882,56 @@
     {
       "check": "workflow_health",
       "status": "fail",
-      "detail": "64% healthy, 18 failing, color=RED",
+      "detail": "61% healthy, 18 failing, color=RED",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:asset-scan.yml",
       "status": "fail",
-      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558797612",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:community-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264164",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881218",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:congress-watcher.yml",
       "status": "fail",
-      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22538849006",
+      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566739767",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:daily-promoter.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf39 Gaza Rose Promoter \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22560480390",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:dex-monitor.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcc8 DEX Monitor \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566584779",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-drafter.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881549",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-gateway.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264345",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880627",
       "fixable": false,
       "fix_applied": false
     },
@@ -966,7 +945,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263767",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881368",
       "fixable": false,
       "fix_applied": false
     },
@@ -980,28 +959,28 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881077",
       "fixable": false,
       "fix_applied": false
     },
     {
-      "check": "failing:orchestrator-daily.yml",
+      "check": "failing:knowledge-harvester.yml",
       "status": "fail",
-      "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "detail": "\ud83e\udde0 Knowledge Harvester \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566542021",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-grants.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264235",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880795",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263917",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880925",
       "fixable": false,
       "fix_applied": false
     },
@@ -1015,14 +994,7 @@
     {
       "check": "failing:space-bridge-daily.yml",
       "status": "fail",
-      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "failing:wiring-hub-daily.yml",
-      "status": "fail",
-      "detail": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22533939922",
+      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558820032",
       "fixable": false,
       "fix_applied": false
     },
@@ -1037,13 +1009,6 @@
       "check": "failing:youtube-shorts-writer.yml",
       "status": "fail",
       "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22539984700",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "failing:dynamic/pages/pages-build-deployment",
-      "status": "fail",
-      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558709800",
       "fixable": false,
       "fix_applied": false
     },
@@ -1077,13 +1042,6 @@
     }
   ],
   "action_required": [
-    {
-      "check": "syntax:ORCHESTRATOR.py",
-      "status": "fail",
-      "detail": "ORCHESTRATOR.py: line 59 \u2014 invalid character '\u2014' (U+2014)",
-      "fixable": false,
-      "fix_applied": false
-    },
     {
       "check": "syntax:autonomous_git.py",
       "status": "fail",
@@ -1120,13 +1078,6 @@
       "fix_applied": false
     },
     {
-      "check": "syntax:gen_status.py",
-      "status": "fail",
-      "detail": "gen_status.py: line 49 \u2014 f-string: expecting '}'",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "syntax:grant_auto_submitter.py",
       "status": "fail",
       "detail": "grant_auto_submitter.py: line 244 \u2014 f-string expression part cannot include a backslash",
@@ -1134,23 +1085,9 @@
       "fix_applied": false
     },
     {
-      "check": "syntax:hf_brain.py",
-      "status": "fail",
-      "detail": "hf_brain.py: line 139 \u2014 f-string expression part cannot include a backslash",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "syntax:identity_vault.py",
       "status": "fail",
       "detail": "identity_vault.py: line 59 \u2014 invalid syntax",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "syntax:morning_briefing.py",
-      "status": "fail",
-      "detail": "morning_briefing.py: line 73 \u2014 f-string expression part cannot include a backslash",
       "fixable": false,
       "fix_applied": false
     },
@@ -1183,13 +1120,6 @@
       "fix_applied": false
     },
     {
-      "check": "syntax:wiring_hub.py",
-      "status": "fail",
-      "detail": "wiring_hub.py: line 91 \u2014 invalid syntax",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
       "check": "syntax:youtube_manager.py",
       "status": "fail",
       "detail": "youtube_manager.py: line 249 \u2014 f-string expression part cannot include a backslash",
@@ -1213,42 +1143,56 @@
     {
       "check": "workflow_health",
       "status": "fail",
-      "detail": "64% healthy, 18 failing, color=RED",
+      "detail": "61% healthy, 18 failing, color=RED",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:asset-scan.yml",
       "status": "fail",
-      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436",
+      "detail": "\ud83d\udd0e Asset Scanner \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558797612",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:community-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264164",
+      "detail": ".github/workflows/community-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881218",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:congress-watcher.yml",
       "status": "fail",
-      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22538849006",
+      "detail": "\ud83c\udfdb\ufe0f Congress Stock Watcher \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566739767",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:daily-promoter.yml",
+      "status": "fail",
+      "detail": "\ud83c\udf39 Gaza Rose Promoter \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22560480390",
+      "fixable": false,
+      "fix_applied": false
+    },
+    {
+      "check": "failing:dex-monitor.yml",
+      "status": "fail",
+      "detail": "\ud83d\udcc8 DEX Monitor \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566584779",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-drafter.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
+      "detail": ".github/workflows/email-drafter.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881549",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:email-gateway.yml",
       "status": "fail",
-      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264345",
+      "detail": ".github/workflows/email-gateway.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880627",
       "fixable": false,
       "fix_applied": false
     },
@@ -1262,7 +1206,7 @@
     {
       "check": "failing:feedback-loop.yml",
       "status": "fail",
-      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263767",
+      "detail": ".github/workflows/feedback-loop.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881368",
       "fixable": false,
       "fix_applied": false
     },
@@ -1276,28 +1220,28 @@
     {
       "check": "failing:jekyll-gh-pages.yml",
       "status": "fail",
-      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050",
+      "detail": ".github/workflows/jekyll-gh-pages.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565881077",
       "fixable": false,
       "fix_applied": false
     },
     {
-      "check": "failing:orchestrator-daily.yml",
+      "check": "failing:knowledge-harvester.yml",
       "status": "fail",
-      "detail": "\ud83e\udde0 Orchestrator \u2014 Full Cycle \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675",
+      "detail": "\ud83e\udde0 Knowledge Harvester \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22566542021",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-grants.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264235",
+      "detail": ".github/workflows/send-grants.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880795",
       "fixable": false,
       "fix_applied": false
     },
     {
       "check": "failing:send-outreach.yml",
       "status": "fail",
-      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263917",
+      "detail": ".github/workflows/send-outreach.yml \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22565880925",
       "fixable": false,
       "fix_applied": false
     },
@@ -1311,14 +1255,7 @@
     {
       "check": "failing:space-bridge-daily.yml",
       "status": "fail",
-      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "failing:wiring-hub-daily.yml",
-      "status": "fail",
-      "detail": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22533939922",
+      "detail": "\ud83d\udef8 Space Bridge \u2014 Report \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558820032",
       "fixable": false,
       "fix_applied": false
     },
@@ -1333,13 +1270,6 @@
       "check": "failing:youtube-shorts-writer.yml",
       "status": "fail",
       "detail": "\ud83c\udfac YouTube Shorts Writer \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22539984700",
-      "fixable": false,
-      "fix_applied": false
-    },
-    {
-      "check": "failing:dynamic/pages/pages-build-deployment",
-      "status": "fail",
-      "detail": "pages-build-deployment \u2014 https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558709800",
       "fixable": false,
       "fix_applied": false
     }

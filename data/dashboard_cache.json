@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-02T02:20:12.775666",
+  "generated_at": "2026-03-02T08:02:00.765790",
   "date": "2026-03-02",
   "system": {
     "engines_total": 159,
@@ -22,17 +22,17 @@
     "trades_flagged": 0
   },
   "health": {
-    "passing_pct": 64,
+    "passing_pct": 61,
     "total_workflows": 57,
     "failing": 18,
     "color": "RED",
-    "last_check": "2026-03-02T02:19:41.199616"
+    "last_check": "2026-03-02T08:01:37.135764"
   },
   "market": {
     "fear_greed": 10,
     "fear_greed_label": "Extreme Fear",
-    "top_signal": "HYPE",
-    "top_confidence": 87
+    "top_signal": "BTC",
+    "top_confidence": 82
   },
   "press": {
     "articles": 0,
