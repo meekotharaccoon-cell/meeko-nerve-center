@@ -3,9 +3,9 @@
   "results": [
     {
       "check": "github_pages",
-      "ok": true,
-      "detail": "HTTP 200",
-      "action": null
+      "ok": false,
+      "detail": "HTTP 200 \u2014 site may be down or not yet enabled",
+      "action": "Enable GitHub Pages: repo \u2192 Settings \u2192 Pages \u2192 main branch \u2192 /public"
     },
     {
       "check": "system_health_alerting",
@@ -45,17 +45,17 @@
       "check": "github_actions",
       "ok": true,
       "detail": "Latest: Perpetual Builder \u2014 None",
-      "failures": 0
+      "failures": 2
     },
     {
       "check": "social_queue",
       "ok": true,
-      "detail": "31 posts queued in last 3 days (31 total)",
+      "detail": "33 posts queued in last 3 days (33 total)",
       "action": null
     }
   ],
   "confidence": {
-    "github_pages": 98,
+    "github_pages": 78,
     "system_health_alerting": 98,
     "idea_engine": 98,
     "world_intelligence": 98,
@@ -65,6 +65,6 @@
     "github_actions": 98,
     "social_queue": 98
   },
-  "failures": 1,
-  "passes": 8
+  "failures": 2,
+  "passes": 7
 }

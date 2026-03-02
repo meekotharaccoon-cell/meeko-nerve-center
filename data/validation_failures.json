@@ -1,6 +1,7 @@
 {
   "date": "2026-03-02",
   "checks": [
+    "github_pages",
     "content_performance"
   ]
 }
