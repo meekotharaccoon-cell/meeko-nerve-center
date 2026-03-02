@@ -1,9 +1,9 @@
 {
-  "run_at": "2026-02-28T18:01:29.862015Z",
-  "passed": 39,
+  "run_at": "2026-03-02T02:04:25.638841Z",
+  "passed": 50,
   "warned": 0,
   "failed": 6,
-  "secrets": 7,
+  "secrets": 6,
   "results": [
     {
       "category": "secrets",
@@ -50,9 +50,9 @@
     {
       "category": "secrets",
       "name": "Gumroad sales API",
-      "status": "pass",
-      "detail": "connected",
-      "fix": ""
+      "status": "fail",
+      "detail": "MISSING",
+      "fix": "Get at app.gumroad.com/settings/advanced"
     },
     {
       "category": "secrets",
@@ -100,42 +100,42 @@
       "category": "knowledge",
       "name": "Total knowledge files",
       "status": "info",
-      "detail": "64 .md files",
+      "detail": "80 .md files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "knowledge/github/",
       "status": "pass",
-      "detail": "4 files",
+      "detail": "5 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "knowledge/wikipedia/",
       "status": "pass",
-      "detail": "4 files",
+      "detail": "5 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "knowledge/arxiv/",
       "status": "pass",
-      "detail": "4 files",
+      "detail": "5 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "knowledge/hackernews/",
       "status": "pass",
-      "detail": "4 files",
+      "detail": "5 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "knowledge/nasa/",
       "status": "pass",
-      "detail": "4 files",
+      "detail": "5 files",
       "fix": ""
     },
     {
@@ -149,21 +149,21 @@
       "category": "knowledge",
       "name": "knowledge/digest/",
       "status": "pass",
-      "detail": "7 files",
+      "detail": "9 files",
       "fix": ""
     },
     {
       "category": "knowledge",
       "name": "LATEST_DIGEST.md",
       "status": "pass",
-      "detail": "3,481 bytes",
+      "detail": "3,410 bytes",
       "fix": ""
     },
     {
       "category": "workflows",
       "name": "Total workflows",
       "status": "info",
-      "detail": "53 .yml files",
+      "detail": "56 .yml files",
       "fix": ""
     },
     {
@@ -282,7 +282,35 @@
       "category": "pipeline",
       "name": "wiring_status.json",
       "status": "pass",
-      "detail": "1,610 bytes",
+      "detail": "1,629 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "03-grant-hunter-system.md",
+      "status": "pass",
+      "detail": "8,357 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "05-store-that-runs-itself.md",
+      "status": "pass",
+      "detail": "4,857 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "06-the-morning-briefing.md",
+      "status": "pass",
+      "detail": "3,468 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "04-the-viral-fork.md",
+      "status": "pass",
+      "detail": "5,051 bytes",
       "fix": ""
     },
     {
@@ -290,6 +318,55 @@
       "name": "fork-guide.md",
       "status": "pass",
       "detail": "7,239 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "10-the-ethical-ai-business.md",
+      "status": "pass",
+      "detail": "2,771 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "09-the-prompt-that-changed-everything.md",
+      "status": "pass",
+      "detail": "2,780 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "01-the-zero-dollar-ai-stack.md",
+      "status": "pass",
+      "detail": "5,226 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "07-the-digital-twin.md",
+      "status": "pass",
+      "detail": "2,817 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "02-autonomous-email-responder.md",
+      "status": "pass",
+      "detail": "8,507 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "PRODUCT_CATALOG.md",
+      "status": "pass",
+      "detail": "2,547 bytes",
+      "fix": ""
+    },
+    {
+      "category": "products",
+      "name": "08-permanent-internet-presence.md",
+      "status": "pass",
+      "detail": "1,989 bytes",
       "fix": ""
     },
     {
@@ -323,8 +400,8 @@
     {
       "category": "network",
       "name": "ISS / Open-Notify",
-      "status": "fail",
-      "detail": "<urlopen error timed out>",
+      "status": "pass",
+      "detail": "HTTP 200",
       "fix": ""
     },
     {
