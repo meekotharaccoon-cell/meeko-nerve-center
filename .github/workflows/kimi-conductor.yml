@@ -1,0 +1,50 @@
+name: Kimi Conductor
+
+on:
+  schedule:
+    # 30 min after Claude Autonomous (9:30am + 9:30pm UTC)
+    # Kimi always has Claude's fresh report to respond to
+    - cron: '30 9 * * *'
+    - cron: '30 21 * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why triggering manually?'
+        required: false
+        default: 'manual run'
+
+jobs:
+  kimi-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Kimi Conductor
+        env:
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python mycelium/kimi_conductor.py
+
+      - name: Upload Kimi report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kimi-report-${{ github.run_id }}
+          path: data/kimi_conductor_report.json
+          if-no-files-found: ignore
