@@ -1,0 +1,46 @@
+name: 🎮 Discord Bridge — Daily Briefing + Sale Alerts
+
+on:
+  schedule:
+    - cron: '30 6 * * *'   # 6:30am UTC — after MASTER_CONTROLLER morning cycle
+    - cron: '30 18 * * *'  # 6:30pm UTC — after MASTER_CONTROLLER evening cycle
+  workflow_dispatch:
+
+jobs:
+  discord_bridge:
+    name: 🎮 Discord Bridge
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk-Discord'
+          git config user.email 'solarpunk@meeko-nerve-center'
+          mkdir -p data
+
+      - name: Run Discord Bridge
+        env:
+          DIS_APP_ID: ${{ secrets.DIS_APP_ID }}
+          DIS_APP_PUBLIC_KEY: ${{ secrets.DIS_APP_PUBLIC_KEY }}
+          DIS_BOT_TOKEN: ${{ secrets.DIS_BOT_TOKEN }}
+          DIS_CHANNEL_ID: ${{ secrets.DIS_CHANNEL_ID }}
+        run: python mycelium/discord_bridge.py
+        continue-on-error: true
+
+      - name: Commit Discord status
+        run: |
+          git add data/discord_status.json data/discord_last_sale_posted.json || true
+          git diff --cached --quiet && echo 'Nothing to commit' && exit 0
+          git commit -m "🎮 discord briefing — $(date +%Y-%m-%d\ %H:%M)"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true
