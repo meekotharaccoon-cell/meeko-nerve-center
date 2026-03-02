@@ -1,30 +1,7 @@
 {
-  "date": "2026-03-01",
+  "date": "2026-03-02",
   "total": 158,
   "crypto_jobs": [
-    {
-      "id": 139577,
-      "title": "Business Partnership Manager &amp;#8211; Payment",
-      "company": "Binance",
-      "location": "Poland",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Business Development"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139577-business-partnership-manager-payment",
-      "excerpt": "Binance is a leading global blockchain ecosystem behind the world\u2019s largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for...",
-      "tags": [],
-      "date": "2026-02-16T16:40:00+00:00",
-      "scores": {
-        "crypto": 6,
-        "mission": 0,
-        "value": 3,
-        "total": 9
-      }
-    },
     {
       "id": 139850,
       "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
@@ -293,10 +270,10 @@
       }
     },
     {
-      "id": 139655,
-      "title": "Deputy Head of Engineering (Node.js / Next.js)",
-      "company": "Ruby Labs",
-      "location": "Ukraine",
+      "id": 140027,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Spain | Remote",
+      "company": "Grafana Labs",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -304,33 +281,10 @@
         "Software Engineering"
       ],
       "salary": "",
-      "url": "https://jobicy.com/jobs/139655-deputy-head-of-engineering-node-js-next-js",
-      "excerpt": "About usRuby Labs is a leading tech company that creates and operates innovative consumer products. We offer a diverse range of opportunities across the health, education, and entertainment industries. Our...",
+      "url": "https://jobicy.com/jobs/140027-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-spain-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
       "tags": [],
-      "date": "2026-02-18T03:45:57+00:00",
-      "scores": {
-        "crypto": 0,
-        "mission": 6,
-        "value": 3,
-        "total": 9
-      }
-    },
-    {
-      "id": 139598,
-      "title": "CRAII / Senior CRA",
-      "company": "ICON plc",
-      "location": "Australia",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Healthcare &amp; Medical"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139598-craii-senior-cra",
-      "excerpt": "CRA II / Senior CRA, Home-based in Sydney preferredICON plc is a world-leading healthcare intelligence and clinical research organization. We\u2019re proud to foster an inclusive environment driving innovation and excellence,...",
-      "tags": [],
-      "date": "2026-02-16T16:41:27+00:00",
+      "date": "2026-03-02T07:42:21+00:00",
       "scores": {
         "crypto": 0,
         "mission": 6,
@@ -403,6 +357,75 @@
         "mission": 3,
         "value": 6,
         "total": 9
+      }
+    },
+    {
+      "id": 140028,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Germany | Remote",
+      "company": "Grafana Labs",
+      "location": "Germany",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140028-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-germany-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:23+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
+      }
+    },
+    {
+      "id": 140026,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Sweden | Remote",
+      "company": "Grafana Labs",
+      "location": "Sweden",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140026-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-sweden-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:19+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
+      }
+    },
+    {
+      "id": 140025,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | United Kingdom | Remote",
+      "company": "Grafana Labs",
+      "location": "UK",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140025-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-united-kingdom-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:17+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
       }
     },
     {
@@ -584,21 +607,21 @@
       }
     },
     {
-      "id": 139548,
-      "title": "Lead Solution Architect- Networking",
-      "company": "World Wide Technology",
-      "location": "USA",
+      "id": 140033,
+      "title": "Senior Business Development Manager (UK Remote)",
+      "company": "Turnitin, LLC",
+      "location": "UK",
       "type": [
         "Full-Time"
       ],
       "industry": [
-        "Software Engineering"
+        "Business Development"
       ],
       "salary": "",
-      "url": "https://jobicy.com/jobs/139548-lead-solution-architect-networking",
-      "excerpt": "Qualifications:Education Qualifications Bachelor\u2019s Degree\u202frequired, Master\u2019s degree preferred Work Experience A minimum of 10 years&amp;#8217; progressive experience in a related field required Other Work Experience 10+ years of experience in customer...",
+      "url": "https://jobicy.com/jobs/140033-senior-business-development-manager-uk-remote",
+      "excerpt": "Company DescriptionWhen you join Turnitin, you&amp;#8217;ll be welcomed into a company that is a recognized innovator in the global education space. For more than 25 years, Turnitin has partnered with...",
       "tags": [],
-      "date": "2026-02-15T07:06:23+00:00",
+      "date": "2026-03-02T07:42:31+00:00",
       "scores": {
         "crypto": 0,
         "mission": 3,
@@ -650,69 +673,6 @@
         "mission": 3,
         "value": 2,
         "total": 5
-      }
-    },
-    {
-      "id": "1680495",
-      "title": "Office Assistant",
-      "company": "Coalition Technologies ",
-      "location": "Remote",
-      "type": "full_time",
-      "industry": "Marketing",
-      "salary": "$31,2k- $52k",
-      "url": "https://remotive.com/remote-jobs/marketing/office-assistant-1680495",
-      "excerpt": "<p class=\"h3\">WHY YOU SHOULD APPLY:</p>\n<p>\u00a0</p>\n<p>Coalition Technologies is devoted to delivering clients the highest quality work while providing our team a fun, thriving, and innovative environment. Along with the opportunity for tremendous career growth and rapid advancement, CT offers:</p>\n<ul",
-      "tags": [
-        "CSS",
-        "excel",
-        "frontend",
-        "git",
-        "html",
-        "illustrator",
-        "magento",
-        "photoshop",
-        "php",
-        "shopify",
-        "wordpress",
-        "MySQL",
-        "startup",
-        "responsive",
-        "themes",
-        "bootstrap",
-        "insurance",
-        "jQuery",
-        "Ajax"
-      ],
-      "date": "2026-02-11",
-      "source": "remotive",
-      "scores": {
-        "crypto": 0,
-        "mission": 3,
-        "value": 2,
-        "total": 5
-      }
-    },
-    {
-      "id": 139918,
-      "title": "Developer",
-      "company": "World Wide Technology",
-      "location": "USA",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Programming"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139918-developer",
-      "excerpt": "Qualifications\u00a0 5+ years of professional software development experience, ideally across multiple technology stacks and environments. Demonstrated experience evaluating, adopting, or integrating AI\u2011related development tools, frameworks, or workflows. Strong understanding of...",
-      "tags": [],
-      "date": "2026-02-27T03:33:42+00:00",
-      "scores": {
-        "crypto": 0,
-        "mission": 3,
-        "value": 1,
-        "total": 4
       }
     }
   ],
@@ -914,10 +874,10 @@
       }
     },
     {
-      "id": 139655,
-      "title": "Deputy Head of Engineering (Node.js / Next.js)",
-      "company": "Ruby Labs",
-      "location": "Ukraine",
+      "id": 140027,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Spain | Remote",
+      "company": "Grafana Labs",
+      "location": "Spain",
       "type": [
         "Full-Time"
       ],
@@ -925,56 +885,10 @@
         "Software Engineering"
       ],
       "salary": "",
-      "url": "https://jobicy.com/jobs/139655-deputy-head-of-engineering-node-js-next-js",
-      "excerpt": "About usRuby Labs is a leading tech company that creates and operates innovative consumer products. We offer a diverse range of opportunities across the health, education, and entertainment industries. Our...",
+      "url": "https://jobicy.com/jobs/140027-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-spain-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
       "tags": [],
-      "date": "2026-02-18T03:45:57+00:00",
-      "scores": {
-        "crypto": 0,
-        "mission": 6,
-        "value": 3,
-        "total": 9
-      }
-    },
-    {
-      "id": 139577,
-      "title": "Business Partnership Manager &amp;#8211; Payment",
-      "company": "Binance",
-      "location": "Poland",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Business Development"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139577-business-partnership-manager-payment",
-      "excerpt": "Binance is a leading global blockchain ecosystem behind the world\u2019s largest cryptocurrency exchange by trading volume and registered users. We are trusted by 300+ million people in 100+ countries for...",
-      "tags": [],
-      "date": "2026-02-16T16:40:00+00:00",
-      "scores": {
-        "crypto": 6,
-        "mission": 0,
-        "value": 3,
-        "total": 9
-      }
-    },
-    {
-      "id": 139598,
-      "title": "CRAII / Senior CRA",
-      "company": "ICON plc",
-      "location": "Australia",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Healthcare &amp; Medical"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139598-craii-senior-cra",
-      "excerpt": "CRA II / Senior CRA, Home-based in Sydney preferredICON plc is a world-leading healthcare intelligence and clinical research organization. We\u2019re proud to foster an inclusive environment driving innovation and excellence,...",
-      "tags": [],
-      "date": "2026-02-16T16:41:27+00:00",
+      "date": "2026-03-02T07:42:21+00:00",
       "scores": {
         "crypto": 0,
         "mission": 6,
@@ -1047,6 +961,75 @@
         "mission": 3,
         "value": 6,
         "total": 9
+      }
+    },
+    {
+      "id": 140028,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Germany | Remote",
+      "company": "Grafana Labs",
+      "location": "Germany",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140028-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-germany-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:23+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
+      }
+    },
+    {
+      "id": 140026,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | Sweden | Remote",
+      "company": "Grafana Labs",
+      "location": "Sweden",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140026-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-sweden-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:19+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
+      }
+    },
+    {
+      "id": 140025,
+      "title": "Staff Mobile Engineer: Instrumentation SDK (iOS/Android) &amp;#8211; Observability | United Kingdom | Remote",
+      "company": "Grafana Labs",
+      "location": "UK",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140025-staff-mobile-engineer-instrumentation-sdk-ios-android-observability-united-kingdom-remote",
+      "excerpt": "Grafana Labs is a remote-first, open-source powerhouse. There are more than 20M users of Grafana, the open source visualization tool, around the globe, monitoring everything from beehives to climate change...",
+      "tags": [],
+      "date": "2026-03-02T07:42:17+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 6,
+        "value": 2,
+        "total": 8
       }
     },
     {
@@ -1426,21 +1409,21 @@
       }
     },
     {
-      "id": 139548,
-      "title": "Lead Solution Architect- Networking",
-      "company": "World Wide Technology",
-      "location": "USA",
+      "id": 140033,
+      "title": "Senior Business Development Manager (UK Remote)",
+      "company": "Turnitin, LLC",
+      "location": "UK",
       "type": [
         "Full-Time"
       ],
       "industry": [
-        "Software Engineering"
+        "Business Development"
       ],
       "salary": "",
-      "url": "https://jobicy.com/jobs/139548-lead-solution-architect-networking",
-      "excerpt": "Qualifications:Education Qualifications Bachelor\u2019s Degree\u202frequired, Master\u2019s degree preferred Work Experience A minimum of 10 years&amp;#8217; progressive experience in a related field required Other Work Experience 10+ years of experience in customer...",
+      "url": "https://jobicy.com/jobs/140033-senior-business-development-manager-uk-remote",
+      "excerpt": "Company DescriptionWhen you join Turnitin, you&amp;#8217;ll be welcomed into a company that is a recognized innovator in the global education space. For more than 25 years, Turnitin has partnered with...",
       "tags": [],
-      "date": "2026-02-15T07:06:23+00:00",
+      "date": "2026-03-02T07:42:31+00:00",
       "scores": {
         "crypto": 0,
         "mission": 3,
@@ -1970,6 +1953,29 @@
       }
     },
     {
+      "id": 140014,
+      "title": "Engineering Director (100% Remote-friendly, Spain)",
+      "company": "Docplanner",
+      "location": "Spain",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/140014-engineering-director-100-remote-friendly-spain",
+      "excerpt": "Company DescriptionWelcome to the good side of tech You might have heard about us, but with a different name:\u00a0Doctoralia. It all started more than 10 years ago, when we asked...",
+      "tags": [],
+      "date": "2026-03-02T07:41:59+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 0,
+        "value": 3,
+        "total": 3
+      }
+    },
+    {
       "id": 139935,
       "title": "Senior Software Engineer &amp;#8211; Full Remote or Hybrid",
       "company": "Voyage Priv\u00e9",
@@ -2054,52 +2060,6 @@
       "excerpt": "Please submit your CV in English and indicate your level of English proficiency. Mindrift connects specialists with project-based AI opportunities for leading tech companies, focused on testing, evaluating, and improving...",
       "tags": [],
       "date": "2026-02-23T15:17:19+00:00",
-      "scores": {
-        "crypto": 0,
-        "mission": 0,
-        "value": 3,
-        "total": 3
-      }
-    },
-    {
-      "id": 139804,
-      "title": "Electrical Engineer with Python &amp;#8211; Freelance AI Trainer",
-      "company": "Mindrift",
-      "location": "Romania",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Software Engineering"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139804-electrical-engineer-with-python-freelance-ai-trainer",
-      "excerpt": "Please submit your CV in English and indicate your level of English proficiency. Mindrift connects specialists with project-based AI opportunities for leading tech companies, focused on testing, evaluating, and improving...",
-      "tags": [],
-      "date": "2026-02-23T15:17:17+00:00",
-      "scores": {
-        "crypto": 0,
-        "mission": 0,
-        "value": 3,
-        "total": 3
-      }
-    },
-    {
-      "id": 139784,
-      "title": "Enterprise Architect",
-      "company": "WorkNomads",
-      "location": "Bulgaria",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Software Engineering"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139784-enterprise-architect-2",
-      "excerpt": "WorkNomads is seeking an Enterprise Architect to join our diverse team, working remote from the EU or from the WorkNomads base in Sofia, Bulgaria.Dare to have a mission:&amp;#8211; Lead large-scale...",
-      "tags": [],
-      "date": "2026-02-23T15:16:25+00:00",
       "scores": {
         "crypto": 0,
         "mission": 0,
