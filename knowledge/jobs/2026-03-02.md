@@ -1,10 +1,9 @@
 # Remote Jobs Digest — 2026-03-02
 
-Total: 158 | Crypto/Web3: 3 | Mission: 32
+Total: 157 | Crypto/Web3: 2 | Mission: 31
 
 ## Top Crypto/Web3 Jobs
 
-- **Senior Software Engineer &amp;#8211; .NET, AWS** @ Experian | https://jobicy.com/jobs/139850-senior-software-engineer-net-aws
 - **Software Architect** @ OrthoVirginia | https://jobicy.com/jobs/139835-software-architect
 - **APM Strategy &amp;#038; Reliability SME &amp;#8211; Digital Implementation Services** @ GE Vernova | https://jobicy.com/jobs/139588-apm-strategy-reliability-sme-digital-implementation-services
 

@@ -1,30 +1,7 @@
 {
   "date": "2026-03-02",
-  "total": 158,
+  "total": 157,
   "crypto_jobs": [
-    {
-      "id": 139850,
-      "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
-      "company": "Experian",
-      "location": "USA",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Software Engineering"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139850-senior-software-engineer-net-aws",
-      "excerpt": "Company DescriptionExperian is a global data and technology company, powering opportunities for people and businesses around the world. We help to redefine lending practices, uncover and prevent fraud, simplify healthcare,...",
-      "tags": [],
-      "date": "2026-02-25T04:03:33+00:00",
-      "scores": {
-        "crypto": 3,
-        "mission": 3,
-        "value": 1,
-        "total": 7
-      }
-    },
     {
       "id": 139835,
       "title": "Software Architect",
@@ -478,29 +455,6 @@
       }
     },
     {
-      "id": 139850,
-      "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
-      "company": "Experian",
-      "location": "USA",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Software Engineering"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139850-senior-software-engineer-net-aws",
-      "excerpt": "Company DescriptionExperian is a global data and technology company, powering opportunities for people and businesses around the world. We help to redefine lending practices, uncover and prevent fraud, simplify healthcare,...",
-      "tags": [],
-      "date": "2026-02-25T04:03:33+00:00",
-      "scores": {
-        "crypto": 3,
-        "mission": 3,
-        "value": 1,
-        "total": 7
-      }
-    },
-    {
       "id": 139786,
       "title": "Backend Engineer &amp;#8211; AI Integration",
       "company": "Docplanner",
@@ -668,6 +622,46 @@
       "excerpt": "At Claritev, we pride ourselves on being a dynamic team of innovative professionals. Our purpose is simple &amp;#8211; we strive\u00a0to bend the cost curve in healthcare for all. Our dedication...",
       "tags": [],
       "date": "2026-02-15T07:06:19+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 3,
+        "value": 2,
+        "total": 5
+      }
+    },
+    {
+      "id": "1680495",
+      "title": "Office Assistant",
+      "company": "Coalition Technologies ",
+      "location": "Remote",
+      "type": "full_time",
+      "industry": "Marketing",
+      "salary": "$31,2k- $52k",
+      "url": "https://remotive.com/remote-jobs/marketing/office-assistant-1680495",
+      "excerpt": "<p class=\"h3\">WHY YOU SHOULD APPLY:</p>\n<p>\u00a0</p>\n<p>Coalition Technologies is devoted to delivering clients the highest quality work while providing our team a fun, thriving, and innovative environment. Along with the opportunity for tremendous career growth and rapid advancement, CT offers:</p>\n<ul",
+      "tags": [
+        "CSS",
+        "excel",
+        "frontend",
+        "git",
+        "html",
+        "illustrator",
+        "magento",
+        "photoshop",
+        "php",
+        "shopify",
+        "wordpress",
+        "MySQL",
+        "startup",
+        "responsive",
+        "themes",
+        "bootstrap",
+        "insurance",
+        "jQuery",
+        "Ajax"
+      ],
+      "date": "2026-02-11",
+      "source": "remotive",
       "scores": {
         "crypto": 0,
         "mission": 3,
@@ -1079,29 +1073,6 @@
         "mission": 3,
         "value": 5,
         "total": 8
-      }
-    },
-    {
-      "id": 139850,
-      "title": "Senior Software Engineer &amp;#8211; .NET, AWS",
-      "company": "Experian",
-      "location": "USA",
-      "type": [
-        "Full-Time"
-      ],
-      "industry": [
-        "Software Engineering"
-      ],
-      "salary": "",
-      "url": "https://jobicy.com/jobs/139850-senior-software-engineer-net-aws",
-      "excerpt": "Company DescriptionExperian is a global data and technology company, powering opportunities for people and businesses around the world. We help to redefine lending practices, uncover and prevent fraud, simplify healthcare,...",
-      "tags": [],
-      "date": "2026-02-25T04:03:33+00:00",
-      "scores": {
-        "crypto": 3,
-        "mission": 3,
-        "value": 1,
-        "total": 7
       }
     },
     {
@@ -2060,6 +2031,29 @@
       "excerpt": "Please submit your CV in English and indicate your level of English proficiency. Mindrift connects specialists with project-based AI opportunities for leading tech companies, focused on testing, evaluating, and improving...",
       "tags": [],
       "date": "2026-02-23T15:17:19+00:00",
+      "scores": {
+        "crypto": 0,
+        "mission": 0,
+        "value": 3,
+        "total": 3
+      }
+    },
+    {
+      "id": 139804,
+      "title": "Electrical Engineer with Python &amp;#8211; Freelance AI Trainer",
+      "company": "Mindrift",
+      "location": "Romania",
+      "type": [
+        "Full-Time"
+      ],
+      "industry": [
+        "Software Engineering"
+      ],
+      "salary": "",
+      "url": "https://jobicy.com/jobs/139804-electrical-engineer-with-python-freelance-ai-trainer",
+      "excerpt": "Please submit your CV in English and indicate your level of English proficiency. Mindrift connects specialists with project-based AI opportunities for leading tech companies, focused on testing, evaluating, and improving...",
+      "tags": [],
+      "date": "2026-02-23T15:17:17+00:00",
       "scores": {
         "crypto": 0,
         "mission": 0,

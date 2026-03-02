@@ -64,156 +64,156 @@
   },
   "solana_new_pools": [
     {
-      "name": "KUDU / SOL",
-      "price_usd": "0.000242790415553548538242174588586892498766039746055671340079290624",
-      "volume_24h": "1453.0037517387",
-      "created": "2026-03-02T17:16:58Z",
-      "dex": "meteora-dbc",
-      "url": "https://www.geckoterminal.com/solana/pools/HJXMe4SR3pYR9CxYSz2dUeNoGzDXowmqZCJku9mKwzXv"
-    },
-    {
-      "name": "CTRL / SOL",
-      "price_usd": "0.00000289890974592483857844483773069199582781737887976180465794166096",
-      "volume_24h": "264.8749959832",
-      "created": "2026-03-02T17:16:55Z",
-      "dex": "meteora-dbc",
-      "url": "https://www.geckoterminal.com/solana/pools/4D5Tm1sz1d1irLMuQUvnFH6U4p3d5H6LmtUsMEs5SgST"
-    },
-    {
-      "name": "Shitfaced / SOL",
-      "price_usd": "0.00000529220975374949942517311565360505474205450867276427623012986628",
-      "volume_24h": "870.797586254",
-      "created": "2026-03-02T17:16:52Z",
+      "name": "red / SOL",
+      "price_usd": "0.00000245127878592741651783137301261554024466661509948321495036262336",
+      "volume_24h": "0.8656316654",
+      "created": "2026-03-02T19:39:50Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/9eWRFsnhJqkoCRx2xFXrfhRRTtteYZoSfDeC4PoAMQ1o"
+      "url": "https://www.geckoterminal.com/solana/pools/CqCBxsUB1uCNaTGb9fWqKX6svq56ft2gExUjyxW7m8Bh"
     },
     {
-      "name": "ClawdPad / SOL",
-      "price_usd": "0.00000252987724894575179263486251882161013958963634348483988950802554",
-      "volume_24h": "1064.243181336",
-      "created": "2026-03-02T17:16:52Z",
+      "name": "Cardputer / SOL",
+      "price_usd": "0.00000307957990043118077133935516876923163658418423484942709226711104",
+      "volume_24h": "145.576138768",
+      "created": "2026-03-02T19:39:49Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/2gPRk1erySknxLNwqHqeLGsXKY1u618tnqQvLSnZxQCD"
+      "url": "https://www.geckoterminal.com/solana/pools/2CBuqJoVJnMXRvDRhZpsS33AH64F1vxqDKEzvDkF1Vts"
     },
     {
-      "name": "TP / SOL",
-      "price_usd": "0.00000247741289873745291616952014064787682032565334557955494673445498",
-      "volume_24h": "600.9625848441",
-      "created": "2026-03-02T17:16:50Z",
+      "name": "WARHAWK / SOL",
+      "price_usd": "0.00000305060025482848300627537854858152590414298386458111669980549792",
+      "volume_24h": "43.2815884392",
+      "created": "2026-03-02T19:39:47Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/G1Hvu53PGF7iys4n8QLE2APmTG3DuMRZv7B5ECtCS2fc"
+      "url": "https://www.geckoterminal.com/solana/pools/7iQbKrnYCCVYfGNLaoejdQnArU7PdnSwwXsY92HXs2VY"
     },
     {
-      "name": "OPTIMISM / SOL",
-      "price_usd": "0.0000025024543812632842824727255167663617842856420432068953004323422",
-      "volume_24h": "406.5828007643",
-      "created": "2026-03-02T17:16:50Z",
-      "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/EucGoBe2WrYRdJg4y9dJfGzMUUJKPQviUdqCoGNDzaH1"
-    },
-    {
-      "name": "Pokopia\u2728 / SOL",
-      "price_usd": "0.0000318019947145855202130205279420057214305947823949139446075256964",
-      "volume_24h": "252.3691511434",
-      "created": "2026-03-02T17:16:49Z",
+      "name": "TROLL / SOL",
+      "price_usd": "0.000000644086002041723271300703132961997793780277865821269869576336876",
+      "volume_24h": "0.005623317113",
+      "created": "2026-03-02T19:39:46Z",
       "dex": "pumpswap",
-      "url": "https://www.geckoterminal.com/solana/pools/Feo3JCCxFZNLa2oSar11eMuQoJAKbPcTNuCTbQnM1P2D"
+      "url": "https://www.geckoterminal.com/solana/pools/2X2qSwFVzxwjSDL2z8dpvmmBgfdiHWJkNC93HocFiYQQ"
     },
     {
-      "name": "hippo / SOL",
-      "price_usd": "0.00000248496651518742213454430792556737601332212210452159567682322504",
-      "volume_24h": "602.394734529",
-      "created": "2026-03-02T17:16:48Z",
+      "name": "XROh / SOL",
+      "price_usd": "0.000002526828997316463225632817431516027365990478565839145477868778",
+      "volume_24h": "169.6778052803",
+      "created": "2026-03-02T19:39:44Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/8QrQYvGhZNDASCodMJhqELZmiEMGrBab2vqX7SFo3wLv"
+      "url": "https://www.geckoterminal.com/solana/pools/7jwd6PFWp7uzUH6BgHgv36GzGY5DL3FFnLjLLwaQ1JrX"
     },
     {
-      "name": "IQ / SOL",
-      "price_usd": "0.000022513890165150816310202254026658234154501933520612758426327888",
-      "volume_24h": "8905.1784273878",
-      "created": "2026-03-02T17:16:43Z",
+      "name": "1 / SOL",
+      "price_usd": "0.00000254843488025942920589807646837596099247194276956463173184684875",
+      "volume_24h": "261.7806592376",
+      "created": "2026-03-02T19:39:43Z",
+      "dex": "pump-fun",
+      "url": "https://www.geckoterminal.com/solana/pools/3bYvTrKy8BWWKyubMgUjKo9a2tVAwDnt1j44NDauxtoa"
+    },
+    {
+      "name": "4 / SOL",
+      "price_usd": "0.0000024668085318131036093630771100774328927506564005162677692901584",
+      "volume_24h": "17.31264674",
+      "created": "2026-03-02T19:39:42Z",
+      "dex": "pump-fun",
+      "url": "https://www.geckoterminal.com/solana/pools/Cs7EZo3f52pSo5npG7gywFHUFEdmyuDKAJEW8CiMZ6sX"
+    },
+    {
+      "name": "Sealvestor / SOL",
+      "price_usd": "0.0000149205455989319313876252163361931182917200175484781041433364346",
+      "volume_24h": "2585.5356022488",
+      "created": "2026-03-02T19:39:42Z",
       "dex": "pumpswap",
-      "url": "https://www.geckoterminal.com/solana/pools/EzNLiSR5bncD4PaFJJxGMWsvp3SWdTTnXBUKQio3XCsa"
+      "url": "https://www.geckoterminal.com/solana/pools/DM8Gg4YK3kNRT6p9PZ3AaahPyZr7yv6FrvL9oeizFTGY"
     },
     {
-      "name": "MANIFEST / SOL",
-      "price_usd": "0.000002485112825012606598903155153394988656287986738226022044197737",
-      "volume_24h": "2106.0643182256",
-      "created": "2026-03-02T17:16:43Z",
+      "name": "Pilot / SOL",
+      "price_usd": "0.0000027829621470665105778213714975945066967036549588854676801154313",
+      "volume_24h": "28.7422877978",
+      "created": "2026-03-02T19:39:32Z",
       "dex": "pump-fun",
-      "url": "https://www.geckoterminal.com/solana/pools/DDSMZ4VNWCVWuLhwBiPjpCz5HjNrp3Vm35hL7tsaW1P3"
+      "url": "https://www.geckoterminal.com/solana/pools/6RpaQV7u7CHKpqzrDevzdZerM6Fyrg7aCBxE2m2Lvfp3"
+    },
+    {
+      "name": "Eyes on AI / SOL",
+      "price_usd": "0.00000247257496664639864706377258817443384513210670115496942820526728",
+      "volume_24h": "25.9469234985",
+      "created": "2026-03-02T19:39:30Z",
+      "dex": "pump-fun",
+      "url": "https://www.geckoterminal.com/solana/pools/3xEhhMSiGU2Zw58Acm2EeiBZ8RwmYGqzxvBxvBSm8wgx"
     }
   ],
   "crypto": [
     {
       "name": "Bitcoin",
       "symbol": "BTC",
-      "price": 69360.0,
-      "change_24h": 5.34,
-      "volume_24h": 60311627139
+      "price": 68973.0,
+      "change_24h": 4.47,
+      "volume_24h": 62471120439
     },
     {
       "name": "Ethereum",
       "symbol": "ETH",
-      "price": 2056.27,
-      "change_24h": 4.92,
-      "volume_24h": 27402860873
+      "price": 2038.69,
+      "change_24h": 3.97,
+      "volume_24h": 26116744602
     },
     {
       "name": "Solana",
       "symbol": "SOL",
-      "price": 88.46,
-      "change_24h": 5.21,
-      "volume_24h": 5752729013
+      "price": 87.58,
+      "change_24h": 4.88,
+      "volume_24h": 6004902309
     },
     {
       "name": "Binancecoin",
       "symbol": "BNB",
-      "price": 646.94,
-      "change_24h": 4.48,
-      "volume_24h": 1531141767
+      "price": 638.61,
+      "change_24h": 2.94,
+      "volume_24h": 1528774570
     },
     {
       "name": "Ripple",
       "symbol": "XRP",
       "price": 1.4,
-      "change_24h": 2.56,
-      "volume_24h": 3632150829
+      "change_24h": 3.26,
+      "volume_24h": 3780045224
     },
     {
       "name": "Cardano",
       "symbol": "ADA",
-      "price": 0.2832,
-      "change_24h": 2.73,
-      "volume_24h": 622758605
+      "price": 0.2806,
+      "change_24h": 2.21,
+      "volume_24h": 652315036
     },
     {
       "name": "Avalanche",
       "symbol": "AVAX",
-      "price": 9.33,
-      "change_24h": 3.76,
-      "volume_24h": 384331394
+      "price": 9.23,
+      "change_24h": 2.77,
+      "volume_24h": 400865903
     },
     {
       "name": "Polkadot",
       "symbol": "DOT",
-      "price": 1.56,
-      "change_24h": 1.33,
-      "volume_24h": 261081570
+      "price": 1.53,
+      "change_24h": 0.21,
+      "volume_24h": 265395913
     },
     {
       "name": "Chainlink",
       "symbol": "LINK",
-      "price": 9.12,
-      "change_24h": 3.76,
-      "volume_24h": 437100202
+      "price": 9.03,
+      "change_24h": 3.48,
+      "volume_24h": 440256532
     },
     {
       "name": "Uniswap",
       "symbol": "UNI",
-      "price": 3.96,
-      "change_24h": 5.14,
-      "volume_24h": 241563378
+      "price": 3.94,
+      "change_24h": 4.94,
+      "volume_24h": 247445262
     }
   ],
   "exchange_rates": {
