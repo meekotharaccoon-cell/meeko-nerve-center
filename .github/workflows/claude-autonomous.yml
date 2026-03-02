@@ -1,0 +1,53 @@
+name: Claude Autonomous
+
+on:
+  schedule:
+    # Runs daily at 9am UTC — after MASTER_CONTROLLER morning cycle
+    - cron: '0 9 * * *'
+    # Also runs at 9pm UTC — after MASTER_CONTROLLER evening cycle
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why are you triggering this manually?'
+        required: false
+        default: 'manual audit'
+
+jobs:
+  audit-and-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run Claude Autonomous
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DIRECTIVES_PAGE_ID: ${{ secrets.NOTION_DIRECTIVES_PAGE_ID }}
+        run: python mycelium/claude_autonomous.py
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-autonomous-report-${{ github.run_id }}
+          path: data/claude_autonomous_report.json
+          if-no-files-found: ignore
