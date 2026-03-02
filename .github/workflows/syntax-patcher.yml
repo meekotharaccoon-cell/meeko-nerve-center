@@ -1,0 +1,41 @@
+name: 🔧 Syntax Patcher — Auto-fix LLM code errors
+
+on:
+  push:
+    paths:
+      - 'mycelium/**.py'
+  workflow_dispatch:
+
+jobs:
+  syntax-patch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run syntax patcher
+        run: python mycelium/syntax_patcher.py
+
+      - name: Commit any auto-fixes
+        run: |
+          git config user.name  "Meeko"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No syntax fixes needed — all files are clean"
+          else
+            FIXED=$(git diff --staged --name-only | wc -l)
+            git commit -m "fix: syntax_patcher auto-fixed ${FIXED} file(s) [skip ci]"
+            git push
+          fi
