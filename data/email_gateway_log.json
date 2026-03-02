@@ -2,206 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-01",
-      "from": "team@email.anthropic.com",
-      "subject": "Welcome to Claude \u2014 let\u2019s get started",
-      "action": "ignored_automated",
-      "reason": "auto prefix: team@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Shop Small. Support Art. \ud83d\udd8c\ufe0f",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "heythere@m.redbubble.com",
-      "subject": "See something you liked?",
-      "action": "ignored_dedup"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "\ud83d\udcac P\u0103un Viorel left you a comment",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Black Friday Weekend: Up to 40% Off \u2728",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Cyber Monday up to 40% off savings from Adidas, just for you",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "ElKremso | Rock Band just sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "team@email.anthropic.com",
-      "subject": "The secret to your first \"aha moment\" with Claude (1/5)",
-      "action": "ignored_automated",
-      "reason": "auto prefix: team@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Sunday Savings: Up to 40% Off \ud83d\udecd\ufe0f",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@update.tiktok.com",
-      "subject": "GaryVee posted: 2026 is the year of live \u2026 you must understa",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "CYBER MONDAY. Up to 40% Off. \u26a1",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@society6.com",
-      "subject": "Cyber Monday Deals",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "marketing@engage.canva.com",
-      "subject": "My top take-aways from our AI Vision event",
-      "action": "ignored_automated",
-      "reason": "auto prefix: marketing@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@manychat.com",
-      "subject": "Meeko , here are Updates to Manychat\u2019s Privacy Policy and Te",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@news.paypal.com",
-      "subject": "Start accepting payments with PayPal Open",
-      "action": "ignored_automated",
-      "reason": "blocked domain: paypal.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@society6.com",
-      "subject": "Cyber Monday: Save Up to 50%",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Echoes Of Tomorrow just sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "ebay@reply.ebay.com",
-      "subject": "Final hours for deals \ud83d\udea8Cyber Monday ends soon.",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Cyber Monday: $15 tees & up to 40% off \ud83d\uded2",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@society6.com",
-      "subject": "Save Up to 50% Off",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@news.gemini.com",
-      "subject": "Get $20 in Crypto",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "pinbot@info.pinterest.com",
-      "subject": "Join Our 2-Day Creator Bootcamp: Pinterest Trends & Affiliat",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "recommendations@explore.pinterest.com",
-      "subject": "These belong in your world",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Gifts that match every personality \ud83c\udf81",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "marketing@engage.canva.com",
-      "subject": "We're at 900,000 nonprofits - help us get to 1 million",
-      "action": "ignored_automated",
-      "reason": "auto prefix: marketing@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Precious Deborah posted a new video",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "ebay@reply.ebay.com",
-      "subject": "Fashion picked for Michael \ud83d\udc57 \ud83d\udc5c",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@marketing.base44.com",
-      "subject": "The biggest Base44 update yet \ud83d\udd25",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@billing.linktr.ee",
-      "subject": "Your free trial ends in 3 days",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "pinmail@marketing.pinterest.com",
-      "subject": "Get a jump start on 2026 trends with Pinterest Predicts\u2122",
-      "action": "ignored_dedup"
-    },
-    {
-      "date": "2026-03-01",
       "from": "newsletter@em.teepublic.com",
       "subject": "Your next favorite tee is $16",
       "action": "ignored_automated",
@@ -3424,6 +3224,214 @@
       "date": "2026-03-02",
       "from": "notifications@github.com",
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Claude",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 KB | Artist Spotlight",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Credits, Creations, Glory: Join the Daily Challenge",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Your Audience is Waiting: Publish Your Art on NightCafe",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Create Again for 10 Free Credits!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@tx.nightcafe.studio",
+      "subject": "Claim your daily free credits!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Scale to $8M without dancing on Reels",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Your Audience is Waiting: Publish Your Art on NightCafe",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Credits, Creations, Glory: Join the Daily Challenge",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "Earn Free Credits: Complete Your Profile",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "store-news@amazon.com",
+      "subject": "Don't forget: Creator Text alerts are here",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Special savings, right this way\u2026",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Credits, Creations, Glory: Join the Daily Challenge",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Catch Gabby Windey at Instagram Summit by Manychat Virtual",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "marketing@engage.canva.com",
+      "subject": "Meeko, your brain prefers visuals \ud83c\udfa8",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Brown for fall? Brilliant.",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "no-reply@pionex.us",
+      "subject": "\ud83d\udd25 Deposit and get 200 USDT on Pionex",
+      "action": "ignored_automated",
+      "reason": "blocked domain: pionex.us"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Don't miss 20% off top brands",
+      "action": "ignored_offtopic"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Prep the pumpkins. Cue the ghosts.",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "no-reply@pionex.us",
+      "subject": "Bitcoin AI Bot. Up 100%?",
+      "action": "ignored_automated",
+      "reason": "blocked domain: pionex.us"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Want More Likes, Comments, and Shares on Instagram? We gotch",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "no-reply@pionex.us",
+      "subject": "Trading Bot is Risky (if you use it wrong)",
+      "action": "ignored_automated",
+      "reason": "blocked domain: pionex.us"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Get More Credits with NightCafe PRO",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "no-reply@pionex.us",
+      "subject": "Backtest: 85.17% APR on Pionex Bitcoin Growth Bot",
+      "action": "ignored_automated",
+      "reason": "blocked domain: pionex.us"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "email@email.etsy.com",
+      "subject": "Extraordinary designs\u2014and deals\u2728",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Doesn\u2019t your content deserve VIP treatment?? \ud83c\udf9f\ufe0f ",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Follow your Favourite Artists (and Earn Credits)",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "info@email.manychat.com",
+      "subject": "Leah Kateb helps you sign brand deals at Instagram Summit by",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "hello@gdevelop.io",
+      "subject": "\ud83d\udd79\ufe0f Download This Paw-Mazing Demo from Steam Fest! \ud83d\udd79\ufe0f",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Kimi\r\n",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Dual B",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
     }
