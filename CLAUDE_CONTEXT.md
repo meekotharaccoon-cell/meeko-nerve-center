@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-02 07:26 UTC — fix: hf_brain backslash-in-fstring (SyntaxError line 139), pre-assign nl variable*
+*Auto-updated by the system. Last update: 2026-03-02 15:45 UTC — fix: GUMROAD_TOKEN mismatch + fallback condition — products will now list*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
