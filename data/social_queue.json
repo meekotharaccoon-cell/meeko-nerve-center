@@ -209,6 +209,17 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-02-6",
+      "text": "\ud83c\udf38 SolarPunk's revenue split, honestly:\n\nFor every $1 earned:\n  70\u00a2 \u2192 PCRF (Palestinian Children's Relief Fund)\n  20\u00a2 \u2192 crypto compound wallet (grows over time)\n  10\u00a2 \u2192 operating costs / human running it\n\nNo exceptions. Coded directly into revenue_router.py.\nYou can read every line at:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#Transparency #FreePalestine #SolarPunk",
+      "template_idx": 6,
+      "created": "2026-03-02",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
@@ -220,6 +231,7 @@
     3,
     4,
     2,
-    8
+    8,
+    6
   ]
 }

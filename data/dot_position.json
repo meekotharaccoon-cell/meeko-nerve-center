@@ -5,14 +5,14 @@
     "action": "HOLD \u2014 wait for clearer signal.",
     "current": "$1.5300",
     "target": "$1.7595",
-    "change_24h": "0.2%",
+    "change_24h": "0.6%",
     "change_7d": "0.0%",
     "holdings": "~$8.00 worth",
     "where": "Phantom Wallet \u2192 sell via Uniswap or Kraken"
   },
   "market": {
     "price": 1.53,
-    "change_24h": 0.22821176283040595,
+    "change_24h": 0.6111770926177741,
     "change_7d": 0
   }
 }

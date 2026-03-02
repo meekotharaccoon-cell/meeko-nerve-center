@@ -1,7 +1,7 @@
 {
   "date": "2026-03-02",
-  "total": 4,
-  "human_required": 2,
+  "total": 5,
+  "human_required": 3,
   "auto_fixable": 2,
   "loops": [
     {
@@ -21,9 +21,17 @@
       "date_found": "2026-03-02"
     },
     {
+      "type": "grant_submission",
+      "priority": "HIGH",
+      "description": "Grant drafted but not submitted: Open Society Foundations \u2014 Emerging Technology Initiative",
+      "action": "Submit at: https://www.opensocietyfoundations.org/grants",
+      "human_required": true,
+      "date_found": "2026-03-02"
+    },
+    {
       "type": "workflow_health",
       "priority": "HIGH",
-      "description": "System health RED: 62% (21 failing)",
+      "description": "System health RED: 60% (20 failing)",
       "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
       "human_required": false,
       "date_found": "2026-03-02"
@@ -31,7 +39,7 @@
     {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "94 unresolved diagnostic issues",
+      "description": "100 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
       "date_found": "2026-03-02"
