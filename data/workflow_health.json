@@ -1,19 +1,19 @@
 {
   "date": "2026-03-02",
-  "timestamp": "2026-03-02T02:19:41.199616",
+  "timestamp": "2026-03-02T02:24:24.531266",
   "total": 57,
-  "passing": 37,
-  "failing": 18,
+  "passing": 38,
+  "failing": 17,
   "running": 1,
-  "retried": 10,
-  "health_pct": 64,
+  "retried": 0,
+  "health_pct": 66,
   "color": "RED",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
       "file": "asset-scan.yml",
-      "id": 22517876436,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517876436"
+      "id": 22558797612,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558797612"
     },
     {
       "name": ".github/workflows/community-outreach.yml",
@@ -64,12 +64,6 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050"
     },
     {
-      "name": "\ud83e\udde0 Orchestrator \u2014 Full Cycle",
-      "file": "orchestrator-daily.yml",
-      "id": 22517984675,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22517984675"
-    },
-    {
       "name": ".github/workflows/send-grants.yml",
       "file": "send-grants.yml",
       "id": 22558264235,
@@ -90,8 +84,8 @@
     {
       "name": "\ud83d\udef8 Space Bridge \u2014 Report",
       "file": "space-bridge-daily.yml",
-      "id": 22509220456,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509220456"
+      "id": 22558820032,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558820032"
     },
     {
       "name": "\ud83d\udd78\ufe0f Wiring Hub \u2014 Data Bus Update",
@@ -114,8 +108,8 @@
     {
       "name": "pages-build-deployment",
       "file": "dynamic/pages/pages-build-deployment",
-      "id": 22558709800,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558709800"
+      "id": 22558775648,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558775648"
     }
   ]
 }
