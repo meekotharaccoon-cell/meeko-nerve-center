@@ -43,18 +43,22 @@ jobs:
           git diff --staged --quiet || git commit -m "auto: product PDFs [$(date -u +%Y-%m-%dT%H:%M)]"
           git push
       
+      # FIX: was GUMROAD_SECRET — gumroad_listing_update.py reads GUMROAD_TOKEN
       - name: Post to Gumroad via gumroad_listing_update.py
-        if: env.GUMROAD_SECRET != ''
+        if: env.GUMROAD_TOKEN != ''
         run: |
           pip install requests --quiet
           python mycelium/gumroad_listing_update.py
         env:
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_SECRET }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
           GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
       
-      - name: Fallback — Direct Gumroad API if listing_update fails
-        if: env.GUMROAD_SECRET != '' && failure()
+      # FIX: was failure() — script exits 0 even when it does nothing, so fallback never ran
+      # Now runs always when GUMROAD_SECRET is set, creating the 10 product listings directly
+      - name: Post 10 products to Gumroad (direct API)
+        if: env.GUMROAD_SECRET != ''
         run: |
           python3 << 'PYEOF'
           import requests, os, glob
@@ -87,27 +91,35 @@ jobs:
           try:
             resp = requests.get("https://api.gumroad.com/v2/products", headers=H)
             existing = {p["name"] for p in resp.json().get("products", [])}
+            print(f"[gumroad] {len(existing)} existing products found")
           except Exception as e:
             print(f"[gumroad] Error fetching products: {e}")
             existing = set()
           
+          created = 0
+          skipped = 0
           for p in PRODUCTS:
             if p["name"] in existing:
               print(f"[gumroad] ✅ Exists: {p['name']}")
+              skipped += 1
               continue
             pdf = f"products/pdf/{p['file']}"
             if not os.path.exists(pdf):
-              print(f"[gumroad] ⚠️  No PDF yet: {p['file']}")
+              print(f"[gumroad] ⚠️  No PDF yet: {p['file']} — skipping")
               continue
             r = requests.post("https://api.gumroad.com/v2/products", headers=H,
               data={"name": p["name"], "description": p["desc"], "price": 100, "published": True})
-            if r.json().get("success"):
-              pid = r.json()["product"]["id"]
+            rj = r.json()
+            if rj.get("success"):
+              pid = rj["product"]["id"]
               with open(pdf, "rb") as f:
                 requests.post(f"https://api.gumroad.com/v2/products/{pid}/files", headers=H, files={"file": f})
-              print(f"[gumroad] 🌸 CREATED: {p['name']}")
+              print(f"[gumroad] 🌸 CREATED: {p['name']} — https://app.gumroad.com/products/{pid}")
+              created += 1
             else:
-              print(f"[gumroad] ❌ Failed: {p['name']} — {r.json()}")
+              print(f"[gumroad] ❌ Failed: {p['name']} — {rj}")
+          
+          print(f"\n[gumroad] Summary: {created} created, {skipped} already existed")
           PYEOF
         env:
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
