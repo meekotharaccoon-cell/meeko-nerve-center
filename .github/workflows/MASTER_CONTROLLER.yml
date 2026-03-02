@@ -35,8 +35,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 0 — System Manifest
-      # The system learns ALL its own parts before doing anything
-      # Writes data/system_manifest.json — every engine reads this
       # ══════════════════════════════════════════════════════
       - name: Phase 0a — System Manifest (system knows itself)
         run: python mycelium/system_manifest.py
@@ -44,7 +42,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 0b — Human Directives
-      # You write plain English in Notion → system obeys
       # ══════════════════════════════════════════════════════
       - name: Phase 0b — Read Human Directives
         env:
@@ -67,7 +64,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 1.5 — 3D Brain synthesis
-      # Revenue × Reach × Impact → strategy
       # ══════════════════════════════════════════════════════
       - name: Phase 1.5 — 3D Brain
         env:
@@ -93,7 +89,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 3 — Self-Improver
-      # Reads all data, identifies bottlenecks, queues improvements
       # ══════════════════════════════════════════════════════
       - name: Phase 3 — Self-Improver
         env:
@@ -147,9 +142,7 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
-      # PHASE 7b — Social Content Engine (NEW)
-      # Generates factual posts BEFORE social_poster runs
-      # social_poster picks them up from data/social_queue.json
+      # PHASE 7b — Social Content Engine
       # ══════════════════════════════════════════════════════
       - name: Phase 7b — Social Content Engine (generates 3 posts)
         env:
@@ -300,15 +293,29 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 18b — Email Gateway v4
-      # ONE email engine. ONE place. Inbound-only.
-      # Never auto-sends. Only replies to real humans.
+      # ONE email engine. Inbound-only. Calls opt-in guard.
       # ══════════════════════════════════════════════════════
-      - name: Phase 18b — Email Gateway v4 (inbound-only)
+      - name: Phase 18b — Email Gateway v4 (inbound + opt-in processing)
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/email_gateway.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 18c — Discord Bridge
+      # Posts daily briefing + sale alerts to Discord
+      # Reads: DIS_APP_ID (connected), DIS_APP_PUBLIC_KEY (connected)
+      # Needs: DIS_BOT_TOKEN + DIS_CHANNEL_ID to post
+      # ══════════════════════════════════════════════════════
+      - name: Phase 18c — Discord Bridge (briefing + alerts)
+        env:
+          DIS_APP_ID: ${{ secrets.DIS_APP_ID }}
+          DIS_APP_PUBLIC_KEY: ${{ secrets.DIS_APP_PUBLIC_KEY }}
+          DIS_BOT_TOKEN: ${{ secrets.DIS_BOT_TOKEN }}
+          DIS_CHANNEL_ID: ${{ secrets.DIS_CHANNEL_ID }}
+        run: python mycelium/discord_bridge.py
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
