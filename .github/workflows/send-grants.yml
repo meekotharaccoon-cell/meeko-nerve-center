@@ -1,31 +1,3 @@
-name: 🎯 Send Grants
-# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
-
-on:
-  workflow_dispatch:
-    inputs:
-      confirm:
-        description: 'Type CONFIRM to send grant emails'
-        required: true
-
-jobs:
-  grants:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Guard
-        run: |
-          if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
-            echo "Not confirmed. Exiting."
-            exit 1
-          fi
-      - name: Run Grant Intelligence
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python mycelium/grant_intelligence.py
-        continue-on-error: true
+# DISABLED — grant emails require human review before sending
+# Grant intelligence engine writes drafts to data/grant_database.json
+# Human reviews and sends manually via phone_controller.py or directly

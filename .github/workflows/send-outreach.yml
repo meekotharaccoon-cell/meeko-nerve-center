@@ -1,32 +1,3 @@
-name: 📤 Send Outreach
-# 🚨 SCHEDULES DISABLED — Email system rebuild in progress
-# This workflow was auto-sending outreach emails to everyone. DISABLED.
-
-on:
-  workflow_dispatch:
-    inputs:
-      confirm:
-        description: 'Type CONFIRM to actually send (prevents accidental runs)'
-        required: true
-
-jobs:
-  outreach:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Guard — require manual confirmation
-        run: |
-          if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
-            echo "Confirmation not provided. Exiting."
-            exit 1
-          fi
-      - name: Run outreach
-        env:
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python mycelium/ethical_pesterer.py
-        continue-on-error: true
+# DISABLED — was auto-sending to draft_emails.json which contained placeholder addresses
+# [paste your community link / Discord / forum post] is not a valid email
+# Outreach emails are DRAFTS ONLY. Human sends them manually.

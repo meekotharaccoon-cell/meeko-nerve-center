@@ -1,21 +1,2 @@
-name: 📬 Mycelium Email Responder
-# Run manually when you want to check for email replies
-on:
-  workflow_dispatch:
-
-jobs:
-  respond:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install deps
-        run: pip install requests google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
-      - name: Run email responder
-        env:
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
-          BRAIN_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python mycelium/email_responder.py
+# DISABLED — duplicate of email-gateway.yml, both were running simultaneously
+# Email gateway v4 runs once per cycle inside MASTER_CONTROLLER only
