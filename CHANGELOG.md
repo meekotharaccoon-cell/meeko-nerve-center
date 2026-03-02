@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-02 07:27 UTC  
+> Last updated: 2026-03-02 15:54 UTC  
 > Total commits tracked: 200
 
 ---
@@ -9,20 +9,36 @@
 ## Week of March 2, 2026
 
 **📚 Knowledge**
+- `eb018bc0` knowledge: API directory scan [2026-03-02]
+- `f996e77b` knowledge: v2 harvest [2026-03-02]
 - `be60830f` knowledge: v2 harvest [2026-03-02]
 
+**📊 Signals**
+- `122d5fea` fix: crypto_signal_engine.py -> crypto_signals.py (wrong filename, Phase 5c)
+- `6bdefa0f` chore: fork tracker update [2026-03-02]
+
 **🌹 Art & Gallery**
+- `ebe0ca1f` fix: GUMROAD_TOKEN mismatch + fallback condition — products will now list
 - `200e619d` feat: START_SOLARPUNK.bat - one file to run everything and watch for first dollar
 - `2aa5c4c0` 💓 heartbeat: 2026-03-02 02:27 UTC
 
 **🚹 Fixes**
+- `b82901fb` add: syntax-patcher workflow — auto-fixes LLM code patterns on push [skip ci]
+- `cbe1f7e8` add: syntax_patcher.py — auto-fixes all LLM syntax error patterns across 130+ files
+- `7d017693` fix: network_node uncommented section dividers (COLORS, SYSTEM INFO, BLUETOOTH etc.) SyntaxError
+- `f7e460e1` fix: ORCHESTRATOR uncommented section dividers (SyntaxError line 59)
 - `c32f221c` fix: morning_briefing nested f-string quotes (SyntaxError line 73)
 - `deb6f4a5` fix: hf_brain backslash-in-fstring (SyntaxError line 139), pre-assign nl variable
 - `ee9545f3` fix: gen_status nested f-string quotes (SyntaxError line 49)
 - `385895fd` fix: remove push trigger from wiring-hub-daily.yml (was causing commit feedback loops)
 - `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
 
+**📝 Documentation**
+- `2f43a475` 📝 auto: changelog 2026-03-02
+
 **⚙️ System**
+- `131da4e9` 🧠 auto: system state update 2026-03-02 15:45 UTC
+- `0aec208b` auto: gen 23
 - `c75bac6a` 🧠 auto: system state update 2026-03-02 07:26 UTC
 - `53bf9e76` 🧠 auto: system state update 2026-03-02 07:25 UTC
 - `fa15c5fc` 🧠 auto: system state update 2026-03-02 07:23 UTC
@@ -30,6 +46,25 @@
 - `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
 
 **• Other**
+- `855e269f` 🧠 3d-brain state [2026-03-02]
+- `7ea2401e` 🌸 cycle [2026-03-02 14:59] — all 21 phases fired
+- `ec0ea9ec` data: dex update [14:32]
+- `9cbe33be` chore: update wiring_status.json [2026-03-02T14:30]
+- `32455d4e` \U0001f338 perpetual: 2026-03-02 14:29 UTC
+- `2da532c6` chore: update wiring_status.json [2026-03-02T14:22]
+- `27c222e3` chore: update wiring_status.json [2026-03-02T12:00]
+- `41694b74` data: dex update [11:56]
+- `dd4d93dd` \U0001f338 perpetual: 2026-03-02 11:51 UTC
+- `c53da20a` feed: RSS update [2026-03-02]
+- `bb4651fb` chore: update wiring_status.json [2026-03-02T11:09]
+- `4110008d` data: dex update [10:31]
+- `ca13a239` 🎬 shorts scripts [2026-03-02]
+- `193aadc5` 🌸 cycle [2026-03-02 08:02] — all 21 phases fired
+- `58dda027` 🧠 3d-brain state [2026-03-02]
+- `e04023d4` chore: update wiring_status.json [2026-03-02T08:00]
+- `49ecba6c` 🌍 content update [2026-03-02]
+- `1800e7d4` \U0001f338 perpetual: 2026-03-02 07:54 UTC
+- `457aed12` chore: update wiring_status.json [2026-03-02T07:30]
 - `0e3863b2` chore: update wiring_status.json [2026-03-02T07:24]
 - `4095d60e` chore: update wiring_status.json [2026-03-02T06:56]
 - `84d23ea3` ideas: engine cycle [] — tested/built
@@ -59,12 +94,9 @@
 - `961cb917` knowledge: v2 harvest [2026-03-01]
 - `83bb37eb` knowledge: API directory scan [2026-03-01]
 - `c39b0537` knowledge: v2 harvest [2026-03-01]
-- `fef594b9` knowledge: v2 harvest [2026-02-28]
 
 **🤝 Community**
 - `c4cce2e6` products: add Product 3 — The Grant Hunter [full content]
-- `11b75e8e` 🔧 CRITICAL FIXES: email spam storm, feedback-loop crash, grant blindness, duplicate emails
-- `b34ac3f3` 🔧 FIX: stop duplicate emails, fix grants, add diagnostic emailer, unique-content guard
 
 **📧 Outreach**
 - `4be40887` fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER
@@ -73,8 +105,6 @@
 - `737f3936` products: add Product 2 — Autonomous Email Responder [full content]
 - `00caa3a2` 🔧 Complete email system rebuild (v3 strict), deep self-diagnostic, Gumroad tracker
 - `53bc9770` 🚨 EMERGENCY: Disable ALL scheduled workflows — email system rebuild in progress
-- `f53713f0` 🔧 Add unified_briefing + diagnostic_emailer, fix MASTER_CONTROLLER env vars and phases
-- `013aa578` 🔧 Wire diagnostic_emailer into Phase 0 of MASTER_CONTROLLER
 
 **📊 Signals**
 - `5b08f72d` chore: fork tracker update [2026-03-01]
@@ -111,7 +141,6 @@
 - `ff415db2` 🧠 auto: system state update 2026-03-01 03:33 UTC
 - `0b7a0590` products: add Product 4 — The Viral Fork [full content]
 - `5d279b58` 🧠 auto: system state update 2026-03-01 03:32 UTC
-- `844a1f02` 🧠 auto: system state update 2026-02-28 17:18 UTC
 
 **• Other**
 - `650fdfe9` data: dex update [23:47]
@@ -214,31 +243,6 @@
 - `2d0bfd6a` chore: update wiring_status.json [2026-02-28T19:38]
 - `62d9accf` 🌸 SolarPunk cycle [2026-02-28 19:00] — 14 files
 - `fcd70ef1` data: dex update [18:59]
-- `a6f15d2b` chore: update wiring_status.json [2026-02-28T18:58]
-- `ae180fa3` 🔬 diagnostics report [2026-02-28T18:01]
-- `e71e1fe8` 🌸 SolarPunk cycle [2026-02-28 17:56] — 14 files
-- `1b46a3b4` 🌸 SolarPunk cycle [2026-02-28 17:43] — 14 files
-- `a6b63434` data: dex update [17:42]
-- `2edfaeda` chore: update wiring_status.json [2026-02-28T17:41]
-- `ee02be64` 🌸 SolarPunk cycle [2026-02-28 17:39] — 13 files
-- `f7eb21bd` 🌸 SolarPunk cycle [2026-02-28 17:31] — 14 files
-- `ba788e9c` chore: update wiring_status.json [2026-02-28T17:29]
-- `a957770e` chore: update wiring_status.json [2026-02-28T17:28]
-- `c30801c7` 🌸 SolarPunk cycle [2026-02-28 17:20] — 13 files
-- `9efd793c` chore: update wiring_status.json [2026-02-28T17:17]
-- `32d37fcc` \U0001f338 perpetual: 2026-02-28 16:53 UTC
-- `d6abc1b8` 🌸 SolarPunk cycle complete [2026-02-28 16:53] — 11 files
-- `27a1e6de` data: dex update [16:52]
-- `57b6971e` chore: update wiring_status.json [2026-02-28T16:51]
-- `8963dde9` gateway: 15:58 UTC
-- `e1fdfde6` \U0001f338 perpetual: 2026-02-28 15:44 UTC
-- `af90a629` 🌸 SolarPunk cycle complete [2026-02-28 15:42] — 11 files
-- `09748d4b` data: dex update [15:41]
-- `4a85de14` chore: update wiring_status.json [2026-02-28T15:40]
-- `59ff6018` gateway: 15:00 UTC
-- `0cefae19` \U0001f338 perpetual: 2026-02-28 14:59 UTC
-- `c711ec2f` 🌸 SolarPunk cycle complete [2026-02-28 14:49] — 11 files
-- `e8de701e` gateway: 14:49 UTC
 
 ---
 

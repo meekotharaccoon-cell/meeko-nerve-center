@@ -1,8 +1,225 @@
 {
-  "generated": "2026-03-02T07:27:58.353464+00:00",
+  "generated": "2026-03-02T15:54:40.763651+00:00",
   "total_commits": 200,
   "weeks": 2,
   "commits": [
+    {
+      "sha": "122d5fea",
+      "date": "2026-03-02T10:54:29-05:00",
+      "week": "2026-W10",
+      "subject": "fix: crypto_signal_engine.py -> crypto_signals.py (wrong filename, Phase 5c)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "131da4e9",
+      "date": "2026-03-02T15:45:13+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 auto: system state update 2026-03-02 15:45 UTC",
+      "author": "Meeko Mycelium"
+    },
+    {
+      "sha": "ebe0ca1f",
+      "date": "2026-03-02T10:45:00-05:00",
+      "week": "2026-W10",
+      "subject": "fix: GUMROAD_TOKEN mismatch + fallback condition \u2014 products will now list",
+      "author": "Meeko"
+    },
+    {
+      "sha": "855e269f",
+      "date": "2026-03-02T15:40:50+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 3d-brain state [2026-03-02]",
+      "author": "meeko-3d-brain"
+    },
+    {
+      "sha": "7ea2401e",
+      "date": "2026-03-02T14:59:11+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udf38 cycle [2026-03-02 14:59] \u2014 all 21 phases fired",
+      "author": "SolarPunk-MasterController"
+    },
+    {
+      "sha": "ec0ea9ec",
+      "date": "2026-03-02T14:32:19+00:00",
+      "week": "2026-W10",
+      "subject": "data: dex update [14:32]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "9cbe33be",
+      "date": "2026-03-02T14:30:32+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T14:30]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "32455d4e",
+      "date": "2026-03-02T14:29:53+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-02 14:29 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "b82901fb",
+      "date": "2026-03-02T09:23:16-05:00",
+      "week": "2026-W10",
+      "subject": "add: syntax-patcher workflow \u2014 auto-fixes LLM code patterns on push [skip ci]",
+      "author": "Meeko"
+    },
+    {
+      "sha": "cbe1f7e8",
+      "date": "2026-03-02T09:23:06-05:00",
+      "week": "2026-W10",
+      "subject": "add: syntax_patcher.py \u2014 auto-fixes all LLM syntax error patterns across 130+ files",
+      "author": "Meeko"
+    },
+    {
+      "sha": "2da532c6",
+      "date": "2026-03-02T14:22:06+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T14:22]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "7d017693",
+      "date": "2026-03-02T09:21:55-05:00",
+      "week": "2026-W10",
+      "subject": "fix: network_node uncommented section dividers (COLORS, SYSTEM INFO, BLUETOOTH etc.) SyntaxError",
+      "author": "Meeko"
+    },
+    {
+      "sha": "27c222e3",
+      "date": "2026-03-02T12:00:15+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T12:00]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "0aec208b",
+      "date": "2026-03-02T07:00:04-05:00",
+      "week": "2026-W10",
+      "subject": "auto: gen 23",
+      "author": "meekotharaccoon-cell"
+    },
+    {
+      "sha": "41694b74",
+      "date": "2026-03-02T11:56:57+00:00",
+      "week": "2026-W10",
+      "subject": "data: dex update [11:56]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "dd4d93dd",
+      "date": "2026-03-02T11:51:37+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-02 11:51 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "c53da20a",
+      "date": "2026-03-02T11:46:58+00:00",
+      "week": "2026-W10",
+      "subject": "feed: RSS update [2026-03-02]",
+      "author": "meeko-rss"
+    },
+    {
+      "sha": "bb4651fb",
+      "date": "2026-03-02T11:09:46+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T11:09]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "4110008d",
+      "date": "2026-03-02T10:31:27+00:00",
+      "week": "2026-W10",
+      "subject": "data: dex update [10:31]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "ca13a239",
+      "date": "2026-03-02T10:30:39+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udfac shorts scripts [2026-03-02]",
+      "author": "meeko-content"
+    },
+    {
+      "sha": "6bdefa0f",
+      "date": "2026-03-02T08:04:00+00:00",
+      "week": "2026-W10",
+      "subject": "chore: fork tracker update [2026-03-02]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "193aadc5",
+      "date": "2026-03-02T08:02:17+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udf38 cycle [2026-03-02 08:02] \u2014 all 21 phases fired",
+      "author": "SolarPunk-MasterController"
+    },
+    {
+      "sha": "58dda027",
+      "date": "2026-03-02T08:00:53+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 3d-brain state [2026-03-02]",
+      "author": "meeko-3d-brain"
+    },
+    {
+      "sha": "e04023d4",
+      "date": "2026-03-02T08:00:43+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T08:00]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "49ecba6c",
+      "date": "2026-03-02T07:55:23+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udf0d content update [2026-03-02]",
+      "author": "meeko-content"
+    },
+    {
+      "sha": "1800e7d4",
+      "date": "2026-03-02T07:54:25+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-02 07:54 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "eb018bc0",
+      "date": "2026-03-02T07:40:06+00:00",
+      "week": "2026-W10",
+      "subject": "knowledge: API directory scan [2026-03-02]",
+      "author": "meeko-api-hunter"
+    },
+    {
+      "sha": "f996e77b",
+      "date": "2026-03-02T07:39:42+00:00",
+      "week": "2026-W10",
+      "subject": "knowledge: v2 harvest [2026-03-02]",
+      "author": "meeko-harvest-v2"
+    },
+    {
+      "sha": "457aed12",
+      "date": "2026-03-02T07:30:54+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-02T07:30]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "f7e460e1",
+      "date": "2026-03-02T02:30:46-05:00",
+      "week": "2026-W10",
+      "subject": "fix: ORCHESTRATOR uncommented section dividers (SyntaxError line 59)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "2f43a475",
+      "date": "2026-03-02T07:27:58+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-02",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "c32f221c",
       "date": "2026-03-02T02:27:49-05:00",
@@ -135,223 +352,6 @@
       "week": "2026-W10",
       "subject": "\ud83c\udf0d content update [2026-03-02]",
       "author": "meeko-content"
-    },
-    {
-      "sha": "ab7e463b",
-      "date": "2026-03-02T02:06:21+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udcec newsletter [2026-W09]",
-      "author": "meeko-content"
-    },
-    {
-      "sha": "be60830f",
-      "date": "2026-03-02T02:05:23+00:00",
-      "week": "2026-W10",
-      "subject": "knowledge: v2 harvest [2026-03-02]",
-      "author": "meeko-harvest-v2"
-    },
-    {
-      "sha": "54424b0c",
-      "date": "2026-03-02T02:04:27+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udd2c diagnostics report [2026-03-02T02:04]",
-      "author": "meeko-diagnostics"
-    },
-    {
-      "sha": "ef43fca7",
-      "date": "2026-03-02T02:03:16+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 auto: system state update 2026-03-02 02:03 UTC",
-      "author": "Meeko Mycelium"
-    },
-    {
-      "sha": "769b109b",
-      "date": "2026-03-02T01:59:52+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 3d-brain state [2026-03-02]",
-      "author": "meeko-3d-brain"
-    },
-    {
-      "sha": "41551c2e",
-      "date": "2026-03-02T01:55:23+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T01:55]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "27fc536b",
-      "date": "2026-03-01T20:55:13-05:00",
-      "week": "2026-W09",
-      "subject": "auto: gen 22",
-      "author": "meekotharaccoon-cell"
-    },
-    {
-      "sha": "bbadf5c3",
-      "date": "2026-03-02T01:38:35+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf38 cycle [2026-03-02 01:38] \u2014 all 21 phases fired",
-      "author": "SolarPunk-MasterController"
-    },
-    {
-      "sha": "cc36dbb1",
-      "date": "2026-03-02T01:34:09+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T01:34]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "4be40887",
-      "date": "2026-03-01T20:33:58-05:00",
-      "week": "2026-W09",
-      "subject": "fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER",
-      "author": "Meeko"
-    },
-    {
-      "sha": "38654075",
-      "date": "2026-03-02T01:30:01+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T01:30]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "2aceb5ba",
-      "date": "2026-03-01T20:29:54-05:00",
-      "week": "2026-W09",
-      "subject": "fix: all email issues \u2014 phantom address removed, Wired corrected, blocked domains expanded, old engine retired, self-email loop closed + system manifest + social content engine",
-      "author": "Meeko"
-    },
-    {
-      "sha": "76bfd3ad",
-      "date": "2026-03-02T01:09:19+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 auto: system state update 2026-03-02 01:09 UTC",
-      "author": "Meeko Mycelium"
-    },
-    {
-      "sha": "b5122053",
-      "date": "2026-03-01T20:09:12-05:00",
-      "week": "2026-W09",
-      "subject": "wire: self_improver + form_filler + humanitarian_fork_distributor + readme_updater into MASTER_CONTROLLER \u2014 README is now last thing written, first thing read",
-      "author": "Meeko"
-    },
-    {
-      "sha": "b85c1f84",
-      "date": "2026-03-02T01:06:48+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T01:06]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "e896cfc4",
-      "date": "2026-03-01T20:06:40-05:00",
-      "week": "2026-W09",
-      "subject": "build: readme_updater (live stats, first read = last written) + phone_controller (a-Shell iOS) + phone_setup.sh + self_improver + SOLARPUNK_FOR_EVERYONE.md",
-      "author": "Meeko"
-    },
-    {
-      "sha": "bd49cf04",
-      "date": "2026-03-02T00:00:49+00:00",
-      "week": "2026-W10",
-      "subject": "\\U0001f338 perpetual: 2026-03-02 00:00 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "650fdfe9",
-      "date": "2026-03-01T23:47:53+00:00",
-      "week": "2026-W09",
-      "subject": "data: dex update [23:47]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "8ca71d18",
-      "date": "2026-03-01T23:46:54+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-03-01 23:46 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "f020b507",
-      "date": "2026-03-01T23:45:11+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T23:45]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "58360d19",
-      "date": "2026-03-01T22:53:49+00:00",
-      "week": "2026-W09",
-      "subject": "data: dex update [22:53]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "e27aa85d",
-      "date": "2026-03-01T22:52:43+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T22:52]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "93566774",
-      "date": "2026-03-01T21:58:23+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-03-01 21:58 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "0210761a",
-      "date": "2026-03-01T21:44:15+00:00",
-      "week": "2026-W09",
-      "subject": "data: dex update [21:44]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "b9ed7e57",
-      "date": "2026-03-01T21:42:54+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T21:42]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "0345e96f",
-      "date": "2026-03-01T21:42:04+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-03-01 21:42 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "0f036966",
-      "date": "2026-03-01T20:56:05+00:00",
-      "week": "2026-W09",
-      "subject": "\ud83d\udcdd auto: changelog 2026-03-01",
-      "author": "SolarPunk Mycelium"
-    },
-    {
-      "sha": "5987b153",
-      "date": "2026-03-01T15:55:58-05:00",
-      "week": "2026-W09",
-      "subject": "fix: wallet config checks all possible secret names \u2014 works with whatever you already named it",
-      "author": "Meeko"
-    },
-    {
-      "sha": "eb04cb3e",
-      "date": "2026-03-01T20:53:45+00:00",
-      "week": "2026-W09",
-      "subject": "data: dex update [20:53]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "664202a2",
-      "date": "2026-03-01T20:53:04+00:00",
-      "week": "2026-W09",
-      "subject": "\\U0001f338 perpetual: 2026-03-01 20:53 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "1df7f7ac",
-      "date": "2026-03-01T20:52:29+00:00",
-      "week": "2026-W09",
-      "subject": "chore: update wiring_status.json [2026-03-01T20:52]",
-      "author": "meeko-system"
     }
   ]
 }
