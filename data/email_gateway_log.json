@@ -2,209 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Neuronal Muse Labz sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "sam@hey.runable.com",
-      "subject": "\ud83d\ude32 Are you still creating boring PPTs?",
-      "action": "ignored_dedup"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "verify@x.com",
-      "subject": "New login to X from EdgeDesktop on Windows",
-      "action": "ignored_automated",
-      "reason": "blocked domain: x.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "bbno$ posted: which is better?",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "verify@x.com",
-      "subject": "New login to X from EdgeDesktop on Windows",
-      "action": "ignored_automated",
-      "reason": "blocked domain: x.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "security@mail.instagram.com",
-      "subject": "Username changed on Instagram",
-      "action": "ignored_automated",
-      "reason": "auto prefix: security@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "sam@hey.runable.com",
-      "subject": "\ud83d\udcbb No code website builders are dead - Here's why?\u00a0",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "2-Step Verification turned on",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@google.com",
-      "subject": "\u2705 Meeko, finish setting up your Apple iPhone with Google",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@google.com",
-      "subject": "Google Verification Code",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@marketing.base44.com",
-      "subject": "Everything just got a little easier",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@ma.linktr.ee",
-      "subject": "Linktree features you can\u2019t miss",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "SchlafGut posted: Murmelnde Welpen. #gutenachtgeschichte#tr\u00e4",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "team@netlify.com",
-      "subject": "[Netlify] You've used 75% of your credits on MeekoThaRaccoon",
-      "action": "ignored_automated",
-      "reason": "blocked domain: netlify.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "mailer-daemon@googlemail.com",
-      "subject": "Delivery Status Notification (Failure)",
-      "action": "ignored_automated",
-      "reason": "blocked domain: googlemail.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "mailer-daemon@googlemail.com",
-      "subject": "Delivery Status Notification (Failure)",
-      "action": "ignored_automated",
-      "reason": "blocked domain: googlemail.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@render.com",
-      "subject": "deploy failed for Business-autopilot",
-      "action": "ignored_automated",
-      "reason": "auto prefix: no-reply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Neuronal Muse Labz sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "mongodb-atlas@mongodb.com",
-      "subject": "You've added \"Allow access from anywhere (0.0.0.0/0)\" to you",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "hello@notify.railway.app",
-      "subject": "Start Collecting Referral Credits",
-      "action": "ignored_automated",
-      "reason": "auto prefix: hello@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@github.com",
-      "subject": "GitHub Copilot: What\u2019s in your free plan \ud83e\udd16",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-01",
       "from": "info@email.manychat.com",
       "subject": "All about algorithm fatigue \ud83e\udd71(and breaking through it) ",
       "action": "ignored_automated",
@@ -3377,6 +3174,216 @@
       "subject": "Your code: 953342",
       "action": "ignored_automated",
       "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "newsletter@em.teepublic.com",
+      "subject": "A lot to see. One to love.",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "noreply@medium.com",
+      "subject": "The Most Interesting Job in the World (And How to Lose It in",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "support@resend.com",
+      "subject": "Re: Welcome to Resend!",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "noreply@polymarket.com",
+      "subject": "A widening regional war",
+      "action": "ignored_automated",
+      "reason": "blocked domain: polymarket.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-02",
+      "from": "notifications@github.com",
+      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: pages ",
+      "action": "ignored_automated",
+      "reason": "blocked domain: github.com"
     }
   ],
   "human_emails_total": 1,
