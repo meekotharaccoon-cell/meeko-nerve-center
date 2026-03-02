@@ -126,10 +126,11 @@ jobs:
         run: python mycelium/congress_watcher.py
         continue-on-error: true
 
+      # FIX: was crypto_signal_engine.py — file is crypto_signals.py
       - name: Phase 5c — Crypto Signals
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python mycelium/crypto_signal_engine.py
+        run: python mycelium/crypto_signals.py
         continue-on-error: true
 
       - name: Phase 6 — Investment Intelligence
@@ -163,8 +164,8 @@ jobs:
           MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
           MASTODON_URL: ${{ secrets.MASTODON_URL }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
-          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python mycelium/social_poster.py
         continue-on-error: true
@@ -193,6 +194,7 @@ jobs:
           GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_SECRET }}
         run: python mycelium/gumroad_tracker.py
         continue-on-error: true
 
