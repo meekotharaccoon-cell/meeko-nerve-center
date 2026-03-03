@@ -6,7 +6,7 @@
 - M5.3 — 229 km ESE of Attu Station, Alaska (2026-03-02) ⚠️ TSUNAMI WATCH
 - M5.2 — 235 km ESE of Attu Station, Alaska (2026-03-03) ⚠️ TSUNAMI WATCH
 
-## UK Grid Carbon: 171 gCO2/kWh (high)
+## UK Grid Carbon: 169 gCO2/kWh (moderate)
 Lower numbers = more renewable energy on the grid.
 
 ## Space

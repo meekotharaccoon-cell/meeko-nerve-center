@@ -325,12 +325,28 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 24,
+      "gen": 24,
+      "at": "2026-03-03T11:20:23.188126",
+      "built": "consolidate",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
     "index_lessons",
     "gen_changelog",
-    "scan_assets"
+    "scan_assets",
+    "consolidate"
   ],
-  "gen": 24
+  "gen": 25
 }

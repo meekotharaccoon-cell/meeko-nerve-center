@@ -1,8 +1,8 @@
 {
   "date": "2026-03-03",
-  "total": 6,
+  "total": 5,
   "human_required": 4,
-  "auto_fixable": 2,
+  "auto_fixable": 1,
   "loops": [
     {
       "type": "grant_submission",
@@ -37,17 +37,9 @@
       "date_found": "2026-03-03"
     },
     {
-      "type": "workflow_health",
-      "priority": "HIGH",
-      "description": "System health RED: 69% (13 failing)",
-      "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
-      "human_required": false,
-      "date_found": "2026-03-03"
-    },
-    {
       "type": "unresolved_diagnostics",
       "priority": "MEDIUM",
-      "description": "101 unresolved diagnostic issues",
+      "description": "100 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
       "date_found": "2026-03-03"
