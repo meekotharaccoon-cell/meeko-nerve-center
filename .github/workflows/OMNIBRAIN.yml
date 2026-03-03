@@ -25,8 +25,9 @@ on:
 #   PHASE 7  — Comms (email gateway, humanitarian dispatch, Discord, Telegram, Notion)
 #   PHASE 8  — Evolution (perpetual builder, self-improver, loop closer)
 #   PHASE 8e — 🧬 SYNTHESIS_FACTORY (discovers + builds new engine combos autonomously)
-#   PHASE 8f — 💹 REVENUE_FLYWHEEL (tracks all money, reinvests at thresholds)
+#   PHASE 8f — 💹 REVENUE_FLYWHEEL (tracks all money, notifies at upgrade thresholds)
 #   PHASE 8g — 🖥️ DESKTOP_INTEGRATOR (scans machine, finds new connections)
+#   PHASE 8h — 👁️ GETSCREEN_BRIDGE (remote desktop eyes + hands via X_API_KEY)
 #   PHASE 9  — Memory + HF (long-term memory, dataset logger)
 #   PHASE 10 — Dashboard + diagnostics
 #   PHASE 11 — README (always last before brain)
@@ -329,17 +330,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 7f — HUMANITARIAN KNOWLEDGE DISPATCH
-      #
-      # Reaches out to verified organizations working in:
-      # Gaza, Congo, Sudan, and other active crisis zones.
-      #
-      # Sends: fork instructions, accountability data, AI pattern.
-      # Everything free. Nothing sold. Knowledge only.
-      # Goes through opt-in guard — consent is part of the mission.
-      # Never re-sends. Logs every dispatch permanently.
-      #
-      # See HUMANITARIAN_MISSION.md for full mission statement.
-      # See mycelium/knowledge_dispatch.py for recipient list.
       # ══════════════════════════════════════════════════════
       - name: "Phase 7f — 🌍 Humanitarian Knowledge Dispatch (Gaza, Congo, Sudan)"
         env:
@@ -382,16 +372,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 8e — 🧬 SYNTHESIS FACTORY
-      #
-      # The meta-engine. Reads all existing engines, discovers
-      # unwired combination opportunities using the Anthropic API,
-      # then WRITES new engines and commits them autonomously.
-      #
-      # This directly kills the 4-hour Claude chat bottleneck:
-      #   → OMNIBRAIN calls this every cycle (7am + 7pm UTC)
-      #   → SYNTHESIS_FACTORY calls the Anthropic API directly
-      #   → New engines get written, committed, and added to system
-      #   → System grows 24/7 with zero chat dependency
       # ══════════════════════════════════════════════════════
       - name: "Phase 8e — 🧬 SYNTHESIS_FACTORY (auto-discovery + engine generation)"
         env:
@@ -407,19 +387,20 @@ jobs:
       # ══════════════════════════════════════════════════════
       # PHASE 8f — 💹 REVENUE FLYWHEEL
       #
-      # Polls all revenue streams, tracks accumulated balance,
-      # and auto-notifies when upgrade thresholds are hit:
-      #   $5  → Claude Pro (eliminates 4hr chat gap)
-      #   $20 → Custom domain
-      #   $50 → Higher email limits
-      #   $100 → More API credits
-      #   $200 → GitHub Pro
-      #   $500 → Always-on VPS server
+      # Upgrade thresholds (corrected):
+      #   $20  → Claude Pro ($20/mo) — eliminates 4hr chat gap
+      #   $25  → Custom domain
+      #   $35  → Anthropic API credits
+      #   $50  → Mailgun Flex
+      #   $54  → GitHub Pro
+      #   $200 → DigitalOcean VPS
+      #   $500 → Dedicated SolarPunk server
       # ══════════════════════════════════════════════════════
-      - name: "Phase 8f — 💹 REVENUE_FLYWHEEL (all streams → balance → auto-upgrade)"
+      - name: "Phase 8f — 💹 REVENUE_FLYWHEEL (all streams → balance → upgrade alerts)"
         env:
           GUMROAD_TOKEN: ${{ secrets.GUMROAD_SECRET }}
           STRIKE_API_KEY: ${{ secrets.STRIKE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: python mycelium/REVENUE_FLYWHEEL.py
@@ -427,21 +408,31 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 8g — 🖥️ DESKTOP INTEGRATOR
-      #
-      # Scans the entire local machine for assets and connections
-      # that can be wired into the neural mesh:
-      #   - Local Python scripts → import into OMNIBRAIN
-      #   - Local videos → YouTube pipeline
-      #   - Local data files → knowledge_synthesizer
-      #   - Running apps with APIs → new bridge scripts
-      #   - Local LLMs (Ollama/LM Studio) → free API alternative
-      #   - Active localhost ports → integration opportunities
       # ══════════════════════════════════════════════════════
       - name: "Phase 8g — 🖥️ DESKTOP_INTEGRATOR (scan machine + find connections)"
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
         run: python mycelium/DESKTOP_INTEGRATOR.py --scan-only
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 8h — 👁️ GETSCREEN BRIDGE
+      #
+      # Uses X_API_KEY (your Getscreen.me key) to connect to
+      # your actual Windows machine from GitHub Actions.
+      # Gives SolarPunk remote desktop eyes and hands.
+      # Enables: screenshot, PowerShell execution, app control,
+      #          WhatsApp Desktop, Brave browser, local files.
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 8h — 👁️ GETSCREEN_BRIDGE (remote desktop via X_API_KEY)"
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/GETSCREEN_BRIDGE.py
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
