@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 10:14 UTC  
+> Last updated: 2026-03-03 10:54 UTC  
 > Total commits tracked: 200
 
 ---
@@ -9,6 +9,9 @@
 ## Week of March 2, 2026
 
 **📚 Knowledge**
+- `cb3aa28d` feat: add Phase 7f humanitarian knowledge dispatch to OMNIBRAIN — Gaza, Congo, Sudan
+- `9b43a00b` feat: KNOWLEDGE_DISPATCH — verified humanitarian outreach to Gaza, Congo, Sudan orgs
+- `139404e2` mission: SolarPunk humanitarian knowledge dispatch — Gaza, Congo, Sudan
 - `63dfe462` 🧠 knowledge update [2026-03-03]
 - `1633dc82` knowledge: v2 harvest [2026-03-03]
 
@@ -78,9 +81,6 @@
 - `1e32afd5` [solarpunk-activate] live dashboard update
 - `220c2f33` [solarpunk-activate] live dashboard update
 - `fe552c09` [solarpunk-activate] live dashboard update
-- `b73d4a0b` [solarpunk-activate] live dashboard update
-- `db279ed7` [solarpunk-activate] live dashboard update
-- `2f3b8089` [solarpunk-activate] live dashboard update
 
 **📧 Outreach**
 - `10dfb234` feat: SYNAPSE — resolver (reads A+B, finds consensus, emails briefing)
@@ -90,6 +90,7 @@
 - `07172ccf` fix: resolve all 7 syntax errors (identity_vault bare headers + youtube_manager f-string escapes)
 
 **📝 Documentation**
+- `2d012d51` 📝 auto: changelog 2026-03-03
 - `4efec9cc` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b8195ced` 📝 auto: changelog 2026-03-03
 - `fb951bf0` 📝 auto: changelog 2026-03-03
@@ -103,9 +104,10 @@
 - `57a1aad0` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b592c560` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `0005bae5` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `b0d0557e` 📄 auto: sync HTML to docs/ for GitHub Pages
 
 **⚙️ System**
+- `15a7ea9f` 🧬 SYNTHESIS_FACTORY: autonomous engine-combiner, kills 4hr bottleneck
+- `d3760f37` 🧠 auto: system state update 2026-03-03 10:34 UTC
 - `4773c639` feat: OMNIBRAIN workflow — 15-phase unified ops + dual-brain loop
 - `854a5903` feat: NEURON_A — builder brain (dual-Claude system)
 - `d6023cb9` 🧠 auto: system state update 2026-03-03 09:25 UTC
@@ -113,6 +115,8 @@
 - `557ad890` 🧠 auto: system state update 2026-03-03 08:00 UTC
 
 **• Other**
+- `cb741656` chore: update wiring_status.json [2026-03-03T10:33]
+- `5b760bb1` chore: update wiring_status.json [2026-03-03T10:31]
 - `52ad191c` chore: update wiring_status.json [2026-03-03T10:13]
 - `5c06f84f` chore: update wiring_status.json [2026-03-03T10:12]
 - `3a9f1a5a` feat: NEURON_B — skeptic brain (challenges everything A found)
@@ -217,10 +221,6 @@
 - `03851730` [solarpunk-activate] live status update
 - `847908b9` [solarpunk-activate] live status update
 - `bfd3b02a` [solarpunk-activate] live status update
-- `4fed5388` chore: update wiring_status.json [2026-03-03T05:32]
-- `d92739b8` [solarpunk-activate] live status update
-- `4bb2e7a9` [solarpunk-activate] live status update
-- `1d9be1df` [solarpunk-activate] live status update
 
 ---
 

@@ -1,8 +1,64 @@
 {
-  "generated": "2026-03-03T10:14:23.702156+00:00",
+  "generated": "2026-03-03T10:54:13.885244+00:00",
   "total_commits": 200,
   "weeks": 1,
   "commits": [
+    {
+      "sha": "15a7ea9f",
+      "date": "2026-03-03T05:54:03-05:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\uddec SYNTHESIS_FACTORY: autonomous engine-combiner, kills 4hr bottleneck",
+      "author": "Meeko"
+    },
+    {
+      "sha": "d3760f37",
+      "date": "2026-03-03T10:34:56+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 auto: system state update 2026-03-03 10:34 UTC",
+      "author": "Meeko Mycelium"
+    },
+    {
+      "sha": "cb3aa28d",
+      "date": "2026-03-03T05:34:46-05:00",
+      "week": "2026-W10",
+      "subject": "feat: add Phase 7f humanitarian knowledge dispatch to OMNIBRAIN \u2014 Gaza, Congo, Sudan",
+      "author": "Meeko"
+    },
+    {
+      "sha": "cb741656",
+      "date": "2026-03-03T10:33:34+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T10:33]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "9b43a00b",
+      "date": "2026-03-03T05:33:24-05:00",
+      "week": "2026-W10",
+      "subject": "feat: KNOWLEDGE_DISPATCH \u2014 verified humanitarian outreach to Gaza, Congo, Sudan orgs",
+      "author": "Meeko"
+    },
+    {
+      "sha": "5b760bb1",
+      "date": "2026-03-03T10:31:32+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T10:31]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "139404e2",
+      "date": "2026-03-03T05:31:22-05:00",
+      "week": "2026-W10",
+      "subject": "mission: SolarPunk humanitarian knowledge dispatch \u2014 Gaza, Congo, Sudan",
+      "author": "Meeko"
+    },
+    {
+      "sha": "2d012d51",
+      "date": "2026-03-03T10:14:23+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-03",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "4773c639",
       "date": "2026-03-03T05:14:13-05:00",
@@ -293,62 +349,6 @@
     {
       "sha": "6817789e",
       "date": "2026-03-03T03:12:21-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "63398711",
-      "date": "2026-03-03T03:12:20-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "a18b27fe",
-      "date": "2026-03-03T08:12:01+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-03T08:12]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "51a41fb6",
-      "date": "2026-03-03T03:11:51-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "f0d8542f",
-      "date": "2026-03-03T03:11:51-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "9761baca",
-      "date": "2026-03-03T03:11:49-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "bb7be854",
-      "date": "2026-03-03T03:11:49-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "5bed1560",
-      "date": "2026-03-03T08:11:27+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-03T08:11]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "0afac4fb",
-      "date": "2026-03-03T03:11:17-05:00",
       "week": "2026-W10",
       "subject": "[solarpunk-activate] live dashboard update",
       "author": "Meeko"
