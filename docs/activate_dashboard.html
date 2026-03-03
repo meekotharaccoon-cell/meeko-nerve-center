@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="30">
+<title>🌱 SolarPunk Activate! — Live Status</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Courier New', monospace; background: #0a0a0a; color: #00ff88; padding: 20px; }
+  h1 { font-size: 1.8em; margin-bottom: 5px; color: #00ffcc; }
+  .subtitle { color: #666; margin-bottom: 20px; font-size: 0.85em; }
+  .stats { display: flex; gap: 20px; margin-bottom: 20px; }
+  .stat { background: #111; border: 1px solid #333; padding: 10px 20px; border-radius: 4px; }
+  .stat .num { font-size: 2em; color: #00ff88; }
+  .stat.fail .num { color: #ff4444; }
+  .stat.label { font-size: 0.75em; color: #666; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+  th { background: #111; padding: 8px; text-align: left; border-bottom: 2px solid #333; color: #00ffcc; }
+  td { padding: 6px 8px; border-bottom: 1px solid #1a1a1a; font-size: 0.85em; }
+  tr.ok td { color: #00ff88; }
+  tr.fail td { color: #ff6666; }
+  a { color: inherit; }
+  .ai-chat { background: #0d0d0d; border: 1px solid #1a3322; border-radius: 6px; padding: 15px; }
+  .ai-chat h2 { color: #00ffcc; margin-bottom: 10px; }
+  .exchange { border-left: 3px solid #333; margin: 10px 0; padding: 8px 12px; }
+  .exchange.claude { border-color: #ff9900; }
+  .exchange.kimi { border-color: #0099ff; }
+  .exchange.sync { border-color: #00ff88; }
+  .speaker { font-size: 0.75em; color: #666; margin-bottom: 4px; }
+  .msg { font-size: 0.85em; line-height: 1.5; }
+  .footer { margin-top: 30px; font-size: 0.7em; color: #333; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; background: #00ff88; border-radius: 50%; 
+               animation: pulse 1.5s infinite; margin-right: 6px; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+</style>
+</head>
+<body>
+<h1>🌱 SolarPunk Activate! <span class="live-dot"></span></h1>
+<p class="subtitle">Started: 2026-03-03T00:30:52.505400+00:00 · Auto-refreshes every 30s · 70% of all revenue → PCRF 🇵🇸</p>
+
+<div class="stats">
+  <div class="stat"><div class="num">0</div><div class="label">TOTAL</div></div>
+  <div class="stat"><div class="num" style="color:#00ff88">0</div><div class="label">PASSED</div></div>
+  <div class="stat fail"><div class="num">0</div><div class="label">FAILED</div></div>
+</div>
+
+<table>
+  <tr><th>Status</th><th>Repo</th><th>Workflow</th><th>Result</th><th>Time</th></tr>
+  
+</table>
+
+<div class="ai-chat">
+  <h2>🧠 Live AI Conversation (Claude + Kimi)</h2>
+  <div id="conv">Loading...</div>
+</div>
+
+<div class="footer">
+  meekotharaccoon-cell.github.io/meeko-nerve-center · SolarPunk · AGPL-3.0
+</div>
+
+<script>
+async function loadConversation() {
+  try {
+    const r = await fetch('https://raw.githubusercontent.com/meekotharaccoon-cell/meeko-nerve-center/main/data/dual_brain_conversation.json?t=' + Date.now());
+    const data = await r.json();
+    const exchanges = (data.exchanges || []).slice(-10).reverse();
+    const div = document.getElementById('conv');
+    if (!exchanges.length) { div.innerHTML = '<p style="color:#444">No exchanges yet — run SolarPunk Activate! to start.</p>'; return; }
+    div.innerHTML = exchanges.map(e => {
+      const cls = e.speaker || 'sync';
+      const ts = (e.timestamp || '').slice(0,16).replace('T',' ');
+      let content = '';
+      if (e.summary) content += '<div class="msg">' + e.summary + '</div>';
+      if (e.message_to_claude) content += '<div class="msg" style="color:#0099ff">→ Claude: ' + e.message_to_claude + '</div>';
+      if (e.message_to_kimi) content += '<div class="msg" style="color:#ff9900">→ Kimi: ' + e.message_to_kimi + '</div>';
+      if (e.claude_to_kimi) content += '<div class="msg" style="color:#ff9900">Claude→Kimi: ' + e.claude_to_kimi + '</div>';
+      if (e.kimi_to_claude) content += '<div class="msg" style="color:#0099ff">Kimi→Claude: ' + e.kimi_to_claude + '</div>';
+      const steps = e.collective_next_steps || [];
+      if (steps.length) content += '<div class="msg" style="color:#00ff88">Next: ' + steps.slice(0,3).join(' · ') + '</div>';
+      return '<div class="exchange ' + cls + '"><div class="speaker">' + cls.toUpperCase() + ' · ' + ts + ' · changes:' + (e.changes_count || e.consensus_count || 0) + '</div>' + content + '</div>';
+    }).join('');
+  } catch(e) {
+    document.getElementById('conv').innerHTML = '<p style="color:#444">Loading conversation...</p>';
+  }
+}
+loadConversation();
+setInterval(loadConversation, 30000);
+</script>
+</body>
+</html>
