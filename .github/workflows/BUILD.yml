@@ -1,0 +1,214 @@
+name: "🔨 BUILD — SolarPunk Self-Assembly"
+
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: 'What to focus on this build (optional)'
+        required: false
+        default: ''
+      force_tier:
+        description: 'Force tier number (blank = auto-advance)'
+        required: false
+        default: ''
+
+# Each manual trigger = one tier of evolution.
+# Tier 1: Thinking (SYNAPSE, NEURON_A/B)
+# Tier 2: Revenue (FLYWHEEL, dispatch)
+# Tier 3: Perception (BRAVE, GETSCREEN, DESKTOP)
+# Tier 4: Growth (SYNTHESIS_FACTORY, INCOME_HUNTER)
+# Tier 5+: Self-generated -- Claude writes new engines every run
+
+jobs:
+  build:
+    name: "🔨 Build Next Tier"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests 2>/dev/null || true
+
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk-Build'
+          git config user.email 'build@solarpunk'
+          mkdir -p data mycelium
+
+      - name: Audit + Advance Tier
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          BUILD_NOTE: ${{ inputs.note }}
+          FORCE_TIER: ${{ inputs.force_tier }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, requests, smtplib
+          from pathlib import Path
+          from datetime import datetime
+          from email.mime.text import MIMEText
+
+          api_key = os.environ.get("ANTHROPIC_API_KEY","")
+          note    = os.environ.get("BUILD_NOTE","")
+          force   = os.environ.get("FORCE_TIER","")
+
+          tier_f = Path("data/tier_state.json")
+          tier_state = {}
+          if tier_f.exists():
+              try: tier_state = json.loads(tier_f.read_text())
+              except: pass
+
+          engines = [f.name for f in Path("mycelium").glob("*.py")]
+          current_tier = int(force.strip()) if force.strip().isdigit() else tier_state.get("current_tier", 0)
+          next_tier = current_tier + 1
+
+          # What should exist at each tier
+          TIER_MAP = {
+              1: ["SYNAPSE.py","NEURON_A.py","NEURON_B.py"],
+              2: ["REVENUE_FLYWHEEL.py","knowledge_dispatch.py"],
+              3: ["BRAVE_BRIDGE.py","GETSCREEN_BRIDGE.py","DESKTOP_INTEGRATOR.py"],
+              4: ["SYNTHESIS_FACTORY.py","INCOME_HUNTER.py"],
+          }
+
+          print(f"BUILD -- Tier {current_tier} -> {next_tier}")
+          print(f"  Engines present: {len(engines)}")
+          print(f"  Note: {note or '(none)'}")
+
+          missing = []
+          for t, required in TIER_MAP.items():
+              for eng in required:
+                  if eng not in engines:
+                      missing.append((t, eng))
+
+          if missing:
+              print(f"  Missing: {[m[1] for m in missing]}")
+
+          self_built = []
+
+          # Tier 5+: Claude generates new engine
+          if current_tier >= 4 and api_key:
+              print(f"Self-build mode -- Tier {next_tier}")
+              prompt = f"""You are SolarPunk's BUILD system. Create the next evolution.
+
+CURRENT:
+- Tier: {current_tier}
+- Engines: {engines}
+- Build note: {note or 'expand passive income'}
+
+Write ONE new Python engine for mycelium/ that:
+1. Does NOT duplicate existing engines
+2. Enables concrete passive income (affiliate, content, API service, etc.)
+3. Runs in GitHub Actions (Ubuntu, headless)
+4. Uses only: requests, smtplib, json, pathlib, datetime, os
+5. Writes results to data/
+6. Is 50-120 lines
+7. NEVER touches .github/ directory
+
+Format EXACTLY:
+FILENAME: name.py
+DESCRIPTION: one line
+---
+<complete Python code>
+---"""
+              try:
+                  r = requests.post(
+                      "https://api.anthropic.com/v1/messages",
+                      headers={"x-api-key": api_key, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 3000,
+                            "messages": [{"role": "user", "content": prompt}]},
+                      timeout=90
+                  )
+                  r.raise_for_status()
+                  text = r.json()["content"][0]["text"]
+                  fname = ""; code_lines = []; in_code = False; dashes = 0
+                  for line in text.split("\n"):
+                      if line.startswith("FILENAME:"):
+                          fname = line.split("FILENAME:")[1].strip()
+                      elif line.strip() == "---":
+                          dashes += 1
+                          if dashes == 1: in_code = True
+                          elif dashes == 2: in_code = False
+                      elif in_code:
+                          code_lines.append(line)
+                  if fname and code_lines:
+                      code = "\n".join(code_lines)
+                      if ".github" not in code and "git merge" not in code:
+                          target = Path("mycelium") / fname
+                          if target.exists():
+                              fname = fname.replace(".py", f"_v{next_tier}.py")
+                              target = Path("mycelium") / fname
+                          target.write_text(code)
+                          self_built.append(fname)
+                          print(f"Claude built: {fname}")
+              except Exception as e:
+                  print(f"Self-build error: {e}")
+
+          # Update logs
+          log = []
+          lf = Path("data/build_log.json")
+          if lf.exists():
+              try: log = json.loads(lf.read_text())
+              except: pass
+          log.append({
+              "tier": next_tier, "timestamp": datetime.now().isoformat(),
+              "engines_present": len(engines), "missing": [m[1] for m in missing],
+              "self_built": self_built, "note": note
+          })
+          lf.write_text(json.dumps(log[-100:], indent=2))
+
+          tier_f.write_text(json.dumps({
+              "current_tier": next_tier, "last_build": datetime.now().isoformat(),
+              "engines_count": len(engines) + len(self_built), "note": note
+          }, indent=2))
+
+          # Email Meeko
+          gmail = os.environ.get("GMAIL_ADDRESS","")
+          gpass = os.environ.get("GMAIL_APP_PASSWORD","")
+          if gmail and gpass:
+              self_build_note = "\nTier 5+ ACTIVE: Claude generating new engines each run!\n" if next_tier >= 5 else ""
+              body = f"""BUILD COMPLETE -- Tier {next_tier}
+{'='*40}
+{self_build_note}
+Engines present:  {len(engines) + len(self_built)}
+Self-built:       {self_built or ['(trigger again to reach tier 5+)']}
+Missing engines:  {[m[1] for m in missing] or ['none']}
+Note:             {note or '(none)'}
+
+Trigger BUILD again -> Tier {next_tier + 1}
+{'Each trigger now generates a new Claude-written engine.' if next_tier >= 4 else f'Tier {next_tier + 1} unlocks: {TIER_MAP.get(next_tier + 1, ["self-build mode"])}'}
+
+The system grows.
+-- SolarPunk"""
+              try:
+                  msg = MIMEText(body)
+                  msg["Subject"] = f"BUILD Tier {next_tier} -- {len(engines)+len(self_built)} engines"
+                  msg["From"] = gmail; msg["To"] = gmail
+                  with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+                      s.login(gmail, gpass); s.send_message(msg)
+                  print("Build email sent")
+              except Exception as e:
+                  print(f"Email err: {e}")
+
+          print(f"BUILD COMPLETE -- Tier {next_tier}")
+          PYEOF
+
+      - name: Commit build
+        run: |
+          git add -A
+          git diff --cached --quiet && echo "Nothing new" && exit 0
+          TIER=$(python3 -c "import json; print(json.loads(open('data/tier_state.json').read()).get('current_tier',0))" 2>/dev/null || echo "?")
+          git commit -m "[build] tier $TIER -- $(date +%Y-%m-%dT%H:%M)"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true
