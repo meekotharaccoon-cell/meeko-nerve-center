@@ -42,7 +42,7 @@ import argparse
 from pathlib import Path
 
 # ─────────────────────────────────────────────────────
-COLORS
+# COLORS
 # ─────────────────────────────────────────────────────
 class C:
     G = '\033[92m'; Y = '\033[93m'; R = '\033[91m'
@@ -56,7 +56,7 @@ def d(s): return f"{C.D}{s}{C.X}"
 def r(s): return f"{C.R}{s}{C.X}"
 
 # ─────────────────────────────────────────────────────
-VAULT SETUP
+# VAULT SETUP
 # ─────────────────────────────────────────────────────
 VAULT_DIR = Path.home() / '.identity_vault'
 DOCS_DIR = VAULT_DIR / 'documents'
@@ -87,7 +87,7 @@ def get_today(): return datetime.date.today().strftime("%B %d, %Y")
 def get_file_date(): return datetime.date.today().strftime("%Y%m%d")
 
 # ─────────────────────────────────────────────────────
-FOIA REQUEST GENERATOR
+# FOIA REQUEST GENERATOR
 # ─────────────────────────────────────────────────────
 def generate_foia():
     print(f"\n{b('🏛️ FOIA REQUEST GENERATOR')}")
@@ -162,12 +162,12 @@ FOIA requests are a legal right under 5 U.S.C. § 552.
     print(f"\n  {g('✓ FOIA request generated!')}")
     print(f"  {d('Review it, then send by certified mail with return receipt.')}")
     print(f"  {d('Keep your tracking number. Agencies must respond in 20 business days.')}")
-    print(f"  {d('If they miss the deadline, that itself can be a FOIA violation.'))}")
+    print(f"  {d('If they miss the deadline, that itself can be a FOIA violation.')}")
     print(f"\n  {c('File:')} {path}")
     return path
 
 # ─────────────────────────────────────────────────────
-DEBT VALIDATION LETTER (FDCPA)
+# DEBT VALIDATION LETTER (FDCPA)
 # ─────────────────────────────────────────────────────
 def generate_debt_validation():
     print(f"\n{b('💳 DEBT VALIDATION LETTER (FDCPA)')}")
@@ -269,7 +269,7 @@ Send via certified mail. Keep your tracking number as proof of delivery.
     return path
 
 # ─────────────────────────────────────────────────────
-CEASE AND DESIST
+# CEASE AND DESIST
 # ─────────────────────────────────────────────────────
 def generate_cease_desist():
     print(f"\n{b('✋ CEASE AND DESIST LETTER')}")
@@ -347,7 +347,7 @@ Send via certified mail. Keep your tracking number.
     return path
 
 # ─────────────────────────────────────────────────────
-CREDIT DISPUTE (FCRA)
+# CREDIT DISPUTE (FCRA)
 # ─────────────────────────────────────────────────────
 def generate_credit_dispute():
     print(f"\n{b('📊 CREDIT BUREAU DISPUTE (FCRA)')}")
@@ -441,7 +441,7 @@ Send via certified mail with return receipt. Keep all records.
     return path
 
 # ─────────────────────────────────────────────────────
-STATUTE OF LIMITATIONS CHECKER
+# STATUTE OF LIMITATIONS CHECKER
 # ─────────────────────────────────────────────────────
 SOL_BY_STATE = {
     'AL': 6, 'AK': 3, 'AZ': 6, 'AR': 5, 'CA': 4, 'CO': 6, 'CT': 6,
@@ -494,7 +494,7 @@ def check_sol():
     print(f"  {d('SOL rules vary by debt type and are subject to legal interpretation.')}")
 
 # ─────────────────────────────────────────────────────
-BENEFITS ELIGIBILITY
+# BENEFITS ELIGIBILITY
 # ─────────────────────────────────────────────────────
 def check_benefits():
     print(f"\n{b('🌱 PUBLIC BENEFITS ELIGIBILITY GUIDE')}")
@@ -559,7 +559,7 @@ def check_benefits():
     print(f"  {c('211.org')}     — call 2-1-1, free, confidential, 24/7")
 
 # ─────────────────────────────────────────────────────
-CFPB COMPLAINT GUIDE
+# CFPB COMPLAINT GUIDE
 # ─────────────────────────────────────────────────────
 def cfpb_guide():
     print(f"\n{b('⚖️ CFPB / FTC COMPLAINT GUIDE')}")
@@ -591,7 +591,7 @@ def cfpb_guide():
     print(f"  {d('Pattern complaints trigger enforcement actions.')}")  
 
 # ─────────────────────────────────────────────────────
-STATUS / DASHBOARD
+# STATUS / DASHBOARD
 # ─────────────────────────────────────────────────────
 def show_status():
     print(f"\n{b('📋 IDENTITY VAULT — STATUS')}")
@@ -611,7 +611,7 @@ def show_status():
     print(f"\n  {d('Vault location: ' + str(VAULT_DIR))}")
 
 # ─────────────────────────────────────────────────────
-MENU
+# MENU
 # ─────────────────────────────────────────────────────
 def show_menu():
     print(f"\n{b('🏛️ IDENTITY VAULT — WHAT DO YOU NEED?')}")
@@ -648,7 +648,7 @@ def interactive_menu():
         print()
 
 # ─────────────────────────────────────────────────────
-MAIN
+# MAIN
 # ─────────────────────────────────────────────────────
 def main():
     setup_vault()

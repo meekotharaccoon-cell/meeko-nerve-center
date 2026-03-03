@@ -246,7 +246,8 @@ def update_video_description(video, access_token, dry_run=False):
 
 def update_all_descriptions(access_token, dry_run=False):
     """Update descriptions on all channel videos."""
-    print(f'\n[yt] Updating descriptions {\'(DRY RUN) \' if dry_run else \'\'}...')
+    drmode = '(DRY RUN) ' if dry_run else ''
+    print(f'\n[yt] Updating descriptions {drmode}...')
     
     playlist_videos = get_channel_videos(access_token)
     if not playlist_videos:
@@ -303,7 +304,8 @@ AUTO_REPLIES = {
 
 def respond_to_comments(access_token, max_replies=5, dry_run=True):
     """Respond to comments on recent videos. Always dry_run by default for safety."""
-    print(f'\n[yt] Scanning comments {\'(DRY RUN)\' if dry_run else \'\'}...')
+    scanmode = '(DRY RUN)' if dry_run else ''
+    print(f'\n[yt] Scanning comments {scanmode}...')
     
     playlist_videos = get_channel_videos(access_token)
     if not playlist_videos:
