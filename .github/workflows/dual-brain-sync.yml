@@ -16,6 +16,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     timeout-minutes: 20
     permissions:
       contents: write
