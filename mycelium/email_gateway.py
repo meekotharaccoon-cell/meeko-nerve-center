@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
-Email Gateway v4 — Strict inbound-only, all known issues fixed
-===============================================================
-Fixes from v3:
-  - Added cryptohopper.com, pionex.us, and 40+ more crypto/fintech to blocklist
-  - Explicit GMAIL_ADDRESS self-email block regardless of env var state
-  - Retired email_log.json format (was written by old engine, now unified)
-  - Added placeholder email detection so [paste...] addresses never get sent
-  - More aggressive bounce/auto-reply detection
+Email Gateway v5 — Zero false positives
+========================================
+Changes from v4:
+  - Added missing blocked domains: tiktok.com, amazon.com, pinterest.com,
+    huggingface.co, redbubble.com, society6.com, teepublic.com, nightcafe.studio,
+    ebay.com, medium.com, discord.com, mongodb.com, replit.com, gdevelop.io,
+    base44.com, solpump.io, canva.com, manychat.com, freeup.net, linktr.ee
+  - Added missing auto prefixes: store-news@, website@, nobody@, pinbot@,
+    recommendations@, heythere@, canva*@, business-account@
+  - is_on_topic() now requires SUBJECT match OR both subject+body match.
+    Body-only matches were causing false positives (Amazon email body had "github").
+  - Self-emails from the system now go to data/system_inbox.json NOT Gmail.
+    Scripts that send to Gmail have been redirected.
 
 THE ONE JOB: Reply to real humans who ask about SolarPunk.
-Do nothing else.
+Do nothing else. Never generate outbound email noise.
 """
 
 import json, datetime, os, smtplib, imaplib, email as email_lib
@@ -31,21 +36,20 @@ HF_TOKEN           = os.environ.get('HF_TOKEN', '')
 REPO_URL = 'https://github.com/meekotharaccoon-cell/meeko-nerve-center'
 FORK_URL = f'{REPO_URL}/fork'
 
-# ── BLOCKED DOMAINS (expanded v4) ────────────────────────────────────────────
+# ── BLOCKED DOMAINS (v5 — complete) ──────────────────────────────────────────
 BLOCKED_DOMAINS = {
     # GitHub
     'github.com', 'githubusercontent.com', 'noreply.github.com',
     # Payment processors
     'stripe.com', 'paypal.com', 'square.com', 'braintree.com',
-    # Crypto exchanges — EXPANDED
+    # Crypto exchanges
     'coinbase.com', 'binance.com', 'kraken.com', 'bitfinex.com',
     'gemini.com', 'kucoin.com', 'bybit.com', 'okx.com',
     'crypto.com', 'ftx.com', 'huobi.com', 'gate.io',
-    'cryptohopper.com',   # WAS MISSING — caused llm_failed
-    'pionex.us', 'pionex.com',  # WAS MISSING
+    'cryptohopper.com', 'pionex.us', 'pionex.com',
     'tradingview.com', 'coingecko.com', 'coinmarketcap.com',
     'messari.io', 'glassnode.com', 'nansen.ai',
-    'polymarket.com', 'dydx.exchange', 'uniswap.org',
+    'polymarket.com', 'dydx.exchange', 'uniswap.org', 'solpump.io',
     # Email marketing
     'mailchimp.com', 'list-manage.com', 'sendgrid.net', 'sendgrid.com',
     'mailgun.org', 'mailgun.net', 'amazonses.com', 'amazonaws.com',
@@ -59,19 +63,43 @@ BLOCKED_DOMAINS = {
     'twitter.com', 'x.com', 'facebook.com', 'meta.com',
     'instagram.com', 'linkedin.com', 'discord.com', 'slack.com',
     'notion.so', 'intercom.io', 'intercom.com',
+    'tiktok.com',        # v5 — WAS MISSING. caused TikTok shop reply
+    'pinterest.com',     # v5 — WAS MISSING. caused Pinterest marketing reply
     # Support
     'zendesk.com', 'freshdesk.com', 'helpscout.com', 'front.com',
     # Commerce
     'gumroad.com', 'etsy.com', 'shopify.com', 'patreon.com',
     'ko-fi.com', 'buymeacoffee.com',
+    'redbubble.com', 'redbubblemail.com', # v5 — was missing
+    'society6.com',      # v5 — was missing
+    'teepublic.com',     # v5 — was missing
+    'ebay.com',          # v5 — was missing
+    # Amazon — ALL subdomains
+    'amazon.com',        # v5 — WAS MISSING. caused Amazon Associates reply + bounce reply
     # Google
     'google.com', 'googlemail.com', 'accounts.google.com',
+    # AI/ML platforms — do not reply to login alerts etc
+    'huggingface.co',    # v5 — WAS MISSING. caused HuggingFace login alert reply
+    'openai.com',
+    # Creator tools
+    'canva.com',         # v5 — was slipping through on engage.canva.com subdomains
+    'nightcafe.studio',  # v5 — was missing
+    'gdevelop.io', 'gdevelop-app.com',  # v5
+    'base44.com',        # v5
+    'medium.com',        # v5
+    'replit.com',        # v5
+    'mongodb.com',       # v5
+    'manychat.com',      # v5
+    'freeup.net',        # v5
+    'linktr.ee',         # v5
     # Infra
     'heroku.com', 'netlify.com', 'vercel.com', 'cloudflare.com',
     'namecheap.com', 'godaddy.com', 'digitalocean.com',
     # Other fintech
     'robinhood.com', 'webull.com', 'etrade.com', 'fidelity.com',
     'schwab.com', 'vanguard.com',
+    # Resend — they use support@ but it's a system email
+    'resend.com',
 }
 
 AUTO_PREFIXES = [
@@ -87,10 +115,29 @@ AUTO_PREFIXES = [
     'billing@', 'payments@', 'invoices@',
     'security@', 'account@', 'accounts@',
     'admin@', 'administrator@', 'webmaster@',
+    # v5 additions — these were causing false replies
+    'store-news@',       # Amazon store news
+    'website@',          # HuggingFace login alerts (website@huggingface.co)
+    'nobody@',           # Bounce addresses (nobody@bounces.amazon.com)
+    'pinbot@',           # Pinterest bots
+    'recommendations@',  # Recommendation engines
+    'heythere@',         # RedBubble promo
+    'notification@',     # TikTok notifications
+    'verify@',           # Verification emails
+    'canvaworldtour@', 'canvadesignschool@', 'product@', 'business@',
+    'ttsmarketplace@',   # TikTok Shop
+    'pinterest-recommendations@',
+    'ebay@',
+    'service@',
+    'analytics-noreply@', 'tagmanager-noreply@', 'business-noreply@',
+    'account-security-noreply@',
+    'fomoapp@',
+    'mongodb-atlas@',
+    'contact@',
 ]
 
 AUTO_SUBJECTS = [
-    # GitHub Actions (all variations)
+    # GitHub Actions
     'run failed:', 'run succeeded:', 'run cancelled:', 'run skipped:',
     '[meekotharaccoon-cell/', 'workflow run', 'github actions',
     'pull request', 'issue opened', 'issue closed',
@@ -110,10 +157,21 @@ AUTO_SUBJECTS = [
     'unsubscribe', 'manage preferences', 'email preferences',
     'view in browser', 'you received this email because',
     'you are receiving this', 'to stop receiving',
-    # Crypto marketing
+    # Security/account — never reply to these
+    'new login', 'login from', 'security alert', 'security info',
+    'password changed', 'email address has been changed',
+    'your code:', 'verification code', 'confirm your',
+    '2fa', 'two-factor', 'login code',
+    # Commerce
     'bonus available', 'deposit now', 'trade now',
     'tax documents', 'account deactivated', 'account suspended',
-    '2fa', 'two-factor',
+    'flash sale', 'free shipping', 'off sitewide', '% off',
+    'shop now', 'buy now', 'limited time', 'expires soon',
+    # System health emails from OUR OWN system
+    # (these are self-emails we want to keep silent in inbox)
+    '⚠️ system health', '⚠️ 1 validation', '📁 new grant draft',
+    'new grant draft', 'system health:', 'validation failure',
+    '[diagnostic]', '[self-fix]', '[blocked]', '[alert]', '[workflow-fail]',
 ]
 
 AUTO_BODY_PATTERNS = [
@@ -125,20 +183,22 @@ AUTO_BODY_PATTERNS = [
     'unsubscribe from this list', 'manage your preferences',
 ]
 
-RESPONSE_TOPICS = [
+# v5 — SUBJECT ONLY topic matching. Body-only matches caused false positives.
+# Amazon Associates email body happened to contain "github" somewhere.
+# Rule: MUST match in the SUBJECT to reply. Body match alone = ignore.
+RESPONSE_TOPICS_SUBJECT = [
     'solarpunk', 'solar punk', 'nerve center', 'meeko',
-    'fork', 'github', 'repository', 'repo',
-    'how does this work', 'what is this', 'tell me more',
+    'fork this', 'fork it', 'clone this', 'how does this work',
+    'what is this', 'tell me more', 'interested in your',
     'palestine', 'palestinian', 'pcrf', 'gaza', 'humanitarian',
     'congress', 'congressional', 'accountability',
     'crypto signal', 'art generator', 'gaza rose',
-    'grant', 'autonomous', 'ai system', 'self-building',
-    'open source', 'agpl', 'free software',
+    'grant question', 'autonomous ai', 'self-building',
+    'open source project', 'agpl',
 ]
 
 
 def is_placeholder_email(addr: str) -> bool:
-    """Catch literal placeholder text used as email addresses."""
     red_flags = ['[', ']', 'paste', 'your ', 'link', 'forum', 'discord', 'community']
     return any(f in addr.lower() for f in red_flags) or '@' not in addr
 
@@ -148,14 +208,13 @@ def is_automated(from_email: str, from_raw: str, subject: str, body: str):
     s = subject.lower()
     b = body.lower()[:2000]
 
-    # Self-email — check both ways
+    # Self-email
     if GMAIL_ADDRESS and GMAIL_ADDRESS.lower() in e:
         return True, 'self-email (env match)'
-    # Also catch meekotharaccoon pattern directly
     if 'meekotharaccoon' in e:
         return True, 'self-email (username match)'
 
-    # Placeholder address
+    # Placeholder
     if is_placeholder_email(from_email):
         return True, 'placeholder address'
 
@@ -168,19 +227,20 @@ def is_automated(from_email: str, from_raw: str, subject: str, body: str):
             return True, f'blocked subdomain: {domain}'
 
     # Prefix blocklist
+    local = e.split('@')[0] + '@' if '@' in e else e
     for prefix in AUTO_PREFIXES:
-        if e.startswith(prefix) or e.split('@')[0] == prefix.rstrip('@'):
-            return True, f'auto prefix'
+        if e.startswith(prefix) or local == prefix:
+            return True, 'auto prefix'
 
     # Subject patterns
     for pattern in AUTO_SUBJECTS:
         if pattern in s:
-            return True, f'auto subject'
+            return True, 'auto subject'
 
     # Body patterns
     for pattern in AUTO_BODY_PATTERNS:
         if pattern in b:
-            return True, f'auto body'
+            return True, 'auto body'
 
     # Encoded GitHub subjects
     if ('=?utf' in s or '=?UTF' in s) and ('run' in s or 'meekotharaccoon' in s):
@@ -190,8 +250,12 @@ def is_automated(from_email: str, from_raw: str, subject: str, body: str):
 
 
 def is_on_topic(subject: str, body: str) -> bool:
-    text = (subject + ' ' + body).lower()
-    return any(topic in text for topic in RESPONSE_TOPICS)
+    """
+    v5 — Subject MUST match. Body-only match is not enough.
+    Prevents false positives where spam bodies contain common keywords.
+    """
+    subj_lower = subject.lower()
+    return any(topic in subj_lower for topic in RESPONSE_TOPICS_SUBJECT)
 
 
 def get_dedup_key(from_email: str) -> str:
@@ -304,7 +368,6 @@ def send_reply(to_email: str, orig_subject: str, body: str) -> bool:
 
 
 def append_log(entry: dict):
-    """Single unified log — replaces both email_log.json and email_gateway_log.json."""
     p = DATA / 'email_gateway_log.json'
     try:
         data = json.loads(p.read_text()) if p.exists() else {'interactions': []}
@@ -370,7 +433,7 @@ def check_inbox() -> list:
 
 
 def run():
-    print(f'\n[gateway] Email Gateway v4 — {TODAY}')
+    print(f'\n[gateway] Email Gateway v5 — {TODAY}')
     DATA.mkdir(parents=True, exist_ok=True)
 
     messages = check_inbox()
