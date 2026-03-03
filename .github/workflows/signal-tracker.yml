@@ -5,6 +5,7 @@ on:
 jobs:
   signals:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
