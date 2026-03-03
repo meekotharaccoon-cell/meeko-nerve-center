@@ -1,5 +1,66 @@
 {
-  "started_at": "2026-03-03T05:31:34.195123+00:00",
-  "results": [],
-  "phase": "critical_sequence"
+  "started_at": "2026-03-03T05:30:37.588426+00:00",
+  "results": [
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "MASTER_CONTROLLER.yml",
+      "success": false,
+      "conclusion": "not_dispatchable",
+      "duration_s": 0,
+      "run_url": ""
+    },
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "self-healer.yml",
+      "success": false,
+      "conclusion": "not_dispatchable",
+      "duration_s": 0,
+      "run_url": ""
+    },
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "claude-autonomous.yml",
+      "success": true,
+      "conclusion": "success",
+      "duration_s": 29,
+      "run_url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22609773557"
+    },
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "SOLARPUNK_ACTIVATE.yml",
+      "success": true,
+      "conclusion": "triggered",
+      "duration_s": 0,
+      "run_url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions"
+    }
+  ],
+  "phase": "complete",
+  "completed_at": "2026-03-03T05:31:46.044247+00:00",
+  "fired_count": 1,
+  "critical_results": [
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "MASTER_CONTROLLER.yml",
+      "success": false,
+      "conclusion": "not_dispatchable",
+      "duration_s": 0,
+      "run_url": ""
+    },
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "self-healer.yml",
+      "success": false,
+      "conclusion": "not_dispatchable",
+      "duration_s": 0,
+      "run_url": ""
+    },
+    {
+      "repo": "meeko-nerve-center",
+      "workflow": "claude-autonomous.yml",
+      "success": true,
+      "conclusion": "success",
+      "duration_s": 29,
+      "run_url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22609773557"
+    }
+  ]
 }
