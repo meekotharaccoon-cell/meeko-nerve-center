@@ -9,6 +9,7 @@ jobs:
   three_d_brain:
     name: 3D Cross-Dimensional Intelligence
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     permissions:
       contents: write
     steps:
