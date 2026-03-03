@@ -1,0 +1,472 @@
+name: "🧠 OMNIBRAIN — All Systems One Workflow"
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 7am UTC — morning full cycle
+    - cron: '0 19 * * *'  # 7pm UTC — evening full cycle
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'full | brain_only | ops_only | health_check'
+        required: false
+        default: 'full'
+
+# OMNIBRAIN is the single unified workflow.
+# All other workflows remain but this is the one that runs everything together.
+#
+# Structure:
+#   PHASE 0  — System knows itself (manifest + directives)
+#   PHASE 1  — Self-heal broken scripts
+#   PHASE 2  — Intelligence (world, crypto, congress, investment)
+#   PHASE 3  — Content (art, social, YouTube shorts)
+#   PHASE 4  — Post (social poster, cross-poster, network spread)
+#   PHASE 5  — Revenue (Gumroad, Etsy, router)
+#   PHASE 6  — Grants + Jobs
+#   PHASE 7  — Comms (email gateway, Discord, Telegram, Notion)
+#   PHASE 8  — Evolution (perpetual builder, self-improver, loop closer)
+#   PHASE 9  — Memory + HF (long-term memory, dataset logger)
+#   PHASE 10 — Dashboard + diagnostics
+#   PHASE 11 — README (always last before brain)
+#   ─── MID-CYCLE COMMIT ───
+#   PHASE 12 — NEURON_A (builder pass — optimistic, reads everything)
+#   PHASE 13 — NEURON_B (skeptic pass — challenges everything A said)
+#   PHASE 14 — SYNAPSE  (resolve A+B, save brain state, email briefing)
+#   PHASE 15 — Final commit
+
+jobs:
+  omnibrain:
+    name: "🧠 OMNIBRAIN"
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests 2>/dev/null || true
+
+      - name: Configure git + dirs
+        run: |
+          git config user.name 'OMNIBRAIN'
+          git config user.email 'omnibrain@meeko-nerve-center'
+          mkdir -p data content public knowledge/world
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 0 — System knows itself
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 0a — System Manifest"
+        run: python mycelium/system_manifest.py
+        continue-on-error: true
+
+      - name: "Phase 0b — Human Directives"
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/notion_directives_reader.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 1 — Self-heal
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 1a — Self-Healer v2"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python mycelium/self_healer_v2.py
+        continue-on-error: true
+
+      - name: "Phase 1b — Syntax Patcher"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/syntax_patcher.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 2 — Intelligence
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 2a — World Intelligence"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/world_intelligence.py
+        continue-on-error: true
+
+      - name: "Phase 2b — Congress Watcher"
+        env:
+          QUIVER_API_KEY: ${{ secrets.QUIVER_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/congress_watcher.py
+        continue-on-error: true
+
+      - name: "Phase 2c — Crypto Signals"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/crypto_signals.py
+        continue-on-error: true
+
+      - name: "Phase 2d — Investment Intelligence"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/investment_intelligence.py
+        continue-on-error: true
+
+      - name: "Phase 2e — Knowledge Harvester"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/knowledge_harvester_v2.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 3 — Content Generation
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 3a — 3D Brain Synthesis"
+        env:
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/three_d_brain.py
+        continue-on-error: true
+
+      - name: "Phase 3b — Art Generator"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: python mycelium/art_cause_generator.py
+        continue-on-error: true
+
+      - name: "Phase 3c — Social Content Engine"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/social_content_engine.py
+        continue-on-error: true
+
+      - name: "Phase 3d — YouTube Shorts Writer"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/youtube_shorts_writer.py
+        continue-on-error: true
+
+      - name: "Phase 3e — Newsletter Writer"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/newsletter_writer.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 4 — Posting
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 4a — Social Poster"
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          MASTODON_URL: ${{ secrets.MASTODON_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/social_poster.py
+        continue-on-error: true
+
+      - name: "Phase 4b — Cross Poster"
+        env:
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+        run: python mycelium/cross_poster.py
+        continue-on-error: true
+
+      - name: "Phase 4c — Network Spreader"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          MASTODON_BASE_URL: ${{ secrets.MASTODON_BASE_URL }}
+        run: python mycelium/network_spreader.py
+        continue-on-error: true
+
+      - name: "Phase 4d — YouTube Manager"
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python mycelium/youtube_manager.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 5 — Revenue (70% PCRF always)
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 5a — Gumroad Tracker"
+        env:
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_SECRET }}
+        run: python mycelium/gumroad_tracker.py
+        continue-on-error: true
+
+      - name: "Phase 5b — Etsy Bridge"
+        env:
+          ETSY_API_KEY: ${{ secrets.ETSY_API_KEY }}
+          ETSY_SHOP_ID: ${{ secrets.ETSY_SHOP_ID }}
+          ETSY_ACCESS_TOKEN: ${{ secrets.ETSY_ACCESS_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/etsy_bridge.py
+        continue-on-error: true
+
+      - name: "Phase 5c — Revenue Router (70% PCRF)"
+        env:
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+          WALLET_SOLANA: ${{ secrets.WALLET_SOLANA }}
+          WALLET_ETHEREUM: ${{ secrets.WALLET_ETHEREUM }}
+          WALLET_BASE: ${{ secrets.WALLET_BASE }}
+          WALLET_POLYGON: ${{ secrets.WALLET_POLYGON }}
+          WALLET_BTC_TAPROOT: ${{ secrets.WALLET_BTC_TAPROOT }}
+          WALLET_BTC_SEGWIT: ${{ secrets.WALLET_BTC_SEGWIT }}
+          WALLET_SUI: ${{ secrets.WALLET_SUI }}
+          WALLET_MONAD: ${{ secrets.WALLET_MONAD }}
+          WALLET_HYPEREVM: ${{ secrets.WALLET_HYPEREVM }}
+          HUMAN_PAYPAL_EMAIL: ${{ secrets.HUMAN_PAYPAL_EMAIL }}
+          PCRF_PAYPAL_EMAIL: ${{ secrets.PCRF_PAYPAL_EMAIL }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+        run: python mycelium/revenue_router.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 6 — Grants + Jobs
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 6a — Grant Intelligence"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/grant_intelligence.py
+        continue-on-error: true
+
+      - name: "Phase 6b — Job Agent"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HUMAN_FULL_NAME: ${{ secrets.HUMAN_FULL_NAME }}
+          HUMAN_EMAIL: ${{ secrets.HUMAN_EMAIL }}
+          HUMAN_LOCATION: ${{ secrets.HUMAN_LOCATION }}
+          HUMAN_TIMEZONE: ${{ secrets.HUMAN_TIMEZONE }}
+        run: python mycelium/job_agent.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 7 — Communications
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 7a — Email Gateway (inbound + opt-in only)"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/email_gateway.py
+        continue-on-error: true
+
+      - name: "Phase 7b — Humanitarian Fork Distributor"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python mycelium/humanitarian_fork_distributor.py
+        continue-on-error: true
+
+      - name: "Phase 7c — Discord Bridge"
+        env:
+          DIS_APP_ID: ${{ secrets.DIS_APP_ID }}
+          DIS_APP_PUBLIC_KEY: ${{ secrets.DIS_APP_PUBLIC_KEY }}
+          DIS_BOT_TOKEN: ${{ secrets.DIS_BOT_TOKEN }}
+          DIS_CHANNEL_ID: ${{ secrets.DIS_CHANNEL_ID }}
+        run: python mycelium/discord_bridge.py
+        continue-on-error: true
+
+      - name: "Phase 7d — Telegram Bot"
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python mycelium/telegram_bot.py
+        continue-on-error: true
+
+      - name: "Phase 7e — Notion Bridge"
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/notion_bridge.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 8 — Evolution
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 8a — Perpetual Builder"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: python mycelium/perpetual_builder.py
+        continue-on-error: true
+
+      - name: "Phase 8b — Self-Improver"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          WALLET_SOLANA: ${{ secrets.WALLET_SOLANA }}
+        run: python mycelium/self_improver.py
+        continue-on-error: true
+
+      - name: "Phase 8c — Loop Closer"
+        run: python mycelium/loop_closer.py
+        continue-on-error: true
+
+      - name: "Phase 8d — Evolve"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python mycelium/evolve.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 9 — Memory
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 9a — Long-Term Memory"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python mycelium/long_term_memory.py
+        continue-on-error: true
+
+      - name: "Phase 9b — HF Dataset Logger"
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ secrets.HF_USERNAME }}
+        run: python mycelium/hf_dataset_logger.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 10 — Dashboard + Diagnostics
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 10a — Workflow Health Monitor"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/master_controller.py
+        continue-on-error: true
+
+      - name: "Phase 10b — Deep Diagnostic"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python mycelium/deep_diagnostic.py
+        continue-on-error: true
+
+      - name: "Phase 10c — Dashboard Generator"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/dashboard_data_generator.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 11 — README (always last before brain)
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 11 — README Updater"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          WALLET_SOLANA: ${{ secrets.WALLET_SOLANA }}
+          WALLET_ETHEREUM: ${{ secrets.WALLET_ETHEREUM }}
+          WALLET_BTC_SEGWIT: ${{ secrets.WALLET_BTC_SEGWIT }}
+          WALLET_BTC_TAPROOT: ${{ secrets.WALLET_BTC_TAPROOT }}
+          WALLET_SUI: ${{ secrets.WALLET_SUI }}
+        run: python mycelium/readme_updater.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # MID-CYCLE COMMIT — save all ops data before brain runs
+      # ══════════════════════════════════════════════════════
+      - name: "Mid-Cycle Commit — save ops data"
+        run: |
+          git add -A
+          git diff --cached --quiet && echo 'Nothing to commit' && exit 0
+          git commit -m "ops [$(date +%Y-%m-%dT%H:%M)] — phases 0-11 complete"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 12 — NEURON_A (Builder brain)
+      # Optimistic. Reads full system + ALL repos.
+      # Finds real problems, proposes fixes, writes message to B.
+      # Auto-applies only if confidence >= 0.85
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 12 — NEURON_A (Builder)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DIRECTIVES_PAGE_ID: ${{ secrets.NOTION_DIRECTIVES_PAGE_ID }}
+        run: python mycelium/NEURON_A.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 13 — NEURON_B (Skeptic brain)
+      # Adversarial. Reads A's report, challenges everything.
+      # Finds what A missed. Reviews A's skipped fixes.
+      # Applies B's own high-confidence fixes.
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 13 — NEURON_B (Skeptic)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/NEURON_B.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 14 — SYNAPSE (Resolver)
+      # Reads both A and B reports.
+      # Finds consensus. Resolves conflicts. Saves brain state.
+      # Emails meeko the daily briefing with health score.
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 14 — SYNAPSE (Resolver + Daily Briefing)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python mycelium/SYNAPSE.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 15 — Final Commit (includes brain outputs)
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 15 — Final Commit"
+        run: |
+          git add -A
+          git diff --cached --quiet && echo 'Clean — nothing to commit' && exit 0
+          git commit -m "🧠 omnibrain [$(date +%Y-%m-%dT%H:%M)] — A+B+synapse complete"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
