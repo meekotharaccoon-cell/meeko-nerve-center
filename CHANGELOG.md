@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 01:07 UTC  
+> Last updated: 2026-03-03 05:19 UTC  
 > Total commits tracked: 200
 
 ---
@@ -11,9 +11,11 @@
 **📚 Knowledge**
 - `2a4977dc` fix: silent failure — add continue-on-error to knowledge-harvester.yml
 - `206fc7b6` fix: silent failure — add continue-on-error to knowledge-harvester-v2.yml
-- `96eea8b1` knowledge: v2 harvest [2026-03-02]
 
 **🤝 Community**
+- `abe8e14d` [solarpunk-activate] live dashboard update
+- `4ce3504c` [solarpunk-activate] live dashboard update
+- `189eb00e` [solarpunk-activate] live dashboard update
 - `999831be` [solarpunk-activate] live dashboard update
 - `3836639a` [solarpunk-activate] live dashboard update
 - `57f5e9e1` [solarpunk-activate] live dashboard update
@@ -62,8 +64,6 @@
 - `8e882c21` [solarpunk-activate] live dashboard update
 - `60ca98a8` [solarpunk-activate] live dashboard update
 - `d1f4cbbe` [solarpunk-activate] live dashboard update
-- `28726640` [solarpunk-activate] live dashboard update
-- `cbf0050a` feat: activate.py — ONE script that fires ALL workflows across ALL repos, self-heals, live dashboard
 
 **📧 Outreach**
 - `24b663ab` fix: email_gateway v5 — add 20+ missing blocked domains, fix false reply bug (tiktok/amazon/pinterest/huggingface), subject-only topic matching
@@ -131,6 +131,8 @@
 - `9ee369a6` fix: silent failure — add continue-on-error to api-directory-harvester.yml
 
 **📝 Documentation**
+- `4aba588d` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `38119314` 📝 auto: changelog 2026-03-03
 - `0ef5a340` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `1a46e30e` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `48877000` 📝 auto: changelog 2026-03-03
@@ -144,14 +146,28 @@
 - `c2b98fb7` 📝 auto: changelog 2026-03-03
 
 **⚙️ System**
+- `be4ada7d` [dual-brain-sync] system wants 0 things next
+- `e5d66e57` 🧠 auto: system state update 2026-03-03 01:10 UTC
+- `5a6f9bb2` [dual-brain-sync] system wants 0 things next
 - `8f5352d6` [dual-brain-sync] system wants 0 things next
 - `dea89ae5` 🧠 auto: system state update 2026-03-03 00:50 UTC
 - `f69a2282` feat: notify.py — system alerts go to data/system_inbox.json instead of Gmail inbox
 - `3ce89d33` 🧠 auto: system state update 2026-03-03 00:46 UTC
-- `61905874` 🧠 auto: system state update 2026-03-03 00:06 UTC
-- `51a0d653` feat: SOLARPUNK_ACTIVATE.yml — ONE workflow that triggers everything across all 21 repos
 
 **• Other**
+- `940c408b` [solarpunk-activate] live status update
+- `fdb1ffcc` [solarpunk-activate] live status update
+- `4ad59459` [solarpunk-activate] live status update
+- `9f992c40` 🌸 cycle [2026-03-03 05:17] — all 21 phases fired
+- `ec735451` chore: update wiring_status.json [2026-03-03T05:15]
+- `4d7cf6ca` [dual-brain-sync] shared brain state
+- `eb479718` [dual-brain-sync] 0 consensus items — both AIs agree
+- `e68f5c5c` chore: update wiring_status.json [2026-03-03T05:07]
+- `f02bbbc7` 🌸 cycle [2026-03-03 01:36] — all 21 phases fired
+- `c184232f` 🌸 cycle [2026-03-03 01:12] — all 21 phases fired
+- `30db2788` [dual-brain-sync] shared brain state
+- `0b84db61` [dual-brain-sync] 0 consensus items — both AIs agree
+- `6e22f4a8` 🌸 cycle [2026-03-03 01:07] — all 21 phases fired
 - `0407d145` [dual-brain-sync] shared brain state
 - `77e6d537` [dual-brain-sync] 0 consensus items — both AIs agree
 - `c2fc5df5` [solarpunk-activate] live status update
@@ -213,22 +229,6 @@
 - `6e096dd2` [solarpunk-activate] live status update
 - `4b05c68f` [solarpunk-activate] live status update
 - `f9b38313` [solarpunk-activate] live status update
-- `542ecaf5` [solarpunk-activate] live status update
-- `9a961af0` chore: update wiring_status.json [2026-03-03T00:28]
-- `61067b2b` [solarpunk-activate] live status update
-- `8dada5b8` chore: update wiring_status.json [2026-03-03T00:07]
-- `188039ac` feat: queue reply to Zeno/Resend — asks for introductions, feature recommendations, infrastructure connections
-- `08155269` chore: update wiring_status.json [2026-03-03T00:06]
-- `1cdf4b4b` data: dex update [23:54]
-- `695f1426` chore: update wiring_status.json [2026-03-02T23:54]
-- `78565356` \U0001f338 perpetual: 2026-03-02 22:57 UTC
-- `974fea8b` data: dex update [22:57]
-- `4c0043cf` chore: update wiring_status.json [2026-03-02T22:56]
-- `c391aac5` \U0001f338 perpetual: 2026-03-02 22:02 UTC
-- `f25f3c2c` data: dex update [21:51]
-- `81150de4` 🧠 3d-brain state [2026-03-02]
-- `1e31a0ce` chore: update wiring_status.json [2026-03-02T21:06]
-- `977c99bd` 🌸 cycle [2026-03-02 19:54] — all 21 phases fired
 
 ---
 
