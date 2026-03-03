@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 08:15 UTC  
+> Last updated: 2026-03-03 10:14 UTC  
 > Total commits tracked: 200
 
 ---
@@ -13,6 +13,7 @@
 - `1633dc82` knowledge: v2 harvest [2026-03-03]
 
 **🤝 Community**
+- `742ad89e` [solarpunk-activate] live dashboard update
 - `2e71692b` [solarpunk-activate] live dashboard update
 - `01e8e42a` [solarpunk-activate] live dashboard update
 - `78a4e27b` [solarpunk-activate] live dashboard update
@@ -80,15 +81,17 @@
 - `b73d4a0b` [solarpunk-activate] live dashboard update
 - `db279ed7` [solarpunk-activate] live dashboard update
 - `2f3b8089` [solarpunk-activate] live dashboard update
-- `bde192c2` [solarpunk-activate] live dashboard update
-- `a5af0049` [solarpunk-activate] live dashboard update
-- `b5343ebe` [solarpunk-activate] live dashboard update
-- `f550136e` [solarpunk-activate] live dashboard update
-- `3f05751f` [solarpunk-activate] live dashboard update
-- `f4d96217` [solarpunk-activate] live dashboard update
-- `eb55ad11` [solarpunk-activate] live dashboard update
+
+**📧 Outreach**
+- `10dfb234` feat: SYNAPSE — resolver (reads A+B, finds consensus, emails briefing)
+
+**🚹 Fixes**
+- `aac6f0e3` fix: syntax_patcher auto-fixed 1 file(s) [skip ci]
+- `07172ccf` fix: resolve all 7 syntax errors (identity_vault bare headers + youtube_manager f-string escapes)
 
 **📝 Documentation**
+- `4efec9cc` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `b8195ced` 📝 auto: changelog 2026-03-03
 - `fb951bf0` 📝 auto: changelog 2026-03-03
 - `e92d654b` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `db31b8bb` 📝 auto: changelog 2026-03-03
@@ -101,15 +104,25 @@
 - `b592c560` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `0005bae5` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b0d0557e` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `06735ea8` 📝 auto: changelog 2026-03-03
 
 **⚙️ System**
+- `4773c639` feat: OMNIBRAIN workflow — 15-phase unified ops + dual-brain loop
+- `854a5903` feat: NEURON_A — builder brain (dual-Claude system)
+- `d6023cb9` 🧠 auto: system state update 2026-03-03 09:25 UTC
 - `5004d602` 🧠 auto: system state update 2026-03-03 08:13 UTC
 - `557ad890` 🧠 auto: system state update 2026-03-03 08:00 UTC
-- `a0c98be8` 🧠 auto: system state update 2026-03-03 05:31 UTC
-- `6c3d1157` 🧠 auto: system state update 2026-03-03 05:29 UTC
 
 **• Other**
+- `52ad191c` chore: update wiring_status.json [2026-03-03T10:13]
+- `5c06f84f` chore: update wiring_status.json [2026-03-03T10:12]
+- `3a9f1a5a` feat: NEURON_B — skeptic brain (challenges everything A found)
+- `bf0e0fab` data: dex update [10:06]
+- `a74371a0` chore: update wiring_status.json [2026-03-03T10:06]
+- `4c6b5911` 🎬 shorts scripts [2026-03-03]
+- `350f5afc` \U0001f338 perpetual: 2026-03-03 10:02 UTC
+- `411e36c5` chore: update wiring_status.json [2026-03-03T09:35]
+- `db81a95a` add: GITHUB_CONNECT.ps1 + MEEKO_RUN.ps1 — auth setup and claude-mode runner
+- `28e32c4b` [solarpunk-activate] live status update
 - `2140535a` [solarpunk-activate] live status update
 - `eb85bc0c` [solarpunk-activate] live status update
 - `ed177215` chore: update wiring_status.json [2026-03-03T08:14]
@@ -208,15 +221,6 @@
 - `d92739b8` [solarpunk-activate] live status update
 - `4bb2e7a9` [solarpunk-activate] live status update
 - `1d9be1df` [solarpunk-activate] live status update
-- `6ca1a2fb` [solarpunk-activate] live status update
-- `68aacda8` [solarpunk-activate] live status update
-- `f4317209` [solarpunk-activate] live status update
-- `d17224e2` chore: update wiring_status.json [2026-03-03T05:30]
-- `aab9d3cb` [solarpunk-activate] live status update
-- `16c0bc17` chore: update wiring_status.json [2026-03-03T05:30]
-- `57f5b90b` [solarpunk-activate] live status update
-- `540d42a2` [solarpunk-activate] live status update
-- `189aa51e` [solarpunk-activate] live status update
 
 ---
 

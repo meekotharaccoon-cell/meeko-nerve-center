@@ -1,8 +1,141 @@
 {
-  "generated": "2026-03-03T08:15:29.666373+00:00",
+  "generated": "2026-03-03T10:14:23.702156+00:00",
   "total_commits": 200,
   "weeks": 1,
   "commits": [
+    {
+      "sha": "4773c639",
+      "date": "2026-03-03T05:14:13-05:00",
+      "week": "2026-W10",
+      "subject": "feat: OMNIBRAIN workflow \u2014 15-phase unified ops + dual-brain loop",
+      "author": "Meeko"
+    },
+    {
+      "sha": "52ad191c",
+      "date": "2026-03-03T10:13:16+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T10:13]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "10dfb234",
+      "date": "2026-03-03T05:13:05-05:00",
+      "week": "2026-W10",
+      "subject": "feat: SYNAPSE \u2014 resolver (reads A+B, finds consensus, emails briefing)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "5c06f84f",
+      "date": "2026-03-03T10:12:19+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T10:12]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "3a9f1a5a",
+      "date": "2026-03-03T05:12:08-05:00",
+      "week": "2026-W10",
+      "subject": "feat: NEURON_B \u2014 skeptic brain (challenges everything A found)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "aac6f0e3",
+      "date": "2026-03-03T10:11:16+00:00",
+      "week": "2026-W10",
+      "subject": "fix: syntax_patcher auto-fixed 1 file(s) [skip ci]",
+      "author": "Meeko"
+    },
+    {
+      "sha": "854a5903",
+      "date": "2026-03-03T05:11:05-05:00",
+      "week": "2026-W10",
+      "subject": "feat: NEURON_A \u2014 builder brain (dual-Claude system)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "bf0e0fab",
+      "date": "2026-03-03T10:06:38+00:00",
+      "week": "2026-W10",
+      "subject": "data: dex update [10:06]",
+      "author": "meeko-dex"
+    },
+    {
+      "sha": "a74371a0",
+      "date": "2026-03-03T10:06:05+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T10:06]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "4c6b5911",
+      "date": "2026-03-03T10:05:41+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83c\udfac shorts scripts [2026-03-03]",
+      "author": "meeko-content"
+    },
+    {
+      "sha": "350f5afc",
+      "date": "2026-03-03T10:02:38+00:00",
+      "week": "2026-W10",
+      "subject": "\\U0001f338 perpetual: 2026-03-03 10:02 UTC",
+      "author": "meeko-perpetual-builder"
+    },
+    {
+      "sha": "411e36c5",
+      "date": "2026-03-03T09:35:55+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T09:35]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "db81a95a",
+      "date": "2026-03-03T04:35:20-05:00",
+      "week": "2026-W10",
+      "subject": "add: GITHUB_CONNECT.ps1 + MEEKO_RUN.ps1 \u2014 auth setup and claude-mode runner",
+      "author": "Meeko"
+    },
+    {
+      "sha": "d6023cb9",
+      "date": "2026-03-03T09:25:22+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83e\udde0 auto: system state update 2026-03-03 09:25 UTC",
+      "author": "Meeko Mycelium"
+    },
+    {
+      "sha": "07172ccf",
+      "date": "2026-03-03T04:25:07-05:00",
+      "week": "2026-W10",
+      "subject": "fix: resolve all 7 syntax errors (identity_vault bare headers + youtube_manager f-string escapes)",
+      "author": "Meeko"
+    },
+    {
+      "sha": "4efec9cc",
+      "date": "2026-03-03T08:16:09+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcc4 auto: sync HTML to docs/ for GitHub Pages",
+      "author": "SolarPunk Mycelium"
+    },
+    {
+      "sha": "742ad89e",
+      "date": "2026-03-03T03:16:00-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "28e32c4b",
+      "date": "2026-03-03T03:16:00-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "b8195ced",
+      "date": "2026-03-03T08:15:29+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-03",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "2e71692b",
       "date": "2026-03-03T03:15:20-05:00",
@@ -218,139 +351,6 @@
       "date": "2026-03-03T03:11:17-05:00",
       "week": "2026-W10",
       "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "bc0848d1",
-      "date": "2026-03-03T03:11:17-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "95aca5b1",
-      "date": "2026-03-03T03:11:16-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "999fca40",
-      "date": "2026-03-03T03:11:16-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "e92d654b",
-      "date": "2026-03-03T08:10:55+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udcc4 auto: sync HTML to docs/ for GitHub Pages",
-      "author": "SolarPunk Mycelium"
-    },
-    {
-      "sha": "b01c94c3",
-      "date": "2026-03-03T03:10:45-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "049300dd",
-      "date": "2026-03-03T03:10:44-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "29d5c5c8",
-      "date": "2026-03-03T03:10:40-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "c1fcc4f4",
-      "date": "2026-03-03T03:10:40-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "db31b8bb",
-      "date": "2026-03-03T08:10:19+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udcdd auto: changelog 2026-03-03",
-      "author": "SolarPunk Mycelium"
-    },
-    {
-      "sha": "d211e36f",
-      "date": "2026-03-03T03:10:10-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "e3852cf6",
-      "date": "2026-03-03T03:10:09-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "19849c03",
-      "date": "2026-03-03T03:10:09-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "bf2ab57b",
-      "date": "2026-03-03T03:10:08-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "2f687184",
-      "date": "2026-03-03T08:09:43+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83d\udcc4 auto: sync HTML to docs/ for GitHub Pages",
-      "author": "SolarPunk Mycelium"
-    },
-    {
-      "sha": "fb3eb304",
-      "date": "2026-03-03T03:09:34-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "98b8ac48",
-      "date": "2026-03-03T03:09:34-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "b84986d0",
-      "date": "2026-03-03T08:09:27+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-03T08:09]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "865a3727",
-      "date": "2026-03-03T03:09:18-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "04f2b50c",
-      "date": "2026-03-03T03:09:17-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live status update",
       "author": "Meeko"
     }
   ]
