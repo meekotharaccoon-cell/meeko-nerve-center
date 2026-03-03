@@ -1,15 +1,15 @@
 @echo off
-REM EVOLVE.bat Generation 24
-REM Last evolved: 2026-03-03 06:49
-REM Last built: [WARN] Scan local assets — find missed connections
+REM EVOLVE.bat Generation 26
+REM Last evolved: 2026-03-03 07:18
+REM Last built: [WARN] Map all connections + generate gap report
 REM Written by the system itself. Fork: https://github.com/meekotharaccoon-cell/meeko-nerve-center/fork
 
-title SolarPunk Mycelium Gen 24 evolving...
+title SolarPunk Mycelium Gen 26 evolving...
 color 0A
 echo.
 echo  ==================================================
-echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 24
-echo   Last built: Scan local assets — find missed connections
+echo   SOLARPUNK MYCELIUM EVOLUTION ENGINE Gen 26
+echo   Last built: Map all connections + generate gap report
 echo  ==================================================
 echo.
 set REPO=%USERPROFILE%\Desktop\meeko-nerve-center
@@ -20,11 +20,11 @@ echo.
 python mycelium\evolve.py
 echo.
 git add -A
-git commit -m "auto: gen 24" 2>nul
+git commit -m "auto: gen 26" 2>nul
 git push origin main 2>nul
 echo.
 echo  ==================================================
-echo   ENHANCEMENTS Gen 24
+echo   ENHANCEMENTS Gen 26
 echo  ==================================================
 echo.
 echo   [SECRETS] Add GitHub Secrets to unlock locked workflows
@@ -42,7 +42,7 @@ echo   [DOMAIN] Consider solarpunkmycelium.org (~$8/yr) for email deliverability
 echo     - porkbun.com or namecheap.com
 echo.
 echo   System: https://github.com/meekotharaccoon-cell/meeko-nerve-center
-echo   Generation 24 complete.
+echo   Generation 26 complete.
 echo  ==================================================
 echo.
 pause

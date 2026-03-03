@@ -325,12 +325,44 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 24,
+      "gen": 24,
+      "at": "2026-03-03T07:14:34.180582",
+      "built": "consolidate",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
+    },
+    {
+      "run": 25,
+      "gen": 25,
+      "at": "2026-03-03T07:18:09.005948",
+      "built": "map_connections",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
     "index_lessons",
     "gen_changelog",
-    "scan_assets"
+    "scan_assets",
+    "consolidate",
+    "map_connections"
   ],
-  "gen": 24
+  "gen": 26
 }
