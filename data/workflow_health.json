@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-02",
-  "timestamp": "2026-03-02T19:53:39.354445",
-  "total": 61,
-  "passing": 37,
-  "failing": 20,
-  "running": 3,
-  "retried": 12,
-  "health_pct": 60,
+  "date": "2026-03-03",
+  "timestamp": "2026-03-03T01:07:07.862330",
+  "total": 62,
+  "passing": 43,
+  "failing": 18,
+  "running": 1,
+  "retried": 10,
+  "health_pct": 69,
   "color": "RED",
   "failures": [
     {
@@ -16,16 +16,10 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22587321265"
     },
     {
-      "name": "Claude Autonomous",
-      "file": "claude-autonomous.yml",
-      "id": 22592638044,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592638044"
-    },
-    {
       "name": ".github/workflows/community-outreach.yml",
       "file": "community-outreach.yml",
-      "id": 22592737201,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592737201"
+      "id": 22602943960,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943960"
     },
     {
       "name": "\ud83c\udfdb\ufe0f Congress Stock Watcher",
@@ -40,34 +34,28 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22560480390"
     },
     {
-      "name": "\ud83d\udcc8 DEX Monitor",
-      "file": "dex-monitor.yml",
-      "id": 22593047254,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22593047254"
-    },
-    {
       "name": "Dual Brain Sync",
       "file": "dual-brain-sync.yml",
-      "id": 22592542506,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592542506"
+      "id": 22600479980,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22600479980"
     },
     {
       "name": ".github/workflows/email-drafter.yml",
       "file": "email-drafter.yml",
-      "id": 22592738126,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592738126"
+      "id": 22602944135,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944135"
     },
     {
       "name": ".github/workflows/email-gateway.yml",
       "file": "email-gateway.yml",
-      "id": 22592738479,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592738479"
+      "id": 22602944337,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944337"
     },
     {
       "name": ".github/workflows/feedback-loop.yml",
       "file": "feedback-loop.yml",
-      "id": 22592738721,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592738721"
+      "id": 22602943724,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943724"
     },
     {
       "name": "\ud83c\udf0d Full Daily Cycle",
@@ -78,14 +66,14 @@
     {
       "name": ".github/workflows/jekyll-gh-pages.yml",
       "file": "jekyll-gh-pages.yml",
-      "id": 22592739051,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592739051"
+      "id": 22602943583,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943583"
     },
     {
       "name": "Kimi Conductor",
       "file": "kimi-conductor.yml",
-      "id": 22592680345,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592680345"
+      "id": 22599489968,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22599489968"
     },
     {
       "name": "\ud83e\udde0 Knowledge Harvester",
@@ -96,14 +84,14 @@
     {
       "name": ".github/workflows/send-grants.yml",
       "file": "send-grants.yml",
-      "id": 22592737525,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592737525"
+      "id": 22602944281,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944281"
     },
     {
       "name": ".github/workflows/send-outreach.yml",
       "file": "send-outreach.yml",
-      "id": 22592737879,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592737879"
+      "id": 22602944453,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944453"
     },
     {
       "name": "\ud83d\udcca Signal Tracker",
@@ -118,16 +106,16 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558820032"
     },
     {
-      "name": "\ud83d\udd27 Syntax Patcher \u2014 Auto-fix LLM code errors",
-      "file": "syntax-patcher.yml",
-      "id": 22592367328,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22592367328"
-    },
-    {
       "name": "\ud83d\udcfa YouTube Manager",
       "file": "youtube-manager.yml",
       "id": 22509111934,
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22509111934"
+    },
+    {
+      "name": "pages-build-deployment",
+      "file": "dynamic/pages/pages-build-deployment",
+      "id": 22602947785,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602947785"
     }
   ]
 }

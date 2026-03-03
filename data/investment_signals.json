@@ -1,18 +1,18 @@
 {
-  "date": "2026-03-02",
+  "date": "2026-03-03",
   "signals": [],
   "fear_greed": {
-    "value": 10,
+    "value": 14,
     "label": "Extreme Fear",
     "history": [
+      14,
       10,
       14,
       11,
       13,
       11,
-      11,
-      8
+      11
     ]
   },
-  "synthesis": "The market is experiencing extreme fear, with a Fear/Greed index of 10, indicating a potential oversold condition.\n\nTop 3 actionable ideas: \n1. Buy VVV on a breakout above $10 with a stop-loss at $8.\n2. Short FAI on a breakdown below $5 with a target at $3.\n3. Buy BTC on a pullback to $20,000 with a stop-loss at $18,000.\n\nRisk to watch: a further decline in breadth, potentially leading to a market crash.\n\nFor compounding, consider sizing positions using the Kelly Criterion: allocate 2% of portfolio value to each trade, with a maximum of 10% total allocation. This approach can maximize long-term growth while minimizing risk."
+  "synthesis": null
 }

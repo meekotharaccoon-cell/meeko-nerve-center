@@ -1,207 +1,6 @@
 {
   "interactions": [
     {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Your next favorite tee is $16",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@email.manychat.com",
-      "subject": "Soft launches, hard truths: Who really owns your audience?",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Live Wallpaper reposted:\u5a18\u304c\u6700\u8fd1\u30cf\u30de\u3063\u3066\u308b\u66f2\u263a\ufe0f\u2728 \u8e0a\u308a\u306f\u5a18\u306e\u5275\u4f5c\u30c0\u30f3\u30b9\u3067\u3059\ud83d\udd7a\u7b11 \u66f2\u306f\u3001KANA",
-      "action": "ignored_dedup"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "$16 tees + free shipping over $80!",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: accounts.google.com"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Qy Dreams sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@accounts.linktr.ee",
-      "subject": "Your code: 560180",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Up to 35% off gifts they\u2019ll actually want",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notifications@ae.linktr.ee",
-      "subject": "Update to Linktree's Privacy Notice and Terms and Conditions",
-      "action": "ignored_automated",
-      "reason": "auto prefix: notifications@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@redbubblemail.com",
-      "subject": "New comment on Neon Macro Cosmos, Vibrant Microscopic World,",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@redbubblemail.com",
-      "subject": "New comment on Grotto Glow by verifications",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@redbubblemail.com",
-      "subject": "New comment on Glowfall Grove Glowing, Bioluminescent Night ",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "noreply@redbubblemail.com",
-      "subject": "New comment on Otherworldly AI Generated Flora by verificati",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@billing.linktr.ee",
-      "subject": "Your subscription has been activated",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@update.tiktok.com",
-      "subject": "Latest updates from GaryVee and more",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "notification@service.tiktok.com",
-      "subject": "Qy Dreams sent you a message",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "support@redbubblemail.com",
-      "subject": "Change to your login details",
-      "action": "ignored_automated",
-      "reason": "auto prefix: support@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "security@mail.instagram.com",
-      "subject": "New login to Instagram from Edge on Windows",
-      "action": "ignored_automated",
-      "reason": "auto prefix: security@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "info@billing.linktr.ee",
-      "subject": "[Important] Your subscription has ended",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-01",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Last chance for free shipping over $80!",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "email@email.etsy.com",
-      "subject": "\u2744\ufe0f\u2744\ufe0f A flurry of fantastic sellers\u2744\ufe0f\u2744\ufe0f",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "security@mail.instagram.com",
-      "subject": "New login to Instagram from Edge on Windows",
-      "action": "ignored_automated",
-      "reason": "auto prefix: security@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 694923",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 303512",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 022838",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Shop $16 tees \ud83d\udc55",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "pinbot@info.pinterest.com",
-      "subject": "Instagram Back Catalog Completed! See Your Pins in the board",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "info@email.manychat.com",
-      "subject": "Don't cry on Black Friday \ud83d\ude2d",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notification@service.tiktok.com",
-      "subject": "Precious Deborah posted: From 0 to results like this!\ud83d\udca5 Let\u2019s",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "noreply@mail.etsy.com",
-      "subject": "Meeko, did you recently sign into Etsy?",
-      "action": "ignored_automated",
-      "reason": "auto prefix: noreply@"
-    },
-    {
       "date": "2026-03-02",
       "from": "support@etsy.com",
       "subject": "Etsy Account Closed: 2rih2mpkjudhb7fr",
@@ -3434,6 +3233,216 @@
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Dual B",
       "action": "ignored_automated",
       "reason": "blocked domain: github.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Sports + vintage = winning combo",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "product@engage.canva.com",
+      "subject": "1 minute to level up your design",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@judge.me",
+      "subject": "You\u2019re invited to the best online event of the year (at leas",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Michael, come see what's new. Buy, sell, and save!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Increase your Linktree engagement",
+      "action": "ignored_automated",
+      "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Deals on deals on deals",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Don't just see the future. Shape it \u2014 at Instagram Summit by",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "We'd love to hear your thoughts",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Your strategy, with Instagram Summit by Manychat: \ud83d\udcc8",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Want to show your CMO what AI can really do?",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Today\u2019s mood: goth princess \ud83d\udda4",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Visual communication: Soft skill or business driver?",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "product@engage.canva.com",
+      "subject": "What have you been working on lately?",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Jewelry with a P.O.V.",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "Increase your earnings on Audible Audiobooks",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "The Instagram bio formula for MORE followers in 2025",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@gdevelop.io",
+      "subject": "\ud83d\udcb8 Up to \u20ac2300 in Prizes In the Latest Game Jam! \ud83d\udcb8",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gdevelop.io"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Michael, remember that eBay feeling?",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Try Linktree Pro free for 30 days \ud83d\udc9a",
+      "action": "ignored_automated",
+      "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@tx.nightcafe.studio",
+      "subject": "Claim your daily free credits!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: tx.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Getting Started: Create, Publish, Compete",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "kate.r@freeup.net",
+      "subject": "FreeUp Survey",
+      "action": "ignored_automated",
+      "reason": "blocked domain: freeup.net"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Create Again for 10 Free Credits!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Getting Started: Create, Publish, Compete",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Deals on deals on deals",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Make your social content shine",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Your Audience is Waiting: Publish Your Art on NightCafe",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Don\u2019t miss our AI webinar",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Getting Started: Create, Publish, Compete",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@em.nightcafe.studio",
+      "subject": "\u2728 Create Again for 10 Free Credits!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: em.nightcafe.studio"
     }
   ],
   "human_emails_total": 1,

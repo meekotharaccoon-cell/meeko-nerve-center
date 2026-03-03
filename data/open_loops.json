@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-02",
+  "date": "2026-03-03",
   "total": 5,
   "human_required": 3,
   "auto_fixable": 2,
@@ -10,7 +10,7 @@
       "description": "Grant drafted but not submitted: Mozilla Foundation \u2014 Mozilla Technology Fund",
       "action": "Submit at: https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund/",
       "human_required": true,
-      "date_found": "2026-03-02"
+      "date_found": "2026-03-03"
     },
     {
       "type": "grant_submission",
@@ -18,7 +18,7 @@
       "description": "Grant drafted but not submitted: NLnet Foundation \u2014 NGI Zero Core",
       "action": "Submit at: https://nlnet.nl/core/",
       "human_required": true,
-      "date_found": "2026-03-02"
+      "date_found": "2026-03-03"
     },
     {
       "type": "grant_submission",
@@ -26,15 +26,15 @@
       "description": "Grant drafted but not submitted: Open Society Foundations \u2014 Emerging Technology Initiative",
       "action": "Submit at: https://www.opensocietyfoundations.org/grants",
       "human_required": true,
-      "date_found": "2026-03-02"
+      "date_found": "2026-03-03"
     },
     {
       "type": "workflow_health",
       "priority": "HIGH",
-      "description": "System health RED: 60% (20 failing)",
+      "description": "System health RED: 69% (18 failing)",
       "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
       "human_required": false,
-      "date_found": "2026-03-02"
+      "date_found": "2026-03-03"
     },
     {
       "type": "unresolved_diagnostics",
@@ -42,7 +42,7 @@
       "description": "100 unresolved diagnostic issues",
       "action": "self_healer_v2.py will process these next cycle",
       "human_required": false,
-      "date_found": "2026-03-02"
+      "date_found": "2026-03-03"
     }
   ]
 }
