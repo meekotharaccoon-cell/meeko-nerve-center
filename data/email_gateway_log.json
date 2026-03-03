@@ -2,13 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "$16 tees and up to 35% off sitewide!",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
       "from": "verify@accounts.linktr.ee",
       "subject": "Your code: 722259",
       "action": "ignored_automated",
@@ -3455,6 +3448,13 @@
       "subject": "Delivery Status Notification (Failure)",
       "action": "ignored_automated",
       "reason": "blocked domain: googlemail.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "noreply@polymarket.com",
+      "subject": "Spice must flow",
+      "action": "ignored_automated",
+      "reason": "blocked domain: polymarket.com"
     }
   ],
   "human_emails_total": 1,

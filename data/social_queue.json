@@ -2,17 +2,6 @@
   "updated": "2026-03-03",
   "queue": [
     {
-      "id": "2026-03-02-6",
-      "text": "\ud83c\udf38 SolarPunk's revenue split, honestly:\n\nFor every $1 earned:\n  70\u00a2 \u2192 PCRF (Palestinian Children's Relief Fund)\n  20\u00a2 \u2192 crypto compound wallet (grows over time)\n  10\u00a2 \u2192 operating costs / human running it\n\nNo exceptions. Coded directly into revenue_router.py.\nYou can read every line at:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#Transparency #FreePalestine #SolarPunk",
-      "template_idx": 6,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
       "id": "2026-03-03-5",
       "text": "\ud83c\udf38 Every congressional stock trade is being watched.\n\nSolarPunk's Congress Watcher tracks STOCK Act disclosures \u2014 members of Congress trading on information they got from their jobs.\n\nEvery trade logged. Every pattern analyzed. Posted publicly.\n\nIt runs automatically. Every day.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Accountability #STOCKACT #Congress",
       "template_idx": 5,
@@ -220,6 +209,17 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-03-2",
+      "text": "\ud83c\udf38 SolarPunk is:\n\n19 engines running in sequence\n9 crypto chains accepting payment\n10 products live on Gumroad + Etsy\n1 mission: humanitarian income generation\n$0/month to operate\n\nFull source code, AGPL license, free to fork:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#FreePalestine #OpenSource",
+      "template_idx": 2,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
@@ -231,6 +231,7 @@
     5,
     3,
     1,
-    7
+    7,
+    2
   ]
 }

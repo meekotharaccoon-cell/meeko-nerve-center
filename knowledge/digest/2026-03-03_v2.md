@@ -4,15 +4,15 @@
 
 - M6.2 — 62 km SE of Sinabang, Indonesia (2026-03-03)
 - M5.3 — 229 km ESE of Attu Station, Alaska (2026-03-02) ⚠️ TSUNAMI WATCH
-- M5.2 — 235 km ESE of Attu Station, Alaska (2026-03-03) ⚠️ TSUNAMI WATCH
+- M5.3 — 297 km SSW of Bluff, New Zealand (2026-03-03)
 
-## UK Grid Carbon: 169 gCO2/kWh (moderate)
+## UK Grid Carbon: 179 gCO2/kWh (high)
 Lower numbers = more renewable energy on the grid.
 
 ## Space
 
-- [Antarctica retreat study signals future ice loss](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Antarctica_retreat_study_signals_future_ice_loss)
-- [Self-repairing spacecraft could change future missions](https://www.esa.int/Enabling_Support/Space_Transportation/Future_space_transportation/Self-repairing_spacecraft_could_change_future_missions)
+- [Redwire unveils new solar array](https://spacenews.com/redwire-unveils-new-solar-array/)
+- [Spectrum showdown](https://spacenews.com/spectrum-showdown/)
 
 ## 12 humans currently in space
 Oleg Kononenko, Nikolai Chub, Tracy Caldwell Dyson, Matthew Dominick

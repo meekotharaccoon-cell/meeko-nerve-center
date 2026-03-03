@@ -340,13 +340,29 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 25,
+      "gen": 25,
+      "at": "2026-03-03T13:43:12.899890",
+      "built": "map_connections",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
     "index_lessons",
     "gen_changelog",
     "scan_assets",
-    "consolidate"
+    "consolidate",
+    "map_connections"
   ],
-  "gen": 25
+  "gen": 26
 }
