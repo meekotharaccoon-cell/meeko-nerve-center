@@ -8,6 +8,7 @@ on:
 jobs:
   harvest:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     permissions:
       contents: write
     steps:
