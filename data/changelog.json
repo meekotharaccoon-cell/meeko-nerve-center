@@ -1,8 +1,78 @@
 {
-  "generated": "2026-03-03T00:42:53.893665+00:00",
+  "generated": "2026-03-03T00:45:19.528731+00:00",
   "total_commits": 200,
   "weeks": 1,
   "commits": [
+    {
+      "sha": "c2c9dc85",
+      "date": "2026-03-02T19:44:21-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "62727caa",
+      "date": "2026-03-02T19:44:20-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "5799f394",
+      "date": "2026-03-02T19:44:18-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "906d411b",
+      "date": "2026-03-02T19:44:17-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "a7b403e3",
+      "date": "2026-03-03T00:43:46+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T00:43]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "605207d8",
+      "date": "2026-03-02T19:43:37-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "81b51083",
+      "date": "2026-03-02T19:43:37-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "8ca38cd3",
+      "date": "2026-03-02T19:43:36-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "b214b8f3",
+      "date": "2026-03-02T19:43:35-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "137e4ab9",
+      "date": "2026-03-03T00:42:53+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-03",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "b6875ef0",
       "date": "2026-03-02T19:42:43-05:00",
@@ -281,76 +351,6 @@
       "date": "2026-03-02T19:38:59-05:00",
       "week": "2026-W10",
       "subject": "fix: silent failure \u2014 add continue-on-error to parallel-ingest.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "00f3502d",
-      "date": "2026-03-02T19:38:57-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to pages.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "0a891673",
-      "date": "2026-03-02T19:38:57-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to orchestrator-daily.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "c4126b59",
-      "date": "2026-03-02T19:38:56-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to notion-bridge.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "470519af",
-      "date": "2026-03-02T19:38:54-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to newsletter-writer.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "b966cdf5",
-      "date": "2026-03-02T19:38:54-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to mycelium-morning.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "72f9b895",
-      "date": "2026-03-02T19:38:53-05:00",
-      "week": "2026-W10",
-      "subject": "[solarpunk-activate] live dashboard update",
-      "author": "Meeko"
-    },
-    {
-      "sha": "5428a9e1",
-      "date": "2026-03-02T19:38:52-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to mycelium-evening.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "53432d9e",
-      "date": "2026-03-02T19:38:51-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to meeko-brain-daily.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "59152b7a",
-      "date": "2026-03-02T19:38:50-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to master.yml",
-      "author": "Meeko"
-    },
-    {
-      "sha": "2a4977dc",
-      "date": "2026-03-02T19:38:49-05:00",
-      "week": "2026-W10",
-      "subject": "fix: silent failure \u2014 add continue-on-error to knowledge-harvester.yml",
       "author": "Meeko"
     }
   ]
