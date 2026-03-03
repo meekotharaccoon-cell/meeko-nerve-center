@@ -2,13 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 722259",
-      "action": "ignored_automated",
-      "reason": "placeholder address"
-    },
-    {
-      "date": "2026-03-02",
       "from": "hello@ma.linktr.ee",
       "subject": "Talk to more followers \ud83d\udcac",
       "action": "ignored_automated",
@@ -3455,6 +3448,13 @@
       "subject": "Spice must flow",
       "action": "ignored_automated",
       "reason": "blocked domain: polymarket.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@mail.apollo.io",
+      "subject": "Tomorrow: Apollo's biggest launches of the quarter (live dem",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: mail.apollo.io"
     }
   ],
   "human_emails_total": 1,

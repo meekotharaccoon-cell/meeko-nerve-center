@@ -27,6 +27,14 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1p5"
     },
     {
+      "place": "Pagan region, Northern Mariana Islands",
+      "mag": 5.3,
+      "time": "2026-03-03T14:38",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1pp"
+    },
+    {
       "place": "235 km ESE of Attu Station, Alaska",
       "mag": 5.2,
       "time": "2026-03-03T10:44",
@@ -73,14 +81,6 @@
       "alert": null,
       "tsunami": 0,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1gx"
-    },
-    {
-      "place": "Kermadec Islands, New Zealand",
-      "mag": 4.9,
-      "time": "2026-03-02T19:23",
-      "alert": null,
-      "tsunami": 0,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s1hn"
     }
   ]
 }
