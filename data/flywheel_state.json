@@ -1,0 +1,65 @@
+{
+  "created": "2026-03-03T21:04:33.681509",
+  "current_balance": 0.0,
+  "streams": {
+    "gaza_rose_gallery": {
+      "name": "Gaza Rose Gallery",
+      "type": "digital_art",
+      "balance": 0.0
+    },
+    "newsletter": {
+      "name": "Newsletter/Email List",
+      "type": "content",
+      "balance": 0.0
+    },
+    "affiliate": {
+      "name": "Affiliate Links",
+      "type": "affiliate",
+      "balance": 0.0
+    },
+    "freelance_auto": {
+      "name": "Automated Freelance",
+      "type": "services",
+      "balance": 0.0
+    },
+    "digital_products": {
+      "name": "Digital Products",
+      "type": "products",
+      "balance": 0.0
+    },
+    "api_services": {
+      "name": "API/Tool Services",
+      "type": "saas",
+      "balance": 0.0
+    },
+    "content_licensing": {
+      "name": "Content Licensing",
+      "type": "licensing",
+      "balance": 0.0
+    },
+    "consulting": {
+      "name": "Consulting Leads",
+      "type": "services",
+      "balance": 0.0
+    }
+  },
+  "history": [
+    {
+      "timestamp": "2026-03-03T21:04:33.781574",
+      "balance": 0.0,
+      "active": []
+    }
+  ],
+  "cycles": 1,
+  "last_run": "2026-03-03T21:04:33.681522",
+  "advisor": {
+    "next_upgrade": {
+      "t": 20,
+      "n": "Claude Pro",
+      "d": "5x context, priority API, better reasoning for all engines"
+    },
+    "needed": 20.0,
+    "insight": "API unavailable",
+    "action": "Check API key"
+  }
+}
