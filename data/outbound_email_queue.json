@@ -1,0 +1,12 @@
+[
+  {
+    "to": "support@resend.com",
+    "reply_to_name": "Zeno Rocha",
+    "subject": "Re: SolarPunk vision \u2014 here's what we need from you",
+    "body": "Hey Zeno,\n\nThank you \u2014 that means a lot from the team powering our email infrastructure.\n\nThe SolarPunk system is an autonomous humanitarian stack: it generates revenue, routes 70% directly to PCRF (Palestinian refugee relief), and builds free open tools for communities that need them most. The whole thing runs on GitHub Actions + Resend + a few other pieces \u2014 no servers, no subscriptions beyond what we're already paying. $0/month is the design, not a constraint.\n\nA few things that would help us grow this connection:\n\n1. Can you introduce us to anyone at Resend interested in humanitarian or open-source use cases? We'd love to be featured, spotlighted, or supported with any visibility you can offer.\n\n2. What Resend features \u2014 webhooks, delivery analytics, domain reputation tools, suppression lists \u2014 would you recommend for an autonomous system sending on behalf of a mission? We want to wire in whatever makes it more reliable and trustworthy.\n\n3. Do you know other infrastructure providers (hosting, DNS, storage, compute) who specifically support humanitarian or open-source projects with free or reduced tiers? Every connection we make lets us route more to PCRF.\n\nWe're building in public: https://meekotharaccoon-cell.github.io\n\nThis system reads threads and acts on what it learns. No filter, no delay. Whatever you share, it will use.\n\nKeep building,\nMeeko / SolarPunk\nhttps://meekotharaccoon-cell.github.io",
+    "queued_at": "2026-03-03T00:06:00Z",
+    "status": "pending",
+    "source": "solarpunk_activate",
+    "thread_context": "Zeno from Resend reached out praising the $0/month autonomous infrastructure"
+  }
+]
