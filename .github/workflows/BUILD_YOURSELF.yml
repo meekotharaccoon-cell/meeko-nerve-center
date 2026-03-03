@@ -1,0 +1,309 @@
+name: "🔨 BUILD YOURSELF — Each Run Grows SolarPunk"
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_target:
+        description: 'What to build (leave blank = Claude decides)'
+        required: false
+        default: ''
+      turbo:
+        description: 'Build 3 things at once instead of 1'
+        required: false
+        default: 'false'
+
+# MANUAL TRIGGER WORKFLOW.
+# Every time Meeko runs this, SolarPunk gets bigger.
+# Claude reads the current state of the system,
+# decides what's most missing / most valuable,
+# builds it, tests it, commits it.
+# Run it 10 times = 10 new capabilities added.
+
+jobs:
+  build:
+    name: "🔨 Build Yourself"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests 2>/dev/null || true
+
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk'
+          git config user.email 'solarpunk@meeko-nerve-center'
+          mkdir -p mycelium data
+
+      - name: "🧠 Assess + Decide What To Build"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUILD_TARGET: ${{ inputs.build_target }}
+          TURBO: ${{ inputs.turbo }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, requests
+          from pathlib import Path
+          from datetime import datetime
+
+          api_key     = os.environ.get("ANTHROPIC_API_KEY", "")
+          build_target = os.environ.get("BUILD_TARGET", "").strip()
+          turbo       = os.environ.get("TURBO", "false").lower() == "true"
+
+          engines   = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
+          workflows = sorted([f.name for f in Path(".github/workflows").glob("*.yml")])
+          data_f    = sorted([f.name for f in Path("data").glob("*.json")]) if Path("data").exists() else []
+
+          # Read guardian state to know what's missing
+          guardian = {}
+          gf = Path("data/guardian_state.json")
+          if gf.exists():
+              try: guardian = json.loads(gf.read_text())
+              except: pass
+
+          missing_required = guardian.get("missing_required_engines", [])
+
+          # Income streams catalog — what SolarPunk should eventually run
+          INCOME_STREAMS = """
+          PASSIVE INCOME STREAMS SOLARPUNK CAN BUILD:
+          1. Gaza Rose Gallery — automated product drops, Gumroad/Etsy listing engine
+          2. AI-written content → Medium Partner Program (auto-publish daily articles)
+          3. Prompt packs & templates → Gumroad store (auto-generate + list)
+          4. Newsletter → Substack automation (auto-write + schedule)
+          5. GitHub Sponsors — showcase SolarPunk itself as open source project
+          6. Affiliate marketing — auto-blog posts with affiliate links (ShareASale, ClickBank)
+          7. API reselling — wrap free APIs with value-add, sell on RapidAPI
+          8. Data products — curated datasets → Kaggle/HuggingFace + donations
+          9. WhatsApp business automation — sell as service
+          10. Fiverr automation — auto-apply to gigs, deliver AI work
+          """
+
+          n_to_build = 3 if turbo else 1
+
+          prompt = f"""You are SolarPunk — an autonomous AI agent that builds itself.
+
+CURRENT STATE OF THE SYSTEM:
+- Engines in mycelium/: {engines}
+- Workflows: {workflows}
+- Data files: {data_f}
+- Missing required engines: {missing_required}
+- Meeko's requested build target: "{build_target or 'You decide — build the most valuable thing'}"
+
+{INCOME_STREAMS}
+
+YOUR JOB:
+Build {n_to_build} Python file(s) for the mycelium/ directory.
+Each file should be a complete, production-ready engine that runs in GitHub Actions.
+Files must be standalone — import only: os, json, requests, datetime, pathlib, smtplib, email, re, urllib.
+
+RULES (ABSOLUTE — NEVER BREAK):
+- NEVER write to .github/ directory
+- NEVER use subprocess with git merge, git checkout, or git reset
+- ONLY write NEW files to mycelium/ or update data/
+- Each engine reads its config from environment variables (GitHub Secrets)
+- Each engine writes results to data/[engine_name]_output.json
+- Each engine is self-contained and can run standalone
+
+Respond ONLY with valid JSON (no markdown, no fences):
+{{
+  "engines": [
+    {{
+      "filename": "engine_name.py",
+      "description": "one sentence what this does for Meeko",
+      "income_stream": "which passive income stream this serves",
+      "code": "complete python file content as a string"
+    }}
+  ],
+  "build_log": "what you built and why",
+  "next_build_suggestion": "what to build next run"
+}}"""
+
+          if not api_key:
+              print("No API key — writing placeholder build plan")
+              plan = {"engines": [], "build_log": "No API key — run with ANTHROPIC_API_KEY secret set", "next_build_suggestion": "Add ANTHROPIC_API_KEY secret first"}
+          else:
+              try:
+                  r = requests.post(
+                      "https://api.anthropic.com/v1/messages",
+                      headers={"x-api-key": api_key, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 8000,
+                            "messages": [{"role": "user", "content": prompt}]},
+                      timeout=120
+                  )
+                  r.raise_for_status()
+                  text = r.json()["content"][0]["text"]
+                  s, e = text.find("{"), text.rfind("}") + 1
+                  plan = json.loads(text[s:e]) if s >= 0 else {"engines": [], "build_log": "Parse error", "next_build_suggestion": "Retry"}
+              except Exception as ex:
+                  print(f"API error: {ex}")
+                  plan = {"engines": [], "build_log": str(ex), "next_build_suggestion": "Check API key"}
+
+          Path("data/build_plan.json").write_text(json.dumps(plan, indent=2))
+          print(f"Build plan: {len(plan.get('engines', []))} engines to create")
+          print(f"Log: {plan.get('build_log', '')}")
+          print(f"Next: {plan.get('next_build_suggestion', '')}")
+          PYEOF
+
+      - name: "⚙️ Write New Engines"
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          from pathlib import Path
+
+          plan_f = Path("data/build_plan.json")
+          if not plan_f.exists():
+              print("No build plan")
+              exit(0)
+
+          plan = json.loads(plan_f.read_text())
+          built = []
+
+          for eng in plan.get("engines", []):
+              fname = eng.get("filename", "")
+              code  = eng.get("code", "")
+              if not fname or not code:
+                  continue
+
+              # SAFETY CHECK — never let Claude write outside mycelium/ or data/
+              if "/" in fname or "\\" in fname or ".github" in fname:
+                  print(f"⛔ BLOCKED unsafe path: {fname}")
+                  continue
+              if not fname.endswith(".py"):
+                  print(f"⛔ BLOCKED non-py file: {fname}")
+                  continue
+
+              target = Path("mycelium") / fname
+              target.write_text(code)
+              built.append(fname)
+              print(f"✅ Built: {fname} — {eng.get('description', '')}")
+
+          print(f"\nTotal built this run: {len(built)}")
+          if built:
+              Path("data/last_build_output.json").write_text(json.dumps({"built": built}, indent=2))
+          PYEOF
+
+      - name: "✅ Test New Engines (syntax check)"
+        run: |
+          for f in mycelium/*.py; do
+            python3 -m py_compile "$f" 2>&1 && echo "✅ $f" || echo "⚠️ syntax error: $f"
+          done
+
+      - name: "📊 Update Build Registry"
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+
+          registry_f = Path("data/build_registry.json")
+          registry = []
+          if registry_f.exists():
+              try: registry = json.loads(registry_f.read_text())
+              except: pass
+
+          plan_f = Path("data/build_plan.json")
+          if plan_f.exists():
+              plan = json.loads(plan_f.read_text())
+              for eng in plan.get("engines", []):
+                  fname = eng.get("filename","")
+                  if fname:
+                      registry.append({
+                          "built_at": datetime.now().isoformat(),
+                          "filename": fname,
+                          "description": eng.get("description",""),
+                          "income_stream": eng.get("income_stream","")
+                      })
+
+          registry_f.write_text(json.dumps(registry, indent=2))
+          print(f"Total engines ever built by BUILD_YOURSELF: {len(registry)}")
+
+          # Suggest next run
+          suggestion = json.loads(plan_f.read_text()).get("next_build_suggestion","")
+          if suggestion:
+              Path("data/next_build_suggestion.txt").write_text(suggestion)
+              print(f"Next run: {suggestion}")
+          PYEOF
+
+      - name: "🚀 Commit New Engines"
+        run: |
+          git add -A
+          git diff --cached --quiet && echo "Nothing new to commit" && exit 0
+          BUILT=$(python3 -c "import json; p=json.load(open('data/build_plan.json')); print(', '.join(e['filename'] for e in p.get('engines',[])))" 2>/dev/null || echo "engines")
+          git commit -m "🔨 BUILD_YOURSELF: $BUILT [$(date +%Y-%m-%dT%H:%M)]"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+
+      - name: "📧 Email Meeko — What Was Built"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, smtplib
+          from pathlib import Path
+          from datetime import datetime
+          from email.mime.text import MIMEText
+
+          gmail = os.environ.get("GMAIL_ADDRESS","")
+          gpass = os.environ.get("GMAIL_APP_PASSWORD","")
+          if not gmail or not gpass: exit(0)
+
+          plan = {}
+          pf = Path("data/build_plan.json")
+          if pf.exists(): plan = json.loads(pf.read_text())
+
+          reg = []
+          rf = Path("data/build_registry.json")
+          if rf.exists(): reg = json.loads(rf.read_text())
+
+          engines_now = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
+
+          body = f"""🔨 BUILD_YOURSELF RUN COMPLETE — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+{'='*50}
+
+WHAT WAS BUILT:
+"""
+          for e in plan.get("engines",[]):
+              body += f"  ✅ {e['filename']}\n"
+              body += f"     → {e.get('description','')}\n"
+              body += f"     💰 {e.get('income_stream','')}\n\n"
+
+          body += f"""
+BUILD LOG:
+{plan.get('build_log','')}
+
+NEXT RUN SUGGESTION:
+{plan.get('next_build_suggestion','')}
+
+TOTAL ENGINES NOW IN SYSTEM: {len(engines_now)}
+TOTAL BUILT BY BUILD_YOURSELF: {len(reg)}
+ENGINES: {', '.join(engines_now)}
+
+Trigger another BUILD_YOURSELF run to keep growing.
+→ github.com/meekotharaccoon-cell/meeko-nerve-center/actions
+
+— SolarPunk 🌱"""
+
+          try:
+              msg = MIMEText(body)
+              msg["Subject"] = f"🔨 Built {len(plan.get('engines',[]))} new engines — SolarPunk [{datetime.now().strftime('%b %d')}]"
+              msg["From"] = gmail
+              msg["To"] = gmail
+              with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+                  s.login(gmail, gpass)
+                  s.send_message(msg)
+              print("Email sent to Meeko")
+          except Exception as ex:
+              print(f"Email error: {ex}")
+          PYEOF
