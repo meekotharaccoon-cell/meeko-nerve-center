@@ -1,115 +1,121 @@
 #!/usr/bin/env python3
 """
-REVENUE_FLYWHEEL — Tracks all income streams, advises on next upgrade.
-$20 Investment Advisor powered by Claude API.
+REVENUE_FLYWHEEL.py -- Income Tracker + Investment Advisor (v2)
+Tracks every income stream. Advises exactly where $20 does the most.
+The flywheel spins: income -> upgrade -> more income -> upgrade...
 """
-import os, json, requests, smtplib
+import os, json, requests
 from pathlib import Path
 from datetime import datetime
-from email.mime.text import MIMEText
 
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-GMAIL   = os.environ.get("GMAIL_ADDRESS", "")
-GPASS   = os.environ.get("GMAIL_APP_PASSWORD", "")
+DATA = Path("data")
+DATA.mkdir(exist_ok=True)
 
-UPGRADE_TIERS = [
-    {"cost": 20,  "name": "Claude Pro",          "benefit": "5x more API capacity for SolarPunk"},
-    {"cost": 25,  "name": "Custom domain",        "benefit": "Professional brand, trust signals"},
-    {"cost": 35,  "name": "Anthropic API credits","benefit": "SolarPunk thinks faster and more"},
-    {"cost": 50,  "name": "Mailgun",              "benefit": "Bulk email for knowledge dispatch"},
-    {"cost": 54,  "name": "GitHub Pro",           "benefit": "Private repos, more Actions minutes"},
-    {"cost": 200, "name": "VPS server",           "benefit": "24/7 always-on SolarPunk server"},
-    {"cost": 500, "name": "Dedicated server",     "benefit": "Full autonomy, no limits"},
+UPGRADES = [
+    {"t": 20,  "n": "Claude Pro",       "d": "5x context, priority API, better reasoning for all engines"},
+    {"t": 25,  "n": "Custom Domain",    "d": "meeko.io or gazarose.com -- professional brand presence"},
+    {"t": 35,  "n": "API Credits",      "d": "More SYNTHESIS runs, deeper analysis, 24/7 AI"},
+    {"t": 50,  "n": "Mailgun",          "d": "10k emails/month -- scale knowledge dispatch + newsletters"},
+    {"t": 54,  "n": "GitHub Pro",       "d": "Unlimited Actions minutes, faster builds, more storage"},
+    {"t": 200, "n": "VPS Server",       "d": "Always-on SolarPunk, no GitHub Actions limits, real-time response"},
+    {"t": 500, "n": "Dedicated Server", "d": "Full autonomy, 24/7 agents, no external dependencies"},
+    {"t": 1000,"n": "Team Expansion",   "d": "Hire human help for tasks SolarPunk can't automate yet"},
 ]
 
-DEFAULT_STREAMS = [
-    {"name": "Gaza Rose Gallery",    "platform": "manual",   "status": "active",  "monthly_est": 0.0},
-    {"name": "Gumroad products",     "platform": "gumroad",  "status": "pending", "monthly_est": 0.0},
-    {"name": "Medium Partner",       "platform": "medium",   "status": "pending", "monthly_est": 0.0},
-    {"name": "Substack newsletter",  "platform": "substack", "status": "pending", "monthly_est": 0.0},
-    {"name": "Affiliate posts",      "platform": "blog",     "status": "pending", "monthly_est": 0.0},
-    {"name": "WhatsApp automation",  "platform": "manual",   "status": "pending", "monthly_est": 0.0},
-    {"name": "RapidAPI listings",    "platform": "rapidapi", "status": "pending", "monthly_est": 0.0},
-    {"name": "Prompt packs",         "platform": "gumroad",  "status": "pending", "monthly_est": 0.0},
-]
+STREAMS_INIT = {
+    "gaza_rose_gallery": {"name": "Gaza Rose Gallery",     "type": "digital_art",     "balance": 0.0},
+    "newsletter":        {"name": "Newsletter/Email List", "type": "content",          "balance": 0.0},
+    "affiliate":         {"name": "Affiliate Links",       "type": "affiliate",        "balance": 0.0},
+    "freelance_auto":    {"name": "Automated Freelance",   "type": "services",         "balance": 0.0},
+    "digital_products":  {"name": "Digital Products",      "type": "products",         "balance": 0.0},
+    "api_services":      {"name": "API/Tool Services",     "type": "saas",             "balance": 0.0},
+    "content_licensing": {"name": "Content Licensing",     "type": "licensing",        "balance": 0.0},
+    "consulting":        {"name": "Consulting Leads",      "type": "services",         "balance": 0.0},
+}
 
-def load_state():
-    sf = Path("data/flywheel_state.json")
-    if sf.exists():
-        try: return json.loads(sf.read_text())
+def load():
+    ff = DATA / "flywheel_state.json"
+    if ff.exists():
+        try:
+            state = json.loads(ff.read_text())
+            # Ensure all streams exist (new streams added in updates)
+            for k, v in STREAMS_INIT.items():
+                if k not in state.get("streams", {}):
+                    state.setdefault("streams", {})[k] = v.copy()
+            return state
         except: pass
-    return {"current_balance": 0.0, "streams": DEFAULT_STREAMS, "transactions": []}
+    return {"created": datetime.now().isoformat(), "current_balance": 0.0,
+            "streams": {k: v.copy() for k, v in STREAMS_INIT.items()}, "history": [], "cycles": 0}
 
-def save_state(state):
-    Path("data").mkdir(exist_ok=True)
-    state["last_updated"] = datetime.now().isoformat()
-    Path("data/flywheel_state.json").write_text(json.dumps(state, indent=2))
-
-def next_upgrade(balance):
-    for t in UPGRADE_TIERS:
-        if balance < t["cost"]: return t
-    return UPGRADE_TIERS[-1]
-
-def investment_advice(state):
-    if not API_KEY:
-        t = next_upgrade(state["current_balance"])
-        return f"Save toward {t['name']} (${t['cost']}) — {t['benefit']}"
+def advise(state):
     balance = state["current_balance"]
-    streams = state["streams"]
-    engines = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
-    prompt = f"""You are a $20 Investment Advisor for SolarPunk — Meeko's autonomous income system.
+    active  = [k for k, v in state["streams"].items() if v.get("balance", 0) > 0]
 
-STATE: Balance=${balance:.2f} | Engines={len(engines)} | Active streams={[s['name'] for s in streams if s['status']=='active']}
+    next_up = next((u for u in UPGRADES if balance < u["t"]), None)
+    needed  = (next_up["t"] - balance) if next_up else 0
 
-UPGRADE OPTIONS:
-{json.dumps(UPGRADE_TIERS, indent=2)}
+    if not API_KEY:
+        if balance == 0:
+            insight = "No revenue yet. Gaza Rose Gallery + affiliate links are the fastest paths. Set up Redbubble (print-on-demand art) today -- zero cost, passive once listed."
+            action  = "Create Redbubble account, upload 5 Gaza Rose Gallery art pieces"
+        else:
+            insight = f"${balance:.2f} tracked. Keep building streams. ${needed:.0f} more unlocks {next_up['n'] if next_up else 'full autonomy'}."
+            action  = f"Scale {active[0] if active else 'top income stream'}"
+        return {"next_upgrade": next_up, "needed": needed, "insight": insight, "action": action}
 
-Where should $20 go RIGHT NOW to unlock the most passive income fastest?
-Respond in 2-3 sentences. Be specific. Start with the upgrade name."""
+    prompt = f"""SolarPunk Investment Advisor. $20 budget decisions.
+
+Revenue: ${balance:.2f}
+Active streams: {active or ['none']}
+All streams: {list(state['streams'].keys())}
+Upgrade tiers: {json.dumps(UPGRADES, indent=2)}
+
+Best single recommendation given current balance. Be SPECIFIC -- exact platform, exact action.
+If $0, tell exactly how to earn first $20 fastest with no upfront cost.
+
+JSON only (no fences):
+{{"next_upgrade":{{"t":X,"n":"name","d":"desc"}},"needed":X.X,"insight":"specific 1-sentence","action":"exact next action"}}"""
+
     try:
         r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key":API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":300,"messages":[{"role":"user","content":prompt}]},timeout=30)
+            headers={"x-api-key": API_KEY, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+            json={"model": "claude-sonnet-4-20250514", "max_tokens": 400,
+                  "messages": [{"role": "user", "content": prompt}]}, timeout=30)
         r.raise_for_status()
-        return r.json()["content"][0]["text"].strip()
+        t = r.json()["content"][0]["text"]
+        s, e = t.find("{"), t.rfind("}") + 1
+        return json.loads(t[s:e]) if s >= 0 else {}
     except Exception as ex:
-        t = next_upgrade(balance)
-        return f"[API err] {t['name']} (${t['cost']}) — {t['benefit']}"
+        print(f"Advisor err: {ex}")
+        return {"next_upgrade": next_up, "needed": needed, "insight": "API unavailable", "action": "Check API key"}
 
-def check_thresholds(state, advice):
-    balance = state["current_balance"]
-    t = next_upgrade(balance)
-    pct = (balance / t["cost"]) * 100 if t["cost"] > 0 else 100
-    if 98 <= pct or (50 <= pct < 52):
-        if not GMAIL or not GPASS: return
-        milestone = "🎉 THRESHOLD REACHED — UPGRADE NOW" if pct >= 98 else f"50% to {t['name']}"
-        body = f"💰 REVENUE FLYWHEEL\n\n{milestone}\nBalance: ${balance:.2f} / ${t['cost']}\n\n$20 ADVICE:\n{advice}\n\nStreams:\n"
-        for s in state["streams"]:
-            body += f"  {'✅' if s['status']=='active' else '⏳'} {s['name']}: ${s['monthly_est']:.2f}/mo\n"
-        try:
-            msg = MIMEText(body)
-            msg["Subject"] = f"💰 SolarPunk Revenue — {milestone[:40]}"
-            msg["From"] = GMAIL; msg["To"] = GMAIL
-            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-                s.login(GMAIL, GPASS); s.send_message(msg)
-            print(f"Revenue alert sent: {milestone}")
-        except Exception as ex:
-            print(f"Email error: {ex}")
+def run():
+    state = load()
+    state["cycles"] = state.get("cycles", 0) + 1
+    state["last_run"] = datetime.now().isoformat()
 
-def main():
-    print("💰 REVENUE_FLYWHEEL activating...")
-    state  = load_state()
-    advice = investment_advice(state)
-    balance = state["current_balance"]
-    t = next_upgrade(balance)
-    pct = (balance / t["cost"]) * 100 if t["cost"] > 0 else 0
-    print(f"   Balance: ${balance:.2f} | Next: {t['name']} (${t['cost']}) [{pct:.0f}%]")
-    print(f"   Advice: {advice[:100]}")
-    state["investment_advice"] = advice
-    state["next_upgrade"] = t
-    state["progress_pct"] = round(pct, 1)
-    save_state(state)
-    check_thresholds(state, advice)
+    # Recompute total from all streams
+    total = sum(v.get("balance", 0.0) for v in state["streams"].values())
+    state["current_balance"] = total
+
+    advisor = advise(state)
+    state["advisor"] = advisor
+
+    state.setdefault("history", []).append({
+        "timestamp": datetime.now().isoformat(),
+        "balance": total,
+        "active": [k for k, v in state["streams"].items() if v.get("balance", 0) > 0]
+    })
+    state["history"] = state["history"][-100:]
+
+    (DATA / "flywheel_state.json").write_text(json.dumps(state, indent=2))
+
+    print(f"FLYWHEEL: ${total:.2f} total | Cycle {state['cycles']}")
+    nu = advisor.get("next_upgrade")
+    if nu: print(f"  Next: ${nu.get('t','?')} -> {nu.get('n','?')} (need ${advisor.get('needed',0):.0f} more)")
+    print(f"  Action: {advisor.get('action','(none)')}")
+    return state
 
 if __name__ == "__main__":
-    main()
+    run()
