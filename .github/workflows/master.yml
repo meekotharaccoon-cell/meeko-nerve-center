@@ -17,6 +17,7 @@ on:
 jobs:
   trigger-all:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     permissions:
       actions: write
       contents: read
