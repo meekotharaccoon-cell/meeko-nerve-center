@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 05:19 UTC  
+> Last updated: 2026-03-03 05:20 UTC  
 > Total commits tracked: 200
 
 ---
@@ -13,6 +13,8 @@
 - `206fc7b6` fix: silent failure — add continue-on-error to knowledge-harvester-v2.yml
 
 **🤝 Community**
+- `4ae8366b` [solarpunk-activate] live dashboard update
+- `822b826a` [solarpunk-activate] live dashboard update
 - `abe8e14d` [solarpunk-activate] live dashboard update
 - `4ce3504c` [solarpunk-activate] live dashboard update
 - `189eb00e` [solarpunk-activate] live dashboard update
@@ -61,9 +63,6 @@
 - `36dd880f` [solarpunk-activate] live dashboard update
 - `700ea579` [solarpunk-activate] live dashboard update
 - `8c84a7c7` [solarpunk-activate] live dashboard update
-- `8e882c21` [solarpunk-activate] live dashboard update
-- `60ca98a8` [solarpunk-activate] live dashboard update
-- `d1f4cbbe` [solarpunk-activate] live dashboard update
 
 **📧 Outreach**
 - `24b663ab` fix: email_gateway v5 — add 20+ missing blocked domains, fix false reply bug (tiktok/amazon/pinterest/huggingface), subject-only topic matching
@@ -131,6 +130,8 @@
 - `9ee369a6` fix: silent failure — add continue-on-error to api-directory-harvester.yml
 
 **📝 Documentation**
+- `e1d03f87` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `5ab592cc` 📝 auto: changelog 2026-03-03
 - `4aba588d` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `38119314` 📝 auto: changelog 2026-03-03
 - `0ef5a340` 📄 auto: sync HTML to docs/ for GitHub Pages
@@ -143,7 +144,6 @@
 - `ed4657db` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `db3f6f5c` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `3097c078` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `c2b98fb7` 📝 auto: changelog 2026-03-03
 
 **⚙️ System**
 - `be4ada7d` [dual-brain-sync] system wants 0 things next
@@ -155,6 +155,8 @@
 - `3ce89d33` 🧠 auto: system state update 2026-03-03 00:46 UTC
 
 **• Other**
+- `07583a39` [solarpunk-activate] live status update
+- `b51df076` [solarpunk-activate] live status update
 - `940c408b` [solarpunk-activate] live status update
 - `fdb1ffcc` [solarpunk-activate] live status update
 - `4ad59459` [solarpunk-activate] live status update
@@ -227,8 +229,6 @@
 - `fa0bba52` [solarpunk-activate] live status update
 - `bd0c522a` [solarpunk-activate] live status update
 - `6e096dd2` [solarpunk-activate] live status update
-- `4b05c68f` [solarpunk-activate] live status update
-- `f9b38313` [solarpunk-activate] live status update
 
 ---
 
