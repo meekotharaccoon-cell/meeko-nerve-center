@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 11:22 UTC  
+> Last updated: 2026-03-03 15:54 UTC  
 > Total commits tracked: 200
 
 ---
@@ -12,8 +12,6 @@
 - `cb3aa28d` feat: add Phase 7f humanitarian knowledge dispatch to OMNIBRAIN — Gaza, Congo, Sudan
 - `9b43a00b` feat: KNOWLEDGE_DISPATCH — verified humanitarian outreach to Gaza, Congo, Sudan orgs
 - `139404e2` mission: SolarPunk humanitarian knowledge dispatch — Gaza, Congo, Sudan
-- `63dfe462` 🧠 knowledge update [2026-03-03]
-- `1633dc82` knowledge: v2 harvest [2026-03-03]
 
 **🤝 Community**
 - `742ad89e` [solarpunk-activate] live dashboard update
@@ -66,27 +64,22 @@
 - `afcbeff6` [solarpunk-activate] live dashboard update
 - `5aee1289` [solarpunk-activate] live dashboard update
 - `1e309513` [solarpunk-activate] live dashboard update
-- `0eff8cc3` [solarpunk-activate] live dashboard update
-- `70f84dc6` [solarpunk-activate] live dashboard update
-- `22cdcce0` [solarpunk-activate] live dashboard update
-- `81eec117` [solarpunk-activate] live dashboard update
-- `470ac08b` [solarpunk-activate] live dashboard update
-- `43be80aa` [solarpunk-activate] live dashboard update
-- `40b30642` [solarpunk-activate] live dashboard update
-- `caf3ea80` [solarpunk-activate] live dashboard update
-- `4b10634c` [solarpunk-activate] live dashboard update
 
 **📧 Outreach**
+- `c4702a49` 🔧 SYNAPSE: fix health_score=0 bug, add real system stats to email
 - `10dfb234` feat: SYNAPSE — resolver (reads A+B, finds consensus, emails briefing)
 
 **📊 Signals**
 - `82ca9f58` 💹 REVENUE_FLYWHEEL: all money streams → balance tracker → auto-upgrade at thresholds
 
 **🚹 Fixes**
+- `c9c6565a` 🔧 OMNIBRAIN: X_API_KEY for Getscreen, add Phase 8h, fix $20 Claude Pro threshold
+- `047e5dbe` 💹 FLYWHEEL: fix $20 Claude Pro threshold + add SolarPunk $20 investment advisor
 - `aac6f0e3` fix: syntax_patcher auto-fixed 1 file(s) [skip ci]
 - `07172ccf` fix: resolve all 7 syntax errors (identity_vault bare headers + youtube_manager f-string escapes)
 
 **📝 Documentation**
+- `96cea97f` 📝 auto: changelog 2026-03-03
 - `af567b93` 📝 auto: changelog 2026-03-03
 - `2d012d51` 📝 auto: changelog 2026-03-03
 - `4efec9cc` 📄 auto: sync HTML to docs/ for GitHub Pages
@@ -97,12 +90,15 @@
 - `2f687184` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `d15cb29f` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `78260617` 📝 auto: changelog 2026-03-03
-- `2932c131` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `d38b5223` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `57a1aad0` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `b592c560` 📄 auto: sync HTML to docs/ for GitHub Pages
 
 **⚙️ System**
+- `dd6f5083` 🧠 auto: system state update 2026-03-03 15:35 UTC
+- `dff534d3` [synapse] system wants — score 0/100
+- `bed44060` 🧠 auto: system state update 2026-03-03 15:24 UTC
+- `d7ba06c9` 🧠 auto: system state update 2026-03-03 15:03 UTC
+- `395e7c4f` 🧠 auto: system state update 2026-03-03 13:44 UTC
+- `4f803d3c` [synapse] system wants — score 0/100
+- `f8c0dfc7` [dual-brain-sync] system wants 0 things next
 - `257a6af0` [synapse] system wants — score 0/100
 - `9adfe8be` [synapse] system wants — score 0/100
 - `15a7ea9f` 🧬 SYNTHESIS_FACTORY: autonomous engine-combiner, kills 4hr bottleneck
@@ -114,6 +110,27 @@
 - `557ad890` 🧠 auto: system state update 2026-03-03 08:00 UTC
 
 **• Other**
+- `200ee015` [synapse] brain state 52225777 — score 0/100
+- `0db19ec2` ops [2026-03-03T15:34] — phases 0-11 complete
+- `9643956f` chore: update wiring_status.json [2026-03-03T15:25]
+- `a843547a` 🔧 GETSCREEN_BRIDGE: X_API_KEY is the secret name (not GETSCREEN_API_KEY)
+- `56469fb6` chore: update wiring_status.json [2026-03-03T15:08]
+- `a8c467dc` 🌱 SOLARPUNK_LOOP: closed feedback cycle — OMNIBRAIN outputs feed back in
+- `3a53c8b3` chore: update wiring_status.json [2026-03-03T15:07]
+- `fc7f24dd` 🖥️ GETSCREEN_BRIDGE: remote desktop eyes and hands for SolarPunk
+- `d9951ca0` chore: update wiring_status.json [2026-03-03T15:04]
+- `bbc63618` 🦁 BRAVE_BRIDGE: connect SolarPunk to Brave browser via CDP
+- `52094cd4` data: dex update [14:33]
+- `7c65b4f1` chore: update wiring_status.json [2026-03-03T14:32]
+- `93bc137d` \U0001f338 perpetual: 2026-03-03 14:11 UTC
+- `2db69aa5` [synapse] brain state ce13d273 — score 0/100
+- `75b1c841` ops [2026-03-03T13:43] — phases 0-11 complete
+- `19189b34` chore: update wiring_status.json [2026-03-03T11:57]
+- `5fce9648` data: dex update [11:52]
+- `e78c1691` \U0001f338 perpetual: 2026-03-03 11:48 UTC
+- `9e7c0748` feed: RSS update [2026-03-03]
+- `9e9e4159` [dual-brain-sync] shared brain state
+- `8cab5897` [dual-brain-sync] 0 consensus items — both AIs agree
 - `6c22a8c2` [synapse] brain state 4f3685b5 — score 0/100
 - `996978b0` ops [2026-03-03T11:21] — phases 0-11 complete
 - `60e1c606` chore: update wiring_status.json [2026-03-03T11:11]
@@ -206,23 +223,6 @@
 - `8d7afe4f` [solarpunk-activate] live status update
 - `e632c998` [solarpunk-activate] live status update
 - `b23ae805` [solarpunk-activate] live status update
-- `a4585b05` [solarpunk-activate] live status update
-- `decbcbd8` chore: update wiring_status.json [2026-03-03T07:57]
-- `97e214c9` data: dex update [07:54]
-- `df0a6447` 🌍 content update [2026-03-03]
-- `b8ec656c` \U0001f338 perpetual: 2026-03-03 07:32 UTC
-- `cba496f2` ideas: engine cycle [] — tested/built
-- `269bd877` [solarpunk-activate] live status update
-- `1351e6ea` [solarpunk-activate] live status update
-- `fc9ca283` chore: update wiring_status.json [2026-03-03T05:36]
-- `39b2ac95` [solarpunk-activate] live status update
-- `cc781044` [solarpunk-activate] live status update
-- `932219bc` chore: update wiring_status.json [2026-03-03T05:35]
-- `6683ed8e` [solarpunk-activate] live status update
-- `0e609b4a` [solarpunk-activate] live status update
-- `e2700db8` chore: update wiring_status.json [2026-03-03T05:34]
-- `76a700c6` [solarpunk-activate] live status update
-- `57f111f9` [solarpunk-activate] live status update
 
 ---
 
