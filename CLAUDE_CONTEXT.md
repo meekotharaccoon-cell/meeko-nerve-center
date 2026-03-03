@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-03 15:35 UTC — [synapse] system wants — score 0/100*
+*Auto-updated by the system. Last update: 2026-03-03 16:02 UTC — 🔌 SOLARPUNK_CONNECT.ps1 — one admin command to close the desktop loop*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
