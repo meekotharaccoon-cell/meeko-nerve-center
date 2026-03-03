@@ -222,6 +222,24 @@
       "moved": 0,
       "moved_files": [],
       "errors": []
+    },
+    {
+      "at": "2026-03-03T12:18:37.613074+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-03-03T12:21:13.646788+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260303_071926",
+          "to": "BACKUPS\\BACKUP_20260303_071926",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
     }
   ]
 }
