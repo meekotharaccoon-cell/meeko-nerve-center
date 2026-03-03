@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-03 15:03 UTC — 💹 FLYWHEEL: fix $20 Claude Pro threshold + add SolarPunk $20 investment advisor*
+*Auto-updated by the system. Last update: 2026-03-03 15:24 UTC — 🔧 GETSCREEN_BRIDGE: X_API_KEY is the secret name (not GETSCREEN_API_KEY)*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
