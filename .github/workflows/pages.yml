@@ -20,6 +20,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     steps:
       - name: Checkout
         uses: actions/checkout@v4
