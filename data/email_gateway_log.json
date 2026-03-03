@@ -2,207 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-02",
-      "from": "support@etsy.com",
-      "subject": "Etsy Account Closed: 2rih2mpkjudhb7fr",
-      "action": "ignored_automated",
-      "reason": "auto prefix: support@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "pinterest-recommendations@ideas.pinteres",
-      "subject": "Futuristic for you",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 342448",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Great gifts, great prices, up to 35% off",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "marketing@engage.canva.com",
-      "subject": "Was your Canva wish granted? \ud83e\ude84",
-      "action": "ignored_automated",
-      "reason": "auto prefix: marketing@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "info@update.tiktok.com",
-      "subject": "GaryVee posted: The flip life \ud83d\udcb0- this video is about to chan",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: google.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "noreply@news.paypal.com",
-      "subject": "Get paid with just your phone",
-      "action": "ignored_automated",
-      "reason": "blocked domain: paypal.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Gifts you won't find anywhere else",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 545791",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "product@engage.canva.com",
-      "subject": "Transform your design in seconds",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 387839",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "Chris@marketing.pinterest.com",
-      "subject": "Why create on Pinterest?",
-      "action": "replied"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "info@email.manychat.com",
-      "subject": "Don't miss out: Save your seat for this small-business train",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "support@freeup.net",
-      "subject": "Let\u2019s Talk Budget, Fit, and Finding the Right Writer",
-      "action": "ignored_automated",
-      "reason": "auto prefix: support@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "recommendations@explore.pinterest.com",
-      "subject": "Flower Painting for you",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "High quality art meets high quality gifts",
-      "action": "ignored_automated",
-      "reason": "auto prefix: newsletter@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "info@accounts.linktr.ee",
-      "subject": "Your code: 892999",
-      "action": "ignored_automated",
-      "reason": "auto prefix: info@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notification@service.tiktok.com",
-      "subject": "Precious Deborah posted: MY WORK MY PRIDE\ud83d\ude0a\ud83d\ude0a\ud83d\ude0a#FreelancerLife ",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "marketing@engage.canva.com",
-      "subject": "You\u2019re invited! Check out Canva's exciting new launches",
-      "action": "ignored_automated",
-      "reason": "auto prefix: marketing@"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 057750",
-      "action": "ignored_automated",
-      "reason": "placeholder address"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "$16 tees + up to 35% off sitewide!",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notification@service.tiktok.com",
-      "subject": "Precious Deborah posted: Hard work, consistency, and profess",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "noreply@society6.com",
-      "subject": "842927 is your code",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "no-reply@accounts.google.com",
-      "subject": "Security alert",
-      "action": "ignored_automated",
-      "reason": "blocked domain: accounts.google.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0c Wiri",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
       "from": "meekotharaccoon@gmail.com",
       "subject": "",
       "action": "ignored_automated",
@@ -3443,6 +3242,216 @@
       "subject": "\u2728 Create Again for 10 Free Credits!",
       "action": "ignored_automated",
       "reason": "blocked subdomain: em.nightcafe.studio"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marcos@gdevelop.io",
+      "subject": "\ud83d\udcb8Get a Gift card + New GDevelop Courses! \ud83e\uddd1\u200d\ud83c\udf93",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gdevelop.io"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "You\u2019re invited: Data storytelling for business leaders",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "The latest from independent designers",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "product@engage.canva.com",
+      "subject": "A template could save you hours",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@judge.me",
+      "subject": "See what's new at Judge.me \u2013 Watch the demo \ud83d\udcf9",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Hi Meeko, get professional prints that support quality care",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Creators say this is THE place to learn + grow",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "What's in the bag: designer finds and spring sales",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "This is your little treat email",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ttsmarketplace@email.tiktok.com",
+      "subject": "Claim your coupon before it expires!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.tiktok.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Email Marketing 101: Build Your Strategy in One Hour",
+      "action": "ignored_automated",
+      "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Instagram Summit by Manychat IRL is where creators go to con",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Give your Linktree a boost",
+      "action": "ignored_automated",
+      "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "\u23f3 Final call: Your data deserves better",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Weekly deals coming your way",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@freeup.net",
+      "subject": "Last Week to Double Your Freelancer Interviews",
+      "action": "ignored_automated",
+      "reason": "blocked domain: freeup.net"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "start@engage.canva.com",
+      "subject": "You're a force for good",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Your favorite creator duo just joined the lineup \ud83e\udd29",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Satisfy your inner free spirit",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Bright, bold, cheerful ceramics",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "product@engage.canva.com",
+      "subject": "Recommended templates based on your search",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Shimmer in luxury jewelry, plus shop deals on Tiffany & Co.",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "We're holding our breath for Instagram Summit by Manychat IR",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "kate.r@freeup.net",
+      "subject": "Ready to Outsource Smarter This Year?",
+      "action": "ignored_automated",
+      "reason": "blocked domain: freeup.net"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@ma.linktr.ee",
+      "subject": "Insights to take your further \ud83d\ude80",
+      "action": "ignored_automated",
+      "reason": "placeholder address"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@freeup.net",
+      "subject": "Labor Day Flash Deal: $25 to Spend on Your Next Hire",
+      "action": "ignored_automated",
+      "reason": "blocked domain: freeup.net"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Specials finds at special prices",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Create a business that runs itself with Instagram Summit by ",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "noreply@gdevelop.io",
+      "subject": "We\u2019ve redesigned the \u201cPlay\u201d tab\u2014and here\u2019s why it matters fo",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gdevelop.io"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Meet the power plaids",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
     }
   ],
   "human_emails_total": 1,

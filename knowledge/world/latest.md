@@ -2,14 +2,14 @@
 
 ## Crypto Market
 
-- BTC: $69,086.0 (+3.8%)
-- SOL: $86.85 (+2.1%)
+- BTC: $69,128.0 (+3.5%)
+- SOL: $86.89 (+1.3%)
 
 ## New Solana Pools
 
-- Bombardino / SOL | Vol 24h: $10359.2105670898 | https://www.geckoterminal.com/solana/pools/Ho95DdsPCM4iHnhW9Zir3FxMgigNNK7dyr6dKTVPkAe2
-- SWARM / SOL | Vol 24h: $0.08706163835 | https://www.geckoterminal.com/solana/pools/73sHxLGaSHyGJprDh6MhfmweqDfBrFykdbvnMK4PYa9J
-- TWNS / SOL | Vol 24h: $1835.5332722348 | https://www.geckoterminal.com/solana/pools/FabT7uwdj22kK9oLxvgQLknvGD3FiYtL1HdAr52QXpSG
+- Werld / SOL | Vol 24h: $1303.3942133657 | https://www.geckoterminal.com/solana/pools/BkN79WJyEFCpfLHWN7VApgNmkEB2cmhSqLE8juJ8HgR8
+- IRANCOIN / SOL | Vol 24h: $1319.0365391697 | https://www.geckoterminal.com/solana/pools/CCtUhsw98L9Kj169pWbdrMu1vNjfvFkDXwPcnxQPrZVK
+- TNT / SOL | Vol 24h: $163.69432498 | https://www.geckoterminal.com/solana/pools/Cd87f6K3QReiBYQ7TaBUiFSG59vrRf1HwhqMnVrMcFvh
 
 ## Next SpaceX: USSF-44 on 2022-11-01
 

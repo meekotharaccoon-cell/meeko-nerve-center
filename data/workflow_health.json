@@ -1,13 +1,13 @@
 {
   "date": "2026-03-03",
-  "timestamp": "2026-03-03T01:07:07.862330",
+  "timestamp": "2026-03-03T01:12:06.632861",
   "total": 62,
-  "passing": 43,
-  "failing": 18,
+  "passing": 45,
+  "failing": 16,
   "running": 1,
-  "retried": 10,
-  "health_pct": 69,
-  "color": "RED",
+  "retried": 8,
+  "health_pct": 72,
+  "color": "YELLOW",
   "failures": [
     {
       "name": "\ud83d\udd0e Asset Scanner",
@@ -18,8 +18,8 @@
     {
       "name": ".github/workflows/community-outreach.yml",
       "file": "community-outreach.yml",
-      "id": 22602943960,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943960"
+      "id": 22603495028,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495028"
     },
     {
       "name": "\ud83c\udfdb\ufe0f Congress Stock Watcher",
@@ -34,28 +34,22 @@
       "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22560480390"
     },
     {
-      "name": "Dual Brain Sync",
-      "file": "dual-brain-sync.yml",
-      "id": 22600479980,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22600479980"
-    },
-    {
       "name": ".github/workflows/email-drafter.yml",
       "file": "email-drafter.yml",
-      "id": 22602944135,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944135"
+      "id": 22603495593,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495593"
     },
     {
       "name": ".github/workflows/email-gateway.yml",
       "file": "email-gateway.yml",
-      "id": 22602944337,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944337"
+      "id": 22603495766,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495766"
     },
     {
       "name": ".github/workflows/feedback-loop.yml",
       "file": "feedback-loop.yml",
-      "id": 22602943724,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943724"
+      "id": 22603495911,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495911"
     },
     {
       "name": "\ud83c\udf0d Full Daily Cycle",
@@ -66,14 +60,8 @@
     {
       "name": ".github/workflows/jekyll-gh-pages.yml",
       "file": "jekyll-gh-pages.yml",
-      "id": 22602943583,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602943583"
-    },
-    {
-      "name": "Kimi Conductor",
-      "file": "kimi-conductor.yml",
-      "id": 22599489968,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22599489968"
+      "id": 22603495559,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495559"
     },
     {
       "name": "\ud83e\udde0 Knowledge Harvester",
@@ -84,14 +72,14 @@
     {
       "name": ".github/workflows/send-grants.yml",
       "file": "send-grants.yml",
-      "id": 22602944281,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944281"
+      "id": 22603495755,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495755"
     },
     {
       "name": ".github/workflows/send-outreach.yml",
       "file": "send-outreach.yml",
-      "id": 22602944453,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602944453"
+      "id": 22603495403,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603495403"
     },
     {
       "name": "\ud83d\udcca Signal Tracker",
@@ -114,8 +102,8 @@
     {
       "name": "pages-build-deployment",
       "file": "dynamic/pages/pages-build-deployment",
-      "id": 22602947785,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22602947785"
+      "id": 22603499180,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22603499180"
     }
   ]
 }

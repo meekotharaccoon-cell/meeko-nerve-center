@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-03T01:07:41.566578",
+  "generated_at": "2026-03-03T01:12:34.594407",
   "date": "2026-03-03",
   "system": {
     "engines_total": 168,
@@ -22,11 +22,11 @@
     "trades_flagged": 0
   },
   "health": {
-    "passing_pct": 69,
+    "passing_pct": 72,
     "total_workflows": 62,
-    "failing": 18,
-    "color": "RED",
-    "last_check": "2026-03-03T01:07:07.862330"
+    "failing": 16,
+    "color": "YELLOW",
+    "last_check": "2026-03-03T01:12:06.632861"
   },
   "market": {},
   "press": {
