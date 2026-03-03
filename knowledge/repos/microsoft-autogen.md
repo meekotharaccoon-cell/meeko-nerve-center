@@ -1,7 +1,7 @@
 # microsoft/autogen
-*Category: multi-agent · Harvested: 2026-03-01*
+*Category: multi-agent · Harvested: 2026-03-03*
 
-**Stars:** 54,984  
+**Stars:** 55,094  
 **Language:** Python  
 **License:** CC-BY-4.0  
 **URL:** https://github.com/microsoft/autogen

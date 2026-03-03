@@ -1,7 +1,7 @@
 # Significant-Gravitas/AutoGPT
-*Category: autonomous-ai · Harvested: 2026-03-01*
+*Category: autonomous-ai · Harvested: 2026-03-03*
 
-**Stars:** 182,106  
+**Stars:** 182,172  
 **Language:** Python  
 **License:** NOASSERTION  
 **URL:** https://github.com/Significant-Gravitas/AutoGPT
