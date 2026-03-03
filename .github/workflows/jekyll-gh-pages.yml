@@ -1,4 +1,0 @@
-# DISABLED — was failing every run and sending notification emails
-# GitHub Pages is deployed via pages.yml instead
-# name: Deploy Jekyll with GitHub Pages dependencies preinstalled
-# This workflow has been intentionally disabled to stop failure notification spam.

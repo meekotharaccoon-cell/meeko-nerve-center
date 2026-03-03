@@ -1,3 +1,0 @@
-# DISABLED — grant emails require human review before sending
-# Grant intelligence engine writes drafts to data/grant_database.json
-# Human reviews and sends manually via phone_controller.py or directly
