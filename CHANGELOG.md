@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 00:30 UTC  
+> Last updated: 2026-03-03 00:34 UTC  
 > Total commits tracked: 200
 
 ---
@@ -20,6 +20,14 @@
 - `be60830f` knowledge: v2 harvest [2026-03-02]
 
 **🤝 Community**
+- `98979a20` [solarpunk-activate] live dashboard update
+- `cf01ecf3` [solarpunk-activate] live dashboard update
+- `999df5ca` [solarpunk-activate] live dashboard update
+- `fa82ce1f` [solarpunk-activate] live dashboard update
+- `36dd880f` [solarpunk-activate] live dashboard update
+- `700ea579` [solarpunk-activate] live dashboard update
+- `8c84a7c7` [solarpunk-activate] live dashboard update
+- `8e882c21` [solarpunk-activate] live dashboard update
 - `60ca98a8` [solarpunk-activate] live dashboard update
 - `d1f4cbbe` [solarpunk-activate] live dashboard update
 - `28726640` [solarpunk-activate] live dashboard update
@@ -58,6 +66,10 @@
 - `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
 
 **📝 Documentation**
+- `ed4657db` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `db3f6f5c` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `3097c078` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `c2b98fb7` 📝 auto: changelog 2026-03-03
 - `232bd99f` 📝 auto: changelog 2026-03-02
 - `92178fed` 📝 auto: changelog 2026-03-02
 - `2f43a475` 📝 auto: changelog 2026-03-02
@@ -82,6 +94,15 @@
 - `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
 
 **• Other**
+- `82d29c69` [solarpunk-activate] live status update
+- `755a9f73` [solarpunk-activate] live status update
+- `2c4a3a9c` [solarpunk-activate] live status update
+- `4cd96953` [solarpunk-activate] live status update
+- `5fdfb7be` chore: update wiring_status.json [2026-03-03T00:32]
+- `fa0bba52` [solarpunk-activate] live status update
+- `bd0c522a` [solarpunk-activate] live status update
+- `6e096dd2` [solarpunk-activate] live status update
+- `4b05c68f` [solarpunk-activate] live status update
 - `f9b38313` [solarpunk-activate] live status update
 - `542ecaf5` [solarpunk-activate] live status update
 - `9a961af0` chore: update wiring_status.json [2026-03-03T00:28]
@@ -162,9 +183,6 @@
 - `4be40887` fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER
 - `2aceb5ba` fix: all email issues — phantom address removed, Wired corrected, blocked domains expanded, old engine retired, self-email loop closed + system manifest + social content engine
 
-**🌹 Art & Gallery**
-- `185a7eb8` fix: use GUMROAD_SECRET (correct secret name) instead of broken GUMROAD_TOKEN
-
 **🚹 Fixes**
 - `5987b153` fix: wallet config checks all possible secret names — works with whatever you already named it
 
@@ -174,8 +192,6 @@
 - `0f036966` 📝 auto: changelog 2026-03-01
 - `db03728e` 📝 auto: changelog 2026-03-01
 - `20eea761` 📝 auto: changelog 2026-03-01
-- `98bdb262` 📝 auto: changelog 2026-03-01
-- `608a7ff0` 📝 auto: changelog 2026-03-01
 
 **⚙️ System**
 - `27fc536b` auto: gen 22
@@ -187,8 +203,6 @@
 - `7737929a` audit: autonomy log updated 2026-03-01
 - `666eeb20` audit: autonomy log updated 2026-03-01
 - `3eaff3b4` 🧠 auto: system state update 2026-03-01 18:22 UTC
-- `3dbc2925` 🧠 auto: system state update 2026-03-01 11:07 UTC
-- `c3f92bcd` feat: add daily 3D brain workflow — runs every morning at 6am UTC
 
 **• Other**
 - `650fdfe9` data: dex update [23:47]
@@ -229,22 +243,6 @@
 - `79d6cb3d` chore: update wiring_status.json [2026-03-01T15:44]
 - `b9828c91` \U0001f338 perpetual: 2026-03-01 15:43 UTC
 - `177214d2` data: dex update [14:52]
-- `a292eb08` chore: update wiring_status.json [2026-03-01T14:51]
-- `d0743863` \U0001f338 perpetual: 2026-03-01 14:51 UTC
-- `b4b53f21` chore: update wiring_status.json [2026-03-01T13:51]
-- `95eef6e1` \U0001f338 perpetual: 2026-03-01 11:55 UTC
-- `63c2e1a6` data: dex update [11:39]
-- `5c95e68c` chore: update wiring_status.json [2026-03-01T11:38]
-- `04eff536` feat: inject three_d_brain.py as Phase 1.5 + add Notion sync as Phase 13 in MASTER_CONTROLLER
-- `0bbfa9aa` feat: add three_d_brain.py — cross-dimensional intelligence engine (revenue × reach × impact)
-- `cea44a0a` chore: update wiring_status.json [2026-03-01T11:04]
-- `9024854b` feed: RSS update [2026-03-01]
-- `9ffa9f89` \U0001f338 perpetual: 2026-03-01 10:53 UTC
-- `b934e8dd` chore: update wiring_status.json [2026-03-01T10:53]
-- `4b98d1be` data: dex update [09:58]
-- `ecd327c0` \U0001f338 perpetual: 2026-03-01 09:55 UTC
-- `7981bfe5` chore: update wiring_status.json [2026-03-01T09:53]
-- `93b6b869` data: dex update [09:00]
 
 ---
 
