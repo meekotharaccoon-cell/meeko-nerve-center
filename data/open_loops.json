@@ -1,8 +1,8 @@
 {
   "date": "2026-03-03",
-  "total": 5,
+  "total": 6,
   "human_required": 4,
-  "auto_fixable": 1,
+  "auto_fixable": 2,
   "loops": [
     {
       "type": "grant_submission",
@@ -34,6 +34,14 @@
       "description": "Grant drafted but not submitted: Open Society Foundations \u2014 Emerging Technology Initiative",
       "action": "Submit at: https://www.opensocietyfoundations.org/grants",
       "human_required": true,
+      "date_found": "2026-03-03"
+    },
+    {
+      "type": "workflow_health",
+      "priority": "HIGH",
+      "description": "System health RED: 69% (13 failing)",
+      "action": "MASTER_CONTROLLER auto-retrying. Check in 30min.",
+      "human_required": false,
       "date_found": "2026-03-03"
     },
     {

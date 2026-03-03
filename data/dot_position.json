@@ -3,16 +3,16 @@
   "dot": {
     "symbol": "DOT",
     "action": "HOLD \u2014 wait for clearer signal.",
-    "current": "$1.5000",
-    "target": "$1.7250",
-    "change_24h": "-3.0%",
+    "current": "$1.5100",
+    "target": "$1.7365",
+    "change_24h": "-0.1%",
     "change_7d": "0.0%",
     "holdings": "~$8.00 worth",
     "where": "Phantom Wallet \u2192 sell via Uniswap or Kraken"
   },
   "market": {
-    "price": 1.5,
-    "change_24h": -2.9604231643695744,
+    "price": 1.51,
+    "change_24h": -0.0899529603119107,
     "change_7d": 0
   }
 }

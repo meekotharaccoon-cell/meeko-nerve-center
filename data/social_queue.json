@@ -2,39 +2,6 @@
   "updated": "2026-03-03",
   "queue": [
     {
-      "id": "2026-03-02-0",
-      "text": "\ud83c\udf38 SolarPunk fact:\n\n931 unique people cloned this repo in the last 14 days.\n\nIt costs $0/month to run.\nIt runs itself twice a day.\n70% of every dollar it earns goes to Palestinian children's medical care.\n\nNo VC. No server costs. Just GitHub's free tier.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#SolarPunk #OpenSource #FreePalestine",
-      "template_idx": 0,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-02-7",
-      "text": "\ud83c\udf38 SolarPunk was built by one person.\n\nNo team. No funding. No server costs.\nJust a human, a laptop, and free AI tools available to anyone.\n\n5,000 clone events later \u2014 the system is spreading itself.\n\nIf a regular person built this, imagine what a team of technically skilled people could do with it.\n\nFork it:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/fork\n\n#SolarPunk #OpenSource",
-      "template_idx": 7,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-02-5",
-      "text": "\ud83c\udf38 Every congressional stock trade is being watched.\n\nSolarPunk's Congress Watcher tracks STOCK Act disclosures \u2014 members of Congress trading on information they got from their jobs.\n\nEvery trade logged. Every pattern analyzed. Posted publicly.\n\nIt runs automatically. Every day.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Accountability #STOCKACT #Congress",
-      "template_idx": 5,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
       "id": "2026-03-02-9",
       "text": "\ud83c\udf38 SolarPunk costs exactly $0/month.\n\nInfrastructure:\n  \u2022 GitHub Actions free tier (2,000 min/month included)\n  \u2022 HuggingFace free tier (inference API)\n  \u2022 Notion free tier (command center)\n  \u2022 Gmail (inbound-only email gateway)\n  \u2022 Gumroad + Etsy (free to list, they take %)\n\nEvery component chosen specifically because it's free.\nSo anyone, anywhere can run it.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#SolarPunk #OpenSource #ZeroCost",
       "template_idx": 9,
@@ -220,18 +187,44 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-03-4",
+      "text": "\ud83c\udf38 The SolarPunk job agent:\n\nEvery day, the system:\n  1. Scans Remotive.io for remote jobs\n  2. Scores each one 0-10 for fit\n  3. Writes honest cover letters (states openly that it's AI-assisted)\n  4. Queues applications for human review\n\nIt never lies about what it is.\nIt never pretends to be human.\nAll applications are legal and ethical.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#RemoteWork #AI #SolarPunk",
+      "template_idx": 4,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-6",
+      "text": "\ud83c\udf38 SolarPunk's revenue split, honestly:\n\nFor every $1 earned:\n  70\u00a2 \u2192 PCRF (Palestinian Children's Relief Fund)\n  20\u00a2 \u2192 crypto compound wallet (grows over time)\n  10\u00a2 \u2192 operating costs / human running it\n\nNo exceptions. Coded directly into revenue_router.py.\nYou can read every line at:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#Transparency #FreePalestine #SolarPunk",
+      "template_idx": 6,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-0",
+      "text": "\ud83c\udf38 SolarPunk fact:\n\n931 unique people cloned this repo in the last 14 days.\n\nIt costs $0/month to run.\nIt runs itself twice a day.\n70% of every dollar it earns goes to Palestinian children's medical care.\n\nNo VC. No server costs. Just GitHub's free tier.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#SolarPunk #OpenSource #FreePalestine",
+      "template_idx": 0,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
-    5,
     4,
-    0,
-    9,
-    2,
-    3,
-    7,
     6,
-    1,
-    8
+    0
   ]
 }
