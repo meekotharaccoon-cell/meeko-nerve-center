@@ -1,3 +1,0 @@
-# DISABLED — email is now handled exclusively inside MASTER_CONTROLLER phase 18
-# Running this separately was causing double-processing and reply loops
-# All email logic lives in mycelium/email_gateway.py (v4)

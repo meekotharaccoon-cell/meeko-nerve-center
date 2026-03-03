@@ -1,2 +1,0 @@
-# DISABLED — was failing every run (check email_log.json: 'Run failed: feedback-loop.yml')
-# Feedback loop is now Phase 17 (hf_dataset_logger.py) inside MASTER_CONTROLLER
