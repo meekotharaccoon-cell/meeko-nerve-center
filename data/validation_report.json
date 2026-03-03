@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-02",
+  "date": "2026-03-03",
   "results": [
     {
       "check": "github_pages",
@@ -45,17 +45,17 @@
       "check": "github_actions",
       "ok": true,
       "detail": "Latest: Perpetual Builder \u2014 None",
-      "failures": 5
+      "failures": 2
     },
     {
       "check": "social_queue",
       "ok": true,
-      "detail": "36 posts queued in last 3 days (36 total)",
+      "detail": "37 posts queued in last 3 days (37 total)",
       "action": null
     }
   ],
   "confidence": {
-    "github_pages": 21,
+    "github_pages": 17,
     "system_health_alerting": 98,
     "idea_engine": 98,
     "world_intelligence": 98,
