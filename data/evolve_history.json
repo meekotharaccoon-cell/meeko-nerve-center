@@ -385,6 +385,21 @@
         "DOMAIN"
       ],
       "duration_s": 0
+    },
+    {
+      "run": 28,
+      "gen": 28,
+      "at": "2026-03-03T07:23:28.975911",
+      "built": "verify_workflows",
+      "build_ok": true,
+      "sugs": [
+        "SECRETS",
+        "SHARE",
+        "REDDIT",
+        "DEVTO",
+        "DOMAIN"
+      ],
+      "duration_s": 0
     }
   ],
   "built": [
@@ -394,7 +409,8 @@
     "consolidate",
     "map_connections",
     "signal_tracker",
-    "seo_ping"
+    "seo_ping",
+    "verify_workflows"
   ],
-  "gen": 28
+  "gen": 29
 }
