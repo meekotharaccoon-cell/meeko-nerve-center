@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-SYNAPSE — The Resolver + Brain State + Daily Email
-Reads NEURON_A + NEURON_B, synthesizes with REAL stats, sends email to Meeko.
-Health score is grounded in reality — never hallucinated 0.
+SYNAPSE.py -- SolarPunk Brain Coordinator (v2)
+Runs last in OMNIBRAIN. Reads all engine outputs, computes real health score,
+sends Meeko the daily report with actual metrics. No fake zeros.
 """
 import os, json, requests, smtplib
 from pathlib import Path
@@ -12,169 +12,174 @@ from email.mime.text import MIMEText
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 GMAIL   = os.environ.get("GMAIL_ADDRESS", "")
 GPASS   = os.environ.get("GMAIL_APP_PASSWORD", "")
-RUN_ID  = os.environ.get("GITHUB_RUN_ID", datetime.now().strftime("%Y%m%d%H%M"))
+DATA    = Path("data")
+MYC     = Path("mycelium")
+DATA.mkdir(exist_ok=True)
+RUN_ID  = datetime.now().strftime("%Y%m%d-%H%M")
 
-def gather_real_stats():
-    myc = Path("mycelium")
-    dat = Path("data")
-    engines = sorted([f.name for f in myc.glob("*.py") if not f.name.startswith("__")]) if myc.exists() else []
-    workflows = sorted([f.name for f in Path(".github/workflows").glob("*.yml")]) if Path(".github/workflows").exists() else []
-    data_files = {}
-    if dat.exists():
-        for f in dat.glob("*.json"):
-            try: data_files[f.name] = json.loads(f.read_text())
-            except: pass
-    flywheel   = data_files.get("flywheel_state.json", {})
-    loop_mem   = data_files.get("loop_memory.json", [])
-    registry   = data_files.get("build_registry.json", [])
-    prev_brain = data_files.get("brain_state.json", {})
-    REQUIRED   = ["NEURON_A.py","NEURON_B.py","SYNAPSE.py","SYNTHESIS_FACTORY.py",
-                  "REVENUE_FLYWHEEL.py","email_gateway.py","social_poster.py"]
+UPGRADES = [
+    (20,  "Claude Pro -- 5x context, priority API"),
+    (25,  "Custom Domain -- professional presence"),
+    (35,  "API Credits -- more synthesis cycles"),
+    (50,  "Mailgun -- 10k emails/month"),
+    (54,  "GitHub Pro -- unlimited Actions"),
+    (200, "VPS -- always-on SolarPunk"),
+    (500, "Dedicated Server -- full autonomy"),
+]
+
+def load(fname):
+    f = DATA / fname
+    if f.exists():
+        try: return json.loads(f.read_text())
+        except: pass
+    return {}
+
+def gather():
+    engines   = list(MYC.glob("*.py")) if MYC.exists() else []
+    data_files = list(DATA.glob("*.json"))
+    flywheel  = load("flywheel_state.json")
+    memory    = load("loop_memory.json") if (DATA / "loop_memory.json").exists() else []
+    if isinstance(memory, list): cycles = len(memory)
+    else: cycles = memory.get("count", 0)
+    synth_log = load("synthesis_log.json")
+    tier      = load("tier_state.json")
+    guardian  = load("guardian_state.json")
+    income    = load("income_hunt.json")
+    prev      = load("brain_state.json")
+
+    revenue   = flywheel.get("current_balance", 0)
+    streams   = flywheel.get("streams", {})
+    active_streams = [(k, v.get("balance", 0)) for k, v in streams.items() if v.get("balance", 0) > 0]
+
+    next_up = None
+    for thresh, desc in UPGRADES:
+        if revenue < thresh:
+            next_up = (thresh, desc, thresh - revenue)
+            break
+
     return {
-        "engines_total": len(engines), "engines": engines,
-        "workflows": workflows, "workflow_count": len(workflows),
-        "missing_engines": [e for e in REQUIRED if e not in engines],
-        "data_files_count": len(data_files),
-        "revenue_balance": flywheel.get("current_balance", 0.0),
-        "revenue_streams": flywheel.get("streams", []),
-        "loop_cycles": len(loop_mem) if isinstance(loop_mem, list) else 0,
-        "engines_auto_built": len(registry) if isinstance(registry, list) else 0,
-        "prev_health_score": prev_brain.get("health_score", 0),
+        "engines_total": len(engines),
+        "engine_names": [e.name for e in engines],
+        "data_files": len(data_files),
+        "revenue": revenue,
+        "active_streams": active_streams,
+        "income_opportunities": income.get("opportunities_found", [])[:2],
+        "next_upgrade": next_up,
+        "loop_cycles": cycles,
+        "auto_built": len(synth_log.get("built", [])),
+        "tier": tier.get("current_tier", 0),
+        "guardian": guardian.get("status", "unknown"),
+        "prev_score": prev.get("health_score", 0),
+        "a_report": load("neuron_a_report.json").get("summary", ""),
+        "b_report": load("neuron_b_report.json").get("summary", ""),
+        "top_income_action": income.get("action", "") or load("neuron_a_report.json").get("proposals", [""])[0] if load("neuron_a_report.json").get("proposals") else "",
     }
 
-def calc_base_score(stats):
-    score = 0
-    score += min(stats["engines_total"] * 3, 30)   # up to 30 for engines
-    score += min(stats["workflow_count"] * 5, 20)   # up to 20 for workflows
-    score += 10 if stats["revenue_balance"] > 0 else 0
-    score += min(stats["loop_cycles"] * 2, 20)      # up to 20 for loops
-    score += max(0, 20 - len(stats["missing_engines"]) * 4)  # penalty for missing
-    return max(5, min(int(score), 95))
-
-def synthesize(stats, report_a, report_b):
-    base = calc_base_score(stats)
+def score(s):
     if not API_KEY:
-        return {"health_score": base, "verdict": "BUILD",
-                "synthesis": f"SolarPunk has {stats['engines_total']} engines and {stats['workflow_count']} workflows running.",
-                "top_priority": report_a.get("highest_priority","Activate first revenue stream"),
-                "key_risk": report_b.get("biggest_single_risk","Zero revenue"),
-                "what_to_do_today": "Trigger BUILD_YOURSELF with turbo=true"}
-    prompt = f"""You are SYNAPSE — resolver of SolarPunk's dual-brain architecture.
+        pts = 20
+        pts += min(40, s["engines_total"] * 3)
+        pts += min(10, s["data_files"] * 1)
+        pts += min(10, s["loop_cycles"])
+        pts += min(10, s["tier"] * 2)
+        if s["revenue"] > 0: pts += 5
+        if s["guardian"] == "healthy": pts += 5
+        return {"health_score": min(100, pts), "status": "Local compute (no API)", "top_action": s["top_income_action"] or "Activate Gaza Rose Gallery income stream", "risk": "No Anthropic API key"}
 
-REAL SYSTEM STATS (FACTS — use these to score honestly):
-{json.dumps(stats, indent=2)}
+    prompt = f"""SYNAPSE health check for SolarPunk autonomous income system.
 
-NEURON_A (Builder) said:
-{json.dumps(report_a, indent=2)}
+REAL STATS:
+- Engines: {s['engines_total']} ({', '.join(s['engine_names'][:6])})
+- Data files: {s['data_files']}
+- Revenue: ${s['revenue']:.2f}
+- Active income streams: {s['active_streams'] or 'none yet'}
+- Loop cycles: {s['loop_cycles']}
+- Auto-built engines: {s['auto_built']}
+- Tier: {s['tier']}
+- Guardian: {s['guardian']}
+- Builder says: {s['a_report'][:200]}
+- Skeptic says: {s['b_report'][:200]}
 
-NEURON_B (Skeptic) said:
-{json.dumps(report_b, indent=2)}
+Score 0-100. {s['engines_total']} engines is NOT zero. Be honest.
 
-Calculated base health score from REAL stats: {base}/100
-A system with {stats['engines_total']} engines and {stats['workflow_count']} workflows is NOT a zero.
+JSON only (no fences): {{"health_score":<int>,"status":"one line","top_action":"exact next income action","risk":"biggest risk"}}"""
 
-Respond ONLY with JSON (no markdown):
-{{
-  "health_score": {base},
-  "synthesis": "2-3 sentence honest summary",
-  "verdict": "BUILD|FIX|WAIT",
-  "top_priority": "single most important action",
-  "key_risk": "single biggest risk",
-  "what_to_do_today": "concrete action",
-  "passive_income_ETA": "realistic estimate of first $1"
-}}"""
     try:
         r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key":API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":1000,"messages":[{"role":"user","content":prompt}]},timeout=60)
+            headers={"x-api-key": API_KEY, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+            json={"model": "claude-sonnet-4-20250514", "max_tokens": 400,
+                  "messages": [{"role": "user", "content": prompt}]}, timeout=30)
         r.raise_for_status()
-        text = r.json()["content"][0]["text"]
-        s,e = text.find("{"), text.rfind("}")+1
-        result = json.loads(text[s:e]) if s>=0 else {}
-        # Floor — Claude cannot hallucinate below base score
-        if result.get("health_score",0) < base - 10:
-            result["health_score"] = base
-        return result
+        t = r.json()["content"][0]["text"]
+        s2, e = t.find("{"), t.rfind("}") + 1
+        if s2 >= 0: return json.loads(t[s2:e])
     except Exception as ex:
-        print(f"SYNAPSE error: {ex}")
-        return {"health_score": base, "verdict": "BUILD", "synthesis": "Running on base score."}
+        print(f"Score API err: {ex}")
 
-def send_email(stats, brain):
+    pts = 20 + min(40, s["engines_total"] * 3)
+    return {"health_score": min(100, pts), "status": "API err -- local compute", "top_action": "", "risk": ""}
+
+def send(s, h):
     if not GMAIL or not GPASS: return
-    score = brain.get("health_score", 0)
-    prev  = stats.get("prev_health_score", 0)
-    delta = score - prev
-    trend = f"▲{delta}" if delta > 0 else (f"▼{abs(delta)}" if delta < 0 else "→0")
-    subject = f"🌱 SolarPunk [{score}/100 {trend}] — {stats['engines_total']} engines | ${stats['revenue_balance']:.2f} | {datetime.now().strftime('%m/%d %H:%M')} UTC"
-    body = f"""🌱 SOLARPUNK BRAIN REPORT
+    sc = h.get("health_score", 0)
+    prev = s["prev_score"]
+    trend = f"+{sc-prev}" if sc > prev else (f"{sc-prev}" if sc < prev else "=")
+    nu = s["next_upgrade"]
+    up_line = f"${nu[0]} -> {nu[1]} (need ${nu[2]:.0f} more)" if nu else "All upgrades funded!"
+
+    streams_text = "\n".join(f"  {k}: ${v:.2f}" for k,v in s["active_streams"]) if s["active_streams"] else "  (none active yet)"
+    opps = "\n".join(f"  -> {o.get('name','?')}: {o.get('monthly_potential','?')}/mo" for o in s["income_opportunities"]) if s["income_opportunities"] else "  (run INCOME_HUNTER for opportunities)"
+
+    body = f"""SOLARPUNK -- {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
 {'='*50}
+HEALTH: {sc}/100 ({trend}) | TIER: {s['tier']} | GUARDIAN: {s['guardian'].upper()}
+{h.get('status','')}
 
-REAL SYSTEM STATS
-{'─'*40}
-Engines in mycelium/:    {stats['engines_total']}
-Workflows active:         {stats['workflow_count']}
-Data files produced:      {stats['data_files_count']}
-Revenue balance:          ${stats['revenue_balance']:.2f}
-Loop cycles:              {stats['loop_cycles']}
-Engines auto-built:       {stats['engines_auto_built']}
-Missing engines:          {', '.join(stats['missing_engines']) or 'None'}
+SYSTEM STATS
+{'--'*25}
+  Engines running:    {s['engines_total']}
+  Data files:         {s['data_files']}
+  Revenue balance:    ${s['revenue']:.2f}
+  Loop cycles:        {s['loop_cycles']}
+  Auto-built engines: {s['auto_built']}
 
-HEALTH SCORE: {score}/100  (was {prev}, {trend})
-VERDICT: {brain.get('verdict','?')}
+INCOME STREAMS
+{'--'*25}
+{streams_text}
 
-SYNTHESIS:
-{brain.get('synthesis','')}
+OPPORTUNITIES DETECTED
+{'--'*25}
+{opps}
 
-TOP PRIORITY:
-  {brain.get('top_priority','')}
+UPGRADE PATH: {up_line}
 
-KEY RISK:
-  {brain.get('key_risk','')}
+TOP ACTION:   {h.get('top_action','')}
+BIGGEST RISK: {h.get('risk','')}
 
-TODAY:
-  {brain.get('what_to_do_today','')}
+The loop never stops. -- SolarPunk"""
 
-PASSIVE INCOME ETA: {brain.get('passive_income_ETA','Unknown')}
-
-ENGINES:
-  {', '.join(stats['engines'])}
-
-WORKFLOWS:
-  {', '.join(stats['workflows'])}
-
-Run BUILD_YOURSELF to add more engines:
-→ github.com/meekotharaccoon-cell/meeko-nerve-center/actions
-
-— SolarPunk 🌱  |  Run: {RUN_ID}"""
+    subject = f"SolarPunk [{sc}/100 {trend}] T{s['tier']} | {s['engines_total']} engines | ${s['revenue']:.2f} | {datetime.now().strftime('%m/%d %H:%M')}"
     try:
         msg = MIMEText(body)
-        msg["Subject"] = subject
-        msg["From"] = GMAIL
-        msg["To"] = GMAIL
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-            s.login(GMAIL, GPASS)
-            s.send_message(msg)
-        print(f"Email sent: {subject[:60]}...")
-    except Exception as ex:
-        print(f"Email error: {ex}")
-
-def main():
-    print("⚡ SYNAPSE activating...")
-    stats = gather_real_stats()
-    print(f"   {stats['engines_total']} engines | {stats['workflow_count']} workflows | ${stats['revenue_balance']:.2f}")
-    report_a, report_b = {}, {}
-    af = Path("data/neuron_a_report.json")
-    bf = Path("data/neuron_b_report.json")
-    if af.exists(): report_a = json.loads(af.read_text())
-    if bf.exists(): report_b = json.loads(bf.read_text())
-    brain = synthesize(stats, report_a, report_b)
-    brain["run_id"] = RUN_ID
-    brain["generated_at"] = datetime.now().isoformat()
-    brain["stats"] = stats
-    Path("data").mkdir(exist_ok=True)
-    Path("data/brain_state.json").write_text(json.dumps(brain, indent=2))
-    print(f"   Health: {brain.get('health_score',0)}/100 | Verdict: {brain.get('verdict','?')}")
-    send_email(stats, brain)
+        msg["Subject"] = subject; msg["From"] = GMAIL; msg["To"] = GMAIL
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as srv:
+            srv.login(GMAIL, GPASS); srv.send_message(msg)
+        print(f"Email: {subject}")
+    except Exception as e:
+        print(f"Email err: {e}")
 
 if __name__ == "__main__":
-    main()
+    print(f"SYNAPSE v2 -- {RUN_ID}")
+    s = gather()
+    print(f"Stats: {s['engines_total']} engines | ${s['revenue']:.2f} | Tier {s['tier']}")
+    h = score(s)
+    sc = h.get("health_score", 0)
+    print(f"Health: {sc}/100")
+    (DATA / "brain_state.json").write_text(json.dumps({
+        "run_id": RUN_ID, "timestamp": datetime.now().isoformat(),
+        "health_score": sc, "engines_total": s["engines_total"],
+        "revenue": s["revenue"], "tier": s["tier"],
+        "status": h.get("status",""), "top_action": h.get("top_action","")
+    }, indent=2))
+    send(s, h)
+    print(f"SYNAPSE done -- {sc}/100")
