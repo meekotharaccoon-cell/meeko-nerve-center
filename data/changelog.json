@@ -1,8 +1,78 @@
 {
-  "generated": "2026-03-03T00:34:28.576612+00:00",
+  "generated": "2026-03-03T00:36:29.576035+00:00",
   "total_commits": 200,
   "weeks": 2,
   "commits": [
+    {
+      "sha": "2a353c7e",
+      "date": "2026-03-02T19:36:20-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "d0ffc475",
+      "date": "2026-03-02T19:36:19-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "786d5fd3",
+      "date": "2026-03-02T19:36:18-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "d7632068",
+      "date": "2026-03-02T19:36:18-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "437e56fd",
+      "date": "2026-03-03T00:35:04+00:00",
+      "week": "2026-W10",
+      "subject": "chore: update wiring_status.json [2026-03-03T00:35]",
+      "author": "meeko-system"
+    },
+    {
+      "sha": "45115465",
+      "date": "2026-03-02T19:34:55-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "ff8f8a57",
+      "date": "2026-03-02T19:34:54-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "360f2d36",
+      "date": "2026-03-02T19:34:35-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live dashboard update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "7ab0cd68",
+      "date": "2026-03-02T19:34:35-05:00",
+      "week": "2026-W10",
+      "subject": "[solarpunk-activate] live status update",
+      "author": "Meeko"
+    },
+    {
+      "sha": "5243ba19",
+      "date": "2026-03-03T00:34:28+00:00",
+      "week": "2026-W10",
+      "subject": "\ud83d\udcdd auto: changelog 2026-03-03",
+      "author": "SolarPunk Mycelium"
+    },
     {
       "sha": "98979a20",
       "date": "2026-03-02T19:34:19-05:00",
@@ -282,76 +352,6 @@
       "week": "2026-W10",
       "subject": "chore: update wiring_status.json [2026-03-02T22:56]",
       "author": "meeko-system"
-    },
-    {
-      "sha": "c391aac5",
-      "date": "2026-03-02T22:02:44+00:00",
-      "week": "2026-W10",
-      "subject": "\\U0001f338 perpetual: 2026-03-02 22:02 UTC",
-      "author": "meeko-perpetual-builder"
-    },
-    {
-      "sha": "f25f3c2c",
-      "date": "2026-03-02T21:51:37+00:00",
-      "week": "2026-W10",
-      "subject": "data: dex update [21:51]",
-      "author": "meeko-dex"
-    },
-    {
-      "sha": "81150de4",
-      "date": "2026-03-02T21:40:31+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83e\udde0 3d-brain state [2026-03-02]",
-      "author": "meeko-3d-brain"
-    },
-    {
-      "sha": "1e31a0ce",
-      "date": "2026-03-02T21:06:21+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T21:06]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "977c99bd",
-      "date": "2026-03-02T19:54:39+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf38 cycle [2026-03-02 19:54] \u2014 all 21 phases fired",
-      "author": "SolarPunk-MasterController"
-    },
-    {
-      "sha": "fa7aaac1",
-      "date": "2026-03-02T19:52:20+00:00",
-      "week": "2026-W10",
-      "subject": "chore: update wiring_status.json [2026-03-02T19:52]",
-      "author": "meeko-system"
-    },
-    {
-      "sha": "5b695e04",
-      "date": "2026-03-02T19:45:13+00:00",
-      "week": "2026-W10",
-      "subject": "\ud83c\udf38 cycle [2026-03-02 19:45] \u2014 all 21 phases fired",
-      "author": "SolarPunk-MasterController"
-    },
-    {
-      "sha": "9f79718a",
-      "date": "2026-03-02T19:42:30+00:00",
-      "week": "2026-W10",
-      "subject": "knowledge: v2 harvest [2026-03-02]",
-      "author": "meeko-harvest-v2"
-    },
-    {
-      "sha": "18d1a99f",
-      "date": "2026-03-02T19:40:52+00:00",
-      "week": "2026-W10",
-      "subject": "knowledge: API directory scan [2026-03-02]",
-      "author": "meeko-api-hunter"
-    },
-    {
-      "sha": "09edec2b",
-      "date": "2026-03-02T19:40:32+00:00",
-      "week": "2026-W10",
-      "subject": "data: all API tools [2026-03-02]",
-      "author": "meeko-api-tools"
     }
   ]
 }

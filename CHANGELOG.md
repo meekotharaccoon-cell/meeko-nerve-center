@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 00:34 UTC  
+> Last updated: 2026-03-03 00:36 UTC  
 > Total commits tracked: 200
 
 ---
@@ -20,6 +20,10 @@
 - `be60830f` knowledge: v2 harvest [2026-03-02]
 
 **🤝 Community**
+- `2a353c7e` [solarpunk-activate] live dashboard update
+- `786d5fd3` [solarpunk-activate] live dashboard update
+- `45115465` [solarpunk-activate] live dashboard update
+- `360f2d36` [solarpunk-activate] live dashboard update
 - `98979a20` [solarpunk-activate] live dashboard update
 - `cf01ecf3` [solarpunk-activate] live dashboard update
 - `999df5ca` [solarpunk-activate] live dashboard update
@@ -66,6 +70,7 @@
 - `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
 
 **📝 Documentation**
+- `5243ba19` 📝 auto: changelog 2026-03-03
 - `ed4657db` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `db3f6f5c` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `3097c078` 📄 auto: sync HTML to docs/ for GitHub Pages
@@ -94,6 +99,11 @@
 - `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
 
 **• Other**
+- `d0ffc475` [solarpunk-activate] live status update
+- `d7632068` [solarpunk-activate] live status update
+- `437e56fd` chore: update wiring_status.json [2026-03-03T00:35]
+- `ff8f8a57` [solarpunk-activate] live status update
+- `7ab0cd68` [solarpunk-activate] live status update
 - `82d29c69` [solarpunk-activate] live status update
 - `755a9f73` [solarpunk-activate] live status update
 - `2c4a3a9c` [solarpunk-activate] live status update
@@ -176,9 +186,6 @@
 
 ## Week of February 23, 2026
 
-**📚 Knowledge**
-- `64772e77` feat: add notion_directives_reader + hf_dataset_logger + wire long_term_memory to Notion — closing human loop, learning loop, and memory loop simultaneously
-
 **📧 Outreach**
 - `4be40887` fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER
 - `2aceb5ba` fix: all email issues — phantom address removed, Wired corrected, blocked domains expanded, old engine retired, self-email loop closed + system manifest + social content engine
@@ -190,8 +197,6 @@
 - `b5122053` wire: self_improver + form_filler + humanitarian_fork_distributor + readme_updater into MASTER_CONTROLLER — README is now last thing written, first thing read
 - `e896cfc4` build: readme_updater (live stats, first read = last written) + phone_controller (a-Shell iOS) + phone_setup.sh + self_improver + SOLARPUNK_FOR_EVERYONE.md
 - `0f036966` 📝 auto: changelog 2026-03-01
-- `db03728e` 📝 auto: changelog 2026-03-01
-- `20eea761` 📝 auto: changelog 2026-03-01
 
 **⚙️ System**
 - `27fc536b` auto: gen 22
@@ -236,13 +241,6 @@
 - `fbb60f70` chore: update wiring_status.json [2026-03-01T17:48]
 - `f570a1fb` \U0001f338 perpetual: 2026-03-01 16:56 UTC
 - `0df0a237` data: dex update [16:55]
-- `39c6789b` chore: update wiring_status.json [2026-03-01T16:54]
-- `ecef9800` wire: directives → three_d_brain synthesis
-- `2418388a` \U0001f338 perpetual: 2026-03-01 15:59 UTC
-- `ccb651ae` data: dex update [15:46]
-- `79d6cb3d` chore: update wiring_status.json [2026-03-01T15:44]
-- `b9828c91` \U0001f338 perpetual: 2026-03-01 15:43 UTC
-- `177214d2` data: dex update [14:52]
 
 ---
 
