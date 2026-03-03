@@ -2,213 +2,6 @@
   "interactions": [
     {
       "date": "2026-03-02",
-      "from": "meekotharaccoon@gmail.com",
-      "subject": "",
-      "action": "ignored_automated",
-      "reason": "self-email (env match)"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed:\r\n .git",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run cancelled: pag",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "meekotharaccoon@gmail.com",
-      "subject": "\u26a0\ufe0f System health: 67/100",
-      "action": "ignored_automated",
-      "reason": "self-email (env match)"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd0e Asse",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udfdb\ufe0f Con",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udf31 Evol",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83e\udde0 Orch",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udef8 Spac",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udd78\ufe0f Wir",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83d\udcfa YouT",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notifications@github.com",
-      "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: \ud83c\udfac YouT",
-      "action": "ignored_automated",
-      "reason": "blocked domain: github.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "newsletter@em.teepublic.com",
-      "subject": "Get up to 35% off sitewide \ud83d\udecd\ufe0f",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "store-news@amazon.com",
-      "subject": "Important update to the Amazon Associates Program Operating\r",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "noreply@deviantart.com",
-      "subject": "Your Email Address Has Been Changed",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "marketing@engage.canva.com",
-      "subject": "Schedule your next social post straight from Canva",
-      "action": "ignored_automated",
-      "reason": "auto prefix"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "notification@service.tiktok.com",
-      "subject": "Precious Deborah posted: When clients leave5\u2b50 reviews like t",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 282963",
-      "action": "ignored_automated",
-      "reason": "placeholder address"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "ebay@reply.ebay.com",
-      "subject": "Stock up on gifts with 20% off \ud83c\udf81",
-      "action": "ignored_offtopic"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "verify@accounts.linktr.ee",
-      "subject": "Your code: 658112",
-      "action": "ignored_automated",
-      "reason": "placeholder address"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "email@email.etsy.com",
-      "subject": "Holiday party style inspo \u2728",
-      "action": "ignored_automated",
-      "reason": "blocked subdomain: email.etsy.com"
-    },
-    {
-      "date": "2026-03-02",
-      "from": "service@paypal.com",
-      "subject": "Stay logged in on this trusted device",
-      "action": "ignored_automated",
-      "reason": "blocked domain: paypal.com"
-    },
-    {
-      "date": "2026-03-02",
       "from": "notifications@github.com",
       "subject": "[meekotharaccoon-cell/meeko-nerve-center] Run failed: Daily ",
       "action": "ignored_automated",
@@ -3452,6 +3245,216 @@
       "subject": "Meet the power plaids",
       "action": "ignored_automated",
       "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Prices that\u2019ll make you smile",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@freeupmarketing.net",
+      "subject": "What does that even mean?",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "CONFIRMED: Zach King at Instagram Summit by Manychat! ",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Hey, we have a question for you \ud83e\udd14",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@judge.me",
+      "subject": "Judge.me roundup: See what we've released this month \ud83d\udc40",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "noreply@email.openai.com",
+      "subject": "Some handy ideas for you",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.openai.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "If you collect it, we've got it",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Turn Story replies into profit (yes, really) \ud83e\udd2f ",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@freeupmarketing.net",
+      "subject": "How to use a Scope Of Work document (to save yourself from h",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "Easy steps to create content that performs",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "The latest from independent designers",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "notification@service.tiktok.com",
+      "subject": "@coindeskasset posted: MiniApp mobile scanner #mobile #phone",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: service.tiktok.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "noreply@gdevelop-app.com",
+      "subject": "Play GDevelop games and earn credits!",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gdevelop-app.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "A ticket to Instagram Summit by Manychat IRL is everything y",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "product@engage.canva.com",
+      "subject": "Recommended templates based on your search",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Make your social content shine",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Build a dream collection of luxury watches",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Ready to ring in fall? \ud83c\udf42",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "Reminder: Easy steps to create content that performs",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "marketing@engage.canva.com",
+      "subject": "Got work to do? Try resources made for small businesses",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: engage.canva.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "notification@service.tiktok.com",
+      "subject": "@Jay | Digital Wealth posted: AI + Undervalued Domain names ",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: service.tiktok.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "Share more categories and earn MORE",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ttsmarketplace@email.tiktok.com",
+      "subject": "Claim your coupon before it expires!",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.tiktok.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "email@email.etsy.com",
+      "subject": "Something spectacular is on sale",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.etsy.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "store-news@amazon.com",
+      "subject": "Reminder: Share more categories and earn MORE",
+      "action": "ignored_automated",
+      "reason": "blocked domain: amazon.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@m.printify.com",
+      "subject": "Still not using AI? That\u2019s\u2026 bold \ud83e\udd16",
+      "action": "ignored_automated",
+      "reason": "auto prefix"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "support@freeup.net",
+      "subject": "Protect Your Business with One Smart Choice",
+      "action": "ignored_automated",
+      "reason": "blocked domain: freeup.net"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "info@email.manychat.com",
+      "subject": "Instagram Summit by Manychat has people talking\u2026\ud83d\udcac ",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: email.manychat.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "ebay@reply.ebay.com",
+      "subject": "Make your mark with great deals, Michael",
+      "action": "ignored_automated",
+      "reason": "blocked subdomain: reply.ebay.com"
+    },
+    {
+      "date": "2026-03-03",
+      "from": "hello@gdevelop.io",
+      "subject": "Play games online and earn coins! \ud83d\udc40",
+      "action": "ignored_automated",
+      "reason": "blocked domain: gdevelop.io"
     }
   ],
   "human_emails_total": 1,

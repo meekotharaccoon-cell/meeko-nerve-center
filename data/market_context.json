@@ -16,13 +16,13 @@
   "market_breadth": 0.0,
   "market_mood": "BEARISH",
   "trending": [
-    "FAI",
     "PENGU",
+    "FAI",
     "VVV",
-    "GIZA",
-    "NEAR",
     "BTC",
-    "SOL"
+    "NEAR",
+    "SOL",
+    "GIZA"
   ],
   "top_movers": [],
   "worst_movers": []

@@ -2,17 +2,17 @@
   "date": "2026-03-03",
   "dot": {
     "symbol": "DOT",
-    "action": "HOLD \u2014 dip. Do not sell into weakness.",
+    "action": "HOLD \u2014 wait for clearer signal.",
     "current": "$1.5100",
-    "target": "$1.8120",
-    "change_24h": "-5.2%",
+    "target": "$1.7365",
+    "change_24h": "-4.8%",
     "change_7d": "0.0%",
     "holdings": "~$8.00 worth",
     "where": "Phantom Wallet \u2192 sell via Uniswap or Kraken"
   },
   "market": {
     "price": 1.51,
-    "change_24h": -5.223862708187232,
+    "change_24h": -4.771901941653527,
     "change_7d": 0
   }
 }
