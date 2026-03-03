@@ -16,6 +16,7 @@ on:
 jobs:
   audit-and-fix:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     timeout-minutes: 15
 
     permissions:
