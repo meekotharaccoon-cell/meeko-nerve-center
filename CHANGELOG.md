@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 10:54 UTC  
+> Last updated: 2026-03-03 11:22 UTC  
 > Total commits tracked: 200
 
 ---
@@ -75,21 +75,19 @@
 - `40b30642` [solarpunk-activate] live dashboard update
 - `caf3ea80` [solarpunk-activate] live dashboard update
 - `4b10634c` [solarpunk-activate] live dashboard update
-- `508a4324` [solarpunk-activate] live dashboard update
-- `d0262315` [solarpunk-activate] live dashboard update
-- `e2eb22e5` [solarpunk-activate] live dashboard update
-- `1e32afd5` [solarpunk-activate] live dashboard update
-- `220c2f33` [solarpunk-activate] live dashboard update
-- `fe552c09` [solarpunk-activate] live dashboard update
 
 **📧 Outreach**
 - `10dfb234` feat: SYNAPSE — resolver (reads A+B, finds consensus, emails briefing)
+
+**📊 Signals**
+- `82ca9f58` 💹 REVENUE_FLYWHEEL: all money streams → balance tracker → auto-upgrade at thresholds
 
 **🚹 Fixes**
 - `aac6f0e3` fix: syntax_patcher auto-fixed 1 file(s) [skip ci]
 - `07172ccf` fix: resolve all 7 syntax errors (identity_vault bare headers + youtube_manager f-string escapes)
 
 **📝 Documentation**
+- `af567b93` 📝 auto: changelog 2026-03-03
 - `2d012d51` 📝 auto: changelog 2026-03-03
 - `4efec9cc` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b8195ced` 📝 auto: changelog 2026-03-03
@@ -103,9 +101,10 @@
 - `d38b5223` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `57a1aad0` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b592c560` 📄 auto: sync HTML to docs/ for GitHub Pages
-- `0005bae5` 📄 auto: sync HTML to docs/ for GitHub Pages
 
 **⚙️ System**
+- `257a6af0` [synapse] system wants — score 0/100
+- `9adfe8be` [synapse] system wants — score 0/100
 - `15a7ea9f` 🧬 SYNTHESIS_FACTORY: autonomous engine-combiner, kills 4hr bottleneck
 - `d3760f37` 🧠 auto: system state update 2026-03-03 10:34 UTC
 - `4773c639` feat: OMNIBRAIN workflow — 15-phase unified ops + dual-brain loop
@@ -115,6 +114,16 @@
 - `557ad890` 🧠 auto: system state update 2026-03-03 08:00 UTC
 
 **• Other**
+- `6c22a8c2` [synapse] brain state 4f3685b5 — score 0/100
+- `996978b0` ops [2026-03-03T11:21] — phases 0-11 complete
+- `60e1c606` chore: update wiring_status.json [2026-03-03T11:11]
+- `eac432ed` [synapse] brain state fc1c2489 — score 0/100
+- `ae80bbc2` ops [2026-03-03T11:10] — phases 0-11 complete
+- `a52eb357` chore: update wiring_status.json [2026-03-03T10:59]
+- `890d57b0` 🧬 OMNIBRAIN: add SYNTHESIS_FACTORY + REVENUE_FLYWHEEL + DESKTOP_INTEGRATOR phases
+- `fe490289` chore: update wiring_status.json [2026-03-03T10:56]
+- `2a7d7976` 🖥️ DESKTOP_INTEGRATOR: scan whole machine → find connections → wire everything in
+- `31103578` chore: update wiring_status.json [2026-03-03T10:55]
 - `cb741656` chore: update wiring_status.json [2026-03-03T10:33]
 - `5b760bb1` chore: update wiring_status.json [2026-03-03T10:31]
 - `52ad191c` chore: update wiring_status.json [2026-03-03T10:13]
@@ -214,13 +223,6 @@
 - `e2700db8` chore: update wiring_status.json [2026-03-03T05:34]
 - `76a700c6` [solarpunk-activate] live status update
 - `57f111f9` [solarpunk-activate] live status update
-- `1e64b27e` [solarpunk-activate] live status update
-- `e2449a95` [solarpunk-activate] live status update
-- `4b30e7e6` chore: update wiring_status.json [2026-03-03T05:33]
-- `7cd48fd4` [solarpunk-activate] live status update
-- `03851730` [solarpunk-activate] live status update
-- `847908b9` [solarpunk-activate] live status update
-- `bfd3b02a` [solarpunk-activate] live status update
 
 ---
 
