@@ -5,6 +5,7 @@ on:
 jobs:
   morning-pulse:
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     steps:
       - uses: actions/checkout@v4
         with:
