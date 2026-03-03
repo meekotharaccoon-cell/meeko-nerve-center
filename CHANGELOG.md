@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 08:10 UTC  
+> Last updated: 2026-03-03 08:13 UTC  
 > Total commits tracked: 200
 
 ---
@@ -13,6 +13,16 @@
 - `1633dc82` knowledge: v2 harvest [2026-03-03]
 
 **🤝 Community**
+- `4d7dd2ae` [solarpunk-activate] live dashboard update
+- `f4a49cbf` [solarpunk-activate] live dashboard update
+- `0ddbeea5` [solarpunk-activate] live dashboard update
+- `6817789e` [solarpunk-activate] live dashboard update
+- `51a41fb6` [solarpunk-activate] live dashboard update
+- `9761baca` [solarpunk-activate] live dashboard update
+- `0afac4fb` [solarpunk-activate] live dashboard update
+- `95aca5b1` [solarpunk-activate] live dashboard update
+- `b01c94c3` [solarpunk-activate] live dashboard update
+- `29d5c5c8` [solarpunk-activate] live dashboard update
 - `d211e36f` [solarpunk-activate] live dashboard update
 - `19849c03` [solarpunk-activate] live dashboard update
 - `fb3eb304` [solarpunk-activate] live dashboard update
@@ -77,17 +87,10 @@
 - `f7738564` [solarpunk-activate] live dashboard update
 - `33b6971b` [solarpunk-activate] live dashboard update
 - `33143107` [solarpunk-activate] live dashboard update
-- `ccae8a53` [solarpunk-activate] live dashboard update
-- `387869af` [solarpunk-activate] live dashboard update
-- `4f873ed4` [solarpunk-activate] live dashboard update
-- `e8fcbddc` [solarpunk-activate] live dashboard update
-- `b6e3e326` [solarpunk-activate] live dashboard update
-- `bb5eff35` [solarpunk-activate] live dashboard update
-- `c72695f2` [solarpunk-activate] live dashboard update
-- `27a6d945` [solarpunk-activate] live dashboard update
-- `d1aff1bf` [solarpunk-activate] live dashboard update
 
 **📝 Documentation**
+- `e92d654b` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `db31b8bb` 📝 auto: changelog 2026-03-03
 - `2f687184` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `d15cb29f` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `78260617` 📝 auto: changelog 2026-03-03
@@ -98,7 +101,6 @@
 - `0005bae5` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `b0d0557e` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `06735ea8` 📝 auto: changelog 2026-03-03
-- `09d1ddd3` 📄 auto: sync HTML to docs/ for GitHub Pages
 
 **⚙️ System**
 - `557ad890` 🧠 auto: system state update 2026-03-03 08:00 UTC
@@ -107,6 +109,19 @@
 - `97b95fb4` 🧠 auto: system state update 2026-03-03 05:27 UTC
 
 **• Other**
+- `5717a21a` [solarpunk-activate] live status update
+- `f52eca9f` [solarpunk-activate] live status update
+- `a0648147` chore: update wiring_status.json [2026-03-03T08:12]
+- `ed3b8348` [solarpunk-activate] live status update
+- `63398711` [solarpunk-activate] live status update
+- `a18b27fe` chore: update wiring_status.json [2026-03-03T08:12]
+- `f0d8542f` [solarpunk-activate] live status update
+- `bb7be854` [solarpunk-activate] live status update
+- `5bed1560` chore: update wiring_status.json [2026-03-03T08:11]
+- `bc0848d1` [solarpunk-activate] live status update
+- `999fca40` [solarpunk-activate] live status update
+- `049300dd` [solarpunk-activate] live status update
+- `c1fcc4f4` [solarpunk-activate] live status update
 - `e3852cf6` [solarpunk-activate] live status update
 - `bf2ab57b` [solarpunk-activate] live status update
 - `98b8ac48` [solarpunk-activate] live status update
@@ -202,21 +217,6 @@
 - `171d4c85` [solarpunk-activate] live status update
 - `c5b529bc` [solarpunk-activate] live status update
 - `065fdacf` [solarpunk-activate] live status update
-- `8370ca43` [solarpunk-activate] live status update
-- `30d16560` chore: update wiring_status.json [2026-03-03T05:26]
-- `1774d33f` [solarpunk-activate] live status update
-- `4feac11a` [solarpunk-activate] live status update
-- `fbfaf694` chore: update wiring_status.json [2026-03-03T05:26]
-- `06a93e20` [solarpunk-activate] live status update
-- `446f23f4` [solarpunk-activate] live status update
-- `21a565b3` [solarpunk-activate] live status update
-- `837e00eb` chore: update wiring_status.json [2026-03-03T05:24]
-- `f904fcb5` [solarpunk-activate] live status update
-- `57e0a4a8` chore: update wiring_status.json [2026-03-03T05:24]
-- `9200be07` [solarpunk-activate] live status update
-- `2b38ae29` [solarpunk-activate] live status update
-- `dd2dfbab` chore: update wiring_status.json [2026-03-03T05:23]
-- `1614481a` [solarpunk-activate] live status update
 
 ---
 
