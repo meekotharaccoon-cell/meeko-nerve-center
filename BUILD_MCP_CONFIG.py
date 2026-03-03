@@ -27,7 +27,7 @@ import subprocess
 from pathlib import Path
 
 # ─────────────────────────────────────────────
-COLORS
+# --- Colors ---
 # ─────────────────────────────────────────────
 G = '\033[92m'; Y = '\033[93m'; C = '\033[96m'; D = '\033[2m'; B = '\033[1m'; X = '\033[0m'
 def ok(s):   print(f"{G}  ✓ {s}{X}")
@@ -36,7 +36,7 @@ def info(s): print(f"{C}  → {s}{X}")
 def dim(s):  print(f"{D}    {s}{X}")
 
 # ─────────────────────────────────────────────
-PATH DETECTION
+# --- Path Detection ---
 # ─────────────────────────────────────────────
 def find_claude_config_dir():
     """Find where Claude Desktop stores its config"""
@@ -106,7 +106,7 @@ def find_db_paths():
     return found[:10]  # limit
 
 # ─────────────────────────────────────────────
-MCP SERVER INSTALLERS
+# --- Mcp Server Installers ---
 # ─────────────────────────────────────────────
 def install_mcp_servers():
     """Install the MCP servers we need via npx (they auto-install)"""
@@ -129,7 +129,7 @@ def install_mcp_servers():
             warn(f"{pkg} (will install on first use via npx)")
 
 # ─────────────────────────────────────────────
-BUILD CONFIG
+# --- Build Config ---
 # ─────────────────────────────────────────────
 def build_config():
     node = find_node()
@@ -189,7 +189,7 @@ def build_config():
     return config
 
 # ─────────────────────────────────────────────
-WRITE AND VERIFY
+# --- Write And Verify ---
 # ─────────────────────────────────────────────
 def main():
     print(f"\n{B}{G}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{X}")
