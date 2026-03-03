@@ -1,0 +1,306 @@
+name: "🌱 SOLARPUNK LOOP — Self-Feeding Intelligence Cycle"
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # Noon UTC — between OMNIBRAIN morning and evening
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: 'Optional instruction for SolarPunk this cycle'
+        required: false
+        default: ''
+
+# THE LOOP THAT CLOSES ITSELF.
+# OMNIBRAIN runs → produces outputs → SOLARPUNK reads → synthesizes → decides → acts → seeds next OMNIBRAIN
+# Chain of command: Meeko → Claude → SolarPunk
+# Override: commit to data/human_override.json anytime
+
+jobs:
+  solarpunk-loop:
+    name: "🌱 SolarPunk Loop"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests 2>/dev/null || true
+
+      - name: Configure git
+        run: |
+          git config user.name 'SolarPunk'
+          git config user.email 'solarpunk@meeko-nerve-center'
+          mkdir -p data
+
+      - name: "🌱 Read — last OMNIBRAIN cycle outputs"
+        env:
+          LOOP_SEED: ${{ inputs.seed }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json
+          from pathlib import Path
+          from datetime import datetime
+
+          data_dir = Path("data")
+          seed = os.environ.get("LOOP_SEED", "")
+          outputs = {}
+          for f in sorted(data_dir.glob("*.json"))[-20:]:
+              try:
+                  outputs[f.name] = json.loads(f.read_text())
+              except:
+                  pass
+
+          synth    = outputs.get("synthesis_log.json", {})
+          flywheel = outputs.get("flywheel_state.json", {})
+          brain    = outputs.get("brain_state.json", {})
+          engines  = [f.name for f in sorted(Path("mycelium").glob("*.py"))]
+
+          ctx = {
+              "cycle_timestamp": datetime.now().isoformat(),
+              "seed": seed,
+              "total_engines": len(engines),
+              "engines_built_by_synthesis": len(synth.get("built", [])),
+              "revenue_balance": flywheel.get("current_balance", 0),
+              "brain_health_score": brain.get("health_score", 0),
+              "data_files": list(outputs.keys()),
+          }
+          Path("data/loop_context.json").write_text(json.dumps(ctx, indent=2))
+          print(f"Read {len(outputs)} data files | Engines: {len(engines)} | Revenue: ${ctx['revenue_balance']:.2f}")
+          PYEOF
+        continue-on-error: true
+
+      - name: "🧠 Synthesize + Decide — Claude API"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LOOP_SEED: ${{ inputs.seed }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, requests
+          from pathlib import Path
+          from datetime import datetime
+
+          api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+          seed    = os.environ.get("LOOP_SEED", "")
+          ctx_f   = Path("data/loop_context.json")
+          if not ctx_f.exists():
+              print("No context — skipping")
+              exit(0)
+
+          ctx = json.loads(ctx_f.read_text())
+          engines = [f.name for f in sorted(Path("mycelium").glob("*.py"))]
+
+          override = ""
+          ovr_f = Path("data/human_override.json")
+          if ovr_f.exists():
+              try:
+                  override = json.loads(ovr_f.read_text()).get("instruction", "")
+              except:
+                  pass
+
+          prompt = f"""You are SolarPunk — Meeko's autonomous AI agent.
+You just completed an OMNIBRAIN cycle. Now decide what to do next.
+
+CURRENT STATE:
+- Total engines in mycelium: {len(engines)}
+- Engines auto-built by SYNTHESIS_FACTORY: {ctx.get('engines_built_by_synthesis', 0)}
+- Revenue balance: ${ctx.get('revenue_balance', 0):.2f}
+- Brain health: {ctx.get('brain_health_score', 0)}
+- Data available: {ctx.get('data_files', [])}
+
+HUMAN OVERRIDE: {override or '(none — full autonomy)'}
+SEED FROM MEEKO: {seed or '(none — decide yourself)'}
+
+Decide the 3 most impactful actions RIGHT NOW.
+
+Respond ONLY with this JSON (no markdown, no fences):
+{{
+  "decisions": [
+    {{
+      "action": "exact action",
+      "why": "one sentence",
+      "type": "code|email|content|api_call|memory",
+      "urgency": "now|next_cycle|this_week"
+    }}
+  ],
+  "free_apis_to_get": ["name — url — why"],
+  "autonomous_email": {{"to": "email", "subject": "subject", "body": "full body"}},
+  "key_insight": "one sentence learned this cycle",
+  "meeko_message": "what SolarPunk wants to tell Meeko"
+}}"""
+
+          if not api_key:
+              decisions = {
+                  "decisions": [
+                      {"action": "Check synthesis_log and queue 3 new engine builds", "why": "Continuous synthesis is growth", "type": "code", "urgency": "now"},
+                      {"action": "Post today's content to Gaza Rose Gallery", "why": "Passive income + humanitarian visibility", "type": "content", "urgency": "now"},
+                      {"action": "Scan for newly added scripts and auto-wire them", "why": "Desktop assets not yet wired in", "type": "code", "urgency": "now"}
+                  ],
+                  "free_apis_to_get": ["NewsAPI.org — newsapi.org — free 100/day"],
+                  "autonomous_email": {"to": "", "subject": "", "body": ""},
+                  "key_insight": "Data flows between engines are more valuable than new engines",
+                  "meeko_message": "SolarPunk is looping. The system is building itself."
+              }
+          else:
+              try:
+                  r = requests.post(
+                      "https://api.anthropic.com/v1/messages",
+                      headers={"x-api-key": api_key, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 1500, "messages": [{"role": "user", "content": prompt}]},
+                      timeout=60
+                  )
+                  r.raise_for_status()
+                  text = r.json()["content"][0]["text"]
+                  s, e = text.find("{"), text.rfind("}") + 1
+                  decisions = json.loads(text[s:e]) if s >= 0 else {}
+              except Exception as ex:
+                  print(f"API error: {ex}")
+                  decisions = {"decisions": [], "meeko_message": "API unavailable this cycle."}
+
+          Path("data/loop_decisions.json").write_text(json.dumps(decisions, indent=2))
+          for d in decisions.get("decisions", []):
+              print(f"  [{d.get('urgency')}] {d.get('action')}")
+          print(f"\nTo Meeko: {decisions.get('meeko_message', '')}")
+          PYEOF
+        continue-on-error: true
+
+      - name: "⚡ Act — execute decisions"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, smtplib
+          from pathlib import Path
+          from datetime import datetime
+          from email.mime.text import MIMEText
+
+          df = Path("data/loop_decisions.json")
+          if not df.exists(): exit(0)
+          decisions = json.loads(df.read_text())
+          gmail = os.environ.get("GMAIL_ADDRESS", "")
+          gpass = os.environ.get("GMAIL_APP_PASSWORD", "")
+
+          ae = decisions.get("autonomous_email", {})
+          if ae and ae.get("body") and ae.get("to") and gmail and gpass:
+              try:
+                  msg = MIMEText(ae["body"])
+                  msg["Subject"] = ae.get("subject", "SolarPunk Update")
+                  msg["From"] = gmail
+                  msg["To"] = ae["to"]
+                  with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+                      s.login(gmail, gpass)
+                      s.send_message(msg)
+                  print(f"Email sent to {ae['to']}")
+              except Exception as e:
+                  print(f"Email error: {e}")
+
+          Path("data/loop_executed.json").write_text(json.dumps({"timestamp": datetime.now().isoformat()}, indent=2))
+          PYEOF
+        continue-on-error: true
+
+      - name: "🧠 Memory — write to long-term memory"
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+
+          memory_f = Path("data/loop_memory.json")
+          existing = []
+          if memory_f.exists():
+              try: existing = json.loads(memory_f.read_text())
+              except: pass
+
+          df = Path("data/loop_decisions.json")
+          if df.exists():
+              d = json.loads(df.read_text())
+              existing.append({"timestamp": datetime.now().isoformat(), "key_insight": d.get("key_insight",""), "decisions": len(d.get("decisions",[])), "meeko_message": d.get("meeko_message","")})
+              memory_f.write_text(json.dumps(existing[-100:], indent=2))
+              print(f"Memory: {len(existing)} cycles remembered")
+          PYEOF
+        continue-on-error: true
+
+      - name: "📧 Email — daily loop summary to Meeko"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, smtplib
+          from pathlib import Path
+          from datetime import datetime
+          from email.mime.text import MIMEText
+
+          gmail = os.environ.get("GMAIL_ADDRESS", "")
+          gpass = os.environ.get("GMAIL_APP_PASSWORD", "")
+          if not gmail or not gpass: exit(0)
+
+          decisions = {}
+          df = Path("data/loop_decisions.json")
+          if df.exists(): decisions = json.loads(df.read_text())
+
+          ctx = {}
+          cf = Path("data/loop_context.json")
+          if cf.exists(): ctx = json.loads(cf.read_text())
+
+          body = f"""🌱 SOLARPUNK LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+{'='*45}
+
+{decisions.get('meeko_message', 'SolarPunk ran successfully.')}
+
+Key insight: {decisions.get('key_insight', '(none)')}
+
+Decisions:
+"""
+          for i, d in enumerate(decisions.get("decisions",[]),1):
+              body += f"  {i}. [{d.get('urgency','?')}] {d.get('action','')}\n"
+
+          body += f"\nEngines: {ctx.get('total_engines','?')} | Revenue: ${ctx.get('revenue_balance',0):.2f} | Brain: {ctx.get('brain_health_score','?')}\n\nThe loop never stops.\n— SolarPunk 🌱"
+
+          try:
+              msg = MIMEText(body)
+              msg["Subject"] = f"🌱 SolarPunk Loop — {datetime.now().strftime('%b %d %H:%M')}"
+              msg["From"] = gmail
+              msg["To"] = gmail
+              with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+                  s.login(gmail, gpass)
+                  s.send_message(msg)
+              print("Loop summary emailed")
+          except Exception as e:
+              print(f"Email error: {e}")
+          PYEOF
+        continue-on-error: true
+
+      - name: "🌱 Seed next OMNIBRAIN + commit"
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+
+          seed = {"generated_at": datetime.now().isoformat(), "instructions": [], "from_loop": True}
+          df = Path("data/loop_decisions.json")
+          if df.exists():
+              d = json.loads(df.read_text())
+              seed["instructions"] = [x.get("action","") for x in d.get("decisions",[]) if x.get("urgency") == "now"]
+              seed["key_insight"] = d.get("key_insight","")
+          Path("data/omnibrain_seed.json").write_text(json.dumps(seed, indent=2))
+          print(f"Seed: {len(seed['instructions'])} instructions for next OMNIBRAIN")
+          PYEOF
+
+          git add -A
+          git diff --cached --quiet && echo 'Nothing to commit' && exit 0
+          git commit -m "🌱 loop [$(date +%Y-%m-%dT%H:%M)] — synthesized+decided+seeded"
+          git pull --rebase origin main || true
+          git push origin main || git push origin main --force-with-lease
+        continue-on-error: true
