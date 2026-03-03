@@ -10,6 +10,7 @@ jobs:
   discord_bridge:
     name: 🎮 Discord Bridge
     runs-on: ubuntu-latest
+    continue-on-error: true   # silent failure — no email
     timeout-minutes: 10
     permissions:
       contents: write
