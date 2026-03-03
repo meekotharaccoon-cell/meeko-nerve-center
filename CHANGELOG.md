@@ -1,7 +1,7 @@
 # CHANGELOG
 
 > Auto-generated from git history by `mycelium/changelog_generator.py`  
-> Last updated: 2026-03-03 00:36 UTC  
+> Last updated: 2026-03-03 00:42 UTC  
 > Total commits tracked: 200
 
 ---
@@ -9,17 +9,30 @@
 ## Week of March 2, 2026
 
 **📚 Knowledge**
+- `2a4977dc` fix: silent failure — add continue-on-error to knowledge-harvester.yml
+- `206fc7b6` fix: silent failure — add continue-on-error to knowledge-harvester-v2.yml
 - `96eea8b1` knowledge: v2 harvest [2026-03-02]
 - `9f79718a` knowledge: v2 harvest [2026-03-02]
 - `18d1a99f` knowledge: API directory scan [2026-03-02]
 - `ad9ce5db` knowledge: API directory scan [2026-03-02]
 - `72358487` knowledge: API directory scan [2026-03-02]
 - `84148aaf` knowledge: v2 harvest [2026-03-02]
-- `eb018bc0` knowledge: API directory scan [2026-03-02]
-- `f996e77b` knowledge: v2 harvest [2026-03-02]
-- `be60830f` knowledge: v2 harvest [2026-03-02]
 
 **🤝 Community**
+- `b6875ef0` [solarpunk-activate] live dashboard update
+- `beb975e7` [solarpunk-activate] live dashboard update
+- `8b05c941` [solarpunk-activate] live dashboard update
+- `5e57b94d` [solarpunk-activate] live dashboard update
+- `027bfc0c` [solarpunk-activate] live dashboard update
+- `9c8405e9` [solarpunk-activate] live dashboard update
+- `84091c11` [solarpunk-activate] live dashboard update
+- `82bc4a20` [solarpunk-activate] live dashboard update
+- `37b53823` [solarpunk-activate] live dashboard update
+- `72f9b895` [solarpunk-activate] live dashboard update
+- `b8dc4f98` [solarpunk-activate] live dashboard update
+- `d746e99c` [solarpunk-activate] live dashboard update
+- `d7c58c32` [solarpunk-activate] live dashboard update
+- `b3ef9213` [solarpunk-activate] live dashboard update
 - `2a353c7e` [solarpunk-activate] live dashboard update
 - `786d5fd3` [solarpunk-activate] live dashboard update
 - `45115465` [solarpunk-activate] live dashboard update
@@ -39,37 +52,84 @@
 - `10ab7a0a` reminder: OTF grant application — Remi gave us the real link, don't forget
 
 **📧 Outreach**
+- `343f0f15` fix: SOLARPUNK_ACTIVATE — Phase 0 now silences all failure emails before firing everything
+- `9ae0b5c6` feat: silence_failures.py — patches all workflows across all repos to not send email on failure
+- `c00d14cf` fix: remove cascade trigger from self-healer — was causing email flood loop on every workflow failure
 - `83d1b2bf` feat: email_optin_guard.py — global dedup + Yes/No consent layer for all outbound email
 
 **📡 Social**
+- `739d1ca9` fix: silent failure — add continue-on-error to discord-bot.yml
+- `271158b7` fix: silent failure — add continue-on-error to cross-poster.yml
 - `010a9264` feat: add Phase 18c Discord Bridge to MASTER_CONTROLLER — DIS_APP_ID now wired end-to-end
 - `079da022` feat: discord-bot.yml — workflow wiring DIS_APP_ID/KEY to discord_bridge.py
 - `98776c32` feat: Discord bridge — DIS_APP_ID/PUBLIC_KEY now connected to system
 
 **📊 Signals**
+- `09b9ce4b` fix: silent failure — add continue-on-error to signal-tracker.yml
+- `06a89296` fix: silent failure — add continue-on-error to fork-tracker.yml
 - `122d5fea` fix: crypto_signal_engine.py -> crypto_signals.py (wrong filename, Phase 5c)
-- `6bdefa0f` chore: fork tracker update [2026-03-02]
 
 **🌹 Art & Gallery**
+- `42fdef04` fix: silent failure — add continue-on-error to heartbeat.yml
+- `4d36eb4b` fix: silent failure — add continue-on-error to gallery-health-check.yml
 - `525d4389` feat: kimi_conductor.py — MASTER_CONDUCTOR, Kimi's counterpart brain to Claude Autonomous
 - `76d86906` 💓 heartbeat: 2026-03-02 16:11 UTC
 - `ebe0ca1f` fix: GUMROAD_TOKEN mismatch + fallback condition — products will now list
-- `200e619d` feat: START_SOLARPUNK.bat - one file to run everything and watch for first dollar
-- `2aa5c4c0` 💓 heartbeat: 2026-03-02 02:27 UTC
+
+**🔍 Discovery**
+- `b41ac8ae` fix: silent failure — add continue-on-error to seo-submitter.yml
 
 **🚹 Fixes**
+- `0781b13b` fix: silent failure — add continue-on-error to mycelium-hello.yml
+- `47af803d` fix: silent failure — add continue-on-error to youtube-shorts-writer.yml
+- `d903b441` fix: silent failure — add continue-on-error to youtube-manager.yml
+- `e8ba5d5b` fix: silent failure — add continue-on-error to wiring-status-generator.yml
+- `31bfb01a` fix: silent failure — add continue-on-error to wiring-hub-daily.yml
+- `62aa0bbb` fix: silent failure — add continue-on-error to weekly-growth.yml
+- `85554c6e` fix: silent failure — add continue-on-error to update-state.yml
+- `9b4c6cb4` fix: silent failure — add continue-on-error to three-d-brain.yml
+- `47272d47` fix: silent failure — add continue-on-error to telegram-briefing.yml
+- `bf367c0c` fix: silent failure — add continue-on-error to syntax-patcher.yml
+- `a473f32e` fix: silent failure — add continue-on-error to sync-docs.yml
+- `e0d9dd4c` fix: silent failure — add continue-on-error to space-bridge-daily.yml
+- `8708d0b8` fix: silent failure — add continue-on-error to setup-wizard.yml
+- `744065f7` fix: silent failure — add continue-on-error to rss-generator.yml
+- `a7d32cfa` fix: silent failure — add continue-on-error to perpetual-builder.yml
+- `c80351c3` fix: silent failure — add continue-on-error to parallel-ingest.yml
+- `00f3502d` fix: silent failure — add continue-on-error to pages.yml
+- `0a891673` fix: silent failure — add continue-on-error to orchestrator-daily.yml
+- `c4126b59` fix: silent failure — add continue-on-error to notion-bridge.yml
+- `470519af` fix: silent failure — add continue-on-error to newsletter-writer.yml
+- `b966cdf5` fix: silent failure — add continue-on-error to mycelium-morning.yml
+- `5428a9e1` fix: silent failure — add continue-on-error to mycelium-evening.yml
+- `53432d9e` fix: silent failure — add continue-on-error to meeko-brain-daily.yml
+- `59152b7a` fix: silent failure — add continue-on-error to master.yml
+- `b3450fe2` fix: silent failure — add continue-on-error to kimi-conductor.yml
+- `c264f4b1` fix: silent failure — add continue-on-error to idea-engine.yml
+- `94e19e92` fix: silent failure — add continue-on-error to humanitarian-content.yml
+- `1282d24c` fix: silent failure — add continue-on-error to huggingface-bridge.yml
+- `7ea29e62` fix: silent failure — add continue-on-error to generate-pdfs.yml
+- `159c80a7` fix: silent failure — add continue-on-error to full-daily.yml
+- `b70a11c9` fix: silent failure — add continue-on-error to evolve.yml
+- `c57fa178` fix: silent failure — add continue-on-error to dual-brain-sync.yml
+- `ac3173cf` fix: silent failure — add continue-on-error to diagnostics.yml
+- `34ed74b6` fix: silent failure — add continue-on-error to dex-monitor.yml
+- `f6542923` fix: silent failure — add continue-on-error to daily-promoter.yml
+- `5143cdf8` fix: silent failure — add continue-on-error to daily-full-cycle.yml
+- `cd503695` fix: silent failure — add continue-on-error to congress-watcher.yml
+- `fa347c34` fix: silent failure — add continue-on-error to claude-autonomous.yml
+- `5fc47141` fix: silent failure — add continue-on-error to changelog.yml
+- `06ea6e45` fix: silent failure — add continue-on-error to asset-scan.yml
+- `ccde4a80` fix: silent failure — add continue-on-error to api-tools.yml
+- `9ee369a6` fix: silent failure — add continue-on-error to api-directory-harvester.yml
 - `4fa911ef` feat: claude_autonomous.py — self-running Claude replacement that audits + fixes the system
 - `b82901fb` add: syntax-patcher workflow — auto-fixes LLM code patterns on push [skip ci]
 - `cbe1f7e8` add: syntax_patcher.py — auto-fixes all LLM syntax error patterns across 130+ files
 - `7d017693` fix: network_node uncommented section dividers (COLORS, SYSTEM INFO, BLUETOOTH etc.) SyntaxError
-- `f7e460e1` fix: ORCHESTRATOR uncommented section dividers (SyntaxError line 59)
-- `c32f221c` fix: morning_briefing nested f-string quotes (SyntaxError line 73)
-- `deb6f4a5` fix: hf_brain backslash-in-fstring (SyntaxError line 139), pre-assign nl variable
-- `ee9545f3` fix: gen_status nested f-string quotes (SyntaxError line 49)
-- `385895fd` fix: remove push trigger from wiring-hub-daily.yml (was causing commit feedback loops)
-- `fe9bea8d` fix: wiring_hub uncommented section dividers (SyntaxError line 91)
 
 **📝 Documentation**
+- `bbfb3f09` 📄 auto: sync HTML to docs/ for GitHub Pages
+- `50fd9e29` 📝 auto: changelog 2026-03-03
 - `5243ba19` 📝 auto: changelog 2026-03-03
 - `ed4657db` 📄 auto: sync HTML to docs/ for GitHub Pages
 - `db3f6f5c` 📄 auto: sync HTML to docs/ for GitHub Pages
@@ -77,7 +137,6 @@
 - `c2b98fb7` 📝 auto: changelog 2026-03-03
 - `232bd99f` 📝 auto: changelog 2026-03-02
 - `92178fed` 📝 auto: changelog 2026-03-02
-- `2f43a475` 📝 auto: changelog 2026-03-02
 
 **⚙️ System**
 - `61905874` 🧠 auto: system state update 2026-03-03 00:06 UTC
@@ -92,13 +151,27 @@
 - `d8b2009b` 🧠 auto: system state update 2026-03-02 17:23 UTC
 - `131da4e9` 🧠 auto: system state update 2026-03-02 15:45 UTC
 - `0aec208b` auto: gen 23
-- `c75bac6a` 🧠 auto: system state update 2026-03-02 07:26 UTC
-- `53bf9e76` 🧠 auto: system state update 2026-03-02 07:25 UTC
-- `fa15c5fc` 🧠 auto: system state update 2026-03-02 07:23 UTC
-- `ef43fca7` 🧠 auto: system state update 2026-03-02 02:03 UTC
-- `76bfd3ad` 🧠 auto: system state update 2026-03-02 01:09 UTC
 
 **• Other**
+- `e63ab5f1` [solarpunk-activate] live status update
+- `a12eb40f` [solarpunk-activate] live status update
+- `1ff9ae8a` chore: update wiring_status.json [2026-03-03T00:42]
+- `6068ef4b` [solarpunk-activate] live status update
+- `86b23cd6` [solarpunk-activate] live status update
+- `ea75d65c` [solarpunk-activate] live status update
+- `6afc63df` [solarpunk-activate] live status update
+- `638195a7` chore: update wiring_status.json [2026-03-03T00:40]
+- `e3cbbb6b` chore: update wiring_status.json [2026-03-03T00:40]
+- `fa85d44b` [solarpunk-activate] live status update
+- `e6d7557e` [solarpunk-activate] live status update
+- `c4cabaa8` [solarpunk-activate] live status update
+- `d62af26b` chore: update wiring_status.json [2026-03-03T00:38]
+- `66a7afc4` [solarpunk-activate] live status update
+- `24687d2e` [solarpunk-activate] live status update
+- `eef57015` chore: update wiring_status.json [2026-03-03T00:38]
+- `4724ecab` chore: update wiring_status.json [2026-03-03T00:37]
+- `aa57effb` [solarpunk-activate] live status update
+- `0bf866bf` [solarpunk-activate] live status update
 - `d0ffc475` [solarpunk-activate] live status update
 - `d7632068` [solarpunk-activate] live status update
 - `437e56fd` chore: update wiring_status.json [2026-03-03T00:35]
@@ -156,91 +229,6 @@
 - `c53da20a` feed: RSS update [2026-03-02]
 - `bb4651fb` chore: update wiring_status.json [2026-03-02T11:09]
 - `4110008d` data: dex update [10:31]
-- `ca13a239` 🎬 shorts scripts [2026-03-02]
-- `193aadc5` 🌸 cycle [2026-03-02 08:02] — all 21 phases fired
-- `58dda027` 🧠 3d-brain state [2026-03-02]
-- `e04023d4` chore: update wiring_status.json [2026-03-02T08:00]
-- `49ecba6c` 🌍 content update [2026-03-02]
-- `1800e7d4` \U0001f338 perpetual: 2026-03-02 07:54 UTC
-- `457aed12` chore: update wiring_status.json [2026-03-02T07:30]
-- `0e3863b2` chore: update wiring_status.json [2026-03-02T07:24]
-- `4095d60e` chore: update wiring_status.json [2026-03-02T06:56]
-- `84d23ea3` ideas: engine cycle [] — tested/built
-- `144e884f` chore: update wiring_status.json [2026-03-02T05:08]
-- `23892431` ideas: engine cycle [] — tested/built
-- `edf7a9f8` 🧠 orchestrator [2026-03-02]
-- `7a593a9c` 🌸 cycle [2026-03-02 02:20] — all 21 phases fired
-- `7aef6ed1` 🌸 cycle [2026-03-02 02:17] — all 21 phases fired
-- `e14c9ef2` 🌍 content update [2026-03-02]
-- `ab7e463b` 📬 newsletter [2026-W09]
-- `54424b0c` 🔬 diagnostics report [2026-03-02T02:04]
-- `769b109b` 🧠 3d-brain state [2026-03-02]
-- `41551c2e` chore: update wiring_status.json [2026-03-02T01:55]
-- `bbadf5c3` 🌸 cycle [2026-03-02 01:38] — all 21 phases fired
-- `cc36dbb1` chore: update wiring_status.json [2026-03-02T01:34]
-- `38654075` chore: update wiring_status.json [2026-03-02T01:30]
-- `b85c1f84` chore: update wiring_status.json [2026-03-02T01:06]
-- `bd49cf04` \U0001f338 perpetual: 2026-03-02 00:00 UTC
-
----
-
-## Week of February 23, 2026
-
-**📧 Outreach**
-- `4be40887` fix: disable 8 redundant/broken workflows causing email flood + wire system_manifest + social_content into MASTER_CONTROLLER
-- `2aceb5ba` fix: all email issues — phantom address removed, Wired corrected, blocked domains expanded, old engine retired, self-email loop closed + system manifest + social content engine
-
-**🚹 Fixes**
-- `5987b153` fix: wallet config checks all possible secret names — works with whatever you already named it
-
-**📝 Documentation**
-- `b5122053` wire: self_improver + form_filler + humanitarian_fork_distributor + readme_updater into MASTER_CONTROLLER — README is now last thing written, first thing read
-- `e896cfc4` build: readme_updater (live stats, first read = last written) + phone_controller (a-Shell iOS) + phone_setup.sh + self_improver + SOLARPUNK_FOR_EVERYONE.md
-- `0f036966` 📝 auto: changelog 2026-03-01
-
-**⚙️ System**
-- `27fc536b` auto: gen 22
-- `5fee15e5` feat: multi-chain wallet config (all 9 chains) + setup_wizard_v3 with EVM auto-detection — never turn away money from any blockchain
-- `d64ce872` build: setup_wizard_v2 (uses existing GitHub token) + form_filler + humanitarian_fork_distributor — sending the whole system to Gaza/Sudan/Congo
-- `ba0d55bd` build: setup_wizard auto-detects existing GitHub token + form_filler (fill any form with identity) + humanitarian_fork_distributor (send full system to Gaza/Sudan/Congo)
-- `8880f58e` 🧠 auto: system state update 2026-03-01 20:13 UTC
-- `92411049` build: etsy_bridge + revenue_router + job_agent + setup_wizard — full passive income stack + system as employee + auto-compounding revenue routing
-- `7737929a` audit: autonomy log updated 2026-03-01
-- `666eeb20` audit: autonomy log updated 2026-03-01
-- `3eaff3b4` 🧠 auto: system state update 2026-03-01 18:22 UTC
-
-**• Other**
-- `650fdfe9` data: dex update [23:47]
-- `8ca71d18` \U0001f338 perpetual: 2026-03-01 23:46 UTC
-- `f020b507` chore: update wiring_status.json [2026-03-01T23:45]
-- `58360d19` data: dex update [22:53]
-- `e27aa85d` chore: update wiring_status.json [2026-03-01T22:52]
-- `93566774` \U0001f338 perpetual: 2026-03-01 21:58 UTC
-- `0210761a` data: dex update [21:44]
-- `b9ed7e57` chore: update wiring_status.json [2026-03-01T21:42]
-- `0345e96f` \U0001f338 perpetual: 2026-03-01 21:42 UTC
-- `eb04cb3e` data: dex update [20:53]
-- `664202a2` \U0001f338 perpetual: 2026-03-01 20:53 UTC
-- `1df7f7ac` chore: update wiring_status.json [2026-03-01T20:52]
-- `1ef87e87` chore: update wiring_status.json [2026-03-01T20:46]
-- `adf69109` chore: update wiring_status.json [2026-03-01T20:27]
-- `aaaac20a` chore: update wiring_status.json [2026-03-01T20:24]
-- `d4650a96` activate: MASTER_CONTROLLER now runs daily (6am + 6pm UTC) with all 16 phases including Etsy, revenue router, job agent — full passive income loop enabled
-- `359b306d` chore: update wiring_status.json [2026-03-01T20:12]
-- `03e286f2` \U0001f338 perpetual: 2026-03-01 19:56 UTC
-- `bce2ccb2` data: dex update [19:52]
-- `d6bbfb34` \U0001f338 perpetual: 2026-03-01 19:42 UTC
-- `b41cf1e0` \U0001f338 perpetual: 2026-03-01 19:01 UTC
-- `20ea18bb` data: dex update [19:01]
-- `a7ac1812` chore: update wiring_status.json [2026-03-01T19:00]
-- `deedca77` 🌸 cycle [2026-03-01 18:29]
-- `919ff4ea` 🌸 cycle [2026-03-01 18:26]
-- `59d8dd8d` chore: update wiring_status.json [2026-03-01T18:21]
-- `c1566ae4` \U0001f338 perpetual: 2026-03-01 18:00 UTC
-- `722ab2d2` data: dex update [17:49]
-- `fbb60f70` chore: update wiring_status.json [2026-03-01T17:48]
-- `f570a1fb` \U0001f338 perpetual: 2026-03-01 16:56 UTC
-- `0df0a237` data: dex update [16:55]
 
 ---
 
