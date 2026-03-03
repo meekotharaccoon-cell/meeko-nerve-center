@@ -193,6 +193,23 @@
       "moved": 0,
       "moved_files": [],
       "errors": []
+    },
+    {
+      "at": "2026-03-03T11:49:52.082466+00:00",
+      "moved": 2,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260302_150800",
+          "to": "BACKUPS\\BACKUP_20260302_150800",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260303_064906",
+          "to": "BACKUPS\\BACKUP_20260303_064906",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
     }
   ]
 }
