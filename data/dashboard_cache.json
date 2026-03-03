@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-03T07:59:17.709430",
+  "generated_at": "2026-03-03T11:10:45.123093",
   "date": "2026-03-03",
   "system": {
-    "engines_total": 168,
+    "engines_total": 175,
     "self_built": 1,
     "cycles_per_day": 288,
     "uptime_since": "2025-01-01",
@@ -22,11 +22,11 @@
     "trades_flagged": 0
   },
   "health": {
-    "passing_pct": 69,
-    "total_workflows": 63,
-    "failing": 13,
-    "color": "RED",
-    "last_check": "2026-03-03T07:58:48.229988"
+    "passing_pct": 76,
+    "total_workflows": 64,
+    "failing": 14,
+    "color": "YELLOW",
+    "last_check": "2026-03-03T11:10:44.547158"
   },
   "market": {},
   "press": {

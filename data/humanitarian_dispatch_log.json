@@ -1,0 +1,92 @@
+{
+  "unrwa_media": {
+    "org": "UNRWA (UN Relief and Works Agency for Palestine Refugees)",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "media@unrwa.org"
+  },
+  "prcs_info": {
+    "org": "Palestinian Red Crescent Society",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@palestinercs.org"
+  },
+  "972_editors": {
+    "org": "+972 Magazine",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "editors@972mag.com"
+  },
+  "ei_editors": {
+    "org": "Electronic Intifada",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "editors@electronicintifada.net"
+  },
+  "alhaq_info": {
+    "org": "Al-Haq (Palestinian Human Rights Organization)",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@alhaq.org"
+  },
+  "gcmhp_contact": {
+    "org": "Gaza Community Mental Health Programme",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "gcmhp@gcmhp.net"
+  },
+  "gisha_contact": {
+    "org": "Gisha (Legal Center for Freedom of Movement)",
+    "crisis": "Gaza",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "gisha@gisha.org"
+  },
+  "crg_info": {
+    "org": "Congo Research Group (NYU Stern Center)",
+    "crisis": "Congo",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@congorc.org"
+  },
+  "heal_africa": {
+    "org": "HEAL Africa",
+    "crisis": "Congo",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@healafrica.org"
+  },
+  "irc_general": {
+    "org": "International Rescue Committee",
+    "crisis": "Congo + Sudan",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@rescue.org"
+  },
+  "sudanese_archive": {
+    "org": "Sudanese Archive",
+    "crisis": "Sudan",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@sudanesearchive.org"
+  },
+  "sudan_tribune": {
+    "org": "Sudan Tribune",
+    "crisis": "Sudan",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "contact@sudantribune.com"
+  },
+  "access_now": {
+    "org": "Access Now",
+    "crisis": "All \u2014 Gaza, Congo, Sudan, Myanmar",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@accessnow.org"
+  },
+  "front_line_defenders": {
+    "org": "Front Line Defenders",
+    "crisis": "All \u2014 Gaza, Congo, Sudan",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@frontlinedefenders.org"
+  },
+  "tactical_tech": {
+    "org": "Tactical Tech",
+    "crisis": "All",
+    "optin_sent": "2026-03-03T11:09:47.288664+00:00",
+    "contact": "info@tacticaltech.org"
+  }
+}

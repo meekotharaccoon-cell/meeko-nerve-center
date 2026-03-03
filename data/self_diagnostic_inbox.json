@@ -2,78 +2,6 @@
   "issues": [
     {
       "type": "workflow_failure",
-      "workflow": ".github/workflows/email-drafter.yml",
-      "file": "email-drafter.yml",
-      "run_id": 22558264460,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/email-gateway.yml",
-      "file": "email-gateway.yml",
-      "run_id": 22558264345,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264345",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/feedback-loop.yml",
-      "file": "feedback-loop.yml",
-      "run_id": 22558263767,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263767",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/jekyll-gh-pages.yml",
-      "file": "jekyll-gh-pages.yml",
-      "run_id": 22558264050,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264050",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/send-grants.yml",
-      "file": "send-grants.yml",
-      "run_id": 22558264235,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264235",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/send-outreach.yml",
-      "file": "send-outreach.yml",
-      "run_id": 22558263917,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558263917",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/community-outreach.yml",
-      "file": "community-outreach.yml",
-      "run_id": 22558264164,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264164",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
-      "workflow": ".github/workflows/email-drafter.yml",
-      "file": "email-drafter.yml",
-      "run_id": 22558264460,
-      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22558264460",
-      "detected": "2026-03-02",
-      "resolved": false
-    },
-    {
-      "type": "workflow_failure",
       "workflow": ".github/workflows/email-gateway.yml",
       "file": "email-gateway.yml",
       "run_id": 22558264345,
@@ -906,6 +834,69 @@
       "date": "2026-03-03",
       "resolved": false,
       "source": "loop_closer"
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/community-outreach.yml",
+      "file": "community-outreach.yml",
+      "run_id": 22619936049,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619936049",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/email-drafter.yml",
+      "file": "email-drafter.yml",
+      "run_id": 22619935286,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619935286",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/email-gateway.yml",
+      "file": "email-gateway.yml",
+      "run_id": 22619935570,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619935570",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/feedback-loop.yml",
+      "file": "feedback-loop.yml",
+      "run_id": 22619935803,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619935803",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/jekyll-gh-pages.yml",
+      "file": "jekyll-gh-pages.yml",
+      "run_id": 22619936338,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619936338",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/send-grants.yml",
+      "file": "send-grants.yml",
+      "run_id": 22619936841,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619936841",
+      "detected": "2026-03-03",
+      "resolved": false
+    },
+    {
+      "type": "workflow_failure",
+      "workflow": ".github/workflows/send-outreach.yml",
+      "file": "send-outreach.yml",
+      "run_id": 22619936579,
+      "url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions/runs/22619936579",
+      "detected": "2026-03-03",
+      "resolved": false
     }
   ],
   "resolved": []

@@ -2,39 +2,6 @@
   "updated": "2026-03-03",
   "queue": [
     {
-      "id": "2026-03-02-9",
-      "text": "\ud83c\udf38 SolarPunk costs exactly $0/month.\n\nInfrastructure:\n  \u2022 GitHub Actions free tier (2,000 min/month included)\n  \u2022 HuggingFace free tier (inference API)\n  \u2022 Notion free tier (command center)\n  \u2022 Gmail (inbound-only email gateway)\n  \u2022 Gumroad + Etsy (free to list, they take %)\n\nEvery component chosen specifically because it's free.\nSo anyone, anywhere can run it.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#SolarPunk #OpenSource #ZeroCost",
-      "template_idx": 9,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-02-1",
-      "text": "\ud83c\udf38 How does SolarPunk work?\n\n1. You write plain English in Notion (your priorities)\n2. The system reads it every 12 hours\n3. It sells products, hunts grants, applies for jobs, posts on social media\n4. Routes 70% of revenue to PCRF (Palestinian children's relief)\n5. Updates its own README with live stats\n6. Then does it again\n\nYou do nothing. It runs itself.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Automation #AI #SolarPunk",
-      "template_idx": 1,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-02-3",
-      "text": "\ud83c\udf38 SolarPunk sends itself to people in Gaza.\n\nIf you know someone in Palestine, Sudan, or DRC with:\n  \u2022 An email address\n  \u2022 Internet access\n  \u2022 A free GitHub account\n\nThey can run this system. It generates income. It costs nothing.\n100% of their revenue stays with them.\n\nAdd their email to data/fork_requests.json.\nNext cycle sends them everything.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#Gaza #Humanitarian #SolarPunk",
-      "template_idx": 3,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
       "id": "2026-03-02-4",
       "text": "\ud83c\udf38 The SolarPunk job agent:\n\nEvery day, the system:\n  1. Scans Remotive.io for remote jobs\n  2. Scores each one 0-10 for fit\n  3. Writes honest cover letters (states openly that it's AI-assisted)\n  4. Queues applications for human review\n\nIt never lies about what it is.\nIt never pretends to be human.\nAll applications are legal and ethical.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#RemoteWork #AI #SolarPunk",
       "template_idx": 4,
@@ -220,11 +187,47 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-03-8",
+      "text": "\ud83c\udf38 SolarPunk learns from itself.\n\nEvery engine output becomes training data on HuggingFace.\nEvery cycle the system gets slightly smarter.\nEvery problem it encounters teaches it how to fix itself.\n\nIt's not magic \u2014 it's a closed feedback loop:\nRun \u2192 Log \u2192 Learn \u2192 Improve \u2192 Run again\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#MachineLearning #SolarPunk #AI",
+      "template_idx": 8,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-9",
+      "text": "\ud83c\udf38 SolarPunk costs exactly $0/month.\n\nInfrastructure:\n  \u2022 GitHub Actions free tier (2,000 min/month included)\n  \u2022 HuggingFace free tier (inference API)\n  \u2022 Notion free tier (command center)\n  \u2022 Gmail (inbound-only email gateway)\n  \u2022 Gumroad + Etsy (free to list, they take %)\n\nEvery component chosen specifically because it's free.\nSo anyone, anywhere can run it.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#SolarPunk #OpenSource #ZeroCost",
+      "template_idx": 9,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-5",
+      "text": "\ud83c\udf38 Every congressional stock trade is being watched.\n\nSolarPunk's Congress Watcher tracks STOCK Act disclosures \u2014 members of Congress trading on information they got from their jobs.\n\nEvery trade logged. Every pattern analyzed. Posted publicly.\n\nIt runs automatically. Every day.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Accountability #STOCKACT #Congress",
+      "template_idx": 5,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
     4,
     6,
-    0
+    0,
+    8,
+    9,
+    5
   ]
 }
