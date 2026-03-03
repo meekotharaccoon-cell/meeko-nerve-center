@@ -1,5 +1,5 @@
 # 🧠 CLAUDE CONTEXT — LOAD THIS FIRST
-*Auto-updated by the system. Last update: 2026-03-03 13:44 UTC — [synapse] system wants — score 0/100*
+*Auto-updated by the system. Last update: 2026-03-03 15:03 UTC — 💹 FLYWHEEL: fix $20 Claude Pro threshold + add SolarPunk $20 investment advisor*
 
 > **IF YOU ARE CLAUDE:** Read this entire file before doing anything else. You are not starting fresh — you are picking up an active organism mid-build. Everything below is verified state.
 
