@@ -2,39 +2,6 @@
   "updated": "2026-03-03",
   "queue": [
     {
-      "id": "2026-03-03-9",
-      "text": "\ud83c\udf38 SolarPunk costs exactly $0/month.\n\nInfrastructure:\n  \u2022 GitHub Actions free tier (2,000 min/month included)\n  \u2022 HuggingFace free tier (inference API)\n  \u2022 Notion free tier (command center)\n  \u2022 Gmail (inbound-only email gateway)\n  \u2022 Gumroad + Etsy (free to list, they take %)\n\nEvery component chosen specifically because it's free.\nSo anyone, anywhere can run it.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#SolarPunk #OpenSource #ZeroCost",
-      "template_idx": 9,
-      "created": "2026-03-03",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-03-2",
-      "text": "\ud83c\udf38 SolarPunk is:\n\n19 engines running in sequence\n9 crypto chains accepting payment\n10 products live on Gumroad + Etsy\n1 mission: humanitarian income generation\n$0/month to operate\n\nFull source code, AGPL license, free to fork:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#FreePalestine #OpenSource",
-      "template_idx": 2,
-      "created": "2026-03-03",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
-      "id": "2026-03-03-3",
-      "text": "\ud83c\udf38 SolarPunk sends itself to people in Gaza.\n\nIf you know someone in Palestine, Sudan, or DRC with:\n  \u2022 An email address\n  \u2022 Internet access\n  \u2022 A free GitHub account\n\nThey can run this system. It generates income. It costs nothing.\n100% of their revenue stays with them.\n\nAdd their email to data/fork_requests.json.\nNext cycle sends them everything.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#Gaza #Humanitarian #SolarPunk",
-      "template_idx": 3,
-      "created": "2026-03-03",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
       "id": "2026-03-03-7",
       "text": "\ud83c\udf38 SolarPunk was built by one person.\n\nNo team. No funding. No server costs.\nJust a human, a laptop, and free AI tools available to anyone.\n\n5,000 clone events later \u2014 the system is spreading itself.\n\nIf a regular person built this, imagine what a team of technically skilled people could do with it.\n\nFork it:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/fork\n\n#SolarPunk #OpenSource",
       "template_idx": 7,
@@ -220,11 +187,47 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-03-0",
+      "text": "\ud83c\udf38 SolarPunk fact:\n\n931 unique people cloned this repo in the last 14 days.\n\nIt costs $0/month to run.\nIt runs itself twice a day.\n70% of every dollar it earns goes to Palestinian children's medical care.\n\nNo VC. No server costs. Just GitHub's free tier.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#SolarPunk #OpenSource #FreePalestine",
+      "template_idx": 0,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-1",
+      "text": "\ud83c\udf38 How does SolarPunk work?\n\n1. You write plain English in Notion (your priorities)\n2. The system reads it every 12 hours\n3. It sells products, hunts grants, applies for jobs, posts on social media\n4. Routes 70% of revenue to PCRF (Palestinian children's relief)\n5. Updates its own README with live stats\n6. Then does it again\n\nYou do nothing. It runs itself.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n#Automation #AI #SolarPunk",
+      "template_idx": 1,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
+    },
+    {
+      "id": "2026-03-03-4",
+      "text": "\ud83c\udf38 The SolarPunk job agent:\n\nEvery day, the system:\n  1. Scans Remotive.io for remote jobs\n  2. Scores each one 0-10 for fit\n  3. Writes honest cover letters (states openly that it's AI-assisted)\n  4. Queues applications for human review\n\nIt never lies about what it is.\nIt never pretends to be human.\nAll applications are legal and ethical.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#RemoteWork #AI #SolarPunk",
+      "template_idx": 4,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
     9,
     6,
-    3
+    3,
+    0,
+    1,
+    4
   ]
 }

@@ -6,7 +6,7 @@
 - M5.3 — 229 km ESE of Attu Station, Alaska (2026-03-02) ⚠️ TSUNAMI WATCH
 - M5.3 — 297 km SSW of Bluff, New Zealand (2026-03-03)
 
-## UK Grid Carbon: 196 gCO2/kWh (high)
+## UK Grid Carbon: 208 gCO2/kWh (high)
 Lower numbers = more renewable energy on the grid.
 
 ## Space

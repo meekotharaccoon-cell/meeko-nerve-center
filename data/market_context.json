@@ -16,13 +16,13 @@
   "market_breadth": 0.0,
   "market_mood": "BEARISH",
   "trending": [
-    "POWER",
     "AAVE",
-    "RIVER",
+    "POWER",
     "VVV",
     "NEAR",
     "BTC",
-    "SOL"
+    "SOL",
+    "RIVER"
   ],
   "top_movers": [],
   "worst_movers": []
