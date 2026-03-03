@@ -20,9 +20,9 @@ on:
 #   PHASE 2  — Intelligence (world, crypto, congress, investment)
 #   PHASE 3  — Content (art, social, YouTube shorts)
 #   PHASE 4  — Post (social poster, cross-poster, network spread)
-#   PHASE 5  — Revenue (Gumroad, Etsy, router)
+#   PHASE 5  — Revenue (Gumroad, Etsy, router — 70% PCRF always)
 #   PHASE 6  — Grants + Jobs
-#   PHASE 7  — Comms (email gateway, Discord, Telegram, Notion)
+#   PHASE 7  — Comms (email gateway, humanitarian dispatch, Discord, Telegram, Notion)
 #   PHASE 8  — Evolution (perpetual builder, self-improver, loop closer)
 #   PHASE 9  — Memory + HF (long-term memory, dataset logger)
 #   PHASE 10 — Dashboard + diagnostics
@@ -32,6 +32,12 @@ on:
 #   PHASE 13 — NEURON_B (skeptic pass — challenges everything A said)
 #   PHASE 14 — SYNAPSE  (resolve A+B, save brain state, email briefing)
 #   PHASE 15 — Final commit
+#
+# HUMANITARIAN MISSION:
+#   Every cycle, Phase 7f dispatches knowledge to verified organizations
+#   working in Gaza, Congo, Sudan, and other active crisis zones.
+#   Knowledge is free. Instructions are complete. Nothing is sold.
+#   See HUMANITARIAN_MISSION.md for the full mission statement.
 
 jobs:
   omnibrain:
@@ -275,7 +281,7 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
-      # PHASE 7 — Communications
+      # PHASE 7 — Communications + Humanitarian Dispatch
       # ══════════════════════════════════════════════════════
       - name: "Phase 7a — Email Gateway (inbound + opt-in only)"
         env:
@@ -316,6 +322,29 @@ jobs:
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python mycelium/notion_bridge.py
+        continue-on-error: true
+
+      # ══════════════════════════════════════════════════════
+      # PHASE 7f — HUMANITARIAN KNOWLEDGE DISPATCH
+      #
+      # Reaches out to verified organizations working in:
+      # Gaza, Congo, Sudan, and other active crisis zones.
+      #
+      # Sends: fork instructions, accountability data, AI pattern.
+      # Everything free. Nothing sold. Knowledge only.
+      # Goes through opt-in guard — consent is part of the mission.
+      # Never re-sends. Logs every dispatch permanently.
+      #
+      # See HUMANITARIAN_MISSION.md for full mission statement.
+      # See mycelium/knowledge_dispatch.py for recipient list.
+      # ══════════════════════════════════════════════════════
+      - name: "Phase 7f — 🌍 Humanitarian Knowledge Dispatch (Gaza, Congo, Sudan)"
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/knowledge_dispatch.py
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
@@ -416,9 +445,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 12 — NEURON_A (Builder brain)
-      # Optimistic. Reads full system + ALL repos.
-      # Finds real problems, proposes fixes, writes message to B.
-      # Auto-applies only if confidence >= 0.85
       # ══════════════════════════════════════════════════════
       - name: "Phase 12 — NEURON_A (Builder)"
         env:
@@ -432,9 +458,6 @@ jobs:
 
       # ══════════════════════════════════════════════════════
       # PHASE 13 — NEURON_B (Skeptic brain)
-      # Adversarial. Reads A's report, challenges everything.
-      # Finds what A missed. Reviews A's skipped fixes.
-      # Applies B's own high-confidence fixes.
       # ══════════════════════════════════════════════════════
       - name: "Phase 13 — NEURON_B (Skeptic)"
         env:
@@ -445,10 +468,7 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
-      # PHASE 14 — SYNAPSE (Resolver)
-      # Reads both A and B reports.
-      # Finds consensus. Resolves conflicts. Saves brain state.
-      # Emails meeko the daily briefing with health score.
+      # PHASE 14 — SYNAPSE (Resolver + Daily Briefing)
       # ══════════════════════════════════════════════════════
       - name: "Phase 14 — SYNAPSE (Resolver + Daily Briefing)"
         env:
@@ -461,12 +481,12 @@ jobs:
         continue-on-error: true
 
       # ══════════════════════════════════════════════════════
-      # PHASE 15 — Final Commit (includes brain outputs)
+      # PHASE 15 — Final Commit
       # ══════════════════════════════════════════════════════
       - name: "Phase 15 — Final Commit"
         run: |
           git add -A
           git diff --cached --quiet && echo 'Clean — nothing to commit' && exit 0
-          git commit -m "🧠 omnibrain [$(date +%Y-%m-%dT%H:%M)] — A+B+synapse complete"
+          git commit -m "🧠 omnibrain [$(date +%Y-%m-%dT%H:%M)] — A+B+synapse+dispatch complete"
           git pull --rebase origin main || true
           git push origin main || git push origin main --force-with-lease
