@@ -1,170 +1,143 @@
-name: "🛡️ GUARDIAN — Instant Disaster Detection + Auto-Restore"
+name: "🛡️ GUARDIAN — Self-Healing Watchdog"
 
 on:
   push:
     branches: [main]
-  schedule:
-    - cron: '0 */4 * * *'  # Backup check every 4 hours
-  workflow_dispatch:
 
-# GUARDIAN runs on EVERY push.
-# If SYNTHESIS_FACTORY, EVOLVE, or any merge wipes .github/workflows,
-# the very next commit triggers GUARDIAN which restores everything from git history.
-# Alert email sent to Meeko immediately.
-
+# Skips our own automation to prevent infinite loops
 jobs:
-  guardian:
-    name: "🛡️ Guardian"
+  watch:
     runs-on: ubuntu-latest
+    if: |
+      github.actor != 'github-actions[bot]' &&
+      !startsWith(github.event.head_commit.message, '[guardian]') &&
+      !startsWith(github.event.head_commit.message, '[build]') &&
+      !startsWith(github.event.head_commit.message, '[synapse]') &&
+      !startsWith(github.event.head_commit.message, '[synthesis]') &&
+      !contains(github.event.head_commit.message, 'loop [') &&
+      !contains(github.event.head_commit.message, 'RESTORE') &&
+      !contains(github.event.head_commit.message, 'checkpoint')
     permissions:
       contents: write
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 5
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Configure git
         run: |
-          git config user.name 'GUARDIAN'
-          git config user.email 'guardian@meeko-nerve-center'
-          mkdir -p data data/snapshots
+          git config user.name 'Guardian'
+          git config user.email 'guardian@solarpunk'
+          mkdir -p data saves
 
-      - name: "🛡️ Check + Auto-Restore Critical Files"
+      - name: Watch + Protect
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
-          RESTORED=0
-          MISSING_LIST=""
-
-          # These files must ALWAYS exist. If missing, restore from git history.
-          CRITICAL=(
-            ".github/workflows/OMNIBRAIN.yml"
-            ".github/workflows/SOLARPUNK_LOOP.yml"
-            ".github/workflows/GUARDIAN.yml"
-            ".github/workflows/BUILD_YOURSELF.yml"
-          )
-
-          for FILE in "${CRITICAL[@]}"; do
-            if [ ! -f "$FILE" ]; then
-              echo "🚨 MISSING: $FILE"
-              MISSING_LIST="$MISSING_LIST $FILE"
-              LAST=$(git log --all --full-history --format="%H" -- "$FILE" | head -1)
-              if [ -n "$LAST" ]; then
-                git checkout "$LAST" -- "$FILE"
-                echo "✅ Restored $FILE from $LAST"
-                RESTORED=$((RESTORED + 1))
-              else
-                echo "❌ No git history for $FILE"
-              fi
-            fi
-          done
-
-          if [ $RESTORED -gt 0 ]; then
-            git add -A
-            git commit -m "🛡️ GUARDIAN restored $RESTORED critical files [$(date +%Y-%m-%dT%H:%M)]"
-            git pull --rebase origin main || true
-            git push origin main || true
-
-            # Alert Meeko
-            python3 - <<PYEOF
-import os, smtplib
-from email.mime.text import MIMEText
-from datetime import datetime
-
-gmail = os.environ.get("GMAIL_ADDRESS", "")
-gpass = os.environ.get("GMAIL_APP_PASSWORD", "")
-if not gmail or not gpass:
-    print("No email creds — alert skipped")
-    exit(0)
-
-body = f"""🚨 GUARDIAN ALERT — SolarPunk Disaster Auto-Fixed
-
-Time: {datetime.now().isoformat()}
-
-WHAT HAPPENED:
-Critical workflow files were deleted from the repo.
-Likely cause: SYNTHESIS_FACTORY or EVOLVE ran a dangerous git merge.
-
-FILES RESTORED: {os.environ.get("RESTORED", "??")} files from git history
-
-SYSTEM STATUS: Back online. Resuming autonomous operations.
-
-PREVENTION: SYNTHESIS_FACTORY is now patched to never touch .github/
-
-— GUARDIAN 🛡️"""
-
-try:
-    msg = MIMEText(body)
-    msg["Subject"] = f"🚨 SolarPunk DISASTER FIXED [{datetime.now().strftime('%b %d %H:%M')}]"
-    msg["From"] = gmail
-    msg["To"] = gmail
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-        s.login(gmail, gpass)
-        s.send_message(msg)
-    print("🚨 Alert sent to Meeko")
-except Exception as e:
-    print(f"Email error: {e}")
-PYEOF
-          else
-            echo "✅ All critical files present — system healthy"
-          fi
-
-      - name: "📸 Save State Snapshot"
-        run: |
           python3 - <<'PYEOF'
-          import json
+          import os, json, smtplib, sys, subprocess
           from pathlib import Path
           from datetime import datetime
+          from email.mime.text import MIMEText
 
-          myc = Path("mycelium")
-          wf = Path(".github/workflows")
-          dat = Path("data")
+          def alert(subj, body):
+              g = os.environ.get("GMAIL_ADDRESS","")
+              p = os.environ.get("GMAIL_APP_PASSWORD","")
+              if not g or not p: return
+              try:
+                  m = MIMEText(body)
+                  m["Subject"] = subj; m["From"] = g; m["To"] = g
+                  with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
+                      s.login(g, p); s.send_message(m)
+                  print("Alert sent")
+              except Exception as e: print(f"Alert err: {e}")
 
-          engines   = sorted([f.name for f in myc.glob("*.py") if not f.name.startswith("__")]) if myc.exists() else []
-          workflows = sorted([f.name for f in wf.glob("*.yml")]) if wf.exists() else []
-          data_files = sorted([f.name for f in dat.glob("*.json")]) if dat.exists() else []
+          wf_dir = Path(".github/workflows")
+          my_dir = Path("mycelium")
+          workflows = [w.name for w in wf_dir.glob("*.yml")] if wf_dir.exists() else []
+          engines   = [e.name for e in my_dir.glob("*.py")] if my_dir.exists() else []
 
-          # Determine engine health
-          REQUIRED = [
-              "NEURON_A.py","NEURON_B.py","SYNAPSE.py","SYNTHESIS_FACTORY.py",
-              "REVENUE_FLYWHEEL.py","GETSCREEN_BRIDGE.py","email_gateway.py",
-              "revenue_router.py","social_poster.py","knowledge_dispatch.py"
-          ]
-          missing_engines = [e for e in REQUIRED if e not in engines]
+          sf = Path("data/guardian_state.json")
+          last = {}
+          if sf.exists():
+              try: last = json.loads(sf.read_text())
+              except: pass
 
-          snapshot = {
-              "timestamp": datetime.now().isoformat(),
-              "engine_count": len(engines),
-              "engines": engines,
-              "workflows": workflows,
-              "data_files": data_files,
-              "missing_required_engines": missing_engines,
-              "health": "HEALTHY" if len(workflows) >= 4 and len(engines) >= 10 else
-                        "DEGRADED" if len(workflows) >= 2 else "CRITICAL"
-          }
+          last_wf  = set(last.get("workflow_names", workflows))
+          last_eng = last.get("engine_names", engines)
 
-          Path("data/snapshots").mkdir(parents=True, exist_ok=True)
-          ts = datetime.now().strftime("%Y%m%d_%H%M")
-          Path(f"data/snapshots/{ts}.json").write_text(json.dumps(snapshot, indent=2))
+          deleted_wf  = last_wf - set(workflows)
+          deleted_eng = [e for e in last_eng if e not in engines]
+          catastrophe = bool(deleted_wf) or (len(deleted_eng) > max(2, len(last_eng) * 0.3) and len(last_eng) > 3)
 
-          # Keep last 20 snapshots
-          snaps = sorted(Path("data/snapshots").glob("*.json"))
-          for old in snaps[:-20]:
-              old.unlink()
+          if catastrophe:
+              print(f"CATASTROPHE! Missing WF: {deleted_wf} | Engines: {deleted_eng[:5]}")
+              save_f = Path("saves/last_good_state.json")
+              if save_f.exists():
+                  try:
+                      save = json.loads(save_f.read_text())
+                      restored = []
+                      for fpath, content in save.get("files", {}).items():
+                          p = Path(fpath)
+                          p.parent.mkdir(parents=True, exist_ok=True)
+                          p.write_text(content)
+                          restored.append(fpath)
+                      subprocess.run(["git","add","-A"])
+                      r = subprocess.run(["git","diff","--cached","--quiet"])
+                      if r.returncode != 0:
+                          subprocess.run(["git","commit","-m",f"[guardian] auto-restore {len(restored)} files -- {datetime.now().strftime('%H:%M')}"])
+                          subprocess.run(["git","pull","--rebase","origin","main"])
+                          subprocess.run(["git","push","origin","main"])
+                          alert("SOLARPUNK AUTO-RESTORED",
+                              f"Catastrophe detected + auto-fixed.\nRestored {len(restored)} files:\n"+"\n".join(restored[:20])+"\n\n-- Guardian")
+                          print(f"Auto-restored {len(restored)} files!")
+                  except Exception as e:
+                      print(f"Restore err: {e}")
+                      alert("SOLARPUNK CATASTROPHE -- RUN BUILD",
+                          f"Deleted WF: {list(deleted_wf)}\nDeleted engines: {deleted_eng[:10]}\n\nRestore failed: {e}\n\nRun BUILD:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/actions")
+              else:
+                  alert("SOLARPUNK CATASTROPHE -- RUN BUILD",
+                      f"Deleted WF: {list(deleted_wf)}\nDeleted engines: {deleted_eng[:10]}\n\nRun BUILD:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/actions")
+              sys.exit(1)
 
-          Path("data/guardian_state.json").write_text(json.dumps(snapshot, indent=2))
-          print(f"📸 {snapshot['health']} | {len(engines)} engines | {len(workflows)} workflows")
-          if missing_engines:
-              print(f"   Missing: {missing_engines[:5]}")
+          # Healthy -- save state + snapshot
+          sf.write_text(json.dumps({
+              "last_checked": datetime.now().isoformat(),
+              "workflow_names": workflows,
+              "engine_names": engines,
+              "status": "healthy"
+          }, indent=2))
+
+          if len(workflows) >= 2 and len(engines) >= 3:
+              snap = {}
+              for w in wf_dir.glob("*.yml"):
+                  snap[str(w)] = w.read_text()
+              for eng in ["SYNAPSE.py","NEURON_A.py","NEURON_B.py","REVENUE_FLYWHEEL.py"]:
+                  p = my_dir / eng
+                  if p.exists():
+                      try: snap[str(p)] = p.read_text()
+                      except: pass
+              Path("saves").mkdir(exist_ok=True)
+              Path("saves/last_good_state.json").write_text(json.dumps({
+                  "timestamp": datetime.now().isoformat(), "files": snap
+              }))
+              print(f"Saved snapshot: {len(snap)} files")
+
+          print(f"Guardian OK: {len(workflows)} workflows, {len(engines)} engines")
           PYEOF
 
-      - name: Commit snapshot
+      - name: Commit checkpoint
         run: |
-          git add data/ 2>/dev/null || true
+          git add data/guardian_state.json saves/ 2>/dev/null || true
           git diff --cached --quiet && echo "Clean" && exit 0
-          git commit -m "📸 guardian snapshot [$(date +%Y-%m-%dT%H:%M)]"
+          git commit -m "[guardian] checkpoint $(date +%H:%M) -- healthy"
           git pull --rebase origin main || true
-          git push origin main || true
+          git push origin main
+        continue-on-error: true
