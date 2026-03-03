@@ -2,17 +2,6 @@
   "updated": "2026-03-03",
   "queue": [
     {
-      "id": "2026-03-02-7",
-      "text": "\ud83c\udf38 SolarPunk was built by one person.\n\nNo team. No funding. No server costs.\nJust a human, a laptop, and free AI tools available to anyone.\n\n5,000 clone events later \u2014 the system is spreading itself.\n\nIf a regular person built this, imagine what a team of technically skilled people could do with it.\n\nFork it:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/fork\n\n#SolarPunk #OpenSource",
-      "template_idx": 7,
-      "created": "2026-03-02",
-      "status": "queued",
-      "platforms": [
-        "mastodon",
-        "bluesky"
-      ]
-    },
-    {
       "id": "2026-03-02-0",
       "text": "\ud83c\udf38 SolarPunk fact:\n\n931 unique people cloned this repo in the last 14 days.\n\nIt costs $0/month to run.\nIt runs itself twice a day.\n70% of every dollar it earns goes to Palestinian children's medical care.\n\nNo VC. No server costs. Just GitHub's free tier.\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#SolarPunk #OpenSource #FreePalestine",
       "template_idx": 0,
@@ -220,6 +209,17 @@
         "mastodon",
         "bluesky"
       ]
+    },
+    {
+      "id": "2026-03-03-8",
+      "text": "\ud83c\udf38 SolarPunk learns from itself.\n\nEvery engine output becomes training data on HuggingFace.\nEvery cycle the system gets slightly smarter.\nEvery problem it encounters teaches it how to fix itself.\n\nIt's not magic \u2014 it's a closed feedback loop:\nRun \u2192 Log \u2192 Learn \u2192 Improve \u2192 Run again\n\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n#MachineLearning #SolarPunk #AI",
+      "template_idx": 8,
+      "created": "2026-03-03",
+      "status": "queued",
+      "platforms": [
+        "mastodon",
+        "bluesky"
+      ]
     }
   ],
   "used_indices": [
@@ -231,6 +231,7 @@
     3,
     7,
     6,
-    1
+    1,
+    8
   ]
 }

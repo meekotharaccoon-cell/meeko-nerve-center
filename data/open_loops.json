@@ -1,7 +1,7 @@
 {
   "date": "2026-03-03",
-  "total": 4,
-  "human_required": 3,
+  "total": 5,
+  "human_required": 4,
   "auto_fixable": 1,
   "loops": [
     {
@@ -9,6 +9,14 @@
       "priority": "HIGH",
       "description": "Grant drafted but not submitted: Mozilla Foundation \u2014 Mozilla Technology Fund",
       "action": "Submit at: https://foundation.mozilla.org/en/what-we-fund/awards/mozilla-technology-fund/",
+      "human_required": true,
+      "date_found": "2026-03-03"
+    },
+    {
+      "type": "grant_submission",
+      "priority": "HIGH",
+      "description": "Grant drafted but not submitted: Knight Foundation \u2014 Prototype Fund",
+      "action": "Submit at: https://knightfoundation.org/prototype/",
       "human_required": true,
       "date_found": "2026-03-03"
     },

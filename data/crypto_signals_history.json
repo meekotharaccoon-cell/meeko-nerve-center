@@ -48,5 +48,32 @@
     "rationale": "PENGU is showing momentum with an 8.3% price increase today and trending on CoinGecko, indicating potential for further upside. The fractional penny price suggests volatility, but the current trend may continue. A modest position size is recommended to manage risk.",
     "risk_warning": "Sudden market-wide downturns could negatively impact PENGU's price",
     "discord_posted": false
+  },
+  {
+    "date": "2026-03-03",
+    "symbol": "FAI",
+    "name": "Freysa AI",
+    "coin_id": "freysa-ai",
+    "score": 48,
+    "reasons": [
+      "fractional penny price",
+      "volume up 117%",
+      "small-cap (<$50M)",
+      "up 117.0% (may be overbought)",
+      "trending on CoinGecko"
+    ],
+    "price_usd": 0.00319415,
+    "market_cap": 26601943,
+    "action": "BUY",
+    "entry": "0.0030 - 0.0033",
+    "position_usd": 3.2,
+    "target": "0.0045",
+    "stop_loss": "0.0025",
+    "timeframe": "24-48 hours",
+    "confidence": "MEDIUM",
+    "where_to_buy": "Gate.io",
+    "rationale": "The 117% price and volume surge in the last 24 hours indicates strong momentum, and the small market cap suggests potential for further growth. However, the rapid increase also raises overbought concerns. A partial budget allocation is recommended to balance risk and potential reward.",
+    "risk_warning": "Sudden market volatility could lead to a sharp price drop, triggering the stop loss.",
+    "discord_posted": false
   }
 ]
