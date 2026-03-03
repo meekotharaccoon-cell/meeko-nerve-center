@@ -1,71 +1,99 @@
+#!/usr/bin/env python3
+"""
+NEURON_A.py -- Builder Brain (v2)
+Analyzes state, proposes income expansions, finds opportunities.
+Focused on: what can SolarPunk actually BUILD and EARN right now?
+"""
 import os, json, requests
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime
 
-class NeuronA:
-    def __init__(self):
-        self.api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-        self.data_dir = Path("data")
-        self.mycelium = Path("mycelium")
-        self.data_dir.mkdir(exist_ok=True)
+API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+DATA = Path("data")
+MYC  = Path("mycelium")
+DATA.mkdir(exist_ok=True)
 
-    def gather_context(self):
-        engines = sorted([f.name for f in self.mycelium.glob("*.py")])
-        flywheel = {}
-        ff = self.data_dir / "flywheel_state.json"
-        if ff.exists():
-            try: flywheel = json.loads(ff.read_text())
-            except: pass
-        queue_remaining = 0
-        bqf = self.data_dir / "BUILD_QUEUE.json"
-        if bqf.exists():
-            try: queue_remaining = len(json.loads(bqf.read_text()).get("queue", []))
-            except: pass
-        return {"engines": engines, "engine_count": len(engines),
-                "revenue": flywheel.get("current_balance", 0),
-                "queue_remaining": queue_remaining}
+def analyze():
+    engines = [e.name for e in MYC.glob("*.py")] if MYC.exists() else []
+    flywheel = {}
+    ff = DATA / "flywheel_state.json"
+    if ff.exists():
+        try: flywheel = json.loads(ff.read_text())
+        except: pass
 
-    def think(self, ctx):
-        if not self.api_key:
-            return {
-                "proposals": [
-                    f"Trigger OMNIBRAIN — builds 1 engine from {ctx['queue_remaining']}-item queue",
-                    "Add Etsy API key to GitHub Secrets to activate Gaza Rose Gallery tracking",
-                    "Create first Gumroad digital product for passive income"
-                ],
-                "system_assessment": f"{ctx['engine_count']} engines, ${ctx['revenue']:.2f} revenue, {ctx['queue_remaining']} queued.",
-                "confidence": 70
-            }
-        prompt = f"""You are NEURON_A — Builder Brain of SolarPunk, Meeko's autonomous income agent.
-Gaza Rose Gallery = Palestinian art. 70% revenue to PCRF. Goal: 100% passive income.
-CURRENT: {ctx['engine_count']} engines, ${ctx['revenue']:.2f} revenue, {ctx['queue_remaining']} engines queued to build.
-Propose 3 concrete actions to grow income RIGHT NOW.
-JSON only: {{"proposals": ["1","2","3"], "system_assessment": "one sentence", "confidence": <50-100>}}"""
+    tier = 0
+    tf = DATA / "tier_state.json"
+    if tf.exists():
+        try: tier = json.loads(tf.read_text()).get("current_tier", 0)
+        except: pass
+
+    desktop = {}
+    df = DATA / "desktop_connection.json"
+    if df.exists():
+        try: desktop = json.loads(df.read_text())
+        except: pass
+
+    revenue    = flywheel.get("current_balance", 0)
+    streams    = list(flywheel.get("streams", {}).keys())
+    brave_live = desktop.get("brave_debug_live", False)
+    desktop_up = desktop.get("loop_status") == "CONNECTED"
+
+    if not API_KEY:
+        report = {
+            "timestamp": datetime.now().isoformat(),
+            "summary": f"Builder: {len(engines)} engines, ${revenue:.2f} revenue. Priority: activate Gaza Rose Gallery automation via Brave.",
+            "proposals": [
+                "Automate Gaza Rose Gallery Instagram/Etsy posts using Brave CDP",
+                "Build email subscriber landing page for humanitarian newsletter",
+                "Create affiliate product links for art supply recommendations"
+            ],
+            "income_opportunities": [
+                {"stream": "Gaza Rose Gallery", "method": "Brave CDP auto-post", "effort": "low", "potential": "$50-200/mo"},
+                {"stream": "Affiliate Links", "method": "Art/tech product recommendations in content", "effort": "low", "potential": "$20-100/mo"},
+                {"stream": "Newsletter", "method": "Weekly curated content + affiliate", "effort": "medium", "potential": "$50-300/mo"},
+            ]
+        }
+    else:
+        prompt = f"""You are NEURON_A, Builder Brain of SolarPunk autonomous income system.
+
+STATE:
+- Engines: {engines}
+- Revenue: ${revenue:.2f}
+- Streams: {streams or ['none']}
+- Tier: {tier}
+- Desktop: {'connected' if desktop_up else 'not connected'}
+- Brave browser: {'LIVE' if brave_live else 'not available'}
+
+MISSION: Find 3 highest-leverage income/capability moves RIGHT NOW.
+
+Rules:
+- Legal, ethical passive income only
+- Automatable with Python + browser (no manual steps)
+- Can realistically earn $10-500/month
+- Fast time to first dollar (days not months)
+- Be specific (exact platform, method, steps)
+
+JSON only (no fences):
+{{"summary":"one line","proposals":["action1","action2","action3"],"income_opportunities":[{{"stream":"name","method":"exact how","effort":"low/med/high","potential":"$X-Y/mo"}}]}}"""
+
         try:
-            r = requests.post(
-                "https://api.anthropic.com/v1/messages",
-                headers={"x-api-key": self.api_key, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
-                json={"model": "claude-sonnet-4-20250514", "max_tokens": 600, "messages": [{"role": "user", "content": prompt}]},
-                timeout=60
-            )
+            r = requests.post("https://api.anthropic.com/v1/messages",
+                headers={"x-api-key": API_KEY, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
+                json={"model": "claude-sonnet-4-20250514", "max_tokens": 800,
+                      "messages": [{"role": "user", "content": prompt}]}, timeout=30)
             r.raise_for_status()
-            text = r.json()["content"][0]["text"]
-            s, e = text.find("{"), text.rfind("}") + 1
-            return json.loads(text[s:e])
+            t = r.json()["content"][0]["text"]
+            s, e = t.find("{"), t.rfind("}") + 1
+            report = json.loads(t[s:e]) if s >= 0 else {}
+            report["timestamp"] = datetime.now().isoformat()
         except Exception as ex:
-            return {"proposals": [f"API error: {ex}"], "system_assessment": "degraded", "confidence": 0}
+            print(f"NEURON_A err: {ex}")
+            report = {"timestamp": datetime.now().isoformat(), "summary": f"API err: {ex}",
+                      "proposals": [], "income_opportunities": []}
 
-    def run(self):
-        print(f"\n🔵 NEURON_A (Builder) — {datetime.now().isoformat()}")
-        ctx = self.gather_context()
-        result = self.think(ctx)
-        result["timestamp"] = datetime.now(timezone.utc).isoformat()
-        result["context"] = ctx
-        (self.data_dir / "neuron_a_output.json").write_text(json.dumps(result, indent=2))
-        print(f"Proposals ({result.get('confidence', 0)}% confidence):")
-        for p in result.get("proposals", []):
-            print(f"  + {p}")
-        return result
+    (DATA / "neuron_a_report.json").write_text(json.dumps(report, indent=2))
+    print(f"NEURON_A: {report.get('summary','done')}")
+    return report
 
 if __name__ == "__main__":
-    NeuronA().run()
+    analyze()
