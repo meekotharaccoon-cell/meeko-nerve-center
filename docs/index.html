@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaza Rose Gallery — $1 Art That Loops</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!-- PayPal SDK — swap sb for your real Client ID from developer.paypal.com -->
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&intent=capture" data-sdk-integration-source="button-factory"></script>
+<style>
+  :root {--rose:#c8756b;--gold:#d4a45a;--olive:#3d5a3e;--cream:#f5ede3;--dark:#0e0c0b;--panel:#1a1613;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--dark);color:var(--cream);font-family:'Cormorant Garamond',serif;min-height:100vh;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;opacity:.6}
+  .hero{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:3rem 1.5rem;text-align:center}
+  .rose-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(200,117,107,.12) 0,transparent 70%);pointer-events:none;animation:bgpulse 4s ease-in-out infinite}
+  @keyframes bgpulse{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .2s forwards}
+  h1{font-size:clamp(3.5rem,9vw,7rem);font-weight:300;line-height:1;letter-spacing:-.02em;opacity:0;animation:fadeUp .9s .4s forwards}
+  h1 em{color:var(--rose);font-style:italic;display:block}
+  .tagline{margin-top:1.5rem;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;color:rgba(245,237,227,.6);max-width:480px;line-height:1.5;opacity:0;animation:fadeUp .9s .6s forwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .loop-container{position:relative;z-index:1;width:100%;max-width:700px;margin:3rem auto;padding:0 1.5rem;opacity:0;animation:fadeUp 1s .9s forwards}
+  .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0 0}
+  .split-card{background:var(--panel);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.06);text-align:left;position:relative;overflow:hidden}
+  .split-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+  .split-card.gaza::before{background:linear-gradient(90deg,var(--olive),#5a8c5b)}
+  .split-card.meeko::before{background:linear-gradient(90deg,var(--rose),#e8957a)}
+  .split-label{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;opacity:.5;margin-bottom:.5rem}
+  .split-percent{font-size:3rem;font-weight:600;line-height:1;margin-bottom:.3rem}
+  .split-card.gaza .split-percent{color:#5a8c5b}.split-card.meeko .split-percent{color:var(--rose)}
+  .split-note{font-size:.9rem;font-style:italic;color:rgba(245,237,227,.5);margin-top:.5rem;line-height:1.4}
+  .art-section{position:relative;z-index:1;max-width:700px;margin:0 auto 3rem;padding:0 1.5rem}
+  .section-label{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:2rem}
+  .art-card{aspect-ratio:1;border-radius:8px;background:var(--panel);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s}
+  .art-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(200,117,107,.2)}
+  .art-bg{position:absolute;inset:0;opacity:.15}
+  .buy-section{position:relative;z-index:1;max-width:520px;margin:0 auto 4rem;padding:0 1.5rem;text-align:center}
+  .price-badge{display:inline-block;background:linear-gradient(135deg,var(--gold),#b8893a);color:var(--dark);font-family:'Space Mono',monospace;font-weight:700;font-size:1.4rem;padding:.4rem 1.2rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:.05em}
+  .buy-headline{font-size:clamp(2rem,5vw,3rem);font-weight:300;line-height:1.2;margin-bottom:.75rem}
+  .buy-sub{font-style:italic;color:rgba(245,237,227,.5);font-size:1.1rem;margin-bottom:2rem;line-height:1.5}
+  #paypal-button-container{width:100%;margin-bottom:1.5rem}
+  .or-divider{display:flex;align-items:center;gap:1rem;color:rgba(245,237,227,.2);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.2em;margin:1rem 0}
+  .or-divider::before,.or-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+  .lightning-btn{width:100%;background:linear-gradient(135deg,#f7941d,#f7b731);color:#1a0d00;border:none;border-radius:8px;padding:1rem;font-family:'Space Mono',monospace;font-weight:700;font-size:.85rem;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:transform .2s,box-shadow .2s}
+  .lightning-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(247,148,29,.4)}
+  .loop-math{position:relative;z-index:1;max-width:640px;margin:0 auto 4rem;padding:2rem 1.5rem;background:var(--panel);border-radius:16px;border:1px solid rgba(255,255,255,.05);overflow:hidden;width:calc(100% - 3rem)}
+  .math-title{font-size:1.5rem;font-weight:600;margin-bottom:1.5rem}
+  .flow-step{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+  .flow-step:last-child{border-bottom:none}
+  .flow-icon{width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:.1rem}
+  .flow-text strong{display:block;font-size:1.1rem;font-weight:400;margin-bottom:.2rem}
+  .flow-text span{font-size:.9rem;font-style:italic;color:rgba(245,237,227,.45)}
+  .flow-amount{margin-left:auto;font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;flex-shrink:0;align-self:center;min-width:4rem;text-align:right}
+  .modal-overlay{display:none;position:fixed;inset:0;z-index:100;background:rgba(14,12,11,.9);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1.5rem}
+  .modal-overlay.open{display:flex}
+  .modal{background:var(--panel);border-radius:20px;border:1px solid rgba(255,255,255,.08);max-width:440px;width:100%;padding:2.5rem;text-align:center;animation:modalIn .3s ease}
+  @keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+  .modal-art{font-size:5rem;margin-bottom:1rem}
+  .modal-title{font-size:1.8rem;margin-bottom:.5rem}
+  .modal-sub{font-style:italic;opacity:.5;margin-bottom:2rem;font-size:1rem}
+  .lightning-invoice{background:rgba(247,148,29,.1);border:1px solid rgba(247,148,29,.2);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
+  .ln-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:rgba(247,148,29,.7);margin-bottom:.75rem;display:block;text-transform:uppercase}
+  .lightning-address{font-family:'Space Mono',monospace;font-size:.75rem;color:#f7941d;word-break:break-all;line-height:1.5;cursor:pointer;padding:.5rem;border-radius:6px}
+  .copy-btn{background:rgba(247,148,29,.15);border:1px solid rgba(247,148,29,.3);color:#f7941d;padding:.5rem 1.2rem;border-radius:6px;font-family:'Space Mono',monospace;font-size:.7rem;cursor:pointer;margin-top:.75rem}
+  .copy-btn.copied{color:#5a8c5b;border-color:rgba(90,140,91,.3);background:rgba(90,140,91,.1)}
+  .modal-close{background:none;border:1px solid rgba(255,255,255,.1);color:rgba(245,237,227,.4);padding:.5rem 1.5rem;border-radius:6px;cursor:pointer;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em}
+  .success-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(14,12,11,.95);align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:2rem}
+  .success-overlay.open{display:flex}
+  .success-art{font-size:8rem;animation:successPop .5s ease}
+  @keyframes successPop{0%{transform:scale(0);opacity:0}70%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
+  .success-msg{font-size:2.5rem;font-weight:300;margin:1rem 0 .5rem}
+  .success-split{display:flex;gap:2rem;margin:2rem 0;font-family:'Space Mono',monospace}
+  .s-amount{font-size:2rem;font-weight:700}.s-label{font-size:.65rem;opacity:.5;letter-spacing:.15em;text-transform:uppercase}
+  .success-loop{font-style:italic;font-size:1.1rem;color:rgba(245,237,227,.5);max-width:360px;line-height:1.5;margin-bottom:2rem}
+  .continue-btn{background:linear-gradient(135deg,var(--rose),#b05a52);border:none;color:white;padding:1rem 2.5rem;border-radius:100px;font-family:'Space Mono',monospace;font-size:.8rem;cursor:pointer;letter-spacing:.1em}
+  .ticker{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.04);padding:1rem 0;overflow:hidden;margin-top:2rem;white-space:nowrap;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:rgba(245,237,227,.2)}
+  .ticker-inner{display:inline-block;animation:tickerScroll 30s linear infinite}
+  @keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  footer{position:relative;z-index:1;text-align:center;padding:2rem 1.5rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:rgba(245,237,227,.2);border-top:1px solid rgba(255,255,255,.03)}
+  footer a{color:var(--rose);text-decoration:none}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="rose-glow"></div>
+  <div class="eyebrow">Gaza Rose Gallery × SolarPunk</div>
+  <h1>One Dollar.<br><em>One Rose.</em></h1>
+  <p class="tagline">AI-generated art that funds Gaza, loops forever, and costs you nothing in the end.</p>
+</section>
+<div class="loop-container">
+  <p class="section-label" style="text-align:center;margin-bottom:1.5rem;">How every dollar flows</p>
+  <div class="split-grid">
+    <div class="split-card gaza">
+      <div class="split-label">Gaza Rose Gallery</div>
+      <div class="split-percent">70¢</div>
+      <div class="split-note">Funds Palestinian artists, families, and creative rebuilding.</div>
+    </div>
+    <div class="split-card meeko">
+      <div class="split-label">SolarPunk Loop Fund</div>
+      <div class="split-percent">30¢</div>
+      <div class="split-note">Auto-reinvests. Buys more art. Generates more sales. Loops.</div>
+    </div>
+  </div>
+</div>
+<div class="art-section">
+  <p class="section-label">Today's AI Art Drops</p>
+  <div class="art-grid" id="artGrid"></div>
+</div>
+<div class="buy-section">
+  <div class="price-badge">$1.00</div>
+  <h2 class="buy-headline">Buy a piece.<br>Feed the loop.</h2>
+  <p class="buy-sub">You get unique AI art.<br>Gaza gets 70 cents.<br>The loop gets 30 cents and buys more.</p>
+  <div id="paypal-button-container"></div>
+  <div class="or-divider">OR PAY WITH</div>
+  <button class="lightning-btn" onclick="openLightning()"><span>⚡</span> Pay with Bitcoin Lightning — $1</button>
+  <p style="font-size:.8rem;color:rgba(245,237,227,.25);margin-top:1.5rem;font-style:italic;font-family:'Space Mono',monospace;line-height:1.5;">
+    PayPal charges 2.9%+$0.30 in fees.<br>Lightning charges ~$0.001.<br>Both split 70/30 after fees.
+  </p>
+</div>
+<div class="loop-math">
+  <div class="math-title">🌱 The Loop Explained</div>
+  <div class="flow-step">
+    <div class="flow-icon" style="background:rgba(212,164,90,.15)">💳</div>
+    <div class="flow-text"><strong>Someone pays $1</strong><span>You, or anyone on the internet</span></div>
+    <div class="flow-amount" style="color:var(--gold)">$1.00</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" style="background:rgba(61,90,62,.2)">🕊️</div>
+    <div class="flow-text"><strong>Gaza Rose gets 70¢</strong><span>Instant PayPal to Gaza Rose account</span></div>
+    <div class="flow-amount" style="color:#5a8c5b">+$0.70</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" style="background:rgba(200,117,107,.15)">🔄</div>
+    <div class="flow-text"><strong>Loop Fund gets 30¢</strong><span>Pools until it hits $1.00</span></div>
+    <div class="flow-amount" style="color:var(--rose)">+$0.30</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" style="background:rgba(212,164,90,.1)">⚡</div>
+    <div class="flow-text"><strong>After ~3.3 sales — Loop auto-buys</strong><span>SolarPunk spends $1 → triggers another full cycle</span></div>
+    <div class="flow-amount" style="color:var(--gold)">×∞</div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-icon" style="background:rgba(61,90,62,.2)">🌹</div>
+    <div class="flow-text"><strong>Each buyer gets unique AI art</strong><span>Generated fresh every time — no two pieces alike</span></div>
+    <div class="flow-amount" style="color:#5a8c5b">🖼️</div>
+  </div>
+</div>
+<div class="ticker">
+  <span class="ticker-inner">
+    LOOP ACTIVE &nbsp;∙&nbsp; GAZA ROSE GALLERY &nbsp;∙&nbsp; 70% TO GAZA &nbsp;∙&nbsp; 30% LOOPS FOREVER &nbsp;∙&nbsp; AI ART &nbsp;∙&nbsp; $1 = INFINITE &nbsp;∙&nbsp; SOLARPUNK &nbsp;∙&nbsp; LOOP ACTIVE &nbsp;∙&nbsp; GAZA ROSE GALLERY &nbsp;∙&nbsp; 70% TO GAZA &nbsp;∙&nbsp; 30% LOOPS FOREVER &nbsp;∙&nbsp; AI ART &nbsp;∙&nbsp;
+  </span>
+</div>
+<footer>
+  GAZA ROSE GALLERY &nbsp;∙&nbsp; POWERED BY SOLARPUNK &nbsp;∙&nbsp; <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">OPEN SOURCE</a>
+  <br><br>All payments split automatically. Art generated by AI. 100% autonomous.
+  <br><br><a href="dashboard.html">📊 System Dashboard</a>
+</footer>
+<!-- LIGHTNING MODAL -->
+<div class="modal-overlay" id="lightningModal">
+  <div class="modal">
+    <div class="modal-art">⚡</div>
+    <h3 class="modal-title">Pay with Lightning</h3>
+    <p class="modal-sub">Send exactly $1 (≈ 1000 sats) to:</p>
+    <div class="lightning-invoice">
+      <span class="ln-label">Lightning Address</span>
+      <!-- REPLACE with your real Lightning address from strike.me -->
+      <div class="lightning-address" id="lnAddress" onclick="copyLN()">gazarose@strike.me</div>
+      <button class="copy-btn" id="copyBtn" onclick="copyLN()">COPY ADDRESS</button>
+    </div>
+    <button class="modal-close" onclick="closeLightning()">CLOSE</button>
+  </div>
+</div>
+<!-- SUCCESS MODAL -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-art" id="successArt">🌹</div>
+  <h2 class="success-msg">Your art is blooming.</h2>
+  <p style="font-style:italic;color:rgba(245,237,227,.5);font-size:1.1rem;margin-bottom:1.5rem;">Check your email for your unique AI piece.</p>
+  <div class="success-split">
+    <div><div class="s-amount" style="color:#5a8c5b">$0.70</div><div class="s-label">To Gaza Rose</div></div>
+    <div style="opacity:.2;font-size:2rem;align-self:center">→</div>
+    <div><div class="s-amount" style="color:var(--rose)">$0.30</div><div class="s-label">Loops back</div></div>
+  </div>
+  <p class="success-loop">Your dollar just funded Palestinian art<br>and seeded the next cycle of the loop.</p>
+  <button class="continue-btn" onclick="closeSuccess()">BUY ANOTHER →</button>
+</div>
+<script>
+const artPieces = [
+  {emoji:'🌹',bg:'linear-gradient(135deg,#3d1a1a,#7a3030)'},
+  {emoji:'🕊️',bg:'linear-gradient(135deg,#1a2a1a,#3d5a3e)'},
+  {emoji:'🌙',bg:'linear-gradient(135deg,#1a1a3d,#2d2d6b)'},
+  {emoji:'🌿',bg:'linear-gradient(135deg,#1a2e1a,#2d5a2d)'},
+  {emoji:'⭐',bg:'linear-gradient(135deg,#2d2000,#5a4000)'},
+  {emoji:'🌊',bg:'linear-gradient(135deg,#001a2d,#003d5a)'},
+];
+function renderArtGrid(){
+  const grid=document.getElementById('artGrid');
+  artPieces.forEach(p=>{
+    const card=document.createElement('div');
+    card.className='art-card';
+    card.innerHTML=`<div class="art-bg" style="background:${p.bg}"></div><span style="position:relative;z-index:1">${p.emoji}</span>`;
+    grid.appendChild(card);
+  });
+}
+function initPayPal(){
+  if(typeof paypal==='undefined')return;
+  paypal.Buttons({
+    style:{color:'gold',shape:'pill',label:'pay',height:50},
+    createOrder:(data,actions)=>actions.order.create({
+      purchase_units:[{amount:{value:'1.00',currency_code:'USD'},
+      description:'Gaza Rose Gallery — AI Art (70% Gaza, 30% Loop)',
+      payee:{email_address:'gazarose@example.com'}}] // REPLACE with Gaza Rose PayPal email
+    }),
+    onApprove:async(data,actions)=>{const o=await actions.order.capture();handleSuccess(o)},
+    onError:err=>{console.error(err);alert('Payment failed. Try Lightning instead. ⚡');}
+  }).render('#paypal-button-container');
+}
+function handleSuccess(order){
+  const emojis=artPieces.map(p=>p.emoji);
+  document.getElementById('successArt').textContent=emojis[Math.floor(Math.random()*emojis.length)];
+  document.getElementById('successOverlay').classList.add('open');
+  console.log('Purchase complete:',order.id);
+}
+function openLightning(){document.getElementById('lightningModal').classList.add('open')}
+function closeLightning(){document.getElementById('lightningModal').classList.remove('open')}
+function copyLN(){
+  const addr=document.getElementById('lnAddress').textContent.trim();
+  navigator.clipboard.writeText(addr).then(()=>{
+    const btn=document.getElementById('copyBtn');
+    btn.textContent='COPIED ✓';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='COPY ADDRESS';btn.classList.remove('copied')},2000);
+  });
+}
+function closeSuccess(){document.getElementById('successOverlay').classList.remove('open')}
+document.getElementById('lightningModal').addEventListener('click',function(e){if(e.target===this)closeLightning()});
+document.addEventListener('DOMContentLoaded',()=>{renderArtGrid();setTimeout(initPayPal,500)});
+</script>
+</body>
+</html>
