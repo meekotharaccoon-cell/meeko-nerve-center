@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-04T23:14:59.201754",
+  "last_checked": "2026-03-04T23:16:23.031432",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -38,7 +38,8 @@
     "SELF_BUILDER.py",
     "CRYPTO_WATCHER.py",
     "CALENDAR_BRAIN.py",
-    "HEALTH_BOOSTER.py"
+    "HEALTH_BOOSTER.py",
+    "GITHUB_SPONSORS_ENGINE.py"
   ],
   "status": "healthy"
 }
