@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-04T23:30:55.042189",
+  "last_checked": "2026-03-04T23:58:49.377085",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -16,6 +16,7 @@
     "NEURON_B.py",
     "HUMAN_CONNECTOR.py",
     "CONNECTION_FORGE.py",
+    "AI_CLIENT.py",
     "EMAIL_BRAIN.py",
     "SUBSTACK_ENGINE.py",
     "README_GENERATOR.py",
