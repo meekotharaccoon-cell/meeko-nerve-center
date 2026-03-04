@@ -8,17 +8,21 @@
       "CONTENT_HARVESTER.py",
       "ETSY_SEO_ENGINE.py",
       "GUARDIAN.py",
+      "GUMROAD_ENGINE.py",
+      "HEALTH_BOOSTER.py",
       "INCOME_ARCHITECT.py",
+      "LINK_PAGE.py",
       "MEMORY_PALACE.py",
       "NEURON_A.py",
       "NEURON_B.py",
       "REVENUE_FLYWHEEL.py",
+      "SOCIAL_PROMOTER.py",
       "SYNAPSE.py",
       "SYNTHESIS_FACTORY.py",
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 13,
+    "engine_count": 17,
     "data_files": [
       "asset_map.json",
       "brain_state.json",
@@ -27,6 +31,7 @@
       "content_harvest.json",
       "desktop_clean_log.json",
       "desktop_connection.json",
+      "etsy_seo_output.json",
       "evolve_history.json",
       "flywheel_state.json",
       "growth_curve.json",
@@ -86,7 +91,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-04T08:02:58.611286+00:00"
+    "timestamp": "2026-03-04T14:02:59.508830+00:00"
   },
-  "generated_at": "2026-03-04T08:02:58.828127+00:00"
+  "generated_at": "2026-03-04T14:02:59.675017+00:00"
 }

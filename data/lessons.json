@@ -6,11 +6,6 @@
     "action": "Settings -> Pages -> main branch -> /docs"
   },
   {
-    "lesson": "Only 10 engines \u2014 SYNTHESIS_FACTORY should build more",
-    "priority": "medium",
-    "type": "growth"
-  },
-  {
     "lesson": "Sub-50 health \u2014 API key 401. Check ANTHROPIC_API_KEY.",
     "priority": "critical",
     "type": "action"
