@@ -1,10 +1,20 @@
 {
-  "run_id": "20260304-0021",
-  "timestamp": "2026-03-04T00:21:05.028272",
-  "health_score": 38,
-  "engines_total": 6,
-  "revenue": 0.0,
-  "tier": 0,
-  "status": "API err -- local compute",
-  "top_action": ""
+  "run_id": "22651268915",
+  "health_score": 40,
+  "stats": {
+    "engines_total": 8,
+    "data_files": 13,
+    "revenue": 0.0,
+    "cycles": 0,
+    "synth_built": 0,
+    "prev_score": 38,
+    "next_upgrade": 20,
+    "next_upgrade_name": "Claude Pro"
+  },
+  "synthesis": {
+    "health_score": 40,
+    "synthesis": "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages",
+    "top_actions": []
+  },
+  "generated_at": "2026-03-04T01:44:17.796475+00:00"
 }
