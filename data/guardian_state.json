@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-04T06:32:41.818250",
+  "last_checked": "2026-03-04T06:36:57.413675",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -15,6 +15,7 @@
     "NEURON_B.py",
     "GUARDIAN.py",
     "REVENUE_FLYWHEEL.py",
+    "knowledge_dispatch.py",
     "SYNAPSE.py",
     "ART_GENERATOR.py"
   ],
