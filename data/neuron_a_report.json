@@ -5,15 +5,17 @@
   "system_state": {
     "engines": [
       "ART_GENERATOR.py",
+      "GUARDIAN.py",
       "INCOME_ARCHITECT.py",
       "NEURON_A.py",
       "NEURON_B.py",
       "REVENUE_FLYWHEEL.py",
       "SYNAPSE.py",
       "SYNTHESIS_FACTORY.py",
-      "ai_council.py"
+      "ai_council.py",
+      "knowledge_dispatch.py"
     ],
-    "engine_count": 8,
+    "engine_count": 10,
     "data_files": [
       "asset_map.json",
       "brain_state.json",
@@ -23,7 +25,9 @@
       "desktop_connection.json",
       "evolve_history.json",
       "flywheel_state.json",
+      "guardian_log.json",
       "guardian_state.json",
+      "guardian_status.json",
       "lessons.json",
       "neuron_a_report.json",
       "neuron_b_report.json",
@@ -76,7 +80,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-04T02:40:59.538341+00:00"
+    "timestamp": "2026-03-04T06:41:52.475246+00:00"
   },
-  "generated_at": "2026-03-04T02:40:59.691898+00:00"
+  "generated_at": "2026-03-04T06:41:52.733704+00:00"
 }
