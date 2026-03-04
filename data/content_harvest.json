@@ -1,0 +1,175 @@
+{
+  "timestamp": "2026-03-04T08:02:54.586467+00:00",
+  "sources": {
+    "hackernews": [
+      {
+        "title": "Motorola GrapheneOS devices will be bootloader unlockable/relockable",
+        "url": "https://grapheneos.social/@GrapheneOS/116160393783585567",
+        "score": 503,
+        "source": "hackernews"
+      },
+      {
+        "title": "Better JIT for Postgres",
+        "url": "https://github.com/vladich/pg_jitter",
+        "score": 26,
+        "source": "hackernews"
+      },
+      {
+        "title": "TikTok will not introduce end-to-end encryption, saying it makes users less safe",
+        "url": "https://www.bbc.com/news/articles/cly2m5e5ke4o",
+        "score": 175,
+        "source": "hackernews"
+      },
+      {
+        "title": "Agentic Engineering Patterns",
+        "url": "https://simonwillison.net/guides/agentic-engineering-patterns/",
+        "score": 53,
+        "source": "hackernews"
+      },
+      {
+        "title": "RFC 9849. TLS Encrypted Client Hello",
+        "url": "https://www.rfc-editor.org/rfc/rfc9849.html",
+        "score": 6,
+        "source": "hackernews"
+      }
+    ],
+    "reddit": [],
+    "devto": [
+      {
+        "title": "Making London's hidden film clubs discoverable",
+        "url": "https://dev.to/alistairjcbrown/i-built-a-film-club-discovery-tool-for-londons-cinema-community-2md",
+        "hearts": 38,
+        "source": "devto"
+      },
+      {
+        "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
+        "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
+        "hearts": 5,
+        "source": "devto"
+      },
+      {
+        "title": "I Built a Voice-to-Code VS Code Extension That Runs Entirely On-Device",
+        "url": "https://dev.to/agentic_engineer/i-built-a-voice-to-code-vs-code-extension-that-runs-entirely-on-device-16gc",
+        "hearts": 6,
+        "source": "devto"
+      },
+      {
+        "title": "StenoAI - Privacy Focused AI meeting intelligence. 380+ GitHub stars, 1000+ downloads",
+        "url": "https://dev.to/ruzin_saleem_2b30cf073fd8/stenoai-privacy-focused-ai-meeting-intelligence-380-github-stars-1000-downloads-4o1m",
+        "hearts": 9,
+        "source": "devto"
+      }
+    ]
+  },
+  "gaza_weather": {
+    "temp_c": 16.7,
+    "vibe": "partly cloudy",
+    "code": 3,
+    "location": "Gaza City"
+  },
+  "trending_themes": [
+    {
+      "word": "will",
+      "count": 2
+    },
+    {
+      "word": "code",
+      "count": 2
+    },
+    {
+      "word": "motorola",
+      "count": 1
+    },
+    {
+      "word": "grapheneos",
+      "count": 1
+    },
+    {
+      "word": "devices",
+      "count": 1
+    },
+    {
+      "word": "bootloader",
+      "count": 1
+    },
+    {
+      "word": "unlockable/relockable",
+      "count": 1
+    },
+    {
+      "word": "better",
+      "count": 1
+    },
+    {
+      "word": "postgres",
+      "count": 1
+    },
+    {
+      "word": "tiktok",
+      "count": 1
+    },
+    {
+      "word": "introduce",
+      "count": 1
+    },
+    {
+      "word": "encryption",
+      "count": 1
+    },
+    {
+      "word": "saying",
+      "count": 1
+    },
+    {
+      "word": "makes",
+      "count": 1
+    },
+    {
+      "word": "users",
+      "count": 1
+    },
+    {
+      "word": "less",
+      "count": 1
+    },
+    {
+      "word": "safe",
+      "count": 1
+    },
+    {
+      "word": "agentic",
+      "count": 1
+    },
+    {
+      "word": "engineering",
+      "count": 1
+    },
+    {
+      "word": "patterns",
+      "count": 1
+    }
+  ],
+  "content_angles": [
+    {
+      "type": "tech_solidarity",
+      "hook": "How 'Motorola GrapheneOS devices will be bootloader unlockable/re...' connects to Gaza resilience",
+      "platform": "twitter/linkedin",
+      "effort": "5min"
+    },
+    {
+      "type": "gallery_promo",
+      "hook": "$1 gets you AI art. 70c goes to Gaza Rose Gallery. The loop funds itself.",
+      "platform": "all",
+      "effort": "30sec",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
+    },
+    {
+      "type": "origin_story",
+      "hook": "I built an AI that earns money while I sleep and donates automatically.",
+      "platform": "twitter/substack",
+      "effort": "15min"
+    }
+  ],
+  "total_items": 9,
+  "status": "harvested"
+}
