@@ -100,13 +100,51 @@ jobs:
         run: python3 mycelium/SYNTHESIS_FACTORY.py || echo "SYNTHESIS_FACTORY error"
         continue-on-error: true
 
-      - name: "🌐 Phase 10 — BRAVE_BRIDGE (browser)"
+      - name: "📢 Phase 10 — SOCIAL_PROMOTER (traffic engine)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+        run: python3 mycelium/SOCIAL_PROMOTER.py || echo "SOCIAL_PROMOTER error"
+        continue-on-error: true
+
+      - name: "🏪 Phase 11 — GUMROAD_ENGINE (product listings)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+        run: python3 mycelium/GUMROAD_ENGINE.py || echo "GUMROAD_ENGINE error"
+        continue-on-error: true
+
+      - name: "🔗 Phase 12 — LINK_PAGE (bio link rebuild)"
+        run: python3 mycelium/LINK_PAGE.py || echo "LINK_PAGE error"
+        continue-on-error: true
+
+      - name: "🏥 Phase 13 — HEALTH_BOOSTER (diagnostics)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+        run: python3 mycelium/HEALTH_BOOSTER.py || echo "HEALTH_BOOSTER error"
+        continue-on-error: true
+
+      - name: "🌐 Phase 14 — BRAVE_BRIDGE (browser)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 mycelium/BRAVE_BRIDGE.py || echo "BRAVE_BRIDGE not present"
         continue-on-error: true
 
-      - name: "🖥️ Phase 11 — GETSCREEN_BRIDGE (desktop)"
+      - name: "🖥️ Phase 15 — GETSCREEN_BRIDGE (desktop)"
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -115,7 +153,7 @@ jobs:
         run: python3 mycelium/GETSCREEN_BRIDGE.py || echo "GETSCREEN_BRIDGE not present"
         continue-on-error: true
 
-      - name: "⚡ Phase 12 — SYNAPSE (resolver + daily email)"
+      - name: "⚡ Phase 16 — SYNAPSE (resolver + daily email)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
