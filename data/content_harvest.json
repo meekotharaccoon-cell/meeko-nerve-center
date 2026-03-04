@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-04T18:55:06.967522+00:00",
+  "timestamp": "2026-03-04T20:02:04.189723+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "An interactive map of FLock Cams",
+        "url": "https://deflock.org/map#map=5/37.125286/-96.284180",
+        "score": 142,
+        "source": "hackernews"
+      },
+      {
         "title": "MacBook Neo",
         "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
-        "score": 919,
+        "score": 1102,
         "source": "hackernews"
       },
       {
         "title": "Making Firefox's right-click not suck with about:config",
         "url": "https://joshua.hu/firefox-making-right-click-not-suck",
-        "score": 53,
+        "score": 122,
         "source": "hackernews"
       },
       {
         "title": "Something is afoot in the land of Qwen",
         "url": "https://simonwillison.net/2026/Mar/4/qwen/",
-        "score": 249,
+        "score": 313,
         "source": "hackernews"
       },
       {
         "title": "Nobody Gets Promoted for Simplicity",
         "url": "https://terriblesoftware.org/2026/03/03/nobody-gets-promoted-for-simplicity/",
-        "score": 617,
-        "source": "hackernews"
-      },
-      {
-        "title": "Moss is a pixel canvas where every brush is a tiny program",
-        "url": "https://www.moss.town/",
-        "score": 29,
+        "score": 682,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.7,
+    "temp_c": 12.9,
     "vibe": "sunny",
-    "code": 0,
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -75,6 +75,18 @@
     {
       "word": "code",
       "count": 2
+    },
+    {
+      "word": "interactive",
+      "count": 1
+    },
+    {
+      "word": "flock",
+      "count": 1
+    },
+    {
+      "word": "cams",
+      "count": 1
     },
     {
       "word": "macbook",
@@ -133,26 +145,14 @@
       "count": 1
     },
     {
-      "word": "moss",
-      "count": 1
-    },
-    {
-      "word": "pixel",
-      "count": 1
-    },
-    {
-      "word": "canvas",
-      "count": 1
-    },
-    {
-      "word": "where",
+      "word": "london's",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'MacBook Neo...' connects to Gaza resilience",
+      "hook": "How 'An interactive map of FLock Cams...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
