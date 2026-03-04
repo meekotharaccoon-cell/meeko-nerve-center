@@ -1,173 +1,180 @@
-name: "🧠 OMNIBRAIN v3 — SolarPunk Full Stack"
+name: SolarPunk OMNIBRAIN v3 — Autonomous Operations
 
 on:
   schedule:
-    - cron: '0 7  * * *'
-    - cron: '0 19 * * *'
+    # Runs 4x/day to stay alive and responsive
+    - cron: '0 6 * * *'   # 6am UTC — Morning briefing window
+    - cron: '0 12 * * *'  # Noon UTC — Midday cycle
+    - cron: '0 18 * * *'  # 6pm UTC — Afternoon cycle
+    - cron: '0 21 * * *'  # 9pm UTC — Evening report window
   workflow_dispatch:
     inputs:
-      instruction:
-        description: 'Manual instruction for this run'
-        required: false
-        default: ''
+      reason:
+        description: 'Why are you running this manually?'
+        default: 'Manual test'
+
+permissions:
+  contents: write
+  actions: write
+
+env:
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  HF_TOKEN: ${{ secrets.HF_TOKEN }}
+  KOFI_USERNAME: ${{ secrets.KOFI_USERNAME }}
+  KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
+  X_API_KEY: ${{ secrets.X_API_KEY }}
+  X_API_SECRET: ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+  REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+  REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
 
 jobs:
-  omnibrain:
-    name: "🧠 OMNIBRAIN v3"
+  solarpunk-brain:
     runs-on: ubuntu-latest
     timeout-minutes: 55
-    permissions:
-      contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout — pull latest engines
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - name: Python setup
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests 2>/dev/null || true
-
-      - name: Configure git
         run: |
-          git config user.name 'SolarPunk'
-          git config user.email 'solarpunk@meeko-nerve-center'
-          mkdir -p data mycelium docs saves
+          pip install requests python-dateutil pillow imapclient --quiet
 
-      - name: "🛡️ Phase 0 — GUARDIAN"
-        env:
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python3 mycelium/GUARDIAN.py || echo "GUARDIAN error"
+      - name: Restore brain state
+        uses: actions/cache@v4
+        with:
+          path: data/
+          key: solarpunk-brain-${{ github.run_number }}
+          restore-keys: solarpunk-brain-
+
+      # ═══════════════════════════════════════════════
+      # PHASE 1: HEALTH CHECK
+      # ═══════════════════════════════════════════════
+      - name: Phase 1 — Guardian health check
+        run: python mycelium/GUARDIAN.py || echo "Guardian fallback"
         continue-on-error: true
 
-      - name: "🌿 Phase 1 — CONTENT_HARVESTER (free APIs, zero cost)"
-        run: python3 mycelium/CONTENT_HARVESTER.py || echo "CONTENT_HARVESTER error"
+      # ═══════════════════════════════════════════════
+      # PHASE 2: EMAIL CORTEX (read + classify + protect)
+      # ═══════════════════════════════════════════════
+      - name: Phase 2a — Read all email (EMAIL_BRAIN)
+        run: python mycelium/EMAIL_BRAIN.py || echo "Email brain offline"
         continue-on-error: true
 
-      - name: "🏛️ Phase 2 — MEMORY_PALACE (persist + learn)"
-        run: python3 mycelium/MEMORY_PALACE.py || echo "MEMORY_PALACE error"
+      - name: Phase 2b — Scam detection (SCAM_SHIELD)
+        run: python mycelium/SCAM_SHIELD.py || echo "Scam shield fallback"
         continue-on-error: true
 
-      - name: "🧠 Phase 3 — NEURON_A Builder Brain"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/NEURON_A.py || echo "NEURON_A error"
+      - name: Phase 2c — Human detection + reply (HUMAN_CONNECTOR)
+        run: python mycelium/HUMAN_CONNECTOR.py || echo "Human connector fallback"
         continue-on-error: true
 
-      - name: "🧠 Phase 4 — NEURON_B Skeptic Brain"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/NEURON_B.py || echo "NEURON_B error"
+      - name: Phase 2d — Calendar scheduling (CALENDAR_BRAIN)
+        run: python mycelium/CALENDAR_BRAIN.py || echo "Calendar offline"
         continue-on-error: true
 
-      - name: "🏪 Phase 5 — ETSY_SEO_ENGINE (Gaza Rose listings)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/ETSY_SEO_ENGINE.py || echo "ETSY_SEO_ENGINE error"
+      # ═══════════════════════════════════════════════
+      # PHASE 3: MONEY IN (revenue collection)
+      # ═══════════════════════════════════════════════
+      - name: Phase 3a — Ko-fi sales processor (KOFI_ENGINE)
+        run: python mycelium/KOFI_ENGINE.py || echo "Kofi offline"
         continue-on-error: true
 
-      - name: "💰 Phase 6 — INCOME_ARCHITECT ($1 Art Loop)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/INCOME_ARCHITECT.py || echo "INCOME_ARCHITECT error"
+      - name: Phase 3b — Gumroad sales (GUMROAD_ENGINE)
+        run: python mycelium/GUMROAD_ENGINE.py || echo "Gumroad offline"
         continue-on-error: true
 
-      - name: "🎨 Phase 7 — ART_GENERATOR (fulfill orders)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python3 mycelium/ART_GENERATOR.py || echo "ART_GENERATOR error"
+      - name: Phase 3c — GitHub Sponsors (GITHUB_SPONSORS_ENGINE)
+        run: python mycelium/GITHUB_SPONSORS_ENGINE.py || echo "Sponsors offline"
         continue-on-error: true
 
-      - name: "💸 Phase 8 — REVENUE_FLYWHEEL (upgrade alerts)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python3 mycelium/REVENUE_FLYWHEEL.py || echo "REVENUE_FLYWHEEL error"
+      # ═══════════════════════════════════════════════
+      # PHASE 4: GRANTS (find money → apply → follow up)
+      # ═══════════════════════════════════════════════
+      - name: Phase 4a — Hunt new grants (GRANT_HUNTER)
+        run: python mycelium/GRANT_HUNTER.py || echo "Grant hunter offline"
         continue-on-error: true
 
-      - name: "🏭 Phase 9 — SYNTHESIS_FACTORY (safe auto-builder)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/SYNTHESIS_FACTORY.py || echo "SYNTHESIS_FACTORY error"
+      - name: Phase 4b — Apply + follow up email chains (GRANT_APPLICANT)
+        run: python mycelium/GRANT_APPLICANT.py || echo "Grant applicant offline"
         continue-on-error: true
 
-      - name: "📢 Phase 10 — SOCIAL_PROMOTER (traffic engine)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
-          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-        run: python3 mycelium/SOCIAL_PROMOTER.py || echo "SOCIAL_PROMOTER error"
+      # ═══════════════════════════════════════════════
+      # PHASE 5: MARKET INTELLIGENCE
+      # ═══════════════════════════════════════════════
+      - name: Phase 5a — Crypto + AI token watch (CRYPTO_WATCHER)
+        run: python mycelium/CRYPTO_WATCHER.py || echo "Crypto watcher offline"
         continue-on-error: true
 
-      - name: "🏪 Phase 11 — GUMROAD_ENGINE (product listings)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-        run: python3 mycelium/GUMROAD_ENGINE.py || echo "GUMROAD_ENGINE error"
+      - name: Phase 5b — AI ecosystem scout (AI_WATCHER)
+        run: python mycelium/AI_WATCHER.py || echo "AI watcher offline"
         continue-on-error: true
 
-      - name: "🔗 Phase 12 — LINK_PAGE (bio link rebuild)"
-        run: python3 mycelium/LINK_PAGE.py || echo "LINK_PAGE error"
+      # ═══════════════════════════════════════════════
+      # PHASE 6: EXPANSION (connections + new platforms)
+      # ═══════════════════════════════════════════════
+      - name: Phase 6a — Platform connection guides (CONNECTION_FORGE)
+        run: python mycelium/CONNECTION_FORGE.py || echo "Connection forge offline"
         continue-on-error: true
 
-      - name: "🏥 Phase 13 — HEALTH_BOOSTER (diagnostics)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-        run: python3 mycelium/HEALTH_BOOSTER.py || echo "HEALTH_BOOSTER error"
+      # ═══════════════════════════════════════════════
+      # PHASE 7: CONTENT + ART
+      # ═══════════════════════════════════════════════
+      - name: Phase 7a — Generate Gaza Rose art (ART_GENERATOR)
+        run: python mycelium/ART_GENERATOR.py || echo "Art gen offline"
         continue-on-error: true
 
-      - name: "🌐 Phase 14 — BRAVE_BRIDGE (browser)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python3 mycelium/BRAVE_BRIDGE.py || echo "BRAVE_BRIDGE not present"
+      - name: Phase 7b — Social media posts (SOCIAL_PROMOTER)
+        run: python mycelium/SOCIAL_PROMOTER.py || echo "Social offline"
         continue-on-error: true
 
-      - name: "🖥️ Phase 15 — GETSCREEN_BRIDGE (desktop)"
-        env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python3 mycelium/GETSCREEN_BRIDGE.py || echo "GETSCREEN_BRIDGE not present"
+      - name: Phase 7c — Weekly newsletter draft (SUBSTACK_ENGINE)
+        run: python mycelium/SUBSTACK_ENGINE.py || echo "Substack offline"
         continue-on-error: true
 
-      - name: "⚡ Phase 16 — SYNAPSE (resolver + daily email)"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: python3 mycelium/SYNAPSE.py || echo "SYNAPSE error"
+      # ═══════════════════════════════════════════════
+      # PHASE 8: SELF-IMPROVEMENT
+      # ═══════════════════════════════════════════════
+      - name: Phase 8a — Build new engine (SELF_BUILDER)
+        run: python mycelium/SELF_BUILDER.py || echo "Self builder offline"
         continue-on-error: true
 
-      - name: "💾 Final — Commit cycle outputs"
+      # ═══════════════════════════════════════════════
+      # PHASE 9: BRIEFING (always last)
+      # ═══════════════════════════════════════════════
+      - name: Phase 9a — Morning + Evening emails (BRIEFING_ENGINE)
+        run: python mycelium/BRIEFING_ENGINE.py || echo "Briefing offline"
+        continue-on-error: true
+
+      - name: Phase 9b — Rebuild README (README_GENERATOR)
+        run: python mycelium/README_GENERATOR.py || echo "README offline"
+        continue-on-error: true
+
+      # ═══════════════════════════════════════════════
+      # PHASE 10: SAVE STATE (ALWAYS RUNS)
+      # ═══════════════════════════════════════════════
+      - name: Phase 10 — Commit all state changes
         run: |
-          git add -A
-          git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          CYCLE=$(date +%Y-%m-%dT%H:%M)
-          HEALTH=$(python3 -c "import json; d=json.load(open('data/brain_state.json')); print(d.get('health_score','?'))" 2>/dev/null || echo "?")
-          git commit -m "🧠 omnibrain v3 ${CYCLE} | health:${HEALTH}"
-          git pull --rebase origin main 2>/dev/null || true
-          git push origin main 2>/dev/null || git push origin main --force-with-lease
+          git config user.name "SolarPunk Brain"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add data/ docs/ mycelium/ .github/FUNDING.yml README.md 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "🧠 Brain cycle $(date -u +%Y-%m-%d\ %H:%M) — autonomous operation"
+          git push origin main || echo "Push failed — will retry next cycle"
         continue-on-error: true
