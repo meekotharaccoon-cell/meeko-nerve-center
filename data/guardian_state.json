@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-04T18:43:39.609064",
+  "last_checked": "2026-03-04T23:02:54.263962",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -20,6 +20,7 @@
     "CONTENT_HARVESTER.py",
     "REVENUE_FLYWHEEL.py",
     "MEMORY_PALACE.py",
+    "GRANT_APPLICANT.py",
     "SOCIAL_PROMOTER.py",
     "knowledge_dispatch.py",
     "ETSY_SEO_ENGINE.py",
