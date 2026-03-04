@@ -38,10 +38,14 @@
       "guardian_log.json",
       "guardian_state.json",
       "guardian_status.json",
+      "gumroad_listings.json",
+      "health_report.json",
       "lessons.json",
       "memory_palace.json",
       "neuron_a_report.json",
       "neuron_b_report.json",
+      "social_latest.json",
+      "social_queue.json",
       "synthesis_log.json"
     ],
     "revenue": 0.0,
@@ -91,7 +95,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-04T14:02:59.508830+00:00"
+    "timestamp": "2026-03-04T14:14:30.291070+00:00"
   },
-  "generated_at": "2026-03-04T14:02:59.675017+00:00"
+  "generated_at": "2026-03-04T14:14:30.427569+00:00"
 }
