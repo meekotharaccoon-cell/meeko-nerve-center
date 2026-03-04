@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
 """
-SYNTHESIS_FACTORY — Auto-builds new engines using Claude API
-PATCHED v2: Hard boundaries. Can NEVER touch .github/ or delete existing files.
+SYNTHESIS_FACTORY — Auto-builds new engines using free AI (HuggingFace)
+PATCHED v3: Uses AI_CLIENT.py (HF free tier) instead of Anthropic API.
+Hard boundaries. Can NEVER touch .github/ or delete existing files.
 Only creates NEW .py files in mycelium/ and writes to data/.
-NO git merge. NO git checkout. NO git rm. Add only.
 """
-import os, json, requests, subprocess
+import os, json, subprocess, sys
 from pathlib import Path
 from datetime import datetime
 
-API_KEY  = os.environ.get("ANTHROPIC_API_KEY", "")
-GEN_NUM  = 0
+# Import shared AI client
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from AI_CLIENT import ask_json
+    AI_AVAILABLE = True
+except ImportError:
+    AI_AVAILABLE = False
+    print("  AI_CLIENT not found")
 
-# ═══════════════════════════════════════════════════════
-# ABSOLUTE SAFETY CONSTRAINTS — checked before every write
-# ═══════════════════════════════════════════════════════
 FORBIDDEN_PATHS = [".github", ".git", "GUARDIAN", "OMNIBRAIN", "SOLARPUNK_LOOP", "BUILD_YOURSELF"]
 ALLOWED_DIRS    = ["mycelium", "data"]
 
-def safe_to_write(filepath: str) -> bool:
-    """Returns True ONLY if path is safe to write."""
+def safe_to_write(filepath):
     fp = filepath.replace("\\", "/").lower()
     for forbidden in FORBIDDEN_PATHS:
         if forbidden.lower() in fp:
@@ -32,7 +34,6 @@ def safe_to_write(filepath: str) -> bool:
     return False
 
 def safe_git_add_only():
-    """Only git add mycelium/ and data/ — never anything else."""
     subprocess.run(["git", "add", "mycelium/", "data/"], capture_output=True)
 
 def get_gen_number():
@@ -45,7 +46,6 @@ def get_gen_number():
     return 1
 
 def discover_opportunities():
-    """What engine combinations don't exist yet but should?"""
     myc = Path("mycelium")
     existing = sorted([f.name for f in myc.glob("*.py") if not f.name.startswith("__")]) if myc.exists() else []
     data_f = Path("data")
@@ -63,8 +63,8 @@ def discover_opportunities():
     return existing, data_files, brain_state, seed
 
 def synthesize_new_engine(existing, data_files, brain_state, seed):
-    if not API_KEY:
-        print("No API key — skipping synthesis")
+    if not AI_AVAILABLE:
+        print("AI_CLIENT not available — skipping synthesis")
         return None
     gen = get_gen_number()
     seed_instrs = seed.get("instructions", [])
@@ -84,9 +84,7 @@ INCOME STREAMS TO BUILD FOR:
 2. Medium Partner Program — daily AI articles auto-published
 3. Substack newsletter — auto-written and scheduled
 4. Affiliate marketing — auto-blog posts with affiliate links
-5. WhatsApp automation — build and sell bot services
-6. Prompt packs on Gumroad — generate and list AI templates
-7. RapidAPI — wrap free APIs, sell value-add tier
+5. Prompt packs on Gumroad — generate and list AI templates
 
 RULES YOU MUST FOLLOW:
 - Engine must write output to data/[engine_name]_output.json
@@ -100,25 +98,11 @@ RULES YOU MUST FOLLOW:
 Pick the engine that provides the MOST value toward first passive income dollar.
 
 Respond ONLY with valid JSON (no markdown, no fences):
-{{
-  "filename": "engine_name.py",
-  "description": "one sentence",
-  "income_stream": "which stream this serves",
-  "how_it_makes_money": "specific mechanism",
-  "code": "complete python file as string — production ready"
-}}"""
+{{"filename":"engine_name.py","description":"one sentence","income_stream":"which stream","how_it_makes_money":"specific mechanism","code":"complete python file as string"}}"""
     try:
-        r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key":API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":6000,
-                  "messages":[{"role":"user","content":prompt}]},timeout=120)
-        r.raise_for_status()
-        text = r.json()["content"][0]["text"]
-        s,e = text.find("{"), text.rfind("}")+1
-        if s < 0: return None
-        return json.loads(text[s:e])
+        return ask_json(prompt, max_tokens=4000)
     except Exception as ex:
-        print(f"Synthesis API error: {ex}")
+        print(f"Synthesis AI error: {ex}")
         return None
 
 def write_engine(result):
@@ -129,7 +113,6 @@ def write_engine(result):
     if not fname.endswith(".py"):
         print(f"⛔ BLOCKED non-py: {fname}")
         return False
-    # Strip any path components — filename only
     fname = Path(fname).name
     target_path = f"mycelium/{fname}"
     if not safe_to_write(target_path):
@@ -161,17 +144,15 @@ def update_log(result, gen):
 
 def main():
     gen = get_gen_number()
-    print(f"🏭 SYNTHESIS_FACTORY gen {gen} activating...")
-    print(f"   Safety: ONLY writing to mycelium/ and data/")
+    print(f"🏭 SYNTHESIS_FACTORY gen {gen} — using HuggingFace free AI")
     existing, data_files, brain_state, seed = discover_opportunities()
     print(f"   Existing engines: {len(existing)}")
     result = synthesize_new_engine(existing, data_files, brain_state, seed)
     wrote  = write_engine(result)
     update_log(result if wrote else None, gen)
     if wrote:
-        # Safe git add ONLY — never touches .github/
         safe_git_add_only()
-        print(f"   Staged for commit (mycelium/ and data/ only)")
+        print(f"   Staged for commit")
     else:
         print("   Nothing new synthesized this run")
 
