@@ -1,9 +1,9 @@
-name: "🧠 OMNIBRAIN v2 — SolarPunk Full Stack"
+name: "🧠 OMNIBRAIN v3 — SolarPunk Full Stack"
 
 on:
   schedule:
-    - cron: '0 7  * * *'   # 7am UTC
-    - cron: '0 19 * * *'   # 7pm UTC
+    - cron: '0 7  * * *'
+    - cron: '0 19 * * *'
   workflow_dispatch:
     inputs:
       instruction:
@@ -11,13 +11,9 @@ on:
         required: false
         default: ''
 
-# CHAIN OF COMMAND: Meeko -> Claude -> SolarPunk
-# GUARDIAN runs FIRST every cycle. Save-state before anything.
-# .github/workflows is SACRED — no engine touches it.
-
 jobs:
   omnibrain:
-    name: "🧠 OMNIBRAIN"
+    name: "🧠 OMNIBRAIN v3"
     runs-on: ubuntu-latest
     timeout-minutes: 55
     permissions:
@@ -40,40 +36,48 @@ jobs:
         run: |
           git config user.name 'SolarPunk'
           git config user.email 'solarpunk@meeko-nerve-center'
-          mkdir -p data mycelium
+          mkdir -p data mycelium docs saves
 
-      # ─── PHASE 0: GUARDIAN — immune system, save-state ───────────────────
-      - name: "🛡️ Phase 0 — GUARDIAN (runs first, always)"
+      - name: "🛡️ Phase 0 — GUARDIAN"
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: |
-          python3 mycelium/GUARDIAN.py || echo "GUARDIAN not present yet — bootstrapping"
+        run: python3 mycelium/GUARDIAN.py || echo "GUARDIAN error"
         continue-on-error: true
 
-      # ─── PHASE 1: NEURON_A — Builder Brain ───────────────────────────────
-      - name: "🧠 Phase 1 — NEURON_A Builder Brain"
+      - name: "🌿 Phase 1 — CONTENT_HARVESTER (free APIs, zero cost)"
+        run: python3 mycelium/CONTENT_HARVESTER.py || echo "CONTENT_HARVESTER error"
+        continue-on-error: true
+
+      - name: "🏛️ Phase 2 — MEMORY_PALACE (persist + learn)"
+        run: python3 mycelium/MEMORY_PALACE.py || echo "MEMORY_PALACE error"
+        continue-on-error: true
+
+      - name: "🧠 Phase 3 — NEURON_A Builder Brain"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 mycelium/NEURON_A.py || echo "NEURON_A error"
         continue-on-error: true
 
-      # ─── PHASE 2: NEURON_B — Skeptic Brain ───────────────────────────────
-      - name: "🧠 Phase 2 — NEURON_B Skeptic Brain"
+      - name: "🧠 Phase 4 — NEURON_B Skeptic Brain"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 mycelium/NEURON_B.py || echo "NEURON_B error"
         continue-on-error: true
 
-      # ─── PHASE 3: INCOME_ARCHITECT — $1 Art Loop Engine ──────────────────
-      - name: "💰 Phase 3 — INCOME_ARCHITECT ($1 Art Loop)"
+      - name: "🏪 Phase 5 — ETSY_SEO_ENGINE (Gaza Rose listings)"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 mycelium/ETSY_SEO_ENGINE.py || echo "ETSY_SEO_ENGINE error"
+        continue-on-error: true
+
+      - name: "💰 Phase 6 — INCOME_ARCHITECT ($1 Art Loop)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 mycelium/INCOME_ARCHITECT.py || echo "INCOME_ARCHITECT error"
         continue-on-error: true
 
-      # ─── PHASE 4: ART_GENERATOR — Fulfill pending art orders ─────────────
-      - name: "🎨 Phase 4 — ART_GENERATOR (fulfill orders)"
+      - name: "🎨 Phase 7 — ART_GENERATOR (fulfill orders)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
@@ -82,8 +86,7 @@ jobs:
         run: python3 mycelium/ART_GENERATOR.py || echo "ART_GENERATOR error"
         continue-on-error: true
 
-      # ─── PHASE 5: REVENUE_FLYWHEEL — upgrade alerts ───────────────────────
-      - name: "💸 Phase 5 — REVENUE_FLYWHEEL (upgrade alerts)"
+      - name: "💸 Phase 8 — REVENUE_FLYWHEEL (upgrade alerts)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
@@ -91,25 +94,19 @@ jobs:
         run: python3 mycelium/REVENUE_FLYWHEEL.py || echo "REVENUE_FLYWHEEL error"
         continue-on-error: true
 
-      # ─── PHASE 6: SYNTHESIS_FACTORY — build approved new engines ─────────
-      - name: "🏭 Phase 6 — SYNTHESIS_FACTORY (safe auto-builder)"
+      - name: "🏭 Phase 9 — SYNTHESIS_FACTORY (safe auto-builder)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # SAFETY: SYNTHESIS_FACTORY must ONLY write to mycelium/SYNTH_* and data/
-          # It must NEVER touch .github/ — enforced in the Python code itself
-          python3 mycelium/SYNTHESIS_FACTORY.py || echo "SYNTHESIS_FACTORY error"
+        run: python3 mycelium/SYNTHESIS_FACTORY.py || echo "SYNTHESIS_FACTORY error"
         continue-on-error: true
 
-      # ─── PHASE 7: BRAVE_BRIDGE — browser automation ───────────────────────
-      - name: "🌐 Phase 7 — BRAVE_BRIDGE (browser automation)"
+      - name: "🌐 Phase 10 — BRAVE_BRIDGE (browser)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 mycelium/BRAVE_BRIDGE.py || echo "BRAVE_BRIDGE not present"
         continue-on-error: true
 
-      # ─── PHASE 8: GETSCREEN_BRIDGE — desktop eyes/hands ──────────────────
-      - name: "🖥️ Phase 8 — GETSCREEN_BRIDGE (desktop control)"
+      - name: "🖥️ Phase 11 — GETSCREEN_BRIDGE (desktop)"
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -118,8 +115,7 @@ jobs:
         run: python3 mycelium/GETSCREEN_BRIDGE.py || echo "GETSCREEN_BRIDGE not present"
         continue-on-error: true
 
-      # ─── PHASE 9: SYNAPSE — resolve brains, send email, commit ──────────
-      - name: "⚡ Phase 9 — SYNAPSE (resolver + daily email)"
+      - name: "⚡ Phase 12 — SYNAPSE (resolver + daily email)"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
@@ -127,12 +123,13 @@ jobs:
         run: python3 mycelium/SYNAPSE.py || echo "SYNAPSE error"
         continue-on-error: true
 
-      # ─── FINAL: Commit everything ─────────────────────────────────────────
       - name: "💾 Final — Commit cycle outputs"
         run: |
           git add -A
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "🧠 omnibrain cycle $(date +%Y-%m-%dT%H:%M) — loop running"
+          CYCLE=$(date +%Y-%m-%dT%H:%M)
+          HEALTH=$(python3 -c "import json; d=json.load(open('data/brain_state.json')); print(d.get('health_score','?'))" 2>/dev/null || echo "?")
+          git commit -m "🧠 omnibrain v3 ${CYCLE} | health:${HEALTH}"
           git pull --rebase origin main 2>/dev/null || true
           git push origin main 2>/dev/null || git push origin main --force-with-lease
         continue-on-error: true
