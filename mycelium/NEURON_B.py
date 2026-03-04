@@ -1,105 +1,75 @@
 #!/usr/bin/env python3
 """
-NEURON_B.py -- Skeptic Brain (v2)
-Reviews NEURON_A's proposals for risk, legality, feasibility.
-Filters out anything shady. Approves what's genuinely safe.
+NEURON_B v2 - Skeptic Brain
+Stress-tests NEURON_A proposals. Finds failure modes. Adds safeguard awareness.
+Writes: data/neuron_b_report.json
 """
 import os, json, requests
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
-API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-DATA = Path("data")
-DATA.mkdir(exist_ok=True)
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
-RED_FLAGS = [
-    "spam", "unsolicited email", "scraped email list", "pyramid",
-    "MLM", "get rich quick", "guaranteed returns", "impersonat",
-    "mislead", "fake review", "astroturfing", "violate ToS",
-    "copyright infring", "DMCA", "without consent"
-]
-
-def review():
-    a_rep = {}
-    af = DATA / "neuron_a_report.json"
-    if af.exists():
-        try: a_rep = json.loads(af.read_text())
+def main():
+    print("NEURON_B v2 - Skeptic Brain starting...")
+    a_report = {}
+    ap = Path("data/neuron_a_report.json")
+    if ap.exists():
+        try: a_report = json.loads(ap.read_text())
         except: pass
+    if not a_report:
+        a_report = {"opportunities":[],"builder_thesis":"No NEURON_A data","priority_build":""}
 
-    proposals    = a_rep.get("proposals", [])
-    opportunities = a_rep.get("income_opportunities", [])
-
-    # Quick local filter before API
-    auto_flagged = []
-    for prop in proposals:
-        for flag in RED_FLAGS:
-            if flag.lower() in prop.lower():
-                auto_flagged.append(f"{prop} (flagged: {flag})")
-                break
-
-    if not API_KEY:
-        approved = [p for p in proposals if p not in [f.split(" (")[0] for f in auto_flagged]]
+    if not ANTHROPIC_API_KEY:
         report = {
-            "timestamp": datetime.now().isoformat(),
-            "summary": f"Skeptic: {len(approved)}/{len(proposals)} proposals approved. {len(auto_flagged)} auto-flagged.",
-            "approved": approved,
-            "rejected": auto_flagged,
-            "risk_notes": [
-                "All automated content must be original or properly licensed",
-                "Only email people who opted in (no cold spam)",
-                "Check each platform's ToS before automating",
-                "GDPR: don't store EU personal data without consent"
+            "vetted_opportunities": a_report.get("opportunities",[]),
+            "killed_ideas": [],
+            "risks": [
+                "SYNTHESIS_FACTORY must never git merge - caused last repo wipe (all workflows deleted)",
+                "GUARDIAN workflow needed on every push to catch catastrophic changes",
+                "Revenue $0 - Gaza Rose Gallery SEO is highest immediate priority",
+                "No external monitoring - system only watches itself after the fact"
             ],
-            "confidence": 75
+            "refined_priority": a_report.get("priority_build","ETSY_SEO_ENGINE.py"),
+            "skeptic_thesis": "Infrastructure only matters when generating income - revenue actions first, automation second",
+            "safeguards_needed": [
+                "SYNTHESIS_FACTORY: hard-block .github/ writes and git merge in code scanner",
+                "GUARDIAN.yml: trigger on every push, email Meeko on any catastrophic change within minutes",
+                "Checkpoint: save known-good state (commit SHA + file list) after each healthy run"
+            ]
         }
     else:
-        prompt = f"""You are NEURON_B, Skeptic Brain of SolarPunk.
-
-NEURON_A proposed:
-{json.dumps(proposals, indent=2)}
-
-Income opportunities:
-{json.dumps(opportunities, indent=2)}
-
-Your job: FILTER ruthlessly. Approve what's genuinely safe and legal. Reject anything risky.
-
-AUTO-FLAGGED (already rejected): {auto_flagged}
-
-Reject if:
-- Requires spamming or unsolicited contact
-- Violates platform ToS
-- Could harm SolarPunk's reputation
-- Is misleading or deceptive in any way
-- Involves copyright infringement
-- Requires scraping without permission
-
-Approve if:
-- 100% legal in US
-- Ethical (you'd be proud to show Meeko)
-- Platform ToS compliant
-- Genuinely helps people or creates real value
-
-JSON only (no fences):
-{{"summary":"one line","approved":["approved action"],"rejected":["rejected + exact reason"],"risk_notes":["important caution"],"confidence":<0-100>}}"""
-
+        prompt = f"""You are NEURON_B, Skeptic Brain of SolarPunk. Stress-test these ideas with brutal honesty.
+NEURON_A proposed: {json.dumps(a_report.get('opportunities',[]), indent=2)}
+Builder thesis: {a_report.get('builder_thesis','')}
+Known system risks: SYNTHESIS_FACTORY wiped all workflows via git merge. Revenue $0. No push-triggered monitoring.
+Kill bad ideas. Refine good ones. Add missing risks.
+Respond ONLY JSON (no markdown):
+{{"vetted_opportunities":[only ideas surviving scrutiny, same format],
+"killed_ideas":["idea - why it won't work"],
+"risks":["risk - mitigation"],
+"refined_priority":"what to ACTUALLY build first after scrutiny",
+"skeptic_thesis":"what the builder missed in one sentence",
+"safeguards_needed":["specific safeguard to prevent another wipe or failure"]}}"""
         try:
             r = requests.post("https://api.anthropic.com/v1/messages",
-                headers={"x-api-key": API_KEY, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
-                json={"model": "claude-sonnet-4-20250514", "max_tokens": 700,
-                      "messages": [{"role": "user", "content": prompt}]}, timeout=30)
+                headers={"x-api-key":ANTHROPIC_API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
+                json={"model":"claude-sonnet-4-20250514","max_tokens":1200,"messages":[{"role":"user","content":prompt}]},
+                timeout=60)
             r.raise_for_status()
-            t = r.json()["content"][0]["text"]
-            s, e = t.find("{"), t.rfind("}") + 1
-            report = json.loads(t[s:e]) if s >= 0 else {}
-            report["timestamp"] = datetime.now().isoformat()
+            text = r.json()["content"][0]["text"]
+            s,e = text.find("{"),text.rfind("}")+1
+            report = json.loads(text[s:e]) if s>=0 else {"vetted_opportunities":a_report.get("opportunities",[]),"risks":[]}
         except Exception as ex:
-            print(f"NEURON_B err: {ex}")
-            report = {"timestamp": datetime.now().isoformat(), "summary": f"API err: {ex}",
-                      "approved": proposals, "rejected": auto_flagged, "risk_notes": [], "confidence": 50}
+            print(f"NEURON_B error: {ex}")
+            report = {"risks":[str(ex)],"vetted_opportunities":a_report.get("opportunities",[]),"refined_priority":a_report.get("priority_build","")}
 
-    (DATA / "neuron_b_report.json").write_text(json.dumps(report, indent=2))
-    print(f"NEURON_B: {report.get('summary','done')} | Confidence: {report.get('confidence','?')}")
-    return report
+    report["generated_at"] = datetime.now(timezone.utc).isoformat()
+    Path("data").mkdir(exist_ok=True)
+    Path("data/neuron_b_report.json").write_text(json.dumps(report, indent=2))
+    print(f"Skeptic thesis: {report.get('skeptic_thesis','?')}")
+    print(f"Refined priority: {report.get('refined_priority','?')}")
+    for risk in report.get("risks",[])[:3]: print(f"  RISK: {risk}")
+    print("NEURON_B done.")
 
-if __name__ == "__main__":
-    review()
+if __name__ == "__main__": main()
