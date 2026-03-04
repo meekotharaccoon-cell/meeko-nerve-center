@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarPunk Nerve Center — Live Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap');
+  :root {
+    --rose: #c9735a; --gold: #d4a853; --green: #5a9e6f; --blue: #4a8fa8;
+    --bg: #0d0d0d; --surface: #141414; --card: #1a1a1a; --border: #2a2a2a;
+    --text: #e8e0d5; --muted: #6b6560;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Space Mono', monospace;
+    font-size: 13px; min-height: 100vh; padding: 20px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 24px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
+    letter-spacing: 0.05em; color: var(--rose); }
+  .logo span { color: var(--gold); }
+  .status-pill { background: #1a2a1a; border: 1px solid var(--green); color: var(--green);
+    padding: 4px 12px; border-radius: 100px; font-size: 11px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px; margin-bottom: 24px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 16px; }
+  .card:hover { border-color: var(--rose); transition: border-color 0.2s; }
+  .card-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px; }
+  .card-value { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; line-height: 1; }
+  .card-value.rose { color: var(--rose); } .card-value.gold { color: var(--gold); }
+  .card-value.green { color: var(--green); } .card-value.blue { color: var(--blue); }
+  .card-sub { font-size: 11px; color: var(--muted); margin-top: 6px; }
+  .section-title { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .big-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+  .loop-viz { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 20px 0; flex-wrap: wrap; }
+  .loop-node { background: var(--surface); border: 1px solid var(--rose); border-radius: 4px;
+    padding: 8px 14px; font-size: 11px; text-align: center; }
+  .loop-arrow { color: var(--rose); font-size: 18px; }
+  .loop-node.active { background: #2a1a14; border-color: var(--gold); color: var(--gold); }
+  .engine-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+  .engine-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+    padding: 6px 10px; font-size: 11px; display: flex; align-items: center; gap: 6px; }
+  .engine-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .lesson-list { list-style: none; }
+  .lesson-list li { padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 12px; display: flex; gap: 8px; align-items: flex-start; }
+  .lesson-list li:last-child { border-bottom: none; }
+  .pill-crit { background:#2a0a0a; color:#e05555; border:1px solid #5a1a1a; font-size:9px; padding:1px 6px; border-radius:100px; white-space:nowrap; }
+  .pill-high { background:#2a1a0a; color:#d4a853; border:1px solid #5a3a0a; font-size:9px; padding:1px 6px; border-radius:100px; white-space:nowrap; }
+  .pill-pos  { background:#0a2a0a; color:#5a9e6f; border:1px solid #1a5a2a; font-size:9px; padding:1px 6px; border-radius:100px; white-space:nowrap; }
+  .content-angle { padding: 10px; border-left: 3px solid var(--rose); background: var(--surface);
+    border-radius: 0 4px 4px 0; margin-bottom: 8px; font-size: 12px; line-height: 1.5; }
+  .angle-meta { font-size: 10px; color: var(--muted); margin-top: 4px; }
+  .fetching { color: var(--muted); font-style: italic; }
+  footer { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 24px;
+    display: flex; justify-content: space-between; align-items: center; }
+  .footer-link { color: var(--rose); text-decoration: none; font-size: 11px; }
+  .footer-link:hover { color: var(--gold); }
+  .refresh-btn { background: transparent; border: 1px solid var(--border); color: var(--muted);
+    padding: 6px 14px; border-radius: 4px; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 11px; }
+  .refresh-btn:hover { border-color: var(--rose); color: var(--rose); }
+  @media(max-width:600px){ .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">⚡ SolarPunk <span>Nerve Center</span></div>
+    <div id="live-status" class="status-pill">● LIVE</div>
+  </header>
+  <div class="grid">
+    <div class="card">
+      <div class="card-label">Brain Health</div>
+      <div class="card-value rose" id="kpi-health">—</div>
+      <div class="card-sub" id="kpi-health-sub">loading...</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Total Revenue</div>
+      <div class="card-value gold" id="kpi-revenue">$—</div>
+      <div class="card-sub" id="kpi-rev-sub">loop cycles: —</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Active Engines</div>
+      <div class="card-value green" id="kpi-engines">—</div>
+      <div class="card-sub">mycelium running</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Memory Cycles</div>
+      <div class="card-value blue" id="kpi-cycles">—</div>
+      <div class="card-sub">OMNIBRAIN runs logged</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Art Generated</div>
+      <div class="card-value rose" id="kpi-art">—</div>
+      <div class="card-sub">pieces for buyers</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Loop Fund</div>
+      <div class="card-value gold" id="kpi-loop">$—</div>
+      <div class="card-sub">auto-buys at $1.00</div>
+    </div>
+  </div>
+  <div class="big-card" style="margin-bottom:14px;">
+    <div class="section-title">$1 Art Loop — Live State</div>
+    <div class="loop-viz">
+      <div class="loop-node">💸 $1 Purchase</div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node active">🌹 Gaza Rose<br><small>$0.70</small></div>
+      <div class="loop-arrow">+</div>
+      <div class="loop-node">🔄 Loop Pool<br><small id="loop-balance-display">$0.00 / $1.00</small></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">🤖 Auto-Buy<br><small>at $1.00</small></div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-node">♾️ Repeat</div>
+    </div>
+    <div style="text-align:center;font-size:11px;color:var(--muted);margin-top:8px;">
+      Every 3.33 human sales = 1 auto-sale. The loop is its own customer.
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="big-card">
+      <div class="section-title">Mycelium Engines</div>
+      <div class="engine-grid" id="engine-list">
+        <div class="fetching">loading...</div>
+      </div>
+    </div>
+    <div class="big-card">
+      <div class="section-title">Memory Palace — Lessons</div>
+      <ul class="lesson-list" id="lesson-list">
+        <li><div class="fetching">loading...</div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="big-card">
+      <div class="section-title">Content Intelligence — Today's Angles</div>
+      <div id="content-angles"><div class="fetching">harvesting content...</div></div>
+    </div>
+    <div class="big-card">
+      <div class="section-title">System Log — Last Cycle</div>
+      <div id="system-log" style="font-size:11px;line-height:1.8;color:var(--muted)">loading...</div>
+    </div>
+  </div>
+  <footer>
+    <div>
+      <a class="footer-link" href="index.html">🌹 Gaza Rose Shop</a>
+      &nbsp;·&nbsp;
+      <a class="footer-link" href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
+      &nbsp;·&nbsp;
+      <span style="color:var(--muted);font-size:11px">Updated every 12h via OMNIBRAIN</span>
+    </div>
+    <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+  </footer>
+</div>
+<script>
+async function fetchJSON(path) {
+  try {
+    const r = await fetch('../' + path + '?_=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch(e) { return null; }
+}
+function setEl(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+async function loadAll() {
+  document.getElementById('live-status').textContent = '● LOADING';
+  const [brain, memory, flywheel, artLog, lessons, harvest] = await Promise.all([
+    fetchJSON('data/brain_state.json'), fetchJSON('data/memory_palace.json'),
+    fetchJSON('data/flywheel_state.json'), fetchJSON('data/art_log.json'),
+    fetchJSON('data/lessons.json'), fetchJSON('data/content_harvest.json'),
+  ]);
+  if (brain) {
+    const h = brain.health_score || 0;
+    const el = document.getElementById('kpi-health');
+    el.textContent = h; el.className = 'card-value ' + (h>=70?'green':h>=40?'gold':'rose');
+    setEl('kpi-health-sub', brain.generated_at?.slice(0,16).replace('T',' ') || '');
+    setEl('kpi-engines', brain.stats?.engines_total || '?');
+    setEl('kpi-revenue', '$' + (brain.stats?.revenue||0).toFixed(2));
+    const log = ['['+new Date().toISOString().slice(0,16)+'] cycle',
+      '  health: '+h, '  engines: '+(brain.stats?.engines_total||'?'),
+      '  revenue: $'+(brain.stats?.revenue||0).toFixed(2),
+      '  synth_built: '+(brain.stats?.synth_built||0)];
+    document.getElementById('system-log').textContent = log.join('\n');
+  }
+  if (memory) {
+    setEl('kpi-cycles', memory.total_cycles || 0);
+    setEl('kpi-health-sub', memory.patterns?.health_trend || 'no trend yet');
+  }
+  if (flywheel) {
+    const bal = flywheel.loop_balance || flywheel.current_balance || 0;
+    setEl('kpi-loop', '$' + bal.toFixed(2));
+    setEl('loop-balance-display', '$' + bal.toFixed(2) + ' / $1.00');
+    setEl('kpi-rev-sub', 'loop cycles: ' + (flywheel.loop_cycles || 0));
+  }
+  if (artLog) setEl('kpi-art', (artLog.pieces||[]).length);
+  const list = document.getElementById('engine-list');
+  list.innerHTML = '';
+  ['GUARDIAN','NEURON_A','NEURON_B','CONTENT_HARVESTER','MEMORY_PALACE',
+   'ETSY_SEO_ENGINE','INCOME_ARCHITECT','ART_GENERATOR','REVENUE_FLYWHEEL',
+   'SYNTHESIS_FACTORY','SYNAPSE'].forEach(name => {
+    const pill = document.createElement('div');
+    pill.className = 'engine-pill';
+    pill.innerHTML = `<div class="dot"></div><span>${name}</span>`;
+    list.appendChild(pill);
+  });
+  const ul = document.getElementById('lesson-list');
+  if (lessons && lessons.length) {
+    ul.innerHTML = '';
+    lessons.slice(0,6).forEach(l => {
+      const li = document.createElement('li');
+      const badge = l.priority==='critical'?'<span class="pill-crit">CRIT</span>':
+                    l.priority==='high'?'<span class="pill-high">HIGH</span>':
+                    '<span class="pill-pos">OK</span>';
+      li.innerHTML = `${badge} <span>${l.lesson}</span>`;
+      ul.appendChild(li);
+    });
+  } else {
+    ul.innerHTML = '<li><span style="color:var(--muted)">No lessons yet — run OMNIBRAIN</span></li>';
+  }
+  const angles = document.getElementById('content-angles');
+  if (harvest?.content_angles?.length) {
+    angles.innerHTML = '';
+    harvest.content_angles.slice(0,3).forEach(a => {
+      angles.innerHTML += `<div class="content-angle"><div>${a.hook}</div><div class="angle-meta">📱 ${a.platform} · ⏱ ${a.effort}</div></div>`;
+    });
+  } else {
+    angles.innerHTML = '<div class="fetching">CONTENT_HARVESTER will run next cycle</div>';
+  }
+  document.getElementById('live-status').textContent = '● LIVE';
+}
+loadAll();
+setInterval(loadAll, 60000);
+</script>
+</body>
+</html>
