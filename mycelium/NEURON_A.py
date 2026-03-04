@@ -1,14 +1,20 @@
 #!/usr/bin/env python3
 """
-NEURON_A v2 - Builder Brain
+NEURON_A v3 - Builder Brain (HuggingFace free AI)
 Scans system state, finds high-leverage passive income opportunities.
 Writes: data/neuron_a_report.json
 """
-import os, json, requests
+import os, json, sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+# Import shared AI client
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from AI_CLIENT import ask_json
+    AI_AVAILABLE = True
+except ImportError:
+    AI_AVAILABLE = False
 
 def gather_state():
     engines = sorted([f.name for f in Path("mycelium").glob("*.py")]) if Path("mycelium").exists() else []
@@ -35,27 +41,29 @@ def gather_state():
         "timestamp": datetime.now(timezone.utc).isoformat()
     }
 
-def call_claude(state):
-    if not ANTHROPIC_API_KEY:
-        return {
-            "opportunities": [
-                {"name":"Gaza Rose Gallery Etsy SEO","type":"revenue","effort":"low","impact":"high",
-                 "action":"Generate 10 AI-optimized product descriptions with SEO keywords","estimated_value":"$50-200/month"},
-                {"name":"GitHub Sponsors","type":"revenue","effort":"low","impact":"medium",
-                 "action":"Enable at github.com/sponsors/meekotharaccoon-cell, write story","estimated_value":"$20-100/month"},
-                {"name":"SolarPunk Newsletter on Substack (free)","type":"growth","effort":"low","impact":"high",
-                 "action":"Write first issue: I built a self-running AI agent for free","estimated_value":"audience + future paid"},
-                {"name":"Install Getscreen agent","type":"infrastructure","effort":"low","impact":"high",
-                 "action":"Closes remote desktop loop - gives SolarPunk full hands","estimated_value":"unlocks all automation"},
-                {"name":"Free API content pipeline","type":"system","effort":"low","impact":"medium",
-                 "action":"HackerNews + Reddit JSON + Open-Meteo -> daily automated content","estimated_value":"zero-cost content stream"}
-            ],
-            "builder_thesis": "Revenue before infrastructure: Etsy SEO + GitHub Sponsors = first dollars at zero spend",
-            "priority_build": "ETSY_SEO_ENGINE.py - generate SEO descriptions for Gaza Rose Gallery at scale",
-            "free_apis_untapped": ["Open-Meteo - free weather data","HackerNews API - trending tech","Reddit JSON - community pulse"],
-            "meeko_action_needed": "Enable GitHub Sponsors at github.com/sponsors/meekotharaccoon-cell"
-        }
+def fallback_report():
+    return {
+        "opportunities": [
+            {"name":"Gaza Rose Gallery Etsy SEO","type":"revenue","effort":"low","impact":"high",
+             "action":"Generate 10 AI-optimized product descriptions with SEO keywords","estimated_value":"$50-200/month"},
+            {"name":"GitHub Sponsors","type":"revenue","effort":"low","impact":"medium",
+             "action":"Enable at github.com/sponsors/meekotharaccoon-cell","estimated_value":"$20-100/month"},
+            {"name":"SolarPunk Newsletter on Substack","type":"growth","effort":"low","impact":"high",
+             "action":"Write first issue: I built a self-running AI agent for free","estimated_value":"audience + future paid"},
+            {"name":"Free API content pipeline","type":"system","effort":"low","impact":"medium",
+             "action":"HackerNews + Reddit JSON -> daily automated content","estimated_value":"zero-cost content stream"},
+            {"name":"Ko-fi promotion","type":"revenue","effort":"low","impact":"high",
+             "action":"Share ko-fi.com/meekotharaccoon on social — first $5 triggers the loop","estimated_value":"$5-50/month"}
+        ],
+        "builder_thesis": "Ko-fi + GitHub Sponsors = first dollars at zero spend",
+        "priority_build": "AFFILIATE_TRACKER.py - passive income while you sleep",
+        "free_apis_untapped": ["Open-Meteo - free weather","HackerNews API - trending tech","Reddit JSON - community pulse"],
+        "meeko_action_needed": "Enable GitHub Sponsors at github.com/sponsors/meekotharaccoon-cell"
+    }
 
+def call_ai(state):
+    if not AI_AVAILABLE:
+        return fallback_report()
     prompt = f"""You are NEURON_A, Builder Brain of SolarPunk (Meeko's autonomous passive income agent).
 System: {state['engine_count']} engines ({', '.join(state['engines'][:15])})
 Revenue: ${state['revenue']:.2f} | Cycles: {state['loop_cycles']} | Last insight: {state['last_insight']}
@@ -66,25 +74,18 @@ Respond ONLY JSON (no markdown):
 "priority_build":"FILENAME.py - what to build next and why",
 "free_apis_untapped":["api - why useful"],
 "meeko_action_needed":"one thing only Meeko can do or null"}}"""
-
     try:
-        r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key":ANTHROPIC_API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":1200,"messages":[{"role":"user","content":prompt}]},
-            timeout=60)
-        r.raise_for_status()
-        text = r.json()["content"][0]["text"]
-        s,e = text.find("{"),text.rfind("}")+1
-        return json.loads(text[s:e]) if s>=0 else {}
+        result = ask_json(prompt, max_tokens=1200)
+        return result if result else fallback_report()
     except Exception as ex:
-        print(f"NEURON_A error: {ex}")
-        return {"opportunities":[],"builder_thesis":f"API error: {ex}","priority_build":""}
+        print(f"NEURON_A AI error: {ex}")
+        return {"opportunities":[], "builder_thesis": f"AI error: {ex}", "priority_build": ""}
 
 def main():
-    print("NEURON_A v2 - Builder Brain starting...")
+    print("NEURON_A v3 - Builder Brain (HuggingFace free AI)")
     state = gather_state()
     print(f"State: {state['engine_count']} engines | ${state['revenue']:.2f} | {state['loop_cycles']} cycles")
-    report = call_claude(state)
+    report = call_ai(state)
     report["system_state"] = state
     report["generated_at"] = datetime.now(timezone.utc).isoformat()
     Path("data").mkdir(exist_ok=True)
