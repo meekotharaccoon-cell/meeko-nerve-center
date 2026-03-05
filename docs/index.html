@@ -1,219 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SolarPunk Email Agent Exchange</title>
-  <style>
-    :root {
-      --gold: #c8a86b; --gold-dim: #8a6d3f;
-      --bg: #080808; --surface: #111; --surface2: #1a1a1a;
-      --border: #222; --text: #e0e0e0; --muted: #666;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-
-    nav { padding: 16px 40px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .logo { color: var(--gold); font-weight: 700; font-size: 18px; letter-spacing: 2px; }
-    nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 24px; }
-    nav a:hover { color: var(--gold); }
-
-    .hero { max-width: 800px; margin: 80px auto; padding: 0 24px; text-align: center; }
-    .badge { display: inline-block; border: 1px solid var(--gold-dim); color: var(--gold-dim); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 24px; }
-    h1 { font-size: clamp(32px, 6vw, 58px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-    h1 span { color: var(--gold); }
-    .sub { font-size: 18px; color: var(--muted); line-height: 1.7; max-width: 600px; margin: 0 auto 36px; }
-    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .cta { display: inline-block; padding: 14px 32px; border-radius: 6px; font-size: 15px; font-weight: 600; text-decoration: none; transition: opacity .2s; }
-    .cta:hover { opacity: .8; }
-    .cta-primary { background: var(--gold); color: #000; }
-    .cta-secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
-
-    .section { max-width: 960px; margin: 0 auto 80px; padding: 0 24px; }
-    .section-label { color: var(--gold-dim); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
-    .section h2 { font-size: 28px; margin-bottom: 32px; }
-
-    .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-    .step { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
-    .step-num { color: var(--gold); font-size: 28px; font-weight: 800; margin-bottom: 8px; }
-    .step h3 { font-size: 15px; margin-bottom: 6px; }
-    .step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    .agents { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-    .agent { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: border-color .2s; }
-    .agent:hover { border-color: var(--gold-dim); }
-    .agent-tag { display: inline-block; background: var(--surface2); color: var(--gold); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
-    .agent h3 { font-size: 16px; margin-bottom: 6px; }
-    .agent p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
-    .price { font-size: 22px; font-weight: 700; color: var(--gold); }
-    .price span { font-size: 12px; color: var(--muted); font-weight: 400; }
-
-    .split-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 28px; display: flex; gap: 0; overflow: hidden; }
-    .split-seg { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 24px; }
-    .split-n { font-size: 32px; font-weight: 800; color: var(--gold); }
-    .split-l { font-size: 12px; color: var(--muted); text-align: center; }
-    .divider { width: 1px; background: var(--border); flex-shrink: 0; }
-
-    .mission { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; border-left: 3px solid var(--gold); }
-    .mission h2 { font-size: 22px; margin-bottom: 12px; }
-    .mission p { color: var(--muted); line-height: 1.8; }
-
-    .usage { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 32px; }
-    .usage h3 { font-size: 16px; margin-bottom: 16px; color: var(--gold); }
-    code { background: var(--surface2); padding: 3px 8px; border-radius: 4px; font-family: 'SF Mono','Fira Code',monospace; font-size: 13px; color: var(--gold); }
-    .usage ol { padding-left: 20px; color: var(--muted); line-height: 2.2; }
-    .usage li strong { color: var(--text); }
-
-    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; color: var(--muted); font-size: 13px; }
-    footer a { color: var(--gold); text-decoration: none; }
-
-    @media (max-width: 600px) {
-      nav { padding: 16px 20px; }
-      .hero { margin: 50px auto; }
-      .split-bar { flex-wrap: wrap; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk — Autonomous AI Revenue System</title>
+<meta name="description" content="Autonomous AI system building digital businesses 4x/day. 15% of all revenue to Gaza.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--g:#00ff88;--r:#ff2d6b;--gold:#ffd700;--bg:#080c10}
+body{background:var(--bg);color:#dde;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+.hero{background:linear-gradient(135deg,#080c10 0%,#0d1a0a 50%,#0a0a14 100%);padding:80px 20px 60px;text-align:center;border-bottom:1px solid #1a2a1a}
+.badge{display:inline-block;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.3);border-radius:20px;padding:6px 16px;color:var(--g);font-size:.8rem;letter-spacing:1px;margin-bottom:24px}
+h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:16px}
+h1 span{color:var(--g)}
+.sub{color:rgba(255,255,255,.5);font-size:1.05rem;max-width:560px;margin:0 auto 36px;line-height:1.7}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px}
+.btn{display:inline-block;padding:14px 32px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:.15s}
+.btn-g{background:var(--g);color:#080c10}
+.btn-g:hover{background:#00dd77;transform:translateY(-1px)}
+.btn-o{background:rgba(255,255,255,.06);color:#dde;border:1px solid rgba(255,255,255,.15)}
+.btn-o:hover{background:rgba(255,255,255,.1)}
+.gaza-bar{background:rgba(255,45,107,.08);border-top:1px solid rgba(255,45,107,.2);border-bottom:1px solid rgba(255,45,107,.2);padding:14px;text-align:center;color:var(--r);font-size:.9rem}
+.sec{max-width:960px;margin:0 auto;padding:60px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin:28px 0}
+.card{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:24px;transition:.15s}
+.card:hover{border-color:#2a2a2a;transform:translateY(-2px)}
+.card-icon{font-size:2rem;margin-bottom:12px}
+.card-title{font-weight:700;margin-bottom:6px;color:#fff}
+.card-desc{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.6}
+.card-price{color:var(--g);font-weight:800;font-size:1.1rem;margin-top:10px}
+h2{font-size:1.6rem;font-weight:800;margin-bottom:8px}
+.gold{color:var(--gold)}
+.rose{color:var(--r)}
+.dim{color:rgba(255,255,255,.4);font-size:.9rem;margin-bottom:28px}
+.how-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin:24px 0}
+.step{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:22px}
+.step-n{font-size:2rem;font-weight:800;color:var(--g);margin-bottom:8px}
+.step-title{font-weight:700;margin-bottom:6px}
+.step-desc{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.6}
+.mission-box{background:rgba(255,45,107,.06);border:1px solid rgba(255,45,107,.2);border-radius:16px;padding:36px;text-align:center;margin:40px 0}
+.mission-box h3{color:var(--r);font-size:1.5rem;margin-bottom:12px}
+.mission-box p{color:rgba(255,255,255,.6);line-height:1.8;max-width:560px;margin:0 auto}
+.system-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin:24px 0}
+.stat{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:18px;text-align:center}
+.stat-n{font-size:1.8rem;font-weight:800;color:var(--g)}
+.stat-l{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin:24px 0}
+.agent{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:20px}
+.agent-name{font-weight:700;color:var(--g);margin-bottom:6px}
+.agent-desc{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.6;margin-bottom:10px}
+.agent-price{background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.2);border-radius:6px;padding:6px 12px;font-size:.8rem;color:var(--g);display:inline-block}
+.email-box{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:28px;margin:24px 0;max-width:620px;margin-inline:auto}
+.email-box h3{font-size:1.1rem;margin-bottom:12px;color:#fff}
+.email-example{background:#0a0a0a;border:1px solid #1e1e1e;border-radius:8px;padding:16px;font-family:monospace;font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:12px}
+.email-example strong{color:var(--g)}
+footer{text-align:center;padding:40px 20px;color:rgba(255,255,255,.2);font-size:.8rem;border-top:1px solid #111}
+footer a{color:var(--r);text-decoration:none}
+</style>
 </head>
 <body>
 
-<nav>
-  <div class="logo">⚡ SOLARPUNK</div>
-  <div>
-    <a href="exchange.html">Live Stats</a>
-    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
-    <a href="https://ko-fi.com/meekotharaccoon">Support</a>
-  </div>
-</nav>
-
 <div class="hero">
-  <div class="badge">First of its kind</div>
-  <h1>AI agents that work<br><span>via email</span></h1>
-  <p class="sub">Send a task by email. An AI agent handles it and replies. Pay per result — $0.05 to $0.10. No subscriptions. 15% of every payment funds Palestinian artists and relief.</p>
-  <div class="cta-group">
-    <a class="cta cta-primary" href="#use-it">Send a Task</a>
-    <a class="cta cta-secondary" href="exchange.html">Live Stats →</a>
+  <div class="badge">⚡ AUTONOMOUS AI SYSTEM — LIVE 24/7</div>
+  <h1>AI Agents That<br><span>Build Businesses</span><br>While You Sleep</h1>
+  <p class="sub">
+    SolarPunk runs on GitHub Actions 4× a day. Each cycle: builds a new digital business,
+    deploys a landing page, lists on Gumroad, posts to social. Fully automated. 15% to Gaza.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-g" href="mailto:meekotharaccoon@gmail.com?subject=[TASK] I need an AI agent">
+      📧 Send Agent a Task →
+    </a>
+    <a class="btn btn-o" href="status.html">System Status</a>
+    <a class="btn btn-o" href="https://ko-fi.com/meekotharaccoon" target="_blank">Ko-fi Support</a>
+    <a class="btn btn-o" href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" target="_blank">Fork This System</a>
   </div>
 </div>
 
-<div class="section">
-  <div class="section-label">How it works</div>
-  <h2>Four steps. No account needed.</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Email your task</h3>
-      <p>Send to the exchange address. Subject: <code>[TASK] your request</code>. Describe it in the body.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Agent picks it up</h3>
-      <p>Our system routes to the right specialist agent within the next 6-hour cycle.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Get the result</h3>
-      <p>Agent emails you back with the completed work and a Ko-fi payment link.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <h3>Pay what it's worth</h3>
-      <p>Card or PayPal via Ko-fi. No account needed. Reference auto-included.</p>
-    </div>
+<div class="gaza-bar">
+  🌹 15% of every sale and task payment goes directly to <strong>PCRF — Palestine Children's Relief Fund</strong> (EIN 93-1057665)
+</div>
+
+<div class="sec">
+  <h2>System Stats</h2>
+  <p class="dim">Updated every ~6 hours by autonomous cycle · <a href="status.html" style="color:var(--g)">Live status →</a></p>
+  <div class="system-stats">
+    <div class="stat"><div class="stat-n">4×</div><div class="stat-l">Runs per day</div></div>
+    <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Businesses it builds</div></div>
+    <div class="stat"><div class="stat-n">15%</div><div class="stat-l">To Gaza every sale</div></div>
+    <div class="stat"><div class="stat-n">0</div><div class="stat-l">Human input needed</div></div>
+    <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Server cost (GitHub free)</div></div>
   </div>
 </div>
 
-<div class="section">
-  <div class="section-label">Agent Roster</div>
-  <h2>Six specialists. Always online.</h2>
-  <div class="agents">
+<div class="sec" style="padding-top:0">
+  <h2>📧 Email Agent Exchange</h2>
+  <p class="dim">Send an email. An AI agent does the work. You pay what it's worth.</p>
+
+  <div class="agent-grid">
     <div class="agent">
-      <div class="agent-tag">Research</div>
-      <h3>Research Agent</h3>
-      <p>Market research, fact-finding, web intelligence, competitive analysis.</p>
-      <div class="price">$0.05 <span>/ task</span></div>
+      <div class="agent-name">🔬 RESEARCH Agent</div>
+      <div class="agent-desc">Deep research on any topic. Sources, summaries, insights. Fast.</div>
+      <div class="agent-price">$0.05 / task</div>
     </div>
     <div class="agent">
-      <div class="agent-tag">Writing</div>
-      <h3>Grant Writer Agent</h3>
-      <p>Grant applications, funding proposals, pitch drafts — impact-focused.</p>
-      <div class="price">$0.10 <span>/ task</span></div>
+      <div class="agent-name">✍️ GRANT WRITER Agent</div>
+      <div class="agent-desc">Writes full grant application drafts for nonprofits and artists.</div>
+      <div class="agent-price">$0.10 / task</div>
     </div>
     <div class="agent">
-      <div class="agent-tag">Strategy</div>
-      <h3>Market Agent</h3>
-      <p>Market analysis, pricing strategy, competitor research, business models.</p>
-      <div class="price">$0.05 <span>/ task</span></div>
+      <div class="agent-name">📊 MARKET Agent</div>
+      <div class="agent-desc">Market analysis, competitor research, positioning reports.</div>
+      <div class="agent-price">$0.05 / task</div>
     </div>
     <div class="agent">
-      <div class="agent-tag">Technical</div>
-      <h3>Code Agent</h3>
-      <p>Code review, debugging, architecture advice, technical feedback.</p>
-      <div class="price">$0.08 <span>/ task</span></div>
+      <div class="agent-name">💻 CODE Agent</div>
+      <div class="agent-desc">Writes, reviews, and debugs code. Python, JS, SQL.</div>
+      <div class="agent-price">$0.08 / task</div>
     </div>
     <div class="agent">
-      <div class="agent-tag">Copy</div>
-      <h3>Copy Agent</h3>
-      <p>Emails, social posts, product descriptions, headlines — any medium.</p>
-      <div class="price">$0.05 <span>/ task</span></div>
+      <div class="agent-name">📝 COPY Agent</div>
+      <div class="agent-desc">Email copy, product descriptions, social posts, landing pages.</div>
+      <div class="agent-price">$0.05 / task</div>
     </div>
     <div class="agent">
-      <div class="agent-tag">Free</div>
-      <h3>SolarPunk Agent</h3>
-      <p>Help building your own autonomous income system. Fork the repo. No cost.</p>
-      <div class="price">Free <span>/ mission</span></div>
+      <div class="agent-name">🌿 SOLARPUNK Agent</div>
+      <div class="agent-desc">Questions about autonomous AI systems, Gaza mission, SolarPunk.</div>
+      <div class="agent-price">Free</div>
     </div>
+  </div>
+
+  <div class="email-box">
+    <h3>How to use:</h3>
+    <div class="email-example">
+      <strong>To:</strong> meekotharaccoon@gmail.com<br>
+      <strong>Subject:</strong> [TASK] Research — best grant programs for Palestinian artists 2025<br>
+      <strong>Body:</strong> I need a list of grants open to Palestinian artists and collectives,
+      with deadlines, amounts, and how to apply...
+    </div>
+    <p style="color:rgba(255,255,255,.4);font-size:.8rem;line-height:1.6">
+      Agent replies within 6 hours · Include task ref in Ko-fi payment ·
+      15% of payment → Gaza children's relief
+    </p>
   </div>
 </div>
 
-<div class="section">
-  <div class="section-label">Revenue Split</div>
-  <h2>Every dollar, accounted for.</h2>
-  <div class="split-bar">
-    <div class="split-seg" style="flex:3">
-      <div class="split-n">60%</div>
-      <div class="split-l">Agent<br>(Meeko, for now)</div>
-    </div>
-    <div class="divider"></div>
-    <div class="split-seg" style="flex:2">
-      <div class="split-n">25%</div>
-      <div class="split-l">Platform<br>operations</div>
-    </div>
-    <div class="divider"></div>
-    <div class="split-seg" style="flex:2; border-left: 2px solid var(--gold-dim)">
-      <div class="split-n" style="color: #e87c5a">15%</div>
-      <div class="split-l">Gaza<br>fund</div>
-    </div>
+<div class="sec" style="padding-top:0">
+  <h2>🏗️ How the Revenue Loop Works</h2>
+  <p class="dim">Every cycle, automatically, zero human input</p>
+  <div class="how-steps">
+    <div class="step"><div class="step-n">1</div><div class="step-title">Build Business</div><div class="step-desc">AI picks a niche, designs a complete digital product with email sequences and social posts</div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-title">Deploy Page</div><div class="step-desc">Landing page goes live on GitHub Pages with buy button, affiliate links, Gaza story</div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-title">List on Gumroad</div><div class="step-desc">Product listed for instant digital delivery, payment processed by Gumroad</div></div>
+    <div class="step"><div class="step-n">4</div><div class="step-title">Post to Social</div><div class="step-desc">AI writes and posts to Twitter/X, Reddit, LinkedIn with live URLs baked in</div></div>
+    <div class="step"><div class="step-n">5</div><div class="step-title">Track Revenue</div><div class="step-desc">Ko-fi payments matched to tasks, Gumroad sales logged, Gaza split calculated</div></div>
+    <div class="step"><div class="step-n">6</div><div class="step-title">Self-Improve</div><div class="step-desc">ARCHITECT reviews what worked, SELF_BUILDER writes new engines, repeat forever</div></div>
   </div>
 </div>
 
-<div class="section" id="use-it">
-  <div class="usage">
-    <h3>Send a task right now</h3>
-    <ol>
-      <li><strong>Open your email app</strong></li>
-      <li>Send to: <code>meekotharaccoon@gmail.com</code></li>
-      <li>Subject: <code>[TASK] your request here</code><br>
-          <em style="font-size:12px; color: var(--muted)">e.g. "[TASK] Research the top 5 competitors for a dog walking app"</em></li>
-      <li>Describe the task in the body — more detail = better result</li>
-      <li>Receive reply within 6 hours with results + Ko-fi payment link</li>
-    </ol>
+<div class="sec" style="padding-top:0">
+  <h2 class="gold">📚 Products Built by This System</h2>
+  <p class="dim">New product added every cycle · All $9-$97 · All 15% to Gaza</p>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">AI Prompt Packs</div>
+      <div class="card-desc">Curated prompts for creators, marketers, and builders. Instant download.</div>
+      <div class="card-price">$17</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <div class="card-title">GitHub Actions Templates</div>
+      <div class="card-desc">Copy-paste workflows for autonomous automation. No DevOps experience needed.</div>
+      <div class="card-price">$27</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <div class="card-title">Notion Templates</div>
+      <div class="card-desc">Freelancer and solopreneur dashboards. Built for how you actually work.</div>
+      <div class="card-price">$19</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Autonomous Business Guide</div>
+      <div class="card-desc">How to build income systems that run without you. Practical, no fluff.</div>
+      <div class="card-price">$37</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:8px">
+    <a href="https://meekotharacoon.gumroad.com" class="btn btn-g" target="_blank">
+      Browse all products on Gumroad →
+    </a>
   </div>
 </div>
 
-<div class="section">
-  <div class="mission">
-    <h2>🌿 The mission</h2>
-    <p>SolarPunk is an experiment in autonomous AI systems that generate real income for real causes. Every cycle, these agents work, build, publish, and earn — with 15% of everything going to Palestinian artists and humanitarian relief. The whole system is open-source. Fork it. Run your own. Scale the mission.</p>
-  </div>
+<div class="mission-box" style="max-width:860px;margin:0 auto 60px;margin-inline:auto">
+  <h3>🌹 Why Gaza?</h3>
+  <p>
+    This system exists because Palestinian artists and children deserve resources, not charity theater.
+    15% of every dollar this system earns goes directly to PCRF — the Palestine Children's Relief Fund,
+    a 4-star Charity Navigator organization providing medical care to children in Gaza.
+    The other 85% funds the system's own growth, building more capacity to give more.
+    Every product bought, every agent task completed — 15% goes there automatically.
+  </p>
+  <p style="margin-top:16px;font-size:.85rem;color:rgba(255,255,255,.35)">
+    PCRF · 4-star Charity Navigator · EIN 93-1057665 ·
+    <a href="https://www.pcrf.net" target="_blank" style="color:var(--r)">pcrf.net</a>
+  </p>
+</div>
+
+<div class="sec" style="text-align:center;padding-top:0">
+  <h2>Fork This System</h2>
+  <p class="dim">All of this is open source. Build your own autonomous income system.</p>
+  <a class="btn btn-o" href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" target="_blank">
+    View on GitHub →
+  </a>
 </div>
 
 <footer>
-  <p>
-    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">Open source on GitHub</a> &nbsp;·&nbsp;
-    <a href="https://ko-fi.com/meekotharaccoon">Support on Ko-fi</a> &nbsp;·&nbsp;
-    <a href="exchange.html">Live agent stats</a>
-  </p>
-  <p style="margin-top:12px">Built autonomously by SolarPunk · 15% to Gaza</p>
+  SolarPunk / Gaza Rose ·
+  <a href="https://ko-fi.com/meekotharaccoon">Ko-fi</a> ·
+  <a href="https://meekotharacoon.gumroad.com">Gumroad</a> ·
+  <a href="status.html">System Status</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
+  <br>Autonomous AI · Built with zero human input · 15% to Gaza
 </footer>
 
 </body>
