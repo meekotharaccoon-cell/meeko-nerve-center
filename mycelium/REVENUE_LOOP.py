@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-REVENUE_LOOP.py v4 — Bulletproof end-to-end revenue pipeline
-============================================================
-PREVIOUS BUGS:
-1. Imported BUSINESS_FACTORY and LANDING_DEPLOYER directly —
-   if either crashed on import, entire loop died.
-2. LANDING_DEPLOYER was pushing to a separate repo (no access).
-3. No fallback if business plan generation failed.
-
-FIX: All steps run standalone — no module imports. Reads data/ files
-directly. Each step is independently safe. Loop always completes.
+REVENUE_LOOP.py v5 — Bulletproof end-to-end revenue pipeline
+=============================================================
+FIXES from v4:
+- Import ask_json_list (not ask_json) for social posts — ask_json returns
+  dict, but social posts prompt returns a JSON array [...]. Was silently
+  returning None every cycle → always used fallback posts.
+- ask_json_list added to AI_CLIENT in this session.
 
 FLOW (all self-contained, file-based handoff):
   1. Read latest business from data/business_*.json
@@ -25,13 +22,13 @@ from pathlib import Path
 from datetime import datetime, timezone
 from email.mime.text import MIMEText
 
-DATA   = Path("data");   DATA.mkdir(exist_ok=True)
-DOCS   = Path("docs");   DOCS.mkdir(exist_ok=True)
+DATA     = Path("data");   DATA.mkdir(exist_ok=True)
+DOCS     = Path("docs");   DOCS.mkdir(exist_ok=True)
 MYCELIUM = Path("mycelium")
 
 sys.path.insert(0, str(MYCELIUM))
 try:
-    from AI_CLIENT import ask, ask_json
+    from AI_CLIENT import ask, ask_json, ask_json_list   # ← fixed: added ask_json_list
     AI_AVAILABLE = True
 except ImportError:
     AI_AVAILABLE = False
@@ -43,16 +40,15 @@ AMAZON_TAG    = os.environ.get("MEEKO_AFFILIATE_LINK", "autonomoushum-20")
 BASE_URL      = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
 
 AMAZON_BOOKS = [
-    {"title": "The $100 Startup",         "url": f"https://www.amazon.com/dp/0307951529?tag={AMAZON_TAG}"},
-    {"title": "Palestine — Joe Sacco",    "url": f"https://www.amazon.com/dp/1560974523?tag={AMAZON_TAG}"},
-    {"title": "Steal Like an Artist",     "url": f"https://www.amazon.com/dp/0761169253?tag={AMAZON_TAG}"},
-    {"title": "Automate the Boring Stuff","url": f"https://www.amazon.com/dp/1593279922?tag={AMAZON_TAG}"},
+    {"title": "The $100 Startup",          "url": f"https://www.amazon.com/dp/0307951529?tag={AMAZON_TAG}"},
+    {"title": "Palestine — Joe Sacco",     "url": f"https://www.amazon.com/dp/1560974523?tag={AMAZON_TAG}"},
+    {"title": "Steal Like an Artist",      "url": f"https://www.amazon.com/dp/0761169253?tag={AMAZON_TAG}"},
+    {"title": "Automate the Boring Stuff", "url": f"https://www.amazon.com/dp/1593279922?tag={AMAZON_TAG}"},
 ]
 
 
 # ── STEP 1: GET BUSINESS ────────────────────────────────────────────
 def step_get_business():
-    """Read the most recently built business from data/. No imports needed."""
     print("\n━━━ STEP 1: GET BUSINESS ━━━")
     newest, newest_time = None, ""
     for f in DATA.glob("business_*.json"):
@@ -71,7 +67,7 @@ def step_get_business():
         print(f"  ✅ Found: {name} (built {newest_time[:10]})")
         return newest
 
-    print("  ⚠️  No business found — BUSINESS_FACTORY hasn't run yet")
+    print("  ⚠️  No business found — BUSINESS_FACTORY hasn't run yet this cycle")
     return None
 
 
@@ -86,10 +82,9 @@ def step_inject_affiliates(package):
 
     if desc and AI_AVAILABLE and "amazon.com" not in desc:
         book = AMAZON_BOOKS[0]
-        prompt = f"""Add ONE Amazon book recommendation naturally to this product description.
-Book: {book['title']} → {book['url']}
-Description: {desc}
-Keep under 4 sentences. Return plain text only."""
+        prompt = (f"Add ONE Amazon book recommendation naturally to this product description.\n"
+                  f"Book: {book['title']} → {book['url']}\nDescription: {desc}\n"
+                  f"Keep under 4 sentences. Return plain text only.")
         try:
             enriched = ask([{"role": "user", "content": prompt}], max_tokens=300)
             if enriched and len(enriched) > 20:
@@ -97,7 +92,6 @@ Keep under 4 sentences. Return plain text only."""
         except:
             pass
 
-    # Inject into email sequence
     for email in plan.get("email_sequence", []):
         if email.get("body") and "amazon.com" not in email.get("body", ""):
             book = AMAZON_BOOKS[1]
@@ -117,26 +111,26 @@ def step_deploy_landing(package):
     if not package:
         return None
 
-    # Check if already deployed
     existing_url = package.get("live_url")
-    if existing_url and (DOCS / existing_url.split("/meeko-nerve-center/")[-1].rstrip("/")).exists():
-        print(f"  Already live: {existing_url}")
-        return existing_url
+    if existing_url:
+        slug_path = existing_url.split("/meeko-nerve-center/")[-1].rstrip("/")
+        if (DOCS / slug_path / "index.html").exists():
+            print(f"  Already live: {existing_url}")
+            return existing_url
 
-    plan  = package.get("plan", {})
-    niche = package.get("niche", {})
-    name  = plan.get("business_name", niche.get("niche", "Product"))
-    desc  = plan.get("product_description", plan.get("tagline", ""))
-    price = plan.get("price", niche.get("price", 17))
-    tagline = plan.get("tagline", "Built by AI. 15% to Gaza.")
-    gumroad_url = package.get("gumroad_url", "https://meekotharacoon.gumroad.com")
-    keywords = ", ".join(plan.get("seo_keywords", ["AI", "digital", "Gaza"]))
-    launch_steps = plan.get("launch_steps", [])
-    gaza_impact = plan.get("gaza_impact", f"15% of every ${price} sale → PCRF")
+    plan       = package.get("plan", {})
+    niche      = package.get("niche", {})
+    name       = plan.get("business_name", niche.get("niche", "Product"))
+    desc       = plan.get("product_description", plan.get("tagline", ""))
+    price      = plan.get("price", niche.get("price", 17))
+    tagline    = plan.get("tagline", "Built by AI. 15% to Gaza.")
+    gumroad_url= package.get("gumroad_url", "https://meekotharacoon.gumroad.com")
+    keywords   = ", ".join(plan.get("seo_keywords", ["AI", "digital", "Gaza"]))
+    steps      = plan.get("launch_steps", [])
+    gaza       = plan.get("gaza_impact", f"15% of every ${price} sale → PCRF")
     product_nm = plan.get("product_name", name)
 
-    # Build slug
-    raw = niche.get("niche", name).lower()
+    raw  = niche.get("niche", name).lower()
     slug = re.sub(r'[^a-z0-9-]', '-', raw.replace(" ", "-"))
     slug = re.sub(r'-+', '-', slug).strip('-')[:40]
 
@@ -147,8 +141,8 @@ def step_deploy_landing(package):
         for b in AMAZON_BOOKS
     )
     steps_html = ("<ul class='steps'>" +
-                  "".join(f"<li>{s}</li>" for s in launch_steps) +
-                  "</ul>") if launch_steps else ""
+                  "".join(f"<li>{s}</li>" for s in steps) +
+                  "</ul>") if steps else ""
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -204,7 +198,7 @@ footer a{{color:#ff2d6b;text-decoration:none}}
   {f'<h2 style="margin-top:26px">Launch Steps</h2>{steps_html}' if steps_html else ""}
   <div class="mission">
     <h3>🌹 The Gaza Connection</h3>
-    <p>{gaza_impact}</p>
+    <p>{gaza}</p>
     <p style="margin-top:10px;font-size:.8rem;color:rgba(255,255,255,.3)">→ <a href="https://www.pcrf.net" style="color:#ff2d6b">PCRF</a> · 4-star Charity Navigator · EIN 93-1057665</p>
   </div>
 </div>
@@ -220,19 +214,17 @@ footer a{{color:#ff2d6b;text-decoration:none}}
   Generated {datetime.now(timezone.utc).strftime('%Y-%m-%d')}</footer>
 </body></html>"""
 
-    # Write to docs/{slug}/index.html — committed by OMNIBRAIN git step
     out_dir = DOCS / slug
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "index.html").write_text(html)
     live_url = f"{BASE_URL}/{slug}/"
-    print(f"  ✅ Staged at docs/{slug}/ → {live_url}")
+    print(f"  ✅ Staged docs/{slug}/ → {live_url}")
 
-    # Update the business file with live_url
     package["live_url"]    = live_url
     package["slug"]        = slug
     package["deployed_at"] = datetime.now(timezone.utc).isoformat()
-    # Write back to the original business file
-    for f in DATA.glob(f"business_*.json"):
+
+    for f in DATA.glob("business_*.json"):
         if "factory_state" in f.name:
             continue
         try:
@@ -243,14 +235,13 @@ footer a{{color:#ff2d6b;text-decoration:none}}
         except:
             pass
 
-    # Update landing deployer state
-    ld_state_file = DATA / "landing_deployer_state.json"
-    ld_state = json.loads(ld_state_file.read_text()) if ld_state_file.exists() else {"deployed": [], "live_urls": []}
-    bid = package.get("id", slug)
-    if bid not in ld_state.get("deployed", []):
-        ld_state.setdefault("deployed", []).append(bid)
-        ld_state.setdefault("live_urls", []).append(live_url)
-    ld_state_file.write_text(json.dumps(ld_state, indent=2))
+    ld_f = DATA / "landing_deployer_state.json"
+    ld   = json.loads(ld_f.read_text()) if ld_f.exists() else {"deployed": [], "live_urls": []}
+    bid  = package.get("id", slug)
+    if bid not in ld.get("deployed", []):
+        ld.setdefault("deployed", []).append(bid)
+        ld.setdefault("live_urls", []).append(live_url)
+    ld_f.write_text(json.dumps(ld, indent=2))
 
     return live_url
 
@@ -258,16 +249,12 @@ footer a{{color:#ff2d6b;text-decoration:none}}
 # ── STEP 4: GUMROAD LISTING ─────────────────────────────────────────
 def step_gumroad(package, live_url):
     print("\n━━━ STEP 4: GUMROAD ━━━")
-    # If already has a gumroad URL, return it
     if package and package.get("gumroad_url") and "gumroad.com/l/" in package.get("gumroad_url", ""):
         print(f"  Already listed: {package['gumroad_url']}")
         return package["gumroad_url"]
 
-    if not GUMROAD_TOKEN:
-        print("  No GUMROAD_ACCESS_TOKEN — skipping listing creation")
-        return "https://meekotharacoon.gumroad.com"
-
-    if not package:
+    if not GUMROAD_TOKEN or not package:
+        print(f"  {'No token' if not GUMROAD_TOKEN else 'No package'} — skipping")
         return "https://meekotharacoon.gumroad.com"
 
     plan  = package.get("plan", {})
@@ -275,24 +262,21 @@ def step_gumroad(package, live_url):
     desc  = plan.get("product_description", plan.get("tagline", ""))
     price = int(plan.get("price", package.get("niche", {}).get("price", 17))) * 100
 
-    full_desc = desc
     if live_url:
-        full_desc += f"\n\nFull details: {live_url}"
-    full_desc += "\n\n15% of this purchase goes to PCRF — Palestine Children's Relief Fund (EIN 93-1057665)."
+        desc += f"\n\nFull details: {live_url}"
+    desc += "\n\n15% of this purchase goes to PCRF — Palestine Children's Relief Fund (EIN 93-1057665)."
 
     try:
         resp = requests.post(
             "https://api.gumroad.com/v2/products",
             headers={"Authorization": f"Bearer {GUMROAD_TOKEN}"},
-            data={"name": name, "description": full_desc, "price": price,
-                  "currency": "usd", "published": True},
+            data={"name": name, "description": desc, "price": price, "currency": "usd", "published": True},
             timeout=20
         )
         if resp.status_code == 201:
             buy_url = resp.json().get("product", {}).get("short_url", "https://meekotharacoon.gumroad.com")
-            print(f"  ✅ Gumroad listing live: {buy_url}")
-            # Update package
             package["gumroad_url"] = buy_url
+            print(f"  ✅ Listed: {buy_url}")
             return buy_url
         else:
             print(f"  Gumroad {resp.status_code}: {resp.text[:100]}")
@@ -313,41 +297,37 @@ def step_social(package, live_url, gumroad_url):
     tagline = plan.get("tagline", "15% to Gaza")
     price   = plan.get("price", 17)
 
-    # Try AI-generated posts first
     posts = []
     if AI_AVAILABLE:
-        prompt = f"""Write 3 social posts for this product launch.
-
-Product: {name}
-Tagline: {tagline}
-Price: ${price}
-Landing page: {live_url}
-Buy: {gumroad_url}
-Mission: 15% → Gaza children's relief
-
-1. Twitter/X (280 chars max, include URL)
-2. Reddit (conversational, include URL, no spam)
-3. LinkedIn (professional, mission-focused)
-
-Respond ONLY as JSON array:
-[{{"platform":"twitter","text":"..."}},{{"platform":"reddit","text":"..."}},{{"platform":"linkedin","text":"..."}}]"""
+        prompt = (
+            f"Write 3 social posts for this product launch.\n\n"
+            f"Product: {name}\nTagline: {tagline}\nPrice: ${price}\n"
+            f"Landing page: {live_url}\nBuy: {gumroad_url}\n"
+            f"Mission: 15% → Gaza children's relief\n\n"
+            f"Write:\n1. Twitter/X (280 chars max, include URL)\n"
+            f"2. Reddit (conversational, include URL, no spam)\n"
+            f"3. LinkedIn (professional, mission-focused)\n\n"
+            f"Return ONLY a JSON array: "
+            f'[{{"platform":"twitter","text":"..."}},{{"platform":"reddit","text":"..."}},{{"platform":"linkedin","text":"..."}}]'
+        )
         try:
-            posts = ask_json(prompt, max_tokens=600) or []
-        except:
-            pass
+            posts = ask_json_list(prompt, max_tokens=600)  # ← FIXED: was ask_json
+        except Exception as e:
+            print(f"  AI social gen error: {e}")
 
     if not posts:
         posts = [
-            {"platform": "twitter",  "text": f"Just launched: {name} 🌹 {tagline} → {live_url} — ${price}, 15% to Gaza"},
-            {"platform": "reddit",   "text": f"Built this with AI: {name}\n\n{tagline}\n\nDetails: {live_url}\nBuy: {gumroad_url}\n\n15% of every sale funds Gaza aid."},
-            {"platform": "linkedin", "text": f"New launch: {name}\n\n{tagline}\n\n${price} · 15% to PCRF · {live_url}"},
+            {"platform": "twitter",  "text": f"🌹 New: {name} — {tagline} {live_url} ${price}, 15% to Gaza"},
+            {"platform": "reddit",   "text": f"Built with AI: {name}\n\n{tagline}\n\n{live_url}\n15% → Gaza."},
+            {"platform": "linkedin", "text": f"New launch: {name}\n{tagline}\n${price} · 15% to PCRF · {live_url}"},
         ]
 
     qf = DATA / "social_queue.json"
     q  = json.loads(qf.read_text()) if qf.exists() else {"posts": []}
     ts = datetime.now(timezone.utc).isoformat()
     for p in posts:
-        p.update({"queued_at": ts, "source": "REVENUE_LOOP", "live_url": live_url})
+        p.update({"queued_at": ts, "source": "REVENUE_LOOP", "live_url": live_url,
+                  "niche": package.get("niche", {}).get("niche", "")})
     q.setdefault("posts", []).extend(posts)
     q["posts"] = q["posts"][-300:]
     qf.write_text(json.dumps(q, indent=2))
@@ -359,7 +339,7 @@ Respond ONLY as JSON array:
 def step_brief(package, live_url, gumroad_url, posts):
     print("\n━━━ STEP 6: EMAIL BRIEFING ━━━")
     if not GMAIL or not GPWD or not package:
-        print("  Skipping — no email config")
+        print("  Skipping — no email config or no package")
         return
 
     plan    = package.get("plan", {})
@@ -368,7 +348,7 @@ def step_brief(package, live_url, gumroad_url, posts):
     revenue = plan.get("monthly_revenue_estimate", "?")
     gaza    = plan.get("gaza_impact", "15% to Gaza")
 
-    posts_txt = "\n".join(f"  [{p['platform'].upper()}] {p['text'][:100]}..." for p in posts) if posts else "  none queued"
+    posts_txt  = "\n".join(f"  [{p['platform'].upper()}] {p['text'][:100]}..." for p in posts) or "  none"
     amazon_txt = "\n".join(f"  {b['title']}: {b['url']}" for b in AMAZON_BOOKS[:3])
 
     body = f"""REVENUE_LOOP cycle complete.
@@ -376,30 +356,28 @@ def step_brief(package, live_url, gumroad_url, posts):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   BUILT:   {name}
   PRICE:   ${price}
-  REVENUE: {revenue} (estimated)
+  REVENUE: {revenue}
   GAZA:    {gaza}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  🌐 LIVE PAGE: {live_url or '(staged — live after next git push)'}
-  🛒 BUY:       {gumroad_url}
+  LIVE:  {live_url or '(staged — live after git push)'}
+  BUY:   {gumroad_url}
 
-  📱 SOCIAL POSTS QUEUED:
+  SOCIAL QUEUED:
 {posts_txt}
 
-  📚 AMAZON AFFILIATE ({AMAZON_TAG}):
+  AMAZON ({AMAZON_TAG}):
 {amazon_txt}
 
-Loop runs again in ~6 hours. Every cycle = new business built + live.
-
-— REVENUE_LOOP / SolarPunk"""
+— REVENUE_LOOP v5 / SolarPunk"""
 
     try:
         msg = MIMEText(body)
         msg["From"] = GMAIL; msg["To"] = GMAIL
-        msg["Subject"] = f"[SolarPunk] 🔁 Loop complete — {name}"
+        msg["Subject"] = f"[SolarPunk] Loop complete — {name}"
         with smtplib.SMTP("smtp.gmail.com", 587) as s:
             s.starttls(); s.login(GMAIL, GPWD); s.sendmail(GMAIL, GMAIL, msg.as_string())
-        print(f"  ✅ Report sent to {GMAIL}")
+        print(f"  ✅ Email sent")
     except Exception as e:
         print(f"  Email error: {e}")
 
@@ -407,7 +385,7 @@ Loop runs again in ~6 hours. Every cycle = new business built + live.
 # ── STEP 7: BRAIN UPDATE ────────────────────────────────────────────
 def step_brain(package, live_url):
     print("\n━━━ STEP 7: BRAIN UPDATE ━━━")
-    bf = DATA / "brain_state.json"
+    bf    = DATA / "brain_state.json"
     brain = json.loads(bf.read_text()) if bf.exists() else {}
     prev  = brain.get("health_score", 40)
     new   = min(100, prev + 5)
@@ -417,101 +395,56 @@ def step_brain(package, live_url):
         "last_business_built":   package.get("plan", {}).get("business_name") if package else None,
         "last_live_url":         live_url,
         "total_loops_completed": brain.get("total_loops_completed", 0) + 1,
-        "synthesis":             f"Loop complete. Health {prev}→{new}.",
     })
     bf.write_text(json.dumps(brain, indent=2))
-    print(f"  ✅ Health {prev} → {new} | Loops: {brain['total_loops_completed']}")
+    print(f"  ✅ Health {prev}→{new} | Total loops: {brain['total_loops_completed']}")
 
 
 # ── MASTER LOOP ─────────────────────────────────────────────────────
 def run():
     start = datetime.now(timezone.utc)
-    print(f"\n🔁 REVENUE_LOOP v4 — {start.strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🔁 REVENUE_LOOP v5 — {start.strftime('%Y-%m-%d %H:%M UTC')}")
     print("=" * 55)
 
-    loop = {
-        "started_at": start.isoformat(),
-        "steps_ok": [], "steps_failed": [],
-        "live_url": None, "gumroad_url": None, "posts": [],
-    }
+    loop = {"started_at": start.isoformat(), "steps_ok": [], "steps_failed": [],
+            "live_url": None, "gumroad_url": None, "posts": []}
 
-    try:
-        package = step_get_business()
-        (loop["steps_ok"] if package else loop["steps_failed"]).append("get_business")
-    except Exception as e:
-        print(f"  ❌ get_business: {e}")
-        loop["steps_failed"].append("get_business")
-        package = None
+    def step(name, fn, *args):
+        try:
+            result = fn(*args)
+            loop["steps_ok"].append(name)
+            return result
+        except Exception as e:
+            print(f"  ❌ {name}: {e}")
+            loop["steps_failed"].append(name)
+            return None
 
-    try:
-        package = step_inject_affiliates(package)
-        loop["steps_ok"].append("affiliates")
-    except Exception as e:
-        print(f"  ❌ affiliates: {e}")
-        loop["steps_failed"].append("affiliates")
+    package     = step("get_business",  step_get_business)
+    package     = step("affiliates",    step_inject_affiliates, package) or package
+    live_url    = step("deploy",        step_deploy_landing,    package)
+    gumroad_url = step("gumroad",       step_gumroad,           package, live_url) or "https://meekotharacoon.gumroad.com"
+    posts       = step("social",        step_social,            package, live_url, gumroad_url) or []
+                  step("brief",         step_brief,             package, live_url, gumroad_url, posts)
+                  step("brain",         step_brain,             package, live_url)
 
-    try:
-        live_url = step_deploy_landing(package)
-        loop["live_url"] = live_url
-        (loop["steps_ok"] if live_url else loop["steps_failed"]).append("deploy")
-    except Exception as e:
-        print(f"  ❌ deploy: {e}")
-        loop["steps_failed"].append("deploy")
-        live_url = None
-
-    try:
-        gumroad_url = step_gumroad(package, live_url)
-        loop["gumroad_url"] = gumroad_url
-        loop["steps_ok"].append("gumroad")
-    except Exception as e:
-        print(f"  ❌ gumroad: {e}")
-        loop["steps_failed"].append("gumroad")
-        gumroad_url = "https://meekotharacoon.gumroad.com"
-
-    try:
-        posts = step_social(package, live_url, gumroad_url)
-        loop["posts"] = posts
-        loop["steps_ok"].append("social")
-    except Exception as e:
-        print(f"  ❌ social: {e}")
-        loop["steps_failed"].append("social")
-        posts = []
-
-    try:
-        step_brief(package, live_url, gumroad_url, posts)
-        loop["steps_ok"].append("brief")
-    except Exception as e:
-        print(f"  ❌ brief: {e}")
-        loop["steps_failed"].append("brief")
-
-    try:
-        step_brain(package, live_url)
-        loop["steps_ok"].append("brain")
-    except Exception as e:
-        print(f"  ❌ brain: {e}")
-        loop["steps_failed"].append("brain")
-
-    elapsed = (datetime.now(timezone.utc) - start).seconds
     loop.update({
+        "live_url": live_url, "gumroad_url": gumroad_url, "posts": posts,
         "completed_at": datetime.now(timezone.utc).isoformat(),
-        "elapsed_seconds": elapsed,
-        "success": len(loop["steps_failed"]) == 0,
+        "elapsed_seconds": (datetime.now(timezone.utc) - start).seconds,
+        "success": not loop["steps_failed"],
     })
-    (DATA / "revenue_loop_last.json").write_text(json.dumps(loop, indent=2, default=str))
 
-    hf = DATA / "revenue_loop_history.json"
+    (DATA / "revenue_loop_last.json").write_text(json.dumps(loop, indent=2, default=str))
+    hf   = DATA / "revenue_loop_history.json"
     hist = json.loads(hf.read_text()) if hf.exists() else []
     hist.append({"at": loop["completed_at"], "ok": loop["steps_ok"],
-                 "failed": loop["steps_failed"], "url": live_url, "elapsed": elapsed})
+                 "failed": loop["steps_failed"], "url": live_url})
     hf.write_text(json.dumps(hist[-100:], indent=2))
 
-    icon = "✅" if loop["success"] else "⚠️"
-    print(f"\n{icon} REVENUE_LOOP done in {elapsed}s")
-    print(f"   OK:     {', '.join(loop['steps_ok'])}")
-    if loop["steps_failed"]:
-        print(f"   Failed: {', '.join(loop['steps_failed'])}")
-    if live_url:
-        print(f"   Live:   {live_url}")
+    print(f"\n{'✅' if loop['success'] else '⚠️ '} REVENUE_LOOP done {loop['elapsed_seconds']}s")
+    print(f"   OK: {', '.join(loop['steps_ok'])}")
+    if loop["steps_failed"]: print(f"   FAILED: {', '.join(loop['steps_failed'])}")
+    if live_url: print(f"   Live: {live_url}")
     return loop
 
 
