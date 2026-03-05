@@ -204,9 +204,10 @@ def run():
     print(f"BRIEFING_ENGINE cycle {state['cycles']} | UTC hour: {hour}")
 
     # Reset daily flags at midnight UTC
-    if state.get("last_morning","")[:10] != today:
+    # Use (... or "") to guard against None stored in JSON (fixes TypeError: NoneType[:10])
+    if (state.get("last_morning") or "")[:10] != today:
         state["morning_sent_today"]=False
-    if state.get("last_evening","")[:10] != today:
+    if (state.get("last_evening") or "")[:10] != today:
         state["evening_sent_today"]=False
 
     d=gather_all()
