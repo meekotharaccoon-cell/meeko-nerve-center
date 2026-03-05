@@ -78,6 +78,8 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           INPUT_SEED: ${{ github.event.inputs.seed }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
         run: |
           python3 - <<'PYEOF'
@@ -94,13 +96,14 @@ jobs:
           ctx_f = Path("data/loop_context.json")
           ctx   = json.loads(ctx_f.read_text()) if ctx_f.exists() else {}
 
-          prompt = f"""You are SolarPunk — Meeko's autonomous AI revenue agent. Analyze state and decide.
+          prompt = f"""You are SolarPunk™ — Meeko's autonomous AI revenue agent. Analyze state and decide.
 
 SYSTEM STATE:
 - Engines: {ctx.get('total_engines')} | Businesses: {ctx.get('businesses_built')}
 - Revenue: ${ctx.get('total_revenue', 0):.2f} total | ${ctx.get('total_to_gaza', 0):.2f} to Gaza
 - Brain health: {ctx.get('brain_health')} | Loops completed: {ctx.get('total_loops')}
-- Gumroad connected: {has_gumroad} | Email connected: {has_gmail}
+- Gumroad connected: {has_gumroad} (use GUMROAD_SECRET token)
+- Email connected: {has_gmail}
 - Seed instruction: "{seed or '(none — full autonomy)'}"
 
 Decide the 3 highest-leverage actions to maximize autonomous revenue RIGHT NOW.
@@ -113,7 +116,7 @@ Respond ONLY as JSON:
                   r = requests.post(
                       "https://api.anthropic.com/v1/messages",
                       headers={"x-api-key": api_key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
-                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 800,
+                      json={"model": "claude-sonnet-4-6", "max_tokens": 800,
                             "messages": [{"role": "user", "content": prompt}]},
                       timeout=60
                   )
@@ -144,12 +147,12 @@ Respond ONLY as JSON:
           if not decisions:
               decisions = {
                   "decisions": [
-                      {"action": "Run BUSINESS_FACTORY to build new digital product", "why": "More products = more revenue", "urgency": "now", "revenue_impact": "high"},
-                      {"action": "Publish all pending Gumroad listings", "why": "Unlisted products earn $0", "urgency": "now", "revenue_impact": "high"},
+                      {"action": "Run BUILD_YOURSELF to add missing revenue engine", "why": "More engines = more money paths", "urgency": "now", "revenue_impact": "high"},
+                      {"action": "Publish all pending Gumroad listings via GUMROAD_ENGINE", "why": "Unlisted products earn $0", "urgency": "now", "revenue_impact": "high"},
                       {"action": "Generate + queue social posts for all products", "why": "Distribution is the gap", "urgency": "now", "revenue_impact": "medium"},
                   ],
                   "key_insight": "Build → deploy → promote → repeat. Every idle product is lost revenue.",
-                  "meeko_message": "SolarPunk loop running autonomously.",
+                  "meeko_message": "SolarPunk™ loop running autonomously.",
                   "health_delta": 3,
               }
 
@@ -212,7 +215,7 @@ Respond ONLY as JSON:
           decisions = json.loads(Path("data/loop_decisions.json").read_text()) if Path("data/loop_decisions.json").exists() else {}
           ctx = json.loads(Path("data/loop_context.json").read_text()) if Path("data/loop_context.json").exists() else {}
 
-          body = f"""SOLARPUNK LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+          body = f"""SOLARPUNK™ LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
 
 {decisions.get('meeko_message', 'Loop ran.')}
 
@@ -233,12 +236,13 @@ SYSTEM STATS:
 
 Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html
 Social queue: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html
+Actions: https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
 
 — SolarPunk™"""
 
           try:
               msg = MIMEText(body)
-              msg["Subject"] = f"[SolarPunk] Loop {datetime.now().strftime('%b %d')} — ${ctx.get('total_revenue',0):.2f} revenue | {ctx.get('total_engines','?')} engines"
+              msg["Subject"] = f"[SolarPunk™] Loop {datetime.now().strftime('%b %d')} — ${ctx.get('total_revenue',0):.2f} | {ctx.get('total_engines','?')} engines"
               msg["From"] = gmail; msg["To"] = gmail
               with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
                   s.login(gmail, gpass); s.send_message(msg)
