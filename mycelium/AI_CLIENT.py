@@ -1,34 +1,27 @@
 #!/usr/bin/env python3
 """
-AI_CLIENT.py — SolarPunk AI brain
-===================================
-Priority: ANTHROPIC_API_KEY (Claude) → HF_TOKEN (HuggingFace fallback)
-All engines import this. Zero config needed beyond secrets.
-
-ask()           — returns text string
-ask_json()      — returns parsed dict
-ask_json_list() — returns parsed list
+AI_CLIENT.py — SolarPunk unified AI brain
+==========================================
+Priority: ANTHROPIC (Claude sonnet-4-6) → HF fallback (confirmed live models)
+Dead models purged: Llama-3.1-8B, Phi-3.5-mini (both 410 Gone as of 2026-03)
+All engines import: ask(), ask_json(), ask_json_list(), ai_available(), ai_backend()
 """
 import os, json, requests
 
-ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-HF_TOKEN      = os.environ.get("HF_TOKEN", "")
+ANTHROPIC_KEY   = os.environ.get("ANTHROPIC_API_KEY", "")
+HF_TOKEN        = os.environ.get("HF_TOKEN", "")
+ANTHROPIC_MODEL = "claude-sonnet-4-6"
 
-ANTHROPIC_MODEL = "claude-sonnet-4-6"  # fixed: was claude-sonnet-4-20250514 (invalid)
+# Only confirmed-working HF models (no 410s) — updated 2026-03
 HF_MODELS = [
     "Qwen/Qwen2.5-72B-Instruct",
-    "meta-llama/Llama-3.1-8B-Instruct",
-    "microsoft/Phi-3.5-mini-instruct",
+    "mistralai/Mistral-7B-Instruct-v0.3",
+    "HuggingFaceH4/zephyr-7b-beta",
 ]
 
 
 def _ask_anthropic(messages, max_tokens=2000, system=None):
-    """Call Anthropic API directly."""
-    body = {
-        "model": ANTHROPIC_MODEL,
-        "max_tokens": max_tokens,
-        "messages": messages,
-    }
+    body = {"model": ANTHROPIC_MODEL, "max_tokens": max_tokens, "messages": messages}
     if system:
         body["system"] = system
     r = requests.post(
@@ -38,18 +31,15 @@ def _ask_anthropic(messages, max_tokens=2000, system=None):
             "anthropic-version": "2023-06-01",
             "Content-Type": "application/json",
         },
-        json=body,
-        timeout=120,
+        json=body, timeout=120,
     )
     r.raise_for_status()
-    data = r.json()
-    text = data["content"][0]["text"]
-    print(f"  [AI] Claude ({len(text)}c)")
+    text = r.json()["content"][0]["text"]
+    print(f"  [AI] Claude ✓ ({len(text)}c)")
     return text
 
 
 def _ask_hf(messages, max_tokens=2000, system=None):
-    """Call HuggingFace as fallback."""
     full = []
     if system:
         full.append({"role": "system", "content": system})
@@ -62,40 +52,37 @@ def _ask_hf(messages, max_tokens=2000, system=None):
                 url,
                 headers={"Authorization": f"Bearer {HF_TOKEN}", "Content-Type": "application/json"},
                 json={"model": model, "messages": full, "max_tokens": max_tokens, "temperature": 0.7},
-                timeout=120,
+                timeout=60,
             )
+            if r.status_code == 410:
+                print(f"  [AI] HF {model.split('/')[-1]} — 410 Gone, skip")
+                continue
             r.raise_for_status()
             text = r.json()["choices"][0]["message"]["content"]
-            print(f"  [AI] HF/{model.split('/')[-1]} ({len(text)}c)")
+            print(f"  [AI] HF {model.split('/')[-1]} ✓ ({len(text)}c)")
             return text
         except Exception as e:
-            print(f"  [AI] HF/{model.split('/')[-1]} failed: {e}")
+            print(f"  [AI] HF {model.split('/')[-1]} failed: {e}")
             last_err = e
     raise RuntimeError(f"All HF models failed. Last: {last_err}")
 
 
 def ask(messages, max_tokens=2000, system=None):
-    """
-    Ask the AI. Returns text string.
-    Uses ANTHROPIC_API_KEY if available, falls back to HF_TOKEN.
-    messages: list of {"role": "user"|"assistant", "content": "..."}
-    """
     if ANTHROPIC_KEY:
         try:
             return _ask_anthropic(messages, max_tokens=max_tokens, system=system)
         except Exception as e:
-            print(f"  [AI] Anthropic failed ({e}), trying HF fallback...")
+            print(f"  [AI] Anthropic error ({e}), trying HF fallback...")
     if HF_TOKEN:
         return _ask_hf(messages, max_tokens=max_tokens, system=system)
-    raise RuntimeError("No AI credentials — set ANTHROPIC_API_KEY or HF_TOKEN in GitHub Secrets")
+    raise RuntimeError("No AI backend — set ANTHROPIC_API_KEY or HF_TOKEN")
 
 
 def ask_json(prompt, max_tokens=2000, system=None):
-    """Ask for a JSON object response. Returns parsed dict or None."""
-    sys_suffix = "\nRespond ONLY with a valid JSON object. No markdown fences, no preamble."
-    full_system = ((system or "") + sys_suffix).strip()
+    sys_suffix = "\nRespond ONLY with a valid JSON object. No markdown, no preamble."
+    full_sys = ((system or "") + sys_suffix).strip()
     try:
-        text = ask([{"role": "user", "content": prompt}], max_tokens=max_tokens, system=full_system)
+        text = ask([{"role": "user", "content": prompt}], max_tokens=max_tokens, system=full_sys)
         text = text.strip()
         for fence in ["```json", "```"]:
             if text.startswith(fence):
@@ -112,11 +99,10 @@ def ask_json(prompt, max_tokens=2000, system=None):
 
 
 def ask_json_list(prompt, max_tokens=2000, system=None):
-    """Ask for a JSON array response. Returns parsed list or []."""
-    sys_suffix = "\nRespond ONLY with a valid JSON array. No markdown fences, no preamble."
-    full_system = ((system or "") + sys_suffix).strip()
+    sys_suffix = "\nRespond ONLY with a valid JSON array. No markdown, no preamble."
+    full_sys = ((system or "") + sys_suffix).strip()
     try:
-        text = ask([{"role": "user", "content": prompt}], max_tokens=max_tokens, system=full_system)
+        text = ask([{"role": "user", "content": prompt}], max_tokens=max_tokens, system=full_sys)
         text = text.strip()
         for fence in ["```json", "```"]:
             if text.startswith(fence):
@@ -133,18 +119,18 @@ def ask_json_list(prompt, max_tokens=2000, system=None):
 
 
 def ai_available():
-    """Returns True if any AI backend is configured."""
     return bool(ANTHROPIC_KEY or HF_TOKEN)
 
 
 def ai_backend():
-    """Returns which backend will be used."""
-    if ANTHROPIC_KEY: return "anthropic"
-    if HF_TOKEN: return "huggingface"
+    if ANTHROPIC_KEY:
+        return "anthropic"
+    if HF_TOKEN:
+        return "huggingface"
     return "none"
 
 
 if __name__ == "__main__":
     print(f"AI_CLIENT — backend: {ai_backend()}")
-    result = ask([{"role": "user", "content": "Say exactly: SolarPunk AI online."}], max_tokens=20)
-    print(f"Test: {result}")
+    r = ask([{"role": "user", "content": "Say exactly: SolarPunk AI online."}], max_tokens=20)
+    print(f"Test: {r}")
