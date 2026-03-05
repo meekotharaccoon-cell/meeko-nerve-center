@@ -1,7 +1,7 @@
 {
-  "cycles": 12,
-  "posted": 12,
-  "failed": 24,
+  "cycles": 13,
+  "posted": 13,
+  "failed": 26,
   "history": [
     {
       "platform": "linkedin",
@@ -74,7 +74,13 @@
       "niche": "Social Media Content Packs",
       "info": "manual",
       "at": "2026-03-05T15:57:55.507359+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "Grant Writing Templates",
+      "info": "manual",
+      "at": "2026-03-05T18:57:41.582131+00:00"
     }
   ],
-  "last_run": "2026-03-05T15:57:55.506956+00:00"
+  "last_run": "2026-03-05T18:57:41.581668+00:00"
 }
