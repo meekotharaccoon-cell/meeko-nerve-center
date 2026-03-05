@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v7 — full bridge network
+OMNIBUS v8 — full bridge network
 =================================
-v7 changes vs v6:
-- Added GUMROAD_AUTO_QUEUE (L2) — auto-populates gumroad_listings.json with real products
-- Added CONTRIBUTOR_REGISTRY (L5) — tracks human revenue splits, credits contributors
-- Added PAYPAL_PAYOUT (L5) — sends real PayPal payments to contributors
-- Added KNOWLEDGE_BRIDGE (L6) — maps all engine connections, finds gaps
-- Added BIG_BRAIN_ORACLE (L6) — asks Claude strategic questions, seeds next cycle
-- All workflows now pass PAYPAL_CLIENT_ID + PAYPAL_CLIENT_SECRET
+v8 changes vs v7:
+- BOTTLENECK_SCANNER added to L0 (runs every cycle, writes docs/bottleneck.html)
+- AUTO_HEALER added to L0 (auto-fixes broken engines after GUARDIAN scan)
+- DISPATCH_HANDLER added to L5 (routes payments, triggers legal fund allocations)
+- AFFILIATE_MAXIMIZER added to L4 (boosts affiliate link revenue)
+- All 4 previously orphaned engines now wired in
 
 FULL DEPENDENCY CHAIN:
-  L0  GUARDIAN + ENGINE_INTEGRITY + SECRETS_CHECKER
+  L0  GUARDIAN + ENGINE_INTEGRITY + SECRETS_CHECKER + BOTTLENECK_SCANNER + AUTO_HEALER
   L1  EMAIL + INTEL
   L2  REVENUE INTEL + GUMROAD_AUTO_QUEUE + BUSINESS_FACTORY
   L3  BUILD + ART_CATALOG
-  L4  PUBLISH (social, releases, dashboard)
-  L5  COLLECT + PAYOUT (Ko-fi, Gumroad, PayPal, CONTRIBUTOR_REGISTRY, PAYPAL_PAYOUT)
+  L4  PUBLISH (social, releases, dashboard) + AFFILIATE_MAXIMIZER
+  L5  COLLECT + PAYOUT (Ko-fi, Gumroad, PayPal, DISPATCH_HANDLER, CONTRIBUTOR_REGISTRY, PAYPAL_PAYOUT)
   L6  SYNTH + PLAN + KNOWLEDGE_BRIDGE + BIG_BRAIN_ORACLE
   L7  REPORT + LEGAL (memory, readme, briefing, digest, issue sync, legal)
 """
@@ -120,6 +119,9 @@ def write_ctx():
         "oracle":         rj("oracle_state.json"),
         "knowledge_gaps": rj("knowledge_gaps.json"),
         "contributor_reg":rj("contributor_registry.json"),
+        "bottlenecks":    rj("bottleneck_report.json"),
+        "dispatch":       rj("dispatch_handler_state.json"),
+        "affiliate":      rj("affiliate_maximizer_state.json"),
         "engines_ok":     results["ok"][:],
         "engines_failed": results["failed"][:],
         "engines_skipped":results["skipped"][:],
@@ -130,10 +132,12 @@ def write_ctx():
 
 # ─────────────────────────────────────────────────────────────────────────────
 def layer_0():
-    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS ━━━")
-    eng("GUARDIAN",         timeout=60)
-    eng("ENGINE_INTEGRITY", timeout=60)
-    eng("SECRETS_CHECKER",  timeout=60)
+    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS + SCANNER + HEALER ━━━")
+    eng("GUARDIAN",           timeout=60)
+    eng("ENGINE_INTEGRITY",   timeout=60)
+    eng("SECRETS_CHECKER",    timeout=60)
+    eng("BOTTLENECK_SCANNER", timeout=60)   # ← v8: runs every cycle, docs/bottleneck.html
+    eng("AUTO_HEALER",        timeout=90)   # ← v8: auto-fixes broken engines after scan
     write_ctx()
 
 
@@ -156,7 +160,7 @@ def layer_2():
     eng("ETSY_SEO_ENGINE",    timeout=60)
     eng("INCOME_ARCHITECT",   timeout=60)
     eng("REVENUE_FLYWHEEL",   timeout=90)
-    eng("GUMROAD_AUTO_QUEUE", timeout=60)   # ← v7: builds gumroad listings
+    eng("GUMROAD_AUTO_QUEUE", timeout=60)
     write_ctx()
     print("\n━━━ L2b: BUSINESS FACTORY ━━━")
     eng("BUSINESS_FACTORY", timeout=180)
@@ -177,26 +181,28 @@ def layer_3():
 
 
 def layer_4():
-    print("\n━━━ L4: PUBLISH ━━━")
-    eng("SOCIAL_PROMOTER",  timeout=90)
-    eng("SUBSTACK_ENGINE",  timeout=90)
-    eng("LINK_PAGE",        timeout=60)
-    eng("GITHUB_POSTER",    timeout=120)
-    eng("SOCIAL_DASHBOARD", timeout=60)
-    eng("CONNECTION_FORGE", timeout=90)
-    eng("HUMAN_CONNECTOR",  timeout=60)
+    print("\n━━━ L4: PUBLISH + AFFILIATE ━━━")
+    eng("SOCIAL_PROMOTER",    timeout=90)
+    eng("SUBSTACK_ENGINE",    timeout=90)
+    eng("LINK_PAGE",          timeout=60)
+    eng("GITHUB_POSTER",      timeout=120)
+    eng("SOCIAL_DASHBOARD",   timeout=60)
+    eng("CONNECTION_FORGE",   timeout=90)
+    eng("HUMAN_CONNECTOR",    timeout=60)
+    eng("AFFILIATE_MAXIMIZER",timeout=60)   # ← v8: boosts affiliate revenue
     write_ctx()
 
 
 def layer_5():
-    print("\n━━━ L5: COLLECT + PAYOUT ━━━")
+    print("\n━━━ L5: COLLECT + DISPATCH + PAYOUT ━━━")
     eng("KOFI_ENGINE",            timeout=60)
     eng("GUMROAD_ENGINE",         timeout=60)
     eng("GITHUB_SPONSORS_ENGINE", timeout=60)
     eng("KOFI_PAYMENT_TRACKER",   timeout=60)
+    eng("DISPATCH_HANDLER",       timeout=60)   # ← v8: routes payments, legal fund
     eng("HUMAN_PAYOUT",           timeout=60)
-    eng("CONTRIBUTOR_REGISTRY",   timeout=60)   # ← v7: credits contributors from revenue
-    eng("PAYPAL_PAYOUT",          timeout=90)   # ← v7: auto-sends PayPal payments
+    eng("CONTRIBUTOR_REGISTRY",   timeout=60)
+    eng("PAYPAL_PAYOUT",          timeout=90)
     write_ctx()
 
 
@@ -207,8 +213,8 @@ def layer_6():
     eng("SYNTHESIS_FACTORY", timeout=120); write_ctx()
     eng("ARCHITECT",         timeout=120); write_ctx()
     eng("SELF_BUILDER",      timeout=240); write_ctx()
-    eng("KNOWLEDGE_BRIDGE",  timeout=60)   # ← v7: maps engine connections, finds gaps
-    eng("BIG_BRAIN_ORACLE",  timeout=90)   # ← v7: asks strategic questions, seeds next cycle
+    eng("KNOWLEDGE_BRIDGE",  timeout=60)
+    eng("BIG_BRAIN_ORACLE",  timeout=90)
     write_ctx()
 
 
@@ -220,7 +226,7 @@ def layer_7():
     eng("NIGHTLY_DIGEST",   timeout=120)
     eng("ISSUE_SYNC",       timeout=90)
     eng("SOLARPUNK_LEGAL",  timeout=60)
-    eng("BRAND_LEGAL",      timeout=60)   # ← v7: SolarPunk™ trademark + legal fund
+    eng("BRAND_LEGAL",      timeout=60)
     write_ctx()
 
 
@@ -229,7 +235,7 @@ def run():
     t0 = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
 
-    print(f"\n🧠 OMNIBUS v7 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🧠 OMNIBUS v8 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
     print("=" * 58)
 
@@ -249,9 +255,10 @@ def run():
     legal   = rj("brand_legal_state.json")
     secrets = rj("secrets_checker_state.json")
     payouts = rj("payout_ledger.json")
+    bottlenecks = rj("bottleneck_report.json")
 
     manifest = {
-        "version":           "v7",
+        "version":           "v8",
         "run_id":            run_id,
         "completed":         datetime.now(timezone.utc).isoformat(),
         "elapsed_s":         elapsed,
@@ -267,6 +274,8 @@ def run():
         "secrets_configured":secrets.get("configured", 0),
         "secrets_total":     secrets.get("total", 0),
         "critical_missing":  secrets.get("critical_missing", []),
+        "bottleneck_count":  bottlenecks.get("summary", {}).get("total_bottlenecks", 0),
+        "critical_blockers": bottlenecks.get("summary", {}).get("critical", 0),
         "engines_ok":        results["ok"],
         "engines_failed":    results["failed"],
         "engines_skipped":   results["skipped"],
@@ -280,7 +289,7 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*58}")
-    print(f"🧠 OMNIBUS v7 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v8 done — {elapsed}s")
     print(f"   Engines: {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED:  {', '.join(results['failed'])}")
@@ -289,18 +298,22 @@ def run():
     print(f"   Paid out: ${manifest['total_paid_out']:.2f} to contributors")
     print(f"   Legal fund: ${manifest['legal_fund']:.2f} / $1,200 full USPTO target")
     print(f"   Secrets: {manifest['secrets_configured']}/{manifest['secrets_total']} configured")
+    print(f"   Blockers: {manifest['bottleneck_count']} total | {manifest['critical_blockers']} CRITICAL")
     if manifest["critical_missing"]:
         print(f"   🔴 CRITICAL missing: {', '.join(manifest['critical_missing'])}")
+    if manifest["critical_blockers"] == 0:
+        print(f"   ✅ No critical blockers — system fully operational")
     print(f"\n   🌐 LIVE URLS:")
-    print(f"   Home:      {BASE_URL}/index.html")
-    print(f"   Store:     {BASE_URL}/store.html")
-    print(f"   Art:       {BASE_URL}/art.html")
-    print(f"   Social:    {BASE_URL}/social.html")
-    print(f"   Dashboard: {BASE_URL}/dashboard.html")
-    print(f"   Setup:     {BASE_URL}/setup.html")
-    print(f"   Legal:     {BASE_URL}/legal.html")
-    print(f"   Payouts:   {BASE_URL}/payouts.html")
-    print(f"   Knowledge: {BASE_URL}/knowledge_map.html")
+    print(f"   Home:        {BASE_URL}/index.html")
+    print(f"   Store:       {BASE_URL}/store.html")
+    print(f"   Art:         {BASE_URL}/art.html")
+    print(f"   Social:      {BASE_URL}/social.html")
+    print(f"   Dashboard:   {BASE_URL}/dashboard.html")
+    print(f"   Setup:       {BASE_URL}/setup.html")
+    print(f"   Legal:       {BASE_URL}/legal.html")
+    print(f"   Payouts:     {BASE_URL}/payouts.html")
+    print(f"   Knowledge:   {BASE_URL}/knowledge_map.html")
+    print(f"   Bottlenecks: {BASE_URL}/bottleneck.html")
     return manifest
 
 
