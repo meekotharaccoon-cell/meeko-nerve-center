@@ -1,7 +1,7 @@
 {
-  "cycles": 19,
-  "posted": 19,
-  "failed": 38,
+  "cycles": 20,
+  "posted": 20,
+  "failed": 40,
   "history": [
     {
       "platform": "linkedin",
@@ -116,7 +116,13 @@
       "niche": "Palestine Solidarity Zine Pack",
       "info": "manual",
       "at": "2026-03-05T20:12:15.788263+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "Palestine Solidarity Zine Pack",
+      "info": "manual",
+      "at": "2026-03-05T20:13:20.454162+00:00"
     }
   ],
-  "last_run": "2026-03-05T20:12:15.787746+00:00"
+  "last_run": "2026-03-05T20:13:20.453583+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-05T20:12:01.770098+00:00",
+  "timestamp": "2026-03-05T20:13:06.018976+00:00",
   "sources": {
     "hackernews": [
       {
@@ -11,7 +11,7 @@
       {
         "title": "Wikipedia in read-only mode following mass admin account compromise",
         "url": "https://www.wikimediastatus.net",
-        "score": 632,
+        "score": 636,
         "source": "hackernews"
       },
       {
@@ -27,9 +27,9 @@
         "source": "hackernews"
       },
       {
-        "title": "Let's Get Physical",
-        "url": "https://m4iler.cloud/posts/lets-get-physical/",
-        "score": 24,
+        "title": "Pentagon Formally Labels Anthropic Supply-Chain Risk",
+        "url": "https://www.wsj.com/politics/national-security/pentagon-formally-labels-anthropic-supply-chain-risk-escalating-conflict-ebdf0523",
+        "score": 86,
         "source": "hackernews"
       }
     ],
@@ -133,19 +133,19 @@
       "count": 1
     },
     {
-      "word": "let's",
+      "word": "pentagon",
       "count": 1
     },
     {
-      "word": "physical",
+      "word": "formally",
       "count": 1
     },
     {
-      "word": "making",
+      "word": "labels",
       "count": 1
     },
     {
-      "word": "london's",
+      "word": "anthropic",
       "count": 1
     }
   ],
