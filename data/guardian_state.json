@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-05T10:08:01.185603",
+  "last_checked": "2026-03-05T10:13:05.217126",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -20,6 +20,7 @@
     "NIGHTLY_DIGEST.py",
     "SOCIAL_DASHBOARD.py",
     "NEURON_B.py",
+    "ENGINE_INTEGRITY.py",
     "HUMAN_CONNECTOR.py",
     "ARCHITECT.py",
     "CONNECTION_FORGE.py",
