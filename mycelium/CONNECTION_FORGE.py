@@ -111,7 +111,7 @@ CONNECTIONS=[
         "name":"OpenCollective",
         "value":"accept donations with full transparency — ideal for humanitarian mission",
         "revenue":"$20-200/mo","effort":"30 min",
-        "steps">[
+        "steps":[
             "Go to opencollective.com -> Create Collective",
             "Name: SolarPunk Gaza Rose Fund",
             "Category: Open Source, Humanitarian",
