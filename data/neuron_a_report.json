@@ -177,6 +177,7 @@
       "human_connector_state.json",
       "issue_sync_state.json",
       "knowledge_gaps.json",
+      "knowledge_weaver_state.json",
       "kofi_state.json",
       "kofi_tracker_state.json",
       "landing_deployer_state.json",
@@ -194,6 +195,7 @@
       "revenue_inbox.json",
       "revenue_loop_history.json",
       "revenue_loop_last.json",
+      "revenue_optimizer_state.json",
       "scam_shield_state.json",
       "secrets_checker_state.json",
       "self_builder_state.json",
@@ -211,7 +213,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T19:42:10.246110+00:00"
+    "timestamp": "2026-03-05T20:04:34.605859+00:00"
   },
-  "generated_at": "2026-03-05T19:42:10.700221+00:00"
+  "generated_at": "2026-03-05T20:04:34.989135+00:00"
 }

@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T19:42:00.235720+00:00",
+  "timestamp": "2026-03-05T20:04:25.507425+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Wikipedia in read-only mode following mass admin account compromise",
-        "url": "https://www.wikimediastatus.net",
-        "score": 576,
+        "title": "GPT-5.4",
+        "url": "https://openai.com/index/introducing-gpt-5-4/",
+        "score": 220,
         "source": "hackernews"
       },
       {
-        "title": "GPT-5.4 Thinking System Card",
-        "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
-        "score": 171,
+        "title": "Wikipedia in read-only mode following mass admin account compromise",
+        "url": "https://www.wikimediastatus.net",
+        "score": 621,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 56,
+        "score": 72,
+        "source": "hackernews"
+      },
+      {
+        "title": "Hardware hotplug events on Linux, the gory details",
+        "url": "https://arcanenibble.github.io/hardware-hotplug-events-on-linux-the-gory-details.html",
+        "score": 27,
         "source": "hackernews"
       },
       {
         "title": "A GitHub Issue Title Compromised 4k Developer Machines",
         "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
-        "score": 144,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: Jido 2.0, Elixir Agent Framework",
-        "url": "https://jido.run/blog/jido-2-0-is-here",
-        "score": 162,
+        "score": 157,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.2,
+    "temp_c": 10.9,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -105,19 +105,31 @@
       "count": 1
     },
     {
-      "word": "thinking",
-      "count": 1
-    },
-    {
-      "word": "system",
-      "count": 1
-    },
-    {
-      "word": "card",
-      "count": 1
-    },
-    {
       "word": "brand",
+      "count": 1
+    },
+    {
+      "word": "hardware",
+      "count": 1
+    },
+    {
+      "word": "hotplug",
+      "count": 1
+    },
+    {
+      "word": "events",
+      "count": 1
+    },
+    {
+      "word": "linux",
+      "count": 1
+    },
+    {
+      "word": "gory",
+      "count": 1
+    },
+    {
+      "word": "details",
       "count": 1
     },
     {
@@ -135,24 +147,12 @@
     {
       "word": "compromised",
       "count": 1
-    },
-    {
-      "word": "developer",
-      "count": 1
-    },
-    {
-      "word": "machines",
-      "count": 1
-    },
-    {
-      "word": "show",
-      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Wikipedia in read-only mode following mass admin account com...' connects to Gaza resilience",
+      "hook": "How 'GPT-5.4...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
