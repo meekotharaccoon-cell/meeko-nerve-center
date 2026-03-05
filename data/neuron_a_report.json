@@ -54,6 +54,8 @@
       "ai_watcher_state.json",
       "asset_map.json",
       "brain_state.json",
+      "business_ai_prompt_packs.json",
+      "business_factory_state.json",
       "calendar_brain_state.json",
       "connections.json",
       "consolidated_knowledge.json",
@@ -63,72 +65,50 @@
       "desktop_clean_log.json",
       "desktop_connection.json",
       "email_brain_state.json",
+      "email_exchange_state.json",
       "etsy_seo_output.json",
       "evolve_history.json",
       "flywheel_state.json",
+      "flywheel_summary.json",
+      "grant_applicant_state.json",
+      "grant_hunter_state.json",
+      "grants_found.json",
       "growth_curve.json",
       "guardian_log.json",
       "guardian_state.json",
       "guardian_status.json",
       "gumroad_listings.json",
       "health_report.json",
+      "human_connector_state.json",
+      "kofi_state.json",
+      "kofi_tracker_state.json",
+      "landing_deployer_state.json",
       "lessons.json",
+      "live_landing_pages.json",
       "memory_palace.json",
       "neuron_a_report.json",
       "neuron_b_report.json",
+      "nightly_digest_last.json",
+      "nightly_digest_state.json",
+      "omnibus_history.json",
+      "omnibus_last.json",
+      "revenue_loop_history.json",
+      "revenue_loop_last.json",
       "scam_shield_state.json",
+      "self_builder_state.json",
       "social_latest.json",
       "social_queue.json",
+      "sponsors_state.json",
+      "substack_state.json",
       "synthesis_log.json"
     ],
     "revenue": 0.0,
-    "revenue_streams": {
-      "gaza_rose_gallery": {
-        "name": "Gaza Rose Gallery",
-        "type": "digital_art",
-        "balance": 0.0
-      },
-      "newsletter": {
-        "name": "Newsletter/Email List",
-        "type": "content",
-        "balance": 0.0
-      },
-      "affiliate": {
-        "name": "Affiliate Links",
-        "type": "affiliate",
-        "balance": 0.0
-      },
-      "freelance_auto": {
-        "name": "Automated Freelance",
-        "type": "services",
-        "balance": 0.0
-      },
-      "digital_products": {
-        "name": "Digital Products",
-        "type": "products",
-        "balance": 0.0
-      },
-      "api_services": {
-        "name": "API/Tool Services",
-        "type": "saas",
-        "balance": 0.0
-      },
-      "content_licensing": {
-        "name": "Content Licensing",
-        "type": "licensing",
-        "balance": 0.0
-      },
-      "consulting": {
-        "name": "Consulting Leads",
-        "type": "services",
-        "balance": 0.0
-      }
-    },
+    "revenue_streams": {},
     "loop_cycles": 0,
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T05:18:17.118569+00:00"
+    "timestamp": "2026-03-05T05:20:57.591910+00:00"
   },
-  "generated_at": "2026-03-05T05:18:17.448125+00:00"
+  "generated_at": "2026-03-05T05:20:57.923220+00:00"
 }

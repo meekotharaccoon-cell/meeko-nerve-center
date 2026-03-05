@@ -1,22 +1,22 @@
 {
-  "cycle": 5,
-  "piece": "Star of Hope Rising",
-  "ts": "2026-03-05T05:18:24.768953+00:00",
+  "cycle": 6,
+  "piece": "Pomegranate Season",
+  "ts": "2026-03-05T05:21:10.046032+00:00",
   "tweets": [
     {
-      "text": "\u2b50 NEW: \"Star of Hope Rising\"\n\n$1 AI art print.\n70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artists)\n30\u00a2 \u2192 loop fund \u2192 buys the next piece automatically\n\nThe loop feeds itself \ud83d\udd04\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#GazaRose #PalestineArt #DigitalArt #SocialImpact",
+      "text": "Every purchase loops.\n\n\ud83c\udf4e \"Pomegranate Season\" \u2014 $1\n\n\u2192 70% to Gaza Rose Gallery\n\u2192 30% pools until it auto-buys another piece\n\u2192 That piece donates 70% too\n\u2192 Forever\n\nOne dollar. Infinite echoes.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#Palestine #ArtForGood #GazaRose",
       "result": {
         "status": "queued"
       }
     },
     {
-      "text": "Every purchase loops.\n\n\u2b50 \"Star of Hope Rising\" \u2014 $1\n\n\u2192 70% to Gaza Rose Gallery\n\u2192 30% pools until it auto-buys another piece\n\u2192 That piece donates 70% too\n\u2192 Forever\n\nOne dollar. Infinite echoes.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#Palestine #ArtForGood #GazaRose",
+      "text": "\ud83c\udf4e Art that doesn't stop giving.\n\n\"Pomegranate Season\" \u2014 only $1\n\nAfter 4 purchases, the system buys itself a new piece.\nGaza Rose Gallery gets 70\u00a2 every single time.\n\nThis is SolarPunk economics.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#DigitalArt #Palestine #GazaRose #AIArt",
       "result": {
         "status": "queued"
       }
     },
     {
-      "text": "\u2b50 Art that doesn't stop giving.\n\n\"Star of Hope Rising\" \u2014 only $1\n\nAfter 4 purchases, the system buys itself a new piece.\nGaza Rose Gallery gets 70\u00a2 every single time.\n\nThis is SolarPunk economics.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#DigitalArt #Palestine #GazaRose #AIArt",
+      "text": "This is different.\n\n\ud83c\udf4e \"Pomegranate Season\" \u2014 $1\n\u2514 70\u00a2 \u2192 Palestinian artist support (instant)\n\u2514 30\u00a2 \u2192 auto-reinvestment pool\n   \u2514 When pool hits $1 \u2192 auto-buys another piece\n      \u2514 70\u00a2 to Gaza Rose Gallery\n         \u2514 and it loops again\n\nYour $1 never stops.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#GazaRose #SolarPunk #Palestine",
       "result": {
         "status": "queued"
       }
@@ -27,7 +27,7 @@
       "post": {
         "subreddit": "DigitalArt",
         "title": "[OC] Gaza Rose Gallery \u2014 AI art prints where 70% of every sale goes to Palestinian artist relief",
-        "text": "I built a small shop where every $1 purchase of AI-generated art automatically splits:\n\n- **70\u00a2 \u2192 Gaza Rose Gallery** (Palestinian artists & community relief)\n- **30\u00a2 \u2192 Loop Fund** (pools until $1, then auto-buys another piece)\n\nThe loop part is what makes it interesting: the system becomes its own customer. After ~4 human sales, the fund auto-purchases a new piece, which donates 70\u00a2 to Gaza Rose, which adds 30\u00a2 back to the pool... it compounds indefinitely.\n\nPiece this week: **Star of Hope Rising** \u2014 resilience themed, AI-generated, instant download.\n\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n\nAll art is $1. All art is instant download. All art echoes.\n\n*Built with SolarPunk autonomous systems \u2014 GitHub Actions + Claude API*"
+        "text": "I built a small shop where every $1 purchase of AI-generated art automatically splits:\n\n- **70\u00a2 \u2192 Gaza Rose Gallery** (Palestinian artists & community relief)\n- **30\u00a2 \u2192 Loop Fund** (pools until $1, then auto-buys another piece)\n\nThe loop part is what makes it interesting: the system becomes its own customer. After ~4 human sales, the fund auto-purchases a new piece, which donates 70\u00a2 to Gaza Rose, which adds 30\u00a2 back to the pool... it compounds indefinitely.\n\nPiece this week: **Pomegranate Season** \u2014 abundance themed, AI-generated, instant download.\n\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n\nAll art is $1. All art is instant download. All art echoes.\n\n*Built with SolarPunk autonomous systems \u2014 GitHub Actions + Claude API*"
       },
       "result": {
         "status": "queued"

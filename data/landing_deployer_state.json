@@ -1,10 +1,12 @@
 {
   "deployed": [
-    "ai_prompt_packs_202603050518"
+    "ai_prompt_packs_202603050518",
+    "palestinian_art_prints_202603050521"
   ],
   "live_urls": [
-    "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+    "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+    "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/"
   ],
-  "cycles": 1,
-  "last_run": "2026-03-05T05:18:22.197009+00:00"
+  "cycles": 2,
+  "last_run": "2026-03-05T05:21:02.401026+00:00"
 }
