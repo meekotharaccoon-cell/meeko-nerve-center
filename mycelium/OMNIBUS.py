@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v5 — zero-API infrastructure complete
-==============================================
-v5 changes vs v4:
-- Added ENGINE_INTEGRITY (L0) — SHA-based tamper detection, GITHUB_TOKEN only
-- Added ISSUE_SYNC (L7) — auto-updates GitHub Issues with real credential state
-- Added GITHUB_POSTER + SOCIAL_DASHBOARD (L4) — already in v4
-- All 4 product issues auto-update on every cycle
-- Webhook infrastructure: WEBHOOK_RELAY.yml + DISPATCH_HANDLER ready for Ko-fi/Gumroad/Stripe
+OMNIBUS v6 — full bridge network
+=================================
+v6 changes vs v5:
+- Added SECRETS_CHECKER (L0) — live setup.html, diagnoses all missing API keys
+- Added ART_CATALOG (L3) — builds art.html, the actual working Gaza gallery
+- Added HUMAN_PAYOUT (L5) — PayPal auto-payouts to collaborators + PCRF
+- Added SOLARPUNK_LEGAL (L7) — trademark tracking, legal fund counter
+- Updated print footer with all live URLs including art, dashboard, payouts
+- All engines use ANTHROPIC_API_KEY (Claude) as primary AI brain
 
 FULL DEPENDENCY CHAIN:
-  L0  GUARDIAN + ENGINE_INTEGRITY — load brain state, verify all engine SHAs
-  L1  EMAIL + INTEL               — read email, gather intel
-  L2  REVENUE INTEL               — grants, flywheel, SEO, income plan
-  L2b BUSINESS_FACTORY            — build new business
-  L3  REVENUE_LOOP + BUILD        — deploy, Gumroad, social, art, health
-  L4  PUBLISH                     — social posts, GitHub Releases, copy-paste board
-  L5  COLLECT                     — Ko-fi, Gumroad, payment tracking
-  L6  SYNTH + PLAN                — SYNAPSE, SYNTHESIS, ARCHITECT, SELF_BUILDER
-  L7  REPORT + SYNC               — memory, README, briefing, digest, issue sync
+  L0  GUARDIAN + ENGINE_INTEGRITY + SECRETS_CHECKER
+  L1  EMAIL + INTEL
+  L2  REVENUE INTEL + BUSINESS_FACTORY
+  L3  BUILD + ART_CATALOG
+  L4  PUBLISH (social, releases, dashboard)
+  L5  COLLECT (Ko-fi, Gumroad, PayPal, sponsors)
+  L6  SYNTH + PLAN (synapse, synthesis, architect, self-builder)
+  L7  REPORT + LEGAL (memory, readme, briefing, digest, issue sync, legal)
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -30,6 +30,7 @@ MYCELIUM = Path("mycelium")
 PYTHON   = sys.executable
 
 results = {"ok": [], "failed": [], "skipped": [], "log": []}
+BASE_URL = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
 
 
 def eng(name, *, timeout=120):
@@ -45,9 +46,7 @@ def eng(name, *, timeout=120):
         proc = subprocess.run(
             [PYTHON, str(script)],
             capture_output=True, text=True,
-            timeout=timeout,
-            cwd=Path.cwd(),
-            env=dict(os.environ),
+            timeout=timeout, cwd=Path.cwd(), env=dict(os.environ),
         )
         elapsed = round(time.time() - t0, 1)
         ok = proc.returncode == 0
@@ -55,18 +54,13 @@ def eng(name, *, timeout=120):
         if ok:
             results["ok"].append(name)
             lines = [l for l in (proc.stdout or "").strip().splitlines() if l.strip()]
-            tail  = lines[-2:] if lines else []
-            print(f"  ✅ {name} ({elapsed}s)" + (f"  ← {tail[-1][:80]}" if tail else ""))
+            tail = lines[-1][:80] if lines else ""
+            print(f"  ✅ {name} ({elapsed}s)" + (f"  ← {tail}" if tail else ""))
         else:
             results["failed"].append(name)
-            err_lines = [l for l in (proc.stderr or "").strip().splitlines() if l.strip()]
-            err_tail  = err_lines[-1][:120] if err_lines else "unknown error"
-            out_lines = [l for l in (proc.stdout or "").strip().splitlines() if l.strip()]
-            out_tail  = out_lines[-1][:80] if out_lines else ""
+            err = (proc.stderr or "")[-200:].strip().splitlines()
             print(f"  ❌ {name} ({elapsed}s) rc={proc.returncode}")
-            print(f"     ERR: {err_tail}")
-            if out_tail:
-                print(f"     OUT: {out_tail}")
+            if err: print(f"     {err[-1][:120]}")
 
         results["log"].append({
             "engine": name, "status": "ok" if ok else "error",
@@ -77,9 +71,8 @@ def eng(name, *, timeout=120):
         return ok
 
     except subprocess.TimeoutExpired:
-        elapsed = round(time.time() - t0, 1)
         results["failed"].append(name)
-        results["log"].append({"engine": name, "status": "timeout", "elapsed": elapsed})
+        results["log"].append({"engine": name, "status": "timeout", "elapsed": timeout})
         print(f"  ⏱  {name} TIMEOUT after {timeout}s")
         return False
     except Exception as e:
@@ -101,7 +94,6 @@ def write_ctx():
     ctx = {
         "run_id":         os.environ.get("GITHUB_RUN_ID", f"local-{int(time.time())}"),
         "cycle_start":    datetime.now(timezone.utc).isoformat(),
-        "amazon_tag":     os.environ.get("MEEKO_AFFILIATE_LINK", "autonomoushum-20"),
         "prev_health":    rj("brain_state.json").get("health_score", 40),
         "memory":         rj("memory_palace.json"),
         "lessons":        rj("lessons.json", []),
@@ -121,6 +113,10 @@ def write_ctx():
         "self_builder":   rj("self_builder_state.json"),
         "integrity":      rj("engine_sha_registry.json"),
         "revenue_inbox":  rj("revenue_inbox.json"),
+        "secrets":        rj("secrets_checker_state.json"),
+        "legal":          rj("solarpunk_legal_state.json"),
+        "payouts":        rj("payout_ledger.json"),
+        "art_catalog":    rj("art_catalog.json"),
         "engines_ok":     results["ok"][:],
         "engines_failed": results["failed"][:],
         "engines_skipped":results["skipped"][:],
@@ -131,9 +127,10 @@ def write_ctx():
 
 # ─────────────────────────────────────────────────────────────────────────────
 def layer_0():
-    print("\n━━━ L0: GUARDIAN + INTEGRITY ━━━")
-    eng("GUARDIAN",          timeout=60)
-    eng("ENGINE_INTEGRITY",  timeout=60)   # SHA scan — GITHUB_TOKEN only
+    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS ━━━")
+    eng("GUARDIAN",         timeout=60)
+    eng("ENGINE_INTEGRITY", timeout=60)
+    eng("SECRETS_CHECKER",  timeout=60)   # ← NEW: builds setup.html, diagnoses blockers
     write_ctx()
 
 
@@ -146,10 +143,8 @@ def layer_1():
     eng("AI_WATCHER",        timeout=60)
     eng("CRYPTO_WATCHER",    timeout=60)
     write_ctx()
-    eng("NEURON_A", timeout=90)
-    write_ctx()
-    eng("NEURON_B", timeout=90)
-    write_ctx()
+    eng("NEURON_A", timeout=90); write_ctx()
+    eng("NEURON_B", timeout=90); write_ctx()
 
 
 def layer_2():
@@ -157,25 +152,23 @@ def layer_2():
     eng("GRANT_HUNTER",     timeout=90)
     eng("ETSY_SEO_ENGINE",  timeout=60)
     eng("INCOME_ARCHITECT", timeout=60)
-    write_ctx()
     eng("REVENUE_FLYWHEEL", timeout=90)
     write_ctx()
-
     print("\n━━━ L2b: BUSINESS FACTORY ━━━")
     eng("BUSINESS_FACTORY", timeout=180)
     write_ctx()
 
 
 def layer_3():
-    print("\n━━━ L3: BUILD ━━━")
-    eng("LANDING_DEPLOYER",    timeout=90)
+    print("\n━━━ L3: BUILD + ART ━━━")
+    eng("LANDING_DEPLOYER",     timeout=90)
+    eng("ART_CATALOG",          timeout=60)   # ← NEW: builds art.html, fixes Ko-fi art page
     write_ctx()
-    eng("REVENUE_LOOP",        timeout=240)
-    write_ctx()
-    eng("ART_GENERATOR",       timeout=120)
-    eng("EMAIL_AGENT_EXCHANGE",timeout=120)
-    eng("GRANT_APPLICANT",     timeout=90)
-    eng("HEALTH_BOOSTER",      timeout=60)
+    eng("REVENUE_LOOP",         timeout=240)
+    eng("ART_GENERATOR",        timeout=120)
+    eng("EMAIL_AGENT_EXCHANGE", timeout=120)
+    eng("GRANT_APPLICANT",      timeout=90)
+    eng("HEALTH_BOOSTER",       timeout=60)
     write_ctx()
 
 
@@ -184,42 +177,40 @@ def layer_4():
     eng("SOCIAL_PROMOTER",  timeout=90)
     eng("SUBSTACK_ENGINE",  timeout=90)
     eng("LINK_PAGE",        timeout=60)
-    eng("GITHUB_POSTER",    timeout=120)   # GitHub Releases — zero external APIs
-    eng("SOCIAL_DASHBOARD", timeout=60)    # docs/social.html copy-paste board
+    eng("GITHUB_POSTER",    timeout=120)
+    eng("SOCIAL_DASHBOARD", timeout=60)
     eng("CONNECTION_FORGE", timeout=90)
     eng("HUMAN_CONNECTOR",  timeout=60)
     write_ctx()
 
 
 def layer_5():
-    print("\n━━━ L5: COLLECT ━━━")
+    print("\n━━━ L5: COLLECT + PAYOUT ━━━")
     eng("KOFI_ENGINE",            timeout=60)
     eng("GUMROAD_ENGINE",         timeout=60)
     eng("GITHUB_SPONSORS_ENGINE", timeout=60)
     eng("KOFI_PAYMENT_TRACKER",   timeout=60)
+    eng("HUMAN_PAYOUT",           timeout=60)   # ← NEW: PayPal auto-payouts
     write_ctx()
 
 
 def layer_6():
     print("\n━━━ L6: SYNTH + PLAN ━━━")
     write_ctx()
-    eng("SYNAPSE",           timeout=120)
-    write_ctx()
-    eng("SYNTHESIS_FACTORY", timeout=120)
-    write_ctx()
-    eng("ARCHITECT",         timeout=120)
-    write_ctx()
-    eng("SELF_BUILDER",      timeout=240)
-    write_ctx()
+    eng("SYNAPSE",           timeout=120); write_ctx()
+    eng("SYNTHESIS_FACTORY", timeout=120); write_ctx()
+    eng("ARCHITECT",         timeout=120); write_ctx()
+    eng("SELF_BUILDER",      timeout=240); write_ctx()
 
 
 def layer_7():
-    print("\n━━━ L7: REPORT + SYNC ━━━")
+    print("\n━━━ L7: REPORT + LEGAL ━━━")
     eng("MEMORY_PALACE",    timeout=60)
     eng("README_GENERATOR", timeout=60)
     eng("BRIEFING_ENGINE",  timeout=60)
     eng("NIGHTLY_DIGEST",   timeout=120)
-    eng("ISSUE_SYNC",       timeout=90)    # auto-update product issues — GITHUB_TOKEN only
+    eng("ISSUE_SYNC",       timeout=90)
+    eng("SOLARPUNK_LEGAL",  timeout=60)   # ← NEW: trademark tracking, legal fund
     write_ctx()
 
 
@@ -228,12 +219,9 @@ def run():
     t0 = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
 
-    print(f"\n🧠 OMNIBUS v5 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🧠 OMNIBUS v6 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
     print("=" * 58)
-
-    biz_before = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
-    print(f"   Businesses before run: {max(0, biz_before)}")
 
     for layer_fn in [layer_0, layer_1, layer_2, layer_3,
                      layer_4, layer_5, layer_6, layer_7]:
@@ -246,20 +234,27 @@ def run():
     total   = len(results["ok"]) + len(results["failed"])
     ctx     = write_ctx()
 
-    biz_after = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
+    biz_after = len(list(DATA.glob("business_*.json")))
+    revenue = rj("revenue_inbox.json")
+    legal   = rj("solarpunk_legal_state.json")
+    secrets = rj("secrets_checker_state.json")
 
     manifest = {
+        "version":          "v6",
         "run_id":           run_id,
         "completed":        datetime.now(timezone.utc).isoformat(),
         "elapsed_s":        elapsed,
         "health_before":    ctx.get("prev_health", 0),
         "health_after":     rj("brain_state.json").get("health_score", 0),
-        "businesses_built": max(0, biz_after),
+        "businesses_built": biz_after,
         "live_url":         ctx.get("live_url"),
         "gumroad_url":      ctx.get("gumroad_url"),
-        "exchange_tasks":   ctx.get("exchange", {}).get("total_tasks", 0),
-        "exchange_earned":  ctx.get("exchange", {}).get("total_earned", 0.0),
-        "exchange_gaza":    ctx.get("exchange", {}).get("total_to_gaza", 0.0),
+        "total_revenue":    revenue.get("total_received", 0),
+        "total_to_gaza":    revenue.get("total_to_gaza", 0),
+        "legal_fund":       legal.get("legal_fund_usd", 0),
+        "secrets_configured": secrets.get("configured", 0),
+        "secrets_total":    secrets.get("total", 0),
+        "critical_missing": secrets.get("critical_missing", []),
         "engines_ok":       results["ok"],
         "engines_failed":   results["failed"],
         "engines_skipped":  results["skipped"],
@@ -267,23 +262,30 @@ def run():
     }
     (DATA / "omnibus_last.json").write_text(json.dumps(manifest, indent=2))
 
-    hf   = DATA / "omnibus_history.json"
+    hf = DATA / "omnibus_history.json"
     hist = json.loads(hf.read_text()) if hf.exists() else []
     hist.append({k: v for k, v in manifest.items() if k != "log"})
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*58}")
-    print(f"🧠 OMNIBUS v5 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v6 done — {elapsed}s")
     print(f"   Engines: {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED:  {', '.join(results['failed'])}")
     print(f"   Health:  {manifest['health_before']} → {manifest['health_after']}")
-    print(f"   Businesses: {manifest['businesses_built']}")
-    if manifest.get("live_url"):
-        print(f"   Live: {manifest['live_url']}")
-    print(f"   Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html")
-    print(f"   Social: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html")
-    print(f"   Webhooks: https://meekotharaccoon-cell.github.io/meeko-nerve-center/webhook.html")
+    print(f"   Revenue: ${manifest['total_revenue']:.2f} | → Gaza: ${manifest['total_to_gaza']:.2f}")
+    print(f"   Legal fund: ${manifest['legal_fund']:.2f} / $350 USPTO target")
+    print(f"   Secrets: {manifest['secrets_configured']}/{manifest['secrets_total']} configured")
+    if manifest["critical_missing"]:
+        print(f"   🔴 CRITICAL missing: {', '.join(manifest['critical_missing'])}")
+    print(f"\n   🌐 LIVE URLS:")
+    print(f"   Home:      {BASE_URL}/index.html")
+    print(f"   Store:     {BASE_URL}/store.html")
+    print(f"   Art:       {BASE_URL}/art.html")
+    print(f"   Social:    {BASE_URL}/social.html")
+    print(f"   Dashboard: {BASE_URL}/dashboard.html")
+    print(f"   Setup:     {BASE_URL}/setup.html")
+    print(f"   Payouts:   {BASE_URL}/payouts.html")
     return manifest
 
 
