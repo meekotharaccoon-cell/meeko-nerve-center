@@ -1,11 +1,11 @@
 {
-  "run_id": "22703587059",
-  "completed": "2026-03-05T05:21:14.987201+00:00",
-  "elapsed_s": 27,
+  "run_id": "22705546954",
+  "completed": "2026-03-05T06:33:27.152133+00:00",
+  "elapsed_s": 15,
   "health_before": 40,
   "health_after": 40,
-  "businesses_built": 2,
-  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/",
+  "businesses_built": 3,
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
   "gumroad_url": "https://meekotharacoon.gumroad.com",
   "exchange_tasks": 0,
   "exchange_earned": 0.0,
@@ -57,16 +57,16 @@
       "engine": "GUARDIAN",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.8,
-      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-05 05:20 UTC\n\ud83d\udcbe Save-state: save-20260305-052047\n\u2705 All 10 core files intact\n",
+      "elapsed": 0.7,
+      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-05 06:33 UTC\n\ud83d\udcbe Save-state: save-20260305-063312\n\u2705 All 10 core files intact\n",
       "stderr_tail": ""
     },
     {
       "engine": "EMAIL_BRAIN",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.0,
-      "stdout_tail": "EMAIL_BRAIN cycle 2 | meekotharaccoon@gmail.com | AI=online\n  IMAP: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'\n",
+      "elapsed": 0.5,
+      "stdout_tail": "EMAIL_BRAIN cycle 3 | meekotharaccoon@gmail.com | AI=online\n  IMAP: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'\n",
       "stderr_tail": ""
     },
     {
@@ -74,7 +74,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SCAM_SHIELD cycle 2 | 0 caught\n  Scanning 0 new emails\n  Total: 0 scams | 0 safe\n",
+      "stdout_tail": "SCAM_SHIELD cycle 3 | 0 caught\n  Scanning 0 new emails\n  Total: 0 scams | 0 safe\n",
       "stderr_tail": ""
     },
     {
@@ -82,31 +82,31 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "CALENDAR_BRAIN cycle 2\n  No appointments inbox\n",
+      "stdout_tail": "CALENDAR_BRAIN cycle 3\n  No appointments inbox\n",
       "stderr_tail": ""
     },
     {
       "engine": "CONTENT_HARVESTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 3.9,
-      "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 10.4C partly cloudy\nHarvested 9 items -> 3 content angles\nBest angle: How 'Google Workspace CLI...' connects to Gaza resilience\n",
+      "elapsed": 3.2,
+      "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 13.3C partly cloudy\nHarvested 9 items -> 3 content angles\nBest angle: How 'Google Workspace CLI...' connects to Gaza resilience\n",
       "stderr_tail": ""
     },
     {
       "engine": "AI_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.2,
-      "stdout_tail": "AI_WATCHER cycle 2\n  Found: 10 image models, 5 text models, 5 repos\n  Weekly digest queued\n",
+      "elapsed": 1.3,
+      "stdout_tail": "AI_WATCHER cycle 3\n  Found: 10 image models, 5 text models, 5 repos\n  Weekly digest queued\n",
       "stderr_tail": ""
     },
     {
       "engine": "CRYPTO_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.7,
-      "stdout_tail": "CRYPTO_WATCHER cycle 2\n  Market updated | Fear&Greed: 22 (Extreme Fear)\n  BTC: $72,710 | ETH: $2,133\n  alert: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-127899d49ccsm24139545c88.3 - gsmtp')\n  AI tokens spotlight: RENDER-TOKEN +5.5%\n",
+      "elapsed": 0.4,
+      "stdout_tail": "CRYPTO_WATCHER cycle 3\n  Market updated | Fear&Greed: 22 (Extreme Fear)\n  BTC: $72,369 | ETH: $2,119\n  AI tokens spotlight: SINGULARITYNET +4.7%\n",
       "stderr_tail": ""
     },
     {
@@ -121,7 +121,7 @@
       "engine": "NEURON_B",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.2,
+      "elapsed": 0.3,
       "stdout_tail": "NEURON_B v2 - Skeptic Brain starting...\nNEURON_B error: 401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages\nSkeptic thesis: ?\nRefined priority: \n  RISK: 401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages\nNEURON_B done.\n",
       "stderr_tail": ""
     },
@@ -129,15 +129,15 @@
       "engine": "GRANT_HUNTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.7,
-      "stdout_tail": "GRANT_HUNTER cycle 2\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
+      "elapsed": 0.6,
+      "stdout_tail": "GRANT_HUNTER cycle 3\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
       "stderr_tail": ""
     },
     {
       "engine": "ETSY_SEO_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.3,
+      "elapsed": 1.1,
       "stdout_tail": "ETSY_SEO_ENGINE starting...\n  Desert Rose at Dawn...\n  White Doves Over the Mediterranean...\n  Olive Grove Eternal...\n  Tatreez Pattern Bloom...\n  Gaza Coastline at Golden Hour...\n  Star of Hope Rising...\n  Pomegranate Season...\n  Night Garden in Ruins...\n  Child with Balloon...\n  The Return - Sunflower Field...\nGenerated 10 Etsy listings (0 Claude-enhanced)\n",
       "stderr_tail": ""
     },
@@ -161,8 +161,8 @@
       "engine": "BUSINESS_FACTORY",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.6,
-      "stdout_tail": "inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Saved: data/business_palestinian_art_prints.json\n  3 social posts queued\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2be2f5f1f4dsm2663030eec.25 - gsmtp')\n  \u2705 SolarPunk Palestinian Art Prints | $250-$1000/month\n  \ud83d\udcb0 Gaza: 15% of every $25 sale = $3.75 to PCRF\n  \ud83d\udcca Total potential: $840/month\n",
+      "elapsed": 1.0,
+      "stdout_tail": "nce.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Saved: data/business_github_actions_templates.json\n  3 social posts queued\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-899fc21676fsm86763296d6.22 - gsmtp')\n  \u2705 SolarPunk GitHub Actions Templates | $270-$1080/month\n  \ud83d\udcb0 Gaza: 15% of every $27 sale = $4.05 to PCRF\n  \ud83d\udcca Total potential: $1,380/month\n",
       "stderr_tail": ""
     },
     {
@@ -170,15 +170,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "LANDING_DEPLOYER cycle 2 | 1 pages live\n  Deploying: SolarPunk Palestinian Art Prints\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/\n  Total live pages: 2\n",
+      "stdout_tail": "LANDING_DEPLOYER cycle 3 | 2 pages live\n  Deploying: SolarPunk GitHub Actions Templates\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/\n  Total live pages: 3\n",
       "stderr_tail": ""
     },
     {
       "engine": "REVENUE_LOOP",
       "status": "ok",
       "code": 0,
-      "elapsed": 6.8,
-      "stdout_tail": "ts queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2bdd1f23c01sm16564134eec.16 - gsmtp')\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40 \u2192 45 | Loops: 1\n\n\u2705 REVENUE_LOOP done in 6s\n   OK:     get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live:   https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/\n",
+      "elapsed": 1.0,
+      "stdout_tail": "s queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-899fc95502dsm86746746d6.25 - gsmtp')\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40 \u2192 45 | Loops: 1\n\n\u2705 REVENUE_LOOP done in 0s\n   OK:     get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live:   https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/\n",
       "stderr_tail": ""
     },
     {
@@ -194,7 +194,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 2 | 0 tasks | $0.00 | AI=online\n  No inbox data \u2014 EMAIL_BRAIN hasn't run yet or Gmail not configured\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
+      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 3 | 0 tasks | $0.00 | AI=online\n  No inbox data \u2014 EMAIL_BRAIN hasn't run yet or Gmail not configured\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
       "stderr_tail": ""
     },
     {
@@ -202,7 +202,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "GRANT_APPLICANT cycle 2 | 0 applied\n  0 new candidates\n",
+      "stdout_tail": "GRANT_APPLICANT cycle 3 | 0 applied\n  0 new candidates\n",
       "stderr_tail": ""
     },
     {
@@ -218,7 +218,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.2,
-      "stdout_tail": "ddit r/DigitalArt: queued\n\n\ud83d\udccb COPY-PASTE READY TWEET:\n==================================================\nEvery purchase loops.\n\n\ud83c\udf4e \"Pomegranate Season\" \u2014 $1\n\n\u2192 70% to Gaza Rose Gallery\n\u2192 30% pools until it auto-buys another piece\n\u2192 That piece donates 70% too\n\u2192 Forever\n\nOne dollar. Infinite echoes.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#Palestine #ArtForGood #Gaz\n==================================================\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n",
+      "stdout_tail": "ddit r/DigitalArt: queued\n\n\ud83d\udccb COPY-PASTE READY TWEET:\n==================================================\n\ud83c\udf19 Art that doesn't stop giving.\n\n\"Night Garden in Ruins\" \u2014 only $1\n\nAfter 4 purchases, the system buys itself a new piece.\nGaza Rose Gallery gets 70\u00a2 every single time.\n\nThis is SolarPunk economics.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#DigitalArt #Palestin\n==================================================\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n",
       "stderr_tail": ""
     },
     {
@@ -226,7 +226,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SUBSTACK_ENGINE cycle 2 | 1 issues\n  Not yet time for weekly issue\n",
+      "stdout_tail": "SUBSTACK_ENGINE cycle 3 | 1 issues\n  Not yet time for weekly issue\n",
       "stderr_tail": ""
     },
     {
@@ -250,7 +250,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "HUMAN_CONNECTOR cycle 2 | 0 humans met\n  0 new genuine humans found\n",
+      "stdout_tail": "HUMAN_CONNECTOR cycle 3 | 0 humans met\n  0 new genuine humans found\n",
       "stderr_tail": ""
     },
     {
@@ -258,7 +258,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "KOFI_ENGINE cycle 2 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
+      "stdout_tail": "KOFI_ENGINE cycle 3 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
       "stderr_tail": ""
     },
     {
@@ -266,7 +266,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "ycle 6 | 6 products\n  \ud83d\udccb Queued: Desert Rose at Dawn \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: White Doves Over the Mediterranean \u2014 Gaza Ros (no_token)\n  \ud83d\udccb Queued: Olive Grove Eternal \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Tatreez Pattern Bloom \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Gaza Coastline at Golden Hour \u2014 Gaza Rose Gal (no_token)\n  \ud83d\udccb Queued: Star of Hope Rising \u2014 Gaza Rose Gallery (no_token)\n\nGUMROAD: 0 live | 6 queued\n  \u2192 Add GUMROAD_ACCESS_TOKEN secret to auto-create listings\n",
+      "stdout_tail": "ycle 7 | 6 products\n  \ud83d\udccb Queued: Desert Rose at Dawn \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: White Doves Over the Mediterranean \u2014 Gaza Ros (no_token)\n  \ud83d\udccb Queued: Olive Grove Eternal \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Tatreez Pattern Bloom \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Gaza Coastline at Golden Hour \u2014 Gaza Rose Gal (no_token)\n  \ud83d\udccb Queued: Star of Hope Rising \u2014 Gaza Rose Gallery (no_token)\n\nGUMROAD: 0 live | 6 queued\n  \u2192 Add GUMROAD_ACCESS_TOKEN secret to auto-create listings\n",
       "stderr_tail": ""
     },
     {
@@ -274,7 +274,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "GITHUB_SPONSORS cycle 2 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
+      "stdout_tail": "GITHUB_SPONSORS cycle 3 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
       "stderr_tail": ""
     },
     {
@@ -282,22 +282,22 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 2 | matched: 0 | verified: $0.00\n  No revenue_inbox.json yet\n",
+      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 3 | matched: 0 | verified: $0.00\n  No revenue_inbox.json yet\n",
       "stderr_tail": ""
     },
     {
       "engine": "SYNAPSE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.2,
-      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 43 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-12789a5312dsm20486103c88.16 - gsmtp')\nBrain state saved. Score: 40/100\n",
+      "elapsed": 0.8,
+      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 43 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-507449630b6sm193920551cf.7 - gsmtp')\nBrain state saved. Score: 40/100\n",
       "stderr_tail": ""
     },
     {
       "engine": "SYNTHESIS_FACTORY",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
+      "elapsed": 0.3,
       "stdout_tail": "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\nSynthesis AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n   Nothing new synthesized this run\n",
       "stderr_tail": ""
     },
@@ -305,7 +305,7 @@
       "engine": "ARCHITECT",
       "status": "error",
       "code": 1,
-      "elapsed": 0.4,
+      "elapsed": 0.3,
       "stdout_tail": "-Instruct failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-72B-Instruct/v1/chat/completions\n  [AI_CLIENT] Mixtral-8x7B-Instruct-v0.1 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n",
       "stderr_tail": "x_tokens, system=json_system.strip())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/AI_CLIENT.py\", line 61, in ask\n    raise RuntimeError(f\"All AI models failed. Last error: {last_error}\")\nRuntimeError: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n"
     },
@@ -313,7 +313,7 @@
       "engine": "SELF_BUILDER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.8,
+      "elapsed": 0.6,
       "stdout_tail": "e for url: https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Code generation error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Generation failed\n",
       "stderr_tail": ""
     },
@@ -338,15 +338,15 @@
       "status": "error",
       "code": 1,
       "elapsed": 0.1,
-      "stdout_tail": "BRIEFING_ENGINE cycle 1 | UTC hour: 5\n",
+      "stdout_tail": "BRIEFING_ENGINE cycle 1 | UTC hour: 6\n",
       "stderr_tail": "Traceback (most recent call last):\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/BRIEFING_ENGINE.py\", line 234, in <module>\n    if __name__==\"__main__\": run()\n                             ^^^^^\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/BRIEFING_ENGINE.py\", line 207, in run\n    if state.get(\"last_morning\",\"\")[:10] != today:\n       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^\nTypeError: 'NoneType' object is not subscriptable\n"
     },
     {
       "engine": "NIGHTLY_DIGEST",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.2,
-      "stdout_tail": "NIGHTLY_DIGEST cycle 2\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-128bac04455sm1416742c88.1 - gsmtp')\n  Status page \u2192 docs/status.html\n",
+      "elapsed": 0.7,
+      "stdout_tail": "NIGHTLY_DIGEST cycle 3\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-8cbbf6869f5sm2106856685a.20 - gsmtp')\n  Status page \u2192 docs/status.html\n",
       "stderr_tail": ""
     }
   ]

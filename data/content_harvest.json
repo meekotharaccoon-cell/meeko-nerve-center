@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T05:20:49.800149+00:00",
+  "timestamp": "2026-03-05T06:33:13.289449+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Google Workspace CLI",
         "url": "https://github.com/googleworkspace/cli",
-        "score": 313,
+        "score": 403,
+        "source": "hackernews"
+      },
+      {
+        "title": "You Just Reveived",
+        "url": "https://dylan.gr/1772520728",
+        "score": 50,
+        "source": "hackernews"
+      },
+      {
+        "title": "Relicensing with AI-Assisted Rewrite",
+        "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
+        "score": 38,
         "source": "hackernews"
       },
       {
         "title": "MacBook Neo",
         "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
-        "score": 1672,
+        "score": 1700,
         "source": "hackernews"
       },
       {
         "title": "Building a new Flash",
         "url": "https://bill.newgrounds.com/news/post/1607118",
-        "score": 438,
-        "source": "hackernews"
-      },
-      {
-        "title": "What Python's asyncio primitives get wrong about shared state",
-        "url": "https://www.inngest.com/blog/no-lost-updates-python-asyncio",
-        "score": 21,
-        "source": "hackernews"
-      },
-      {
-        "title": "Dario Amodei calls OpenAI\u2019s messaging around military deal \u2018straight up lies\u2019",
-        "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says/",
-        "score": 396,
+        "score": 478,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.4,
+    "temp_c": 13.3,
     "vibe": "partly cloudy",
-    "code": 3,
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -81,6 +81,26 @@
       "count": 1
     },
     {
+      "word": "just",
+      "count": 1
+    },
+    {
+      "word": "reveived",
+      "count": 1
+    },
+    {
+      "word": "relicensing",
+      "count": 1
+    },
+    {
+      "word": "assisted",
+      "count": 1
+    },
+    {
+      "word": "rewrite",
+      "count": 1
+    },
+    {
       "word": "macbook",
       "count": 1
     },
@@ -93,59 +113,39 @@
       "count": 1
     },
     {
-      "word": "python's",
+      "word": "making",
       "count": 1
     },
     {
-      "word": "asyncio",
+      "word": "london's",
       "count": 1
     },
     {
-      "word": "primitives",
+      "word": "hidden",
       "count": 1
     },
     {
-      "word": "wrong",
+      "word": "film",
       "count": 1
     },
     {
-      "word": "about",
+      "word": "clubs",
       "count": 1
     },
     {
-      "word": "shared",
+      "word": "discoverable",
       "count": 1
     },
     {
-      "word": "state",
+      "word": "created",
       "count": 1
     },
     {
-      "word": "dario",
+      "word": "enterprise",
       "count": 1
     },
     {
-      "word": "amodei",
-      "count": 1
-    },
-    {
-      "word": "calls",
-      "count": 1
-    },
-    {
-      "word": "openai\u2019s",
-      "count": 1
-    },
-    {
-      "word": "messaging",
-      "count": 1
-    },
-    {
-      "word": "around",
-      "count": 1
-    },
-    {
-      "word": "military",
+      "word": "gateway",
       "count": 1
     }
   ],
