@@ -1,15 +1,16 @@
 {
-  "cycles": 3,
+  "cycles": 4,
   "released": [
-    "factory-state",
+    "grant-writing-templates",
     "ai-prompt-packs",
     "palestinian-art-prints",
-    "github-actions-templates",
+    "social-media-content-packs",
+    "factory-state",
     "notion-templates-for-freelancers",
-    "grant-writing-templates",
     "autonomous-business-guide",
-    "social-media-content-packs"
+    "github-actions-templates",
+    "email-automation-blueprints"
   ],
-  "total_releases": 8,
-  "last_run": "2026-03-05T11:24:53.470870+00:00"
+  "total_releases": 9,
+  "last_run": "2026-03-05T11:26:15.076383+00:00"
 }

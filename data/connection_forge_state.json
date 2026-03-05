@@ -1,9 +1,10 @@
 {
-  "cycles": 3,
+  "cycles": 4,
   "guides_sent": [],
   "connections_active": [
     "Gmail",
-    "HuggingFace"
+    "HuggingFace",
+    "Twitter/X"
   ],
-  "last_run": "2026-03-05T11:24:53.597861+00:00"
+  "last_run": "2026-03-05T11:26:15.204322+00:00"
 }

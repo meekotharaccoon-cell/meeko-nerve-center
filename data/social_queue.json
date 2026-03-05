@@ -435,21 +435,39 @@
       "text": "Just launched: GitHub Actions Templates \u2014 $27, 15% to Gaza \ud83c\udf39 gumroad.com",
       "queued_at": "2026-03-05T06:33:21.170160+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "GitHub Actions Templates"
+      "niche": "GitHub Actions Templates",
+      "sent": true,
+      "sent_at": "2026-03-05T11:26:13.983141+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with autonomous AI: GitHub Actions Templates. $27, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T06:33:21.170160+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "GitHub Actions Templates"
+      "niche": "GitHub Actions Templates",
+      "sent": true,
+      "sent_at": "2026-03-05T11:26:13.983150+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New digital product: GitHub Actions Templates. $27. 15% to PCRF (Gaza children's relief).",
       "queued_at": "2026-03-05T06:33:21.170160+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "GitHub Actions Templates"
+      "niche": "GitHub Actions Templates",
+      "sent": true,
+      "sent_at": "2026-03-05T11:26:13.983153+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -651,6 +669,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/",
       "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Email Automation Blueprints \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T11:26:10.838458+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Email Automation Blueprints"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Email Automation Blueprints. $37, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T11:26:10.838458+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Email Automation Blueprints"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Email Automation Blueprints. $37. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T11:26:10.838458+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Email Automation Blueprints"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Email Automation Blueprints \u2014 Email Automation Blueprints \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/ $37, 15% to Gaza",
+      "queued_at": "2026-03-05T11:26:12.340648+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/",
+      "niche": "Email Automation Blueprints"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Email Automation Blueprints\n\nEmail Automation Blueprints \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T11:26:12.340648+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/",
+      "niche": "Email Automation Blueprints"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Email Automation Blueprints\nEmail Automation Blueprints \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/",
+      "queued_at": "2026-03-05T11:26:12.340648+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/",
+      "niche": "Email Automation Blueprints"
     }
   ]
 }
