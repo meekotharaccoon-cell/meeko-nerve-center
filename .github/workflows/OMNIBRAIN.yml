@@ -1,15 +1,15 @@
-name: SolarPunk OMNIBRAIN v5 — Autonomous Operations
+name: SolarPunk OMNIBRAIN v6 — Gapless Revenue Loop
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # 6am UTC
-    - cron: '0 12 * * *'  # Noon UTC
-    - cron: '0 18 * * *'  # 6pm UTC
-    - cron: '0 21 * * *'  # 9pm UTC
+    - cron: '0 6 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 18 * * *'
+    - cron: '0 21 * * *'
   workflow_dispatch:
     inputs:
       reason:
-        description: 'Why are you running this manually?'
+        description: 'Manual trigger reason'
         default: 'Manual test'
 
 permissions:
@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 55
 
     steps:
-      - name: Checkout — pull latest engines
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -54,8 +54,7 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: |
-          pip install requests python-dateutil pillow imapclient --quiet
+        run: pip install requests python-dateutil pillow imapclient --quiet
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -65,128 +64,124 @@ jobs:
           restore-keys: solarpunk-brain-
 
       # ═══════════════════════════════════════════════
-      # PHASE 1: HEALTH CHECK
+      # PHASE 1: HEALTH
       # ═══════════════════════════════════════════════
-      - name: Phase 1 — Guardian health check
+      - name: Phase 1 — Guardian
         run: python mycelium/GUARDIAN.py || echo "Guardian fallback"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 2: EMAIL CORTEX
       # ═══════════════════════════════════════════════
-      - name: Phase 2a — Read all email (EMAIL_BRAIN)
-        run: python mycelium/EMAIL_BRAIN.py || echo "Email brain offline"
+      - name: Phase 2a — EMAIL_BRAIN
+        run: python mycelium/EMAIL_BRAIN.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 2b — Scam detection (SCAM_SHIELD)
-        run: python mycelium/SCAM_SHIELD.py || echo "Scam shield fallback"
+      - name: Phase 2b — SCAM_SHIELD
+        run: python mycelium/SCAM_SHIELD.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 2c — Human detection + reply (HUMAN_CONNECTOR)
-        run: python mycelium/HUMAN_CONNECTOR.py || echo "Human connector fallback"
+      - name: Phase 2c — HUMAN_CONNECTOR
+        run: python mycelium/HUMAN_CONNECTOR.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 2d — Calendar scheduling (CALENDAR_BRAIN)
-        run: python mycelium/CALENDAR_BRAIN.py || echo "Calendar offline"
+      - name: Phase 2d — CALENDAR_BRAIN
+        run: python mycelium/CALENDAR_BRAIN.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 3: MONEY IN
       # ═══════════════════════════════════════════════
-      - name: Phase 3a — Ko-fi sales processor (KOFI_ENGINE)
-        run: python mycelium/KOFI_ENGINE.py || echo "Kofi offline"
+      - name: Phase 3a — KOFI_ENGINE
+        run: python mycelium/KOFI_ENGINE.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 3b — Gumroad sales (GUMROAD_ENGINE)
-        run: python mycelium/GUMROAD_ENGINE.py || echo "Gumroad offline"
+      - name: Phase 3b — GUMROAD_ENGINE
+        run: python mycelium/GUMROAD_ENGINE.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 3c — GitHub Sponsors (GITHUB_SPONSORS_ENGINE)
-        run: python mycelium/GITHUB_SPONSORS_ENGINE.py || echo "Sponsors offline"
+      - name: Phase 3c — GITHUB_SPONSORS_ENGINE
+        run: python mycelium/GITHUB_SPONSORS_ENGINE.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 4: GRANTS
       # ═══════════════════════════════════════════════
-      - name: Phase 4a — Hunt new grants (GRANT_HUNTER)
-        run: python mycelium/GRANT_HUNTER.py || echo "Grant hunter offline"
+      - name: Phase 4a — GRANT_HUNTER
+        run: python mycelium/GRANT_HUNTER.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 4b — Apply + follow up (GRANT_APPLICANT)
-        run: python mycelium/GRANT_APPLICANT.py || echo "Grant applicant offline"
+      - name: Phase 4b — GRANT_APPLICANT
+        run: python mycelium/GRANT_APPLICANT.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 5: MARKET INTELLIGENCE
       # ═══════════════════════════════════════════════
-      - name: Phase 5a — Crypto + AI token watch (CRYPTO_WATCHER)
-        run: python mycelium/CRYPTO_WATCHER.py || echo "Crypto watcher offline"
+      - name: Phase 5a — CRYPTO_WATCHER
+        run: python mycelium/CRYPTO_WATCHER.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 5b — AI ecosystem scout (AI_WATCHER)
-        run: python mycelium/AI_WATCHER.py || echo "AI watcher offline"
+      - name: Phase 5b — AI_WATCHER
+        run: python mycelium/AI_WATCHER.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 6: BUSINESS FACTORY
+      # PHASE 6: THE LOOP
+      # Build → Affiliates → Deploy → Gumroad → Social → Brief → Brain
+      # One engine. Explicit data handoff. No gaps.
       # ═══════════════════════════════════════════════
-      - name: Phase 6a — Build new business (BUSINESS_FACTORY)
-        run: python mycelium/BUSINESS_FACTORY.py || echo "Business factory offline"
+      - name: Phase 6 — REVENUE_LOOP (gapless pipeline)
+        run: python mycelium/REVENUE_LOOP.py || echo "Loop offline"
         continue-on-error: true
 
-      - name: Phase 6b — Maximize affiliate revenue (AFFILIATE_MAXIMIZER)
-        run: python mycelium/AFFILIATE_MAXIMIZER.py || echo "Affiliate maximizer offline"
-        continue-on-error: true
-
-      - name: Phase 6c — Deploy landing pages live (LANDING_DEPLOYER)
-        run: python mycelium/LANDING_DEPLOYER.py || echo "Landing deployer offline"
-        continue-on-error: true
-
-      - name: Phase 6d — Platform connections (CONNECTION_FORGE)
-        run: python mycelium/CONNECTION_FORGE.py || echo "Connection forge offline"
+      # CONNECTION_FORGE still runs independently (outreach, not revenue)
+      - name: Phase 6b — CONNECTION_FORGE
+        run: python mycelium/CONNECTION_FORGE.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 7: CONTENT + ART
       # ═══════════════════════════════════════════════
-      - name: Phase 7a — Generate Gaza Rose art (ART_GENERATOR)
-        run: python mycelium/ART_GENERATOR.py || echo "Art gen offline"
+      - name: Phase 7a — ART_GENERATOR
+        run: python mycelium/ART_GENERATOR.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 7b — Social media posts (SOCIAL_PROMOTER)
-        run: python mycelium/SOCIAL_PROMOTER.py || echo "Social offline"
+      # Social posts queued by REVENUE_LOOP get fired here
+      - name: Phase 7b — SOCIAL_PROMOTER
+        run: python mycelium/SOCIAL_PROMOTER.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 7c — Weekly newsletter draft (SUBSTACK_ENGINE)
-        run: python mycelium/SUBSTACK_ENGINE.py || echo "Substack offline"
+      - name: Phase 7c — SUBSTACK_ENGINE
+        run: python mycelium/SUBSTACK_ENGINE.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 8: SELF-IMPROVEMENT
       # ═══════════════════════════════════════════════
-      - name: Phase 8a — Build new engine (SELF_BUILDER)
-        run: python mycelium/SELF_BUILDER.py || echo "Self builder offline"
+      - name: Phase 8a — SELF_BUILDER
+        run: python mycelium/SELF_BUILDER.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 8b — Synthesis factory (SYNTHESIS_FACTORY)
-        run: python mycelium/SYNTHESIS_FACTORY.py || echo "Synthesis offline"
+      - name: Phase 8b — SYNTHESIS_FACTORY
+        run: python mycelium/SYNTHESIS_FACTORY.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
       # PHASE 9: BRIEFING
       # ═══════════════════════════════════════════════
-      - name: Phase 9a — Morning + Evening emails (BRIEFING_ENGINE)
-        run: python mycelium/BRIEFING_ENGINE.py || echo "Briefing offline"
+      - name: Phase 9a — BRIEFING_ENGINE
+        run: python mycelium/BRIEFING_ENGINE.py || echo "offline"
         continue-on-error: true
 
-      - name: Phase 9b — Rebuild README (README_GENERATOR)
-        run: python mycelium/README_GENERATOR.py || echo "README offline"
+      - name: Phase 9b — README_GENERATOR
+        run: python mycelium/README_GENERATOR.py || echo "offline"
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 10: SAVE STATE (ALWAYS RUNS)
+      # PHASE 10: COMMIT (ALWAYS RUNS)
       # ═══════════════════════════════════════════════
-      - name: Phase 10 — Commit all state changes
+      - name: Phase 10 — Commit all state
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
