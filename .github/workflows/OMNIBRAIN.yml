@@ -68,13 +68,25 @@ jobs:
 
       - name: Verify secrets
         run: |
-          python -c "
-          import sys, os; sys.path.insert(0, 'mycelium')
-          secrets = ['HF_TOKEN','GMAIL_ADDRESS','GITHUB_TOKEN','ANTHROPIC_API_KEY',
-                     'GUMROAD_SECRET','GUMROAD_ID','GUMROAD_NAME','PAYPAL_CLIENT_ID']
-          for s in secrets:
-              v = os.environ.get(s,'')
-              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')\" || true
+          python3 << 'PYEOF'
+          import os
+          checks = [
+            ('ANTHROPIC_API_KEY', True),
+            ('HF_TOKEN', False),
+            ('GMAIL_ADDRESS', True),
+            ('GMAIL_APP_PASSWORD', True),
+            ('GUMROAD_SECRET', True),
+            ('GUMROAD_ID', False),
+            ('GUMROAD_NAME', False),
+            ('PAYPAL_CLIENT_ID', False),
+          ]
+          for name, required in checks:
+              v = os.environ.get(name, '')
+              tag = 'REQUIRED' if required else 'optional'
+              status = 'OK ' + str(len(v)) + 'c' if v else 'MISSING'
+              print(name + ': ' + status + ' [' + tag + ']')
+          PYEOF
+        continue-on-error: true
 
       - name: Run OMNIBUS
         run: python mycelium/OMNIBUS.py
