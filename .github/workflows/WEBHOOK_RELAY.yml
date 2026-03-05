@@ -1,0 +1,78 @@
+name: WEBHOOK_RELAY
+
+# Generic repository_dispatch receiver — ONE workflow handles ALL payment platforms
+#
+# WIRE ANY PLATFORM IN 5 MIN (no new GitHub Secrets needed):
+#
+#   1. pipedream.com → New Workflow → HTTP Trigger → copy URL
+#   2. Paste that URL into your payment platform's webhook settings:
+#        Ko-fi:   Settings → API → Webhook URL
+#        Gumroad: Settings → Advanced → Webhooks
+#        Stripe:  Developers → Webhooks → Add endpoint
+#   3. In Pipedream, add "Send HTTP Request" step:
+#        POST https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center/dispatches
+#        Auth: Bearer YOUR_GITHUB_PAT   ← PAT lives ONLY in Pipedream, never in GitHub
+#        Body: {"event_type":"kofi_payment","client_payload":{"amount":"{{amount}}","email":"{{email}}"}}
+#
+# Result: payment received → Pipedream fires → this workflow runs in <30s
+# GITHUB_TOKEN handles everything on the GitHub side. Zero extra secrets here.
+
+on:
+  repository_dispatch:
+    types:
+      - kofi_payment
+      - kofi_test
+      - gumroad_sale
+      - github_sponsor
+      - stripe_payment
+      - manual_payment
+  workflow_dispatch:
+    inputs:
+      amount:
+        description: 'Test payment amount'
+        default: '1.00'
+      platform:
+        description: 'Platform'
+        default: 'test'
+
+jobs:
+  handle_payment:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Process payment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          PAYMENT_AMOUNT: ${{ github.event.client_payload.amount || inputs.amount || '0' }}
+          PAYMENT_EMAIL:  ${{ github.event.client_payload.email || '' }}
+          PAYMENT_MESSAGE: ${{ github.event.client_payload.message || '' }}
+          PAYMENT_SOURCE: ${{ github.event.action || 'manual' }}
+        run: python mycelium/DISPATCH_HANDLER.py
+
+      - name: Sync issues
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python mycelium/ISSUE_SYNC.py
+
+      - name: Commit state
+        run: |
+          git config --global user.email "solarpunk@meeko"
+          git config --global user.name "SolarPunk"
+          git add -A
+          git diff --staged --quiet || git commit -m "💰 payment [${{ github.event.action || 'test' }}] ${{ github.event.client_payload.amount || inputs.amount }}  [skip ci]"
+          git push || true
