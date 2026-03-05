@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T20:04:25.507425+00:00",
+  "timestamp": "2026-03-05T20:12:01.770098+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 220,
+        "score": 238,
         "source": "hackernews"
       },
       {
         "title": "Wikipedia in read-only mode following mass admin account compromise",
         "url": "https://www.wikimediastatus.net",
-        "score": 621,
+        "score": 632,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 72,
+        "score": 74,
         "source": "hackernews"
       },
       {
         "title": "Hardware hotplug events on Linux, the gory details",
         "url": "https://arcanenibble.github.io/hardware-hotplug-events-on-linux-the-gory-details.html",
-        "score": 27,
+        "score": 32,
         "source": "hackernews"
       },
       {
-        "title": "A GitHub Issue Title Compromised 4k Developer Machines",
-        "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
-        "score": 157,
+        "title": "Let's Get Physical",
+        "url": "https://m4iler.cloud/posts/lets-get-physical/",
+        "score": 24,
         "source": "hackernews"
       }
     ],
@@ -133,19 +133,19 @@
       "count": 1
     },
     {
-      "word": "github",
+      "word": "let's",
       "count": 1
     },
     {
-      "word": "issue",
+      "word": "physical",
       "count": 1
     },
     {
-      "word": "title",
+      "word": "making",
       "count": 1
     },
     {
-      "word": "compromised",
+      "word": "london's",
       "count": 1
     }
   ],
