@@ -1,0 +1,103 @@
+name: "🚀 Run SolarPunk NOW"
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'What to test'
+        default: 'manual trigger'
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: write
+
+env:
+  PYTHONPATH: mycelium
+  ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+  GMAIL_ADDRESS:           ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_APP_PASSWORD:      ${{ secrets.GMAIL_APP_PASSWORD }}
+  GITHUB_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
+  GUMROAD_ACCESS_TOKEN:    ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  HF_TOKEN:                ${{ secrets.HF_TOKEN }}
+  KOFI_USERNAME:           ${{ secrets.KOFI_USERNAME }}
+  KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
+  X_API_KEY:               ${{ secrets.X_API_KEY }}
+  X_API_SECRET:            ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN:          ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_TOKEN_SECRET:   ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+  REDDIT_CLIENT_ID:        ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET:    ${{ secrets.REDDIT_CLIENT_SECRET }}
+  REDDIT_USERNAME:         ${{ secrets.REDDIT_USERNAME }}
+  REDDIT_PASSWORD:         ${{ secrets.REDDIT_PASSWORD }}
+  MEEKO_AFFILIATE_LINK:    autonomoushum-20
+
+jobs:
+  run-now:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet \
+            requests python-dateutil pillow \
+            imapclient tweepy praw \
+            beautifulsoup4 feedparser
+
+      - name: Restore brain state
+        uses: actions/cache@v4
+        with:
+          path: data/
+          key: brain-${{ github.run_number }}
+          restore-keys: brain-
+
+      - name: Ensure docs dir
+        run: mkdir -p docs
+
+      - name: Verify secrets + AI
+        run: |
+          python -c "
+          import sys, os
+          sys.path.insert(0, 'mycelium')
+          for s in ['HF_TOKEN','GMAIL_ADDRESS','GMAIL_APP_PASSWORD','GITHUB_TOKEN']:
+              v = os.environ.get(s,'')
+              status = f'present ({len(v)} chars)' if v else 'MISSING'
+              print(f'{s}: {status}')
+          try:
+              from AI_CLIENT import ask, ask_json
+              print('AI_CLIENT: OK')
+          except Exception as e:
+              print(f'AI_CLIENT ERROR: {e}')
+          " || true
+
+      - name: Run OMNIBUS
+        run: python mycelium/OMNIBUS.py
+        continue-on-error: true
+
+      - name: Commit outputs
+        run: |
+          git config user.name "SolarPunk Brain"
+          git config user.email "meekotharaccoon@gmail.com"
+          git add data/ docs/ mycelium/ README.md 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "🚀 manual $(date -u +'%Y-%m-%d %H:%M') — ${{ github.event.inputs.reason }}"
+            git push origin main || (git pull --rebase origin main && git push origin main)
+          fi
+        continue-on-error: true
