@@ -1,7 +1,7 @@
 {
-  "cycles": 23,
-  "posted": 23,
-  "failed": 46,
+  "cycles": 24,
+  "posted": 24,
+  "failed": 48,
   "history": [
     {
       "platform": "linkedin",
@@ -140,7 +140,13 @@
       "niche": "Freelance Cold Email Templates",
       "info": "manual",
       "at": "2026-03-05T21:26:59.357161+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "Freelance Cold Email Templates",
+      "info": "manual",
+      "at": "2026-03-05T22:02:00.525330+00:00"
     }
   ],
-  "last_run": "2026-03-05T21:26:59.356593+00:00"
+  "last_run": "2026-03-05T22:02:00.524711+00:00"
 }
