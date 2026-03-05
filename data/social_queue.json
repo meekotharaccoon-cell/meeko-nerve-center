@@ -357,21 +357,39 @@
       "text": "Just launched: Palestinian Art Prints \u2014 $25, 15% to Gaza \ud83c\udf39 gumroad.com",
       "queued_at": "2026-03-05T05:21:01.170870+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Palestinian Art Prints"
+      "niche": "Palestinian Art Prints",
+      "sent": true,
+      "sent_at": "2026-03-05T10:23:22.471612+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with autonomous AI: Palestinian Art Prints. $25, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T05:21:01.170870+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Palestinian Art Prints"
+      "niche": "Palestinian Art Prints",
+      "sent": true,
+      "sent_at": "2026-03-05T10:23:22.471626+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New digital product: Palestinian Art Prints. $25. 15% to PCRF (Gaza children's relief).",
       "queued_at": "2026-03-05T05:21:01.170870+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Palestinian Art Prints"
+      "niche": "Palestinian Art Prints",
+      "sent": true,
+      "sent_at": "2026-03-05T10:23:22.471631+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -525,6 +543,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
       "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Social Media Content Packs \u2014 $22, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T10:23:18.859863+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Social Media Content Packs. $22, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T10:23:18.859863+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Social Media Content Packs. $22. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T10:23:18.859863+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Social Media Content Packs \u2014 Social Media Content Packs \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/ $22, 15% to Gaza",
+      "queued_at": "2026-03-05T10:23:20.807022+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
+      "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Social Media Content Packs\n\nSocial Media Content Packs \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T10:23:20.807022+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
+      "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Social Media Content Packs\nSocial Media Content Packs \u2014 built by AI, 15% to Gaza\n$22 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
+      "queued_at": "2026-03-05T10:23:20.807022+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
+      "niche": "Social Media Content Packs"
     }
   ]
 }

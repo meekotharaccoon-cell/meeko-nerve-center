@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-03-05T10:22:00.307673+00:00",
+  "generated_at": "2026-03-05T10:23:27.499348+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
     "engines_ok": [
       "GUARDIAN",
+      "ENGINE_INTEGRITY",
       "EMAIL_BRAIN",
       "SCAM_SHIELD",
       "CALENDAR_BRAIN",
@@ -27,6 +28,9 @@
       "SOCIAL_PROMOTER",
       "SUBSTACK_ENGINE",
       "LINK_PAGE",
+      "GITHUB_POSTER",
+      "SOCIAL_DASHBOARD",
+      "CONNECTION_FORGE",
       "HUMAN_CONNECTOR",
       "KOFI_ENGINE",
       "GUMROAD_ENGINE",
@@ -38,20 +42,19 @@
       "SELF_BUILDER",
       "MEMORY_PALACE",
       "README_GENERATOR",
-      "NIGHTLY_DIGEST"
+      "BRIEFING_ENGINE",
+      "NIGHTLY_DIGEST",
+      "ISSUE_SYNC"
     ],
-    "engines_failed": [
-      "CONNECTION_FORGE",
-      "BRIEFING_ENGINE"
-    ],
+    "engines_failed": [],
     "engines_skipped": [],
     "exchange_tasks": 0,
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 5,
+    "businesses_built": 6,
     "engines_built": 0,
-    "revenue_potential": 2500,
+    "revenue_potential": 2940,
     "active_revenue_streams": [
       "substack"
     ]
