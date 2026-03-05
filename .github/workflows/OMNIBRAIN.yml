@@ -1,8 +1,7 @@
-name: SolarPunk OMNIBRAIN v3 — Autonomous Operations
+name: SolarPunk OMNIBRAIN v4 — Autonomous Operations
 
 on:
   schedule:
-    # Runs 4x/day to stay alive and responsive
     - cron: '0 6 * * *'   # 6am UTC — Morning briefing window
     - cron: '0 12 * * *'  # Noon UTC — Midday cycle
     - cron: '0 18 * * *'  # 6pm UTC — Afternoon cycle
@@ -72,7 +71,7 @@ jobs:
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 2: EMAIL CORTEX (read + classify + protect)
+      # PHASE 2: EMAIL CORTEX
       # ═══════════════════════════════════════════════
       - name: Phase 2a — Read all email (EMAIL_BRAIN)
         run: python mycelium/EMAIL_BRAIN.py || echo "Email brain offline"
@@ -91,7 +90,7 @@ jobs:
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 3: MONEY IN (revenue collection)
+      # PHASE 3: MONEY IN
       # ═══════════════════════════════════════════════
       - name: Phase 3a — Ko-fi sales processor (KOFI_ENGINE)
         run: python mycelium/KOFI_ENGINE.py || echo "Kofi offline"
@@ -106,13 +105,13 @@ jobs:
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 4: GRANTS (find money → apply → follow up)
+      # PHASE 4: GRANTS
       # ═══════════════════════════════════════════════
       - name: Phase 4a — Hunt new grants (GRANT_HUNTER)
         run: python mycelium/GRANT_HUNTER.py || echo "Grant hunter offline"
         continue-on-error: true
 
-      - name: Phase 4b — Apply + follow up email chains (GRANT_APPLICANT)
+      - name: Phase 4b — Apply + follow up (GRANT_APPLICANT)
         run: python mycelium/GRANT_APPLICANT.py || echo "Grant applicant offline"
         continue-on-error: true
 
@@ -128,9 +127,18 @@ jobs:
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 6: EXPANSION (connections + new platforms)
+      # PHASE 6: BUSINESS FACTORY (NEW)
+      # Builds complete businesses from scratch every cycle
       # ═══════════════════════════════════════════════
-      - name: Phase 6a — Platform connection guides (CONNECTION_FORGE)
+      - name: Phase 6a — Build new business (BUSINESS_FACTORY)
+        run: python mycelium/BUSINESS_FACTORY.py || echo "Business factory offline"
+        continue-on-error: true
+
+      - name: Phase 6b — Maximize affiliate revenue (AFFILIATE_MAXIMIZER)
+        run: python mycelium/AFFILIATE_MAXIMIZER.py || echo "Affiliate maximizer offline"
+        continue-on-error: true
+
+      - name: Phase 6c — Platform connections (CONNECTION_FORGE)
         run: python mycelium/CONNECTION_FORGE.py || echo "Connection forge offline"
         continue-on-error: true
 
@@ -156,8 +164,12 @@ jobs:
         run: python mycelium/SELF_BUILDER.py || echo "Self builder offline"
         continue-on-error: true
 
+      - name: Phase 8b — Synthesis factory (SYNTHESIS_FACTORY)
+        run: python mycelium/SYNTHESIS_FACTORY.py || echo "Synthesis offline"
+        continue-on-error: true
+
       # ═══════════════════════════════════════════════
-      # PHASE 9: BRIEFING (always last)
+      # PHASE 9: BRIEFING
       # ═══════════════════════════════════════════════
       - name: Phase 9a — Morning + Evening emails (BRIEFING_ENGINE)
         run: python mycelium/BRIEFING_ENGINE.py || echo "Briefing offline"
