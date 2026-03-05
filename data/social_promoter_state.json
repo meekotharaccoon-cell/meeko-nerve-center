@@ -1,7 +1,7 @@
 {
-  "cycles": 16,
-  "posted": 16,
-  "failed": 32,
+  "cycles": 17,
+  "posted": 17,
+  "failed": 34,
   "history": [
     {
       "platform": "linkedin",
@@ -98,7 +98,13 @@
       "niche": "Email Automation Blueprints",
       "info": "manual",
       "at": "2026-03-05T19:19:27.972311+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "AI Side Income Blueprint 2.0",
+      "info": "manual",
+      "at": "2026-03-05T19:42:18.409094+00:00"
     }
   ],
-  "last_run": "2026-03-05T19:19:27.971800+00:00"
+  "last_run": "2026-03-05T19:42:18.408574+00:00"
 }

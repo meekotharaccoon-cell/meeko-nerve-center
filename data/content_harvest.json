@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T19:19:16.309003+00:00",
+  "timestamp": "2026-03-05T19:42:00.235720+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Wikipedia in read-only mode following mass admin account compromise",
         "url": "https://www.wikimediastatus.net",
-        "score": 517,
+        "score": 576,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4 Thinking System Card",
         "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
-        "score": 141,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: Jido 2.0, Elixir Agent Framework",
-        "url": "https://jido.run/blog/jido-2-0-is-here",
-        "score": 156,
-        "source": "hackernews"
-      },
-      {
-        "title": "Good software knows when to stop",
-        "url": "https://ogirardot.writizzy.com/p/good-software-knows-when-to-stop",
-        "score": 214,
+        "score": 171,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 40,
+        "score": 56,
+        "source": "hackernews"
+      },
+      {
+        "title": "A GitHub Issue Title Compromised 4k Developer Machines",
+        "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
+        "score": 144,
+        "source": "hackernews"
+      },
+      {
+        "title": "Show HN: Jido 2.0, Elixir Agent Framework",
+        "url": "https://jido.run/blog/jido-2-0-is-here",
+        "score": 162,
         "source": "hackernews"
       }
     ],
@@ -62,16 +62,12 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.4,
+    "temp_c": 11.2,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
-    {
-      "word": "stop",
-      "count": 2
-    },
     {
       "word": "wikipedia",
       "count": 1
@@ -121,31 +117,35 @@
       "count": 1
     },
     {
+      "word": "brand",
+      "count": 1
+    },
+    {
+      "word": "github",
+      "count": 1
+    },
+    {
+      "word": "issue",
+      "count": 1
+    },
+    {
+      "word": "title",
+      "count": 1
+    },
+    {
+      "word": "compromised",
+      "count": 1
+    },
+    {
+      "word": "developer",
+      "count": 1
+    },
+    {
+      "word": "machines",
+      "count": 1
+    },
+    {
       "word": "show",
-      "count": 1
-    },
-    {
-      "word": "jido",
-      "count": 1
-    },
-    {
-      "word": "elixir",
-      "count": 1
-    },
-    {
-      "word": "agent",
-      "count": 1
-    },
-    {
-      "word": "framework",
-      "count": 1
-    },
-    {
-      "word": "good",
-      "count": 1
-    },
-    {
-      "word": "software",
       "count": 1
     }
   ],

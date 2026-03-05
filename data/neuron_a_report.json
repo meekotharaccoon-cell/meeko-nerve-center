@@ -73,6 +73,7 @@
       "EMAIL_BRAIN.py",
       "ENGINE_INTEGRITY.py",
       "ETSY_SEO_ENGINE.py",
+      "FREE_API_ENGINE.py",
       "GITHUB_POSTER.py",
       "GITHUB_SPONSORS_ENGINE.py",
       "GRANT_APPLICANT.py",
@@ -86,6 +87,7 @@
       "INCOME_ARCHITECT.py",
       "ISSUE_SYNC.py",
       "KNOWLEDGE_BRIDGE.py",
+      "KNOWLEDGE_WEAVER.py",
       "KOFI_ENGINE.py",
       "KOFI_PAYMENT_TRACKER.py",
       "LANDING_DEPLOYER.py",
@@ -99,6 +101,7 @@
       "README_GENERATOR.py",
       "REVENUE_FLYWHEEL.py",
       "REVENUE_LOOP.py",
+      "REVENUE_OPTIMIZER.py",
       "SCAM_SHIELD.py",
       "SECRETS_CHECKER.py",
       "SELF_BUILDER.py",
@@ -111,7 +114,7 @@
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 59,
+    "engine_count": 62,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -158,6 +161,7 @@
       "evolve_history.json",
       "flywheel_state.json",
       "flywheel_summary.json",
+      "free_api_state.json",
       "github_poster_state.json",
       "grant_applicant_state.json",
       "grant_hunter_state.json",
@@ -207,7 +211,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T19:19:21.446697+00:00"
+    "timestamp": "2026-03-05T19:42:10.246110+00:00"
   },
-  "generated_at": "2026-03-05T19:19:21.848493+00:00"
+  "generated_at": "2026-03-05T19:42:10.700221+00:00"
 }
