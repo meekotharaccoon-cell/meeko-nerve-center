@@ -7,6 +7,8 @@ FIXES from v4:
   dict, but social posts prompt returns a JSON array [...]. Was silently
   returning None every cycle → always used fallback posts.
 - ask_json_list added to AI_CLIENT in this session.
+- FIXED IndentationError: step("brief") and step("brain") were at col 18
+  instead of col 4 — caused SyntaxError preventing any execution.
 
 FLOW (all self-contained, file-based handoff):
   1. Read latest business from data/business_*.json
@@ -28,7 +30,7 @@ MYCELIUM = Path("mycelium")
 
 sys.path.insert(0, str(MYCELIUM))
 try:
-    from AI_CLIENT import ask, ask_json, ask_json_list   # ← fixed: added ask_json_list
+    from AI_CLIENT import ask, ask_json, ask_json_list
     AI_AVAILABLE = True
 except ImportError:
     AI_AVAILABLE = False
@@ -311,7 +313,7 @@ def step_social(package, live_url, gumroad_url):
             f'[{{"platform":"twitter","text":"..."}},{{"platform":"reddit","text":"..."}},{{"platform":"linkedin","text":"..."}}]'
         )
         try:
-            posts = ask_json_list(prompt, max_tokens=600)  # ← FIXED: was ask_json
+            posts = ask_json_list(prompt, max_tokens=600)
         except Exception as e:
             print(f"  AI social gen error: {e}")
 
@@ -419,13 +421,13 @@ def run():
             loop["steps_failed"].append(name)
             return None
 
-    package     = step("get_business",  step_get_business)
-    package     = step("affiliates",    step_inject_affiliates, package) or package
-    live_url    = step("deploy",        step_deploy_landing,    package)
-    gumroad_url = step("gumroad",       step_gumroad,           package, live_url) or "https://meekotharacoon.gumroad.com"
-    posts       = step("social",        step_social,            package, live_url, gumroad_url) or []
-                  step("brief",         step_brief,             package, live_url, gumroad_url, posts)
-                  step("brain",         step_brain,             package, live_url)
+    package     = step("get_business", step_get_business)
+    package     = step("affiliates",   step_inject_affiliates, package) or package
+    live_url    = step("deploy",       step_deploy_landing,    package)
+    gumroad_url = step("gumroad",      step_gumroad,           package, live_url) or "https://meekotharacoon.gumroad.com"
+    posts       = step("social",       step_social,            package, live_url, gumroad_url) or []
+    step("brief", step_brief, package, live_url, gumroad_url, posts)
+    step("brain", step_brain, package, live_url)
 
     loop.update({
         "live_url": live_url, "gumroad_url": gumroad_url, "posts": posts,
