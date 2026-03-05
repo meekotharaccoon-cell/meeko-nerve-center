@@ -1,6 +1,6 @@
 {
   "risks": [
-    "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages"
+    "400 Client Error: Bad Request for url: https://api.anthropic.com/v1/messages"
   ],
   "vetted_opportunities": [
     {
@@ -45,5 +45,5 @@
     }
   ],
   "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-  "generated_at": "2026-03-05T10:23:15.094639+00:00"
+  "generated_at": "2026-03-05T11:24:45.305638+00:00"
 }

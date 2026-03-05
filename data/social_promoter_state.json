@@ -1,7 +1,7 @@
 {
-  "cycles": 3,
-  "posted": 3,
-  "failed": 6,
+  "cycles": 4,
+  "posted": 4,
+  "failed": 8,
   "history": [
     {
       "platform": "linkedin",
@@ -20,7 +20,13 @@
       "niche": "Palestinian Art Prints",
       "info": "manual",
       "at": "2026-03-05T10:23:22.471631+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "",
+      "info": "manual",
+      "at": "2026-03-05T11:24:52.258954+00:00"
     }
   ],
-  "last_run": "2026-03-05T10:23:22.471369+00:00"
+  "last_run": "2026-03-05T11:24:52.258688+00:00"
 }

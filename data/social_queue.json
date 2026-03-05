@@ -396,21 +396,39 @@
       "text": "Just launched: SolarPunk Palestinian Art Prints \ud83c\udf39 Palestinian Art Prints \u2014 built by AI, 15% to Gaza \u2192 https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/ \u2014 $25, 15% to Gaza",
       "queued_at": "2026-03-05T05:21:08.185336+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/",
+      "sent": true,
+      "sent_at": "2026-03-05T11:24:52.258941+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with AI: SolarPunk Palestinian Art Prints\n\nPalestinian Art Prints \u2014 built by AI, 15% to Gaza\n\nDetails: https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/\nBuy: https://meekotharacoon.gumroad.com\n\n15% of every sale funds Gaza aid.",
       "queued_at": "2026-03-05T05:21:08.185336+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/",
+      "sent": true,
+      "sent_at": "2026-03-05T11:24:52.258949+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New launch: SolarPunk Palestinian Art Prints\n\nPalestinian Art Prints \u2014 built by AI, 15% to Gaza\n\n$25 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/",
       "queued_at": "2026-03-05T05:21:08.185336+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestinian-art-prints/",
+      "sent": true,
+      "sent_at": "2026-03-05T11:24:52.258954+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -588,6 +606,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
       "niche": "Social Media Content Packs"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Grant Writing Templates \u2014 $47, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T11:24:48.681991+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Grant Writing Templates. $47, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T11:24:48.681991+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Grant Writing Templates. $47. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T11:24:48.681991+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Grant Writing Templates \u2014 Grant Writing Templates \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/ $47, 15% to Gaza",
+      "queued_at": "2026-03-05T11:24:50.582631+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/",
+      "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Grant Writing Templates\n\nGrant Writing Templates \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T11:24:50.582631+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/",
+      "niche": "Grant Writing Templates"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Grant Writing Templates\nGrant Writing Templates \u2014 built by AI, 15% to Gaza\n$47 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/",
+      "queued_at": "2026-03-05T11:24:50.582631+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/grant-writing-templates/",
+      "niche": "Grant Writing Templates"
     }
   ]
 }

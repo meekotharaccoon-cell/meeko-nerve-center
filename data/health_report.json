@@ -12,7 +12,7 @@
     "\u2705 HF_TOKEN: configured"
   ],
   "issues": [
-    "\ud83d\udd34 CRITICAL: API key invalid (401) \u2014 regenerate at anthropic.com/console \u2014 All AI features disabled",
+    "\ud83d\udd34 CRITICAL: API error: 400 \u2014 All AI features disabled",
     "\u26a0\ufe0f Revenue: 1 secret(s) missing \u2192 -10 pts potential",
     "\u26a0\ufe0f Social: 3 secret(s) missing \u2192 -10 pts potential",
     "\ud83d\udcb0 No revenue yet \u2014 shop needs human promotion"
@@ -55,5 +55,5 @@
   "has_revenue": false,
   "total_sales": 0,
   "total_to_gaza": 0.0,
-  "timestamp": "2026-03-05T10:23:22.361001+00:00"
+  "timestamp": "2026-03-05T11:24:52.156980+00:00"
 }

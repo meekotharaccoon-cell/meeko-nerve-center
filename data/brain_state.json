@@ -1,9 +1,9 @@
 {
-  "run_id": "22713405571",
+  "run_id": "22715637890",
   "health_score": 40,
   "stats": {
     "engines_total": 48,
-    "data_files": 64,
+    "data_files": 65,
     "revenue": 0.0,
     "cycles": 0,
     "synth_built": 0,
@@ -13,8 +13,8 @@
   },
   "synthesis": {
     "health_score": 40,
-    "synthesis": "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages",
+    "synthesis": "400 Client Error: Bad Request for url: https://api.anthropic.com/v1/messages",
     "top_actions": []
   },
-  "generated_at": "2026-03-05T10:23:26.534141+00:00"
+  "generated_at": "2026-03-05T11:24:55.710673+00:00"
 }
