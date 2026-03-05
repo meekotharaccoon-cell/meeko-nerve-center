@@ -1,0 +1,83 @@
+name: KOFI_PAYMENT
+
+# Triggered by external webhook via repository_dispatch
+# HOW TO WIRE THIS UP (one-time, 10 minutes, no new secrets):
+#
+#   1. Go to pipedream.com → New Workflow → HTTP Trigger → copy the URL
+#   2. Go to ko-fi.com → Settings → API → paste the Pipedream URL as webhook
+#   3. In Pipedream, add a "Send HTTP Request" step:
+#        URL: https://api.github.com/repos/meekotharaccoon-cell/meeko-nerve-center/dispatches
+#        Method: POST
+#        Headers:
+#          Authorization: Bearer <YOUR_GITHUB_PAT>
+#          Accept: application/vnd.github.v3+json
+#        Body:
+#          {
+#            "event_type": "kofi_payment",
+#            "client_payload": {
+#              "amount": "{{steps.trigger.event.body.amount}}",
+#              "email": "{{steps.trigger.event.body.email}}",
+#              "message": "{{steps.trigger.event.body.message}}"
+#            }
+#          }
+#
+# Result: Every Ko-fi payment → triggers this workflow in <30 seconds → revenue tracked
+# GITHUB_TOKEN is already in every workflow run. No extra secrets needed here.
+
+on:
+  repository_dispatch:
+    types: [kofi_payment, kofi_test, manual_payment]
+
+  # Also allow manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      amount:
+        description: 'Payment amount (e.g. 1.00)'
+        required: false
+        default: '1.00'
+      email:
+        description: 'Buyer email (optional)'
+        required: false
+        default: 'test@test.com'
+
+jobs:
+  process_payment:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Process payment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          # Payment data from dispatch or manual input
+          PAYMENT_AMOUNT: ${{ github.event.client_payload.amount || inputs.amount || '1.00' }}
+          PAYMENT_EMAIL: ${{ github.event.client_payload.email || inputs.email || '' }}
+          PAYMENT_MESSAGE: ${{ github.event.client_payload.message || '' }}
+          PAYMENT_SOURCE: ${{ github.event.action || 'manual' }}
+        run: python mycelium/DISPATCH_HANDLER.py
+
+      - name: Commit updated state
+        run: |
+          git config --global user.email "solarpunk@meeko-nerve-center"
+          git config --global user.name "SolarPunk"
+          git add -A
+          git diff --staged --quiet || git commit -m "💰 payment processed [\${{ github.event.client_payload.amount || inputs.amount || '1.00' }}] [skip ci]"
+          git push || echo "Push failed — will retry next cycle"
