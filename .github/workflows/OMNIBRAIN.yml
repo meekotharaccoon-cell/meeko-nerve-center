@@ -1,4 +1,4 @@
-name: SolarPunk OMNIBRAIN v8
+name: SolarPunk OMNIBRAIN v9
 
 on:
   schedule:
@@ -11,12 +11,16 @@ on:
       reason:
         description: 'Why triggering manually'
         default: 'debug'
+        required: false
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
   actions: write
 
 env:
+  PYTHONPATH: mycelium
   ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
   GMAIL_ADDRESS:           ${{ secrets.GMAIL_ADDRESS }}
   GMAIL_APP_PASSWORD:      ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -34,9 +38,6 @@ env:
   REDDIT_USERNAME:         ${{ secrets.REDDIT_USERNAME }}
   REDDIT_PASSWORD:         ${{ secrets.REDDIT_PASSWORD }}
   MEEKO_AFFILIATE_LINK:    autonomoushum-20
-  # THE CRITICAL FIX: subprocesses launched by OMNIBUS need this
-  # so every engine can: from AI_CLIENT import ask
-  PYTHONPATH:              mycelium
 
 jobs:
   brain:
@@ -50,14 +51,23 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Python
+      - name: Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Dependencies
-        run: pip install requests python-dateutil pillow imapclient tweepy praw --quiet
+      - name: Install dependencies
+        run: |
+          pip install --quiet \
+            requests \
+            python-dateutil \
+            pillow \
+            imapclient \
+            tweepy \
+            praw \
+            beautifulsoup4 \
+            feedparser
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -66,15 +76,44 @@ jobs:
           key: brain-${{ github.run_number }}
           restore-keys: brain-
 
+      - name: Ensure docs directory exists
+        run: mkdir -p docs
+
+      - name: Verify AI_CLIENT works
+        run: |
+          python -c "
+          import sys; sys.path.insert(0, 'mycelium')
+          import os
+          hf = os.environ.get('HF_TOKEN', '')
+          if hf:
+              print(f'HF_TOKEN: present ({len(hf)} chars)')
+          else:
+              print('WARNING: HF_TOKEN not set')
+          try:
+              from AI_CLIENT import ask, ask_json
+              print('AI_CLIENT: import OK')
+          except Exception as e:
+              print(f'AI_CLIENT import error: {e}')
+          " || true
+
       - name: OMNIBUS — all engines, subprocess-isolated
         run: python mycelium/OMNIBUS.py
         continue-on-error: true
 
-      - name: Commit
+      - name: Commit all outputs
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
-          git add data/ docs/ mycelium/ README.md .github/FUNDING.yml 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git push origin main || echo "push failed — retry next cycle"
+          git add data/ docs/ mycelium/ README.md 2>/dev/null || true
+          git add .github/FUNDING.yml 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
+            git push origin main || (
+              echo "Push failed — pulling and retrying"
+              git pull --rebase origin main
+              git push origin main
+            )
+          fi
         continue-on-error: true
