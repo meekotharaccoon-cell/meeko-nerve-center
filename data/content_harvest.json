@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T09:33:44.554574+00:00",
+  "timestamp": "2026-03-05T10:21:41.116154+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "No right to relicense this project",
-        "url": "https://github.com/chardet/chardet/issues/327",
-        "score": 87,
-        "source": "hackernews"
-      },
-      {
         "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
         "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
-        "score": 64,
+        "score": 85,
         "source": "hackernews"
       },
       {
         "title": "Google Workspace CLI",
         "url": "https://github.com/googleworkspace/cli",
-        "score": 561,
+        "score": 585,
         "source": "hackernews"
       },
       {
         "title": "Relicensing with AI-Assisted Rewrite",
         "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
-        "score": 93,
+        "score": 119,
         "source": "hackernews"
       },
       {
         "title": "The L in \"LLM\" Stands for Lying",
         "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
-        "score": 123,
+        "score": 170,
+        "source": "hackernews"
+      },
+      {
+        "title": "Smalltalk's Browser: Unbeatable, yet Not Enough",
+        "url": "https://blog.lorenzano.eu/smalltalks-browser-unbeatable-yet-not-enough/",
+        "score": 33,
         "source": "hackernews"
       }
     ],
@@ -62,27 +62,15 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 18.9,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 19.5,
+    "vibe": "sunny",
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
       "word": "speech",
       "count": 2
-    },
-    {
-      "word": "right",
-      "count": 1
-    },
-    {
-      "word": "relicense",
-      "count": 1
-    },
-    {
-      "word": "project",
-      "count": 1
     },
     {
       "word": "nvidia",
@@ -141,18 +129,30 @@
       "count": 1
     },
     {
-      "word": "making",
+      "word": "smalltalk's",
       "count": 1
     },
     {
-      "word": "london's",
+      "word": "browser:",
+      "count": 1
+    },
+    {
+      "word": "unbeatable",
+      "count": 1
+    },
+    {
+      "word": "enough",
+      "count": 1
+    },
+    {
+      "word": "making",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'No right to relicense this project...' connects to Gaza resilience",
+      "hook": "How 'Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-t...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

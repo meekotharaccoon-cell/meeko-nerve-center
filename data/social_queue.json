@@ -318,21 +318,39 @@
       "text": "Just launched: SolarPunk AI Prompt Packs \ud83c\udf39 AI Prompt Packs \u2014 built by AI, 15% to Gaza \u2192 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/ \u2014 $17, 15% to Gaza",
       "queued_at": "2026-03-05T05:18:22.992167+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+      "sent": true,
+      "sent_at": "2026-03-05T10:21:52.931748+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with AI: SolarPunk AI Prompt Packs\n\nAI Prompt Packs \u2014 built by AI, 15% to Gaza\n\nDetails: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/\nBuy: https://meekotharacoon.gumroad.com\n\n15% of every sale funds Gaza aid.",
       "queued_at": "2026-03-05T05:18:22.992167+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+      "sent": true,
+      "sent_at": "2026-03-05T10:21:52.931756+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New launch: SolarPunk AI Prompt Packs\n\nAI Prompt Packs \u2014 built by AI, 15% to Gaza\n\n$17 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
       "queued_at": "2026-03-05T05:18:22.992167+00:00",
       "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+      "sent": true,
+      "sent_at": "2026-03-05T10:21:52.931759+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -462,6 +480,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
       "niche": "Notion Templates for Freelancers"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Autonomous Business Guide \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T10:21:49.775176+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Autonomous Business Guide. $37, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T10:21:49.775176+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Autonomous Business Guide. $37. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T10:21:49.775176+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Autonomous Business Guide \u2014 Autonomous Business Guide \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/ $37, 15% to Gaza",
+      "queued_at": "2026-03-05T10:21:51.397483+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
+      "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Autonomous Business Guide\n\nAutonomous Business Guide \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T10:21:51.397483+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
+      "niche": "Autonomous Business Guide"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Autonomous Business Guide\nAutonomous Business Guide \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
+      "queued_at": "2026-03-05T10:21:51.397483+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
+      "niche": "Autonomous Business Guide"
     }
   ]
 }
