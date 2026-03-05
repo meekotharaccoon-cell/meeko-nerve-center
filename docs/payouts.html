@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk™ Payout Ledger</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#06060e;color:#dde;font-family:-apple-system,sans-serif;padding:30px;max-width:800px;margin:0 auto}
+nav{margin-bottom:24px;display:flex;gap:12px;flex-wrap:wrap}
+nav a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.8rem}
+nav a:hover{color:#00ff88}
+h1{color:#00ff88;margin-bottom:6px}
+.sub{color:#555;font-size:.82rem;margin-bottom:20px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.stat{background:#0f0f1c;border:1px solid #1a1a2e;border-radius:8px;padding:14px 20px;text-align:center}
+.stat .n{font-size:1.8rem;font-weight:700;color:#00ff88}
+.stat .l{font-size:.7rem;color:#555;text-transform:uppercase}
+.no-paypal{background:#1a0a0a;border:1px solid rgba(255,87,34,.2);border-radius:8px;padding:16px;margin-bottom:20px}
+.no-paypal h3{color:#ff7043;margin-bottom:8px;font-size:.9rem}
+.no-paypal ol{padding-left:18px;color:#888;font-size:.82rem;line-height:2}
+.no-paypal code{background:#0a0a0a;padding:1px 6px;border-radius:3px;color:#ffb74d}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:10px;background:#0a0a18;color:#555;font-size:.72rem;text-transform:uppercase;letter-spacing:1px}
+td{padding:10px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem;color:#aaa}
+.note{background:#0a0a18;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:14px;margin-top:20px;font-size:.78rem;color:#555;line-height:1.8}
+.note a{color:#ff4d6d;text-decoration:none}
+</style></head><body>
+<nav>
+  <a href="index.html">Home</a> ·
+  <a href="dashboard.html">Dashboard</a> ·
+  <a href="store.html">Store</a> ·
+  <a href="art.html">Art</a>
+</nav>
+<h1>💸 SolarPunk™ Payout Ledger</h1>
+<p class="sub">Transparent auto-generated ledger. Updated 2026-03-05 14:34 UTC. Mode: SANDBOX.</p>
+
+<div class="stats">
+  <div class="stat"><div class="n">$0.00</div><div class="l">Total Paid Out</div></div>
+  <div class="stat"><div class="n">$0.00</div><div class="l">→ Gaza (PCRF)</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">Payouts Made</div></div>
+  <div class="stat"><div class="n">0</div><div class="l">Pending</div></div>
+</div>
+
+<div class="no-paypal">
+<h3>⚠️ PayPal not connected — enable to auto-send payouts</h3>
+<ol>
+<li>Go to <b>developer.paypal.com</b> — sign in with PayPal</li>
+<li>My Apps &amp; Credentials → <b>Create App</b> → name: "SolarPunk"</li>
+<li>Copy <b>Client ID</b> and <b>Secret</b></li>
+<li>GitHub Secrets → Add: <code>PAYPAL_CLIENT_ID</code> and <code>PAYPAL_CLIENT_SECRET</code></li>
+<li>Also add: <code>PAYPAL_MODE</code> = <code>sandbox</code> (test first, then switch to <code>live</code>)</li>
+</ol>
+</div>
+
+<table>
+<tr><th></th><th>Date</th><th>Amount</th><th>Description</th></tr>
+<tr><td colspan="4" style="color:#333;padding:20px;text-align:center">No payouts yet — connect PayPal to enable</td></tr>
+</table>
+
+<div class="note">
+🌹 Gaza donations go to <a href="https://www.pcrf.net" target="_blank">PCRF</a> (EIN 93-1057665, 4★ Charity Navigator).<br>
+💸 Collaborator payouts are automatic — revenue share configures in HUMAN_PAYOUT engine.<br>
+🔒 PayPal handles all financial security. SolarPunk™ never stores payment details.
+</div>
+</body></html>

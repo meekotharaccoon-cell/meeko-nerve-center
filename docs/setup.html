@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk™ Setup Guide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#06060e;color:#ddd;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:20px;max-width:860px;margin:0 auto;line-height:1.6}
+h1{color:#81c784;font-size:22px;margin-bottom:4px}
+.sub{color:#555;font-size:12px;margin-bottom:24px}
+.progress-bar{background:#111;border-radius:20px;height:12px;margin:16px 0 8px;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,#4caf50,#81c784);height:100%;border-radius:20px;transition:width .5s}
+.progress-label{font-size:12px;color:#555;margin-bottom:20px}
+.hero-stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.hstat{background:#0f0f1c;border:1px solid #1a1a2e;border-radius:8px;padding:12px 20px;text-align:center}
+.hstat .n{font-size:24px;font-weight:700;color:#81c784}
+.hstat .l{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px}
+.hstat.warn .n{color:#ff7043}
+.critical-box{background:#1a0a0a;border:1px solid #f44336;border-radius:8px;padding:16px;margin-bottom:24px}
+.critical-box h3{color:#f44336;margin-bottom:8px;font-size:14px}
+.critical-box code{background:#0a0a0a;padding:2px 8px;border-radius:3px;color:#ef9a9a;font-size:12px;margin:2px;display:inline-block}
+h2.cat{color:#90caf9;font-size:13px;text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #1a1a2e;padding-bottom:8px;margin:28px 0 12px}
+.card{background:#0f0f1c;border:1px solid #1a1a2e;border-radius:10px;padding:18px;margin:8px 0;transition:border-color .2s}
+.card.ok{border-left:3px solid #4caf50}
+.card.critical{border-left:3px solid #f44336}
+.card.impact-high{border-left:3px solid #ff9800}
+.card.impact-medium{border-left:3px solid #ff9800;opacity:.8}
+.card.impact-low{border-left:3px solid #333}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px}
+.secret-name{font-family:monospace;font-size:15px;font-weight:700;color:#e0e0e0}
+.status-badge{font-size:11px;padding:3px 10px;border-radius:4px}
+.status-badge.ok{background:#0d1a0d;color:#81c784}
+.status-badge.critical{background:#1a0a0a;color:#f44336}
+.status-badge.impact-high{background:#1a0f0a;color:#ff9800}
+.status-badge.impact-medium{background:#111;color:#aaa}
+.status-badge.impact-low{background:#111;color:#666}
+.desc{font-size:13px;color:#888;margin-bottom:8px}
+.engines{font-size:11px;color:#555;margin-bottom:10px}
+.engines code{background:#0a0a0a;padding:1px 6px;border-radius:3px;color:#546e7a;margin:2px;font-size:10px}
+.steps-wrap{background:#080810;border-radius:6px;padding:12px;margin-top:8px}
+.steps-label{font-size:11px;color:#4caf50;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.step{display:flex;gap:8px;margin:6px 0;font-size:12px;color:#aaa;align-items:flex-start}
+.step-n{background:#1a2a1a;color:#81c784;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;flex-shrink:0;margin-top:2px}
+.github-link{display:inline-block;background:#4caf50;color:#000;font-weight:700;font-size:13px;padding:10px 24px;border-radius:8px;text-decoration:none;margin:16px 0}
+footer{color:#333;font-size:11px;margin-top:48px;border-top:1px solid #111;padding-top:12px}
+footer a{color:#444}
+</style>
+</head>
+<body>
+
+<h1>⚡ SolarPunk™ Setup Guide</h1>
+<p class="sub">Live status — auto-updated every cycle · 2026-03-05 14:33 UTC</p>
+
+<div class="hero-stats">
+  <div class="hstat"><div class="n">5</div><div class="l">Configured</div></div>
+  <div class="hstat warn"><div class="n">1</div><div class="l">Critical Missing</div></div>
+  <div class="hstat"><div class="n">11</div><div class="l">Optional Remaining</div></div>
+  <div class="hstat"><div class="n">31%</div><div class="l">Complete</div></div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" style="width:31%"></div></div>
+<div class="progress-label">5/16 secrets configured</div>
+
+<div class="critical-box">
+  <h3>🔴 Critical — fix these first (blocking revenue):</h3>
+  <code>GUMROAD_SECRET</code>
+</div>
+
+<a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/settings/secrets/actions" class="github-link" target="_blank">
+  → Open GitHub Secrets (add secrets here)
+</a>
+
+<h2 class="cat">🧠 AI Brain</h2>
+<div class="card ok">
+  <div class="card-head">
+    <span class="secret-name">ANTHROPIC_API_KEY</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
+  </div>
+  <div class="desc">Powers Claude — the core intelligence behind every engine</div>
+  <div class="engines">Used by: <code>AI_CLIENT</code> <code>BUILD_YOURSELF</code> <code>ARCHITECT</code> <code>SELF_BUILDER</code> <code>SOLARPUNK_LOOP</code></div>
+  
+</div>
+<div class="card ok">
+  <div class="card-head">
+    <span class="secret-name">HF_TOKEN</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
+  </div>
+  <div class="desc">HuggingFace fallback AI (free) — used if Anthropic is down</div>
+  <div class="engines">Used by: <code>AI_CLIENT</code></div>
+  
+</div>
+<h2 class="cat">💰 Revenue</h2>
+<div class="card critical">
+  <div class="card-head">
+    <span class="secret-name">GUMROAD_SECRET</span>
+    <span class="status-badge critical">🔴 MISSING — CRITICAL</span>
+  </div>
+  <div class="desc">Publishes your products to Gumroad automatically</div>
+  <div class="engines">Used by: <code>GUMROAD_ENGINE</code> <code>REVENUE_LOOP</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Log in to gumroad.com</div>
+<div class="step"><span class="step-n">2</span>Click your avatar → Settings</div>
+<div class="step"><span class="step-n">3</span>Click 'Advanced' tab</div>
+<div class="step"><span class="step-n">4</span>Scroll to 'Application' section</div>
+<div class="step"><span class="step-n">5</span>Click 'Generate Token' or copy existing token</div>
+<div class="step"><span class="step-n">6</span>Add as GitHub Secret: GUMROAD_SECRET</div>
+</div>
+</div>
+<div class="card impact-low">
+  <div class="card-head">
+    <span class="secret-name">GUMROAD_ID</span>
+    <span class="status-badge impact-low">⚪ OPTIONAL (low impact)</span>
+  </div>
+  <div class="desc">Your Gumroad seller ID (for analytics)</div>
+  <div class="engines">Used by: <code>GUMROAD_ENGINE</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Already set — found in your Gumroad account URL</div>
+</div>
+</div>
+<div class="card impact-low">
+  <div class="card-head">
+    <span class="secret-name">GUMROAD_NAME</span>
+    <span class="status-badge impact-low">⚪ OPTIONAL (low impact)</span>
+  </div>
+  <div class="desc">Your Gumroad display name</div>
+  <div class="engines">Used by: <code>GUMROAD_ENGINE</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Already set — your Gumroad username</div>
+</div>
+</div>
+<h2 class="cat">📧 Email</h2>
+<div class="card ok">
+  <div class="card-head">
+    <span class="secret-name">GMAIL_ADDRESS</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
+  </div>
+  <div class="desc">Gmail address SolarPunk sends briefings from/to</div>
+  <div class="engines">Used by: <code>BRIEFING_ENGINE</code> <code>EMAIL_BRAIN</code> <code>DISPATCH_HANDLER</code></div>
+  
+</div>
+<div class="card ok">
+  <div class="card-head">
+    <span class="secret-name">GMAIL_APP_PASSWORD</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
+  </div>
+  <div class="desc">Gmail App Password — NOT your regular password</div>
+  <div class="engines">Used by: <code>BRIEFING_ENGINE</code> <code>EMAIL_BRAIN</code> <code>NIGHTLY_DIGEST</code></div>
+  
+</div>
+<h2 class="cat">📣 Social</h2>
+<div class="card ok">
+  <div class="card-head">
+    <span class="secret-name">X_API_KEY</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
+  </div>
+  <div class="desc">Twitter/X API — auto-posts 24 queued tweets</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  
+</div>
+<div class="card impact-high">
+  <div class="card-head">
+    <span class="secret-name">X_API_SECRET</span>
+    <span class="status-badge impact-high">⚪ OPTIONAL (high impact)</span>
+  </div>
+  <div class="desc">Twitter/X API Secret</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as X_API_KEY above</div>
+</div>
+</div>
+<div class="card impact-high">
+  <div class="card-head">
+    <span class="secret-name">X_ACCESS_TOKEN</span>
+    <span class="status-badge impact-high">⚪ OPTIONAL (high impact)</span>
+  </div>
+  <div class="desc">Twitter/X Access Token</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as X_API_KEY above</div>
+</div>
+</div>
+<div class="card impact-high">
+  <div class="card-head">
+    <span class="secret-name">X_ACCESS_SECRET</span>
+    <span class="status-badge impact-high">⚪ OPTIONAL (high impact)</span>
+  </div>
+  <div class="desc">Twitter/X Access Secret</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as X_API_KEY above</div>
+</div>
+</div>
+<div class="card impact-high">
+  <div class="card-head">
+    <span class="secret-name">REDDIT_CLIENT_ID</span>
+    <span class="status-badge impact-high">⚪ OPTIONAL (high impact)</span>
+  </div>
+  <div class="desc">Reddit API — auto-posts to relevant subreddits</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Go to reddit.com/prefs/apps</div>
+<div class="step"><span class="step-n">2</span>Click 'Create App' at bottom</div>
+<div class="step"><span class="step-n">3</span>Type: 'script' | Name: 'SolarPunk'</div>
+<div class="step"><span class="step-n">4</span>Redirect URI: http://localhost:8080</div>
+<div class="step"><span class="step-n">5</span>Copy Client ID (under 'personal use script')</div>
+<div class="step"><span class="step-n">6</span>Add as REDDIT_CLIENT_ID</div>
+</div>
+</div>
+<div class="card impact-high">
+  <div class="card-head">
+    <span class="secret-name">REDDIT_CLIENT_SECRET</span>
+    <span class="status-badge impact-high">⚪ OPTIONAL (high impact)</span>
+  </div>
+  <div class="desc">Reddit API Secret</div>
+  <div class="engines">Used by: <code>SOCIAL_PROMOTER</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as REDDIT_CLIENT_ID — it's the 'secret' field</div>
+</div>
+</div>
+<h2 class="cat">💸 Payments</h2>
+<div class="card impact-medium">
+  <div class="card-head">
+    <span class="secret-name">PAYPAL_CLIENT_ID</span>
+    <span class="status-badge impact-medium">⚪ OPTIONAL (medium impact)</span>
+  </div>
+  <div class="desc">PayPal — enables automatic revenue payouts to collaborators</div>
+  <div class="engines">Used by: <code>HUMAN_PAYOUT</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Go to developer.paypal.com</div>
+<div class="step"><span class="step-n">2</span>Log in with PayPal account</div>
+<div class="step"><span class="step-n">3</span>My Apps → Create App → name: 'SolarPunk'</div>
+<div class="step"><span class="step-n">4</span>Copy Client ID + Secret</div>
+<div class="step"><span class="step-n">5</span>Add: PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET</div>
+</div>
+</div>
+<div class="card impact-medium">
+  <div class="card-head">
+    <span class="secret-name">PAYPAL_CLIENT_SECRET</span>
+    <span class="status-badge impact-medium">⚪ OPTIONAL (medium impact)</span>
+  </div>
+  <div class="desc">PayPal Client Secret</div>
+  <div class="engines">Used by: <code>HUMAN_PAYOUT</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as PAYPAL_CLIENT_ID</div>
+</div>
+</div>
+<div class="card impact-low">
+  <div class="card-head">
+    <span class="secret-name">PAYPAL_MODE</span>
+    <span class="status-badge impact-low">⚪ OPTIONAL (low impact)</span>
+  </div>
+  <div class="desc">sandbox or live — start with sandbox for testing</div>
+  <div class="engines">Used by: <code>HUMAN_PAYOUT</code></div>
+  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Add GitHub Secret PAYPAL_MODE with value: sandbox (then switch to live later)</div>
+</div>
+</div>
+
+
+<footer>
+  SolarPunk™ · <a href="store.html">Store</a> · <a href="social.html">Social Queue</a> · <a href="dashboard.html">Dashboard</a><br>
+  Auto-generated by SECRETS_CHECKER engine
+</footer>
+</body>
+</html>
