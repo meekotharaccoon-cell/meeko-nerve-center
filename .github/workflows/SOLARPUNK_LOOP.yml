@@ -2,7 +2,7 @@ name: "🌱 SOLARPUNK LOOP — Self-Feeding Intelligence Cycle"
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 12 * * *'   # Daily at noon UTC
   workflow_dispatch:
     inputs:
       seed:
@@ -14,11 +14,7 @@ permissions:
   contents: write
 
 env:
-  PYTHONPATH:          mycelium
-  HF_TOKEN:            ${{ secrets.HF_TOKEN }}
-  GMAIL_ADDRESS:       ${{ secrets.GMAIL_ADDRESS }}
-  GMAIL_APP_PASSWORD:  ${{ secrets.GMAIL_APP_PASSWORD }}
-  GITHUB_TOKEN:        ${{ secrets.GITHUB_TOKEN }}
+  PYTHONPATH: mycelium
 
 jobs:
   solarpunk-loop:
@@ -40,9 +36,9 @@ jobs:
         run: |
           git config user.name 'SolarPunk'
           git config user.email 'solarpunk@meeko-nerve-center'
-          mkdir -p data
+          mkdir -p data mycelium
 
-      - name: Read last cycle outputs
+      - name: Read system state
         run: |
           python3 - <<'PYEOF'
           import json
@@ -50,85 +46,156 @@ jobs:
           from datetime import datetime
 
           data_dir = Path("data")
-          outputs  = {}
+          outputs = {}
           for f in sorted(data_dir.glob("*.json"))[-20:]:
               try: outputs[f.name] = json.loads(f.read_text())
               except: pass
 
-          brain    = outputs.get("brain_state.json", {})
-          biz      = outputs.get("business_factory_state.json", {})
-          engines  = [f.name for f in sorted(Path("mycelium").glob("*.py"))]
+          brain   = outputs.get("brain_state.json", {})
+          biz     = outputs.get("business_factory_state.json", {})
+          engines = [f.name for f in sorted(Path("mycelium").glob("*.py"))]
+          revenue = outputs.get("revenue_inbox.json", {})
 
           ctx = {
-              "cycle_timestamp":   datetime.now().isoformat(),
-              "total_engines":     len(engines),
-              "businesses_built":  len(biz.get("businesses_built", [])),
-              "brain_health":      brain.get("health_score", 0),
-              "total_loops":       brain.get("total_loops_completed", 0),
-              "data_files":        list(outputs.keys()),
+              "ts":               datetime.now().isoformat(),
+              "total_engines":    len(engines),
+              "engine_names":     engines[:30],
+              "businesses_built": len(biz.get("businesses_built", [])),
+              "brain_health":     brain.get("health_score", 0),
+              "total_loops":      brain.get("total_loops_completed", 0),
+              "total_revenue":    revenue.get("total_received", 0),
+              "total_to_gaza":    revenue.get("total_to_gaza", 0),
+              "data_files":       list(outputs.keys()),
           }
           Path("data/loop_context.json").write_text(json.dumps(ctx, indent=2))
-          print(f"Read {len(outputs)} data files | Engines: {len(engines)} | Businesses: {ctx['businesses_built']}")
+          print(f"State read: {len(engines)} engines | {ctx['businesses_built']} businesses | ${ctx['total_revenue']:.2f} total revenue")
           PYEOF
         continue-on-error: true
 
-      - name: Synthesize + Decide via AI_CLIENT
+      - name: Synthesize + Decide via Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          INPUT_SEED: ${{ github.event.inputs.seed }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
         run: |
           python3 - <<'PYEOF'
-          import os, json, sys
+          import os, json, requests
           from pathlib import Path
           from datetime import datetime
 
-          sys.path.insert(0, 'mycelium')
-          try:
-              from AI_CLIENT import ask_json
-              AI_OK = True
-          except Exception as e:
-              print(f"AI_CLIENT: {e}")
-              AI_OK = False
+          api_key  = os.environ.get("ANTHROPIC_API_KEY", "")
+          hf_key   = os.environ.get("HF_TOKEN", "")
+          seed     = os.environ.get("INPUT_SEED", "").strip()
+          has_gumroad = bool(os.environ.get("GUMROAD_SECRET", ""))
+          has_gmail   = bool(os.environ.get("GMAIL_ADDRESS", ""))
 
-          seed = os.environ.get("INPUT_SEED", "")
           ctx_f = Path("data/loop_context.json")
           ctx   = json.loads(ctx_f.read_text()) if ctx_f.exists() else {}
 
-          if AI_OK:
-              prompt = f"""You are SolarPunk — Meeko's autonomous AI agent. Current state:
-- Engines: {ctx.get('total_engines')} | Businesses built: {ctx.get('businesses_built')}
-- Brain health: {ctx.get('brain_health')} | Loops completed: {ctx.get('total_loops')}
-- Seed: {seed or '(none — full autonomy)'}
+          prompt = f"""You are SolarPunk — Meeko's autonomous AI revenue agent. Analyze state and decide.
 
-Decide 3 most impactful actions to maximize autonomous revenue.
+SYSTEM STATE:
+- Engines: {ctx.get('total_engines')} | Businesses: {ctx.get('businesses_built')}
+- Revenue: ${ctx.get('total_revenue', 0):.2f} total | ${ctx.get('total_to_gaza', 0):.2f} to Gaza
+- Brain health: {ctx.get('brain_health')} | Loops completed: {ctx.get('total_loops')}
+- Gumroad connected: {has_gumroad} | Email connected: {has_gmail}
+- Seed instruction: "{seed or '(none — full autonomy)'}"
+
+Decide the 3 highest-leverage actions to maximize autonomous revenue RIGHT NOW.
 Respond ONLY as JSON:
-{{"decisions":[{{"action":"...","why":"...","urgency":"now|next_cycle"}}],"key_insight":"...","meeko_message":"..."}}"""
+{{"decisions":[{{"action":"...","why":"...","urgency":"now|next_cycle","revenue_impact":"low|medium|high"}}],"key_insight":"...","meeko_message":"...","health_delta": 5}}"""
+
+          decisions = None
+          if api_key:
               try:
-                  decisions = ask_json(prompt, max_tokens=600) or {}
-              except Exception as e:
-                  print(f"AI error: {e}")
-                  decisions = {}
-          else:
-              decisions = {}
+                  r = requests.post(
+                      "https://api.anthropic.com/v1/messages",
+                      headers={"x-api-key": api_key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
+                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 800,
+                            "messages": [{"role": "user", "content": prompt}]},
+                      timeout=60
+                  )
+                  r.raise_for_status()
+                  text = r.json()["content"][0]["text"]
+                  s, e = text.find("{"), text.rfind("}") + 1
+                  if s >= 0: decisions = json.loads(text[s:e])
+                  print("✅ Claude synthesized decisions")
+              except Exception as ex:
+                  print(f"Anthropic error: {ex}")
+
+          if not decisions and hf_key:
+              try:
+                  r = requests.post(
+                      "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-72B-Instruct/v1/chat/completions",
+                      headers={"Authorization": f"Bearer {hf_key}"},
+                      json={"model": "Qwen/Qwen2.5-72B-Instruct",
+                            "messages": [{"role": "user", "content": prompt}], "max_tokens": 800},
+                      timeout=60
+                  )
+                  r.raise_for_status()
+                  text = r.json()["choices"][0]["message"]["content"]
+                  s, e = text.find("{"), text.rfind("}") + 1
+                  if s >= 0: decisions = json.loads(text[s:e])
+              except Exception as ex:
+                  print(f"HF error: {ex}")
 
           if not decisions:
               decisions = {
                   "decisions": [
-                      {"action": "Run BUSINESS_FACTORY to build new digital product", "why": "More products = more revenue", "urgency": "now"},
-                      {"action": "Deploy all pending landing pages", "why": "Staged pages don't earn money", "urgency": "now"},
-                      {"action": "Send queued social posts", "why": "Distribution is the gap", "urgency": "now"},
+                      {"action": "Run BUSINESS_FACTORY to build new digital product", "why": "More products = more revenue", "urgency": "now", "revenue_impact": "high"},
+                      {"action": "Publish all pending Gumroad listings", "why": "Unlisted products earn $0", "urgency": "now", "revenue_impact": "high"},
+                      {"action": "Generate + queue social posts for all products", "why": "Distribution is the gap", "urgency": "now", "revenue_impact": "medium"},
                   ],
-                  "key_insight": "Build → deploy → promote → repeat",
-                  "meeko_message": "SolarPunk loop running. Building revenue autonomously.",
+                  "key_insight": "Build → deploy → promote → repeat. Every idle product is lost revenue.",
+                  "meeko_message": "SolarPunk loop running autonomously.",
+                  "health_delta": 3,
               }
 
           Path("data/loop_decisions.json").write_text(json.dumps(decisions, indent=2))
           for d in decisions.get("decisions", []):
-              print(f"  [{d.get('urgency')}] {d.get('action')}")
-          print(f"\nTo Meeko: {decisions.get('meeko_message', '')}")
+              print(f"  [{d.get('urgency')}] [{d.get('revenue_impact','?')} impact] {d.get('action')}")
+          print(f"\nInsight: {decisions.get('key_insight', '')}")
+          print(f"To Meeko: {decisions.get('meeko_message', '')}")
           PYEOF
-        env:
-          INPUT_SEED: ${{ github.event.inputs.seed }}
+        continue-on-error: true
+
+      - name: Update brain health + seed next OMNIBRAIN
+        run: |
+          python3 - <<'PYEOF'
+          import json
+          from pathlib import Path
+          from datetime import datetime
+
+          df = Path("data/loop_decisions.json")
+          decisions = json.loads(df.read_text()) if df.exists() else {}
+          health_delta = decisions.get("health_delta", 3)
+
+          brain_f = Path("data/brain_state.json")
+          brain = json.loads(brain_f.read_text()) if brain_f.exists() else {}
+          old_h = brain.get("health_score", 40)
+          brain["health_score"] = min(100, old_h + health_delta)
+          brain["total_loops_completed"] = brain.get("total_loops_completed", 0) + 1
+          brain["last_loop"] = datetime.now().isoformat()
+          brain_f.write_text(json.dumps(brain, indent=2))
+          print(f"Health: {old_h} → {brain['health_score']} (+{health_delta})")
+
+          seed = {
+              "generated_at": datetime.now().isoformat(),
+              "from_loop": True,
+              "instructions": [d.get("action","") for d in decisions.get("decisions",[]) if d.get("urgency") == "now"],
+              "key_insight": decisions.get("key_insight",""),
+          }
+          Path("data/omnibrain_seed.json").write_text(json.dumps(seed, indent=2))
+          print(f"Seeded {len(seed['instructions'])} instructions for next OMNIBRAIN")
+          PYEOF
         continue-on-error: true
 
       - name: Email loop summary
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
           python3 - <<'PYEOF'
           import os, json, smtplib
@@ -142,25 +209,36 @@ Respond ONLY as JSON:
               print("No email creds — skipping")
               exit(0)
 
-          decisions = {}
-          df = Path("data/loop_decisions.json")
-          if df.exists(): decisions = json.loads(df.read_text())
-          ctx = {}
-          cf = Path("data/loop_context.json")
-          if cf.exists(): ctx = json.loads(cf.read_text())
+          decisions = json.loads(Path("data/loop_decisions.json").read_text()) if Path("data/loop_decisions.json").exists() else {}
+          ctx = json.loads(Path("data/loop_context.json").read_text()) if Path("data/loop_context.json").exists() else {}
 
-          body = (f"SOLARPUNK LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}\n\n"
-                  f"{decisions.get('meeko_message', 'Loop ran.')}\n\n"
-                  f"Key insight: {decisions.get('key_insight', '(none)')}\n\nDecisions:\n")
+          body = f"""SOLARPUNK LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+
+{decisions.get('meeko_message', 'Loop ran.')}
+
+KEY INSIGHT: {decisions.get('key_insight', '(none)')}
+
+DECISIONS:
+"""
           for i, d in enumerate(decisions.get("decisions", []), 1):
-              body += f"  {i}. [{d.get('urgency','?')}] {d.get('action','')}\n"
-          body += (f"\nEngines: {ctx.get('total_engines','?')} | "
-                   f"Businesses: {ctx.get('businesses_built','?')} | "
-                   f"Health: {ctx.get('brain_health','?')}\n\n— SolarPunk")
+              body += f"  {i}. [{d.get('urgency','?')}] [{d.get('revenue_impact','?')} impact] {d.get('action','')}\n"
+
+          body += f"""
+SYSTEM STATS:
+  Engines:   {ctx.get('total_engines','?')}
+  Revenue:   ${ctx.get('total_revenue', 0):.2f} total
+  → Gaza:    ${ctx.get('total_to_gaza', 0):.2f}
+  Health:    {ctx.get('brain_health','?')}/100
+  Loops:     {ctx.get('total_loops','?')}
+
+Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html
+Social queue: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html
+
+— SolarPunk™"""
 
           try:
               msg = MIMEText(body)
-              msg["Subject"] = f"[SolarPunk] Loop — {datetime.now().strftime('%b %d')}"
+              msg["Subject"] = f"[SolarPunk] Loop {datetime.now().strftime('%b %d')} — ${ctx.get('total_revenue',0):.2f} revenue | {ctx.get('total_engines','?')} engines"
               msg["From"] = gmail; msg["To"] = gmail
               with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
                   s.login(gmail, gpass); s.send_message(msg)
@@ -170,24 +248,8 @@ Respond ONLY as JSON:
           PYEOF
         continue-on-error: true
 
-      - name: Seed next OMNIBRAIN + commit
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit
         run: |
-          python3 - <<'PYEOF'
-          import json
-          from pathlib import Path
-          from datetime import datetime
-          seed = {"generated_at": datetime.now().isoformat(), "instructions": [], "from_loop": True}
-          df = Path("data/loop_decisions.json")
-          if df.exists():
-              d = json.loads(df.read_text())
-              seed["instructions"] = [x.get("action","") for x in d.get("decisions",[]) if x.get("urgency") == "now"]
-              seed["key_insight"]  = d.get("key_insight","")
-          Path("data/omnibrain_seed.json").write_text(json.dumps(seed, indent=2))
-          print(f"Seed written: {len(seed['instructions'])} instructions")
-          PYEOF
-
           git add data/
           git diff --staged --quiet && echo 'Nothing to commit' && exit 0
           git commit -m "🌱 loop $(date +%Y-%m-%dT%H:%M) [skip ci]"
