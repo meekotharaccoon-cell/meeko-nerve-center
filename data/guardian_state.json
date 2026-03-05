@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-05T00:00:34.322063",
+  "last_checked": "2026-03-05T00:07:07.083032",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -12,6 +12,7 @@
     "ai_council.py",
     "INCOME_ARCHITECT.py",
     "SYNTHESIS_FACTORY.py",
+    "BUSINESS_FACTORY.py",
     "GUMROAD_ENGINE.py",
     "NEURON_B.py",
     "HUMAN_CONNECTOR.py",
