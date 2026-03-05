@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gaza Rose Gallery — $1 AI Art Prints</title>
+<meta name="description" content="$1 AI art prints. 70¢ goes directly to Gaza aid. Built by SolarPunk™.">
+<meta name="keywords" content="gaza art, palestinian art, ai art prints, digital art, solidarity, donate to gaza">
+<meta property="og:title" content="Gaza Rose Gallery — $1 AI Art Prints">
+<meta property="og:description" content="Every $1 print sends 70¢ to Gaza. Buy art. Fund resistance.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080810;--card:#0e0e1a;--border:rgba(255,255,255,.07);--green:#00ff88;--red:#ff2d6b;--gold:#ffd700;--text:rgba(255,255,255,.8)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,#0a0520,#080818,#140a08);padding:80px 20px 60px;text-align:center;border-bottom:1px solid rgba(255,45,107,.15)}
+.hero-eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);opacity:.7;margin-bottom:16px}
+.hero h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:16px}
+.hero h1 span{color:var(--red)}
+.hero-sub{color:rgba(255,255,255,.5);font-size:1rem;max-width:520px;margin:0 auto 32px;line-height:1.7}
+.impact-bar{display:inline-flex;gap:32px;background:rgba(255,45,107,.06);border:1px solid rgba(255,45,107,.2);border-radius:16px;padding:18px 32px;margin-bottom:36px;flex-wrap:wrap;justify-content:center}
+.impact-stat{text-align:center}
+.impact-num{display:block;font-size:1.6rem;font-weight:800;color:var(--red)}
+.impact-label{font-size:.7rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em}
+.flow{display:inline-flex;align-items:center;gap:10px;font-size:.85rem;color:rgba(255,255,255,.4);background:rgba(0,0,0,.3);border-radius:10px;padding:10px 20px;flex-wrap:wrap;justify-content:center}
+.flow span{color:#fff;font-weight:700}
+.flow-arrow{color:rgba(255,255,255,.2)}
+
+/* GALLERY */
+.gallery-section{max-width:1100px;margin:0 auto;padding:60px 20px}
+.section-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px}
+.section-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:6px}
+.section-sub{color:rgba(255,255,255,.35);font-size:.85rem;margin-bottom:36px}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+
+/* ART CARD */
+.art-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s ease;cursor:pointer}
+.art-card:hover{border-color:rgba(255,45,107,.4);transform:translateY(-4px);box-shadow:0 20px 60px rgba(255,45,107,.1)}
+.art-preview{height:220px;position:relative;display:flex;align-items:center;justify-content:center;font-size:5rem;overflow:hidden}
+.art-badge{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.8);border:1px solid rgba(255,45,107,.4);border-radius:20px;padding:4px 12px;font-size:.7rem;color:var(--red);backdrop-filter:blur(8px)}
+.art-info{padding:20px}
+.art-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:6px}
+.art-desc{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.6;margin-bottom:14px}
+.art-split{display:flex;gap:8px;margin-bottom:14px}
+.split-item{flex:1;background:rgba(255,255,255,.03);border-radius:8px;padding:8px 10px;text-align:center}
+.split-pct{display:block;font-size:1rem;font-weight:800}
+.split-pct.gaza{color:var(--red)}
+.split-pct.loop{color:var(--green)}
+.split-label{font-size:.6rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em}
+.buy-btn{display:block;text-align:center;background:linear-gradient(135deg,#c41230,#ff2d6b);color:#fff;font-weight:800;font-size:.9rem;padding:12px;border-radius:10px;text-decoration:none;transition:opacity .2s}
+.buy-btn:hover{opacity:.85}
+.buy-price{font-size:.75rem;opacity:.7;margin-left:6px;font-weight:400}
+
+/* GRADIENT THEMES FOR EACH ART PIECE */
+.art1{background:linear-gradient(135deg,#1a0a0a,#3d0d1a,#1a0a0a)}
+.art2{background:linear-gradient(135deg,#0a1a0a,#1a3d1a,#0a1a0a)}
+.art3{background:linear-gradient(135deg,#0a0a1a,#0d1a3d,#0a0a1a)}
+.art4{background:linear-gradient(135deg,#1a1a0a,#3d3d0d,#1a1a0a)}
+.art5{background:linear-gradient(135deg,#1a0a1a,#3d0d3d,#1a0a1a)}
+.art6{background:linear-gradient(135deg,#0a1a1a,#0d3d3d,#0a1a1a)}
+.art7{background:linear-gradient(135deg,#1a0a0a,#2a1a0a,#3d1a0d)}
+
+/* HOW IT WORKS */
+.how-section{background:rgba(255,255,255,.015);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 20px}
+.how-inner{max-width:860px;margin:0 auto;text-align:center}
+.how-inner h2{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:8px}
+.how-inner p{color:rgba(255,255,255,.35);margin-bottom:36px}
+.loop-diagram{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;max-width:700px;margin:0 auto}
+.loop-step{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-align:center;min-width:120px}
+.loop-step .icon{font-size:1.5rem;margin-bottom:6px}
+.loop-step .lbl{font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.4}
+.loop-step .amt{font-size:.95rem;font-weight:800;color:var(--red)}
+.loop-arrow{color:rgba(255,255,255,.15);font-size:1.2rem;padding:0 8px}
+
+/* CTA */
+.cta{padding:60px 20px;text-align:center}
+.cta h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:8px}
+.cta p{color:rgba(255,255,255,.35);margin-bottom:28px}
+.cta-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-btn{padding:14px 28px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s}
+.cta-primary{background:var(--red);color:#fff}
+.cta-secondary{background:rgba(255,255,255,.05);border:1px solid var(--border);color:rgba(255,255,255,.6)}
+
+footer{text-align:center;padding:28px 20px;color:rgba(255,255,255,.2);font-size:.75rem;border-top:1px solid var(--border)}
+footer a{color:var(--red);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">🌹 SolarPunk™ Presents</div>
+  <h1>Gaza Rose<br><span>Art Gallery</span></h1>
+  <p class="hero-sub">AI-generated art prints, $1 each. 70¢ goes directly to Gaza aid organizations. 30¢ funds the loop that keeps creating.</p>
+
+  <div class="impact-bar">
+    <div class="impact-stat"><span class="impact-num">$0.70</span><span class="impact-label">per print to Gaza</span></div>
+    <div class="impact-stat"><span class="impact-num">7</span><span class="impact-label">prints available</span></div>
+    <div class="impact-stat"><span class="impact-num">$1</span><span class="impact-label">each. always.</span></div>
+    <div class="impact-stat"><span class="impact-num">∞</span><span class="impact-label">the loop</span></div>
+  </div>
+
+  <div class="flow">
+    You pay <span>$1</span>
+    <span class="flow-arrow">→</span>
+    <span>70¢</span> to Gaza (PCRF)
+    <span class="flow-arrow">→</span>
+    <span>30¢</span> to Loop Fund
+    <span class="flow-arrow">→</span>
+    Loop funds itself
+    <span class="flow-arrow">→</span>
+    <span>∞</span>
+  </div>
+</div>
+
+<div class="gallery-section">
+  <p class="section-label">Original Digital Art</p>
+  <h2 class="section-title">Choose Your Print</h2>
+  <p class="section-sub">Click any print to buy for $1. Instant download. No subscription. 70¢ goes to Palestinian aid.</p>
+
+  <div class="art-grid">
+
+    <div class="art-card">
+      <div class="art-preview art1">
+        🕊️
+        <span class="art-badge">NEW</span>
+      </div>
+      <div class="art-info">
+        <div class="art-title">White Doves Over Gaza</div>
+        <div class="art-desc">Seven white doves ascending at dawn above a scarred cityscape. Peace as defiance. Generated by SolarPunk AI.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art2">
+        🫒
+      </div>
+      <div class="art-info">
+        <div class="art-title">Ancient Olive Grove</div>
+        <div class="art-desc">A thousand-year-old olive tree, roots deep in Palestinian soil. Roots that cannot be removed. Lush, vivid, defiant.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art3">
+        🧵
+      </div>
+      <div class="art-info">
+        <div class="art-title">Tatreez Pattern — Blue &amp; Gold</div>
+        <div class="art-desc">Traditional Palestinian embroidery pattern — tatreez — in deep blue and gold. Each stitch carries a story.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art4">
+        🌊
+      </div>
+      <div class="art-info">
+        <div class="art-title">Gaza Coastline at Dusk</div>
+        <div class="art-desc">The Mediterranean at golden hour, viewed from Gaza's shore. The sea remembers everything. Warm, calm, eternal.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art5">
+        ✨
+      </div>
+      <div class="art-info">
+        <div class="art-title">Star of Hope — Night Sky</div>
+        <div class="art-desc">A single brilliant star over dark hills. The kind of sky that outlasts everything. Minimalist. Powerful. Still.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art6">
+        🌿
+      </div>
+      <div class="art-info">
+        <div class="art-title">Pomegranate Season</div>
+        <div class="art-desc">Split-open pomegranates bursting with ruby seeds — a symbol of Gaza's abundance and generosity. Rich, textured, alive.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-preview art7">
+        🌙
+      </div>
+      <div class="art-info">
+        <div class="art-title">Night Garden</div>
+        <div class="art-desc">Moonlit jasmine growing from rubble — life insisting on beauty against all odds. A garden that refuses to disappear.</div>
+        <div class="art-split">
+          <div class="split-item"><span class="split-pct gaza">70¢</span><span class="split-label">→ Gaza Aid</span></div>
+          <div class="split-item"><span class="split-pct loop">30¢</span><span class="split-label">→ Loop Fund</span></div>
+        </div>
+        <a class="buy-btn" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">Buy Print<span class="buy-price">$1</span></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="how-section">
+  <div class="how-inner">
+    <h2>How the Loop Works</h2>
+    <p>Every dollar you spend creates more dollars going to Gaza. Autonomous, permanent, self-reinforcing.</p>
+    <div class="loop-diagram">
+      <div class="loop-step">
+        <div class="icon">💳</div>
+        <div class="amt">$1.00</div>
+        <div class="lbl">You buy a print</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step">
+        <div class="icon">🌹</div>
+        <div class="amt" style="color:var(--red)">70¢</div>
+        <div class="lbl">→ Gaza (PCRF)</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step">
+        <div class="icon">⚡</div>
+        <div class="amt" style="color:var(--green)">30¢</div>
+        <div class="lbl">→ Loop Fund</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step">
+        <div class="icon">🤖</div>
+        <div class="amt">AUTO</div>
+        <div class="lbl">AI reinvests loop</div>
+      </div>
+      <div class="loop-arrow">→</div>
+      <div class="loop-step">
+        <div class="icon">∞</div>
+        <div class="amt" style="color:var(--gold)">∞</div>
+        <div class="lbl">Repeats forever</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>More from SolarPunk™</h2>
+  <p>Digital products built by AI. Revenue splits ethically. 15% of all product sales → Gaza.</p>
+  <div class="cta-links">
+    <a class="cta-btn cta-primary" href="https://ko-fi.com/meekotharaccoon/shop" target="_blank">🛒 Buy on Ko-fi</a>
+    <a class="cta-btn cta-secondary" href="store.html">Full Store →</a>
+    <a class="cta-btn cta-secondary" href="https://www.pcrf.net" target="_blank">About PCRF →</a>
+    <a class="cta-btn cta-secondary" href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" target="_blank">Fork SolarPunk →</a>
+  </div>
+</div>
+
+<footer>
+  Built by <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center">SolarPunk™</a> — autonomous AI building for Gaza ·
+  Aid via <a href="https://www.pcrf.net">PCRF</a> (EIN 93-1057665, 4-star Charity Navigator) ·
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
+</footer>
+
+</body>
+</html>
