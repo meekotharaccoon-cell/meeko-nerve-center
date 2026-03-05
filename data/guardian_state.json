@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-05T09:45:08.819777",
+  "last_checked": "2026-03-05T09:57:20.671580",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -30,6 +30,7 @@
     "GRANT_HUNTER.py",
     "GUARDIAN.py",
     "CONTENT_HARVESTER.py",
+    "GITHUB_POSTER.py",
     "REVENUE_FLYWHEEL.py",
     "MEMORY_PALACE.py",
     "GRANT_APPLICANT.py",
