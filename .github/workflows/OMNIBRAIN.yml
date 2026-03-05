@@ -1,11 +1,11 @@
-name: SolarPunk OMNIBRAIN v4 — Autonomous Operations
+name: SolarPunk OMNIBRAIN v5 — Autonomous Operations
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # 6am UTC — Morning briefing window
-    - cron: '0 12 * * *'  # Noon UTC — Midday cycle
-    - cron: '0 18 * * *'  # 6pm UTC — Afternoon cycle
-    - cron: '0 21 * * *'  # 9pm UTC — Evening report window
+    - cron: '0 6 * * *'   # 6am UTC
+    - cron: '0 12 * * *'  # Noon UTC
+    - cron: '0 18 * * *'  # 6pm UTC
+    - cron: '0 21 * * *'  # 9pm UTC
   workflow_dispatch:
     inputs:
       reason:
@@ -33,6 +33,7 @@ env:
   REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
   REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
   REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+  MEEKO_AFFILIATE_LINK: autonomoushum-20
 
 jobs:
   solarpunk-brain:
@@ -127,8 +128,7 @@ jobs:
         continue-on-error: true
 
       # ═══════════════════════════════════════════════
-      # PHASE 6: BUSINESS FACTORY (NEW)
-      # Builds complete businesses from scratch every cycle
+      # PHASE 6: BUSINESS FACTORY
       # ═══════════════════════════════════════════════
       - name: Phase 6a — Build new business (BUSINESS_FACTORY)
         run: python mycelium/BUSINESS_FACTORY.py || echo "Business factory offline"
@@ -138,7 +138,11 @@ jobs:
         run: python mycelium/AFFILIATE_MAXIMIZER.py || echo "Affiliate maximizer offline"
         continue-on-error: true
 
-      - name: Phase 6c — Platform connections (CONNECTION_FORGE)
+      - name: Phase 6c — Deploy landing pages live (LANDING_DEPLOYER)
+        run: python mycelium/LANDING_DEPLOYER.py || echo "Landing deployer offline"
+        continue-on-error: true
+
+      - name: Phase 6d — Platform connections (CONNECTION_FORGE)
         run: python mycelium/CONNECTION_FORGE.py || echo "Connection forge offline"
         continue-on-error: true
 
