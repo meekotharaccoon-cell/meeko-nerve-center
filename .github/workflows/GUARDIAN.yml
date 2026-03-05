@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-# Skips our own automation to prevent infinite loops
 jobs:
   watch:
     runs-on: ubuntu-latest
@@ -16,7 +15,9 @@ jobs:
       !startsWith(github.event.head_commit.message, '[synthesis]') &&
       !contains(github.event.head_commit.message, 'loop [') &&
       !contains(github.event.head_commit.message, 'RESTORE') &&
-      !contains(github.event.head_commit.message, 'checkpoint')
+      !contains(github.event.head_commit.message, 'checkpoint') &&
+      !contains(github.event.head_commit.message, '[skip ci]') &&
+      !contains(github.event.head_commit.message, 'brain ')
     permissions:
       contents: write
 
@@ -56,7 +57,6 @@ jobs:
                   m["Subject"] = subj; m["From"] = g; m["To"] = g
                   with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
                       s.login(g, p); s.send_message(m)
-                  print("Alert sent")
               except Exception as e: print(f"Alert err: {e}")
 
           wf_dir = Path(".github/workflows")
@@ -79,35 +79,10 @@ jobs:
 
           if catastrophe:
               print(f"CATASTROPHE! Missing WF: {deleted_wf} | Engines: {deleted_eng[:5]}")
-              save_f = Path("saves/last_good_state.json")
-              if save_f.exists():
-                  try:
-                      save = json.loads(save_f.read_text())
-                      restored = []
-                      for fpath, content in save.get("files", {}).items():
-                          p = Path(fpath)
-                          p.parent.mkdir(parents=True, exist_ok=True)
-                          p.write_text(content)
-                          restored.append(fpath)
-                      subprocess.run(["git","add","-A"])
-                      r = subprocess.run(["git","diff","--cached","--quiet"])
-                      if r.returncode != 0:
-                          subprocess.run(["git","commit","-m",f"[guardian] auto-restore {len(restored)} files -- {datetime.now().strftime('%H:%M')}"])
-                          subprocess.run(["git","pull","--rebase","origin","main"])
-                          subprocess.run(["git","push","origin","main"])
-                          alert("SOLARPUNK AUTO-RESTORED",
-                              f"Catastrophe detected + auto-fixed.\nRestored {len(restored)} files:\n"+"\n".join(restored[:20])+"\n\n-- Guardian")
-                          print(f"Auto-restored {len(restored)} files!")
-                  except Exception as e:
-                      print(f"Restore err: {e}")
-                      alert("SOLARPUNK CATASTROPHE -- RUN BUILD",
-                          f"Deleted WF: {list(deleted_wf)}\nDeleted engines: {deleted_eng[:10]}\n\nRestore failed: {e}\n\nRun BUILD:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/actions")
-              else:
-                  alert("SOLARPUNK CATASTROPHE -- RUN BUILD",
-                      f"Deleted WF: {list(deleted_wf)}\nDeleted engines: {deleted_eng[:10]}\n\nRun BUILD:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/actions")
+              alert("SOLARPUNK CATASTROPHE",
+                  f"Deleted WF: {list(deleted_wf)}\nDeleted engines: {deleted_eng[:10]}\n\nRun RUN_NOW:\nhttps://github.com/meekotharaccoon-cell/meeko-nerve-center/actions")
               sys.exit(1)
 
-          # Healthy -- save state + snapshot
           sf.write_text(json.dumps({
               "last_checked": datetime.now().isoformat(),
               "workflow_names": workflows,
@@ -119,7 +94,7 @@ jobs:
               snap = {}
               for w in wf_dir.glob("*.yml"):
                   snap[str(w)] = w.read_text()
-              for eng in ["SYNAPSE.py","NEURON_A.py","NEURON_B.py","REVENUE_FLYWHEEL.py"]:
+              for eng in ["OMNIBUS.py","BUSINESS_FACTORY.py","REVENUE_LOOP.py","AI_CLIENT.py"]:
                   p = my_dir / eng
                   if p.exists():
                       try: snap[str(p)] = p.read_text()
@@ -128,16 +103,17 @@ jobs:
               Path("saves/last_good_state.json").write_text(json.dumps({
                   "timestamp": datetime.now().isoformat(), "files": snap
               }))
-              print(f"Saved snapshot: {len(snap)} files")
+              print(f"Snapshot: {len(snap)} files saved")
 
           print(f"Guardian OK: {len(workflows)} workflows, {len(engines)} engines")
           PYEOF
 
       - name: Commit checkpoint
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add data/guardian_state.json saves/ 2>/dev/null || true
           git diff --cached --quiet && echo "Clean" && exit 0
           git commit -m "[guardian] checkpoint $(date +%H:%M) -- healthy"
-          git pull --rebase origin main || true
-          git push origin main
+          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
         continue-on-error: true
