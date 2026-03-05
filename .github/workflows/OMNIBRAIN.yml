@@ -22,7 +22,9 @@ env:
   GMAIL_ADDRESS:           ${{ secrets.GMAIL_ADDRESS }}
   GMAIL_APP_PASSWORD:      ${{ secrets.GMAIL_APP_PASSWORD }}
   GITHUB_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
-  GUMROAD_ACCESS_TOKEN:    ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  GUMROAD_SECRET:          ${{ secrets.GUMROAD_SECRET }}
+  GUMROAD_ID:              ${{ secrets.GUMROAD_ID }}
+  GUMROAD_NAME:            ${{ secrets.GUMROAD_NAME }}
   HF_TOKEN:                ${{ secrets.HF_TOKEN }}
   KOFI_USERNAME:           ${{ secrets.KOFI_USERNAME }}
   KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
@@ -34,6 +36,8 @@ env:
   REDDIT_CLIENT_SECRET:    ${{ secrets.REDDIT_CLIENT_SECRET }}
   REDDIT_USERNAME:         ${{ secrets.REDDIT_USERNAME }}
   REDDIT_PASSWORD:         ${{ secrets.REDDIT_PASSWORD }}
+  PAYPAL_CLIENT_ID:        ${{ secrets.PAYPAL_CLIENT_ID }}
+  PAYPAL_CLIENT_SECRET:    ${{ secrets.PAYPAL_CLIENT_SECRET }}
   MEEKO_AFFILIATE_LINK:    autonomoushum-20
 
 jobs:
@@ -49,7 +53,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # NO cache: pip — we have no requirements.txt
 
       - name: Install dependencies
         run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser
@@ -67,13 +70,11 @@ jobs:
         run: |
           python -c "
           import sys, os; sys.path.insert(0, 'mycelium')
-          for s in ['HF_TOKEN','GMAIL_ADDRESS','GITHUB_TOKEN']:
+          secrets = ['HF_TOKEN','GMAIL_ADDRESS','GITHUB_TOKEN','ANTHROPIC_API_KEY',
+                     'GUMROAD_SECRET','GUMROAD_ID','GUMROAD_NAME','PAYPAL_CLIENT_ID']
+          for s in secrets:
               v = os.environ.get(s,'')
-              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')
-          try:
-              from AI_CLIENT import ask, ask_json; print('AI_CLIENT: OK')
-          except Exception as e: print(f'AI_CLIENT: {e}')
-          " || true
+              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')" || true
 
       - name: Run OMNIBUS
         run: python mycelium/OMNIBUS.py
