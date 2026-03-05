@@ -11,13 +11,13 @@ SHARED CONTEXT: data/ctx.json — written before each layer, read by
 engines that support it. All engines still write their own data/ files
 as before. OMNIBUS reads those files to build ctx progressively.
 
-DEPENDENCY ORDER (same 7 layers, now subprocess-safe):
+DEPENDENCY ORDER:
   L0: MEMORY     — Guardian, (memory loaded from disk)
   L1: INTEL      — Email, Scam, Calendar, Content, AI/Crypto, Neurons A+B
   L2: REV INTEL  — Grants, Flywheel, Income Architect, SEO
   L3: BUILD      — Revenue Loop, Art, Exchange, Grant Applicant
   L4: PUBLISH    — Social, Substack, Links, Connection, Human
-  L5: COLLECT    — Ko-fi, Gumroad, Sponsors
+  L5: COLLECT    — Ko-fi, Gumroad, Sponsors, Payment Tracker
   L6: SYNTH      — Synapse, Synthesis, Self Builder
   L7: REPORT     — Memory Palace, README, Nightly Digest
 """
@@ -29,16 +29,11 @@ DATA     = Path("data"); DATA.mkdir(exist_ok=True)
 MYCELIUM = Path("mycelium")
 PYTHON   = sys.executable
 
-# ── result tracking ──────────────────────────────────────────────────────────
+# ── result tracking ───────────────────────────────────────────────────────────
 results = {"ok": [], "failed": [], "skipped": [], "log": []}
 
 
 def eng(name, *, required=False, timeout=120):
-    """
-    Run mycelium/{name}.py as a subprocess.
-    Captures stdout/stderr. Updates results dict.
-    Writes ctx.json before each call so engines can optionally read it.
-    """
     script = MYCELIUM / f"{name}.py"
     if not script.exists():
         results["skipped"].append(name)
@@ -59,10 +54,8 @@ def eng(name, *, required=False, timeout=120):
         ok = proc.returncode == 0
 
         entry = {
-            "engine": name,
-            "status": "ok" if ok else "error",
-            "code": proc.returncode,
-            "elapsed": elapsed,
+            "engine": name, "status": "ok" if ok else "error",
+            "code": proc.returncode, "elapsed": elapsed,
             "stdout_tail": proc.stdout[-400:] if proc.stdout else "",
             "stderr_tail": proc.stderr[-400:] if proc.stderr else "",
         }
@@ -75,7 +68,6 @@ def eng(name, *, required=False, timeout=120):
             results["failed"].append(name)
             print(f"  ❌ {name} ({elapsed}s) rc={proc.returncode}")
             if proc.stderr:
-                # Show last error line only
                 last_err = [l for l in proc.stderr.strip().splitlines() if l]
                 print(f"     {last_err[-1][:120]}" if last_err else "")
 
@@ -86,8 +78,7 @@ def eng(name, *, required=False, timeout=120):
         results["failed"].append(name)
         results["log"].append({"engine": name, "status": "timeout", "elapsed": elapsed})
         print(f"  ⏱  {name} timeout after {timeout}s")
-        if required:
-            raise
+        if required: raise
         return False
     except Exception as e:
         results["failed"].append(name)
@@ -97,7 +88,6 @@ def eng(name, *, required=False, timeout=120):
 
 
 def rj(fname, fallback=None):
-    """Read a JSON file from data/, return fallback on any error."""
     f = DATA / fname
     if f.exists():
         try: return json.loads(f.read_text())
@@ -106,7 +96,6 @@ def rj(fname, fallback=None):
 
 
 def write_ctx(extra=None):
-    """Write accumulated context to data/ctx.json for engines to consume."""
     ctx = {
         "run_id":      os.environ.get("GITHUB_RUN_ID", f"local-{int(time.time())}"),
         "cycle_start": datetime.now(timezone.utc).isoformat(),
@@ -125,6 +114,8 @@ def write_ctx(extra=None):
         "loop_result": rj("revenue_loop_last.json"),
         "live_url":    rj("revenue_loop_last.json").get("live_url"),
         "gumroad_url": rj("revenue_loop_last.json").get("gumroad_url"),
+        "exchange":    rj("email_exchange_state.json"),
+        "kofi_tracker": rj("kofi_tracker_state.json"),
         "engines_ok":    results["ok"][:],
         "engines_failed":results["failed"][:],
     }
@@ -145,35 +136,35 @@ def layer_0():
 
 def layer_1():
     print("\n━━━ L1: INTEL ━━━")
-    eng("EMAIL_BRAIN",    timeout=60)
-    eng("SCAM_SHIELD",    timeout=60)
-    eng("CALENDAR_BRAIN", timeout=30)
+    eng("EMAIL_BRAIN",       timeout=60)
+    eng("SCAM_SHIELD",       timeout=60)
+    eng("CALENDAR_BRAIN",    timeout=30)
     eng("CONTENT_HARVESTER", timeout=60)
-    eng("AI_WATCHER",    timeout=60)
-    eng("CRYPTO_WATCHER",timeout=60)
+    eng("AI_WATCHER",        timeout=60)
+    eng("CRYPTO_WATCHER",    timeout=60)
     write_ctx()
-    eng("NEURON_A",      timeout=90)
-    write_ctx()          # B sees A's output
-    eng("NEURON_B",      timeout=90)
+    eng("NEURON_A", timeout=90)
+    write_ctx()
+    eng("NEURON_B", timeout=90)
     write_ctx()
 
 def layer_2():
     print("\n━━━ L2: REVENUE INTEL ━━━")
-    eng("GRANT_HUNTER",    timeout=90)
-    eng("ETSY_SEO_ENGINE", timeout=60)
-    eng("INCOME_ARCHITECT",timeout=60)
+    eng("GRANT_HUNTER",     timeout=90)
+    eng("ETSY_SEO_ENGINE",  timeout=60)
+    eng("INCOME_ARCHITECT", timeout=60)
     write_ctx()
-    eng("REVENUE_FLYWHEEL",timeout=90)
+    eng("REVENUE_FLYWHEEL", timeout=90)
     write_ctx()
 
 def layer_3():
     print("\n━━━ L3: BUILD ━━━")
-    eng("REVENUE_LOOP",    timeout=180)  # build+deploy+gumroad
+    eng("REVENUE_LOOP",         timeout=180)
     write_ctx()
-    eng("ART_GENERATOR",   timeout=120)
+    eng("ART_GENERATOR",        timeout=120)
     eng("EMAIL_AGENT_EXCHANGE", timeout=90)
-    eng("GRANT_APPLICANT", timeout=90)
-    eng("HEALTH_BOOSTER",  timeout=60)
+    eng("GRANT_APPLICANT",      timeout=90)
+    eng("HEALTH_BOOSTER",       timeout=60)
     write_ctx()
 
 def layer_4():
@@ -187,28 +178,28 @@ def layer_4():
 
 def layer_5():
     print("\n━━━ L5: COLLECT ━━━")
-    eng("KOFI_ENGINE",           timeout=60)
-    eng("GUMROAD_ENGINE",        timeout=60)
-    eng("GITHUB_SPONSORS_ENGINE",timeout=60)
+    eng("KOFI_ENGINE",            timeout=60)
+    eng("GUMROAD_ENGINE",         timeout=60)
+    eng("GITHUB_SPONSORS_ENGINE", timeout=60)
+    eng("KOFI_PAYMENT_TRACKER",   timeout=60)  # reconcile payments → exchange ledger
     write_ctx()
 
 def layer_6():
     print("\n━━━ L6: SYNTH ━━━")
-    write_ctx()          # flush everything before synthesis
-    eng("SYNAPSE",          timeout=120)
     write_ctx()
-    eng("SYNTHESIS_FACTORY",timeout=120)
-    eng("SELF_BUILDER",     timeout=180)
-    # ARCHITECT: what new engines/capabilities should be built?
-    eng("ARCHITECT",        timeout=120)
+    eng("SYNAPSE",           timeout=120)
+    write_ctx()
+    eng("SYNTHESIS_FACTORY", timeout=120)
+    eng("SELF_BUILDER",      timeout=180)
+    eng("ARCHITECT",         timeout=120)
     write_ctx()
 
 def layer_7():
     print("\n━━━ L7: REPORT ━━━")
-    eng("MEMORY_PALACE",  timeout=60)
+    eng("MEMORY_PALACE",   timeout=60)
     eng("README_GENERATOR",timeout=60)
     eng("BRIEFING_ENGINE", timeout=60)
-    eng("NIGHTLY_DIGEST",  timeout=120)  # comprehensive nightly + system self-improvement
+    eng("NIGHTLY_DIGEST",  timeout=120)
     write_ctx()
 
 
@@ -217,7 +208,7 @@ def layer_7():
 # ─────────────────────────────────────────────────────────────────────────────
 
 def run():
-    t0 = time.time()
+    t0     = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     print(f"\n🧠 OMNIBUS v2 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
@@ -230,24 +221,25 @@ def run():
     elapsed = round(time.time() - t0)
     total   = len(results["ok"]) + len(results["failed"])
 
-    # Final manifest
     ctx = write_ctx()
     manifest = {
-        "run_id":     run_id,
-        "completed":  datetime.now(timezone.utc).isoformat(),
-        "elapsed_s":  elapsed,
+        "run_id":        run_id,
+        "completed":     datetime.now(timezone.utc).isoformat(),
+        "elapsed_s":     elapsed,
         "health_before": ctx.get("prev_health", 0),
         "health_after":  rj("brain_state.json").get("health_score", 0),
-        "live_url":   ctx.get("live_url"),
-        "engines_ok":    results["ok"],
-        "engines_failed":results["failed"],
-        "engines_skipped":results["skipped"],
-        "log":        results["log"],
+        "live_url":      ctx.get("live_url"),
+        "exchange_tasks":   ctx.get("exchange", {}).get("total_tasks", 0),
+        "exchange_earned":  ctx.get("exchange", {}).get("total_earned", 0),
+        "exchange_gaza":    ctx.get("exchange", {}).get("total_to_gaza", 0),
+        "engines_ok":      results["ok"],
+        "engines_failed":  results["failed"],
+        "engines_skipped": results["skipped"],
+        "log":             results["log"],
     }
     (DATA / "omnibus_last.json").write_text(json.dumps(manifest, indent=2))
 
-    # History (last 100 cycles)
-    hf = DATA / "omnibus_history.json"
+    hf   = DATA / "omnibus_history.json"
     hist = json.loads(hf.read_text()) if hf.exists() else []
     hist.append({k: v for k, v in manifest.items() if k != "log"})
     hf.write_text(json.dumps(hist[-100:], indent=2))
@@ -258,10 +250,10 @@ def run():
         print(f"   Failed: {', '.join(results['failed'])}")
     if results["skipped"]:
         print(f"   Skipped: {', '.join(results['skipped'])}")
-    health_after = manifest["health_after"]
-    print(f"   Health: {manifest['health_before']} → {health_after}")
+    print(f"   Health: {manifest['health_before']} → {manifest['health_after']}")
     if ctx.get("live_url"):
         print(f"   Live: {ctx['live_url']}")
+    print(f"   Exchange: {manifest['exchange_tasks']} tasks | ${manifest['exchange_earned']:.2f} earned | ${manifest['exchange_gaza']:.2f} → Gaza")
     return manifest
 
 
