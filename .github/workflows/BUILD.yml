@@ -4,22 +4,17 @@ on:
   workflow_dispatch:
     inputs:
       note:
-        description: 'What to focus on this build (optional)'
+        description: 'Focus for this build (blank = Claude decides)'
         required: false
         default: ''
 
 permissions:
   contents: write
 
-env:
-  HF_TOKEN:           ${{ secrets.HF_TOKEN }}
-  GMAIL_ADDRESS:      ${{ secrets.GMAIL_ADDRESS }}
-  GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-  GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,122 +32,148 @@ jobs:
           git config user.email 'build@solarpunk'
           mkdir -p data mycelium
 
-      - name: Self-Build via AI_CLIENT
+      - name: Build via Claude
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_NOTE: ${{ github.event.inputs.note }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
         run: |
           python3 - <<'PYEOF'
-          import os, json, sys, smtplib
+          import os, json, requests
           from pathlib import Path
           from datetime import datetime
-          from email.mime.text import MIMEText
 
-          sys.path.insert(0, 'mycelium')
-          try:
-              from AI_CLIENT import ask
-              AI_OK = True
-          except Exception as e:
-              print(f"AI_CLIENT error: {e}")
-              AI_OK = False
+          api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+          hf_key  = os.environ.get("HF_TOKEN", "")
+          note    = os.environ.get("BUILD_NOTE", "").strip()
 
-          note    = os.environ.get("BUILD_NOTE", os.environ.get("INPUT_NOTE", ""))
-          my_dir  = Path("mycelium")
-          engines = [f.name for f in my_dir.glob("*.py")]
+          engines   = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
+          data_files = sorted([f.name for f in Path("data").glob("*.json")]) if Path("data").exists() else []
 
-          tier_f = Path("data/tier_state.json")
-          tier_state = json.loads(tier_f.read_text()) if tier_f.exists() else {}
-          current_tier = tier_state.get("current_tier", 0)
-          next_tier = current_tier + 1
+          prompt = f"""You are SolarPunk — Meeko's autonomous AI revenue system building itself.
 
-          print(f"BUILD tier {current_tier} → {next_tier} | {len(engines)} engines | AI={'on' if AI_OK else 'off'}")
+CURRENT ENGINES: {engines}
+DATA FILES: {data_files}
+BUILD FOCUS: {note or 'Build the most impactful missing engine for autonomous revenue'}
 
-          self_built = []
-          if AI_OK:
-              prompt = f"""SolarPunk needs a new Python engine. Existing: {engines[:30]}
-
-Write ONE new engine for mycelium/ that:
-- Does NOT duplicate anything in the list above
-- Generates or amplifies revenue (affiliate, social, SEO, email, etc.)
-- Runs on GitHub Actions, no human input needed
-- Uses only: requests, smtplib, json, os, pathlib, datetime, re (stdlib)
-- Has load(), save(state), run(), if __name__=="__main__": run()
+Build ONE new Python engine for mycelium/ that:
+- Does NOT duplicate any engine listed above
+- Generates or amplifies revenue autonomously
+- Runs fully on GitHub Actions (no human input after setup)
+- Uses ONLY: requests, json, os, pathlib, datetime, smtplib, re (stdlib only)
+- Has a run() function and if __name__=="__main__": run()
+- Reads config from os.environ (GitHub Secrets)
 - Saves state to data/ENGINENAME_state.json
-- Under 180 lines, handles all exceptions
+- Under 200 lines, handles all exceptions gracefully
 
 Respond ONLY with:
 FILENAME: ENGINE_NAME.py
 ---
 <complete python code>
 ---"""
+
+          def call_anthropic(prompt):
+              r = requests.post(
+                  "https://api.anthropic.com/v1/messages",
+                  headers={"x-api-key": api_key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
+                  json={"model": "claude-sonnet-4-20250514", "max_tokens": 4000,
+                        "messages": [{"role": "user", "content": prompt}]},
+                  timeout=120
+              )
+              r.raise_for_status()
+              return r.json()["content"][0]["text"]
+
+          def call_hf(prompt):
+              for model in ["Qwen/Qwen2.5-72B-Instruct", "meta-llama/Llama-3.1-8B-Instruct"]:
+                  try:
+                      r = requests.post(
+                          f"https://api-inference.huggingface.co/models/{model}/v1/chat/completions",
+                          headers={"Authorization": f"Bearer {hf_key}"},
+                          json={"model": model, "messages": [{"role": "user", "content": prompt}], "max_tokens": 4000},
+                          timeout=120
+                      )
+                      r.raise_for_status()
+                      return r.json()["choices"][0]["message"]["content"]
+                  except Exception as e:
+                      print(f"HF/{model} failed: {e}")
+              raise RuntimeError("All AI backends failed")
+
+          text = ""
+          if api_key:
               try:
-                  text = ask([{"role": "user", "content": prompt}], max_tokens=3000)
-                  fname = ""; code_lines = []; in_code = False; dashes = 0
-                  for line in text.split("\n"):
-                      if line.startswith("FILENAME:"):
-                          fname = line.split("FILENAME:")[1].strip()
-                      elif line.strip() == "---":
-                          dashes += 1
-                          if dashes == 1: in_code = True
-                          elif dashes == 2: in_code = False
-                      elif in_code:
-                          code_lines.append(line)
-                  if fname and code_lines:
-                      code = "\n".join(code_lines)
-                      # Validate — no unsafe patterns
-                      for bad in ["os.system(", "subprocess.call(", "eval(", "exec("]:
-                          if bad in code:
-                              print(f"Safety check failed: {bad}")
-                              fname = ""
-                              break
-                      if fname and ".github" not in code:
-                          target = my_dir / fname
-                          if target.exists():
-                              fname = fname.replace(".py", f"_v{next_tier}.py")
-                              target = my_dir / fname
-                          target.write_text(code)
-                          self_built.append(fname)
-                          print(f"✅ Built: {fname} ({len(code_lines)} lines)")
+                  text = call_anthropic(prompt)
+                  print("✅ Claude responded")
               except Exception as e:
-                  print(f"Build error: {e}")
-
-          # Save state
-          tier_f.write_text(json.dumps({
-              "current_tier": next_tier,
-              "last_build": datetime.now().isoformat(),
-              "engines_count": len(engines) + len(self_built),
-              "note": note,
-              "self_built": self_built,
-          }, indent=2))
-
-          lf = Path("data/build_log.json")
-          log = json.loads(lf.read_text()) if lf.exists() else []
-          log.append({"tier": next_tier, "ts": datetime.now().isoformat(),
-                      "engines": len(engines), "built": self_built, "note": note})
-          lf.write_text(json.dumps(log[-100:], indent=2))
-
-          # Email
-          gmail = os.environ.get("GMAIL_ADDRESS", "")
-          gpass = os.environ.get("GMAIL_APP_PASSWORD", "")
-          if gmail and gpass and self_built:
+                  print(f"Anthropic error: {e}")
+          if not text and hf_key:
               try:
-                  body = f"BUILD tier {next_tier} complete.\n\nBuilt: {self_built}\nNote: {note or '(none)'}\n— SolarPunk"
-                  msg = MIMEText(body)
-                  msg["Subject"] = f"[SolarPunk] BUILD tier {next_tier} — {self_built}"
-                  msg["From"] = gmail; msg["To"] = gmail
-                  with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
-                      s.login(gmail, gpass); s.send_message(msg)
-              except: pass
+                  text = call_hf(prompt)
+                  print("✅ HuggingFace responded")
+              except Exception as e:
+                  print(f"HF error: {e}")
 
-          print(f"BUILD COMPLETE — tier {next_tier}")
+          if not text:
+              print("❌ No AI response — no API keys configured or all failed")
+              exit(0)
+
+          # Parse response
+          fname = ""
+          code_lines = []
+          in_code = False
+          dashes = 0
+          for line in text.split("\n"):
+              if line.startswith("FILENAME:"):
+                  fname = line.split("FILENAME:")[1].strip()
+              elif line.strip() == "---":
+                  dashes += 1
+                  if dashes == 1: in_code = True
+                  elif dashes == 2: in_code = False
+              elif in_code:
+                  code_lines.append(line)
+
+          if not fname or not code_lines:
+              print("❌ Could not parse response — bad format")
+              print(text[:500])
+              exit(0)
+
+          code = "\n".join(code_lines)
+
+          # Safety checks
+          blocked = ["os.system(", "eval(", "exec(", ".github", "git push", "git merge"]
+          for bad in blocked:
+              if bad in code:
+                  print(f"⛔ Safety block: {bad} found in generated code")
+                  exit(0)
+
+          if not fname.endswith(".py") or "/" in fname or "\\" in fname:
+              print(f"⛔ Bad filename: {fname}")
+              exit(0)
+
+          target = Path("mycelium") / fname
+          target.write_text(code)
+          print(f"✅ Built: {fname} ({len(code_lines)} lines)")
+
+          # Log
+          log_f = Path("data/build_log.json")
+          log = json.loads(log_f.read_text()) if log_f.exists() else []
+          log.append({"ts": datetime.now().isoformat(), "engine": fname, "note": note, "lines": len(code_lines)})
+          log_f.write_text(json.dumps(log[-100:], indent=2))
           PYEOF
-        env:
-          INPUT_NOTE: ${{ github.event.inputs.note }}
 
-      - name: Commit build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Syntax check all engines
+        run: |
+          ok=0; fail=0
+          for f in mycelium/*.py; do
+            python3 -m py_compile "$f" 2>/dev/null && ok=$((ok+1)) || { echo "⚠️ syntax error: $f"; fail=$((fail+1)); }
+          done
+          echo "✅ $ok engines OK | ⚠️ $fail syntax errors"
+
+      - name: Commit
         run: |
           git add data/ mycelium/
-          git diff --staged --quiet && echo "Nothing new" && exit 0
-          TIER=$(python3 -c "import json; print(json.loads(open('data/tier_state.json').read()).get('current_tier',0))" 2>/dev/null || echo "?")
-          git commit -m "[build] tier $TIER $(date +%Y-%m-%dT%H:%M)"
+          git diff --staged --quiet && echo "Nothing built" && exit 0
+          git commit -m "🔨 BUILD: $(date +%Y-%m-%dT%H:%M) — ${{ github.event.inputs.note || 'autonomous build' }}"
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
-        continue-on-error: true
