@@ -1,28 +1,24 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v4 — The real fixed orchestrator
-=========================================
-v4 changes vs v3:
-- Added GITHUB_POSTER (L4) — creates GitHub Releases per product, GITHUB_TOKEN only
-- Added SOCIAL_DASHBOARD (L4) — builds docs/social.html copy-paste board
-- CONNECTION_FORGE fixed (SyntaxError patched)
-- BRIEFING_ENGINE fixed (None[:10] TypeError patched)
-- AI_CLIENT updated (dead HF models replaced)
+OMNIBUS v5 — zero-API infrastructure complete
+==============================================
+v5 changes vs v4:
+- Added ENGINE_INTEGRITY (L0) — SHA-based tamper detection, GITHUB_TOKEN only
+- Added ISSUE_SYNC (L7) — auto-updates GitHub Issues with real credential state
+- Added GITHUB_POSTER + SOCIAL_DASHBOARD (L4) — already in v4
+- All 4 product issues auto-update on every cycle
+- Webhook infrastructure: WEBHOOK_RELAY.yml + DISPATCH_HANDLER ready for Ko-fi/Gumroad/Stripe
 
-CORRECT DEPENDENCY CHAIN:
-  L0  GUARDIAN              — load/save brain state
-  L1  EMAIL + INTEL         — read email, gather intel
-  L2  REVENUE INTEL         — grants, flywheel, SEO, income plan
-  L2b BUSINESS_FACTORY      — build new business (writes data/business_*.json)
-  L3  REVENUE_LOOP          — reads business file, deploys, Gumroad, social
-  L3b LANDING_DEPLOYER      — deploy any remaining undeployed businesses
-  L3c OTHER BUILD           — art, email exchange, health
-  L4  PUBLISH               — social posts, Substack, links, GitHub Releases, copy-paste board
-  L5  COLLECT               — Ko-fi, Gumroad, payment tracking
-  L6  ARCHITECT             — strategic plan (reads all state, writes plan)
-  L6b SELF_BUILDER          — reads architect plan, writes new engine
-  L6c SYNAPSE + SYNTHESIS   — synthesis
-  L7  REPORT                — memory, README, nightly digest (status page)
+FULL DEPENDENCY CHAIN:
+  L0  GUARDIAN + ENGINE_INTEGRITY — load brain state, verify all engine SHAs
+  L1  EMAIL + INTEL               — read email, gather intel
+  L2  REVENUE INTEL               — grants, flywheel, SEO, income plan
+  L2b BUSINESS_FACTORY            — build new business
+  L3  REVENUE_LOOP + BUILD        — deploy, Gumroad, social, art, health
+  L4  PUBLISH                     — social posts, GitHub Releases, copy-paste board
+  L5  COLLECT                     — Ko-fi, Gumroad, payment tracking
+  L6  SYNTH + PLAN                — SYNAPSE, SYNTHESIS, ARCHITECT, SELF_BUILDER
+  L7  REPORT + SYNC               — memory, README, briefing, digest, issue sync
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -37,7 +33,6 @@ results = {"ok": [], "failed": [], "skipped": [], "log": []}
 
 
 def eng(name, *, timeout=120):
-    """Run one engine as an isolated subprocess."""
     script = MYCELIUM / f"{name}.py"
     if not script.exists():
         results["skipped"].append(name)
@@ -104,28 +99,30 @@ def rj(fname, fallback=None):
 
 def write_ctx():
     ctx = {
-        "run_id":        os.environ.get("GITHUB_RUN_ID", f"local-{int(time.time())}"),
-        "cycle_start":   datetime.now(timezone.utc).isoformat(),
-        "amazon_tag":    os.environ.get("MEEKO_AFFILIATE_LINK", "autonomoushum-20"),
-        "prev_health":   rj("brain_state.json").get("health_score", 40),
-        "memory":        rj("memory_palace.json"),
-        "lessons":       rj("lessons.json", []),
-        "neuron_a":      rj("neuron_a_report.json"),
-        "neuron_b":      rj("neuron_b_report.json"),
-        "flywheel":      rj("flywheel_summary.json"),
-        "content":       rj("content_harvest.json"),
-        "seo":           rj("etsy_seo_output.json"),
-        "grants":        rj("grant_hunter_state.json"),
-        "loop_result":   rj("revenue_loop_last.json"),
-        "live_url":      rj("revenue_loop_last.json").get("live_url"),
-        "gumroad_url":   rj("revenue_loop_last.json").get("gumroad_url"),
-        "exchange":      rj("email_exchange_state.json"),
-        "kofi_tracker":  rj("kofi_tracker_state.json"),
-        "architect_plan":rj("architect_plan.json"),
-        "biz_factory":   rj("business_factory_state.json"),
-        "self_builder":  rj("self_builder_state.json"),
-        "engines_ok":    results["ok"][:],
-        "engines_failed":results["failed"][:],
+        "run_id":         os.environ.get("GITHUB_RUN_ID", f"local-{int(time.time())}"),
+        "cycle_start":    datetime.now(timezone.utc).isoformat(),
+        "amazon_tag":     os.environ.get("MEEKO_AFFILIATE_LINK", "autonomoushum-20"),
+        "prev_health":    rj("brain_state.json").get("health_score", 40),
+        "memory":         rj("memory_palace.json"),
+        "lessons":        rj("lessons.json", []),
+        "neuron_a":       rj("neuron_a_report.json"),
+        "neuron_b":       rj("neuron_b_report.json"),
+        "flywheel":       rj("flywheel_summary.json"),
+        "content":        rj("content_harvest.json"),
+        "seo":            rj("etsy_seo_output.json"),
+        "grants":         rj("grant_hunter_state.json"),
+        "loop_result":    rj("revenue_loop_last.json"),
+        "live_url":       rj("revenue_loop_last.json").get("live_url"),
+        "gumroad_url":    rj("revenue_loop_last.json").get("gumroad_url"),
+        "exchange":       rj("email_exchange_state.json"),
+        "kofi_tracker":   rj("kofi_tracker_state.json"),
+        "architect_plan": rj("architect_plan.json"),
+        "biz_factory":    rj("business_factory_state.json"),
+        "self_builder":   rj("self_builder_state.json"),
+        "integrity":      rj("engine_sha_registry.json"),
+        "revenue_inbox":  rj("revenue_inbox.json"),
+        "engines_ok":     results["ok"][:],
+        "engines_failed": results["failed"][:],
         "engines_skipped":results["skipped"][:],
     }
     (DATA / "ctx.json").write_text(json.dumps(ctx, indent=2, default=str))
@@ -134,14 +131,13 @@ def write_ctx():
 
 # ─────────────────────────────────────────────────────────────────────────────
 def layer_0():
-    """Memory & guardian — load brain state"""
-    print("\n━━━ L0: GUARDIAN ━━━")
-    eng("GUARDIAN", timeout=60)
+    print("\n━━━ L0: GUARDIAN + INTEGRITY ━━━")
+    eng("GUARDIAN",          timeout=60)
+    eng("ENGINE_INTEGRITY",  timeout=60)   # SHA scan — GITHUB_TOKEN only
     write_ctx()
 
 
 def layer_1():
-    """Intel — email, scams, calendar, content, market data"""
     print("\n━━━ L1: INTEL ━━━")
     eng("EMAIL_BRAIN",       timeout=90)
     eng("SCAM_SHIELD",       timeout=60)
@@ -157,7 +153,6 @@ def layer_1():
 
 
 def layer_2():
-    """Revenue Intel + Business Building — must run before REVENUE_LOOP"""
     print("\n━━━ L2: REVENUE INTEL ━━━")
     eng("GRANT_HUNTER",     timeout=90)
     eng("ETSY_SEO_ENGINE",  timeout=60)
@@ -166,47 +161,37 @@ def layer_2():
     eng("REVENUE_FLYWHEEL", timeout=90)
     write_ctx()
 
-    # CRITICAL: Build the business FIRST so REVENUE_LOOP has something to read
     print("\n━━━ L2b: BUSINESS FACTORY ━━━")
     eng("BUSINESS_FACTORY", timeout=180)
     write_ctx()
 
 
 def layer_3():
-    """Build — revenue loop reads the business built in L2b"""
     print("\n━━━ L3: BUILD ━━━")
-
-    # Deploy any undeployed businesses first
-    eng("LANDING_DEPLOYER", timeout=90)
+    eng("LANDING_DEPLOYER",    timeout=90)
     write_ctx()
-
-    # Full revenue loop: reads business file → injects affiliates → deploys → Gumroad → social → email
-    eng("REVENUE_LOOP", timeout=240)
+    eng("REVENUE_LOOP",        timeout=240)
     write_ctx()
-
-    # Other build engines
-    eng("ART_GENERATOR",        timeout=120)
-    eng("EMAIL_AGENT_EXCHANGE", timeout=120)
-    eng("GRANT_APPLICANT",      timeout=90)
-    eng("HEALTH_BOOSTER",       timeout=60)
+    eng("ART_GENERATOR",       timeout=120)
+    eng("EMAIL_AGENT_EXCHANGE",timeout=120)
+    eng("GRANT_APPLICANT",     timeout=90)
+    eng("HEALTH_BOOSTER",      timeout=60)
     write_ctx()
 
 
 def layer_4():
-    """Publish — social posts, GitHub Releases, copy-paste dashboard"""
     print("\n━━━ L4: PUBLISH ━━━")
-    eng("SOCIAL_PROMOTER",   timeout=90)
-    eng("SUBSTACK_ENGINE",   timeout=90)
-    eng("LINK_PAGE",         timeout=60)
-    eng("GITHUB_POSTER",     timeout=120)   # GitHub Releases — zero external APIs
-    eng("SOCIAL_DASHBOARD",  timeout=60)    # builds docs/social.html copy-paste board
-    eng("CONNECTION_FORGE",  timeout=90)
-    eng("HUMAN_CONNECTOR",   timeout=60)
+    eng("SOCIAL_PROMOTER",  timeout=90)
+    eng("SUBSTACK_ENGINE",  timeout=90)
+    eng("LINK_PAGE",        timeout=60)
+    eng("GITHUB_POSTER",    timeout=120)   # GitHub Releases — zero external APIs
+    eng("SOCIAL_DASHBOARD", timeout=60)    # docs/social.html copy-paste board
+    eng("CONNECTION_FORGE", timeout=90)
+    eng("HUMAN_CONNECTOR",  timeout=60)
     write_ctx()
 
 
 def layer_5():
-    """Collect — track payments, reconcile"""
     print("\n━━━ L5: COLLECT ━━━")
     eng("KOFI_ENGINE",            timeout=60)
     eng("GUMROAD_ENGINE",         timeout=60)
@@ -216,28 +201,25 @@ def layer_5():
 
 
 def layer_6():
-    """Synth — ARCHITECT plans first, then SELF_BUILDER reads the plan"""
     print("\n━━━ L6: SYNTH + PLAN ━━━")
     write_ctx()
     eng("SYNAPSE",           timeout=120)
     write_ctx()
     eng("SYNTHESIS_FACTORY", timeout=120)
     write_ctx()
-
-    # ARCHITECT must run before SELF_BUILDER
-    eng("ARCHITECT",    timeout=120)
+    eng("ARCHITECT",         timeout=120)
     write_ctx()
-    eng("SELF_BUILDER", timeout=240)
+    eng("SELF_BUILDER",      timeout=240)
     write_ctx()
 
 
 def layer_7():
-    """Report — update status page, README, memory, send digest"""
-    print("\n━━━ L7: REPORT ━━━")
+    print("\n━━━ L7: REPORT + SYNC ━━━")
     eng("MEMORY_PALACE",    timeout=60)
     eng("README_GENERATOR", timeout=60)
     eng("BRIEFING_ENGINE",  timeout=60)
     eng("NIGHTLY_DIGEST",   timeout=120)
+    eng("ISSUE_SYNC",       timeout=90)    # auto-update product issues — GITHUB_TOKEN only
     write_ctx()
 
 
@@ -246,12 +228,12 @@ def run():
     t0 = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
 
-    print(f"\n🧠 OMNIBUS v4 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🧠 OMNIBUS v5 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
     print("=" * 58)
 
     biz_before = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
-    print(f"   Business files before run: {max(0, biz_before)}")
+    print(f"   Businesses before run: {max(0, biz_before)}")
 
     for layer_fn in [layer_0, layer_1, layer_2, layer_3,
                      layer_4, layer_5, layer_6, layer_7]:
@@ -267,21 +249,21 @@ def run():
     biz_after = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
 
     manifest = {
-        "run_id":          run_id,
-        "completed":       datetime.now(timezone.utc).isoformat(),
-        "elapsed_s":       elapsed,
-        "health_before":   ctx.get("prev_health", 0),
-        "health_after":    rj("brain_state.json").get("health_score", 0),
+        "run_id":           run_id,
+        "completed":        datetime.now(timezone.utc).isoformat(),
+        "elapsed_s":        elapsed,
+        "health_before":    ctx.get("prev_health", 0),
+        "health_after":     rj("brain_state.json").get("health_score", 0),
         "businesses_built": max(0, biz_after),
-        "live_url":        ctx.get("live_url"),
-        "gumroad_url":     ctx.get("gumroad_url"),
-        "exchange_tasks":  ctx.get("exchange", {}).get("total_tasks", 0),
-        "exchange_earned": ctx.get("exchange", {}).get("total_earned", 0.0),
-        "exchange_gaza":   ctx.get("exchange", {}).get("total_to_gaza", 0.0),
-        "engines_ok":      results["ok"],
-        "engines_failed":  results["failed"],
-        "engines_skipped": results["skipped"],
-        "log":             results["log"],
+        "live_url":         ctx.get("live_url"),
+        "gumroad_url":      ctx.get("gumroad_url"),
+        "exchange_tasks":   ctx.get("exchange", {}).get("total_tasks", 0),
+        "exchange_earned":  ctx.get("exchange", {}).get("total_earned", 0.0),
+        "exchange_gaza":    ctx.get("exchange", {}).get("total_to_gaza", 0.0),
+        "engines_ok":       results["ok"],
+        "engines_failed":   results["failed"],
+        "engines_skipped":  results["skipped"],
+        "log":              results["log"],
     }
     (DATA / "omnibus_last.json").write_text(json.dumps(manifest, indent=2))
 
@@ -291,15 +273,17 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*58}")
-    print(f"🧠 OMNIBUS v4 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v5 done — {elapsed}s")
     print(f"   Engines: {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED:  {', '.join(results['failed'])}")
     print(f"   Health:  {manifest['health_before']} → {manifest['health_after']}")
-    print(f"   Businesses built: {manifest['businesses_built']}")
+    print(f"   Businesses: {manifest['businesses_built']}")
     if manifest.get("live_url"):
-        print(f"   Live URL: {manifest['live_url']}")
+        print(f"   Live: {manifest['live_url']}")
+    print(f"   Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html")
     print(f"   Social: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html")
+    print(f"   Webhooks: https://meekotharaccoon-cell.github.io/meeko-nerve-center/webhook.html")
     return manifest
 
 
