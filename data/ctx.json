@@ -1,6 +1,6 @@
 {
-  "run_id": "22705546954",
-  "cycle_start": "2026-03-05T06:33:27.150516+00:00",
+  "run_id": "22711517437",
+  "cycle_start": "2026-03-05T09:34:04.748848+00:00",
   "amazon_tag": "autonomoushum-20",
   "prev_health": 40,
   "memory": {
@@ -22,7 +22,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-05T06:33:26.249450+00:00",
+        "timestamp": "2026-03-05T09:34:03.388276+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 43,
@@ -30,20 +30,20 @@
         "loop_balance": 0,
         "total_sales": 0,
         "loop_cycles_count": 0,
-        "top_opportunity": "",
+        "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "code",
-          "google",
-          "workspace"
+          "speech",
+          "right",
+          "relicense"
         ]
       }
     ],
     "patterns": {},
     "total_cycles": 2,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-05T06:33:26.249450+00:00",
+    "last_updated": "2026-03-05T09:34:03.388276+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-05T06:33:26.249450+00:00",
+      "timestamp": "2026-03-05T09:34:03.388276+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 43,
@@ -51,11 +51,11 @@
       "loop_balance": 0,
       "total_sales": 0,
       "loop_cycles_count": 0,
-      "top_opportunity": "",
+      "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "code",
-        "google",
-        "workspace"
+        "speech",
+        "right",
+        "relicense"
       ]
     }
   },
@@ -73,9 +73,56 @@
     }
   ],
   "neuron_a": {
-    "opportunities": [],
-    "builder_thesis": "AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions",
-    "priority_build": "",
+    "opportunities": [
+      {
+        "name": "Gaza Rose Gallery Etsy SEO",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "high",
+        "action": "Generate 10 AI-optimized product descriptions with SEO keywords",
+        "estimated_value": "$50-200/month"
+      },
+      {
+        "name": "GitHub Sponsors",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "medium",
+        "action": "Enable at github.com/sponsors/meekotharaccoon-cell",
+        "estimated_value": "$20-100/month"
+      },
+      {
+        "name": "SolarPunk Newsletter on Substack",
+        "type": "growth",
+        "effort": "low",
+        "impact": "high",
+        "action": "Write first issue: I built a self-running AI agent for free",
+        "estimated_value": "audience + future paid"
+      },
+      {
+        "name": "Free API content pipeline",
+        "type": "system",
+        "effort": "low",
+        "impact": "medium",
+        "action": "HackerNews + Reddit JSON -> daily automated content",
+        "estimated_value": "zero-cost content stream"
+      },
+      {
+        "name": "Ko-fi promotion",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "high",
+        "action": "Share ko-fi.com/meekotharaccoon on social \u2014 first $5 triggers the loop",
+        "estimated_value": "$5-50/month"
+      }
+    ],
+    "builder_thesis": "Ko-fi + GitHub Sponsors = first dollars at zero spend",
+    "priority_build": "AFFILIATE_TRACKER.py - passive income while you sleep",
+    "free_apis_untapped": [
+      "Open-Meteo - free weather",
+      "HackerNews API - trending tech",
+      "Reddit JSON - community pulse"
+    ],
+    "meeko_action_needed": "Enable GitHub Sponsors at github.com/sponsors/meekotharaccoon-cell",
     "system_state": {
       "engines": [
         "AFFILIATE_MAXIMIZER.py",
@@ -130,6 +177,7 @@
         "brain_state.json",
         "business_ai_prompt_packs.json",
         "business_factory_state.json",
+        "business_github_actions_templates.json",
         "business_palestinian_art_prints.json",
         "calendar_brain_state.json",
         "connections.json",
@@ -183,20 +231,61 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-05T06:33:18.233940+00:00"
+      "timestamp": "2026-03-05T09:33:51.510256+00:00"
     },
-    "generated_at": "2026-03-05T06:33:18.480215+00:00"
+    "generated_at": "2026-03-05T09:33:51.964542+00:00"
   },
   "neuron_b": {
     "risks": [
       "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages"
     ],
-    "vetted_opportunities": [],
-    "refined_priority": "",
-    "generated_at": "2026-03-05T06:33:18.734587+00:00"
+    "vetted_opportunities": [
+      {
+        "name": "Gaza Rose Gallery Etsy SEO",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "high",
+        "action": "Generate 10 AI-optimized product descriptions with SEO keywords",
+        "estimated_value": "$50-200/month"
+      },
+      {
+        "name": "GitHub Sponsors",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "medium",
+        "action": "Enable at github.com/sponsors/meekotharaccoon-cell",
+        "estimated_value": "$20-100/month"
+      },
+      {
+        "name": "SolarPunk Newsletter on Substack",
+        "type": "growth",
+        "effort": "low",
+        "impact": "high",
+        "action": "Write first issue: I built a self-running AI agent for free",
+        "estimated_value": "audience + future paid"
+      },
+      {
+        "name": "Free API content pipeline",
+        "type": "system",
+        "effort": "low",
+        "impact": "medium",
+        "action": "HackerNews + Reddit JSON -> daily automated content",
+        "estimated_value": "zero-cost content stream"
+      },
+      {
+        "name": "Ko-fi promotion",
+        "type": "revenue",
+        "effort": "low",
+        "impact": "high",
+        "action": "Share ko-fi.com/meekotharaccoon on social \u2014 first $5 triggers the loop",
+        "estimated_value": "$5-50/month"
+      }
+    ],
+    "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
+    "generated_at": "2026-03-05T09:33:52.294095+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-05T06:33:20.801926+00:00",
+    "ts": "2026-03-05T09:33:55.650761+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -206,14 +295,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 2,
+          "cycles": 3,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-05T05:21:10.375983+00:00"
+          "last_run": "2026-03-05T06:33:24.007900+00:00"
         }
       },
       "grants": {
@@ -222,11 +311,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 2,
+          "cycles": 3,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-05T05:21:09.574808+00:00"
+          "last_run": "2026-03-05T06:33:23.268763+00:00"
         }
       },
       "sponsors": {
@@ -235,11 +324,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 2,
+          "cycles": 3,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-05T05:21:10.540812+00:00"
+          "last_run": "2026-03-05T06:33:24.173690+00:00"
         }
       },
       "exchange": {
@@ -248,14 +337,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 2,
+          "cycles": 3,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-05T05:21:09.449327+00:00"
+          "last_run": "2026-03-05T06:33:23.148212+00:00"
         }
       },
       "substack": {
@@ -264,11 +353,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 2,
+          "cycles": 3,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-05T05:21:10.161665+00:00"
+          "last_run": "2026-03-05T06:33:23.789739+00:00"
         }
       },
       "gumroad": {
@@ -281,37 +370,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-05T06:33:13.289449+00:00",
+    "timestamp": "2026-03-05T09:33:44.554574+00:00",
     "sources": {
       "hackernews": [
         {
-          "title": "Google Workspace CLI",
-          "url": "https://github.com/googleworkspace/cli",
-          "score": 403,
+          "title": "No right to relicense this project",
+          "url": "https://github.com/chardet/chardet/issues/327",
+          "score": 87,
           "source": "hackernews"
         },
         {
-          "title": "You Just Reveived",
-          "url": "https://dylan.gr/1772520728",
-          "score": 50,
+          "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
+          "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
+          "score": 64,
+          "source": "hackernews"
+        },
+        {
+          "title": "Google Workspace CLI",
+          "url": "https://github.com/googleworkspace/cli",
+          "score": 561,
           "source": "hackernews"
         },
         {
           "title": "Relicensing with AI-Assisted Rewrite",
           "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
-          "score": 38,
+          "score": 93,
           "source": "hackernews"
         },
         {
-          "title": "MacBook Neo",
-          "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
-          "score": 1700,
-          "source": "hackernews"
-        },
-        {
-          "title": "Building a new Flash",
-          "url": "https://bill.newgrounds.com/news/post/1607118",
-          "score": 478,
+          "title": "The L in \"LLM\" Stands for Lying",
+          "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
+          "score": 123,
           "source": "hackernews"
         }
       ],
@@ -326,7 +415,13 @@
         {
           "title": "I Created An Enterprise MCP Gateway",
           "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-          "hearts": 103,
+          "hearts": 105,
+          "source": "devto"
+        },
+        {
+          "title": "I Shipped Broken Code and Wrote an Article About It",
+          "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
+          "hearts": 27,
           "source": "devto"
         },
         {
@@ -334,25 +429,59 @@
           "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
           "hearts": 5,
           "source": "devto"
-        },
-        {
-          "title": "I Built a Voice-to-Code VS Code Extension That Runs Entirely On-Device",
-          "url": "https://dev.to/agentic_engineer/i-built-a-voice-to-code-vs-code-extension-that-runs-entirely-on-device-16gc",
-          "hearts": 6,
-          "source": "devto"
         }
       ]
     },
     "gaza_weather": {
-      "temp_c": 13.3,
+      "temp_c": 18.9,
       "vibe": "partly cloudy",
       "code": 2,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "code",
+        "word": "speech",
         "count": 2
+      },
+      {
+        "word": "right",
+        "count": 1
+      },
+      {
+        "word": "relicense",
+        "count": 1
+      },
+      {
+        "word": "project",
+        "count": 1
+      },
+      {
+        "word": "nvidia",
+        "count": 1
+      },
+      {
+        "word": "personaplex",
+        "count": 1
+      },
+      {
+        "word": "apple",
+        "count": 1
+      },
+      {
+        "word": "silicon:",
+        "count": 1
+      },
+      {
+        "word": "full",
+        "count": 1
+      },
+      {
+        "word": "duplex",
+        "count": 1
+      },
+      {
+        "word": "swift",
+        "count": 1
       },
       {
         "word": "google",
@@ -360,14 +489,6 @@
       },
       {
         "word": "workspace",
-        "count": 1
-      },
-      {
-        "word": "just",
-        "count": 1
-      },
-      {
-        "word": "reveived",
         "count": 1
       },
       {
@@ -383,15 +504,11 @@
         "count": 1
       },
       {
-        "word": "macbook",
+        "word": "stands",
         "count": 1
       },
       {
-        "word": "building",
-        "count": 1
-      },
-      {
-        "word": "flash",
+        "word": "lying",
         "count": 1
       },
       {
@@ -401,40 +518,12 @@
       {
         "word": "london's",
         "count": 1
-      },
-      {
-        "word": "hidden",
-        "count": 1
-      },
-      {
-        "word": "film",
-        "count": 1
-      },
-      {
-        "word": "clubs",
-        "count": 1
-      },
-      {
-        "word": "discoverable",
-        "count": 1
-      },
-      {
-        "word": "created",
-        "count": 1
-      },
-      {
-        "word": "enterprise",
-        "count": 1
-      },
-      {
-        "word": "gateway",
-        "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'Google Workspace CLI...' connects to Gaza resilience",
+        "hook": "How 'No right to relicense this project...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -456,7 +545,7 @@
     "status": "harvested"
   },
   "seo": {
-    "generated_at": "2026-03-05T06:33:20.411989+00:00",
+    "generated_at": "2026-03-05T09:33:54.918485+00:00",
     "total_listings": 10,
     "claude_enhanced": 0,
     "listings": [
@@ -481,7 +570,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:19.540819+00:00"
+        "generated_at": "2026-03-05T09:33:53.447093+00:00"
       },
       {
         "title": "White Doves Over the Mediterranean",
@@ -504,7 +593,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:19.671477+00:00"
+        "generated_at": "2026-03-05T09:33:53.634951+00:00"
       },
       {
         "title": "Olive Grove Eternal",
@@ -527,7 +616,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:19.757961+00:00"
+        "generated_at": "2026-03-05T09:33:53.781412+00:00"
       },
       {
         "title": "Tatreez Pattern Bloom",
@@ -550,7 +639,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:19.824981+00:00"
+        "generated_at": "2026-03-05T09:33:53.934000+00:00"
       },
       {
         "title": "Gaza Coastline at Golden Hour",
@@ -573,7 +662,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:19.924793+00:00"
+        "generated_at": "2026-03-05T09:33:54.109750+00:00"
       },
       {
         "title": "Star of Hope Rising",
@@ -596,7 +685,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:20.046311+00:00"
+        "generated_at": "2026-03-05T09:33:54.273390+00:00"
       },
       {
         "title": "Pomegranate Season",
@@ -619,7 +708,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:20.136686+00:00"
+        "generated_at": "2026-03-05T09:33:54.434638+00:00"
       },
       {
         "title": "Night Garden in Ruins",
@@ -642,7 +731,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:20.208690+00:00"
+        "generated_at": "2026-03-05T09:33:54.597415+00:00"
       },
       {
         "title": "Child with Balloon",
@@ -665,7 +754,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:20.328335+00:00"
+        "generated_at": "2026-03-05T09:33:54.752174+00:00"
       },
       {
         "title": "The Return - Sunflower Field",
@@ -688,20 +777,20 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T06:33:20.411973+00:00"
+        "generated_at": "2026-03-05T09:33:54.918470+00:00"
       }
     ],
     "note": "Copy-paste each into Etsy -> Add listing. Title as-is.",
     "status": "ready to post"
   },
   "grants": {
-    "cycles": 3,
-    "last_run": "2026-03-05T06:33:18.852130+00:00",
+    "cycles": 4,
+    "last_run": "2026-03-05T09:33:52.408017+00:00",
     "grants_scored": 20,
     "high_priority": []
   },
   "loop_result": {
-    "started_at": "2026-03-05T06:33:22.044849+00:00",
+    "started_at": "2026-03-05T09:33:57.335808+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -712,59 +801,181 @@
       "brain"
     ],
     "steps_failed": [],
-    "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
+    "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
     "gumroad_url": "https://meekotharacoon.gumroad.com",
     "posts": [
       {
         "platform": "twitter",
-        "text": "Just launched: SolarPunk GitHub Actions Templates \ud83c\udf39 GitHub Actions Templates \u2014 built by AI, 15% to Gaza \u2192 https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/ \u2014 $27, 15% to Gaza",
-        "queued_at": "2026-03-05T06:33:22.413963+00:00",
+        "text": "\ud83c\udf39 New: SolarPunk Notion Templates for Freelancers \u2014 Notion Templates for Freelancers \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/ $19, 15% to Gaza",
+        "queued_at": "2026-03-05T09:33:58.119552+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
+        "niche": "Notion Templates for Freelancers"
       },
       {
         "platform": "reddit",
-        "text": "Built this with AI: SolarPunk GitHub Actions Templates\n\nGitHub Actions Templates \u2014 built by AI, 15% to Gaza\n\nDetails: https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/\nBuy: https://meekotharacoon.gumroad.com\n\n15% of every sale funds Gaza aid.",
-        "queued_at": "2026-03-05T06:33:22.413963+00:00",
+        "text": "Built with AI: SolarPunk Notion Templates for Freelancers\n\nNotion Templates for Freelancers \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/\n15% \u2192 Gaza.",
+        "queued_at": "2026-03-05T09:33:58.119552+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
+        "niche": "Notion Templates for Freelancers"
       },
       {
         "platform": "linkedin",
-        "text": "New launch: SolarPunk GitHub Actions Templates\n\nGitHub Actions Templates \u2014 built by AI, 15% to Gaza\n\n$27 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
-        "queued_at": "2026-03-05T06:33:22.413963+00:00",
+        "text": "New launch: SolarPunk Notion Templates for Freelancers\nNotion Templates for Freelancers \u2014 built by AI, 15% to Gaza\n$19 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
+        "queued_at": "2026-03-05T09:33:58.119552+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
+        "niche": "Notion Templates for Freelancers"
       }
     ],
-    "completed_at": "2026-03-05T06:33:22.912769+00:00",
-    "elapsed_seconds": 0,
+    "completed_at": "2026-03-05T09:33:58.979815+00:00",
+    "elapsed_seconds": 1,
     "success": true
   },
-  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
   "gumroad_url": "https://meekotharacoon.gumroad.com",
   "exchange": {
-    "cycles": 3,
+    "cycles": 4,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-05T06:33:23.148212+00:00"
+    "last_run": "2026-03-05T09:33:59.212364+00:00"
   },
   "kofi_tracker": {
-    "cycles": 3,
+    "cycles": 4,
     "payments_matched": 0,
     "payments_unmatched": 0,
     "total_verified": 0.0,
     "processed_ids": [],
     "log": [],
-    "last_run": "2026-03-05T06:33:24.277953+00:00"
+    "last_run": "2026-03-05T09:34:00.300824+00:00"
   },
-  "architect_plan": {},
+  "architect_plan": {
+    "generated_at": "2026-03-05T09:34:02.496480+00:00",
+    "system_audit": {
+      "health": 40,
+      "total_loops": 0,
+      "engines_ok": [
+        "GUARDIAN",
+        "EMAIL_BRAIN",
+        "SCAM_SHIELD",
+        "CALENDAR_BRAIN",
+        "CONTENT_HARVESTER",
+        "AI_WATCHER",
+        "CRYPTO_WATCHER",
+        "NEURON_A",
+        "NEURON_B",
+        "GRANT_HUNTER",
+        "ETSY_SEO_ENGINE",
+        "INCOME_ARCHITECT",
+        "REVENUE_FLYWHEEL",
+        "BUSINESS_FACTORY",
+        "LANDING_DEPLOYER",
+        "REVENUE_LOOP",
+        "ART_GENERATOR",
+        "EMAIL_AGENT_EXCHANGE",
+        "GRANT_APPLICANT",
+        "HEALTH_BOOSTER",
+        "SOCIAL_PROMOTER",
+        "SUBSTACK_ENGINE",
+        "LINK_PAGE",
+        "HUMAN_CONNECTOR",
+        "KOFI_ENGINE",
+        "GUMROAD_ENGINE",
+        "GITHUB_SPONSORS_ENGINE",
+        "KOFI_PAYMENT_TRACKER",
+        "SYNAPSE",
+        "SYNTHESIS_FACTORY",
+        "SELF_BUILDER",
+        "MEMORY_PALACE",
+        "README_GENERATOR",
+        "NIGHTLY_DIGEST"
+      ],
+      "engines_failed": [
+        "CONNECTION_FORGE",
+        "ARCHITECT",
+        "BRIEFING_ENGINE"
+      ],
+      "engines_skipped": [],
+      "exchange_tasks": 0,
+      "exchange_earned": 0.0,
+      "exchange_gaza": 0.0,
+      "kofi_verified": 0.0,
+      "businesses_built": 4,
+      "engines_built": 0,
+      "revenue_potential": 1760,
+      "active_revenue_streams": [
+        "substack"
+      ]
+    },
+    "revenue_gaps": [
+      "EMAIL_AGENT_EXCHANGE: no tasks completed yet \u2014 needs promotion",
+      "No verified Ko-fi payments yet \u2014 need more promotion + task completion"
+    ],
+    "engine_ideas": [
+      {
+        "name": "REDDIT_POSTER",
+        "purpose": "Auto-post SolarPunk content to relevant subreddits",
+        "revenue_impact": "high",
+        "effort": "low",
+        "priority": 1
+      },
+      {
+        "name": "REVENUE_FORECASTER",
+        "purpose": "Project monthly revenue from all streams, email weekly report",
+        "revenue_impact": "medium",
+        "effort": "low",
+        "priority": 2
+      },
+      {
+        "name": "REDBUBBLE_ENGINE",
+        "purpose": "Generate and upload Gaza Rose art to Redbubble",
+        "revenue_impact": "high",
+        "effort": "medium",
+        "priority": 3
+      }
+    ],
+    "business_niches": [
+      {
+        "niche": "AI Side Income Blueprint",
+        "product_type": "ebook",
+        "price": 27,
+        "platform": "Gumroad",
+        "audience": "people wanting passive income"
+      },
+      {
+        "niche": "Palestine Solidarity Art Pack",
+        "product_type": "digital_download",
+        "price": 15,
+        "platform": "Gumroad",
+        "audience": "activists and artists"
+      },
+      {
+        "niche": "GitHub Actions for Beginners",
+        "product_type": "video_course_notes",
+        "price": 37,
+        "platform": "Gumroad",
+        "audience": "developers"
+      }
+    ],
+    "critical_fix": "EMAIL_AGENT_EXCHANGE: no tasks completed yet \u2014 needs promotion",
+    "next_priority": "Build more revenue streams",
+    "confidence": 0.6,
+    "build_next_engine": "REDDIT_POSTER",
+    "build_next_niche": {
+      "niche": "AI Side Income Blueprint",
+      "product_type": "ebook",
+      "price": 27,
+      "platform": "Gumroad",
+      "audience": "people wanting passive income"
+    }
+  },
   "biz_factory": {
-    "cycles": 3,
+    "cycles": 4,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -786,17 +997,24 @@
         "price": 27,
         "revenue": "$270-$1080/month",
         "built_at": "2026-03-05T06:33:21.170902+00:00"
+      },
+      {
+        "niche": "Notion Templates for Freelancers",
+        "name": "SolarPunk Notion Templates for Freelancers",
+        "price": 19,
+        "revenue": "$190-$760/month",
+        "built_at": "2026-03-05T09:33:56.165765+00:00"
       }
     ],
-    "total_revenue_potential": 1380,
-    "last_run": "2026-03-05T06:33:20.929585+00:00"
+    "total_revenue_potential": 1760,
+    "last_run": "2026-03-05T09:33:55.770469+00:00"
   },
   "self_builder": {
-    "cycles": 3,
+    "cycles": 4,
     "built": [],
     "total_built": 0,
     "ai_generated_ideas": [],
-    "last_run": "2026-03-05T06:33:25.760680+00:00"
+    "last_run": "2026-03-05T09:34:02.611853+00:00"
   },
   "engines_ok": [
     "GUARDIAN",
@@ -829,6 +1047,7 @@
     "KOFI_PAYMENT_TRACKER",
     "SYNAPSE",
     "SYNTHESIS_FACTORY",
+    "ARCHITECT",
     "SELF_BUILDER",
     "MEMORY_PALACE",
     "README_GENERATOR",
@@ -836,7 +1055,6 @@
   ],
   "engines_failed": [
     "CONNECTION_FORGE",
-    "ARCHITECT",
     "BRIEFING_ENGINE"
   ],
   "engines_skipped": []

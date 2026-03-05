@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T06:33:13.289449+00:00",
+  "timestamp": "2026-03-05T09:33:44.554574+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Google Workspace CLI",
-        "url": "https://github.com/googleworkspace/cli",
-        "score": 403,
+        "title": "No right to relicense this project",
+        "url": "https://github.com/chardet/chardet/issues/327",
+        "score": 87,
         "source": "hackernews"
       },
       {
-        "title": "You Just Reveived",
-        "url": "https://dylan.gr/1772520728",
-        "score": 50,
+        "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
+        "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
+        "score": 64,
+        "source": "hackernews"
+      },
+      {
+        "title": "Google Workspace CLI",
+        "url": "https://github.com/googleworkspace/cli",
+        "score": 561,
         "source": "hackernews"
       },
       {
         "title": "Relicensing with AI-Assisted Rewrite",
         "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
-        "score": 38,
+        "score": 93,
         "source": "hackernews"
       },
       {
-        "title": "MacBook Neo",
-        "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
-        "score": 1700,
-        "source": "hackernews"
-      },
-      {
-        "title": "Building a new Flash",
-        "url": "https://bill.newgrounds.com/news/post/1607118",
-        "score": 478,
+        "title": "The L in \"LLM\" Stands for Lying",
+        "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
+        "score": 123,
         "source": "hackernews"
       }
     ],
@@ -44,7 +44,13 @@
       {
         "title": "I Created An Enterprise MCP Gateway",
         "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 103,
+        "hearts": 105,
+        "source": "devto"
+      },
+      {
+        "title": "I Shipped Broken Code and Wrote an Article About It",
+        "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
+        "hearts": 27,
         "source": "devto"
       },
       {
@@ -52,25 +58,59 @@
         "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
         "hearts": 5,
         "source": "devto"
-      },
-      {
-        "title": "I Built a Voice-to-Code VS Code Extension That Runs Entirely On-Device",
-        "url": "https://dev.to/agentic_engineer/i-built-a-voice-to-code-vs-code-extension-that-runs-entirely-on-device-16gc",
-        "hearts": 6,
-        "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.3,
+    "temp_c": 18.9,
     "vibe": "partly cloudy",
     "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "code",
+      "word": "speech",
       "count": 2
+    },
+    {
+      "word": "right",
+      "count": 1
+    },
+    {
+      "word": "relicense",
+      "count": 1
+    },
+    {
+      "word": "project",
+      "count": 1
+    },
+    {
+      "word": "nvidia",
+      "count": 1
+    },
+    {
+      "word": "personaplex",
+      "count": 1
+    },
+    {
+      "word": "apple",
+      "count": 1
+    },
+    {
+      "word": "silicon:",
+      "count": 1
+    },
+    {
+      "word": "full",
+      "count": 1
+    },
+    {
+      "word": "duplex",
+      "count": 1
+    },
+    {
+      "word": "swift",
+      "count": 1
     },
     {
       "word": "google",
@@ -78,14 +118,6 @@
     },
     {
       "word": "workspace",
-      "count": 1
-    },
-    {
-      "word": "just",
-      "count": 1
-    },
-    {
-      "word": "reveived",
       "count": 1
     },
     {
@@ -101,15 +133,11 @@
       "count": 1
     },
     {
-      "word": "macbook",
+      "word": "stands",
       "count": 1
     },
     {
-      "word": "building",
-      "count": 1
-    },
-    {
-      "word": "flash",
+      "word": "lying",
       "count": 1
     },
     {
@@ -119,40 +147,12 @@
     {
       "word": "london's",
       "count": 1
-    },
-    {
-      "word": "hidden",
-      "count": 1
-    },
-    {
-      "word": "film",
-      "count": 1
-    },
-    {
-      "word": "clubs",
-      "count": 1
-    },
-    {
-      "word": "discoverable",
-      "count": 1
-    },
-    {
-      "word": "created",
-      "count": 1
-    },
-    {
-      "word": "enterprise",
-      "count": 1
-    },
-    {
-      "word": "gateway",
-      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Google Workspace CLI...' connects to Gaza resilience",
+      "hook": "How 'No right to relicense this project...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

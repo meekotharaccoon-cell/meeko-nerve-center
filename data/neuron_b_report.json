@@ -2,7 +2,48 @@
   "risks": [
     "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages"
   ],
-  "vetted_opportunities": [],
-  "refined_priority": "",
-  "generated_at": "2026-03-05T06:33:18.734587+00:00"
+  "vetted_opportunities": [
+    {
+      "name": "Gaza Rose Gallery Etsy SEO",
+      "type": "revenue",
+      "effort": "low",
+      "impact": "high",
+      "action": "Generate 10 AI-optimized product descriptions with SEO keywords",
+      "estimated_value": "$50-200/month"
+    },
+    {
+      "name": "GitHub Sponsors",
+      "type": "revenue",
+      "effort": "low",
+      "impact": "medium",
+      "action": "Enable at github.com/sponsors/meekotharaccoon-cell",
+      "estimated_value": "$20-100/month"
+    },
+    {
+      "name": "SolarPunk Newsletter on Substack",
+      "type": "growth",
+      "effort": "low",
+      "impact": "high",
+      "action": "Write first issue: I built a self-running AI agent for free",
+      "estimated_value": "audience + future paid"
+    },
+    {
+      "name": "Free API content pipeline",
+      "type": "system",
+      "effort": "low",
+      "impact": "medium",
+      "action": "HackerNews + Reddit JSON -> daily automated content",
+      "estimated_value": "zero-cost content stream"
+    },
+    {
+      "name": "Ko-fi promotion",
+      "type": "revenue",
+      "effort": "low",
+      "impact": "high",
+      "action": "Share ko-fi.com/meekotharaccoon on social \u2014 first $5 triggers the loop",
+      "estimated_value": "$5-50/month"
+    }
+  ],
+  "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
+  "generated_at": "2026-03-05T09:33:52.294095+00:00"
 }
