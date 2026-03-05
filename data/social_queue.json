@@ -715,7 +715,13 @@
       "queued_at": "2026-03-05T10:23:20.807022+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:57:55.507346+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
@@ -723,7 +729,13 @@
       "queued_at": "2026-03-05T10:23:20.807022+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:57:55.507355+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
@@ -731,7 +743,13 @@
       "queued_at": "2026-03-05T10:23:20.807022+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/social-media-content-packs/",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:57:55.507359+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -1092,6 +1110,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/",
       "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: GitHub Actions for Beginners \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T15:57:51.540874+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "GitHub Actions for Beginners"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: GitHub Actions for Beginners. $37, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T15:57:51.540874+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "GitHub Actions for Beginners"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: GitHub Actions for Beginners. $37. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T15:57:51.540874+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "GitHub Actions for Beginners"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk GitHub Actions for Beginners \u2014 GitHub Actions for Beginners \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/ $37, 15% to Gaza",
+      "queued_at": "2026-03-05T15:57:53.611836+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
+      "niche": "GitHub Actions for Beginners"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk GitHub Actions for Beginners\n\nGitHub Actions for Beginners \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T15:57:53.611836+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
+      "niche": "GitHub Actions for Beginners"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk GitHub Actions for Beginners\nGitHub Actions for Beginners \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
+      "queued_at": "2026-03-05T15:57:53.611836+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
+      "niche": "GitHub Actions for Beginners"
     }
   ]
 }

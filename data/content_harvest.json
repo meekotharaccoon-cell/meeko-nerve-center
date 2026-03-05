@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-05T15:56:18.891508+00:00",
+  "timestamp": "2026-03-05T15:57:39.107758+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
-        "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
-        "score": 394,
+        "title": "Google Safe Browsing missed 84% of phishing sites we found in February",
+        "url": "https://www.norn-labs.com/blog/huginn-report-feb-2026",
+        "score": 33,
         "source": "hackernews"
       },
       {
-        "title": "Google Safe Browsing missed 84% of phishing sites we found in February",
-        "url": "https://www.norn-labs.com/blog/huginn-report-feb-2026",
-        "score": 29,
+        "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
+        "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
+        "score": 401,
         "source": "hackernews"
       },
       {
@@ -21,15 +21,15 @@
         "source": "hackernews"
       },
       {
-        "title": "Fast-Servers",
-        "url": "https://geocar.sdf1.org/fast-servers.html",
-        "score": 19,
+        "title": "Show HN: Jido 2.0, Elixir Agent Framework",
+        "url": "https://jido.run/blog/jido-2-0-is-here",
+        "score": 11,
         "source": "hackernews"
       },
       {
-        "title": "Google Workspace CLI",
-        "url": "https://github.com/googleworkspace/cli",
-        "score": 768,
+        "title": "Fast-Servers",
+        "url": "https://geocar.sdf1.org/fast-servers.html",
+        "score": 19,
         "source": "hackernews"
       }
     ],
@@ -69,12 +69,40 @@
   },
   "trending_themes": [
     {
-      "word": "google",
+      "word": "speech",
       "count": 2
     },
     {
-      "word": "speech",
-      "count": 2
+      "word": "google",
+      "count": 1
+    },
+    {
+      "word": "safe",
+      "count": 1
+    },
+    {
+      "word": "browsing",
+      "count": 1
+    },
+    {
+      "word": "missed",
+      "count": 1
+    },
+    {
+      "word": "phishing",
+      "count": 1
+    },
+    {
+      "word": "sites",
+      "count": 1
+    },
+    {
+      "word": "found",
+      "count": 1
+    },
+    {
+      "word": "february",
+      "count": 1
     },
     {
       "word": "judge",
@@ -113,34 +141,6 @@
       "count": 1
     },
     {
-      "word": "safe",
-      "count": 1
-    },
-    {
-      "word": "browsing",
-      "count": 1
-    },
-    {
-      "word": "missed",
-      "count": 1
-    },
-    {
-      "word": "phishing",
-      "count": 1
-    },
-    {
-      "word": "sites",
-      "count": 1
-    },
-    {
-      "word": "found",
-      "count": 1
-    },
-    {
-      "word": "february",
-      "count": 1
-    },
-    {
       "word": "nvidia",
       "count": 1
     },
@@ -152,7 +152,7 @@
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Judge Orders Government to Begin Refunding More Than $130B i...' connects to Gaza resilience",
+      "hook": "How 'Google Safe Browsing missed 84% of phishing sites we found i...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
