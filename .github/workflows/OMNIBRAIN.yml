@@ -55,7 +55,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser
+        run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser anthropic
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -74,7 +74,7 @@ jobs:
                      'GUMROAD_SECRET','GUMROAD_ID','GUMROAD_NAME','PAYPAL_CLIENT_ID']
           for s in secrets:
               v = os.environ.get(s,'')
-              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')" || true
+              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')\" || true
 
       - name: Run OMNIBUS
         run: python mycelium/OMNIBUS.py
