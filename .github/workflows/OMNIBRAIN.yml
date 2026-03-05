@@ -1,4 +1,4 @@
-name: SolarPunk OMNIBRAIN v7 — OMNIBUS
+name: SolarPunk OMNIBRAIN v8
 
 on:
   schedule:
@@ -9,34 +9,37 @@ on:
   workflow_dispatch:
     inputs:
       reason:
-        description: 'Manual trigger reason'
-        default: 'Manual run'
+        description: 'Why triggering manually'
+        default: 'debug'
 
 permissions:
   contents: write
   actions: write
 
 env:
-  ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
-  GMAIL_ADDRESS:          ${{ secrets.GMAIL_ADDRESS }}
-  GMAIL_APP_PASSWORD:     ${{ secrets.GMAIL_APP_PASSWORD }}
-  GITHUB_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
-  GUMROAD_ACCESS_TOKEN:   ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  HF_TOKEN:               ${{ secrets.HF_TOKEN }}
-  KOFI_USERNAME:          ${{ secrets.KOFI_USERNAME }}
-  KOFI_VERIFICATION_TOKEN:${{ secrets.KOFI_VERIFICATION_TOKEN }}
-  X_API_KEY:              ${{ secrets.X_API_KEY }}
-  X_API_SECRET:           ${{ secrets.X_API_SECRET }}
-  X_ACCESS_TOKEN:         ${{ secrets.X_ACCESS_TOKEN }}
-  X_ACCESS_TOKEN_SECRET:  ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-  REDDIT_CLIENT_ID:       ${{ secrets.REDDIT_CLIENT_ID }}
-  REDDIT_CLIENT_SECRET:   ${{ secrets.REDDIT_CLIENT_SECRET }}
-  REDDIT_USERNAME:        ${{ secrets.REDDIT_USERNAME }}
-  REDDIT_PASSWORD:        ${{ secrets.REDDIT_PASSWORD }}
-  MEEKO_AFFILIATE_LINK:   autonomoushum-20
+  ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+  GMAIL_ADDRESS:           ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_APP_PASSWORD:      ${{ secrets.GMAIL_APP_PASSWORD }}
+  GITHUB_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
+  GUMROAD_ACCESS_TOKEN:    ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  HF_TOKEN:                ${{ secrets.HF_TOKEN }}
+  KOFI_USERNAME:           ${{ secrets.KOFI_USERNAME }}
+  KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
+  X_API_KEY:               ${{ secrets.X_API_KEY }}
+  X_API_SECRET:            ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN:          ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_TOKEN_SECRET:   ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+  REDDIT_CLIENT_ID:        ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET:    ${{ secrets.REDDIT_CLIENT_SECRET }}
+  REDDIT_USERNAME:         ${{ secrets.REDDIT_USERNAME }}
+  REDDIT_PASSWORD:         ${{ secrets.REDDIT_PASSWORD }}
+  MEEKO_AFFILIATE_LINK:    autonomoushum-20
+  # THE CRITICAL FIX: subprocesses launched by OMNIBUS need this
+  # so every engine can: from AI_CLIENT import ask
+  PYTHONPATH:              mycelium
 
 jobs:
-  solarpunk-brain:
+  brain:
     runs-on: ubuntu-latest
     timeout-minutes: 55
 
@@ -47,45 +50,31 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Python setup
+      - name: Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
-        run: |
-          pip install requests python-dateutil pillow imapclient tweepy praw --quiet
+      - name: Dependencies
+        run: pip install requests python-dateutil pillow imapclient tweepy praw --quiet
 
       - name: Restore brain state
         uses: actions/cache@v4
         with:
           path: data/
-          key: solarpunk-brain-${{ github.run_number }}
-          restore-keys: solarpunk-brain-
+          key: brain-${{ github.run_number }}
+          restore-keys: brain-
 
-      # ═══════════════════════════════════════════════════════════
-      # THE ENTIRE BRAIN — one command, one ctx, zero gaps
-      #
-      # L0 MEMORY:  Guardian, Memory Palace
-      # L1 INTEL:   Email, Scam Shield, Calendar, Content, AI/Crypto, Neurons A+B
-      # L2 REV:     Grant Hunter, Flywheel, Income Architect, SEO
-      # L3 BUILD:   Revenue Loop, Art, Exchange, Grant Applicant, Health Booster
-      # L4 PUBLISH: Social, Substack, Link Page, Connection Forge, Human Connector
-      # L5 COLLECT: Ko-fi, Gumroad, Sponsors
-      # L6 SYNTH:   Synapse, Synthesis Factory, Self Builder
-      # L7 REPORT:  Memory Palace persist, README, Master Briefing
-      # ═══════════════════════════════════════════════════════════
-      - name: OMNIBUS — all 37 engines, one ctx, zero gaps
-        run: python mycelium/OMNIBUS.py || echo "OMNIBUS fallback — check logs"
+      - name: OMNIBUS — all engines, subprocess-isolated
+        run: python mycelium/OMNIBUS.py
         continue-on-error: true
 
-      # Commit state — always runs even if OMNIBUS had errors
-      - name: Commit brain state
+      - name: Commit
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
           git add data/ docs/ mycelium/ README.md .github/FUNDING.yml 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "🧠 OMNIBUS $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git push origin main || echo "Push failed — retry next cycle"
+          git diff --staged --quiet || git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push origin main || echo "push failed — retry next cycle"
         continue-on-error: true
