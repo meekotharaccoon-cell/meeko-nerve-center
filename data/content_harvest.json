@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T20:13:06.018976+00:00",
+  "timestamp": "2026-03-05T20:59:14.404599+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 238,
+        "score": 342,
         "source": "hackernews"
       },
       {
         "title": "Wikipedia in read-only mode following mass admin account compromise",
         "url": "https://www.wikimediastatus.net",
-        "score": 636,
+        "score": 686,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 74,
-        "source": "hackernews"
-      },
-      {
-        "title": "Hardware hotplug events on Linux, the gory details",
-        "url": "https://arcanenibble.github.io/hardware-hotplug-events-on-linux-the-gory-details.html",
-        "score": 32,
+        "score": 101,
         "source": "hackernews"
       },
       {
         "title": "Pentagon Formally Labels Anthropic Supply-Chain Risk",
         "url": "https://www.wsj.com/politics/national-security/pentagon-formally-labels-anthropic-supply-chain-risk-escalating-conflict-ebdf0523",
-        "score": 86,
+        "score": 202,
+        "source": "hackernews"
+      },
+      {
+        "title": "Let's Get Physical",
+        "url": "https://m4iler.cloud/posts/lets-get-physical/",
+        "score": 46,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.9,
+    "temp_c": 10.3,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -109,30 +109,6 @@
       "count": 1
     },
     {
-      "word": "hardware",
-      "count": 1
-    },
-    {
-      "word": "hotplug",
-      "count": 1
-    },
-    {
-      "word": "events",
-      "count": 1
-    },
-    {
-      "word": "linux",
-      "count": 1
-    },
-    {
-      "word": "gory",
-      "count": 1
-    },
-    {
-      "word": "details",
-      "count": 1
-    },
-    {
       "word": "pentagon",
       "count": 1
     },
@@ -146,6 +122,30 @@
     },
     {
       "word": "anthropic",
+      "count": 1
+    },
+    {
+      "word": "supply",
+      "count": 1
+    },
+    {
+      "word": "chain",
+      "count": 1
+    },
+    {
+      "word": "risk",
+      "count": 1
+    },
+    {
+      "word": "let's",
+      "count": 1
+    },
+    {
+      "word": "physical",
+      "count": 1
+    },
+    {
+      "word": "making",
       "count": 1
     }
   ],
