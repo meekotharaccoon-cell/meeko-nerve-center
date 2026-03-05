@@ -50,7 +50,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -93,11 +92,12 @@ jobs:
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git add data/ docs/ mycelium/ README.md 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "Nothing to commit"
           else
             git commit -m "🚀 manual $(date -u +'%Y-%m-%d %H:%M') — ${{ github.event.inputs.reason }}"
-            git push origin main || (git pull --rebase origin main && git push origin main)
+            git push origin main
           fi
         continue-on-error: true
