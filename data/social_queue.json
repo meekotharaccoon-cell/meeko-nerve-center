@@ -634,7 +634,13 @@
       "queued_at": "2026-03-05T10:21:51.397483+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:33:33.054243+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
@@ -642,7 +648,13 @@
       "queued_at": "2026-03-05T10:21:51.397483+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:33:33.054253+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
@@ -650,7 +662,13 @@
       "queued_at": "2026-03-05T10:21:51.397483+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/autonomous-business-guide/",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:33:33.054257+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -966,6 +984,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
       "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: AI Side Income Blueprint \u2014 $27, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T15:33:27.310462+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: AI Side Income Blueprint. $27, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T15:33:27.310462+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: AI Side Income Blueprint. $27. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T15:33:27.310462+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk AI Side Income Blueprint \u2014 AI Side Income Blueprint \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/ $27, 15% to Gaza",
+      "queued_at": "2026-03-05T15:33:31.132485+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+      "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk AI Side Income Blueprint\n\nAI Side Income Blueprint \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T15:33:31.132485+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+      "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk AI Side Income Blueprint\nAI Side Income Blueprint \u2014 built by AI, 15% to Gaza\n$27 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+      "queued_at": "2026-03-05T15:33:31.132485+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+      "niche": "AI Side Income Blueprint"
     }
   ]
 }

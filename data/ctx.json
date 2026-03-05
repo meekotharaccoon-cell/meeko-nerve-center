@@ -1,6 +1,6 @@
 {
-  "run_id": "22725137695",
-  "cycle_start": "2026-03-05T15:31:33.374033+00:00",
+  "run_id": "22725198727",
+  "cycle_start": "2026-03-05T15:33:45.056235+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -21,7 +21,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-05T15:31:29.466094+00:00",
+        "timestamp": "2026-03-05T15:33:39.942385+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 59,
@@ -40,9 +40,9 @@
     "patterns": {},
     "total_cycles": 2,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-05T15:31:29.466094+00:00",
+    "last_updated": "2026-03-05T15:33:39.942385+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-05T15:31:29.466094+00:00",
+      "timestamp": "2026-03-05T15:33:39.942385+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 59,
@@ -199,6 +199,7 @@
         "business_autonomous_business_guide.json",
         "business_email_automation_blueprints.json",
         "business_factory_state.json",
+        "business_freelance_cold_email_templates.json",
         "business_github_actions_templates.json",
         "business_github_pages_website_kit.json",
         "business_grant_writing_templates.json",
@@ -211,6 +212,7 @@
         "connections.json",
         "consolidated_knowledge.json",
         "content_harvest.json",
+        "contributor_registry.json",
         "crypto_state.json",
         "ctx.json",
         "desktop_clean_log.json",
@@ -232,9 +234,11 @@
         "guardian_status.json",
         "gumroad_engine_state.json",
         "gumroad_listings.json",
+        "gumroad_queue_state.json",
         "health_report.json",
         "human_connector_state.json",
         "issue_sync_state.json",
+        "knowledge_gaps.json",
         "kofi_state.json",
         "kofi_tracker_state.json",
         "landing_deployer_state.json",
@@ -248,6 +252,7 @@
         "omnibus_history.json",
         "omnibus_last.json",
         "payout_ledger.json",
+        "paypal_payout_state.json",
         "revenue_inbox.json",
         "revenue_loop_history.json",
         "revenue_loop_last.json",
@@ -268,9 +273,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-05T15:31:16.072995+00:00"
+      "timestamp": "2026-03-05T15:33:23.346943+00:00"
     },
-    "generated_at": "2026-03-05T15:31:16.330441+00:00"
+    "generated_at": "2026-03-05T15:33:23.759445+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -319,10 +324,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-05T15:31:16.526156+00:00"
+    "generated_at": "2026-03-05T15:33:24.000784+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-05T15:31:18.514398+00:00",
+    "ts": "2026-03-05T15:33:26.591509+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -332,14 +337,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 11,
+          "cycles": 12,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-05T14:34:14.518993+00:00"
+          "last_run": "2026-03-05T15:31:26.037768+00:00"
         }
       },
       "grants": {
@@ -348,11 +353,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 11,
+          "cycles": 12,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-05T14:34:11.793978+00:00"
+          "last_run": "2026-03-05T15:31:23.019910+00:00"
         }
       },
       "sponsors": {
@@ -361,11 +366,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 11,
+          "cycles": 12,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-05T14:34:14.682303+00:00"
+          "last_run": "2026-03-05T15:31:26.288949+00:00"
         }
       },
       "exchange": {
@@ -374,14 +379,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 11,
+          "cycles": 12,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-05T14:34:11.677043+00:00"
+          "last_run": "2026-03-05T15:31:22.905628+00:00"
         }
       },
       "substack": {
@@ -390,11 +395,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 11,
+          "cycles": 12,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-05T14:34:12.217134+00:00"
+          "last_run": "2026-03-05T15:31:23.451120+00:00"
         }
       },
       "gumroad": {
@@ -407,13 +412,13 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-05T15:31:10.938836+00:00",
+    "timestamp": "2026-03-05T15:33:15.009861+00:00",
     "sources": {
       "hackernews": [
         {
           "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
           "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
-          "score": 301,
+          "score": 311,
           "source": "hackernews"
         },
         {
@@ -431,7 +436,7 @@
         {
           "title": "Rising carbon dioxide levels now detected in human blood",
           "url": "https://phys.org/news/2026-02-carbon-dioxide-human-blood.html",
-          "score": 39,
+          "score": 43,
           "source": "hackernews"
         },
         {
@@ -582,7 +587,7 @@
     "status": "harvested"
   },
   "seo": {
-    "generated_at": "2026-03-05T15:31:18.118461+00:00",
+    "generated_at": "2026-03-05T15:33:26.117231+00:00",
     "total_listings": 10,
     "claude_enhanced": 0,
     "listings": [
@@ -607,7 +612,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.340199+00:00"
+        "generated_at": "2026-03-05T15:33:24.984609+00:00"
       },
       {
         "title": "White Doves Over the Mediterranean",
@@ -630,7 +635,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.422116+00:00"
+        "generated_at": "2026-03-05T15:33:25.105654+00:00"
       },
       {
         "title": "Olive Grove Eternal",
@@ -653,7 +658,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.499940+00:00"
+        "generated_at": "2026-03-05T15:33:25.234691+00:00"
       },
       {
         "title": "Tatreez Pattern Bloom",
@@ -676,7 +681,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.591894+00:00"
+        "generated_at": "2026-03-05T15:33:25.364394+00:00"
       },
       {
         "title": "Gaza Coastline at Golden Hour",
@@ -699,7 +704,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.669979+00:00"
+        "generated_at": "2026-03-05T15:33:25.488271+00:00"
       },
       {
         "title": "Star of Hope Rising",
@@ -722,7 +727,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.762627+00:00"
+        "generated_at": "2026-03-05T15:33:25.617541+00:00"
       },
       {
         "title": "Pomegranate Season",
@@ -745,7 +750,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.842269+00:00"
+        "generated_at": "2026-03-05T15:33:25.735271+00:00"
       },
       {
         "title": "Night Garden in Ruins",
@@ -768,7 +773,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:17.926640+00:00"
+        "generated_at": "2026-03-05T15:33:25.868199+00:00"
       },
       {
         "title": "Child with Balloon",
@@ -791,7 +796,7 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:18.038636+00:00"
+        "generated_at": "2026-03-05T15:33:25.996177+00:00"
       },
       {
         "title": "The Return - Sunflower Field",
@@ -814,20 +819,20 @@
         ],
         "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
         "source": "template",
-        "generated_at": "2026-03-05T15:31:18.118448+00:00"
+        "generated_at": "2026-03-05T15:33:26.117214+00:00"
       }
     ],
     "note": "Copy-paste each into Etsy -> Add listing. Title as-is.",
     "status": "ready to post"
   },
   "grants": {
-    "cycles": 12,
-    "last_run": "2026-03-05T15:31:16.640239+00:00",
+    "cycles": 13,
+    "last_run": "2026-03-05T15:33:24.116922+00:00",
     "grants_scored": 20,
     "high_priority": []
   },
   "loop_result": {
-    "started_at": "2026-03-05T15:31:20.995587+00:00",
+    "started_at": "2026-03-05T15:33:30.308268+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -838,61 +843,61 @@
       "brain"
     ],
     "steps_failed": [],
-    "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+    "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
     "gumroad_url": "https://meekotharacoon.gumroad.com",
     "posts": [
       {
         "platform": "twitter",
-        "text": "\ud83c\udf39 New: SolarPunk Freelance Cold Email Templates \u2014 Freelance Cold Email Templates \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/ $17, 15% to Gaza",
-        "queued_at": "2026-03-05T15:31:21.524723+00:00",
+        "text": "\ud83c\udf39 New: SolarPunk AI Side Income Blueprint \u2014 AI Side Income Blueprint \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/ $27, 15% to Gaza",
+        "queued_at": "2026-03-05T15:33:31.132485+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
-        "niche": "Freelance Cold Email Templates"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+        "niche": "AI Side Income Blueprint"
       },
       {
         "platform": "reddit",
-        "text": "Built with AI: SolarPunk Freelance Cold Email Templates\n\nFreelance Cold Email Templates \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-05T15:31:21.524723+00:00",
+        "text": "Built with AI: SolarPunk AI Side Income Blueprint\n\nAI Side Income Blueprint \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/\n15% \u2192 Gaza.",
+        "queued_at": "2026-03-05T15:33:31.132485+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
-        "niche": "Freelance Cold Email Templates"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+        "niche": "AI Side Income Blueprint"
       },
       {
         "platform": "linkedin",
-        "text": "New launch: SolarPunk Freelance Cold Email Templates\nFreelance Cold Email Templates \u2014 built by AI, 15% to Gaza\n$17 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
-        "queued_at": "2026-03-05T15:31:21.524723+00:00",
+        "text": "New launch: SolarPunk AI Side Income Blueprint\nAI Side Income Blueprint \u2014 built by AI, 15% to Gaza\n$27 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+        "queued_at": "2026-03-05T15:33:31.132485+00:00",
         "source": "REVENUE_LOOP",
-        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
-        "niche": "Freelance Cold Email Templates"
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
+        "niche": "AI Side Income Blueprint"
       }
     ],
-    "completed_at": "2026-03-05T15:31:22.675370+00:00",
-    "elapsed_seconds": 1,
+    "completed_at": "2026-03-05T15:33:32.342562+00:00",
+    "elapsed_seconds": 2,
     "success": true
   },
-  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
   "gumroad_url": "https://meekotharacoon.gumroad.com",
   "exchange": {
-    "cycles": 12,
+    "cycles": 13,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-05T15:31:22.905628+00:00"
+    "last_run": "2026-03-05T15:33:32.581434+00:00"
   },
   "kofi_tracker": {
-    "cycles": 12,
+    "cycles": 13,
     "payments_matched": 0,
     "payments_unmatched": 0,
     "total_verified": 0.0,
     "processed_ids": [],
     "log": [],
-    "last_run": "2026-03-05T15:31:26.390369+00:00"
+    "last_run": "2026-03-05T15:33:36.132892+00:00"
   },
   "architect_plan": {
-    "generated_at": "2026-03-05T15:31:28.536865+00:00",
+    "generated_at": "2026-03-05T15:33:38.782913+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -945,9 +950,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 12,
+      "businesses_built": 13,
       "engines_built": 0,
-      "revenue_potential": 6120,
+      "revenue_potential": 6660,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1015,7 +1020,7 @@
     }
   },
   "biz_factory": {
-    "cycles": 12,
+    "cycles": 13,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1100,17 +1105,24 @@
         "price": 17,
         "revenue": "$170-$680/month",
         "built_at": "2026-03-05T15:31:19.622727+00:00"
+      },
+      {
+        "niche": "AI Side Income Blueprint",
+        "name": "SolarPunk AI Side Income Blueprint",
+        "price": 27,
+        "revenue": "$270-$1080/month",
+        "built_at": "2026-03-05T15:33:27.311604+00:00"
       }
     ],
-    "total_revenue_potential": 6120,
-    "last_run": "2026-03-05T15:31:19.357534+00:00"
+    "total_revenue_potential": 6660,
+    "last_run": "2026-03-05T15:33:26.825005+00:00"
   },
   "self_builder": {
-    "cycles": 12,
+    "cycles": 13,
     "built": [],
     "total_built": 0,
     "ai_generated_ideas": [],
-    "last_run": "2026-03-05T15:31:28.653496+00:00"
+    "last_run": "2026-03-05T15:33:38.901515+00:00"
   },
   "integrity": {
     "first_seen": {
@@ -1355,297 +1367,297 @@
       "AFFILIATE_MAXIMIZER.py": {
         "sha": "bcd1fe3d5cee2e32347593c117ca4cec04a0cfaa",
         "size": 8774,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "AI_CLIENT.py": {
         "sha": "cff3493a024c64cdfedfd11014e3fc2cc6629e69",
         "size": 5221,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "AI_WATCHER.py": {
         "sha": "00f277298ea3885d9d26a73c28fa98c961e69473",
         "size": 7872,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ARCHITECT.py": {
         "sha": "e2c239d872be5576b88d0fb26b07ff85019fdb54",
         "size": 10340,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ART_GENERATOR.py": {
         "sha": "c54e495558bfd007b202d8be3ece6c4da709cf29",
         "size": 6327,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "AUTO_HEALER.py": {
         "sha": "85461d420b281130041f437a5dbd98fe3e68aaab",
         "size": 8578,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "BRIEFING_ENGINE.py": {
         "sha": "163e95dcdc6082b1ec969e3de5061f79c2c3111f",
         "size": 9972,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "BUSINESS_FACTORY.py": {
         "sha": "c0b2c9cf8f3a8201bdc1256bdce24dd74084ecf5",
         "size": 14036,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "CALENDAR_BRAIN.py": {
         "sha": "5f88878a304d21483addc047ba5fafd9856e59b2",
         "size": 4780,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "CONNECTION_FORGE.py": {
         "sha": "003404b4450cd92d307291db5360185773f675ae",
         "size": 10194,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "CONTENT_HARVESTER.py": {
         "sha": "f60ed55853fc2e297b80d053d16cab4ce027ac8d",
         "size": 6281,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "CRYPTO_WATCHER.py": {
         "sha": "50cbcb308e6090e7024c7b52c9f369c9ef7c4e7b",
         "size": 8045,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "DISPATCH_HANDLER.py": {
         "sha": "ca96931d85f1d38e903b311cab53d65ab2d039d0",
         "size": 6667,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "EMAIL_AGENT_EXCHANGE.py": {
         "sha": "ea89bc69f0b7c7b8c6c51186b216639b1fe133c8",
         "size": 13978,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "EMAIL_BRAIN.py": {
         "sha": "50684810d1db7e1277238dfd2d9293368833bbe7",
         "size": 12617,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ENGINE_INTEGRITY.py": {
         "sha": "1e3ac4958ed8dde61e5ada9fbd613ca394078253",
         "size": 3586,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ETSY_SEO_ENGINE.py": {
         "sha": "51ef326623e4b3cd5fcceaf659fc9d0179d5022c",
         "size": 4315,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GITHUB_POSTER.py": {
         "sha": "b050f7bb6c1d11222c50ddc97e3e66821bdbbc12",
         "size": 4470,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GITHUB_SPONSORS_ENGINE.py": {
         "sha": "7df0aba2f056302ddd31dceca3ab824af021dc87",
         "size": 6206,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GRANT_APPLICANT.py": {
         "sha": "2e1a992005d442678e4d3ae3f87490a843c5f58e",
         "size": 8673,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GRANT_HUNTER.py": {
         "sha": "c5b50eb5d39ab7d0634242922b01015820615d96",
         "size": 5363,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GUARDIAN.py": {
         "sha": "d7b52b7405bf8cb02409a2c9254c66c0551e94e9",
         "size": 4559,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GUMROAD_ENGINE.py": {
         "sha": "65d9ced6d310d5590e562e7e6ee0c581c822202e",
         "size": 5831,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "HEALTH_BOOSTER.py": {
         "sha": "557c83c9d0402318519f1e6eac7fc7ff260bb455",
         "size": 7417,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "HUMAN_CONNECTOR.py": {
         "sha": "76a1a9673cfcd865293c930f03ae2fdf405f30d1",
         "size": 7966,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "INCOME_ARCHITECT.py": {
         "sha": "de7e1e14536963759e47c70ffbe7b8407eed5836",
         "size": 4504,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ISSUE_SYNC.py": {
         "sha": "2d7df695cd8bae8af3ecdb38e70449a84e281739",
         "size": 4280,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "KOFI_ENGINE.py": {
         "sha": "6cef8b4d20f3929fef111386230374e7436ac1b7",
         "size": 5168,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "KOFI_PAYMENT_TRACKER.py": {
         "sha": "94a70e73e9b75fbcecfe7393c8ca41448c969ded",
         "size": 6470,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "LANDING_DEPLOYER.py": {
         "sha": "3ccfeebdb9f054c4c06ec97b536561f02c9b78d3",
         "size": 12379,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "LINK_PAGE.py": {
         "sha": "f08fc269a734eaa0f155075b6ceb23e35442c98c",
         "size": 8401,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "MEMORY_PALACE.py": {
         "sha": "84e18ef10b19c1254ca30beb83767e432a3101c4",
         "size": 6098,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "NEURON_A.py": {
         "sha": "1e410e2950e93a00c541b877d220d00d8f3faa55",
         "size": 5261,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "NEURON_B.py": {
         "sha": "9ec029764cc6d972e475d718040134717cfe7194",
         "size": 3892,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "NIGHTLY_DIGEST.py": {
         "sha": "2adf2bed3af091eb0597c24ec5f5a84b6e70a7f9",
         "size": 13618,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "OMNIBUS.py": {
         "sha": "a95c8fb06bf8c9a69f9af213eb864eb23e1b6bb5",
         "size": 12753,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "README_GENERATOR.py": {
         "sha": "902a3196fcfff0b54acaf1d0640c44f927268c8a",
         "size": 5560,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "REVENUE_FLYWHEEL.py": {
         "sha": "b6956aa8b7ee1bdce00910798e10bb92d1e6797c",
         "size": 9045,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "REVENUE_LOOP.py": {
         "sha": "606ecc39db1b8f6a28a3f94db16fa5d0c2460fc8",
         "size": 20862,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SCAM_SHIELD.py": {
         "sha": "da0b8e67bd134a6b41decc1c8342bc2443c76c36",
         "size": 7955,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SELF_BUILDER.py": {
         "sha": "4c33f4260f539fdf32e39051b96315d0e0ce3764",
         "size": 10983,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SOCIAL_DASHBOARD.py": {
         "sha": "76c9dfbd424d22ec39c69019d2130a9957110a64",
         "size": 6324,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SOCIAL_PROMOTER.py": {
         "sha": "3f20561db5e01264a1ffe0a01059f29a04bf5c2a",
         "size": 8777,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SUBSTACK_ENGINE.py": {
         "sha": "1b6d6808c613e33bc688f6bff435ffe52e7f64af",
         "size": 6429,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SYNAPSE.py": {
         "sha": "65fc3691b4653d3ba741e3093a4be96c28d7e6c0",
         "size": 7866,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SYNTHESIS_FACTORY.py": {
         "sha": "183e21798a2f35d8b7c06cce7b42c4a57b60ccb2",
         "size": 6032,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ai_council.py": {
         "sha": "8c66ec48c2adef7fd760bfed09418fd4e6b36072",
         "size": 30795,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "knowledge_dispatch.py": {
         "sha": "dd77d93c92a7709ce265000f59ce443ad7693f47",
         "size": 5125,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "ART_CATALOG.py": {
         "sha": "d0057d91ebd95c492478fb639be0259a903d0297",
         "size": 10547,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "HUMAN_PAYOUT.py": {
         "sha": "eea36205e73c27dbab806970ed07845edbb02a1c",
         "size": 10690,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SECRETS_CHECKER.py": {
         "sha": "7b3b440e415885ca5f2da0fa4457b143eb4f688b",
         "size": 16502,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "SOLARPUNK_LEGAL.py": {
         "sha": "f2dd1d4a17ebb563fa4d922dd7f41d2985bf07ae",
         "size": 10809,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "BIG_BRAIN_ORACLE.py": {
         "sha": "b0d4d363c71f386da0c3f3f0b8a69a3031347e72",
         "size": 6476,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "BOTTLENECK_SCANNER.py": {
         "sha": "dd14984bd8036f6c152f6934c31b825df8498d7e",
         "size": 15339,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "BRAND_LEGAL.py": {
         "sha": "fa72091f655697cbdb6e89275674161cf9923935",
         "size": 15085,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "CONTRIBUTOR_REGISTRY.py": {
         "sha": "d62ca845e65eda329d20a953195600a70b27d5ad",
         "size": 5270,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "GUMROAD_AUTO_QUEUE.py": {
         "sha": "48527c28f2e65e50b87c99cafa61c17c4d6f1692",
         "size": 7702,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "KNOWLEDGE_BRIDGE.py": {
         "sha": "927f4235fa9da7634eecfce3e3241a48adc47abe",
         "size": 8013,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       },
       "PAYPAL_PAYOUT.py": {
         "sha": "56fdd2b98c4d10c6beff8363b55f5c4e70f580a8",
         "size": 6417,
-        "ts": "2026-03-05T15:31:03.276936+00:00"
+        "ts": "2026-03-05T15:32:36.629687+00:00"
       }
     },
     "change_log": [
@@ -1716,7 +1728,7 @@
         "author": "Guardian"
       }
     ],
-    "last_scan": "2026-03-05T15:31:03.276936+00:00",
+    "last_scan": "2026-03-05T15:32:36.629687+00:00",
     "total_engines": 59,
     "total_changes": 4
   },
@@ -1744,10 +1756,12 @@
     }
   ],
   "secrets": {
-    "last_check": "2026-03-05T15:31:03.690405+00:00",
-    "configured": 10,
+    "last_check": "2026-03-05T15:32:37.455781+00:00",
+    "configured": 4,
     "total": 16,
-    "critical_missing": [],
+    "critical_missing": [
+      "GUMROAD_SECRET"
+    ],
     "secrets": {
       "ANTHROPIC_API_KEY": {
         "present": true,
@@ -1760,17 +1774,17 @@
         "impact": "low"
       },
       "GUMROAD_SECRET": {
-        "present": true,
+        "present": false,
         "required": true,
         "impact": "critical"
       },
       "GUMROAD_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
       "GUMROAD_NAME": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
@@ -1785,7 +1799,7 @@
         "impact": "medium"
       },
       "X_API_KEY": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "high"
       },
@@ -1815,12 +1829,12 @@
         "impact": "high"
       },
       "PAYPAL_CLIENT_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
       "PAYPAL_CLIENT_SECRET": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
@@ -1839,10 +1853,10 @@
     "total_paid_usd": 0.0,
     "total_to_gaza_usd": 0.0,
     "collaborators": {},
-    "last_run": "2026-03-05T15:31:26.498849+00:00"
+    "last_run": "2026-03-05T15:33:36.243789+00:00"
   },
   "art_catalog": {
-    "last_updated": "2026-03-05T15:31:20.883127+00:00",
+    "last_updated": "2026-03-05T15:33:30.198655+00:00",
     "total_pieces": 7,
     "price_usd": 1.0,
     "gaza_pct": 70,
@@ -1979,7 +1993,7 @@
   },
   "oracle": {},
   "knowledge_gaps": {
-    "last_scan": "2026-03-05T15:31:29.227315+00:00",
+    "last_scan": "2026-03-05T15:33:39.658470+00:00",
     "total_engines": 8,
     "total_files": 22,
     "gaps": {
@@ -2209,7 +2223,7 @@
     ]
   },
   "contributor_reg": {
-    "last_updated": "2026-03-05T15:31:26.535802+00:00",
+    "last_updated": "2026-03-05T15:33:36.285614+00:00",
     "description": "SolarPunk\u2122 contributor revenue registry. Each active contributor gets their split automatically via PayPal.",
     "contributors": [
       {
