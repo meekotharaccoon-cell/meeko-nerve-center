@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v3 — The real fixed orchestrator
+OMNIBUS v4 — The real fixed orchestrator
 =========================================
-CRITICAL BUGS FIXED FROM v2:
-1. BUSINESS_FACTORY was NEVER called — REVENUE_LOOP always found
-   zero business files in data/ and did nothing. Dead loop.
-2. LANDING_DEPLOYER was never called standalone — pages never deployed.
-3. ARCHITECT was called BEFORE SELF_BUILDER could read its plan.
-4. Layer order was wrong — BUILD ran before REVENUE INTEL finished.
+v4 changes vs v3:
+- Added GITHUB_POSTER (L4) — creates GitHub Releases per product, GITHUB_TOKEN only
+- Added SOCIAL_DASHBOARD (L4) — builds docs/social.html copy-paste board
+- CONNECTION_FORGE fixed (SyntaxError patched)
+- BRIEFING_ENGINE fixed (None[:10] TypeError patched)
+- AI_CLIENT updated (dead HF models replaced)
 
 CORRECT DEPENDENCY CHAIN:
   L0  GUARDIAN              — load/save brain state
@@ -17,7 +17,7 @@ CORRECT DEPENDENCY CHAIN:
   L3  REVENUE_LOOP          — reads business file, deploys, Gumroad, social
   L3b LANDING_DEPLOYER      — deploy any remaining undeployed businesses
   L3c OTHER BUILD           — art, email exchange, health
-  L4  PUBLISH               — social posts, Substack, links
+  L4  PUBLISH               — social posts, Substack, links, GitHub Releases, copy-paste board
   L5  COLLECT               — Ko-fi, Gumroad, payment tracking
   L6  ARCHITECT             — strategic plan (reads all state, writes plan)
   L6b SELF_BUILDER          — reads architect plan, writes new engine
@@ -59,7 +59,6 @@ def eng(name, *, timeout=120):
 
         if ok:
             results["ok"].append(name)
-            # Show last 2 meaningful stdout lines
             lines = [l for l in (proc.stdout or "").strip().splitlines() if l.strip()]
             tail  = lines[-2:] if lines else []
             print(f"  ✅ {name} ({elapsed}s)" + (f"  ← {tail[-1][:80]}" if tail else ""))
@@ -194,13 +193,15 @@ def layer_3():
 
 
 def layer_4():
-    """Publish — send social posts queued by REVENUE_LOOP and BUSINESS_FACTORY"""
+    """Publish — social posts, GitHub Releases, copy-paste dashboard"""
     print("\n━━━ L4: PUBLISH ━━━")
-    eng("SOCIAL_PROMOTER",  timeout=90)
-    eng("SUBSTACK_ENGINE",  timeout=90)
-    eng("LINK_PAGE",        timeout=60)
-    eng("CONNECTION_FORGE", timeout=90)
-    eng("HUMAN_CONNECTOR",  timeout=60)
+    eng("SOCIAL_PROMOTER",   timeout=90)
+    eng("SUBSTACK_ENGINE",   timeout=90)
+    eng("LINK_PAGE",         timeout=60)
+    eng("GITHUB_POSTER",     timeout=120)   # GitHub Releases — zero external APIs
+    eng("SOCIAL_DASHBOARD",  timeout=60)    # builds docs/social.html copy-paste board
+    eng("CONNECTION_FORGE",  timeout=90)
+    eng("HUMAN_CONNECTOR",   timeout=60)
     write_ctx()
 
 
@@ -245,12 +246,10 @@ def run():
     t0 = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
 
-    print(f"\n🧠 OMNIBUS v3 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🧠 OMNIBUS v4 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
-    print(f"   PYTHONPATH: {os.environ.get('PYTHONPATH', 'not set')}")
     print("=" * 58)
 
-    # Count business files before
     biz_before = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
     print(f"   Business files before run: {max(0, biz_before)}")
 
@@ -265,7 +264,6 @@ def run():
     total   = len(results["ok"]) + len(results["failed"])
     ctx     = write_ctx()
 
-    # Count business files after
     biz_after = len(list(DATA.glob("business_*.json"))) - (1 if (DATA/"business_factory_state.json").exists() else 0)
 
     manifest = {
@@ -293,20 +291,15 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*58}")
-    print(f"🧠 OMNIBUS v3 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v4 done — {elapsed}s")
     print(f"   Engines: {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED:  {', '.join(results['failed'])}")
-    if results["skipped"]:
-        skip_important = [s for s in results["skipped"]
-                          if s in ("BUSINESS_FACTORY","REVENUE_LOOP","ARCHITECT","SELF_BUILDER")]
-        if skip_important:
-            print(f"   ⚠️  CRITICAL engines missing: {', '.join(skip_important)}")
     print(f"   Health:  {manifest['health_before']} → {manifest['health_after']}")
     print(f"   Businesses built: {manifest['businesses_built']}")
     if manifest.get("live_url"):
         print(f"   Live URL: {manifest['live_url']}")
-    print(f"   Exchange: {manifest['exchange_tasks']} tasks | ${manifest['exchange_earned']:.2f} | ${manifest['exchange_gaza']:.2f} Gaza")
+    print(f"   Social: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html")
     return manifest
 
 
