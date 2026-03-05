@@ -14,13 +14,16 @@ nav a:hover,nav a.active{color:#ff4d6d}
 .hero p{color:rgba(255,255,255,.45);max-width:500px;margin:0 auto 20px;font-size:.95rem;line-height:1.7}
 .pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
 .pill{background:rgba(255,45,107,.1);border:1px solid rgba(255,45,107,.2);border-radius:20px;padding:5px 14px;font-size:.75rem;color:#ff6b8a}
-.notice{background:rgba(255,152,0,.05);border:1px solid rgba(255,152,0,.2);border-radius:8px;padding:12px 18px;max-width:640px;margin:0 auto 20px;font-size:.8rem;color:#ffb74d;text-align:left}
-.notice b{color:#ff9800;display:block;margin-bottom:4px}
+.how-to-buy{background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15);border-radius:10px;padding:18px 22px;max-width:640px;margin:0 auto 28px;font-size:.82rem;text-align:left;line-height:1.9}
+.how-to-buy b{color:#00ff88;display:block;margin-bottom:8px;font-size:.9rem}
+.how-to-buy span{color:rgba(255,255,255,.5)}
+.how-to-buy a{color:#ff6b8a;text-decoration:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;max-width:980px;margin:30px auto;padding:0 20px}
 .card{background:#0f0f1c;border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;transition:transform .2s}
 .card:hover{transform:translateY(-4px)}
-.preview{height:170px;display:flex;align-items:center;justify-content:center}
+.preview{height:170px;display:flex;align-items:center;justify-content:center;position:relative}
 .emoji{font-size:4rem}
+.print-num{position:absolute;top:10px;right:12px;background:rgba(255,45,107,.2);border:1px solid rgba(255,45,107,.3);border-radius:20px;padding:2px 10px;font-size:.65rem;color:#ff6b8a}
 .info{padding:16px}
 .info h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
 .info p{font-size:.75rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:8px}
@@ -29,9 +32,10 @@ nav a:hover,nav a.active{color:#ff4d6d}
 .footer{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
 .price{font-size:1.3rem;font-weight:800;color:#00ff88}
 .split{font-size:.7rem;color:rgba(255,45,107,.7)}
-.btns{display:flex;gap:8px}
-.btn-g{flex:1;background:#ff90e8;color:#000;text-align:center;padding:8px;border-radius:7px;text-decoration:none;font-size:.8rem;font-weight:700}
-.btn-k{flex:1;background:#ff5e5b;color:#fff;text-align:center;padding:8px;border-radius:7px;text-decoration:none;font-size:.8rem;font-weight:700}
+.btns{display:flex;gap:8px;flex-direction:column}
+.btn-gum{background:linear-gradient(135deg,#ff90e8,#c084fc);color:#000;text-align:center;padding:9px 12px;border-radius:7px;text-decoration:none;font-size:.78rem;font-weight:700}
+.btn-kofi{background:linear-gradient(135deg,#ff5e5b,#ff2d6b);color:#fff;text-align:center;padding:9px 12px;border-radius:7px;text-decoration:none;font-size:.78rem;font-weight:700}
+.btn-note{font-size:.62rem;color:rgba(255,255,255,.25);text-align:center;margin-top:3px}
 .loop{background:#080810;border-top:1px solid rgba(255,255,255,.05);padding:36px 20px;text-align:center}
 .loop h2{color:#00ff88;margin-bottom:16px;font-size:1.1rem}
 .flow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center;font-size:.82rem}
@@ -61,138 +65,117 @@ footer a{color:#ff4d6d;text-decoration:none}
     <span class="pill">7 prints available</span>
     <span class="pill">4★ Charity Navigator</span>
   </div>
-  <div class="notice">
-    <b>⚠️ Ko-fi Shop Setup Needed (Meeko action):</b>
-    Gumroad buttons work now. Ko-fi buttons link to your shop page.
-    To create individual Ko-fi shop items per print: ko-fi.com/account/shop → Add Item → $1 each → copy URL → update data/art_catalog.json → re-run ART_CATALOG engine.
+  <div class="how-to-buy">
+    <b>🛒 How to buy a $1 art print right now:</b>
+    <span><b>Option A — Ko-fi (easiest):</b> Go to <a href="https://ko-fi.com/meekotharaccoon" target="_blank">ko-fi.com/meekotharaccoon</a>, click <b>Support</b>, send $1, and type the print name in the message (e.g. "White Doves"). I'll email you the file.<br><br>
+    <b>Option B — Gumroad (coming):</b> Individual listings auto-publishing via AI engine. Links will appear below automatically once live.</span>
   </div>
 </div>
 
 <div class="grid">
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#f8f4e8,#7a9b5c)">
-    <div class="emoji">🕊️</div>
+    <div class="emoji">🕊️</div><span class="print-num">Print #1</span>
   </div>
   <div class="info">
     <h3>White Doves Over Gaza</h3>
     <p>Seven white doves ascending through golden morning light over ancient olive groves. Peace, hope, and the indomitable spirit of Palestine.</p>
     <div class="tags"><span class="tag">peace</span> <span class="tag">doves</span> <span class="tag">hope</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "White Doves")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#6b8f47,#d4e8b8)">
-    <div class="emoji">🫒</div>
+    <div class="emoji">🫒</div><span class="print-num">Print #2</span>
   </div>
   <div class="info">
     <h3>Ancient Olive Grove</h3>
     <p>Thousand-year-old olive trees standing resilient against the Mediterranean sky.</p>
     <div class="tags"><span class="tag">olive</span> <span class="tag">resilience</span> <span class="tag">nature</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Olive Grove")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#c41e3a,#f4f1de)">
-    <div class="emoji">🧵</div>
+    <div class="emoji">🧵</div><span class="print-num">Print #3</span>
   </div>
   <div class="info">
     <h3>Tatreez — Living Embroidery</h3>
     <p>The geometric language of Palestinian women, woven across generations.</p>
     <div class="tags"><span class="tag">tatreez</span> <span class="tag">culture</span> <span class="tag">art</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Tatreez")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#0077b6,#f4a261)">
-    <div class="emoji">🌊</div>
+    <div class="emoji">🌊</div><span class="print-num">Print #4</span>
   </div>
   <div class="info">
     <h3>Gaza by the Sea</h3>
     <p>The Mediterranean at dusk, its waters catching the last gold of day.</p>
     <div class="tags"><span class="tag">sea</span> <span class="tag">Gaza</span> <span class="tag">sunset</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Gaza Sea")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#1a1a2e,#ffd700)">
-    <div class="emoji">⭐</div>
+    <div class="emoji">⭐</div><span class="print-num">Print #5</span>
   </div>
   <div class="info">
     <h3>Star of Hope</h3>
     <p>A single brilliant star above the ancient cityscape, surrounded by the warm glow of windows.</p>
     <div class="tags"><span class="tag">star</span> <span class="tag">hope</span> <span class="tag">night</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Star of Hope")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#9b2335,#f4c2c2)">
-    <div class="emoji">🍎</div>
+    <div class="emoji">🍎</div><span class="print-num">Print #6</span>
   </div>
   <div class="info">
     <h3>Pomegranate Season</h3>
     <p>Deep crimson pomegranates split open on a mosaic table, seeds gleaming like rubies.</p>
     <div class="tags"><span class="tag">pomegranate</span> <span class="tag">culture</span> <span class="tag">home</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Pomegranate")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 <div class="card">
   <div class="preview" style="background:linear-gradient(135deg,#0d0d2b,#7b2d8b)">
-    <div class="emoji">🌙</div>
+    <div class="emoji">🌙</div><span class="print-num">Print #7</span>
   </div>
   <div class="info">
     <h3>Night Garden of Palestine</h3>
     <p>Jasmine and bougainvillea under a moon so full it turns night to silver.</p>
     <div class="tags"><span class="tag">garden</span> <span class="tag">night</span> <span class="tag">jasmine</span></div>
-    <div class="footer">
-      <span class="price">$1.00</span>
-      <span class="split">70¢ → Gaza · 30¢ → Loop</span>
-    </div>
+    <div class="footer"><span class="price">$1.00</span><span class="split">70¢ → Gaza · 30¢ → Loop</span></div>
     <div class="btns">
-      <a href="https://meekotharacoon.gumroad.com" class="btn-g" target="_blank">🛒 Buy on Gumroad</a>
-      <a href="https://ko-fi.com/meekotharaccoon/shop" class="btn-k" target="_blank">☕ Ko-fi Shop</a>
+      <a href="https://ko-fi.com/meekotharaccoon" class="btn-kofi" target="_blank">☕ Buy on Ko-fi — $1 (say "Night Garden")</a>
     </div>
+    <div class="btn-note">Gumroad listing auto-publishing soon via SolarPunk™ engine</div>
   </div>
 </div>
 </div>
