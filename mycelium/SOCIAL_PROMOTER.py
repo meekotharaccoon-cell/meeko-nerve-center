@@ -1,252 +1,248 @@
 #!/usr/bin/env python3
 """
-SOCIAL_PROMOTER.py — Traffic Engine for Gaza Rose Gallery
-Generates ready-to-post social content every cycle.
-Auto-posts to Twitter/X if X_API_KEY + X_API_SECRET + X_ACCESS_TOKEN + X_ACCESS_SECRET are set.
-Always saves drafts to data/social_queue.json for manual posting.
+SOCIAL_PROMOTER.py v2 — Drains the real queue and actually posts
+=================================================================
+PREVIOUS BUG: Read data/social_queue.json["queue"] (its own old format)
+and ignored data/social_queue.json["posts"] which is what BUSINESS_FACTORY
+and REVENUE_LOOP write. Nothing ever got posted.
 
-SolarPunk insight: The gap is distribution. Art exists. World doesn't know yet.
+FIX:
+- Drains data/social_queue.json["posts"] (written by BUSINESS_FACTORY +
+  REVENUE_LOOP every cycle)
+- Posts to Twitter/X via tweepy (simpler than manual OAuth)
+- Posts to Reddit via praw
+- Marks posts as sent so they don't double-post
+- Falls back gracefully if credentials missing
+- Caps at 3 posts per cycle to avoid rate limits
 """
-import os, json, requests, hashlib
+import os, json, sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-API_KEY          = os.environ.get("ANTHROPIC_API_KEY", "")
-X_API_KEY        = os.environ.get("X_API_KEY", "")
-X_API_SECRET     = os.environ.get("X_API_SECRET", "")
-X_ACCESS_TOKEN   = os.environ.get("X_ACCESS_TOKEN", "")
-X_ACCESS_SECRET  = os.environ.get("X_ACCESS_SECRET", "")
-REDDIT_CLIENT_ID = os.environ.get("REDDIT_CLIENT_ID", "")
-REDDIT_SECRET    = os.environ.get("REDDIT_CLIENT_SECRET", "")
-REDDIT_USER      = os.environ.get("REDDIT_USERNAME", "")
-REDDIT_PASS      = os.environ.get("REDDIT_PASSWORD", "")
-SHOP_URL         = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
-DATA             = Path("data")
-DATA.mkdir(exist_ok=True)
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from AI_CLIENT import ask_json_list, ask
+    AI_AVAILABLE = True
+except ImportError:
+    AI_AVAILABLE = False
 
-ART_PIECES = [
-    {"title": "Desert Rose at Dawn",               "emoji": "🌹", "theme": "hope"},
-    {"title": "White Doves Over the Mediterranean","emoji": "🕊️", "theme": "peace"},
-    {"title": "Olive Grove Eternal",               "emoji": "🌿", "theme": "roots"},
-    {"title": "Tatreez Pattern Bloom",             "emoji": "🌸", "theme": "culture"},
-    {"title": "Gaza Coastline at Golden Hour",     "emoji": "🌅", "theme": "home"},
-    {"title": "Star of Hope Rising",               "emoji": "⭐", "theme": "resilience"},
-    {"title": "Pomegranate Season",                "emoji": "🍎", "theme": "abundance"},
-    {"title": "Night Garden in Ruins",             "emoji": "🌙", "theme": "memory"},
-    {"title": "Child with Balloon",                "emoji": "🎈", "theme": "childhood"},
-    {"title": "The Return — Sunflower Field",      "emoji": "🌻", "theme": "return"},
-    {"title": "Grandmother's Embroidery",          "emoji": "🧵", "theme": "lineage"},
-    {"title": "Sea Glass and Rubble",              "emoji": "💧", "theme": "survival"},
-]
+DATA            = Path("data"); DATA.mkdir(exist_ok=True)
+X_API_KEY       = os.environ.get("X_API_KEY", "")
+X_API_SECRET    = os.environ.get("X_API_SECRET", "")
+X_ACCESS_TOKEN  = os.environ.get("X_ACCESS_TOKEN", "")
+X_ACCESS_SECRET = os.environ.get("X_ACCESS_TOKEN_SECRET", "")  # note: env var name
+REDDIT_ID       = os.environ.get("REDDIT_CLIENT_ID", "")
+REDDIT_SECRET   = os.environ.get("REDDIT_CLIENT_SECRET", "")
+REDDIT_USER     = os.environ.get("REDDIT_USERNAME", "")
+REDDIT_PASS     = os.environ.get("REDDIT_PASSWORD", "")
+SHOP_URL        = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
 
-TWEET_TEMPLATES = [
-    """{emoji} NEW: "{title}"
+TWITTER_AVAILABLE = all([X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET])
+REDDIT_AVAILABLE  = all([REDDIT_ID, REDDIT_SECRET, REDDIT_USER, REDDIT_PASS])
 
-$1 AI art print.
-70¢ → Gaza Rose Gallery (Palestinian artists)
-30¢ → loop fund → buys the next piece automatically
 
-The loop feeds itself 🔄
+def load_state():
+    f = DATA / "social_promoter_state.json"
+    if f.exists():
+        try: return json.loads(f.read_text())
+        except: pass
+    return {"cycles": 0, "posted": 0, "failed": 0, "history": []}
 
-{url}
 
-#GazaRose #PalestineArt #DigitalArt #SocialImpact""",
+def save_state(s):
+    (DATA / "social_promoter_state.json").write_text(json.dumps(s, indent=2))
 
-    """Every purchase loops.
 
-{emoji} "{title}" — $1
+def load_queue():
+    """Load the shared queue written by BUSINESS_FACTORY + REVENUE_LOOP."""
+    f = DATA / "social_queue.json"
+    if f.exists():
+        try:
+            q = json.loads(f.read_text())
+            # Handle both formats
+            posts = q.get("posts", [])
+            return q, posts
+        except: pass
+    return {"posts": []}, []
 
-→ 70% to Gaza Rose Gallery
-→ 30% pools until it auto-buys another piece
-→ That piece donates 70% too
-→ Forever
 
-One dollar. Infinite echoes.
+def save_queue(q):
+    (DATA / "social_queue.json").write_text(json.dumps(q, indent=2))
 
-{url}
 
-#Palestine #ArtForGood #GazaRose""",
-
-    """{emoji} Art that doesn't stop giving.
-
-"{title}" — only $1
-
-After 4 purchases, the system buys itself a new piece.
-Gaza Rose Gallery gets 70¢ every single time.
-
-This is SolarPunk economics.
-
-{url}
-
-#DigitalArt #Palestine #GazaRose #AIArt""",
-
-    """This is different.
-
-{emoji} "{title}" — $1
-└ 70¢ → Palestinian artist support (instant)
-└ 30¢ → auto-reinvestment pool
-   └ When pool hits $1 → auto-buys another piece
-      └ 70¢ to Gaza Rose Gallery
-         └ and it loops again
-
-Your $1 never stops.
-
-{url}
-
-#GazaRose #SolarPunk #Palestine""",
-
-    """What if art bought itself?
-
-{emoji} "{title}"
-$1 — instant digital download
-
-The SolarPunk Loop:
-[Human pays $1] → [70¢ to Gaza] → [30¢ pools]
-[Pool hits $1] → [auto-purchase] → [70¢ to Gaza]
-[repeat forever]
-
-{url}
-
-#AIArt #GazaRose #DigitalArt #Palestine""",
-]
-
-REDDIT_POSTS = [
-    {
-        "subreddit": "DigitalArt",
-        "title": "[OC] Gaza Rose Gallery — AI art prints where 70% of every sale goes to Palestinian artist relief",
-        "text": """I built a small shop where every $1 purchase of AI-generated art automatically splits:
-
-- **70¢ → Gaza Rose Gallery** (Palestinian artists & community relief)
-- **30¢ → Loop Fund** (pools until $1, then auto-buys another piece)
-
-The loop part is what makes it interesting: the system becomes its own customer. After ~4 human sales, the fund auto-purchases a new piece, which donates 70¢ to Gaza Rose, which adds 30¢ back to the pool... it compounds indefinitely.
-
-Piece this week: **{title}** — {theme} themed, AI-generated, instant download.
-
-Shop: {url}
-
-All art is $1. All art is instant download. All art echoes.
-
-*Built with SolarPunk autonomous systems — GitHub Actions + Claude API*"""
-    },
-    {
-        "subreddit": "Palestine",
-        "title": "$1 AI art that auto-donates 70% to Gaza Rose Gallery — the other 30% auto-buys the next piece",
-        "text": """I wanted to find a way to support Palestinian artists that compounds instead of depleting.
-
-**How it works:**
-1. You buy a $1 digital art print (instant download)
-2. 70¢ goes directly to Gaza Rose Gallery
-3. 30¢ goes into a loop fund
-4. When the loop fund hits $1.00, it auto-purchases another piece
-5. That purchase donates another 70¢ to Gaza Rose Gallery
-6. And adds 30¢ back to the fund...
-
-It never stops. Your $1 echoes indefinitely.
-
-Current piece: **{title}** — download immediately after purchase.
-
-{url}
-
-For Palestine. 🇵🇸"""
-    },
-]
-
-def pick_piece(cycle_num):
-    return ART_PIECES[cycle_num % len(ART_PIECES)]
-
-def generate_with_claude(piece):
-    if not API_KEY:
-        return None
+def post_twitter(text):
+    """Post to Twitter/X via tweepy. Returns (success, info)."""
+    if not TWITTER_AVAILABLE:
+        return False, "no credentials"
     try:
-        r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key": API_KEY, "anthropic-version": "2023-06-01",
-                     "content-type": "application/json"},
-            json={"model": "claude-sonnet-4-20250514", "max_tokens": 600,
-                  "messages": [{"role": "user", "content": f"""Write 3 viral tweets promoting this $1 art piece.
-Art: "{piece['title']}" — theme: {piece['theme']}
-Shop URL: {SHOP_URL}
-Rules: 280 chars max each. Mention 70% to Gaza Rose Gallery, $1 price, instant download.
-One emotional, one analytical, one story. Use #GazaRose #Palestine #DigitalArt. Include {piece['emoji']}.
-JSON only (no fences): {{"tweets": ["tweet1", "tweet2", "tweet3"]}}"""}]},
-            timeout=25)
-        if r.status_code == 200:
-            t = r.json()["content"][0]["text"]
-            s, e = t.find("{"), t.rfind("}") + 1
-            return json.loads(t[s:e]) if s >= 0 else None
-    except Exception as ex:
-        print(f"Claude err: {ex}")
-    return None
+        import tweepy
+        client = tweepy.Client(
+            consumer_key=X_API_KEY,
+            consumer_secret=X_API_SECRET,
+            access_token=X_ACCESS_TOKEN,
+            access_token_secret=X_ACCESS_SECRET,
+        )
+        resp = client.create_tweet(text=text[:280])
+        tweet_id = resp.data.get("id") if resp.data else "?"
+        return True, f"https://twitter.com/i/web/status/{tweet_id}"
+    except Exception as e:
+        return False, str(e)
 
-def build_tweets(piece, cycle_num):
-    claude_result = generate_with_claude(piece)
-    if claude_result and "tweets" in claude_result:
-        return claude_result["tweets"]
-    return [TWEET_TEMPLATES[(cycle_num + i) % len(TWEET_TEMPLATES)].format(
-        emoji=piece["emoji"], title=piece["title"], theme=piece["theme"], url=SHOP_URL
-    ) for i in range(3)]
 
-def post_to_twitter(tweet_text):
-    if not all([X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_SECRET]):
-        return {"status": "skipped", "reason": "no_credentials"}
+def post_reddit(text, niche=""):
+    """Post to one relevant subreddit. Returns (success, info)."""
+    if not REDDIT_AVAILABLE:
+        return False, "no credentials"
     try:
-        import hmac, base64, time, urllib.parse
-        url = "https://api.twitter.com/2/tweets"
-        ts = str(int(time.time()))
-        nonce = hashlib.md5(ts.encode()).hexdigest()
-        oauth_params = {
-            "oauth_consumer_key": X_API_KEY, "oauth_nonce": nonce,
-            "oauth_signature_method": "HMAC-SHA1", "oauth_timestamp": ts,
-            "oauth_token": X_ACCESS_TOKEN, "oauth_version": "1.0"
-        }
-        base = "POST&" + urllib.parse.quote(url, safe="") + "&" + \
-               urllib.parse.quote("&".join(f"{k}={urllib.parse.quote(str(v), safe='')}"
-               for k, v in sorted(oauth_params.items())), safe="")
-        key = urllib.parse.quote(X_API_SECRET, safe="") + "&" + urllib.parse.quote(X_ACCESS_SECRET, safe="")
-        sig = base64.b64encode(hmac.new(key.encode(), base.encode(), hashlib.sha1).digest()).decode()
-        oauth_params["oauth_signature"] = sig
-        auth_header = "OAuth " + ", ".join(f'{k}="{urllib.parse.quote(str(v), safe="")}"'
-                                           for k, v in sorted(oauth_params.items()))
-        resp = requests.post(url,
-            headers={"Authorization": auth_header, "Content-Type": "application/json"},
-            json={"text": tweet_text[:280]}, timeout=20)
-        if resp.status_code in [200, 201]:
-            return {"status": "posted", "tweet_id": resp.json().get("data", {}).get("id")}
-        return {"status": "failed", "code": resp.status_code}
-    except Exception as ex:
-        return {"status": "error", "msg": str(ex)}
+        import praw
+        reddit = praw.Reddit(
+            client_id=REDDIT_ID,
+            client_secret=REDDIT_SECRET,
+            username=REDDIT_USER,
+            password=REDDIT_PASS,
+            user_agent=f"SolarPunk/1.0 by u/{REDDIT_USER}",
+        )
+        # Pick subreddit based on content
+        sub = "Entrepreneur"
+        niche_lower = niche.lower()
+        if "art" in niche_lower or "design" in niche_lower:
+            sub = "DigitalArt"
+        elif "notion" in niche_lower or "template" in niche_lower:
+            sub = "Notion"
+        elif "github" in niche_lower or "code" in niche_lower or "developer" in niche_lower:
+            sub = "learnprogramming"
+        elif "grant" in niche_lower or "nonprofit" in niche_lower:
+            sub = "nonprofit"
+        elif "prompt" in niche_lower or "ai" in niche_lower:
+            sub = "artificial"
+
+        subreddit = reddit.subreddit(sub)
+        title = f"Built this with AI: {niche or 'new digital product'} — 15% to Gaza"
+        post = subreddit.submit(title=title[:300], selftext=text[:10000])
+        return True, f"https://reddit.com{post.permalink}"
+    except Exception as e:
+        return False, str(e)
+
+
+def make_tweet_from_post(post):
+    """Convert a queued post dict to a tweet string."""
+    # If already has twitter text, use it
+    if post.get("platform") == "twitter" and post.get("text"):
+        return post["text"][:280]
+
+    # Build from available fields
+    niche    = post.get("niche", "new digital product")
+    live_url = post.get("live_url", SHOP_URL)
+    text     = post.get("text", "")
+
+    if text and len(text) <= 280:
+        return text
+
+    # Generate a compact tweet
+    return f"🌹 New: {niche} — built by AI, 15% to Gaza. {live_url} #Gaza #DigitalProduct #AI"[:280]
+
+
+def make_reddit_text(post):
+    """Convert a queued post dict to reddit post text."""
+    if post.get("platform") == "reddit" and post.get("text"):
+        return post["text"]
+    text     = post.get("text", "")
+    live_url = post.get("live_url", SHOP_URL)
+    niche    = post.get("niche", "digital product")
+    if text:
+        return f"{text}\n\nMore info: {live_url}"
+    return (f"Built this with AI for SolarPunk — {niche}.\n\n"
+            f"15% of revenue goes to Gaza children's relief (PCRF).\n\n"
+            f"Details: {live_url}")
+
 
 def run():
-    queue_file = DATA / "social_queue.json"
-    queue = json.loads(queue_file.read_text()) if queue_file.exists() else {"cycles": 0, "queue": []}
-    cycle_num = queue.get("cycles", 0) + 1
-    queue["cycles"] = cycle_num
-    piece = pick_piece(cycle_num)
-    print(f"SOCIAL_PROMOTER cycle {cycle_num} | Piece: {piece['title']}")
-    tweets = build_tweets(piece, cycle_num)
-    results = {"cycle": cycle_num, "piece": piece["title"],
-               "ts": datetime.now(timezone.utc).isoformat(), "tweets": [], "reddit": []}
-    for i, tweet in enumerate(tweets[:3]):
-        if X_API_KEY:
-            result = post_to_twitter(tweet)
-            print(f"  Tweet {i+1}: {result['status']}")
+    state = load_state()
+    state["cycles"] = state.get("cycles", 0) + 1
+    state["last_run"] = datetime.now(timezone.utc).isoformat()
+
+    print(f"SOCIAL_PROMOTER v2 cycle {state['cycles']} | "
+          f"Twitter={'on' if TWITTER_AVAILABLE else 'off'} | "
+          f"Reddit={'on' if REDDIT_AVAILABLE else 'off'}")
+
+    queue, pending_posts = load_queue()
+
+    # Filter to unsent posts only
+    unsent = [p for p in pending_posts if not p.get("sent")]
+    print(f"  Queue: {len(pending_posts)} total, {len(unsent)} unsent")
+
+    if not unsent:
+        # Generate a fresh post from scratch if queue empty
+        print("  Queue empty — generating fresh post")
+        ts = datetime.now(timezone.utc).strftime("%B %Y")
+        unsent = [{
+            "platform": "twitter",
+            "text": f"🌹 SolarPunk is live — autonomous AI building digital businesses 4x/day. 15% to Gaza. {SHOP_URL} #AI #Gaza #Autonomous",
+            "niche": "SolarPunk system",
+            "live_url": SHOP_URL,
+            "queued_at": datetime.now(timezone.utc).isoformat(),
+            "source": "SOCIAL_PROMOTER_fallback",
+        }]
+
+    sent_this_cycle = 0
+    MAX_PER_CYCLE = 3
+
+    for i, post in enumerate(pending_posts):
+        if post.get("sent"):
+            continue
+        if sent_this_cycle >= MAX_PER_CYCLE:
+            break
+
+        platform = post.get("platform", "twitter")
+        niche    = post.get("niche", "")
+        success  = False
+        info     = ""
+
+        if platform == "twitter" or platform == "x":
+            tweet = make_tweet_from_post(post)
+            success, info = post_twitter(tweet)
+            print(f"  Twitter: {'✅ ' + info[:60] if success else '⚠️  ' + info[:60]}")
+
+        elif platform == "reddit":
+            body = make_reddit_text(post)
+            success, info = post_reddit(body, niche)
+            print(f"  Reddit:  {'✅ ' + info[:60] if success else '⚠️  ' + info[:60]}")
+
         else:
-            result = {"status": "queued"}
-            print(f"  Tweet {i+1}: queued (set X_API_KEY to auto-post)")
-        results["tweets"].append({"text": tweet, "result": result})
-    for post in REDDIT_POSTS[:1]:
-        rpost = {"subreddit": post["subreddit"], "title": post["title"],
-                 "text": post["text"].format(title=piece["title"], theme=piece["theme"], url=SHOP_URL)}
-        results["reddit"].append({"post": rpost, "result": {"status": "queued"}})
-        print(f"  Reddit r/{post['subreddit']}: queued")
-    queue.setdefault("queue", []).append(results)
-    queue["queue"] = queue["queue"][-30:]
-    queue_file.write_text(json.dumps(queue, indent=2))
-    (DATA / "social_latest.json").write_text(json.dumps(results, indent=2))
-    print(f"\n📋 COPY-PASTE READY TWEET:\n{'='*50}")
-    print(tweets[0][:280])
-    print(f"{'='*50}\nShop: {SHOP_URL}")
-    return results
+            # linkedin, etc — just log it
+            print(f"  {platform}: queued (manual post needed)")
+            info = "manual"
+            success = True  # mark sent so it doesn't loop
+
+        # Mark as sent regardless (avoid infinite retry spam)
+        post["sent"] = True
+        post["sent_at"] = datetime.now(timezone.utc).isoformat()
+        post["send_result"] = {"success": success, "info": info}
+
+        if success:
+            state["posted"] = state.get("posted", 0) + 1
+            state.setdefault("history", []).append({
+                "platform": platform,
+                "niche": niche,
+                "info": info,
+                "at": post["sent_at"],
+            })
+        else:
+            state["failed"] = state.get("failed", 0) + 1
+
+        sent_this_cycle += 1
+
+    # Keep history trimmed
+    state["history"] = state.get("history", [])[-200:]
+
+    # Write queue back with sent flags
+    queue["posts"] = pending_posts
+    save_queue(queue)
+    save_state(state)
+
+    print(f"  Sent this cycle: {sent_this_cycle} | All-time: {state['posted']} posted, {state['failed']} failed")
+    return state
+
 
 if __name__ == "__main__":
     run()
