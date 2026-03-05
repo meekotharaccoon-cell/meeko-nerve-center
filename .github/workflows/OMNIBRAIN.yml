@@ -1,4 +1,4 @@
-name: SolarPunk OMNIBRAIN v6 — Gapless Revenue Loop
+name: SolarPunk OMNIBRAIN v7 — OMNIBUS
 
 on:
   schedule:
@@ -10,30 +10,30 @@ on:
     inputs:
       reason:
         description: 'Manual trigger reason'
-        default: 'Manual test'
+        default: 'Manual run'
 
 permissions:
   contents: write
   actions: write
 
 env:
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-  GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-  GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
-  HF_TOKEN: ${{ secrets.HF_TOKEN }}
-  KOFI_USERNAME: ${{ secrets.KOFI_USERNAME }}
-  KOFI_VERIFICATION_TOKEN: ${{ secrets.KOFI_VERIFICATION_TOKEN }}
-  X_API_KEY: ${{ secrets.X_API_KEY }}
-  X_API_SECRET: ${{ secrets.X_API_SECRET }}
-  X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-  X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
-  REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-  REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
-  REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
-  REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
-  MEEKO_AFFILIATE_LINK: autonomoushum-20
+  ANTHROPIC_API_KEY:      ${{ secrets.ANTHROPIC_API_KEY }}
+  GMAIL_ADDRESS:          ${{ secrets.GMAIL_ADDRESS }}
+  GMAIL_APP_PASSWORD:     ${{ secrets.GMAIL_APP_PASSWORD }}
+  GITHUB_TOKEN:           ${{ secrets.GITHUB_TOKEN }}
+  GUMROAD_ACCESS_TOKEN:   ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+  HF_TOKEN:               ${{ secrets.HF_TOKEN }}
+  KOFI_USERNAME:          ${{ secrets.KOFI_USERNAME }}
+  KOFI_VERIFICATION_TOKEN:${{ secrets.KOFI_VERIFICATION_TOKEN }}
+  X_API_KEY:              ${{ secrets.X_API_KEY }}
+  X_API_SECRET:           ${{ secrets.X_API_SECRET }}
+  X_ACCESS_TOKEN:         ${{ secrets.X_ACCESS_TOKEN }}
+  X_ACCESS_TOKEN_SECRET:  ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+  REDDIT_CLIENT_ID:       ${{ secrets.REDDIT_CLIENT_ID }}
+  REDDIT_CLIENT_SECRET:   ${{ secrets.REDDIT_CLIENT_SECRET }}
+  REDDIT_USERNAME:        ${{ secrets.REDDIT_USERNAME }}
+  REDDIT_PASSWORD:        ${{ secrets.REDDIT_PASSWORD }}
+  MEEKO_AFFILIATE_LINK:   autonomoushum-20
 
 jobs:
   solarpunk-brain:
@@ -54,7 +54,8 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install requests python-dateutil pillow imapclient --quiet
+        run: |
+          pip install requests python-dateutil pillow imapclient tweepy praw --quiet
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -63,129 +64,28 @@ jobs:
           key: solarpunk-brain-${{ github.run_number }}
           restore-keys: solarpunk-brain-
 
-      # ═══════════════════════════════════════════════
-      # PHASE 1: HEALTH
-      # ═══════════════════════════════════════════════
-      - name: Phase 1 — Guardian
-        run: python mycelium/GUARDIAN.py || echo "Guardian fallback"
+      # ═══════════════════════════════════════════════════════════
+      # THE ENTIRE BRAIN — one command, one ctx, zero gaps
+      #
+      # L0 MEMORY:  Guardian, Memory Palace
+      # L1 INTEL:   Email, Scam Shield, Calendar, Content, AI/Crypto, Neurons A+B
+      # L2 REV:     Grant Hunter, Flywheel, Income Architect, SEO
+      # L3 BUILD:   Revenue Loop, Art, Exchange, Grant Applicant, Health Booster
+      # L4 PUBLISH: Social, Substack, Link Page, Connection Forge, Human Connector
+      # L5 COLLECT: Ko-fi, Gumroad, Sponsors
+      # L6 SYNTH:   Synapse, Synthesis Factory, Self Builder
+      # L7 REPORT:  Memory Palace persist, README, Master Briefing
+      # ═══════════════════════════════════════════════════════════
+      - name: OMNIBUS — all 37 engines, one ctx, zero gaps
+        run: python mycelium/OMNIBUS.py || echo "OMNIBUS fallback — check logs"
         continue-on-error: true
 
-      # ═══════════════════════════════════════════════
-      # PHASE 2: EMAIL CORTEX
-      # ═══════════════════════════════════════════════
-      - name: Phase 2a — EMAIL_BRAIN
-        run: python mycelium/EMAIL_BRAIN.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 2b — SCAM_SHIELD
-        run: python mycelium/SCAM_SHIELD.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 2c — HUMAN_CONNECTOR
-        run: python mycelium/HUMAN_CONNECTOR.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 2d — CALENDAR_BRAIN
-        run: python mycelium/CALENDAR_BRAIN.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 3: MONEY IN
-      # ═══════════════════════════════════════════════
-      - name: Phase 3a — KOFI_ENGINE
-        run: python mycelium/KOFI_ENGINE.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 3b — GUMROAD_ENGINE
-        run: python mycelium/GUMROAD_ENGINE.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 3c — GITHUB_SPONSORS_ENGINE
-        run: python mycelium/GITHUB_SPONSORS_ENGINE.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 4: GRANTS
-      # ═══════════════════════════════════════════════
-      - name: Phase 4a — GRANT_HUNTER
-        run: python mycelium/GRANT_HUNTER.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 4b — GRANT_APPLICANT
-        run: python mycelium/GRANT_APPLICANT.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 5: MARKET INTELLIGENCE
-      # ═══════════════════════════════════════════════
-      - name: Phase 5a — CRYPTO_WATCHER
-        run: python mycelium/CRYPTO_WATCHER.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 5b — AI_WATCHER
-        run: python mycelium/AI_WATCHER.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 6: THE LOOP
-      # Build → Affiliates → Deploy → Gumroad → Social → Brief → Brain
-      # One engine. Explicit data handoff. No gaps.
-      # ═══════════════════════════════════════════════
-      - name: Phase 6 — REVENUE_LOOP (gapless pipeline)
-        run: python mycelium/REVENUE_LOOP.py || echo "Loop offline"
-        continue-on-error: true
-
-      # CONNECTION_FORGE still runs independently (outreach, not revenue)
-      - name: Phase 6b — CONNECTION_FORGE
-        run: python mycelium/CONNECTION_FORGE.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 7: CONTENT + ART
-      # ═══════════════════════════════════════════════
-      - name: Phase 7a — ART_GENERATOR
-        run: python mycelium/ART_GENERATOR.py || echo "offline"
-        continue-on-error: true
-
-      # Social posts queued by REVENUE_LOOP get fired here
-      - name: Phase 7b — SOCIAL_PROMOTER
-        run: python mycelium/SOCIAL_PROMOTER.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 7c — SUBSTACK_ENGINE
-        run: python mycelium/SUBSTACK_ENGINE.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 8: SELF-IMPROVEMENT
-      # ═══════════════════════════════════════════════
-      - name: Phase 8a — SELF_BUILDER
-        run: python mycelium/SELF_BUILDER.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 8b — SYNTHESIS_FACTORY
-        run: python mycelium/SYNTHESIS_FACTORY.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 9: BRIEFING
-      # ═══════════════════════════════════════════════
-      - name: Phase 9a — BRIEFING_ENGINE
-        run: python mycelium/BRIEFING_ENGINE.py || echo "offline"
-        continue-on-error: true
-
-      - name: Phase 9b — README_GENERATOR
-        run: python mycelium/README_GENERATOR.py || echo "offline"
-        continue-on-error: true
-
-      # ═══════════════════════════════════════════════
-      # PHASE 10: COMMIT (ALWAYS RUNS)
-      # ═══════════════════════════════════════════════
-      - name: Phase 10 — Commit all state
+      # Commit state — always runs even if OMNIBUS had errors
+      - name: Commit brain state
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
-          git add data/ docs/ mycelium/ .github/FUNDING.yml README.md 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "🧠 Brain cycle $(date -u +%Y-%m-%d\ %H:%M) — autonomous operation"
-          git push origin main || echo "Push failed — will retry next cycle"
+          git add data/ docs/ mycelium/ README.md .github/FUNDING.yml 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "🧠 OMNIBUS $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push origin main || echo "Push failed — retry next cycle"
         continue-on-error: true
