@@ -1,9 +1,10 @@
 {
-  "last_scan": "2026-03-05T21:04:50.252595+00:00",
-  "total_engines": 8,
-  "total_files": 22,
+  "last_scan": "2026-03-05T21:27:03.863277+00:00",
+  "total_engines": 9,
+  "total_files": 27,
   "gaps": {
     "written_but_not_read": [
+      "desktop_agent_log.json",
       "neuron_b_report.json"
     ],
     "read_but_not_written": [
@@ -18,10 +19,14 @@
       "growth_curve.json",
       "kimi_conductor_report.json",
       "lessons.json",
+      "live_landing_pages.json",
       "memory_palace.json",
       "omnibrain_seed.json",
+      "omnibus_last.json",
       "open_loops.json",
       "reminders.json",
+      "secrets_checker_state.json",
+      "social_queue.json",
       "synthesis_log.json",
       "system_manifest.json",
       "system_wants_next.json",
@@ -85,6 +90,11 @@
       "priority": "critical"
     },
     {
+      "gap": "data/live_landing_pages.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/live_landing_pages.json",
+      "priority": "critical"
+    },
+    {
       "gap": "data/memory_palace.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/memory_palace.json",
       "priority": "critical"
@@ -92,6 +102,11 @@
     {
       "gap": "data/omnibrain_seed.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/omnibrain_seed.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/omnibus_last.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/omnibus_last.json",
       "priority": "critical"
     },
     {
@@ -105,29 +120,19 @@
       "priority": "critical"
     },
     {
+      "gap": "data/secrets_checker_state.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/secrets_checker_state.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/social_queue.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/social_queue.json",
+      "priority": "critical"
+    },
+    {
       "gap": "data/synthesis_log.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/synthesis_log.json",
       "priority": "critical"
-    },
-    {
-      "gap": "data/system_manifest.json is NEEDED by ['ai_council.py'] but nothing writes it",
-      "suggestion": "Build a generator engine that creates/maintains data/system_manifest.json",
-      "priority": "critical"
-    },
-    {
-      "gap": "data/system_wants_next.json is NEEDED by ['ai_council.py'] but nothing writes it",
-      "suggestion": "Build a generator engine that creates/maintains data/system_wants_next.json",
-      "priority": "critical"
-    },
-    {
-      "gap": "data/workflow_health.json is NEEDED by ['ai_council.py'] but nothing writes it",
-      "suggestion": "Build a generator engine that creates/maintains data/workflow_health.json",
-      "priority": "critical"
-    },
-    {
-      "gap": "data/neuron_b_report.json is written by ['NEURON_B.py'] but nothing reads it",
-      "suggestion": "Build a consumer engine that reads data/neuron_b_report.json and acts on it",
-      "priority": "high"
     }
   ],
   "priority_builds": [
@@ -187,6 +192,11 @@
       "priority": "critical"
     },
     {
+      "gap": "data/live_landing_pages.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/live_landing_pages.json",
+      "priority": "critical"
+    },
+    {
       "gap": "data/memory_palace.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/memory_palace.json",
       "priority": "critical"
@@ -197,6 +207,11 @@
       "priority": "critical"
     },
     {
+      "gap": "data/omnibus_last.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/omnibus_last.json",
+      "priority": "critical"
+    },
+    {
       "gap": "data/open_loops.json is NEEDED by ['ai_council.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/open_loops.json",
       "priority": "critical"
@@ -204,6 +219,16 @@
     {
       "gap": "data/reminders.json is NEEDED by ['ai_council.py'] but nothing writes it",
       "suggestion": "Build a generator engine that creates/maintains data/reminders.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/secrets_checker_state.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/secrets_checker_state.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/social_queue.json is NEEDED by ['DESKTOP_AGENT.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/social_queue.json",
       "priority": "critical"
     },
     {

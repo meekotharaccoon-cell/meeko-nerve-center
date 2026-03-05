@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T21:04:25.399837+00:00",
+  "timestamp": "2026-03-05T21:26:45.316866+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 351,
+        "score": 382,
         "source": "hackernews"
       },
       {
         "title": "Wikipedia in read-only mode following mass admin account compromise",
         "url": "https://www.wikimediastatus.net",
-        "score": 692,
+        "score": 715,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 102,
-        "source": "hackernews"
-      },
-      {
-        "title": "Let's Get Physical",
-        "url": "https://m4iler.cloud/posts/lets-get-physical/",
-        "score": 50,
+        "score": 117,
         "source": "hackernews"
       },
       {
         "title": "Pentagon Formally Labels Anthropic Supply-Chain Risk",
         "url": "https://www.wsj.com/politics/national-security/pentagon-formally-labels-anthropic-supply-chain-risk-escalating-conflict-ebdf0523",
-        "score": 215,
+        "score": 267,
+        "source": "hackernews"
+      },
+      {
+        "title": "Hardware hotplug events on Linux, the gory details",
+        "url": "https://arcanenibble.github.io/hardware-hotplug-events-on-linux-the-gory-details.html",
+        "score": 57,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.2,
+    "temp_c": 10.0,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -109,14 +109,6 @@
       "count": 1
     },
     {
-      "word": "let's",
-      "count": 1
-    },
-    {
-      "word": "physical",
-      "count": 1
-    },
-    {
       "word": "pentagon",
       "count": 1
     },
@@ -145,7 +137,15 @@
       "count": 1
     },
     {
-      "word": "making",
+      "word": "hardware",
+      "count": 1
+    },
+    {
+      "word": "hotplug",
+      "count": 1
+    },
+    {
+      "word": "events",
       "count": 1
     }
   ],
