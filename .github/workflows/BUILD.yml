@@ -40,6 +40,7 @@ jobs:
           BUILD_NOTE: ${{ github.event.inputs.note }}
           GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
           GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
         run: |
           python3 - <<'PYEOF'
           import os, json, requests
@@ -69,6 +70,9 @@ Build ONE new Python engine for mycelium/ that:
 - Saves state to data/ENGINENAME_state.json
 - Under 200 lines, handles all exceptions gracefully
 
+Available secrets: ANTHROPIC_API_KEY, GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME,
+GMAIL_ADDRESS, GMAIL_APP_PASSWORD, HF_TOKEN, GITHUB_TOKEN
+
 Respond ONLY with:
 FILENAME: ENGINE_NAME.py
 ---
@@ -79,7 +83,7 @@ FILENAME: ENGINE_NAME.py
               r = requests.post(
                   "https://api.anthropic.com/v1/messages",
                   headers={"x-api-key": api_key, "anthropic-version": "2023-06-01", "Content-Type": "application/json"},
-                  json={"model": "claude-sonnet-4-20250514", "max_tokens": 4000,
+                  json={"model": "claude-sonnet-4-6", "max_tokens": 4000,
                         "messages": [{"role": "user", "content": prompt}]},
                   timeout=120
               )
