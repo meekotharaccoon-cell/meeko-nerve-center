@@ -1,4 +1,4 @@
-name: SolarPunk OMNIBRAIN v9
+name: SolarPunk OMNIBRAIN v10
 
 on:
   schedule:
@@ -15,9 +15,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-  actions: write
 
 env:
   PYTHONPATH: mycelium
@@ -45,29 +42,17 @@ jobs:
     timeout-minutes: 55
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
+          # NO cache: pip — we have no requirements.txt
 
       - name: Install dependencies
-        run: |
-          pip install --quiet \
-            requests \
-            python-dateutil \
-            pillow \
-            imapclient \
-            tweepy \
-            praw \
-            beautifulsoup4 \
-            feedparser
+        run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -76,44 +61,31 @@ jobs:
           key: brain-${{ github.run_number }}
           restore-keys: brain-
 
-      - name: Ensure docs directory exists
-        run: mkdir -p docs
+      - run: mkdir -p docs
 
-      - name: Verify AI_CLIENT works
+      - name: Verify secrets
         run: |
           python -c "
-          import sys; sys.path.insert(0, 'mycelium')
-          import os
-          hf = os.environ.get('HF_TOKEN', '')
-          if hf:
-              print(f'HF_TOKEN: present ({len(hf)} chars)')
-          else:
-              print('WARNING: HF_TOKEN not set')
+          import sys, os; sys.path.insert(0, 'mycelium')
+          for s in ['HF_TOKEN','GMAIL_ADDRESS','GITHUB_TOKEN']:
+              v = os.environ.get(s,'')
+              print(f'{s}: {\"OK \" + str(len(v)) + \"c\" if v else \"MISSING\"}')
           try:
-              from AI_CLIENT import ask, ask_json
-              print('AI_CLIENT: import OK')
-          except Exception as e:
-              print(f'AI_CLIENT import error: {e}')
+              from AI_CLIENT import ask, ask_json; print('AI_CLIENT: OK')
+          except Exception as e: print(f'AI_CLIENT: {e}')
           " || true
 
-      - name: OMNIBUS — all engines, subprocess-isolated
+      - name: Run OMNIBUS
         run: python mycelium/OMNIBUS.py
         continue-on-error: true
 
-      - name: Commit all outputs
+      - name: Commit + push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "SolarPunk Brain"
           git config user.email "meekotharaccoon@gmail.com"
           git add data/ docs/ mycelium/ README.md 2>/dev/null || true
-          git add .github/FUNDING.yml 2>/dev/null || true
-          if git diff --staged --quiet; then
-            echo "Nothing to commit"
-          else
-            git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
-            git push origin main || (
-              echo "Push failed — pulling and retrying"
-              git pull --rebase origin main
-              git push origin main
-            )
-          fi
-        continue-on-error: true
+          git diff --staged --quiet && echo "nothing to commit" && exit 0
+          git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
+          git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
