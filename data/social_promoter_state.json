@@ -1,7 +1,7 @@
 {
-  "cycles": 13,
-  "posted": 13,
-  "failed": 26,
+  "cycles": 14,
+  "posted": 14,
+  "failed": 28,
   "history": [
     {
       "platform": "linkedin",
@@ -80,7 +80,13 @@
       "niche": "Grant Writing Templates",
       "info": "manual",
       "at": "2026-03-05T18:57:41.582131+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "Grant Writing Templates",
+      "info": "manual",
+      "at": "2026-03-05T18:58:52.109557+00:00"
     }
   ],
-  "last_run": "2026-03-05T18:57:41.581668+00:00"
+  "last_run": "2026-03-05T18:58:52.109047+00:00"
 }
