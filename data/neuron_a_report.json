@@ -111,6 +111,7 @@
       "briefing_state.json",
       "business_ai_prompt_packs.json",
       "business_autonomous_business_guide.json",
+      "business_email_automation_blueprints.json",
       "business_factory_state.json",
       "business_github_actions_templates.json",
       "business_grant_writing_templates.json",
@@ -157,6 +158,7 @@
       "nightly_digest_state.json",
       "omnibus_history.json",
       "omnibus_last.json",
+      "revenue_inbox.json",
       "revenue_loop_history.json",
       "revenue_loop_last.json",
       "scam_shield_state.json",
@@ -174,7 +176,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T11:26:07.679395+00:00"
+    "timestamp": "2026-03-05T11:39:36.729506+00:00"
   },
-  "generated_at": "2026-03-05T11:26:07.914429+00:00"
+  "generated_at": "2026-03-05T11:39:37.022291+00:00"
 }

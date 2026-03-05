@@ -1,11 +1,11 @@
 {
-  "run_id": "22715685614",
-  "completed": "2026-03-05T11:26:21.896559+00:00",
-  "elapsed_s": 22,
+  "run_id": "22716148812",
+  "completed": "2026-03-05T11:39:58.848498+00:00",
+  "elapsed_s": 53,
   "health_before": 40,
   "health_after": 40,
-  "businesses_built": 8,
-  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/",
+  "businesses_built": 9,
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint-2-0/",
   "gumroad_url": "https://meekotharacoon.gumroad.com",
   "exchange_tasks": 0,
   "exchange_earned": 0.0,
@@ -61,7 +61,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.8,
-      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-05 11:26 UTC\n\ud83d\udcbe Save-state: save-20260305-112600\n\u2705 All 10 core files intact\n",
+      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-05 11:39 UTC\n\ud83d\udcbe Save-state: save-20260305-113905\n\u2705 All 10 core files intact\n",
       "stderr_tail": ""
     },
     {
@@ -76,8 +76,8 @@
       "engine": "EMAIL_BRAIN",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.7,
-      "stdout_tail": "EMAIL_BRAIN cycle 8 | meekotharaccoon@gmail.com | AI=online\n  IMAP: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'\n",
+      "elapsed": 22.4,
+      "stdout_tail": "ttps://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct/v1/chat/completions\n  [AI] Phi-3.5-mini-instruct failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  [AI] ask_json parse failed: All AI models failed. Last: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  [BUSINESS] Security alert \u2192 business_queued_review\n",
       "stderr_tail": ""
     },
     {
@@ -85,46 +85,46 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SCAM_SHIELD cycle 8 | 0 caught\n  Scanning 0 new emails\n  Total: 0 scams | 0 safe\n",
+      "stdout_tail": "SCAM_SHIELD cycle 9 | 0 caught\n  Scanning 25 new emails\n  Total: 0 scams | 20 safe\n",
       "stderr_tail": ""
     },
     {
       "engine": "CALENDAR_BRAIN",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.0,
-      "stdout_tail": "CALENDAR_BRAIN cycle 8\n  No appointments inbox\n",
+      "elapsed": 0.1,
+      "stdout_tail": "CALENDAR_BRAIN cycle 9\n  No appointments inbox\n",
       "stderr_tail": ""
     },
     {
       "engine": "CONTENT_HARVESTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 3.1,
-      "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 19.4C sunny\nHarvested 9 items -> 3 content angles\nBest angle: How 'Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-t...' connects t\n",
+      "elapsed": 3.7,
+      "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 19.3C sunny\nHarvested 9 items -> 3 content angles\nBest angle: How 'Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-t...' connects t\n",
       "stderr_tail": ""
     },
     {
       "engine": "AI_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.8,
-      "stdout_tail": "AI_WATCHER cycle 8\n  Found: 10 image models, 5 text models, 5 repos\n  Weekly digest queued\n",
+      "elapsed": 2.9,
+      "stdout_tail": "AI_WATCHER cycle 9\n  Found: 10 image models, 5 text models, 5 repos\n  Weekly digest sent\n",
       "stderr_tail": ""
     },
     {
       "engine": "CRYPTO_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "CRYPTO_WATCHER cycle 8\n  Market updated | Fear&Greed: 22 (Extreme Fear)\n  BTC: $72,960 | ETH: $2,144\n  AI tokens spotlight: SINGULARITYNET +4.3%\n",
+      "elapsed": 0.6,
+      "stdout_tail": "CRYPTO_WATCHER cycle 9\n  Market updated | Fear&Greed: 22 (Extreme Fear)\n  BTC: $72,938 | ETH: $2,143\n  AI tokens spotlight: SINGULARITYNET +5.1%\n",
       "stderr_tail": ""
     },
     {
       "engine": "NEURON_A",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.3,
+      "elapsed": 0.4,
       "stdout_tail": "st: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\nBuilder thesis: Ko-fi + GitHub Sponsors = first dollars at zero spend\n  [high] Gaza Rose Gallery Etsy SEO: Generate 10 AI-optimized product descriptions with SEO keywords\n  [medium] GitHub Sponsors: Enable at github.com/sponsors/meekotharaccoon-cell\n  [high] SolarPunk Newsletter on Substack: Write first issue: I built a self-running AI agent for free\nNEURON_A done.\n",
       "stderr_tail": ""
     },
@@ -140,15 +140,15 @@
       "engine": "GRANT_HUNTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.5,
-      "stdout_tail": "GRANT_HUNTER cycle 8\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
+      "elapsed": 0.9,
+      "stdout_tail": "GRANT_HUNTER cycle 9\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
       "stderr_tail": ""
     },
     {
       "engine": "ETSY_SEO_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.5,
+      "elapsed": 1.4,
       "stdout_tail": "ETSY_SEO_ENGINE starting...\n  Desert Rose at Dawn...\n  White Doves Over the Mediterranean...\n  Olive Grove Eternal...\n  Tatreez Pattern Bloom...\n  Gaza Coastline at Golden Hour...\n  Star of Hope Rising...\n  Pomegranate Season...\n  Night Garden in Ruins...\n  Child with Balloon...\n  The Return - Sunflower Field...\nGenerated 10 Etsy listings (0 Claude-enhanced)\n",
       "stderr_tail": ""
     },
@@ -164,7 +164,7 @@
       "engine": "REVENUE_FLYWHEEL",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.2,
+      "elapsed": 0.3,
       "stdout_tail": "REVENUE_FLYWHEEL | Current: $0.00 | Potential: $2720/mo\n  Ko-fi Sales               $    0.00 [\u2713]\n  Grants                    $    0.00 [\u2713]\n  GitHub Sponsors           $    0.00 [\u2713]\n  Email Agent Exchange      $    0.00 [\u2713]\n  Substack                  $    0.00 [\u2713]\n  Gumroad                   $    0.00 [\u2717]\n  Bottleneck: activate \u2014 Ko-fi Sales\n",
       "stderr_tail": ""
     },
@@ -172,8 +172,8 @@
       "engine": "BUSINESS_FACTORY",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.2,
-      "stdout_tail": "huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  Saved: data/business_email_automation_blueprints.json\n  3 social posts queued\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-50744ad8f8bsm178796991cf.27 - gsmtp')\n  \u2705 SolarPunk Email Automation Blueprints | $370-$1480/month\n  \ud83d\udcb0 Gaza: 15% of every $37 sale = $5.55 to PCRF\n  \ud83d\udcca Total potential: $4,620/month\n",
+      "elapsed": 2.4,
+      "stdout_tail": "//api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  [AI] ask_json parse failed: All AI models failed. Last: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  Saved: data/business_ai_side_income_blueprint_20.json\n  3 social posts queued\n  \u2705 SolarPunk AI Side Income Blueprint 2.0 | $270-$1080/month\n  \ud83d\udcb0 Gaza: 15% of every $27 sale = $4.05 to PCRF\n  \ud83d\udcca Total potential: $5,160/month\n",
       "stderr_tail": ""
     },
     {
@@ -181,15 +181,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "LANDING_DEPLOYER cycle 8 | 7 pages live\n  Deploying: SolarPunk Email Automation Blueprints\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/\n  Total live pages: 8\n",
+      "stdout_tail": "LANDING_DEPLOYER cycle 9 | 8 pages live\n  Deploying: SolarPunk AI Side Income Blueprint 2.0\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint-2-0/\n  Total live pages: 9\n",
       "stderr_tail": ""
     },
     {
       "engine": "REVENUE_LOOP",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.5,
-      "stdout_tail": "ts queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-899c7374600sm180110496d6.29 - gsmtp')\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40\u219245 | Total loops: 1\n\n\u2705 REVENUE_LOOP done 1s\n   OK: get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/email-automation-blueprints/\n",
+      "elapsed": 1.9,
+      "stdout_tail": "on_list parse failed: All AI models failed. Last: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  \u2705 3 posts queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  \u2705 Email sent\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40\u219245 | Total loops: 1\n\n\u2705 REVENUE_LOOP done 1s\n   OK: get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint-2-0/\n",
       "stderr_tail": ""
     },
     {
@@ -205,7 +205,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 8 | 0 tasks | $0.00 | AI=online\n  No inbox data \u2014 EMAIL_BRAIN hasn't run yet or Gmail not configured\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
+      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 9 | 0 tasks | $0.00 | AI=online\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
       "stderr_tail": ""
     },
     {
@@ -213,15 +213,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "GRANT_APPLICANT cycle 8 | 0 applied\n  0 new candidates\n",
+      "stdout_tail": "GRANT_APPLICANT cycle 9 | 0 applied\n  0 new candidates\n",
       "stderr_tail": ""
     },
     {
       "engine": "HEALTH_BOOSTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.3,
-      "stdout_tail": "r Meeko):\n  1. Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets\n  2. Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token\n  3. Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  4. Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)\n  5. Share shop URL: meekotharaccoon-cell.github.io/meeko-nerve-center\n\n\ud83d\udcca Revenue: 0 sales | $0.00 to Gaza\n==================================================\n\n",
+      "elapsed": 0.2,
+      "stdout_tail": "XES (for Meeko):\n  1. Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets\n  2. Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token\n  3. Add X_API_KEY: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  4. Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  5. Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)\n\n\ud83d\udcca Revenue: 0 sales | $0.00 to Gaza\n==================================================\n\n",
       "stderr_tail": ""
     },
     {
@@ -229,7 +229,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SOCIAL_PROMOTER v2 cycle 5 | Twitter=off | Reddit=off\n  Queue: 48 total, 36 unsent\n  Twitter: \u26a0\ufe0f  no credentials\n  Reddit:  \u26a0\ufe0f  no credentials\n  linkedin: queued (manual post needed)\n  Sent this cycle: 3 | All-time: 5 posted, 10 failed\n",
+      "stdout_tail": "SOCIAL_PROMOTER v2 cycle 6 | Twitter=off | Reddit=off\n  Queue: 54 total, 39 unsent\n  Twitter: \u26a0\ufe0f  no credentials\n  Reddit:  \u26a0\ufe0f  no credentials\n  linkedin: queued (manual post needed)\n  Sent this cycle: 3 | All-time: 6 posted, 12 failed\n",
       "stderr_tail": ""
     },
     {
@@ -237,7 +237,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SUBSTACK_ENGINE cycle 8 | 1 issues\n  Not yet time for weekly issue\n",
+      "stdout_tail": "SUBSTACK_ENGINE cycle 9 | 1 issues\n  Not yet time for weekly issue\n",
       "stderr_tail": ""
     },
     {
@@ -253,7 +253,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 1.0,
-      "stdout_tail": "GITHUB_POSTER cycle 4\n  \u2705 Released: Email Automation Blueprints \u2192 https://github.com/meekotharaccoon-cell/meeko-nerve-center/releases/tag/product-email-automation-blueprints\n  1 new releases | 9 total\n",
+      "stdout_tail": "GITHUB_POSTER cycle 5\n  \u2705 Released: Ai Side Income Blueprint 2 0 \u2192 https://github.com/meekotharaccoon-cell/meeko-nerve-center/releases/tag/product-ai-side-income-blueprint-2-0\n  1 new releases | 10 total\n",
       "stderr_tail": ""
     },
     {
@@ -261,15 +261,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "SOCIAL_DASHBOARD building copy-paste board...\n  \u2705 docs/social.html built \u2014 76 posts ready to copy\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html\n",
+      "stdout_tail": "SOCIAL_DASHBOARD building copy-paste board...\n  \u2705 docs/social.html built \u2014 82 posts ready to copy\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html\n",
       "stderr_tail": ""
     },
     {
       "engine": "CONNECTION_FORGE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.0,
-      "stdout_tail": "CONNECTION_FORGE cycle 4\n  Active connections: Gmail, HuggingFace, Twitter/X\n  email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-8cbbf6869f5sm2167239985a.20 - gsmtp')\n",
+      "elapsed": 2.1,
+      "stdout_tail": "CONNECTION_FORGE cycle 5\n  Active connections: Gmail, HuggingFace\n  Setup guide sent: Redbubble ($5-80/mo)\n",
       "stderr_tail": ""
     },
     {
@@ -277,15 +277,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "HUMAN_CONNECTOR cycle 8 | 0 humans met\n  0 new genuine humans found\n",
+      "stdout_tail": "HUMAN_CONNECTOR cycle 9 | 0 humans met\n  0 new genuine humans found\n",
       "stderr_tail": ""
     },
     {
       "engine": "KOFI_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.0,
-      "stdout_tail": "KOFI_ENGINE cycle 8 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
+      "elapsed": 0.1,
+      "stdout_tail": "KOFI_ENGINE cycle 9 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
       "stderr_tail": ""
     },
     {
@@ -293,15 +293,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "cle 12 | 6 products\n  \ud83d\udccb Queued: Desert Rose at Dawn \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: White Doves Over the Mediterranean \u2014 Gaza Ros (no_token)\n  \ud83d\udccb Queued: Olive Grove Eternal \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Tatreez Pattern Bloom \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Gaza Coastline at Golden Hour \u2014 Gaza Rose Gal (no_token)\n  \ud83d\udccb Queued: Star of Hope Rising \u2014 Gaza Rose Gallery (no_token)\n\nGUMROAD: 0 live | 6 queued\n  \u2192 Add GUMROAD_ACCESS_TOKEN secret to auto-create listings\n",
+      "stdout_tail": "cle 13 | 6 products\n  \ud83d\udccb Queued: Desert Rose at Dawn \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: White Doves Over the Mediterranean \u2014 Gaza Ros (no_token)\n  \ud83d\udccb Queued: Olive Grove Eternal \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Tatreez Pattern Bloom \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Gaza Coastline at Golden Hour \u2014 Gaza Rose Gal (no_token)\n  \ud83d\udccb Queued: Star of Hope Rising \u2014 Gaza Rose Gallery (no_token)\n\nGUMROAD: 0 live | 6 queued\n  \u2192 Add GUMROAD_ACCESS_TOKEN secret to auto-create listings\n",
       "stderr_tail": ""
     },
     {
       "engine": "GITHUB_SPONSORS_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.0,
-      "stdout_tail": "GITHUB_SPONSORS cycle 8 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
+      "elapsed": 0.1,
+      "stdout_tail": "GITHUB_SPONSORS cycle 9 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
       "stderr_tail": ""
     },
     {
@@ -309,15 +309,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 8 | matched: 0 | verified: $0.00\n  No revenue_inbox.json yet\n",
+      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 9 | matched: 0 | verified: $0.00\n",
       "stderr_tail": ""
     },
     {
       "engine": "SYNAPSE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.0,
-      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 48 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-899c7374600sm180112036d6.29 - gsmtp')\nBrain state saved. Score: 40/100\n",
+      "elapsed": 3.0,
+      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 48 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail sent: SolarPunk [40/100 -21] - 48 engines | $0.00 | 2026-03-05\nBrain state saved. Score: 40/100\n",
       "stderr_tail": ""
     },
     {
@@ -340,7 +340,7 @@
       "engine": "SELF_BUILDER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.5,
+      "elapsed": 0.6,
       "stdout_tail": "led: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct/v1/chat/completions\n  [AI] Phi-3.5-mini-instruct failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  Code generation error: All AI models failed. Last: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3.5-mini-instruct/v1/chat/completions\n  Generation failed\n",
       "stderr_tail": ""
     },
@@ -364,24 +364,24 @@
       "engine": "BRIEFING_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.3,
-      "stdout_tail": "BRIEFING_ENGINE cycle 4 | UTC hour: 11\n  Outside briefing windows (morning: 6-9 UTC, evening: 19-22 UTC)\n",
+      "elapsed": 0.4,
+      "stdout_tail": "BRIEFING_ENGINE cycle 5 | UTC hour: 11\n  Outside briefing windows (morning: 6-9 UTC, evening: 19-22 UTC)\n",
       "stderr_tail": ""
     },
     {
       "engine": "NIGHTLY_DIGEST",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.9,
-      "stdout_tail": "NIGHTLY_DIGEST cycle 8\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-8cbbf72e21bsm1855792985a.44 - gsmtp')\n  Status page \u2192 docs/status.html\n",
+      "elapsed": 3.0,
+      "stdout_tail": "NIGHTLY_DIGEST cycle 9\n  Nightly digest sent\n  Status page \u2192 docs/status.html\n",
       "stderr_tail": ""
     },
     {
       "engine": "ISSUE_SYNC",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.9,
-      "stdout_tail": "ISSUE_SYNC running...\n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  8 issues synced\n",
+      "elapsed": 2.2,
+      "stdout_tail": "ISSUE_SYNC running...\n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  Updated #4: \n  9 issues synced\n",
       "stderr_tail": ""
     }
   ]

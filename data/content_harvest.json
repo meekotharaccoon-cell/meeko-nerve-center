@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T11:26:02.417642+00:00",
+  "timestamp": "2026-03-05T11:39:29.482548+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
         "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
-        "score": 113,
+        "score": 119,
         "source": "hackernews"
       },
       {
         "title": "Google Workspace CLI",
         "url": "https://github.com/googleworkspace/cli",
-        "score": 618,
+        "score": 625,
         "source": "hackernews"
       },
       {
         "title": "Relicensing with AI-Assisted Rewrite",
         "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
-        "score": 146,
+        "score": 151,
         "source": "hackernews"
       },
       {
         "title": "The L in \"LLM\" Stands for Lying",
         "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
-        "score": 232,
+        "score": 239,
         "source": "hackernews"
       },
       {
         "title": "Smalltalk's Browser: Unbeatable, yet Not Enough",
         "url": "https://blog.lorenzano.eu/smalltalks-browser-unbeatable-yet-not-enough/",
-        "score": 46,
+        "score": 50,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 19.4,
+    "temp_c": 19.3,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
