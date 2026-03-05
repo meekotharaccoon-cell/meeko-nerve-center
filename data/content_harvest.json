@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T15:33:15.009861+00:00",
+  "timestamp": "2026-03-05T15:56:18.891508+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
         "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
-        "score": 311,
+        "score": 394,
+        "source": "hackernews"
+      },
+      {
+        "title": "Google Safe Browsing missed 84% of phishing sites we found in February",
+        "url": "https://www.norn-labs.com/blog/huginn-report-feb-2026",
+        "score": 29,
         "source": "hackernews"
       },
       {
         "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
         "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
-        "score": 248,
+        "score": 254,
+        "source": "hackernews"
+      },
+      {
+        "title": "Fast-Servers",
+        "url": "https://geocar.sdf1.org/fast-servers.html",
+        "score": 19,
         "source": "hackernews"
       },
       {
         "title": "Google Workspace CLI",
         "url": "https://github.com/googleworkspace/cli",
-        "score": 755,
-        "source": "hackernews"
-      },
-      {
-        "title": "Rising carbon dioxide levels now detected in human blood",
-        "url": "https://phys.org/news/2026-02-carbon-dioxide-human-blood.html",
-        "score": 43,
-        "source": "hackernews"
-      },
-      {
-        "title": "The L in \"LLM\" Stands for Lying",
-        "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
-        "score": 468,
+        "score": 768,
         "source": "hackernews"
       }
     ],
@@ -62,12 +62,16 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 15.4,
+    "temp_c": 15.1,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
+    {
+      "word": "google",
+      "count": 2
+    },
     {
       "word": "speech",
       "count": 2
@@ -109,43 +113,39 @@
       "count": 1
     },
     {
+      "word": "safe",
+      "count": 1
+    },
+    {
+      "word": "browsing",
+      "count": 1
+    },
+    {
+      "word": "missed",
+      "count": 1
+    },
+    {
+      "word": "phishing",
+      "count": 1
+    },
+    {
+      "word": "sites",
+      "count": 1
+    },
+    {
+      "word": "found",
+      "count": 1
+    },
+    {
+      "word": "february",
+      "count": 1
+    },
+    {
       "word": "nvidia",
       "count": 1
     },
     {
       "word": "personaplex",
-      "count": 1
-    },
-    {
-      "word": "apple",
-      "count": 1
-    },
-    {
-      "word": "silicon:",
-      "count": 1
-    },
-    {
-      "word": "full",
-      "count": 1
-    },
-    {
-      "word": "duplex",
-      "count": 1
-    },
-    {
-      "word": "swift",
-      "count": 1
-    },
-    {
-      "word": "google",
-      "count": 1
-    },
-    {
-      "word": "workspace",
-      "count": 1
-    },
-    {
-      "word": "rising",
       "count": 1
     }
   ],

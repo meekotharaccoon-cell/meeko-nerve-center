@@ -675,21 +675,39 @@
       "text": "Just launched: Social Media Content Packs \u2014 $22, 15% to Gaza \ud83c\udf39 gumroad.com",
       "queued_at": "2026-03-05T10:23:18.859863+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:56:32.056101+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with autonomous AI: Social Media Content Packs. $22, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T10:23:18.859863+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:56:32.056111+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New digital product: Social Media Content Packs. $22. 15% to PCRF (Gaza children's relief).",
       "queued_at": "2026-03-05T10:23:18.859863+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Social Media Content Packs"
+      "niche": "Social Media Content Packs",
+      "sent": true,
+      "sent_at": "2026-03-05T15:56:32.056118+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -1029,6 +1047,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint/",
       "niche": "AI Side Income Blueprint"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Palestine Solidarity Art Pack \u2014 $15, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T15:56:27.000416+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Palestine Solidarity Art Pack. $15, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T15:56:27.000416+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Palestine Solidarity Art Pack. $15. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T15:56:27.000416+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Palestine Solidarity Art Pack \u2014 Palestine Solidarity Art Pack \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/ $15, 15% to Gaza",
+      "queued_at": "2026-03-05T15:56:29.167519+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/",
+      "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Palestine Solidarity Art Pack\n\nPalestine Solidarity Art Pack \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T15:56:29.167519+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/",
+      "niche": "Palestine Solidarity Art Pack"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Palestine Solidarity Art Pack\nPalestine Solidarity Art Pack \u2014 built by AI, 15% to Gaza\n$15 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/",
+      "queued_at": "2026-03-05T15:56:29.167519+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-art-pack/",
+      "niche": "Palestine Solidarity Art Pack"
     }
   ]
 }
