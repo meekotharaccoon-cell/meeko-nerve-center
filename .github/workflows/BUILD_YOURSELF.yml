@@ -51,6 +51,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUILD_TARGET: ${{ inputs.build_target }}
           TURBO: ${{ inputs.turbo }}
+          GUMROAD_SECRET: ${{ secrets.GUMROAD_SECRET }}
+          GUMROAD_ID: ${{ secrets.GUMROAD_ID }}
+          GUMROAD_NAME: ${{ secrets.GUMROAD_NAME }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
         run: |
           python3 - <<'PYEOF'
           import os, json, requests
@@ -60,6 +64,8 @@ jobs:
           api_key     = os.environ.get("ANTHROPIC_API_KEY", "")
           build_target = os.environ.get("BUILD_TARGET", "").strip()
           turbo       = os.environ.get("TURBO", "false").lower() == "true"
+          has_gumroad = bool(os.environ.get("GUMROAD_SECRET", ""))
+          has_gmail   = bool(os.environ.get("GMAIL_ADDRESS", ""))
 
           engines   = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
           workflows = sorted([f.name for f in Path(".github/workflows").glob("*.yml")])
@@ -74,46 +80,47 @@ jobs:
 
           missing_required = guardian.get("missing_required_engines", [])
 
-          # Income streams catalog — what SolarPunk should eventually run
+          # Income streams catalog
           INCOME_STREAMS = """
           PASSIVE INCOME STREAMS SOLARPUNK CAN BUILD:
-          1. Gaza Rose Gallery — automated product drops, Gumroad/Etsy listing engine
+          1. Gaza Rose Gallery — automated art drops, Gumroad listing engine
           2. AI-written content → Medium Partner Program (auto-publish daily articles)
           3. Prompt packs & templates → Gumroad store (auto-generate + list)
           4. Newsletter → Substack automation (auto-write + schedule)
           5. GitHub Sponsors — showcase SolarPunk itself as open source project
-          6. Affiliate marketing — auto-blog posts with affiliate links (ShareASale, ClickBank)
+          6. Affiliate marketing — auto-blog posts with affiliate links
           7. API reselling — wrap free APIs with value-add, sell on RapidAPI
           8. Data products — curated datasets → Kaggle/HuggingFace + donations
-          9. WhatsApp business automation — sell as service
-          10. Fiverr automation — auto-apply to gigs, deliver AI work
+          9. Human Payout Network — connect contributors, auto-split revenue via PayPal
+          10. SolarPunk Brand™ — licensing, merch, B2B white-label system
           """
 
           n_to_build = 3 if turbo else 1
 
           prompt = f"""You are SolarPunk — an autonomous AI agent that builds itself.
 
-CURRENT STATE OF THE SYSTEM:
-- Engines in mycelium/: {engines}
+CURRENT STATE:
+- Engines: {engines}
 - Workflows: {workflows}
 - Data files: {data_f}
 - Missing required engines: {missing_required}
-- Meeko's requested build target: "{build_target or 'You decide — build the most valuable thing'}"
+- Gumroad connected: {has_gumroad} (secrets: GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME)
+- Gmail connected: {has_gmail}
+- Build target: "{build_target or 'You decide — build the most valuable thing'}"
 
 {INCOME_STREAMS}
 
-YOUR JOB:
-Build {n_to_build} Python file(s) for the mycelium/ directory.
-Each file should be a complete, production-ready engine that runs in GitHub Actions.
-Files must be standalone — import only: os, json, requests, datetime, pathlib, smtplib, email, re, urllib.
+YOUR JOB: Build {n_to_build} Python file(s) for the mycelium/ directory.
+Each file must be a complete, production-ready engine that runs in GitHub Actions.
+Import only: os, json, requests, datetime, pathlib, smtplib, email, re, urllib.
 
-RULES (ABSOLUTE — NEVER BREAK):
+RULES (ABSOLUTE):
 - NEVER write to .github/ directory
-- NEVER use subprocess with git merge, git checkout, or git reset
 - ONLY write NEW files to mycelium/ or update data/
-- Each engine reads its config from environment variables (GitHub Secrets)
+- Each engine reads config from environment variables (GitHub Secrets)
 - Each engine writes results to data/[engine_name]_output.json
-- Each engine is self-contained and can run standalone
+- Use GUMROAD_SECRET (not GUMROAD_ACCESS_TOKEN) for Gumroad API auth
+- Use claude-sonnet-4-6 as model string for any Anthropic API calls
 
 Respond ONLY with valid JSON (no markdown, no fences):
 {{
@@ -137,7 +144,7 @@ Respond ONLY with valid JSON (no markdown, no fences):
                   r = requests.post(
                       "https://api.anthropic.com/v1/messages",
                       headers={"x-api-key": api_key, "Content-Type": "application/json", "anthropic-version": "2023-06-01"},
-                      json={"model": "claude-sonnet-4-20250514", "max_tokens": 8000,
+                      json={"model": "claude-sonnet-4-6", "max_tokens": 8000,
                             "messages": [{"role": "user", "content": prompt}]},
                       timeout=120
                   )
@@ -175,7 +182,7 @@ Respond ONLY with valid JSON (no markdown, no fences):
               if not fname or not code:
                   continue
 
-              # SAFETY CHECK — never let Claude write outside mycelium/ or data/
+              # SAFETY CHECK
               if "/" in fname or "\\" in fname or ".github" in fname:
                   print(f"⛔ BLOCKED unsafe path: {fname}")
                   continue
@@ -228,7 +235,6 @@ Respond ONLY with valid JSON (no markdown, no fences):
           registry_f.write_text(json.dumps(registry, indent=2))
           print(f"Total engines ever built by BUILD_YOURSELF: {len(registry)}")
 
-          # Suggest next run
           suggestion = json.loads(plan_f.read_text()).get("next_build_suggestion","")
           if suggestion:
               Path("data/next_build_suggestion.txt").write_text(suggestion)
@@ -286,14 +292,13 @@ BUILD LOG:
 NEXT RUN SUGGESTION:
 {plan.get('next_build_suggestion','')}
 
-TOTAL ENGINES NOW IN SYSTEM: {len(engines_now)}
+TOTAL ENGINES NOW: {len(engines_now)}
 TOTAL BUILT BY BUILD_YOURSELF: {len(reg)}
-ENGINES: {', '.join(engines_now)}
 
-Trigger another BUILD_YOURSELF run to keep growing.
-→ github.com/meekotharaccoon-cell/meeko-nerve-center/actions
+Trigger another BUILD_YOURSELF run:
+→ https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
 
-— SolarPunk 🌱"""
+— SolarPunk™ 🌱"""
 
           try:
               msg = MIMEText(body)
