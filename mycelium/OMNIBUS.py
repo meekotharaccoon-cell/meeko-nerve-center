@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v6 — full bridge network
+OMNIBUS v7 — full bridge network
 =================================
-v6 changes vs v5:
-- Added SECRETS_CHECKER (L0) — live setup.html, diagnoses all missing API keys
-- Added ART_CATALOG (L3) — builds art.html, the actual working Gaza gallery
-- Added HUMAN_PAYOUT (L5) — PayPal auto-payouts to collaborators + PCRF
-- Added SOLARPUNK_LEGAL (L7) — trademark tracking, legal fund counter
-- Updated print footer with all live URLs including art, dashboard, payouts
-- All engines use ANTHROPIC_API_KEY (Claude) as primary AI brain
+v7 changes vs v6:
+- Added GUMROAD_AUTO_QUEUE (L2) — auto-populates gumroad_listings.json with real products
+- Added CONTRIBUTOR_REGISTRY (L5) — tracks human revenue splits, credits contributors
+- Added PAYPAL_PAYOUT (L5) — sends real PayPal payments to contributors
+- Added KNOWLEDGE_BRIDGE (L6) — maps all engine connections, finds gaps
+- Added BIG_BRAIN_ORACLE (L6) — asks Claude strategic questions, seeds next cycle
+- All workflows now pass PAYPAL_CLIENT_ID + PAYPAL_CLIENT_SECRET
 
 FULL DEPENDENCY CHAIN:
   L0  GUARDIAN + ENGINE_INTEGRITY + SECRETS_CHECKER
   L1  EMAIL + INTEL
-  L2  REVENUE INTEL + BUSINESS_FACTORY
+  L2  REVENUE INTEL + GUMROAD_AUTO_QUEUE + BUSINESS_FACTORY
   L3  BUILD + ART_CATALOG
   L4  PUBLISH (social, releases, dashboard)
-  L5  COLLECT (Ko-fi, Gumroad, PayPal, sponsors)
-  L6  SYNTH + PLAN (synapse, synthesis, architect, self-builder)
+  L5  COLLECT + PAYOUT (Ko-fi, Gumroad, PayPal, CONTRIBUTOR_REGISTRY, PAYPAL_PAYOUT)
+  L6  SYNTH + PLAN + KNOWLEDGE_BRIDGE + BIG_BRAIN_ORACLE
   L7  REPORT + LEGAL (memory, readme, briefing, digest, issue sync, legal)
 """
 import os, sys, json, time, subprocess
@@ -114,9 +114,12 @@ def write_ctx():
         "integrity":      rj("engine_sha_registry.json"),
         "revenue_inbox":  rj("revenue_inbox.json"),
         "secrets":        rj("secrets_checker_state.json"),
-        "legal":          rj("solarpunk_legal_state.json"),
+        "legal":          rj("brand_legal_state.json"),
         "payouts":        rj("payout_ledger.json"),
         "art_catalog":    rj("art_catalog.json"),
+        "oracle":         rj("oracle_state.json"),
+        "knowledge_gaps": rj("knowledge_gaps.json"),
+        "contributor_reg":rj("contributor_registry.json"),
         "engines_ok":     results["ok"][:],
         "engines_failed": results["failed"][:],
         "engines_skipped":results["skipped"][:],
@@ -130,7 +133,7 @@ def layer_0():
     print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS ━━━")
     eng("GUARDIAN",         timeout=60)
     eng("ENGINE_INTEGRITY", timeout=60)
-    eng("SECRETS_CHECKER",  timeout=60)   # ← NEW: builds setup.html, diagnoses blockers
+    eng("SECRETS_CHECKER",  timeout=60)
     write_ctx()
 
 
@@ -149,10 +152,11 @@ def layer_1():
 
 def layer_2():
     print("\n━━━ L2: REVENUE INTEL ━━━")
-    eng("GRANT_HUNTER",     timeout=90)
-    eng("ETSY_SEO_ENGINE",  timeout=60)
-    eng("INCOME_ARCHITECT", timeout=60)
-    eng("REVENUE_FLYWHEEL", timeout=90)
+    eng("GRANT_HUNTER",       timeout=90)
+    eng("ETSY_SEO_ENGINE",    timeout=60)
+    eng("INCOME_ARCHITECT",   timeout=60)
+    eng("REVENUE_FLYWHEEL",   timeout=90)
+    eng("GUMROAD_AUTO_QUEUE", timeout=60)   # ← v7: builds gumroad listings
     write_ctx()
     print("\n━━━ L2b: BUSINESS FACTORY ━━━")
     eng("BUSINESS_FACTORY", timeout=180)
@@ -162,7 +166,7 @@ def layer_2():
 def layer_3():
     print("\n━━━ L3: BUILD + ART ━━━")
     eng("LANDING_DEPLOYER",     timeout=90)
-    eng("ART_CATALOG",          timeout=60)   # ← NEW: builds art.html, fixes Ko-fi art page
+    eng("ART_CATALOG",          timeout=60)
     write_ctx()
     eng("REVENUE_LOOP",         timeout=240)
     eng("ART_GENERATOR",        timeout=120)
@@ -190,17 +194,22 @@ def layer_5():
     eng("GUMROAD_ENGINE",         timeout=60)
     eng("GITHUB_SPONSORS_ENGINE", timeout=60)
     eng("KOFI_PAYMENT_TRACKER",   timeout=60)
-    eng("HUMAN_PAYOUT",           timeout=60)   # ← NEW: PayPal auto-payouts
+    eng("HUMAN_PAYOUT",           timeout=60)
+    eng("CONTRIBUTOR_REGISTRY",   timeout=60)   # ← v7: credits contributors from revenue
+    eng("PAYPAL_PAYOUT",          timeout=90)   # ← v7: auto-sends PayPal payments
     write_ctx()
 
 
 def layer_6():
-    print("\n━━━ L6: SYNTH + PLAN ━━━")
+    print("\n━━━ L6: SYNTH + PLAN + ORACLE ━━━")
     write_ctx()
     eng("SYNAPSE",           timeout=120); write_ctx()
     eng("SYNTHESIS_FACTORY", timeout=120); write_ctx()
     eng("ARCHITECT",         timeout=120); write_ctx()
     eng("SELF_BUILDER",      timeout=240); write_ctx()
+    eng("KNOWLEDGE_BRIDGE",  timeout=60)   # ← v7: maps engine connections, finds gaps
+    eng("BIG_BRAIN_ORACLE",  timeout=90)   # ← v7: asks strategic questions, seeds next cycle
+    write_ctx()
 
 
 def layer_7():
@@ -210,7 +219,8 @@ def layer_7():
     eng("BRIEFING_ENGINE",  timeout=60)
     eng("NIGHTLY_DIGEST",   timeout=120)
     eng("ISSUE_SYNC",       timeout=90)
-    eng("SOLARPUNK_LEGAL",  timeout=60)   # ← NEW: trademark tracking, legal fund
+    eng("SOLARPUNK_LEGAL",  timeout=60)
+    eng("BRAND_LEGAL",      timeout=60)   # ← v7: SolarPunk™ trademark + legal fund
     write_ctx()
 
 
@@ -219,7 +229,7 @@ def run():
     t0 = time.time()
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
 
-    print(f"\n🧠 OMNIBUS v6 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"\n🧠 OMNIBUS v7 — {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
     print(f"   Run: {run_id}")
     print("=" * 58)
 
@@ -236,29 +246,31 @@ def run():
 
     biz_after = len(list(DATA.glob("business_*.json")))
     revenue = rj("revenue_inbox.json")
-    legal   = rj("solarpunk_legal_state.json")
+    legal   = rj("brand_legal_state.json")
     secrets = rj("secrets_checker_state.json")
+    payouts = rj("payout_ledger.json")
 
     manifest = {
-        "version":          "v6",
-        "run_id":           run_id,
-        "completed":        datetime.now(timezone.utc).isoformat(),
-        "elapsed_s":        elapsed,
-        "health_before":    ctx.get("prev_health", 0),
-        "health_after":     rj("brain_state.json").get("health_score", 0),
-        "businesses_built": biz_after,
-        "live_url":         ctx.get("live_url"),
-        "gumroad_url":      ctx.get("gumroad_url"),
-        "total_revenue":    revenue.get("total_received", 0),
-        "total_to_gaza":    revenue.get("total_to_gaza", 0),
-        "legal_fund":       legal.get("legal_fund_usd", 0),
-        "secrets_configured": secrets.get("configured", 0),
-        "secrets_total":    secrets.get("total", 0),
-        "critical_missing": secrets.get("critical_missing", []),
-        "engines_ok":       results["ok"],
-        "engines_failed":   results["failed"],
-        "engines_skipped":  results["skipped"],
-        "log":              results["log"],
+        "version":           "v7",
+        "run_id":            run_id,
+        "completed":         datetime.now(timezone.utc).isoformat(),
+        "elapsed_s":         elapsed,
+        "health_before":     ctx.get("prev_health", 0),
+        "health_after":      rj("brain_state.json").get("health_score", 0),
+        "businesses_built":  biz_after,
+        "live_url":          ctx.get("live_url"),
+        "gumroad_url":       ctx.get("gumroad_url"),
+        "total_revenue":     revenue.get("total_received", 0),
+        "total_to_gaza":     revenue.get("total_to_gaza", 0),
+        "legal_fund":        legal.get("upto_fund_collected", 0),
+        "total_paid_out":    payouts.get("total_paid_usd", 0),
+        "secrets_configured":secrets.get("configured", 0),
+        "secrets_total":     secrets.get("total", 0),
+        "critical_missing":  secrets.get("critical_missing", []),
+        "engines_ok":        results["ok"],
+        "engines_failed":    results["failed"],
+        "engines_skipped":   results["skipped"],
+        "log":               results["log"],
     }
     (DATA / "omnibus_last.json").write_text(json.dumps(manifest, indent=2))
 
@@ -268,13 +280,14 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*58}")
-    print(f"🧠 OMNIBUS v6 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v7 done — {elapsed}s")
     print(f"   Engines: {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED:  {', '.join(results['failed'])}")
     print(f"   Health:  {manifest['health_before']} → {manifest['health_after']}")
     print(f"   Revenue: ${manifest['total_revenue']:.2f} | → Gaza: ${manifest['total_to_gaza']:.2f}")
-    print(f"   Legal fund: ${manifest['legal_fund']:.2f} / $350 USPTO target")
+    print(f"   Paid out: ${manifest['total_paid_out']:.2f} to contributors")
+    print(f"   Legal fund: ${manifest['legal_fund']:.2f} / $1,200 full USPTO target")
     print(f"   Secrets: {manifest['secrets_configured']}/{manifest['secrets_total']} configured")
     if manifest["critical_missing"]:
         print(f"   🔴 CRITICAL missing: {', '.join(manifest['critical_missing'])}")
@@ -285,7 +298,9 @@ def run():
     print(f"   Social:    {BASE_URL}/social.html")
     print(f"   Dashboard: {BASE_URL}/dashboard.html")
     print(f"   Setup:     {BASE_URL}/setup.html")
+    print(f"   Legal:     {BASE_URL}/legal.html")
     print(f"   Payouts:   {BASE_URL}/payouts.html")
+    print(f"   Knowledge: {BASE_URL}/knowledge_map.html")
     return manifest
 
 
