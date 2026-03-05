@@ -594,21 +594,39 @@
       "text": "Just launched: Autonomous Business Guide \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
       "queued_at": "2026-03-05T10:21:49.775176+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:31:23.336548+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with autonomous AI: Autonomous Business Guide. $37, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T10:21:49.775176+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:31:23.336576+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New digital product: Autonomous Business Guide. $37. 15% to PCRF (Gaza children's relief).",
       "queued_at": "2026-03-05T10:21:49.775176+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Autonomous Business Guide"
+      "niche": "Autonomous Business Guide",
+      "sent": true,
+      "sent_at": "2026-03-05T15:31:23.336580+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -903,6 +921,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-pages-website-kit/",
       "niche": "GitHub Pages Website Kit"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Freelance Cold Email Templates \u2014 $17, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T15:31:19.621746+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Freelance Cold Email Templates. $17, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T15:31:19.621746+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Freelance Cold Email Templates. $17. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T15:31:19.621746+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Freelance Cold Email Templates \u2014 Freelance Cold Email Templates \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/ $17, 15% to Gaza",
+      "queued_at": "2026-03-05T15:31:21.524723+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+      "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Freelance Cold Email Templates\n\nFreelance Cold Email Templates \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T15:31:21.524723+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+      "niche": "Freelance Cold Email Templates"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Freelance Cold Email Templates\nFreelance Cold Email Templates \u2014 built by AI, 15% to Gaza\n$17 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+      "queued_at": "2026-03-05T15:31:21.524723+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/freelance-cold-email-templates/",
+      "niche": "Freelance Cold Email Templates"
     }
   ]
 }

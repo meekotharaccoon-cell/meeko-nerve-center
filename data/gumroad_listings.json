@@ -1,85 +1,113 @@
 {
-  "_note": "Seeded — GUMROAD_ENGINE will publish these to meekotharaccoon.gumroad.com",
-  "seller_profile": "https://meekotharaccoon.gumroad.com",
-  "gumroad_live": 0,
-  "last_run": null,
+  "cycles": 14,
   "products": [
+    {
+      "name": "Desert Rose at Dawn \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\ud83c\udf39 AI-generated digital art print \u2014 instant download.\n\nYOUR PURCHASE SPLITS AUTOMATICALLY:\n\u2022 70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artist relief)\n\u2022 30\u00a2 \u2192 SolarPunk Loop Fund (auto-buys the next piece)\n\nThe loop never stops. Your $1 echoes forever.\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI \u2014 print any size)\n\u2022 Instant download after payment\n\u2022 Personal & commercial use license\n\nImpressionist style. Warm rose and ochre palette.\nA desert bloom at first light \u2014 fragile, inevitable, alive.",
+      "created_at": "2026-03-05T11:41:34.890651+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
+    {
+      "name": "White Doves Over the Mediterranean \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\ud83d\udd4a\ufe0f AI-generated digital art print \u2014 instant download.\n\n70% of your $1 goes directly to Gaza Rose Gallery.\n\n\u2022 70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artist relief)\n\u2022 30\u00a2 \u2192 SolarPunk Loop Fund\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI)\n\u2022 Instant download \u2022 Full license\n\nDreamlike style. Deep Mediterranean blue. A symbol of return.",
+      "created_at": "2026-03-05T11:41:34.890659+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
+    {
+      "name": "Olive Grove Eternal \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\ud83c\udf3f Ancient roots. AI-generated digital art \u2014 instant download.\n\n70% of every sale to Gaza Rose Gallery.\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI)\n\u2022 Instant download \u2022 Full license\n\nPainterly style. Deep greens, silver leaves, afternoon light.",
+      "created_at": "2026-03-05T11:41:34.890665+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
+    {
+      "name": "Tatreez Pattern Bloom \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\ud83c\udf38 Palestinian embroidery pattern, reimagined. AI art \u2014 instant download.\n\nTatreez is memory made visible. 70% to Gaza Rose Gallery.\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI)\n\u2022 Instant download \u2022 Full license\n\nGeometric style. Red, black, and gold. Living pattern.",
+      "created_at": "2026-03-05T11:41:34.890668+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
+    {
+      "name": "Gaza Coastline at Golden Hour \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\ud83c\udf05 The coast that remains. AI-generated digital art \u2014 instant download.\n\n70% to Gaza Rose Gallery.\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI)\n\u2022 Instant download \u2022 Full license\n\nLandscape style. Warm golds, deep blues, horizon.",
+      "created_at": "2026-03-05T11:41:34.890672+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
+    {
+      "name": "Star of Hope Rising \u2014 Gaza Rose Gallery",
+      "price_cents": 100,
+      "description": "\u2b50 Light through dark. AI-generated digital art \u2014 instant download.\n\nA single star. 70% to Gaza Rose Gallery.\n\nWHAT YOU GET:\n\u2022 4000 x 4000px JPEG (300 DPI)\n\u2022 Instant download \u2022 Full license\n\nSymbolic style. Dark sky, single point of light, rising.",
+      "created_at": "2026-03-05T11:41:34.890675+00:00",
+      "gumroad_result": {
+        "status": "no_token"
+      }
+    },
     {
       "id": "ai-prompt-packs",
       "name": "SolarPunk AI Prompt Packs",
-      "slug": "ai-prompt-packs",
       "price_cents": 1700,
-      "description": "150+ production-ready AI prompts built by an autonomous AI system.\n\nIncludes:\n- ChatGPT / Claude prompts for business automation\n- Prompt templates for email, content, code review\n- SolarPunk autonomous agent prompts\n- Gaza solidarity messaging templates\n\n15% of every sale -> PCRF (Palestinian children, EIN 93-1057665, 4* Charity Navigator)\n\nInstant download. No subscription. Built by AI, for humans who want AI to work for them.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/downloads/ai-prompt-packs.txt",
+      "description": "Premium AI prompt packs built by an autonomous AI revenue system.\n\nPart of SolarPunk\u2122 \u2014 an AI agent that builds and sells digital products autonomously, with 15% of every sale going to Palestinian children via PCRF.\n\n\ud83c\udf39 $2.55 of your $17 \u2192 PCRF (EIN 93-1057665, 4\u2605 Charity Navigator)\n\nWhat you get:\n\u2022 200+ curated prompts across categories\n\u2022 Claude, GPT-4, Gemini compatible\n\u2022 Organized by use case: business, creative, coding, research\n\u2022 Instant download, no subscription\n\nBuilt by SolarPunk\u2122 \u2014 an AI that funds Gaza.",
       "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
-      "tags": ["AI", "prompts", "automation", "ChatGPT", "Claude"],
-      "gumroad_result": {"status": "pending"}
+      "queued_at": "2026-03-05T15:31:18.623848+00:00",
+      "gumroad_result": {
+        "status": "queued"
+      }
     },
     {
       "id": "github-actions-templates",
       "name": "SolarPunk GitHub Actions Templates",
-      "slug": "github-actions-templates",
       "price_cents": 2700,
-      "description": "Battle-tested GitHub Actions workflows for autonomous business operations.\n\nIncludes:\n- Self-building AI agent workflow (like SolarPunk itself)\n- Automated Gumroad publishing workflow\n- Revenue tracking + email notification workflows\n- Ko-fi webhook handler\n- Cron-based autonomous loop templates\n\n15% of every sale -> PCRF Gaza\n\nInstant download. Works with GitHub free tier. Full documentation included.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/downloads/github-actions-templates.txt",
+      "description": "Complete GitHub Actions workflow templates for autonomous AI revenue systems.\n\nEverything you need to build a self-running AI business on GitHub Actions \u2014 zero DevOps required.\n\nIncludes:\n\u2022 Revenue automation workflows\n\u2022 Payment webhook handlers (Ko-fi, Gumroad, Stripe)\n\u2022 AI-powered build pipelines\n\u2022 Self-healing engine templates\n\u2022 Complete documentation\n\n\ud83c\udf39 15% ($4.05) \u2192 Gaza via PCRF\n\nBuilt by SolarPunk\u2122 \u2014 AI infrastructure for autonomous income.",
       "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
-      "tags": ["GitHub Actions", "automation", "CI/CD", "workflow"],
-      "gumroad_result": {"status": "pending"}
+      "queued_at": "2026-03-05T15:31:18.623848+00:00",
+      "gumroad_result": {
+        "status": "queued"
+      }
     },
     {
-      "id": "notion-templates-for-freelancers",
-      "name": "Notion Templates for Freelancers",
-      "slug": "notion-templates-for-freelancers",
+      "id": "notion-templates-freelancers",
+      "name": "Notion Templates for Freelancers \u2014 AI Edition",
       "price_cents": 1900,
-      "description": "Complete Notion workspace for solo operators and freelancers running AI-assisted businesses.\n\nIncludes:\n- Client tracker + CRM template\n- Revenue dashboard with Gaza donation tracker\n- Project pipeline board\n- Content calendar for social posts\n- AI task automation log\n\n15% of every sale -> PCRF Gaza\n\nInstant download. Notion free tier compatible. Duplicate and customize.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/downloads/notion-templates-for-freelancers.txt",
+      "description": "AI-optimized Notion templates for freelancers building autonomous income.\n\nStop managing projects manually. These templates integrate with AI workflows to automate client communication, invoicing, and project tracking.\n\nIncludes:\n\u2022 Client relationship tracker\n\u2022 Invoice + payment automation template\n\u2022 AI task manager\n\u2022 Revenue dashboard\n\u2022 Content calendar with auto-scheduling\n\n\ud83c\udf39 15% ($2.85) \u2192 Gaza via PCRF\n\nBuilt by SolarPunk\u2122 \u2014 Notion + AI = autonomous freelance business.",
       "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
-      "tags": ["Notion", "freelance", "templates", "productivity"],
-      "gumroad_result": {"status": "pending"}
+      "queued_at": "2026-03-05T15:31:18.623848+00:00",
+      "gumroad_result": {
+        "status": "queued"
+      }
     },
     {
-      "id": "art-white-doves",
-      "name": "White Doves Over Gaza - $1 Art Print",
-      "slug": "art-white-doves",
-      "price_cents": 100,
-      "description": "Digital art print: Seven white doves ascending through golden morning light over ancient olive groves. Peace, hope, and the indomitable spirit of Palestine.\n\nHigh resolution PNG (2400x3000px). Print at home or send to a print shop.\n\n70c of every $1 -> PCRF Gaza\n30c -> SolarPunk Loop Fund (auto-buys the next print)\n\nInstant download.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
+      "id": "gaza-rose-art-pack",
+      "name": "Gaza Rose Gallery \u2014 7 Palestinian Art Prints Pack",
+      "price_cents": 700,
+      "description": "All 7 Gaza Rose Gallery AI-generated Palestinian art prints in one pack.\n\nSave $0 vs buying individually \u2014 or buy individually at $1 each.\n\nPrints included:\n\ud83d\udd4a\ufe0f White Doves Over Gaza\n\ud83e\uded2 Ancient Olive Grove\n\ud83e\uddf5 Tatreez \u2014 Living Embroidery\n\ud83c\udf0a Gaza by the Sea\n\u2b50 Star of Hope\n\ud83c\udf4e Pomegranate Season\n\ud83c\udf19 Night Garden of Palestine\n\nRevenue split: 70% \u2192 PCRF (Gaza children) \u00b7 30% \u2192 Loop Fund\nPCRF EIN: 93-1057665 \u00b7 4\u2605 Charity Navigator \u00b7 operating since 1991\n\nBuilt by SolarPunk\u2122 \u2014 AI art that funds Gaza.",
       "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "tags": ["art", "Palestine", "doves", "digital print", "Gaza"],
-      "gumroad_result": {"status": "pending"}
-    },
-    {
-      "id": "art-olive-grove",
-      "name": "Ancient Olive Grove - $1 Art Print",
-      "slug": "art-olive-grove",
-      "price_cents": 100,
-      "description": "Digital art print: Thousand-year-old olive trees standing resilient against the Mediterranean sky.\n\nHigh resolution PNG (2400x3000px).\n\n70c of every $1 -> PCRF Gaza\n30c -> SolarPunk Loop Fund\n\nInstant download.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "tags": ["art", "Palestine", "olive", "digital print", "Gaza"],
-      "gumroad_result": {"status": "pending"}
-    },
-    {
-      "id": "art-tatreez",
-      "name": "Tatreez Living Embroidery - $1 Art Print",
-      "slug": "art-tatreez",
-      "price_cents": 100,
-      "description": "Digital art print: The geometric language of Palestinian women, woven across generations.\n\nHigh resolution PNG (2400x3000px).\n\n70c of every $1 -> PCRF Gaza\n30c -> SolarPunk Loop Fund\n\nInstant download.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "tags": ["art", "Palestine", "tatreez", "digital print", "Gaza"],
-      "gumroad_result": {"status": "pending"}
-    },
-    {
-      "id": "art-gaza-sea",
-      "name": "Gaza by the Sea - $1 Art Print",
-      "slug": "art-gaza-sea",
-      "price_cents": 100,
-      "description": "Digital art print: The Mediterranean at dusk, its waters catching the last gold of day.\n\nHigh resolution PNG (2400x3000px).\n\n70c of every $1 -> PCRF Gaza\n30c -> SolarPunk Loop Fund\n\nInstant download.",
-      "file_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "landing_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-      "tags": ["art", "Palestine", "sea", "digital print", "Gaza"],
-      "gumroad_result": {"status": "pending"}
+      "queued_at": "2026-03-05T15:31:18.623848+00:00",
+      "gumroad_result": {
+        "status": "queued"
+      }
     }
-  ]
+  ],
+  "last_run": "2026-03-05T11:41:34.890631+00:00",
+  "gumroad_live": 0,
+  "setup_instructions": {
+    "step1": "Go to https://gumroad.com/signup \u2014 free account",
+    "step2": "Settings \u2192 Advanced \u2192 Copy your Access Token",
+    "step3": "Add GUMROAD_ACCESS_TOKEN to GitHub Secrets",
+    "note": "10% Gumroad fee. $1 sale = 90\u00a2 then 70/30 split."
+  },
+  "last_updated": "2026-03-05T15:31:18.623848+00:00",
+  "total_products": 10
 }

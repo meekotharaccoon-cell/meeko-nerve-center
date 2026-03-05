@@ -1,7 +1,7 @@
 {
-  "cycles": 8,
-  "posted": 8,
-  "failed": 16,
+  "cycles": 9,
+  "posted": 9,
+  "failed": 18,
   "history": [
     {
       "platform": "linkedin",
@@ -50,7 +50,13 @@
       "niche": "Notion Templates for Freelancers",
       "info": "manual",
       "at": "2026-03-05T14:34:12.103633+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "Autonomous Business Guide",
+      "info": "manual",
+      "at": "2026-03-05T15:31:23.336580+00:00"
     }
   ],
-  "last_run": "2026-03-05T14:34:12.103269+00:00"
+  "last_run": "2026-03-05T15:31:23.336192+00:00"
 }

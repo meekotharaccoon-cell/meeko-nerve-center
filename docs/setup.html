@@ -49,22 +49,19 @@ footer a{color:#444}
 <body>
 
 <h1>⚡ SolarPunk™ Setup Guide</h1>
-<p class="sub">Live status — auto-updated every cycle · 2026-03-05 14:33 UTC</p>
+<p class="sub">Live status — auto-updated every cycle · 2026-03-05 15:31 UTC</p>
 
 <div class="hero-stats">
-  <div class="hstat"><div class="n">5</div><div class="l">Configured</div></div>
-  <div class="hstat warn"><div class="n">1</div><div class="l">Critical Missing</div></div>
-  <div class="hstat"><div class="n">11</div><div class="l">Optional Remaining</div></div>
-  <div class="hstat"><div class="n">31%</div><div class="l">Complete</div></div>
+  <div class="hstat"><div class="n">10</div><div class="l">Configured</div></div>
+  <div class="hstat "><div class="n">0</div><div class="l">Critical Missing</div></div>
+  <div class="hstat"><div class="n">6</div><div class="l">Optional Remaining</div></div>
+  <div class="hstat"><div class="n">62%</div><div class="l">Complete</div></div>
 </div>
 
-<div class="progress-bar"><div class="progress-fill" style="width:31%"></div></div>
-<div class="progress-label">5/16 secrets configured</div>
+<div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+<div class="progress-label">10/16 secrets configured</div>
 
-<div class="critical-box">
-  <h3>🔴 Critical — fix these first (blocking revenue):</h3>
-  <code>GUMROAD_SECRET</code>
-</div>
+
 
 <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/settings/secrets/actions" class="github-link" target="_blank">
   → Open GitHub Secrets (add secrets here)
@@ -90,40 +87,32 @@ footer a{color:#444}
   
 </div>
 <h2 class="cat">💰 Revenue</h2>
-<div class="card critical">
+<div class="card ok">
   <div class="card-head">
     <span class="secret-name">GUMROAD_SECRET</span>
-    <span class="status-badge critical">🔴 MISSING — CRITICAL</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
   </div>
   <div class="desc">Publishes your products to Gumroad automatically</div>
   <div class="engines">Used by: <code>GUMROAD_ENGINE</code> <code>REVENUE_LOOP</code></div>
-  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Log in to gumroad.com</div>
-<div class="step"><span class="step-n">2</span>Click your avatar → Settings</div>
-<div class="step"><span class="step-n">3</span>Click 'Advanced' tab</div>
-<div class="step"><span class="step-n">4</span>Scroll to 'Application' section</div>
-<div class="step"><span class="step-n">5</span>Click 'Generate Token' or copy existing token</div>
-<div class="step"><span class="step-n">6</span>Add as GitHub Secret: GUMROAD_SECRET</div>
+  
 </div>
-</div>
-<div class="card impact-low">
+<div class="card ok">
   <div class="card-head">
     <span class="secret-name">GUMROAD_ID</span>
-    <span class="status-badge impact-low">⚪ OPTIONAL (low impact)</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
   </div>
   <div class="desc">Your Gumroad seller ID (for analytics)</div>
   <div class="engines">Used by: <code>GUMROAD_ENGINE</code></div>
-  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Already set — found in your Gumroad account URL</div>
+  
 </div>
-</div>
-<div class="card impact-low">
+<div class="card ok">
   <div class="card-head">
     <span class="secret-name">GUMROAD_NAME</span>
-    <span class="status-badge impact-low">⚪ OPTIONAL (low impact)</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
   </div>
   <div class="desc">Your Gumroad display name</div>
   <div class="engines">Used by: <code>GUMROAD_ENGINE</code></div>
-  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Already set — your Gumroad username</div>
-</div>
+  
 </div>
 <h2 class="cat">📧 Email</h2>
 <div class="card ok">
@@ -210,29 +199,23 @@ footer a{color:#444}
 </div>
 </div>
 <h2 class="cat">💸 Payments</h2>
-<div class="card impact-medium">
+<div class="card ok">
   <div class="card-head">
     <span class="secret-name">PAYPAL_CLIENT_ID</span>
-    <span class="status-badge impact-medium">⚪ OPTIONAL (medium impact)</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
   </div>
   <div class="desc">PayPal — enables automatic revenue payouts to collaborators</div>
   <div class="engines">Used by: <code>HUMAN_PAYOUT</code></div>
-  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Go to developer.paypal.com</div>
-<div class="step"><span class="step-n">2</span>Log in with PayPal account</div>
-<div class="step"><span class="step-n">3</span>My Apps → Create App → name: 'SolarPunk'</div>
-<div class="step"><span class="step-n">4</span>Copy Client ID + Secret</div>
-<div class="step"><span class="step-n">5</span>Add: PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET</div>
+  
 </div>
-</div>
-<div class="card impact-medium">
+<div class="card ok">
   <div class="card-head">
     <span class="secret-name">PAYPAL_CLIENT_SECRET</span>
-    <span class="status-badge impact-medium">⚪ OPTIONAL (medium impact)</span>
+    <span class="status-badge ok">✅ CONFIGURED</span>
   </div>
   <div class="desc">PayPal Client Secret</div>
   <div class="engines">Used by: <code>HUMAN_PAYOUT</code></div>
-  <div class="steps-wrap"><div class="steps-label">How to get it (super simple):</div><div class="step"><span class="step-n">1</span>Same step as PAYPAL_CLIENT_ID</div>
-</div>
+  
 </div>
 <div class="card impact-low">
   <div class="card-head">

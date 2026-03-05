@@ -1,19 +1,20 @@
 {
-  "cycles": 7,
+  "cycles": 8,
   "released": [
-    "github-pages-website-kit",
-    "notion-templates-for-freelancers",
     "factory-state",
-    "email-automation-blueprints",
-    "ai-side-income-blueprint-2-0",
-    "grant-writing-templates",
-    "palestine-solidarity-zine-pack",
     "autonomous-business-guide",
     "ai-prompt-packs",
+    "freelance-cold-email-templates",
+    "github-pages-website-kit",
     "github-actions-templates",
+    "notion-templates-for-freelancers",
+    "palestine-solidarity-zine-pack",
+    "email-automation-blueprints",
+    "grant-writing-templates",
+    "social-media-content-packs",
     "palestinian-art-prints",
-    "social-media-content-packs"
+    "ai-side-income-blueprint-2-0"
   ],
-  "total_releases": 12,
-  "last_run": "2026-03-05T14:34:13.409674+00:00"
+  "total_releases": 13,
+  "last_run": "2026-03-05T15:31:24.839088+00:00"
 }

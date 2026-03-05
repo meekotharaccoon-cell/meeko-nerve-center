@@ -1,5 +1,5 @@
 {
-  "ts": "2026-03-05T14:34:07.684004+00:00",
+  "ts": "2026-03-05T15:31:18.514398+00:00",
   "total_current": 0.0,
   "total_potential": 2720,
   "streams": {
@@ -9,14 +9,14 @@
       "potential": 50,
       "active": true,
       "raw": {
-        "cycles": 10,
+        "cycles": 11,
         "total_received": 0.0,
         "total_to_gaza": 0.0,
         "total_to_loop": 0.0,
         "auto_loops": 0,
         "events": [],
         "art_orders": [],
-        "last_run": "2026-03-05T11:41:34.790829+00:00"
+        "last_run": "2026-03-05T14:34:14.518993+00:00"
       }
     },
     "grants": {
@@ -25,11 +25,11 @@
       "potential": 2000,
       "active": true,
       "raw": {
-        "cycles": 10,
+        "cycles": 11,
         "applied": [],
         "total_applied": 0,
         "email_chains": [],
-        "last_run": "2026-03-05T11:41:31.244954+00:00"
+        "last_run": "2026-03-05T14:34:11.793978+00:00"
       }
     },
     "sponsors": {
@@ -38,11 +38,11 @@
       "potential": 145,
       "active": true,
       "raw": {
-        "cycles": 10,
+        "cycles": 11,
         "sponsors": [],
         "total_monthly": 0.0,
         "thank_you_sent": [],
-        "last_run": "2026-03-05T11:41:34.949049+00:00"
+        "last_run": "2026-03-05T14:34:14.682303+00:00"
       }
     },
     "exchange": {
@@ -51,14 +51,14 @@
       "potential": 300,
       "active": true,
       "raw": {
-        "cycles": 10,
+        "cycles": 11,
         "total_tasks": 0,
         "total_earned": 0.0,
         "total_to_gaza": 0.0,
         "agent_earnings": {},
         "task_log": [],
         "registered_clients": [],
-        "last_run": "2026-03-05T11:41:31.129963+00:00"
+        "last_run": "2026-03-05T14:34:11.677043+00:00"
       }
     },
     "substack": {
@@ -67,11 +67,11 @@
       "potential": 175,
       "active": true,
       "raw": {
-        "cycles": 10,
+        "cycles": 11,
         "issues_drafted": 1,
         "issues_published": 0,
         "last_draft": "2026-03-05T05:18:25.021630+00:00",
-        "last_run": "2026-03-05T11:41:31.693091+00:00"
+        "last_run": "2026-03-05T14:34:12.217134+00:00"
       }
     },
     "gumroad": {

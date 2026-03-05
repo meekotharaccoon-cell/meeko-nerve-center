@@ -1,14 +1,15 @@
 {
-  "cycles": 7,
+  "cycles": 8,
   "guides_sent": [
     "Redbubble",
     "Etsy",
-    "Gumroad"
+    "Gumroad",
+    "Ko-fi Webhooks via Pipedream"
   ],
   "connections_active": [
     "Gmail",
     "HuggingFace",
     "Twitter/X"
   ],
-  "last_run": "2026-03-05T14:34:13.555195+00:00"
+  "last_run": "2026-03-05T15:31:24.981658+00:00"
 }

@@ -1,0 +1,230 @@
+{
+  "last_scan": "2026-03-05T15:31:29.227315+00:00",
+  "total_engines": 8,
+  "total_files": 22,
+  "gaps": {
+    "written_but_not_read": [
+      "neuron_b_report.json"
+    ],
+    "read_but_not_written": [
+      "ai_council_report.json",
+      "art_log.json",
+      "claude_autonomous_report.json",
+      "compound_tracker.json",
+      "content_harvest.json",
+      "dual_brain_conversation.json",
+      "etsy_seo_output.json",
+      "flywheel_state.json",
+      "growth_curve.json",
+      "kimi_conductor_report.json",
+      "lessons.json",
+      "memory_palace.json",
+      "omnibrain_seed.json",
+      "open_loops.json",
+      "reminders.json",
+      "synthesis_log.json",
+      "system_manifest.json",
+      "system_wants_next.json",
+      "workflow_health.json"
+    ]
+  },
+  "bridge_suggestions": [
+    {
+      "gap": "data/ai_council_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/ai_council_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/art_log.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/art_log.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/claude_autonomous_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/claude_autonomous_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/compound_tracker.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/compound_tracker.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/content_harvest.json is NEEDED by ['CONTENT_HARVESTER.py', 'MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/content_harvest.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/dual_brain_conversation.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/dual_brain_conversation.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/etsy_seo_output.json is NEEDED by ['ETSY_SEO_ENGINE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/etsy_seo_output.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/flywheel_state.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/flywheel_state.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/growth_curve.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/growth_curve.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/kimi_conductor_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/kimi_conductor_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/lessons.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/lessons.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/memory_palace.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/memory_palace.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/omnibrain_seed.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/omnibrain_seed.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/open_loops.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/open_loops.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/reminders.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/reminders.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/synthesis_log.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/synthesis_log.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/system_manifest.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/system_manifest.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/system_wants_next.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/system_wants_next.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/workflow_health.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/workflow_health.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/neuron_b_report.json is written by ['NEURON_B.py'] but nothing reads it",
+      "suggestion": "Build a consumer engine that reads data/neuron_b_report.json and acts on it",
+      "priority": "high"
+    }
+  ],
+  "priority_builds": [
+    {
+      "gap": "data/ai_council_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/ai_council_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/art_log.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/art_log.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/claude_autonomous_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/claude_autonomous_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/compound_tracker.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/compound_tracker.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/content_harvest.json is NEEDED by ['CONTENT_HARVESTER.py', 'MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/content_harvest.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/dual_brain_conversation.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/dual_brain_conversation.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/etsy_seo_output.json is NEEDED by ['ETSY_SEO_ENGINE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/etsy_seo_output.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/flywheel_state.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/flywheel_state.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/growth_curve.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/growth_curve.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/kimi_conductor_report.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/kimi_conductor_report.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/lessons.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/lessons.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/memory_palace.json is NEEDED by ['MEMORY_PALACE.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/memory_palace.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/omnibrain_seed.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/omnibrain_seed.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/open_loops.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/open_loops.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/reminders.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/reminders.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/synthesis_log.json is NEEDED by ['SYNTHESIS_FACTORY.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/synthesis_log.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/system_manifest.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/system_manifest.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/system_wants_next.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/system_wants_next.json",
+      "priority": "critical"
+    },
+    {
+      "gap": "data/workflow_health.json is NEEDED by ['ai_council.py'] but nothing writes it",
+      "suggestion": "Build a generator engine that creates/maintains data/workflow_health.json",
+      "priority": "critical"
+    }
+  ]
+}

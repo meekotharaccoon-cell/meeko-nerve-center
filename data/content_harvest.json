@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T14:33:59.726251+00:00",
+  "timestamp": "2026-03-05T15:31:10.938836+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
-        "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
-        "score": 214,
+        "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
+        "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
+        "score": 301,
         "source": "hackernews"
       },
       {
-        "title": "Judge Orders Government to Begin Refunding More Than $130B in Tariffs",
-        "url": "https://www.wsj.com/politics/policy/judge-orders-government-to-begin-refunding-more-than-130-billion-in-tariffs-fdc1e62c",
-        "score": 54,
+        "title": "Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-to-Speech in Swift",
+        "url": "https://blog.ivan.digital/nvidia-personaplex-7b-on-apple-silicon-full-duplex-speech-to-speech-in-native-swift-with-mlx-0aa5276f2e23",
+        "score": 248,
         "source": "hackernews"
       },
       {
         "title": "Google Workspace CLI",
         "url": "https://github.com/googleworkspace/cli",
-        "score": 724,
+        "score": 755,
+        "source": "hackernews"
+      },
+      {
+        "title": "Rising carbon dioxide levels now detected in human blood",
+        "url": "https://phys.org/news/2026-02-carbon-dioxide-human-blood.html",
+        "score": 39,
         "source": "hackernews"
       },
       {
         "title": "The L in \"LLM\" Stands for Lying",
         "url": "https://acko.net/blog/the-l-in-llm-stands-for-lying/",
-        "score": 404,
-        "source": "hackernews"
-      },
-      {
-        "title": "Relicensing with AI-Assisted Rewrite",
-        "url": "https://tuananh.net/2026/03/05/relicensing-with-ai-assisted-rewrite/",
-        "score": 238,
+        "score": 468,
         "source": "hackernews"
       }
     ],
@@ -42,15 +42,15 @@
         "source": "devto"
       },
       {
-        "title": "I Created An Enterprise MCP Gateway",
-        "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 106,
+        "title": "I Shipped Broken Code and Wrote an Article About It",
+        "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
+        "hearts": 34,
         "source": "devto"
       },
       {
-        "title": "I Shipped Broken Code and Wrote an Article About It",
-        "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 28,
+        "title": "I Created An Enterprise MCP Gateway",
+        "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
+        "hearts": 106,
         "source": "devto"
       },
       {
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.9,
+    "temp_c": 15.4,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
@@ -71,34 +71,6 @@
     {
       "word": "speech",
       "count": 2
-    },
-    {
-      "word": "nvidia",
-      "count": 1
-    },
-    {
-      "word": "personaplex",
-      "count": 1
-    },
-    {
-      "word": "apple",
-      "count": 1
-    },
-    {
-      "word": "silicon:",
-      "count": 1
-    },
-    {
-      "word": "full",
-      "count": 1
-    },
-    {
-      "word": "duplex",
-      "count": 1
-    },
-    {
-      "word": "swift",
-      "count": 1
     },
     {
       "word": "judge",
@@ -137,6 +109,34 @@
       "count": 1
     },
     {
+      "word": "nvidia",
+      "count": 1
+    },
+    {
+      "word": "personaplex",
+      "count": 1
+    },
+    {
+      "word": "apple",
+      "count": 1
+    },
+    {
+      "word": "silicon:",
+      "count": 1
+    },
+    {
+      "word": "full",
+      "count": 1
+    },
+    {
+      "word": "duplex",
+      "count": 1
+    },
+    {
+      "word": "swift",
+      "count": 1
+    },
+    {
       "word": "google",
       "count": 1
     },
@@ -145,14 +145,14 @@
       "count": 1
     },
     {
-      "word": "stands",
+      "word": "rising",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Nvidia PersonaPlex 7B on Apple Silicon: Full-Duplex Speech-t...' connects to Gaza resilience",
+      "hook": "How 'Judge Orders Government to Begin Refunding More Than $130B i...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
