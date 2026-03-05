@@ -15,10 +15,11 @@ import os, json, requests
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
 
 # Free serverless models, tried in order
+# Updated 2026-03-05: removed dead Mixtral-8x7B and Mistral-7B-v0.3 (both 410 Gone)
 MODELS = [
     "Qwen/Qwen2.5-72B-Instruct",
-    "mistralai/Mixtral-8x7B-Instruct-v0.1",
-    "mistralai/Mistral-7B-Instruct-v0.3",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "microsoft/Phi-3.5-mini-instruct",
 ]
 
 
