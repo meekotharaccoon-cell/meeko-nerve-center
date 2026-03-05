@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-05T04:07:37.643946",
+  "last_checked": "2026-03-05T04:08:12.829303",
   "workflow_names": [
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
@@ -38,6 +38,7 @@
     "ART_GENERATOR.py",
     "AI_WATCHER.py",
     "EMAIL_AGENT_EXCHANGE.py",
+    "AUTO_HEALER.py",
     "BRIEFING_ENGINE.py",
     "SCAM_SHIELD.py",
     "LINK_PAGE.py",
