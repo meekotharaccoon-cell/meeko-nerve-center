@@ -14,7 +14,7 @@ import os, json, requests
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 HF_TOKEN      = os.environ.get("HF_TOKEN", "")
 
-ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_MODEL = "claude-sonnet-4-6"  # fixed: was claude-sonnet-4-20250514 (invalid)
 HF_MODELS = [
     "Qwen/Qwen2.5-72B-Instruct",
     "meta-llama/Llama-3.1-8B-Instruct",
