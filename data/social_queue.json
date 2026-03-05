@@ -513,21 +513,39 @@
       "text": "Just launched: Notion Templates for Freelancers \u2014 $19, 15% to Gaza \ud83c\udf39 gumroad.com",
       "queued_at": "2026-03-05T09:33:56.165146+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Notion Templates for Freelancers"
+      "niche": "Notion Templates for Freelancers",
+      "sent": true,
+      "sent_at": "2026-03-05T11:41:31.580214+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
       "text": "Built this with autonomous AI: Notion Templates for Freelancers. $19, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T09:33:56.165146+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Notion Templates for Freelancers"
+      "niche": "Notion Templates for Freelancers",
+      "sent": true,
+      "sent_at": "2026-03-05T11:41:31.580226+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
       "text": "New digital product: Notion Templates for Freelancers. $19. 15% to PCRF (Gaza children's relief).",
       "queued_at": "2026-03-05T09:33:56.165146+00:00",
       "source": "BUSINESS_FACTORY",
-      "niche": "Notion Templates for Freelancers"
+      "niche": "Notion Templates for Freelancers",
+      "sent": true,
+      "sent_at": "2026-03-05T11:41:31.580230+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -777,6 +795,51 @@
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-side-income-blueprint-2-0/",
       "niche": "AI Side Income Blueprint 2.0"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: Palestine Solidarity Zine Pack \u2014 $12, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-05T11:41:26.903058+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Zine Pack"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: Palestine Solidarity Zine Pack. $12, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-05T11:41:26.903058+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Zine Pack"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: Palestine Solidarity Zine Pack. $12. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-05T11:41:26.903058+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "Palestine Solidarity Zine Pack"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk Palestine Solidarity Zine Pack \u2014 Palestine Solidarity Zine Pack \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/ $12, 15% to Gaza",
+      "queued_at": "2026-03-05T11:41:29.362981+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/",
+      "niche": "Palestine Solidarity Zine Pack"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk Palestine Solidarity Zine Pack\n\nPalestine Solidarity Zine Pack \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-05T11:41:29.362981+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/",
+      "niche": "Palestine Solidarity Zine Pack"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk Palestine Solidarity Zine Pack\nPalestine Solidarity Zine Pack \u2014 built by AI, 15% to Gaza\n$12 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/",
+      "queued_at": "2026-03-05T11:41:29.362981+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/palestine-solidarity-zine-pack/",
+      "niche": "Palestine Solidarity Zine Pack"
     }
   ]
 }
