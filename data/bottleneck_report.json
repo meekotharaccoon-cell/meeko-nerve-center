@@ -1,0 +1,205 @@
+{
+  "generated": "2026-03-05T19:17:57.885751+00:00",
+  "summary": {
+    "total_bottlenecks": 2,
+    "critical": 0,
+    "high": 1,
+    "secrets_ok": 10,
+    "secrets_total": 18,
+    "engines_ok": 59,
+    "engines_total": 59,
+    "gumroad_live": 0,
+    "gumroad_pending": 10,
+    "revenue_total": 0,
+    "gaza_total": 0
+  },
+  "bottlenecks": [
+    {
+      "id": "BN-001",
+      "severity": "HIGH",
+      "title": "10 products seeded but 0 live on Gumroad",
+      "description": "gumroad_listings.json has products but GUMROAD_ENGINE hasn't run successfully yet.",
+      "fix": "Ensure GUMROAD_SECRET is set, then trigger OMNIBRAIN or run GUMROAD_ENGINE manually via RUN_NOW",
+      "revenue_impact": "All product sales blocked",
+      "status": "READY_TO_RUN"
+    },
+    {
+      "id": "BN-002",
+      "severity": "MEDIUM",
+      "title": "Gmail App Password may be account password (535 auth error)",
+      "description": "Gmail requires an App Password (16 chars) not your account password. 2FA must be ON.",
+      "fix": "Google Account \u2192 Security \u2192 2-Step Verification \u2192 App Passwords \u2192 Generate for Mail \u2192 paste new value to GMAIL_APP_PASSWORD",
+      "revenue_impact": "No email briefings, no payment notifications",
+      "status": "VERIFY"
+    }
+  ],
+  "secrets": [
+    {
+      "name": "ANTHROPIC_API_KEY",
+      "present": true,
+      "length": 108,
+      "impact": "CRITICAL",
+      "unlocks": [
+        "BUILD",
+        "SOLARPUNK_LOOP",
+        "SELF_BUILDER",
+        "AI brain"
+      ]
+    },
+    {
+      "name": "GUMROAD_SECRET",
+      "present": true,
+      "length": 43,
+      "impact": "CRITICAL",
+      "unlocks": [
+        "product publishing",
+        "automated sales"
+      ]
+    },
+    {
+      "name": "GUMROAD_ID",
+      "present": true,
+      "length": 43,
+      "impact": "LOW",
+      "unlocks": [
+        "Gumroad analytics"
+      ]
+    },
+    {
+      "name": "GUMROAD_NAME",
+      "present": true,
+      "length": 11,
+      "impact": "LOW",
+      "unlocks": [
+        "Gumroad display name"
+      ]
+    },
+    {
+      "name": "GMAIL_ADDRESS",
+      "present": true,
+      "length": 25,
+      "impact": "HIGH",
+      "unlocks": [
+        "email briefings",
+        "payment alerts"
+      ]
+    },
+    {
+      "name": "GMAIL_APP_PASSWORD",
+      "present": true,
+      "length": 19,
+      "impact": "HIGH",
+      "unlocks": [
+        "email sending (check App Password not account password)"
+      ]
+    },
+    {
+      "name": "HF_TOKEN",
+      "present": true,
+      "length": 37,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "HuggingFace fallback AI"
+      ]
+    },
+    {
+      "name": "X_API_KEY",
+      "present": true,
+      "length": 64,
+      "impact": "HIGH",
+      "unlocks": [
+        "auto-posting 24 queued tweets"
+      ]
+    },
+    {
+      "name": "X_API_SECRET",
+      "present": false,
+      "length": 0,
+      "impact": "HIGH",
+      "unlocks": [
+        "Twitter posting (required with X_API_KEY)"
+      ]
+    },
+    {
+      "name": "X_ACCESS_TOKEN",
+      "present": false,
+      "length": 0,
+      "impact": "HIGH",
+      "unlocks": [
+        "Twitter account auth"
+      ]
+    },
+    {
+      "name": "X_ACCESS_TOKEN_SECRET",
+      "present": false,
+      "length": 0,
+      "impact": "HIGH",
+      "unlocks": [
+        "Twitter account auth"
+      ]
+    },
+    {
+      "name": "REDDIT_CLIENT_ID",
+      "present": false,
+      "length": 0,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "Reddit auto-posting"
+      ]
+    },
+    {
+      "name": "REDDIT_CLIENT_SECRET",
+      "present": false,
+      "length": 0,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "Reddit auto-posting"
+      ]
+    },
+    {
+      "name": "REDDIT_USERNAME",
+      "present": false,
+      "length": 0,
+      "impact": "LOW",
+      "unlocks": [
+        "Reddit identity"
+      ]
+    },
+    {
+      "name": "REDDIT_PASSWORD",
+      "present": false,
+      "length": 0,
+      "impact": "LOW",
+      "unlocks": [
+        "Reddit login"
+      ]
+    },
+    {
+      "name": "PAYPAL_CLIENT_ID",
+      "present": true,
+      "length": 80,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "automated human payouts"
+      ]
+    },
+    {
+      "name": "PAYPAL_CLIENT_SECRET",
+      "present": true,
+      "length": 80,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "PayPal API auth"
+      ]
+    },
+    {
+      "name": "KOFI_VERIFICATION_TOKEN",
+      "present": false,
+      "length": 0,
+      "impact": "LOW",
+      "unlocks": [
+        "Ko-fi webhook verification"
+      ]
+    }
+  ]
+}

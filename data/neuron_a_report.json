@@ -119,6 +119,7 @@
       "architect_state.json",
       "art_catalog.json",
       "asset_map.json",
+      "bottleneck_report.json",
       "brain_state.json",
       "briefing_state.json",
       "business_ai_prompt_packs.json",
@@ -204,7 +205,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T18:58:45.232077+00:00"
+    "timestamp": "2026-03-05T19:18:05.995114+00:00"
   },
-  "generated_at": "2026-03-05T18:58:45.595575+00:00"
+  "generated_at": "2026-03-05T19:18:06.299535+00:00"
 }

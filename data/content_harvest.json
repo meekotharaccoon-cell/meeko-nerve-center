@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T18:58:39.539886+00:00",
+  "timestamp": "2026-03-05T19:18:00.841233+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "GPT-5.4 Thinking System Card",
-        "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
-        "score": 111,
+        "title": "Wikipedia in read-only mode following mass admin account compromise",
+        "url": "https://www.wikimediastatus.net",
+        "score": 515,
         "source": "hackernews"
       },
       {
-        "title": "Wikipedia in read-only mode following mass admin account compromise",
-        "url": "https://www.wikimediastatus.net",
-        "score": 481,
+        "title": "GPT-5.4 Thinking System Card",
+        "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
+        "score": 141,
         "source": "hackernews"
       },
       {
         "title": "Show HN: Jido 2.0, Elixir Agent Framework",
         "url": "https://jido.run/blog/jido-2-0-is-here",
-        "score": 148,
+        "score": 156,
         "source": "hackernews"
       },
       {
         "title": "Good software knows when to stop",
         "url": "https://ogirardot.writizzy.com/p/good-software-knows-when-to-stop",
-        "score": 202,
+        "score": 212,
         "source": "hackernews"
       },
       {
-        "title": "A GitHub Issue Title Compromised 4k Developer Machines",
-        "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
-        "score": 113,
+        "title": "The Brand Age",
+        "url": "https://paulgraham.com/brandage.html",
+        "score": 38,
         "source": "hackernews"
       }
     ],
@@ -62,27 +62,15 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.7,
+    "temp_c": 11.4,
     "vibe": "sunny",
-    "code": 1,
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
       "word": "stop",
       "count": 2
-    },
-    {
-      "word": "thinking",
-      "count": 1
-    },
-    {
-      "word": "system",
-      "count": 1
-    },
-    {
-      "word": "card",
-      "count": 1
     },
     {
       "word": "wikipedia",
@@ -121,6 +109,18 @@
       "count": 1
     },
     {
+      "word": "thinking",
+      "count": 1
+    },
+    {
+      "word": "system",
+      "count": 1
+    },
+    {
+      "word": "card",
+      "count": 1
+    },
+    {
       "word": "show",
       "count": 1
     },
@@ -152,7 +152,7 @@
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'GPT-5.4 Thinking System Card...' connects to Gaza resilience",
+      "hook": "How 'Wikipedia in read-only mode following mass admin account com...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
