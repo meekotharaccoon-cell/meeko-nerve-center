@@ -1,0 +1,44 @@
+{
+  "ts": "2026-03-05T05:18:20.748191+00:00",
+  "total_current": 0,
+  "total_potential": 2720,
+  "streams": {
+    "kofi": {
+      "name": "Ko-fi Sales",
+      "value": 0,
+      "potential": 50,
+      "active": false
+    },
+    "grants": {
+      "name": "Grants",
+      "value": 0,
+      "potential": 2000,
+      "active": false
+    },
+    "sponsors": {
+      "name": "GitHub Sponsors",
+      "value": 0,
+      "potential": 145,
+      "active": false
+    },
+    "exchange": {
+      "name": "Email Agent Exchange",
+      "value": 0,
+      "potential": 300,
+      "active": false
+    },
+    "substack": {
+      "name": "Substack",
+      "value": 0,
+      "potential": 175,
+      "active": false
+    },
+    "gumroad": {
+      "name": "Gumroad",
+      "value": 0,
+      "potential": 50,
+      "active": false
+    }
+  },
+  "recommendation": null
+}

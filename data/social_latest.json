@@ -1,27 +1,24 @@
 {
-  "cycle": 4,
-  "piece": "Gaza Coastline at Golden Hour",
-  "ts": "2026-03-04T20:02:13.356114+00:00",
+  "cycle": 5,
+  "piece": "Star of Hope Rising",
+  "ts": "2026-03-05T05:18:24.768953+00:00",
   "tweets": [
     {
-      "text": "What if art bought itself?\n\n\ud83c\udf05 \"Gaza Coastline at Golden Hour\"\n$1 \u2014 instant digital download\n\nThe SolarPunk Loop:\n[Human pays $1] \u2192 [70\u00a2 to Gaza] \u2192 [30\u00a2 pools]\n[Pool hits $1] \u2192 [auto-purchase] \u2192 [70\u00a2 to Gaza]\n[repeat forever]\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#AIArt #GazaRose #DigitalArt #Palestine",
+      "text": "\u2b50 NEW: \"Star of Hope Rising\"\n\n$1 AI art print.\n70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artists)\n30\u00a2 \u2192 loop fund \u2192 buys the next piece automatically\n\nThe loop feeds itself \ud83d\udd04\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#GazaRose #PalestineArt #DigitalArt #SocialImpact",
       "result": {
-        "status": "skipped",
-        "reason": "no_credentials"
+        "status": "queued"
       }
     },
     {
-      "text": "\ud83c\udf05 NEW: \"Gaza Coastline at Golden Hour\"\n\n$1 AI art print.\n70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artists)\n30\u00a2 \u2192 loop fund \u2192 buys the next piece automatically\n\nThe loop feeds itself \ud83d\udd04\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#GazaRose #PalestineArt #DigitalArt #SocialImpact",
+      "text": "Every purchase loops.\n\n\u2b50 \"Star of Hope Rising\" \u2014 $1\n\n\u2192 70% to Gaza Rose Gallery\n\u2192 30% pools until it auto-buys another piece\n\u2192 That piece donates 70% too\n\u2192 Forever\n\nOne dollar. Infinite echoes.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#Palestine #ArtForGood #GazaRose",
       "result": {
-        "status": "skipped",
-        "reason": "no_credentials"
+        "status": "queued"
       }
     },
     {
-      "text": "Every purchase loops.\n\n\ud83c\udf05 \"Gaza Coastline at Golden Hour\" \u2014 $1\n\n\u2192 70% to Gaza Rose Gallery\n\u2192 30% pools until it auto-buys another piece\n\u2192 That piece donates 70% too\n\u2192 Forever\n\nOne dollar. Infinite echoes.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#Palestine #ArtForGood #GazaRose",
+      "text": "\u2b50 Art that doesn't stop giving.\n\n\"Star of Hope Rising\" \u2014 only $1\n\nAfter 4 purchases, the system buys itself a new piece.\nGaza Rose Gallery gets 70\u00a2 every single time.\n\nThis is SolarPunk economics.\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#DigitalArt #Palestine #GazaRose #AIArt",
       "result": {
-        "status": "skipped",
-        "reason": "no_credentials"
+        "status": "queued"
       }
     }
   ],
@@ -30,7 +27,7 @@
       "post": {
         "subreddit": "DigitalArt",
         "title": "[OC] Gaza Rose Gallery \u2014 AI art prints where 70% of every sale goes to Palestinian artist relief",
-        "text": "I built a small shop where every $1 purchase of AI-generated art automatically splits:\n\n- **70\u00a2 \u2192 Gaza Rose Gallery** (Palestinian artists & community relief)\n- **30\u00a2 \u2192 Loop Fund** (pools until $1, then auto-buys another piece)\n\nThe loop part is what makes it interesting: the system becomes its own customer. After ~4 human sales, the fund auto-purchases a new piece, which donates 70\u00a2 to Gaza Rose, which adds 30\u00a2 back to the pool... it compounds indefinitely.\n\nPiece this week: **Gaza Coastline at Golden Hour** \u2014 home themed, AI-generated, instant download.\n\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n\nAll art is $1. All art is instant download. All art echoes.\n\n*Built with SolarPunk autonomous systems \u2014 GitHub Actions + Claude API*"
+        "text": "I built a small shop where every $1 purchase of AI-generated art automatically splits:\n\n- **70\u00a2 \u2192 Gaza Rose Gallery** (Palestinian artists & community relief)\n- **30\u00a2 \u2192 Loop Fund** (pools until $1, then auto-buys another piece)\n\nThe loop part is what makes it interesting: the system becomes its own customer. After ~4 human sales, the fund auto-purchases a new piece, which donates 70\u00a2 to Gaza Rose, which adds 30\u00a2 back to the pool... it compounds indefinitely.\n\nPiece this week: **Star of Hope Rising** \u2014 resilience themed, AI-generated, instant download.\n\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n\nAll art is $1. All art is instant download. All art echoes.\n\n*Built with SolarPunk autonomous systems \u2014 GitHub Actions + Claude API*"
       },
       "result": {
         "status": "queued"

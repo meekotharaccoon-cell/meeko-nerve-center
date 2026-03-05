@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-04T20:02:04.189723+00:00",
+  "timestamp": "2026-03-05T05:18:09.863648+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "An interactive map of FLock Cams",
-        "url": "https://deflock.org/map#map=5/37.125286/-96.284180",
-        "score": 142,
+        "title": "Google Workspace CLI",
+        "url": "https://github.com/googleworkspace/cli",
+        "score": 309,
         "source": "hackernews"
       },
       {
         "title": "MacBook Neo",
         "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
-        "score": 1102,
+        "score": 1668,
         "source": "hackernews"
       },
       {
-        "title": "Making Firefox's right-click not suck with about:config",
-        "url": "https://joshua.hu/firefox-making-right-click-not-suck",
-        "score": 122,
+        "title": "Building a new Flash",
+        "url": "https://bill.newgrounds.com/news/post/1607118",
+        "score": 438,
         "source": "hackernews"
       },
       {
-        "title": "Something is afoot in the land of Qwen",
-        "url": "https://simonwillison.net/2026/Mar/4/qwen/",
-        "score": 313,
+        "title": "What Python's asyncio primitives get wrong about shared state",
+        "url": "https://www.inngest.com/blog/no-lost-updates-python-asyncio",
+        "score": 21,
         "source": "hackernews"
       },
       {
-        "title": "Nobody Gets Promoted for Simplicity",
-        "url": "https://terriblesoftware.org/2026/03/03/nobody-gets-promoted-for-simplicity/",
-        "score": 682,
+        "title": "Dario Amodei calls OpenAI\u2019s messaging around military deal \u2018straight up lies\u2019",
+        "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says/",
+        "score": 393,
         "source": "hackernews"
       }
     ],
@@ -62,30 +62,22 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 12.9,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 10.4,
+    "vibe": "partly cloudy",
+    "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
-    {
-      "word": "making",
-      "count": 2
-    },
     {
       "word": "code",
       "count": 2
     },
     {
-      "word": "interactive",
+      "word": "google",
       "count": 1
     },
     {
-      "word": "flock",
-      "count": 1
-    },
-    {
-      "word": "cams",
+      "word": "workspace",
       "count": 1
     },
     {
@@ -93,66 +85,74 @@
       "count": 1
     },
     {
-      "word": "firefox's",
+      "word": "building",
       "count": 1
     },
     {
-      "word": "right",
+      "word": "flash",
       "count": 1
     },
     {
-      "word": "click",
+      "word": "python's",
       "count": 1
     },
     {
-      "word": "suck",
+      "word": "asyncio",
       "count": 1
     },
     {
-      "word": "about:config",
+      "word": "primitives",
       "count": 1
     },
     {
-      "word": "something",
+      "word": "wrong",
       "count": 1
     },
     {
-      "word": "afoot",
+      "word": "about",
       "count": 1
     },
     {
-      "word": "land",
+      "word": "shared",
       "count": 1
     },
     {
-      "word": "qwen",
+      "word": "state",
       "count": 1
     },
     {
-      "word": "nobody",
+      "word": "dario",
       "count": 1
     },
     {
-      "word": "gets",
+      "word": "amodei",
       "count": 1
     },
     {
-      "word": "promoted",
+      "word": "calls",
       "count": 1
     },
     {
-      "word": "simplicity",
+      "word": "openai\u2019s",
       "count": 1
     },
     {
-      "word": "london's",
+      "word": "messaging",
+      "count": 1
+    },
+    {
+      "word": "around",
+      "count": 1
+    },
+    {
+      "word": "military",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'An interactive map of FLock Cams...' connects to Gaza resilience",
+      "hook": "How 'Google Workspace CLI...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

@@ -1,0 +1,807 @@
+{
+  "run_id": "22703521181",
+  "cycle_start": "2026-03-05T05:18:29.900879+00:00",
+  "amazon_tag": "autonomoushum-20",
+  "prev_health": 40,
+  "memory": {
+    "cycles": [
+      {
+        "timestamp": "2026-03-04T20:02:07.850677+00:00",
+        "health_score": 40,
+        "revenue": 0.0,
+        "engines": 20,
+        "synth_built": 0,
+        "loop_balance": 0,
+        "total_sales": 0,
+        "loop_cycles_count": 0,
+        "top_opportunity": "",
+        "trending_themes": [
+          "making",
+          "code",
+          "interactive"
+        ]
+      },
+      {
+        "timestamp": "2026-03-05T05:18:28.795113+00:00",
+        "health_score": 40,
+        "revenue": 0.0,
+        "engines": 43,
+        "synth_built": 0,
+        "loop_balance": 0,
+        "total_sales": 0,
+        "loop_cycles_count": 0,
+        "top_opportunity": "",
+        "trending_themes": [
+          "code",
+          "google",
+          "workspace"
+        ]
+      }
+    ],
+    "patterns": {},
+    "total_cycles": 2,
+    "created": "2026-03-04T08:02:58.495462+00:00",
+    "last_updated": "2026-03-05T05:18:28.795113+00:00",
+    "latest_snap": {
+      "timestamp": "2026-03-05T05:18:28.795113+00:00",
+      "health_score": 40,
+      "revenue": 0.0,
+      "engines": 43,
+      "synth_built": 0,
+      "loop_balance": 0,
+      "total_sales": 0,
+      "loop_cycles_count": 0,
+      "top_opportunity": "",
+      "trending_themes": [
+        "code",
+        "google",
+        "workspace"
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "lesson": "Zero revenue yet \u2014 enable GitHub Pages to go live",
+      "priority": "high",
+      "type": "action",
+      "action": "Settings -> Pages -> main branch -> /docs"
+    },
+    {
+      "lesson": "Sub-50 health \u2014 API key 401. Check ANTHROPIC_API_KEY.",
+      "priority": "critical",
+      "type": "action"
+    }
+  ],
+  "neuron_a": {
+    "opportunities": [],
+    "builder_thesis": "AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions",
+    "priority_build": "",
+    "system_state": {
+      "engines": [
+        "AFFILIATE_MAXIMIZER.py",
+        "AI_CLIENT.py",
+        "AI_WATCHER.py",
+        "ARCHITECT.py",
+        "ART_GENERATOR.py",
+        "AUTO_HEALER.py",
+        "BRIEFING_ENGINE.py",
+        "BUSINESS_FACTORY.py",
+        "CALENDAR_BRAIN.py",
+        "CONNECTION_FORGE.py",
+        "CONTENT_HARVESTER.py",
+        "CRYPTO_WATCHER.py",
+        "EMAIL_AGENT_EXCHANGE.py",
+        "EMAIL_BRAIN.py",
+        "ETSY_SEO_ENGINE.py",
+        "GITHUB_SPONSORS_ENGINE.py",
+        "GRANT_APPLICANT.py",
+        "GRANT_HUNTER.py",
+        "GUARDIAN.py",
+        "GUMROAD_ENGINE.py",
+        "HEALTH_BOOSTER.py",
+        "HUMAN_CONNECTOR.py",
+        "INCOME_ARCHITECT.py",
+        "KOFI_ENGINE.py",
+        "KOFI_PAYMENT_TRACKER.py",
+        "LANDING_DEPLOYER.py",
+        "LINK_PAGE.py",
+        "MEMORY_PALACE.py",
+        "NEURON_A.py",
+        "NEURON_B.py",
+        "NIGHTLY_DIGEST.py",
+        "OMNIBUS.py",
+        "README_GENERATOR.py",
+        "REVENUE_FLYWHEEL.py",
+        "REVENUE_LOOP.py",
+        "SCAM_SHIELD.py",
+        "SELF_BUILDER.py",
+        "SOCIAL_PROMOTER.py",
+        "SUBSTACK_ENGINE.py",
+        "SYNAPSE.py",
+        "SYNTHESIS_FACTORY.py",
+        "ai_council.py",
+        "knowledge_dispatch.py"
+      ],
+      "engine_count": 43,
+      "data_files": [
+        "affiliate_config.json",
+        "ai_watcher_state.json",
+        "asset_map.json",
+        "brain_state.json",
+        "calendar_brain_state.json",
+        "connections.json",
+        "consolidated_knowledge.json",
+        "content_harvest.json",
+        "crypto_state.json",
+        "ctx.json",
+        "desktop_clean_log.json",
+        "desktop_connection.json",
+        "email_brain_state.json",
+        "etsy_seo_output.json",
+        "evolve_history.json",
+        "flywheel_state.json",
+        "growth_curve.json",
+        "guardian_log.json",
+        "guardian_state.json",
+        "guardian_status.json",
+        "gumroad_listings.json",
+        "health_report.json",
+        "lessons.json",
+        "memory_palace.json",
+        "neuron_a_report.json",
+        "neuron_b_report.json",
+        "scam_shield_state.json",
+        "social_latest.json",
+        "social_queue.json",
+        "synthesis_log.json"
+      ],
+      "revenue": 0.0,
+      "revenue_streams": {
+        "gaza_rose_gallery": {
+          "name": "Gaza Rose Gallery",
+          "type": "digital_art",
+          "balance": 0.0
+        },
+        "newsletter": {
+          "name": "Newsletter/Email List",
+          "type": "content",
+          "balance": 0.0
+        },
+        "affiliate": {
+          "name": "Affiliate Links",
+          "type": "affiliate",
+          "balance": 0.0
+        },
+        "freelance_auto": {
+          "name": "Automated Freelance",
+          "type": "services",
+          "balance": 0.0
+        },
+        "digital_products": {
+          "name": "Digital Products",
+          "type": "products",
+          "balance": 0.0
+        },
+        "api_services": {
+          "name": "API/Tool Services",
+          "type": "saas",
+          "balance": 0.0
+        },
+        "content_licensing": {
+          "name": "Content Licensing",
+          "type": "licensing",
+          "balance": 0.0
+        },
+        "consulting": {
+          "name": "Consulting Leads",
+          "type": "services",
+          "balance": 0.0
+        }
+      },
+      "loop_cycles": 0,
+      "last_insight": "",
+      "synth_built": 0,
+      "brain_health": 40,
+      "timestamp": "2026-03-05T05:18:17.118569+00:00"
+    },
+    "generated_at": "2026-03-05T05:18:17.448125+00:00"
+  },
+  "neuron_b": {
+    "risks": [
+      "401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages"
+    ],
+    "vetted_opportunities": [],
+    "refined_priority": "",
+    "generated_at": "2026-03-05T05:18:17.887802+00:00"
+  },
+  "flywheel": {
+    "ts": "2026-03-05T05:18:20.748191+00:00",
+    "total_current": 0,
+    "total_potential": 2720,
+    "streams": {
+      "kofi": {
+        "name": "Ko-fi Sales",
+        "value": 0,
+        "potential": 50,
+        "active": false
+      },
+      "grants": {
+        "name": "Grants",
+        "value": 0,
+        "potential": 2000,
+        "active": false
+      },
+      "sponsors": {
+        "name": "GitHub Sponsors",
+        "value": 0,
+        "potential": 145,
+        "active": false
+      },
+      "exchange": {
+        "name": "Email Agent Exchange",
+        "value": 0,
+        "potential": 300,
+        "active": false
+      },
+      "substack": {
+        "name": "Substack",
+        "value": 0,
+        "potential": 175,
+        "active": false
+      },
+      "gumroad": {
+        "name": "Gumroad",
+        "value": 0,
+        "potential": 50,
+        "active": false
+      }
+    },
+    "recommendation": null
+  },
+  "content": {
+    "timestamp": "2026-03-05T05:18:09.863648+00:00",
+    "sources": {
+      "hackernews": [
+        {
+          "title": "Google Workspace CLI",
+          "url": "https://github.com/googleworkspace/cli",
+          "score": 309,
+          "source": "hackernews"
+        },
+        {
+          "title": "MacBook Neo",
+          "url": "https://www.apple.com/newsroom/2026/03/say-hello-to-macbook-neo/",
+          "score": 1668,
+          "source": "hackernews"
+        },
+        {
+          "title": "Building a new Flash",
+          "url": "https://bill.newgrounds.com/news/post/1607118",
+          "score": 438,
+          "source": "hackernews"
+        },
+        {
+          "title": "What Python's asyncio primitives get wrong about shared state",
+          "url": "https://www.inngest.com/blog/no-lost-updates-python-asyncio",
+          "score": 21,
+          "source": "hackernews"
+        },
+        {
+          "title": "Dario Amodei calls OpenAI\u2019s messaging around military deal \u2018straight up lies\u2019",
+          "url": "https://techcrunch.com/2026/03/04/anthropic-ceo-dario-amodei-calls-openais-messaging-around-military-deal-straight-up-lies-report-says/",
+          "score": 393,
+          "source": "hackernews"
+        }
+      ],
+      "reddit": [],
+      "devto": [
+        {
+          "title": "Making London's hidden film clubs discoverable",
+          "url": "https://dev.to/alistairjcbrown/i-built-a-film-club-discovery-tool-for-londons-cinema-community-2md",
+          "hearts": 38,
+          "source": "devto"
+        },
+        {
+          "title": "I Created An Enterprise MCP Gateway",
+          "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
+          "hearts": 103,
+          "source": "devto"
+        },
+        {
+          "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
+          "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
+          "hearts": 5,
+          "source": "devto"
+        },
+        {
+          "title": "I Built a Voice-to-Code VS Code Extension That Runs Entirely On-Device",
+          "url": "https://dev.to/agentic_engineer/i-built-a-voice-to-code-vs-code-extension-that-runs-entirely-on-device-16gc",
+          "hearts": 6,
+          "source": "devto"
+        }
+      ]
+    },
+    "gaza_weather": {
+      "temp_c": 10.4,
+      "vibe": "partly cloudy",
+      "code": 3,
+      "location": "Gaza City"
+    },
+    "trending_themes": [
+      {
+        "word": "code",
+        "count": 2
+      },
+      {
+        "word": "google",
+        "count": 1
+      },
+      {
+        "word": "workspace",
+        "count": 1
+      },
+      {
+        "word": "macbook",
+        "count": 1
+      },
+      {
+        "word": "building",
+        "count": 1
+      },
+      {
+        "word": "flash",
+        "count": 1
+      },
+      {
+        "word": "python's",
+        "count": 1
+      },
+      {
+        "word": "asyncio",
+        "count": 1
+      },
+      {
+        "word": "primitives",
+        "count": 1
+      },
+      {
+        "word": "wrong",
+        "count": 1
+      },
+      {
+        "word": "about",
+        "count": 1
+      },
+      {
+        "word": "shared",
+        "count": 1
+      },
+      {
+        "word": "state",
+        "count": 1
+      },
+      {
+        "word": "dario",
+        "count": 1
+      },
+      {
+        "word": "amodei",
+        "count": 1
+      },
+      {
+        "word": "calls",
+        "count": 1
+      },
+      {
+        "word": "openai\u2019s",
+        "count": 1
+      },
+      {
+        "word": "messaging",
+        "count": 1
+      },
+      {
+        "word": "around",
+        "count": 1
+      },
+      {
+        "word": "military",
+        "count": 1
+      }
+    ],
+    "content_angles": [
+      {
+        "type": "tech_solidarity",
+        "hook": "How 'Google Workspace CLI...' connects to Gaza resilience",
+        "platform": "twitter/linkedin",
+        "effort": "5min"
+      },
+      {
+        "type": "gallery_promo",
+        "hook": "$1 gets you AI art. 70c goes to Gaza Rose Gallery. The loop funds itself.",
+        "platform": "all",
+        "effort": "30sec",
+        "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
+      },
+      {
+        "type": "origin_story",
+        "hook": "I built an AI that earns money while I sleep and donates automatically.",
+        "platform": "twitter/substack",
+        "effort": "15min"
+      }
+    ],
+    "total_items": 9,
+    "status": "harvested"
+  },
+  "seo": {
+    "generated_at": "2026-03-05T05:18:20.262393+00:00",
+    "total_listings": 10,
+    "claude_enhanced": 0,
+    "listings": [
+      {
+        "title": "Desert Rose at Dawn",
+        "style": "impressionist",
+        "description": "Desert Rose at Dawn - AI Digital Art Print\n\nImpressionist digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:18.951288+00:00"
+      },
+      {
+        "title": "White Doves Over the Mediterranean",
+        "style": "dreamlike",
+        "description": "White Doves Over the Mediterranean - AI Digital Art Print\n\nDreamlike digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.091453+00:00"
+      },
+      {
+        "title": "Olive Grove Eternal",
+        "style": "painterly",
+        "description": "Olive Grove Eternal - AI Digital Art Print\n\nPainterly digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.236703+00:00"
+      },
+      {
+        "title": "Tatreez Pattern Bloom",
+        "style": "geometric",
+        "description": "Tatreez Pattern Bloom - AI Digital Art Print\n\nGeometric digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.386274+00:00"
+      },
+      {
+        "title": "Gaza Coastline at Golden Hour",
+        "style": "landscape",
+        "description": "Gaza Coastline at Golden Hour - AI Digital Art Print\n\nLandscape digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.531783+00:00"
+      },
+      {
+        "title": "Star of Hope Rising",
+        "style": "symbolic",
+        "description": "Star of Hope Rising - AI Digital Art Print\n\nSymbolic digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.700852+00:00"
+      },
+      {
+        "title": "Pomegranate Season",
+        "style": "botanical",
+        "description": "Pomegranate Season - AI Digital Art Print\n\nBotanical digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.842630+00:00"
+      },
+      {
+        "title": "Night Garden in Ruins",
+        "style": "surrealist",
+        "description": "Night Garden in Ruins - AI Digital Art Print\n\nSurrealist digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:19.973747+00:00"
+      },
+      {
+        "title": "Child with Balloon",
+        "style": "figurative",
+        "description": "Child with Balloon - AI Digital Art Print\n\nFigurative digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:20.146149+00:00"
+      },
+      {
+        "title": "The Return - Sunflower Field",
+        "style": "hopeful",
+        "description": "The Return - Sunflower Field - AI Digital Art Print\n\nHopeful digital artwork that carries meaning beyond aesthetics.\n\n[ROSE] 70c of every $1 supports Gaza Rose Gallery - Palestinian artists & community relief.\n[LOOP] 30c feeds the SolarPunk Loop - reinvested to generate more art, more support.\n\nINSTANT DIGITAL DOWNLOAD\n- 4000 x 4000px JPEG (300 DPI - print any size)\n- Download immediately after payment\n- Personal & commercial use included\n\nYOUR PURCHASE MATTERS\nThis isn't just wall art - it's a small act of solidarity.\nEvery $1 automatically splits: artist support -> loop fund -> more art.\nThe loop feeds itself. Your $1 echoes.\n\nTags: Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "tags": [
+          "Palestine art print",
+          "Gaza solidarity",
+          "digital wall art",
+          "instant download art",
+          "AI generated art",
+          "humanitarian art",
+          "bedroom wall decor",
+          "digital download",
+          "printable wall art",
+          "unique art print",
+          "social impact art",
+          "Palestinian culture",
+          "donation art print"
+        ],
+        "tag_string": "Palestine art print, Gaza solidarity, digital wall art, instant download art, AI generated art, humanitarian art, bedroom wall decor, digital download, printable wall art, unique art print, social impact art, Palestinian culture, donation art print",
+        "source": "template",
+        "generated_at": "2026-03-05T05:18:20.262377+00:00"
+      }
+    ],
+    "note": "Copy-paste each into Etsy -> Add listing. Title as-is.",
+    "status": "ready to post"
+  },
+  "grants": {
+    "cycles": 1,
+    "last_run": "2026-03-05T05:18:18.001634+00:00",
+    "grants_scored": 20,
+    "high_priority": []
+  },
+  "loop_result": {
+    "started_at": "2026-03-05T05:18:22.315733+00:00",
+    "steps_ok": [
+      "get_business",
+      "affiliates",
+      "deploy",
+      "gumroad",
+      "social",
+      "brief",
+      "brain"
+    ],
+    "steps_failed": [],
+    "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+    "gumroad_url": "https://meekotharacoon.gumroad.com",
+    "posts": [
+      {
+        "platform": "twitter",
+        "text": "Just launched: SolarPunk AI Prompt Packs \ud83c\udf39 AI Prompt Packs \u2014 built by AI, 15% to Gaza \u2192 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/ \u2014 $17, 15% to Gaza",
+        "queued_at": "2026-03-05T05:18:22.992167+00:00",
+        "source": "REVENUE_LOOP",
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      },
+      {
+        "platform": "reddit",
+        "text": "Built this with AI: SolarPunk AI Prompt Packs\n\nAI Prompt Packs \u2014 built by AI, 15% to Gaza\n\nDetails: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/\nBuy: https://meekotharacoon.gumroad.com\n\n15% of every sale funds Gaza aid.",
+        "queued_at": "2026-03-05T05:18:22.992167+00:00",
+        "source": "REVENUE_LOOP",
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      },
+      {
+        "platform": "linkedin",
+        "text": "New launch: SolarPunk AI Prompt Packs\n\nAI Prompt Packs \u2014 built by AI, 15% to Gaza\n\n$17 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+        "queued_at": "2026-03-05T05:18:22.992167+00:00",
+        "source": "REVENUE_LOOP",
+        "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/"
+      }
+    ],
+    "completed_at": "2026-03-05T05:18:23.876478+00:00",
+    "elapsed_seconds": 1,
+    "success": true
+  },
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+  "gumroad_url": "https://meekotharacoon.gumroad.com",
+  "exchange": {
+    "cycles": 1,
+    "total_tasks": 0,
+    "total_earned": 0.0,
+    "total_to_gaza": 0.0,
+    "agent_earnings": {},
+    "task_log": [],
+    "registered_clients": [],
+    "last_run": "2026-03-05T05:18:24.115111+00:00"
+  },
+  "kofi_tracker": {
+    "cycles": 1,
+    "payments_matched": 0,
+    "payments_unmatched": 0,
+    "total_verified": 0.0,
+    "processed_ids": [],
+    "log": [],
+    "last_run": "2026-03-05T05:18:26.329793+00:00"
+  },
+  "architect_plan": {},
+  "biz_factory": {
+    "cycles": 1,
+    "businesses_built": [
+      {
+        "niche": "AI Prompt Packs",
+        "name": "SolarPunk AI Prompt Packs",
+        "price": 17,
+        "revenue": "$170-$680/month",
+        "built_at": "2026-03-05T05:18:21.189164+00:00"
+      }
+    ],
+    "total_revenue_potential": 340,
+    "last_run": "2026-03-05T05:18:20.870010+00:00"
+  },
+  "self_builder": {
+    "cycles": 1,
+    "built": [],
+    "total_built": 0,
+    "ai_generated_ideas": [],
+    "last_run": "2026-03-05T05:18:28.246298+00:00"
+  },
+  "engines_ok": [
+    "GUARDIAN",
+    "EMAIL_BRAIN",
+    "SCAM_SHIELD",
+    "CALENDAR_BRAIN",
+    "CONTENT_HARVESTER",
+    "AI_WATCHER",
+    "CRYPTO_WATCHER",
+    "NEURON_A",
+    "NEURON_B",
+    "GRANT_HUNTER",
+    "ETSY_SEO_ENGINE",
+    "INCOME_ARCHITECT",
+    "REVENUE_FLYWHEEL",
+    "BUSINESS_FACTORY",
+    "LANDING_DEPLOYER",
+    "REVENUE_LOOP",
+    "ART_GENERATOR",
+    "EMAIL_AGENT_EXCHANGE",
+    "GRANT_APPLICANT",
+    "HEALTH_BOOSTER",
+    "SOCIAL_PROMOTER",
+    "SUBSTACK_ENGINE",
+    "LINK_PAGE",
+    "HUMAN_CONNECTOR",
+    "KOFI_ENGINE",
+    "GUMROAD_ENGINE",
+    "GITHUB_SPONSORS_ENGINE",
+    "KOFI_PAYMENT_TRACKER",
+    "SYNAPSE",
+    "SYNTHESIS_FACTORY",
+    "SELF_BUILDER",
+    "MEMORY_PALACE",
+    "README_GENERATOR",
+    "NIGHTLY_DIGEST"
+  ],
+  "engines_failed": [
+    "CONNECTION_FORGE",
+    "ARCHITECT",
+    "BRIEFING_ENGINE"
+  ],
+  "engines_skipped": []
+}

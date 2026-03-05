@@ -1,0 +1,353 @@
+{
+  "run_id": "22703521181",
+  "completed": "2026-03-05T05:18:29.902438+00:00",
+  "elapsed_s": 22,
+  "health_before": 40,
+  "health_after": 40,
+  "businesses_built": 1,
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+  "gumroad_url": "https://meekotharacoon.gumroad.com",
+  "exchange_tasks": 0,
+  "exchange_earned": 0.0,
+  "exchange_gaza": 0.0,
+  "engines_ok": [
+    "GUARDIAN",
+    "EMAIL_BRAIN",
+    "SCAM_SHIELD",
+    "CALENDAR_BRAIN",
+    "CONTENT_HARVESTER",
+    "AI_WATCHER",
+    "CRYPTO_WATCHER",
+    "NEURON_A",
+    "NEURON_B",
+    "GRANT_HUNTER",
+    "ETSY_SEO_ENGINE",
+    "INCOME_ARCHITECT",
+    "REVENUE_FLYWHEEL",
+    "BUSINESS_FACTORY",
+    "LANDING_DEPLOYER",
+    "REVENUE_LOOP",
+    "ART_GENERATOR",
+    "EMAIL_AGENT_EXCHANGE",
+    "GRANT_APPLICANT",
+    "HEALTH_BOOSTER",
+    "SOCIAL_PROMOTER",
+    "SUBSTACK_ENGINE",
+    "LINK_PAGE",
+    "HUMAN_CONNECTOR",
+    "KOFI_ENGINE",
+    "GUMROAD_ENGINE",
+    "GITHUB_SPONSORS_ENGINE",
+    "KOFI_PAYMENT_TRACKER",
+    "SYNAPSE",
+    "SYNTHESIS_FACTORY",
+    "SELF_BUILDER",
+    "MEMORY_PALACE",
+    "README_GENERATOR",
+    "NIGHTLY_DIGEST"
+  ],
+  "engines_failed": [
+    "CONNECTION_FORGE",
+    "ARCHITECT",
+    "BRIEFING_ENGINE"
+  ],
+  "engines_skipped": [],
+  "log": [
+    {
+      "engine": "GUARDIAN",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.8,
+      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-05 05:18 UTC\n\ud83d\udcbe Save-state: save-20260305-051808\n\u2705 All 10 core files intact\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "EMAIL_BRAIN",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.6,
+      "stdout_tail": "EMAIL_BRAIN cycle 1 | meekotharaccoon@gmail.com | AI=online\n  IMAP: b'[AUTHENTICATIONFAILED] Invalid credentials (Failure)'\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "SCAM_SHIELD",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "SCAM_SHIELD cycle 1 | 0 caught\n  Scanning 0 new emails\n  Total: 0 scams | 0 safe\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "CALENDAR_BRAIN",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "CALENDAR_BRAIN cycle 1\n  No appointments inbox\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "CONTENT_HARVESTER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 3.6,
+      "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 10.4C partly cloudy\nHarvested 9 items -> 3 content angles\nBest angle: How 'Google Workspace CLI...' connects to Gaza resilience\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "AI_WATCHER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 2.0,
+      "stdout_tail": "AI_WATCHER cycle 1\n  Found: 10 image models, 5 text models, 5 repos\n  Weekly digest queued\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "CRYPTO_WATCHER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.6,
+      "stdout_tail": "CRYPTO_WATCHER cycle 1\n  Market updated | Fear&Greed: 22 (Extreme Fear)\n  BTC: $72,771 | ETH: $2,135\n  alert: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 006d021491bc7-679f2bcd3c5sm14203413eaf.1 - gsmtp')\n  AI tokens spotlight: RENDER-TOKEN +5.7%\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "NEURON_A",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.4,
+      "stdout_tail": "e for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\nNEURON_A AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\nBuilder thesis: AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\nNEURON_A done.\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "NEURON_B",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.4,
+      "stdout_tail": "NEURON_B v2 - Skeptic Brain starting...\nNEURON_B error: 401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages\nSkeptic thesis: ?\nRefined priority: \n  RISK: 401 Client Error: Unauthorized for url: https://api.anthropic.com/v1/messages\nNEURON_B done.\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "GRANT_HUNTER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.8,
+      "stdout_tail": "GRANT_HUNTER cycle 1\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "ETSY_SEO_ENGINE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.6,
+      "stdout_tail": "ETSY_SEO_ENGINE starting...\n  Desert Rose at Dawn...\n  White Doves Over the Mediterranean...\n  Olive Grove Eternal...\n  Tatreez Pattern Bloom...\n  Gaza Coastline at Golden Hour...\n  Star of Hope Rising...\n  Pomegranate Season...\n  Night Garden in Ruins...\n  Child with Balloon...\n  The Return - Sunflower Field...\nGenerated 10 Etsy listings (0 Claude-enhanced)\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "INCOME_ARCHITECT",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.2,
+      "stdout_tail": "INCOME_ARCHITECT -- $1 Art Loop Engine\n  Gaza: $0.00 | Loop: $0.00 | Auto-buys: 0\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "REVENUE_FLYWHEEL",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.2,
+      "stdout_tail": "REVENUE_FLYWHEEL | Current: $0.00 | Potential: $2720/mo\n  Ko-fi Sales               $    0.00 [\u2717]\n  Grants                    $    0.00 [\u2717]\n  GitHub Sponsors           $    0.00 [\u2717]\n  Email Agent Exchange      $    0.00 [\u2717]\n  Substack                  $    0.00 [\u2717]\n  Gumroad                   $    0.00 [\u2717]\n  Bottleneck: unlock \u2014 Grants\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "BUSINESS_FACTORY",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.3,
+      "stdout_tail": ": https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Saved: data/business_ai_prompt_packs.json\n  3 social posts queued\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 586e51a60fabf-4160d26d45fsm20204473fac.14 - gsmtp')\n  \u2705 SolarPunk AI Prompt Packs | $170-$680/month\n  \ud83d\udcb0 Gaza: 15% of every $17 sale = $2.55 to PCRF\n  \ud83d\udcca Total potential: $340/month\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "LANDING_DEPLOYER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "LANDING_DEPLOYER cycle 1 | 0 pages live\n  Deploying: SolarPunk AI Prompt Packs\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/\n  Total live pages: 1\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "REVENUE_LOOP",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.7,
+      "stdout_tail": " \u2705 3 posts queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5614622812f47-464bb0991f5sm12924631b6e.0 - gsmtp')\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40 \u2192 45 | Loops: 1\n\n\u2705 REVENUE_LOOP done in 1s\n   OK:     get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live:   https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "ART_GENERATOR",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "ART_GENERATOR -- Gaza Rose\n  No pending art requests\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "EMAIL_AGENT_EXCHANGE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 1 | 0 tasks | $0.00 | AI=online\n  No inbox data \u2014 EMAIL_BRAIN hasn't run yet or Gmail not configured\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "GRANT_APPLICANT",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "GRANT_APPLICANT cycle 1 | 0 applied\n  0 new candidates\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "HEALTH_BOOSTER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.3,
+      "stdout_tail": "XES (for Meeko):\n  1. Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets\n  2. Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token\n  3. Add X_API_KEY: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  4. Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  5. Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)\n\n\ud83d\udcca Revenue: 0 sales | $0.00 to Gaza\n==================================================\n\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "SOCIAL_PROMOTER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.3,
+      "stdout_tail": "eddit r/DigitalArt: queued\n\n\ud83d\udccb COPY-PASTE READY TWEET:\n==================================================\n\u2b50 NEW: \"Star of Hope Rising\"\n\n$1 AI art print.\n70\u00a2 \u2192 Gaza Rose Gallery (Palestinian artists)\n30\u00a2 \u2192 loop fund \u2192 buys the next piece automatically\n\nThe loop feeds itself \ud83d\udd04\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center\n\n#GazaRose #PalestineArt #DigitalArt #SocialImpact\n==================================================\nShop: https://meekotharaccoon-cell.github.io/meeko-nerve-center\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "SUBSTACK_ENGINE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.1,
+      "stdout_tail": "SUBSTACK_ENGINE cycle 1 | 0 issues\n  Drafting weekly issue...\n  Draft saved: data/substack_draft.txt\n  Draft emailed to Meeko (add SUBSTACK_EMAIL secret to auto-publish)\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "LINK_PAGE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.0,
+      "stdout_tail": "LINK_PAGE: Rebuilt docs/links.html\n  0 sales | $0.00 to Gaza | 0 loops\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/links.html\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "CONNECTION_FORGE",
+      "status": "error",
+      "code": 1,
+      "elapsed": 0.0,
+      "stdout_tail": "",
+      "stderr_tail": "  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/CONNECTION_FORGE.py\", line 114\n    \"steps\">[\n    ^^^^^^^^^\nSyntaxError: ':' expected after dictionary key\n"
+    },
+    {
+      "engine": "HUMAN_CONNECTOR",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "HUMAN_CONNECTOR cycle 1 | 0 humans met\n  0 new genuine humans found\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "KOFI_ENGINE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "KOFI_ENGINE cycle 1 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "GUMROAD_ENGINE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "ycle 5 | 6 products\n  \ud83d\udccb Queued: Desert Rose at Dawn \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: White Doves Over the Mediterranean \u2014 Gaza Ros (no_token)\n  \ud83d\udccb Queued: Olive Grove Eternal \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Tatreez Pattern Bloom \u2014 Gaza Rose Gallery (no_token)\n  \ud83d\udccb Queued: Gaza Coastline at Golden Hour \u2014 Gaza Rose Gal (no_token)\n  \ud83d\udccb Queued: Star of Hope Rising \u2014 Gaza Rose Gallery (no_token)\n\nGUMROAD: 0 live | 6 queued\n  \u2192 Add GUMROAD_ACCESS_TOKEN secret to auto-create listings\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "GITHUB_SPONSORS_ENGINE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "GITHUB_SPONSORS cycle 1 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "KOFI_PAYMENT_TRACKER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.1,
+      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 1 | matched: 0 | verified: $0.00\n  No revenue_inbox.json yet\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "SYNAPSE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.0,
+      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 43 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 46e09a7af769-7d5864743b9sm18452800a34.10 - gsmtp')\nBrain state saved. Score: 40/100\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "SYNTHESIS_FACTORY",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.4,
+      "stdout_tail": "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\nSynthesis AI error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n   Nothing new synthesized this run\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "ARCHITECT",
+      "status": "error",
+      "code": 1,
+      "elapsed": 0.4,
+      "stdout_tail": "-Instruct failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-72B-Instruct/v1/chat/completions\n  [AI_CLIENT] Mixtral-8x7B-Instruct-v0.1 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n",
+      "stderr_tail": "x_tokens, system=json_system.strip())\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/AI_CLIENT.py\", line 61, in ask\n    raise RuntimeError(f\"All AI models failed. Last error: {last_error}\")\nRuntimeError: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n"
+    },
+    {
+      "engine": "SELF_BUILDER",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.6,
+      "stdout_tail": "e for url: https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions\n  [AI_CLIENT] Mistral-7B-Instruct-v0.3 failed: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Code generation error: All AI models failed. Last error: 410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions\n  Generation failed\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "MEMORY_PALACE",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.0,
+      "stdout_tail": "MEMORY_PALACE awakening...\nMemory: 2 cycles | Health: 40 | Revenue: $0.00\nPattern: unknown\nCRITICAL: Sub-50 health \u2014 API key 401. Check ANTHROPIC_API_KEY.\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "README_GENERATOR",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 0.0,
+      "stdout_tail": "README rebuilt: 43 engines, $0.00 raised, 0 cycles\n",
+      "stderr_tail": ""
+    },
+    {
+      "engine": "BRIEFING_ENGINE",
+      "status": "error",
+      "code": 1,
+      "elapsed": 0.1,
+      "stdout_tail": "BRIEFING_ENGINE cycle 1 | UTC hour: 5\n",
+      "stderr_tail": "Traceback (most recent call last):\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/BRIEFING_ENGINE.py\", line 234, in <module>\n    if __name__==\"__main__\": run()\n                             ^^^^^\n  File \"/home/runner/work/meeko-nerve-center/meeko-nerve-center/mycelium/BRIEFING_ENGINE.py\", line 207, in run\n    if state.get(\"last_morning\",\"\")[:10] != today:\n       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+    },
+    {
+      "engine": "NIGHTLY_DIGEST",
+      "status": "ok",
+      "code": 0,
+      "elapsed": 1.0,
+      "stdout_tail": "NIGHTLY_DIGEST cycle 1\n  Email error: (535, b'5.7.8 Username and Password not accepted. For more information, go to\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 006d021491bc7-679f2a17bfbsm14403189eaf.0 - gsmtp')\n  Status page \u2192 docs/status.html\n",
+      "stderr_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": "ai_prompt_packs_202603050518",
+  "niche": {
+    "niche": "AI Prompt Packs",
+    "product_type": "digital_download",
+    "price": 17,
+    "platform": "Gumroad",
+    "audience": "AI enthusiasts, creators, marketers"
+  },
+  "plan": {
+    "business_name": "SolarPunk AI Prompt Packs",
+    "tagline": "AI Prompt Packs \u2014 built by AI, 15% to Gaza",
+    "product_name": "AI Prompt Packs Pack",
+    "product_description": "Premium AI Prompt Packs created by autonomous AI. Every purchase sends 15% to Palestinian children via PCRF. Instant download, no subscription.",
+    "price": 17,
+    "email_sequence": [
+      {
+        "subject": "Your AI Prompt Packs is ready",
+        "body": "Thanks for your purchase. Your AI Prompt Packs pack is attached. 15% went to Gaza. \u2014 Meeko\n\nP.S. Worth reading: Palestine \u2014 Joe Sacco \u2192 https://www.amazon.com/dp/1560974523?tag=autonomoushum-20",
+        "day": 0
+      },
+      {
+        "subject": "How's it going?",
+        "body": "Just checking in. Let me know if you have questions. More resources at ko-fi.com/meekotharaccoon\n\nP.S. Worth reading: Palestine \u2014 Joe Sacco \u2192 https://www.amazon.com/dp/1560974523?tag=autonomoushum-20",
+        "day": 3
+      }
+    ],
+    "social_posts": [
+      {
+        "platform": "twitter",
+        "text": "Just launched: AI Prompt Packs \u2014 $17, 15% to Gaza \ud83c\udf39 gumroad.com"
+      },
+      {
+        "platform": "reddit",
+        "text": "Built this with autonomous AI: AI Prompt Packs. $17, 15% goes to Palestinian kids."
+      },
+      {
+        "platform": "linkedin",
+        "text": "New digital product: AI Prompt Packs. $17. 15% to PCRF (Gaza children's relief)."
+      }
+    ],
+    "seo_keywords": [
+      "ai prompt packs",
+      "digital download",
+      "ai tools",
+      "gaza solidarity"
+    ],
+    "launch_steps": [
+      "Create Gumroad listing",
+      "Post to social",
+      "Email list",
+      "Repeat"
+    ],
+    "monthly_revenue_estimate": "$170-$680/month",
+    "gaza_impact": "15% of every $17 sale = $2.55 to PCRF",
+    "amazon_books": [
+      {
+        "title": "The $100 Startup",
+        "url": "https://www.amazon.com/dp/0307951529?tag=autonomoushum-20"
+      },
+      {
+        "title": "Palestine \u2014 Joe Sacco",
+        "url": "https://www.amazon.com/dp/1560974523?tag=autonomoushum-20"
+      },
+      {
+        "title": "Steal Like an Artist",
+        "url": "https://www.amazon.com/dp/0761169253?tag=autonomoushum-20"
+      },
+      {
+        "title": "Automate the Boring Stuff",
+        "url": "https://www.amazon.com/dp/1593279922?tag=autonomoushum-20"
+      }
+    ],
+    "amazon_tag": "autonomoushum-20"
+  },
+  "built_at": "2026-03-05T05:18:21.188391+00:00",
+  "status": "ready_to_launch",
+  "affiliate_links": {
+    "gumroad": "https://gumroad.com/?via=meeko",
+    "ko-fi": "https://ko-fi.com/meekotharaccoon",
+    "github": "https://github.com/meekotharaccoon-cell/meeko-nerve-center",
+    "amazon_p1": "https://www.amazon.com/dp/0307951529?tag=autonomoushum-20",
+    "amazon_p2": "https://www.amazon.com/dp/1560974523?tag=autonomoushum-20"
+  },
+  "estimated_monthly_revenue": "$170-$680/month",
+  "gaza_contribution": "15% of all sales",
+  "affiliate_injected": true,
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+  "slug": "ai-prompt-packs",
+  "deployed_at": "2026-03-05T05:18:22.641884+00:00"
+}

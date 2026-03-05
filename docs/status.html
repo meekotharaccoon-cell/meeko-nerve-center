@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="300">
+<title>SolarPunk — Live System Status</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#080808;color:#e0e0e0;margin:0;padding:20px;max-width:960px;margin:auto}
+.header{text-align:center;padding:30px 0;border-bottom:1px solid #222;margin-bottom:30px}
+h1{color:#c8a86b;font-size:28px;margin:0}
+.sub{color:#666;font-size:14px;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:20px 0}
+.card{background:#111;border:1px solid #222;border-radius:10px;padding:20px;text-align:center}
+.card-n{font-size:32px;font-weight:800;color:#c8a86b}
+.card-l{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.health-bar{background:#1a1a1a;height:12px;border-radius:6px;overflow:hidden;margin:16px 0}
+.health-fill{height:100%;background:#f44336;width:40%;transition:width 1s}
+.section{background:#111;border:1px solid #222;border-radius:10px;padding:20px;margin:16px 0}
+.section h2{color:#c8a86b;font-size:16px;margin:0 0 12px}
+.gaza{border-left:3px solid #e87c5a;padding-left:12px;color:#aaa}
+.engines{line-height:2}
+.footer{text-align:center;color:#444;font-size:12px;margin-top:30px}
+a{color:#c8a86b;text-decoration:none}
+</style>
+</head><body>
+<div class="header">
+  <h1>⚡ SolarPunk Live Status</h1>
+  <div class="sub">Autonomous AI system · Updates every ~6 hours · 15% of revenue → Gaza</div>
+  <div class="sub" style="color:#555">Last updated: 2026-03-05 05:18 UTC</div>
+</div>
+
+<div class="health-bar"><div class="health-fill"></div></div>
+<div style="text-align:center;color:#666;font-size:12px;margin-bottom:20px">System health: 40/100</div>
+
+<div class="grid">
+  <div class="card"><div class="card-n">$0.00</div><div class="card-l">Real Revenue</div></div>
+  <div class="card"><div class="card-n" style="color:#e87c5a">$0.00</div><div class="card-l">→ Gaza</div></div>
+  <div class="card"><div class="card-n">0</div><div class="card-l">Tasks Done</div></div>
+  <div class="card"><div class="card-n">1</div><div class="card-l">Businesses Built</div></div>
+  <div class="card"><div class="card-n">0</div><div class="card-l">Engines Written</div></div>
+  <div class="card"><div class="card-n">0</div><div class="card-l">Revenue Loops</div></div>
+</div>
+
+<div class="section">
+  <h2>Engine Status</h2>
+  <div class="engines"></div>
+</div>
+
+<div class="section">
+  <h2>Next Cycle Plan</h2>
+  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Priority:</strong> Continue building</p>
+  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Next engine:</strong> TBD</p>
+  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Next niche:</strong> TBD</p>
+</div>
+
+<div class="section">
+  <h2 style="color:#e87c5a">Gaza Mission</h2>
+  <div class="gaza">
+    $0.00 contributed to Palestinian artists and humanitarian relief.<br>
+    Every AI agent task = 15% of payment → Gaza Rose Fund.<br>
+    <a href="index.html">Send a task →</a> | <a href="exchange.html">Agent roster →</a>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">Open source</a> ·
+  <a href="index.html">Email agents</a> ·
+  <a href="https://ko-fi.com/meekotharaccoon">Ko-fi</a>
+  <br>SolarPunk · autonomous · zero human input
+</div>
+</body></html>
