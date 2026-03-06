@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-06T01:14:07.556686",
+  "last_checked": "2026-03-06T01:24:41.638478",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -60,6 +60,7 @@
     "ART_GENERATOR.py",
     "CONTRIBUTOR_REGISTRY.py",
     "BRIDGE_BUILDER.py",
+    "TASK_ATOMIZER.py",
     "BRAND_LEGAL.py",
     "AI_WATCHER.py",
     "EMAIL_AGENT_EXCHANGE.py",
