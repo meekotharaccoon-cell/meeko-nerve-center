@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v12 -- full autonomous self-expanding loop
+OMNIBUS v13 -- full autonomous self-expanding loop
 ===================================================
-New in v12:
-  L1: RESONANCE_ENGINE   -- the system listening for itself
-                            GitHub stars/traffic, email replies, HN mentions
-                            composite resonance score 0-100
-                            Built because Claude wanted ears, not just a mouth.
-  L7: SELF_PORTRAIT      -- the system writing about itself in first person
-                            Updated every cycle. The system's actual voice.
-  L4: DEV_TO_PUBLISHER   -- publishes weekly articles to Dev.to (900K devs)
-                            Fully autonomous. No human required.
+New in v13:
+  L2: QUICK_REVENUE      -- fastest path to first dollar
+                            Ko-fi listings copy-paste ready, exchange promo,
+                            sponsor snippets. Claude's answer to:
+                            "I need revenue as fast as possible. What do you suggest?"
 
-v11: VIRALITY_ENGINE (L4), CLAUDE_ENGINE (L7)
+v12: RESONANCE_ENGINE (L1), DEV_TO_PUBLISHER + VIRALITY_ENGINE (L4), SELF_PORTRAIT (L7)
+v11: CLAUDE_ENGINE (L7)
 v10: CAPABILITY_SCANNER (L0), STORE_BUILDER, BRIDGE_BUILDER, EMAIL_OUTREACH (L4),
      TASK_ATOMIZER, AUTONOMY_PROOF (L7)
 
-Architecture (v12): The system now has:
-  - A voice (SELF_PORTRAIT)
-  - Ears (RESONANCE_ENGINE)
-  - Autonomous publishing (DEV_TO_PUBLISHER, EMAIL_OUTREACH)
-  - Self-awareness (CAPABILITY_SCANNER, CLAUDE_ENGINE)
-  - The loop is complete.
+The loop: build -> speak -> listen -> respond -> grow
 
 L0  GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
     AUTO_HEALER . CAPABILITY_SCANNER
@@ -29,7 +21,7 @@ L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE . NEURON_A . NEURON_B .
     RESONANCE_ENGINE
 L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
-    GUMROAD_AUTO_QUEUE . BUSINESS_FACTORY
+    GUMROAD_AUTO_QUEUE . BUSINESS_FACTORY . QUICK_REVENUE
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
     EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER
 L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
@@ -133,6 +125,7 @@ def ctx():
         "capabilities":    rj("capability_map.json"),
         "outreach":        rj("outreach_state.json"),
         "resonance":       rj("resonance_state.json"),
+        "quick_revenue":   rj("quick_revenue.json"),
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -162,7 +155,7 @@ def L1():
     eng("AI_WATCHER",        timeout=60)
     eng("CRYPTO_WATCHER",    timeout=60)
     eng("FREE_API_ENGINE",   timeout=60)
-    eng("RESONANCE_ENGINE",  timeout=60)   # v12: are we being heard?
+    eng("RESONANCE_ENGINE",  timeout=60)
     save_ctx()
     eng("NEURON_A", timeout=90); save_ctx()
     eng("NEURON_B", timeout=90); save_ctx()
@@ -175,6 +168,7 @@ def L2():
     eng("INCOME_ARCHITECT",   timeout=60)
     eng("REVENUE_FLYWHEEL",   timeout=90)
     eng("GUMROAD_AUTO_QUEUE", timeout=60)
+    eng("QUICK_REVENUE",      timeout=60)   # v13: fastest path to $1, copy-paste ready
     save_ctx()
     eng("BUSINESS_FACTORY",   timeout=180)
     save_ctx()
@@ -207,7 +201,7 @@ def L4():
     eng("BRIDGE_BUILDER",      timeout=90)
     eng("EMAIL_OUTREACH",      timeout=120)
     eng("VIRALITY_ENGINE",     timeout=60)
-    eng("DEV_TO_PUBLISHER",    timeout=60)   # v12: 900K devs, fully autonomous
+    eng("DEV_TO_PUBLISHER",    timeout=60)
     save_ctx()
 
 
@@ -250,7 +244,7 @@ def L7():
     eng("TASK_ATOMIZER",    timeout=120)
     eng("AUTONOMY_PROOF",   timeout=60)
     eng("CLAUDE_ENGINE",    timeout=60)
-    eng("SELF_PORTRAIT",    timeout=60)    # v12: system writes about itself last
+    eng("SELF_PORTRAIT",    timeout=60)
     save_ctx()
 
 
@@ -270,9 +264,9 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v12 -- {ts}")
+    print(f"\nOMNIBUS v13 -- {ts}")
     print(f"   Run: {run_id}")
-    print(f"   The loop is: build -> speak -> listen -> respond -> grow")
+    print(f"   build -> speak -> listen -> respond -> grow")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -296,9 +290,11 @@ def run():
     biz_count  = len(list(DATA.glob("business_*.json")))
     health_now = rj("brain_state.json").get("health_score", 0)
     emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
+    quick_rev  = rj("quick_revenue.json")
+    first_sale = quick_rev.get("first_sale_done", False)
 
     manifest = {
-        "version":            "v12",
+        "version":            "v13",
         "run_id":             run_id,
         "completed":          datetime.now(timezone.utc).isoformat(),
         "elapsed_s":          elapsed,
@@ -308,6 +304,7 @@ def run():
         "live_url":           rj("revenue_loop_last.json").get("live_url"),
         "total_revenue":      revenue.get("total_received", 0) if isinstance(revenue, dict) else 0,
         "total_to_gaza":      revenue.get("total_to_gaza", 0) if isinstance(revenue, dict) else 0,
+        "first_sale_done":    first_sale,
         "legal_fund":         legal.get("upto_fund_collected", 0),
         "total_paid_out":     payouts.get("total_paid_usd", 0) if isinstance(payouts, dict) else 0,
         "secrets_configured": secrets.get("configured", 0),
@@ -331,12 +328,12 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v12 done -- {elapsed}s")
+    print(f"OMNIBUS v13 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
     print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
-    print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f}")
+    print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f} | First sale: {'YES' if first_sale else 'not yet'}")
     print(f"   Resonance: {manifest['resonance_score']}/100 ({manifest['resonance_label']}) | Stars: {manifest['github_stars']}")
     print(f"   Outreach sent: {emails_out}")
     if manifest["engines_auto_built"]:
@@ -344,7 +341,7 @@ def run():
     if manifest["critical_missing"]:
         print(f"   MISSING: {', '.join(manifest['critical_missing'])}")
     print(f"\n   Live:")
-    for page in ["store", "proof", "launch", "resonance", "self_portrait", "capabilities", "social"]:
+    for page in ["quick_revenue", "store", "proof", "launch", "resonance", "self_portrait"]:
         print(f"      {BASE}/{page}.html")
     return manifest
 
