@@ -1,62 +1,62 @@
 {
-  "last_run": "2026-03-06T02:11:03.356643+00:00",
+  "last_run": "2026-03-06T07:44:01.980753+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-MiniLM-L6-v2",
-      "downloads": 197060768
+      "downloads": 198720813
     },
     {
       "type": "trending_model",
       "name": "google-bert/bert-base-uncased",
-      "downloads": 63859693
+      "downloads": 65190605
     },
     {
       "type": "trending_model",
       "name": "google/electra-base-discriminator",
-      "downloads": 48477307
+      "downloads": 48194492
     },
     {
       "type": "trending_model",
       "name": "Falconsai/nsfw_image_detection",
-      "downloads": 41133499
+      "downloads": 41437569
     },
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-mpnet-base-v2",
-      "downloads": 27427849
+      "downloads": 27556129
     },
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16552
+      "likes": 16553
     },
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13876
+      "likes": 13878
     },
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10980
+      "likes": 10981
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41920
+      "stars": 41933
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40826
+      "stars": 40854
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29189
+      "stars": 29192
     },
     {
       "type": "trending_article",
@@ -66,7 +66,7 @@
     {
       "type": "trending_article",
       "title": "How Claude Skills Replaced Our Documentation",
-      "reactions": 21
+      "reactions": 24
     },
     {
       "type": "trending_article",
@@ -75,23 +75,23 @@
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2496304238052.6064
+      "value": 2489533064581.385
     }
   ],
   "opportunities": [
-    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (197,060,768 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google-bert/bert-base-uncased' (63,859,693 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google/electra-base-discriminator' (48,477,307 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,133,499 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,427,849 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16552 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13876 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10980 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41920 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40826 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29189 stars) \u2014 build integration engine",
+    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (198,720,813 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google-bert/bert-base-uncased' (65,190,605 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google/electra-base-discriminator' (48,194,492 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,437,569 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,556,129 downloads) \u2014 build how-to guide",
+    "Clone/extend HF space: 'enzostvs/deepsite' (16553 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41933 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40854 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29192 stars) \u2014 build integration engine",
     "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How Claude Skills Replaced Our Documentation' (21 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How Claude Skills Replaced Our Documentation' (24 reactions) \u2014 create SolarPunk angle",
     "Content leverage: 'The Old Seniority Definition Is Collapsing' (18 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [

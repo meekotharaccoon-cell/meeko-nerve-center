@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T02:10:54.618802+00:00",
+  "timestamp": "2026-03-06T07:43:51.835898+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "CBP tapped into the online advertising ecosystem to track peoples\u2019 movements",
-        "url": "https://www.404media.co/cbp-tapped-into-the-online-advertising-ecosystem-to-track-peoples-movements/",
-        "score": 327,
+        "title": "System76 on Age Verification Laws",
+        "url": "https://blog.system76.com/post/system76-on-age-verification/",
+        "score": 181,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 636,
+        "score": 781,
+        "source": "hackernews"
+      },
+      {
+        "title": "10% of Firefox crashes are caused by bitflips",
+        "url": "https://mas.to/@gabrielesvelto/116171750653898304",
+        "score": 511,
         "source": "hackernews"
       },
       {
         "title": "Where things stand with the Department of War",
         "url": "https://www.anthropic.com/news/where-stand-department-war",
-        "score": 162,
+        "score": 394,
         "source": "hackernews"
       },
       {
-        "title": "The next generations of Bubble Tea, Lip Gloss, and Bubbles are available now",
-        "url": "https://charm.land/blog/v2/",
-        "score": 93,
-        "source": "hackernews"
-      },
-      {
-        "title": "A standard protocol to handle and discard low-effort, AI-Generated pull requests",
-        "url": "https://406.fail/",
-        "score": 86,
+        "title": "Labor market impacts of AI: A new measure and early evidence",
+        "url": "https://www.anthropic.com/research/labor-market-impacts",
+        "score": 155,
         "source": "hackernews"
       }
     ],
@@ -62,42 +62,38 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 6.7,
+    "temp_c": 16.1,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "tapped",
+      "word": "system76",
       "count": 1
     },
     {
-      "word": "into",
+      "word": "verification",
       "count": 1
     },
     {
-      "word": "online",
+      "word": "laws",
       "count": 1
     },
     {
-      "word": "advertising",
+      "word": "firefox",
       "count": 1
     },
     {
-      "word": "ecosystem",
+      "word": "crashes",
       "count": 1
     },
     {
-      "word": "track",
+      "word": "caused",
       "count": 1
     },
     {
-      "word": "peoples\u2019",
-      "count": 1
-    },
-    {
-      "word": "movements",
+      "word": "bitflips",
       "count": 1
     },
     {
@@ -117,42 +113,46 @@
       "count": 1
     },
     {
-      "word": "next",
+      "word": "labor",
       "count": 1
     },
     {
-      "word": "generations",
+      "word": "market",
       "count": 1
     },
     {
-      "word": "bubble",
+      "word": "impacts",
       "count": 1
     },
     {
-      "word": "gloss",
+      "word": "measure",
       "count": 1
     },
     {
-      "word": "bubbles",
+      "word": "early",
       "count": 1
     },
     {
-      "word": "available",
+      "word": "evidence",
       "count": 1
     },
     {
-      "word": "standard",
+      "word": "making",
       "count": 1
     },
     {
-      "word": "protocol",
+      "word": "london's",
+      "count": 1
+    },
+    {
+      "word": "hidden",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'CBP tapped into the online advertising ecosystem to track pe...' connects to Gaza resilience",
+      "hook": "How 'System76 on Age Verification Laws...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

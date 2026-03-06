@@ -1,6 +1,6 @@
 {
-  "run_id": "22745883267",
-  "ts": "2026-03-06T02:11:20.363102+00:00",
+  "run_id": "22754053455",
+  "ts": "2026-03-06T07:44:34.326990+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -37,19 +37,19 @@
         ]
       },
       {
-        "timestamp": "2026-03-06T02:11:14.398470+00:00",
+        "timestamp": "2026-03-06T07:44:23.326704+00:00",
         "health_score": 40,
         "revenue": 0.0,
-        "engines": 71,
+        "engines": 76,
         "synth_built": 0,
         "loop_balance": 0,
         "total_sales": 0,
         "loop_cycles_count": 0,
         "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "tapped",
-          "into",
-          "online"
+          "system76",
+          "verification",
+          "laws"
         ]
       }
     ],
@@ -62,23 +62,48 @@
     },
     "total_cycles": 3,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-06T02:11:14.398470+00:00",
+    "last_updated": "2026-03-06T07:44:23.326704+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-06T02:11:14.398470+00:00",
+      "timestamp": "2026-03-06T07:44:23.326704+00:00",
       "health_score": 40,
       "revenue": 0.0,
-      "engines": 71,
+      "engines": 76,
       "synth_built": 0,
       "loop_balance": 0,
       "total_sales": 0,
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "tapped",
-        "into",
-        "online"
+        "system76",
+        "verification",
+        "laws"
       ]
     }
+  },
+  "cycle_delta": {
+    "generated": "2026-03-06T07:43:45.285829+00:00",
+    "cycle_number": 1,
+    "health": 40,
+    "health_trend": "unknown",
+    "delta": {
+      "first_cycle": true,
+      "wins": [],
+      "regressions": [],
+      "revenue_delta": 0,
+      "health_delta": 0,
+      "stars_delta": 0,
+      "resonance_delta": 0,
+      "new_failures": [],
+      "fixed_engines": []
+    },
+    "persistent": [],
+    "still_failing": [],
+    "new_fixes": [],
+    "new_regressions": [],
+    "revenue": 0,
+    "revenue_delta": 0,
+    "resonance": 0,
+    "summary": "Cycle 1 | Health: 40 (unknown) | Fixed: 0 | Regressed: 0 | Persistent blockers: 0 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -154,6 +179,7 @@
         "CONTENT_HARVESTER.py",
         "CONTRIBUTOR_REGISTRY.py",
         "CRYPTO_WATCHER.py",
+        "CYCLE_MEMORY.py",
         "DESKTOP_AGENT.py",
         "DISPATCH_HANDLER.py",
         "EMAIL_AGENT_EXCHANGE.py",
@@ -161,6 +187,7 @@
         "EMAIL_OUTREACH.py",
         "ENGINE_INTEGRITY.py",
         "ETSY_SEO_ENGINE.py",
+        "FIRST_CONTACT.py",
         "FREE_API_ENGINE.py",
         "GITHUB_POSTER.py",
         "GITHUB_SPONSORS_ENGINE.py",
@@ -186,13 +213,16 @@
         "NIGHTLY_DIGEST.py",
         "OMNIBUS.py",
         "PAYPAL_PAYOUT.py",
+        "QUICK_REVENUE.py",
         "README_GENERATOR.py",
+        "RESONANCE_ENGINE.py",
         "REVENUE_FLYWHEEL.py",
         "REVENUE_LOOP.py",
         "REVENUE_OPTIMIZER.py",
         "SCAM_SHIELD.py",
         "SECRETS_CHECKER.py",
         "SELF_BUILDER.py",
+        "SELF_PORTRAIT.py",
         "SOCIAL_DASHBOARD.py",
         "SOCIAL_PROMOTER.py",
         "SOLARPUNK_LEGAL.py",
@@ -205,7 +235,7 @@
         "ai_council.py",
         "knowledge_dispatch.py"
       ],
-      "engine_count": 71,
+      "engine_count": 76,
       "data_files": [
         "affiliate_config.json",
         "affiliate_links_master.json",
@@ -249,6 +279,8 @@
         "contributor_registry.json",
         "crypto_state.json",
         "ctx.json",
+        "cycle_delta.json",
+        "cycle_ledger.json",
         "desktop_clean_log.json",
         "desktop_connection.json",
         "email_brain_state.json",
@@ -292,6 +324,7 @@
         "payout_ledger.json",
         "paypal_payout_state.json",
         "proof_state.json",
+        "resonance_state.json",
         "revenue_inbox.json",
         "revenue_loop_history.json",
         "revenue_loop_last.json",
@@ -314,9 +347,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-06T02:11:03.470341+00:00"
+      "timestamp": "2026-03-06T07:44:07.304843+00:00"
     },
-    "generated_at": "2026-03-06T02:11:03.740090+00:00"
+    "generated_at": "2026-03-06T07:44:07.735800+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -365,10 +398,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-06T02:11:03.929195+00:00"
+    "generated_at": "2026-03-06T07:44:07.963659+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-06T02:11:05.905081+00:00",
+    "ts": "2026-03-06T07:44:10.616650+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -378,14 +411,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 30,
+          "cycles": 31,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-06T02:09:44.762673+00:00"
+          "last_run": "2026-03-06T02:11:10.574126+00:00"
         }
       },
       "grants": {
@@ -394,11 +427,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 30,
+          "cycles": 31,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-06T02:09:35.791905+00:00"
+          "last_run": "2026-03-06T02:11:08.760097+00:00"
         }
       },
       "sponsors": {
@@ -407,11 +440,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 30,
+          "cycles": 31,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-06T02:09:45.261953+00:00"
+          "last_run": "2026-03-06T02:11:10.733135+00:00"
         }
       },
       "exchange": {
@@ -420,14 +453,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 30,
+          "cycles": 31,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-06T02:09:35.670366+00:00"
+          "last_run": "2026-03-06T02:11:08.646469+00:00"
         }
       },
       "substack": {
@@ -436,11 +469,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 30,
+          "cycles": 31,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-06T02:09:36.472767+00:00"
+          "last_run": "2026-03-06T02:11:09.181371+00:00"
         }
       },
       "gumroad": {
@@ -453,37 +486,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-06T02:10:54.618802+00:00",
+    "timestamp": "2026-03-06T07:43:51.835898+00:00",
     "sources": {
       "hackernews": [
         {
-          "title": "CBP tapped into the online advertising ecosystem to track peoples\u2019 movements",
-          "url": "https://www.404media.co/cbp-tapped-into-the-online-advertising-ecosystem-to-track-peoples-movements/",
-          "score": 327,
+          "title": "System76 on Age Verification Laws",
+          "url": "https://blog.system76.com/post/system76-on-age-verification/",
+          "score": 181,
           "source": "hackernews"
         },
         {
           "title": "GPT-5.4",
           "url": "https://openai.com/index/introducing-gpt-5-4/",
-          "score": 636,
+          "score": 781,
+          "source": "hackernews"
+        },
+        {
+          "title": "10% of Firefox crashes are caused by bitflips",
+          "url": "https://mas.to/@gabrielesvelto/116171750653898304",
+          "score": 511,
           "source": "hackernews"
         },
         {
           "title": "Where things stand with the Department of War",
           "url": "https://www.anthropic.com/news/where-stand-department-war",
-          "score": 162,
+          "score": 394,
           "source": "hackernews"
         },
         {
-          "title": "The next generations of Bubble Tea, Lip Gloss, and Bubbles are available now",
-          "url": "https://charm.land/blog/v2/",
-          "score": 93,
-          "source": "hackernews"
-        },
-        {
-          "title": "A standard protocol to handle and discard low-effort, AI-Generated pull requests",
-          "url": "https://406.fail/",
-          "score": 86,
+          "title": "Labor market impacts of AI: A new measure and early evidence",
+          "url": "https://www.anthropic.com/research/labor-market-impacts",
+          "score": 155,
           "source": "hackernews"
         }
       ],
@@ -516,42 +549,38 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 6.7,
+      "temp_c": 16.1,
       "vibe": "sunny",
       "code": 0,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "tapped",
+        "word": "system76",
         "count": 1
       },
       {
-        "word": "into",
+        "word": "verification",
         "count": 1
       },
       {
-        "word": "online",
+        "word": "laws",
         "count": 1
       },
       {
-        "word": "advertising",
+        "word": "firefox",
         "count": 1
       },
       {
-        "word": "ecosystem",
+        "word": "crashes",
         "count": 1
       },
       {
-        "word": "track",
+        "word": "caused",
         "count": 1
       },
       {
-        "word": "peoples\u2019",
-        "count": 1
-      },
-      {
-        "word": "movements",
+        "word": "bitflips",
         "count": 1
       },
       {
@@ -571,42 +600,46 @@
         "count": 1
       },
       {
-        "word": "next",
+        "word": "labor",
         "count": 1
       },
       {
-        "word": "generations",
+        "word": "market",
         "count": 1
       },
       {
-        "word": "bubble",
+        "word": "impacts",
         "count": 1
       },
       {
-        "word": "gloss",
+        "word": "measure",
         "count": 1
       },
       {
-        "word": "bubbles",
+        "word": "early",
         "count": 1
       },
       {
-        "word": "available",
+        "word": "evidence",
         "count": 1
       },
       {
-        "word": "standard",
+        "word": "making",
         "count": 1
       },
       {
-        "word": "protocol",
+        "word": "london's",
+        "count": 1
+      },
+      {
+        "word": "hidden",
         "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'CBP tapped into the online advertising ecosystem to track pe...' connects to Gaza resilience",
+        "hook": "How 'System76 on Age Verification Laws...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -628,64 +661,64 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-06T02:11:03.356643+00:00",
+    "last_run": "2026-03-06T07:44:01.980753+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-MiniLM-L6-v2",
-        "downloads": 197060768
+        "downloads": 198720813
       },
       {
         "type": "trending_model",
         "name": "google-bert/bert-base-uncased",
-        "downloads": 63859693
+        "downloads": 65190605
       },
       {
         "type": "trending_model",
         "name": "google/electra-base-discriminator",
-        "downloads": 48477307
+        "downloads": 48194492
       },
       {
         "type": "trending_model",
         "name": "Falconsai/nsfw_image_detection",
-        "downloads": 41133499
+        "downloads": 41437569
       },
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-mpnet-base-v2",
-        "downloads": 27427849
+        "downloads": 27556129
       },
       {
         "type": "trending_space",
         "name": "enzostvs/deepsite",
-        "likes": 16552
+        "likes": 16553
       },
       {
         "type": "trending_space",
         "name": "open-llm-leaderboard/open_llm_leaderboard",
-        "likes": 13876
+        "likes": 13878
       },
       {
         "type": "trending_space",
         "name": "jbilcke-hf/ai-comic-factory",
-        "likes": 10980
+        "likes": 10981
       },
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 41920
+        "stars": 41933
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 40826
+        "stars": 40854
       },
       {
         "type": "github_ai_repo",
         "repo": "CopilotKit/CopilotKit",
-        "stars": 29189
+        "stars": 29192
       },
       {
         "type": "trending_article",
@@ -695,7 +728,7 @@
       {
         "type": "trending_article",
         "title": "How Claude Skills Replaced Our Documentation",
-        "reactions": 21
+        "reactions": 24
       },
       {
         "type": "trending_article",
@@ -704,23 +737,23 @@
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2496304238052.6064
+        "value": 2489533064581.385
       }
     ],
     "opportunities": [
-      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (197,060,768 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google-bert/bert-base-uncased' (63,859,693 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google/electra-base-discriminator' (48,477,307 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,133,499 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,427,849 downloads) \u2014 build how-to guide",
-      "Clone/extend HF space: 'enzostvs/deepsite' (16552 likes) \u2014 integrate into SolarPunk",
-      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13876 likes) \u2014 integrate into SolarPunk",
-      "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10980 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (41920 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (40826 stars) \u2014 build integration engine",
-      "Engine wrapper: CopilotKit/CopilotKit (29189 stars) \u2014 build integration engine",
+      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (198,720,813 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google-bert/bert-base-uncased' (65,190,605 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google/electra-base-discriminator' (48,194,492 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,437,569 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,556,129 downloads) \u2014 build how-to guide",
+      "Clone/extend HF space: 'enzostvs/deepsite' (16553 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (41933 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (40854 stars) \u2014 build integration engine",
+      "Engine wrapper: CopilotKit/CopilotKit (29192 stars) \u2014 build integration engine",
       "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'How Claude Skills Replaced Our Documentation' (21 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'How Claude Skills Replaced Our Documentation' (24 reactions) \u2014 create SolarPunk angle",
       "Content leverage: 'The Old Seniority Definition Is Collapsing' (18 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
@@ -960,7 +993,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-06T02:11:07.402873+00:00",
+    "started_at": "2026-03-06T07:44:13.125505+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -977,7 +1010,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-06T02:11:08.008131+00:00",
+        "queued_at": "2026-03-06T07:44:14.017297+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -985,7 +1018,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-06T02:11:08.008131+00:00",
+        "queued_at": "2026-03-06T07:44:14.017297+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -993,28 +1026,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-06T02:11:08.008131+00:00",
+        "queued_at": "2026-03-06T07:44:14.017297+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-06T02:11:08.418686+00:00",
+    "completed_at": "2026-03-06T07:44:14.989140+00:00",
     "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 31,
+    "cycles": 32,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-06T02:11:08.646469+00:00"
+    "last_run": "2026-03-06T07:44:15.219974+00:00"
   },
   "biz_factory": {
-    "cycles": 31,
+    "cycles": 32,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1232,18 +1265,23 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-06T02:11:06.705002+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-06T07:44:11.895420+00:00"
       }
     ],
-    "total_revenue_potential": 19540,
-    "last_run": "2026-03-06T02:11:06.127679+00:00"
+    "total_revenue_potential": 20280,
+    "last_run": "2026-03-06T07:44:11.019062+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-06T02:10:50.465410+00:00",
-    "configured": 4,
+    "last_check": "2026-03-06T07:43:46.857676+00:00",
+    "configured": 10,
     "total": 16,
-    "critical_missing": [
-      "GUMROAD_SECRET"
-    ],
+    "critical_missing": [],
     "secrets": {
       "ANTHROPIC_API_KEY": {
         "present": true,
@@ -1256,17 +1294,17 @@
         "impact": "low"
       },
       "GUMROAD_SECRET": {
-        "present": false,
+        "present": true,
         "required": true,
         "impact": "critical"
       },
       "GUMROAD_ID": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "low"
       },
       "GUMROAD_NAME": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "low"
       },
@@ -1281,7 +1319,7 @@
         "impact": "medium"
       },
       "X_API_KEY": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "high"
       },
@@ -1311,12 +1349,12 @@
         "impact": "high"
       },
       "PAYPAL_CLIENT_ID": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "medium"
       },
       "PAYPAL_CLIENT_SECRET": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "medium"
       },
@@ -1328,15 +1366,15 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-06T02:10:50.493880+00:00",
+    "generated": "2026-03-06T07:43:46.885826+00:00",
     "summary": {
-      "total_bottlenecks": 4,
-      "critical": 1,
-      "high": 2,
-      "secrets_ok": 4,
+      "total_bottlenecks": 1,
+      "critical": 0,
+      "high": 1,
+      "secrets_ok": 10,
       "secrets_total": 18,
-      "engines_ok": 71,
-      "engines_total": 71,
+      "engines_ok": 76,
+      "engines_total": 76,
       "gumroad_live": 0,
       "gumroad_pending": 10,
       "revenue_total": 0,
@@ -1345,39 +1383,12 @@
     "bottlenecks": [
       {
         "id": "BN-001",
-        "severity": "CRITICAL",
-        "title": "GUMROAD_SECRET missing \u2014 no products can publish",
-        "description": "GUMROAD_ENGINE has products ready but can't authenticate to Gumroad API.",
-        "fix": "gumroad.com \u2192 avatar \u2192 Settings \u2192 Advanced \u2192 Generate Token \u2192 copy \u2192 GitHub Secret: GUMROAD_SECRET",
-        "revenue_impact": "$170/day potential blocked",
-        "status": "PENDING"
-      },
-      {
-        "id": "BN-002",
         "severity": "HIGH",
-        "title": "10 products seeded but 0 live on Gumroad",
-        "description": "gumroad_listings.json has products but GUMROAD_ENGINE hasn't run successfully yet.",
-        "fix": "Ensure GUMROAD_SECRET is set, then trigger OMNIBRAIN or run GUMROAD_ENGINE manually via RUN_NOW",
-        "revenue_impact": "All product sales blocked",
-        "status": "PENDING"
-      },
-      {
-        "id": "BN-003",
-        "severity": "MEDIUM",
-        "title": "Gmail App Password may be account password (535 auth error)",
-        "description": "Gmail requires an App Password (16 chars) not your account password. 2FA must be ON.",
-        "fix": "Google Account \u2192 Security \u2192 2-Step Verification \u2192 App Passwords \u2192 Generate for Mail \u2192 paste new value to GMAIL_APP_PASSWORD",
-        "revenue_impact": "No email briefings, no payment notifications",
-        "status": "VERIFY"
-      },
-      {
-        "id": "BN-004",
-        "severity": "HIGH",
-        "title": "Twitter/X keys missing \u2014 24 queued posts stuck",
-        "description": "SOCIAL_PROMOTER has 24 tweet drafts ready. No X_API_KEY = no auto-posting.",
-        "fix": "developer.twitter.com \u2192 Projects \u2192 App \u2192 Keys \u2192 API Key + Secret + Access Token + Secret \u2192 add 4 secrets",
-        "revenue_impact": "Zero Twitter distribution for products",
-        "status": "PENDING"
+        "title": "Gmail 534 error -- App Password wrong or expired",
+        "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
+        "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
+        "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
+        "status": "BROKEN"
       }
     ],
     "secrets": [
@@ -1387,38 +1398,18 @@
         "length": 108,
         "impact": "CRITICAL",
         "unlocks": [
-          "BUILD",
-          "SOLARPUNK_LOOP",
           "SELF_BUILDER",
+          "KNOWLEDGE_WEAVER",
           "AI brain"
         ]
       },
       {
         "name": "GUMROAD_SECRET",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 43,
         "impact": "CRITICAL",
         "unlocks": [
-          "product publishing",
-          "automated sales"
-        ]
-      },
-      {
-        "name": "GUMROAD_ID",
-        "present": false,
-        "length": 0,
-        "impact": "LOW",
-        "unlocks": [
-          "Gumroad analytics"
-        ]
-      },
-      {
-        "name": "GUMROAD_NAME",
-        "present": false,
-        "length": 0,
-        "impact": "LOW",
-        "unlocks": [
-          "Gumroad display name"
+          "10 queued products publishing"
         ]
       },
       {
@@ -1428,7 +1419,7 @@
         "impact": "HIGH",
         "unlocks": [
           "email briefings",
-          "payment alerts"
+          "outreach"
         ]
       },
       {
@@ -1437,25 +1428,16 @@
         "length": 19,
         "impact": "HIGH",
         "unlocks": [
-          "email sending (check App Password not account password)"
-        ]
-      },
-      {
-        "name": "HF_TOKEN",
-        "present": true,
-        "length": 37,
-        "impact": "MEDIUM",
-        "unlocks": [
-          "HuggingFace fallback AI"
+          "email sending \u2014 MUST be App Password not account password"
         ]
       },
       {
         "name": "X_API_KEY",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 64,
         "impact": "HIGH",
         "unlocks": [
-          "auto-posting 24 queued tweets"
+          "100+ queued tweets posting"
         ]
       },
       {
@@ -1464,7 +1446,7 @@
         "length": 0,
         "impact": "HIGH",
         "unlocks": [
-          "Twitter posting (required with X_API_KEY)"
+          "Twitter auth"
         ]
       },
       {
@@ -1504,6 +1486,51 @@
         ]
       },
       {
+        "name": "PAYPAL_CLIENT_ID",
+        "present": true,
+        "length": 80,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "automated payouts"
+        ]
+      },
+      {
+        "name": "PAYPAL_CLIENT_SECRET",
+        "present": true,
+        "length": 80,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "PayPal API auth"
+        ]
+      },
+      {
+        "name": "HF_TOKEN",
+        "present": true,
+        "length": 37,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "HuggingFace fallback AI"
+        ]
+      },
+      {
+        "name": "GUMROAD_ID",
+        "present": true,
+        "length": 43,
+        "impact": "LOW",
+        "unlocks": [
+          "Gumroad analytics"
+        ]
+      },
+      {
+        "name": "GUMROAD_NAME",
+        "present": true,
+        "length": 11,
+        "impact": "LOW",
+        "unlocks": [
+          "Gumroad display name"
+        ]
+      },
+      {
         "name": "REDDIT_USERNAME",
         "present": false,
         "length": 0,
@@ -1522,24 +1549,6 @@
         ]
       },
       {
-        "name": "PAYPAL_CLIENT_ID",
-        "present": false,
-        "length": 0,
-        "impact": "MEDIUM",
-        "unlocks": [
-          "automated human payouts"
-        ]
-      },
-      {
-        "name": "PAYPAL_CLIENT_SECRET",
-        "present": false,
-        "length": 0,
-        "impact": "MEDIUM",
-        "unlocks": [
-          "PayPal API auth"
-        ]
-      },
-      {
         "name": "KOFI_VERIFICATION_TOKEN",
         "present": false,
         "length": 0,
@@ -1551,7 +1560,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-06T02:11:12.457015+00:00",
+    "generated_at": "2026-03-06T07:44:20.628273+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1630,9 +1639,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 31,
+      "businesses_built": 32,
       "engines_built": 0,
-      "revenue_potential": 19540,
+      "revenue_potential": 20280,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1701,16 +1710,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 12,
-    "last_run": "2026-03-06T02:11:13.540778+00:00",
+    "cycles": 13,
+    "last_run": "2026-03-06T07:44:22.036117+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 12,
+    "cycles": 13,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-06T02:11:14.164990+00:00"
+    "last_run": "2026-03-06T07:44:23.029553+00:00"
   },
   "revenue_inbox": [
     {
@@ -1736,9 +1745,9 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-06T02:10:53.893616+00:00",
-    "active": 5,
-    "blocked": 3,
+    "scanned_at": "2026-03-06T07:43:50.932429+00:00",
+    "active": 6,
+    "blocked": 2,
     "degraded": 1,
     "capabilities": {
       "anthropic_api": {
@@ -1772,7 +1781,7 @@
       },
       "twitter": {
         "name": "Twitter/X (auto-post)",
-        "status": "blocked",
+        "status": "active",
         "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
         "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
         "blocks": [
@@ -1822,10 +1831,10 @@
     },
     "priority_fix": "GUMROAD_ACCESS_TOKEN",
     "best_channel_now": "gmail \u2014 works today, no new keys needed",
-    "summary": "5 active / 3 blocked / 1 degraded"
+    "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 2,
+    "cycles": 3,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -1991,10 +2000,98 @@
       }
     ]
   },
+  "resonance": {
+    "generated_at": "2026-03-06T07:44:02.045912+00:00",
+    "resonance_score": 30,
+    "resonance_label": "SIGNAL",
+    "resonance_notes": [
+      "1 stars",
+      "2 HN mentions"
+    ],
+    "github": {
+      "stars": 1,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 4,
+      "latest_stargazer": "meekotharaccoon-cell"
+    },
+    "star_delta": 1,
+    "star_milestones": [
+      1
+    ],
+    "hn_mentions": [
+      {
+        "source": "hackernews",
+        "title": "SolarPunk: Autonomous redistribution system with anti-corporate code",
+        "url": "https://news.ycombinator.com/item?id=46686394",
+        "points": 3,
+        "query": "solarpunk meeko"
+      },
+      {
+        "source": "hackernews",
+        "title": "SolarPunk: Autonomous redistribution system with anti-corporate code",
+        "url": "https://news.ycombinator.com/item?id=46686394",
+        "points": 3,
+        "query": "meekotharaccoon"
+      }
+    ],
+    "github_mentions": [],
+    "email_replies": [],
+    "reply_count": 0
+  },
+  "quick_revenue": {
+    "generated_at": "2026-03-06T07:44:10.910691+00:00",
+    "total_revenue": 0,
+    "first_sale_done": false,
+    "kofi_products": [
+      {
+        "name": "Desert Rose at Dawn",
+        "price": 1.0,
+        "description": "A desert rose blooming at first light -- symbol of resilience and the enduring beauty of Palestinian land. AI-generated art print. 70% of every sale goes to PCRF (Palestinian Children's Relief Fund, EIN 93-1057665). Digital download, print at any size.",
+        "tags": "palestine, art, digital, rose, gaza"
+      },
+      {
+        "name": "White Doves Over the Mediterranean",
+        "price": 1.0,
+        "description": "White doves in flight above the Mediterranean coast -- peace, migration, and the sky that belongs to everyone. AI-generated art print. 70% of every sale goes to PCRF. Digital download.",
+        "tags": "palestine, doves, mediterranean, peace, art"
+      },
+      {
+        "name": "Olive Grove Eternal",
+        "price": 1.0,
+        "description": "Ancient olive trees -- some thousands of years old -- standing through centuries of history. Palestinian olive groves are among the oldest cultivated landscapes on earth. AI-generated art print. 70% to PCRF. Digital download.",
+        "tags": "palestine, olive, trees, history, art"
+      },
+      {
+        "name": "Tatreez Pattern Bloom",
+        "price": 1.0,
+        "description": "Traditional Palestinian embroidery (tatreez) patterns blooming into a field of color. Each pattern carries regional identity passed through generations of women. AI-generated art print. 70% to PCRF. Digital download.",
+        "tags": "tatreez, embroidery, palestine, pattern, culture"
+      },
+      {
+        "name": "Gaza Coastline at Golden Hour",
+        "price": 1.0,
+        "description": "The Gaza coastline at golden hour -- the Mediterranean catching light the way it always has. Some things persist. AI-generated art print. 70% to PCRF. Digital download.",
+        "tags": "gaza, coast, mediterranean, golden hour, art"
+      },
+      {
+        "name": "Star of Hope Rising",
+        "price": 1.0,
+        "description": "A star rising over Palestinian land -- the kind of image that holds grief and hope at the same time. Sometimes that is what art is for. AI-generated art print. 70% to PCRF. Digital download.",
+        "tags": "palestine, star, hope, art, night"
+      }
+    ],
+    "exchange_promo": "Subject: I built an AI agent that does tasks by email for $0.10 (15% goes to Gaza)\n\nHi,\n\nI built a system called SolarPunk that processes AI tasks by email.\n\nHow it works:\n  1. Email meekotharaccoon@gmail.com with [TASK] in the subject\n  2. Describe what you need (content, research, code review, translation, data)\n  3. The system responds with completed work within 6 hours\n  4. Pay $0.05-$0.10 via Ko-fi: https://ko-fi.com/meekotharaccoon\n  5. 15% goes to PCRF (Palestinian children's charity, EIN 93-1057665)\n\nThis is useful for:\n  - Content generation at scale\n  - Quick research synthesis\n  - Light code review\n  - Translation tasks\n  - Structuring messy data\n\nThe AI is live right now. Runs 4x daily.\nFull source (MIT, free to fork): https://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n-- SolarPunk Autonomous AI\n   (Automated email. A human reviews all replies.)",
+    "sponsor_bio": "Building SolarPunk -- autonomous AI that funds Gaza. $1 products, 15% hardcoded to PCRF. github.com/sponsors/meekotharaccoon-cell",
+    "sponsor_readme": "\n## Support\n\n[![Sponsor](https://img.shields.io/badge/GitHub_Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/meekotharaccoon-cell)\n[![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy_a_print_$1-orange)](https://ko-fi.com/meekotharaccoon)\n\n15% of everything goes to [PCRF](https://www.pcrf.net/) (EIN: 93-1057665). Hardcoded. Not a pledge.\n"
+  },
+  "first_contact": {},
   "engines_ok": [
+    "CYCLE_MEMORY",
     "GUARDIAN",
     "ENGINE_INTEGRITY",
     "SECRETS_CHECKER",
+    "BOTTLENECK_SCANNER",
     "AUTO_HEALER",
     "CAPABILITY_SCANNER",
     "EMAIL_BRAIN",
@@ -2004,6 +2101,8 @@
     "AI_WATCHER",
     "CRYPTO_WATCHER",
     "FREE_API_ENGINE",
+    "RESONANCE_ENGINE",
+    "FIRST_CONTACT",
     "NEURON_A",
     "NEURON_B",
     "GRANT_HUNTER",
@@ -2011,6 +2110,7 @@
     "INCOME_ARCHITECT",
     "REVENUE_FLYWHEEL",
     "GUMROAD_AUTO_QUEUE",
+    "QUICK_REVENUE",
     "BUSINESS_FACTORY",
     "LANDING_DEPLOYER",
     "ART_CATALOG",
@@ -2027,6 +2127,7 @@
     "CONNECTION_FORGE",
     "HUMAN_CONNECTOR",
     "AFFILIATE_MAXIMIZER",
+    "STORE_BUILDER",
     "BRIDGE_BUILDER",
     "EMAIL_OUTREACH",
     "VIRALITY_ENGINE",
@@ -2048,17 +2149,16 @@
     "BIG_BRAIN_ORACLE",
     "MEMORY_PALACE",
     "README_GENERATOR",
-    "BRIEFING_ENGINE",
     "NIGHTLY_DIGEST",
     "ISSUE_SYNC",
     "SOLARPUNK_LEGAL",
     "TASK_ATOMIZER",
     "AUTONOMY_PROOF",
-    "CLAUDE_ENGINE"
+    "CLAUDE_ENGINE",
+    "SELF_PORTRAIT"
   ],
   "engines_failed": [
-    "BOTTLENECK_SCANNER",
-    "STORE_BUILDER",
+    "BRIEFING_ENGINE",
     "BRAND_LEGAL"
   ]
 }

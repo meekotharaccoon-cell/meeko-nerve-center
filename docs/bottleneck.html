@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk Bottleneck Scanner</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#06060e;color:#dde;font-family:-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{color:#ff5e5b;font-size:1.4rem;margin-bottom:4px}
+.ts{color:rgba(255,255,255,.25);font-size:.7rem;margin-bottom:20px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-bottom:24px}
+.stat{background:#0f0f1c;border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px;text-align:center}
+.stat .n{font-size:1.8rem;font-weight:800;display:block}
+.stat .l{font-size:.65rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px}
+.red .n{color:#ff5e5b}.orange .n{color:#ff9800}.green .n{color:#00ff88}.blue .n{color:#90caf9}
+.bn{background:#0f0f1c;border-radius:10px;padding:16px;margin-bottom:10px;border-left:4px solid #333}
+.bn.CRITICAL{border-left-color:#ff5e5b}.bn.HIGH{border-left-color:#ff9800}
+.bn.MEDIUM{border-left-color:#ffd700}.bn.LOW{border-left-color:#444}
+.bn-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:6px}
+.bn-title{font-size:.9rem;font-weight:700}
+.badge{font-size:.65rem;padding:2px 8px;border-radius:4px;font-weight:700}
+.CRITICAL{background:rgba(255,94,91,.15);color:#ff5e5b}
+.HIGH{background:rgba(255,152,0,.1);color:#ff9800}
+.MEDIUM{background:rgba(255,215,0,.08);color:#ffd700}
+.bn-desc{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:8px}
+.bn-fix{background:#080810;border-radius:6px;padding:10px 12px;font-size:.75rem;color:rgba(0,255,136,.7);line-height:1.6}
+.bn-fix::before{content:"FIX: ";color:#00ff88;font-weight:700}
+.section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.2);margin:24px 0 10px}
+</style></head><body>
+<h1>Bottleneck Scanner</h1>
+<p class="ts">Generated 2026-03-06T07:43:46.885826+00:00 - 1 blockers</p>
+<div class="stat-row">
+  <div class="stat red"><span class="n">0</span><span class="l">Critical</span></div>
+  <div class="stat orange"><span class="n">1</span><span class="l">High</span></div>
+  <div class="stat green"><span class="n">10/18</span><span class="l">Secrets OK</span></div>
+  <div class="stat blue"><span class="n">76/76</span><span class="l">Engines OK</span></div>
+  <div class="stat green"><span class="n">$0.00</span><span class="l">To Gaza</span></div>
+  <div class="stat"><span class="n">0/10</span><span class="l">Gumroad Live</span></div>
+</div>
+<div class="section-title">Blockers</div>
+<div class="bn HIGH"><div class="bn-head"><span class="bn-title">BN-001 -- Gmail 534 error -- App Password wrong or expired</span><span class="badge HIGH">HIGH</span></div><div class="bn-desc">Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.</div><div class="bn-fix">Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret</div></div>
+
+<div class="section-title">-> After fixing: trigger Actions -> OMNIBRAIN (workflow_dispatch)</div>
+</body></html>

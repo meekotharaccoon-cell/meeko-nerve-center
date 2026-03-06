@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-06T02:10:50.493880+00:00",
+  "generated": "2026-03-06T07:43:46.885826+00:00",
   "summary": {
-    "total_bottlenecks": 4,
-    "critical": 1,
-    "high": 2,
-    "secrets_ok": 4,
+    "total_bottlenecks": 1,
+    "critical": 0,
+    "high": 1,
+    "secrets_ok": 10,
     "secrets_total": 18,
-    "engines_ok": 71,
-    "engines_total": 71,
+    "engines_ok": 76,
+    "engines_total": 76,
     "gumroad_live": 0,
     "gumroad_pending": 10,
     "revenue_total": 0,
@@ -16,39 +16,12 @@
   "bottlenecks": [
     {
       "id": "BN-001",
-      "severity": "CRITICAL",
-      "title": "GUMROAD_SECRET missing \u2014 no products can publish",
-      "description": "GUMROAD_ENGINE has products ready but can't authenticate to Gumroad API.",
-      "fix": "gumroad.com \u2192 avatar \u2192 Settings \u2192 Advanced \u2192 Generate Token \u2192 copy \u2192 GitHub Secret: GUMROAD_SECRET",
-      "revenue_impact": "$170/day potential blocked",
-      "status": "PENDING"
-    },
-    {
-      "id": "BN-002",
       "severity": "HIGH",
-      "title": "10 products seeded but 0 live on Gumroad",
-      "description": "gumroad_listings.json has products but GUMROAD_ENGINE hasn't run successfully yet.",
-      "fix": "Ensure GUMROAD_SECRET is set, then trigger OMNIBRAIN or run GUMROAD_ENGINE manually via RUN_NOW",
-      "revenue_impact": "All product sales blocked",
-      "status": "PENDING"
-    },
-    {
-      "id": "BN-003",
-      "severity": "MEDIUM",
-      "title": "Gmail App Password may be account password (535 auth error)",
-      "description": "Gmail requires an App Password (16 chars) not your account password. 2FA must be ON.",
-      "fix": "Google Account \u2192 Security \u2192 2-Step Verification \u2192 App Passwords \u2192 Generate for Mail \u2192 paste new value to GMAIL_APP_PASSWORD",
-      "revenue_impact": "No email briefings, no payment notifications",
-      "status": "VERIFY"
-    },
-    {
-      "id": "BN-004",
-      "severity": "HIGH",
-      "title": "Twitter/X keys missing \u2014 24 queued posts stuck",
-      "description": "SOCIAL_PROMOTER has 24 tweet drafts ready. No X_API_KEY = no auto-posting.",
-      "fix": "developer.twitter.com \u2192 Projects \u2192 App \u2192 Keys \u2192 API Key + Secret + Access Token + Secret \u2192 add 4 secrets",
-      "revenue_impact": "Zero Twitter distribution for products",
-      "status": "PENDING"
+      "title": "Gmail 534 error -- App Password wrong or expired",
+      "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
+      "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
+      "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
+      "status": "BROKEN"
     }
   ],
   "secrets": [
@@ -58,38 +31,18 @@
       "length": 108,
       "impact": "CRITICAL",
       "unlocks": [
-        "BUILD",
-        "SOLARPUNK_LOOP",
         "SELF_BUILDER",
+        "KNOWLEDGE_WEAVER",
         "AI brain"
       ]
     },
     {
       "name": "GUMROAD_SECRET",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 43,
       "impact": "CRITICAL",
       "unlocks": [
-        "product publishing",
-        "automated sales"
-      ]
-    },
-    {
-      "name": "GUMROAD_ID",
-      "present": false,
-      "length": 0,
-      "impact": "LOW",
-      "unlocks": [
-        "Gumroad analytics"
-      ]
-    },
-    {
-      "name": "GUMROAD_NAME",
-      "present": false,
-      "length": 0,
-      "impact": "LOW",
-      "unlocks": [
-        "Gumroad display name"
+        "10 queued products publishing"
       ]
     },
     {
@@ -99,7 +52,7 @@
       "impact": "HIGH",
       "unlocks": [
         "email briefings",
-        "payment alerts"
+        "outreach"
       ]
     },
     {
@@ -108,25 +61,16 @@
       "length": 19,
       "impact": "HIGH",
       "unlocks": [
-        "email sending (check App Password not account password)"
-      ]
-    },
-    {
-      "name": "HF_TOKEN",
-      "present": true,
-      "length": 37,
-      "impact": "MEDIUM",
-      "unlocks": [
-        "HuggingFace fallback AI"
+        "email sending \u2014 MUST be App Password not account password"
       ]
     },
     {
       "name": "X_API_KEY",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 64,
       "impact": "HIGH",
       "unlocks": [
-        "auto-posting 24 queued tweets"
+        "100+ queued tweets posting"
       ]
     },
     {
@@ -135,7 +79,7 @@
       "length": 0,
       "impact": "HIGH",
       "unlocks": [
-        "Twitter posting (required with X_API_KEY)"
+        "Twitter auth"
       ]
     },
     {
@@ -175,6 +119,51 @@
       ]
     },
     {
+      "name": "PAYPAL_CLIENT_ID",
+      "present": true,
+      "length": 80,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "automated payouts"
+      ]
+    },
+    {
+      "name": "PAYPAL_CLIENT_SECRET",
+      "present": true,
+      "length": 80,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "PayPal API auth"
+      ]
+    },
+    {
+      "name": "HF_TOKEN",
+      "present": true,
+      "length": 37,
+      "impact": "MEDIUM",
+      "unlocks": [
+        "HuggingFace fallback AI"
+      ]
+    },
+    {
+      "name": "GUMROAD_ID",
+      "present": true,
+      "length": 43,
+      "impact": "LOW",
+      "unlocks": [
+        "Gumroad analytics"
+      ]
+    },
+    {
+      "name": "GUMROAD_NAME",
+      "present": true,
+      "length": 11,
+      "impact": "LOW",
+      "unlocks": [
+        "Gumroad display name"
+      ]
+    },
+    {
       "name": "REDDIT_USERNAME",
       "present": false,
       "length": 0,
@@ -190,24 +179,6 @@
       "impact": "LOW",
       "unlocks": [
         "Reddit login"
-      ]
-    },
-    {
-      "name": "PAYPAL_CLIENT_ID",
-      "present": false,
-      "length": 0,
-      "impact": "MEDIUM",
-      "unlocks": [
-        "automated human payouts"
-      ]
-    },
-    {
-      "name": "PAYPAL_CLIENT_SECRET",
-      "present": false,
-      "length": 0,
-      "impact": "MEDIUM",
-      "unlocks": [
-        "PayPal API auth"
       ]
     },
     {

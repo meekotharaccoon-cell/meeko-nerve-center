@@ -72,6 +72,7 @@
       "CONTENT_HARVESTER.py",
       "CONTRIBUTOR_REGISTRY.py",
       "CRYPTO_WATCHER.py",
+      "CYCLE_MEMORY.py",
       "DESKTOP_AGENT.py",
       "DISPATCH_HANDLER.py",
       "EMAIL_AGENT_EXCHANGE.py",
@@ -79,6 +80,7 @@
       "EMAIL_OUTREACH.py",
       "ENGINE_INTEGRITY.py",
       "ETSY_SEO_ENGINE.py",
+      "FIRST_CONTACT.py",
       "FREE_API_ENGINE.py",
       "GITHUB_POSTER.py",
       "GITHUB_SPONSORS_ENGINE.py",
@@ -104,13 +106,16 @@
       "NIGHTLY_DIGEST.py",
       "OMNIBUS.py",
       "PAYPAL_PAYOUT.py",
+      "QUICK_REVENUE.py",
       "README_GENERATOR.py",
+      "RESONANCE_ENGINE.py",
       "REVENUE_FLYWHEEL.py",
       "REVENUE_LOOP.py",
       "REVENUE_OPTIMIZER.py",
       "SCAM_SHIELD.py",
       "SECRETS_CHECKER.py",
       "SELF_BUILDER.py",
+      "SELF_PORTRAIT.py",
       "SOCIAL_DASHBOARD.py",
       "SOCIAL_PROMOTER.py",
       "SOLARPUNK_LEGAL.py",
@@ -123,7 +128,7 @@
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 71,
+    "engine_count": 76,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -167,6 +172,8 @@
       "contributor_registry.json",
       "crypto_state.json",
       "ctx.json",
+      "cycle_delta.json",
+      "cycle_ledger.json",
       "desktop_clean_log.json",
       "desktop_connection.json",
       "email_brain_state.json",
@@ -210,6 +217,7 @@
       "payout_ledger.json",
       "paypal_payout_state.json",
       "proof_state.json",
+      "resonance_state.json",
       "revenue_inbox.json",
       "revenue_loop_history.json",
       "revenue_loop_last.json",
@@ -232,7 +240,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-06T02:11:03.470341+00:00"
+    "timestamp": "2026-03-06T07:44:07.304843+00:00"
   },
-  "generated_at": "2026-03-06T02:11:03.740090+00:00"
+  "generated_at": "2026-03-06T07:44:07.735800+00:00"
 }
