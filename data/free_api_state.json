@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-06T00:48:48.390803+00:00",
+  "last_run": "2026-03-06T01:05:59.052724+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -51,12 +51,12 @@
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40822
+      "stars": 40821
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29186
+      "stars": 29187
     },
     {
       "type": "trending_article",
@@ -66,16 +66,16 @@
     {
       "type": "trending_article",
       "title": "How Claude Skills Replaced Our Documentation",
-      "reactions": 16
+      "reactions": 21
     },
     {
       "type": "trending_article",
-      "title": "Your MCP server's tool descriptions are an attack surface",
-      "reactions": 4
+      "title": "I audited a codebase written by Devin 3.0. It was a nightmare.",
+      "reactions": 9
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2485441958521.8013
+      "value": 2487421355146.5796
     }
   ],
   "opportunities": [
@@ -88,11 +88,11 @@
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13876 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10980 likes) \u2014 integrate into SolarPunk",
     "Engine wrapper: zhayujie/chatgpt-on-wechat (41912 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40822 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29186 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40821 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29187 stars) \u2014 build integration engine",
     "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How Claude Skills Replaced Our Documentation' (16 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Your MCP server's tool descriptions are an attack surface' (4 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'How Claude Skills Replaced Our Documentation' (21 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I audited a codebase written by Devin 3.0. It was a nightmar' (9 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

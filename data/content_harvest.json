@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T00:48:40.004196+00:00",
+  "timestamp": "2026-03-06T01:05:50.874785+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "CBP tapped into the online advertising ecosystem to track peoples\u2019 movements",
         "url": "https://www.404media.co/cbp-tapped-into-the-online-advertising-ecosystem-to-track-peoples-movements/",
-        "score": 236,
+        "score": 262,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 596,
+        "score": 606,
+        "source": "hackernews"
+      },
+      {
+        "title": "Where things stand with the Department of War",
+        "url": "https://www.anthropic.com/news/where-stand-department-war",
+        "score": 22,
         "source": "hackernews"
       },
       {
         "title": "The next generations of Bubble Tea, Lip Gloss, and Bubbles are available now",
         "url": "https://charm.land/blog/v2/",
-        "score": 52,
+        "score": 64,
         "source": "hackernews"
       },
       {
         "title": "A standard protocol to handle and discard low-effort, AI-Generated pull requests",
         "url": "https://406.fail/",
-        "score": 53,
-        "source": "hackernews"
-      },
-      {
-        "title": "The Brand Age",
-        "url": "https://paulgraham.com/brandage.html",
-        "score": 203,
+        "score": 64,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 8.0,
+    "temp_c": 7.8,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -101,6 +101,22 @@
       "count": 1
     },
     {
+      "word": "where",
+      "count": 1
+    },
+    {
+      "word": "things",
+      "count": 1
+    },
+    {
+      "word": "stand",
+      "count": 1
+    },
+    {
+      "word": "department",
+      "count": 1
+    },
+    {
       "word": "next",
       "count": 1
     },
@@ -130,22 +146,6 @@
     },
     {
       "word": "protocol",
-      "count": 1
-    },
-    {
-      "word": "handle",
-      "count": 1
-    },
-    {
-      "word": "discard",
-      "count": 1
-    },
-    {
-      "word": "effort",
-      "count": 1
-    },
-    {
-      "word": "generated",
       "count": 1
     }
   ],
