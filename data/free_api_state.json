@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-05T22:01:51.540884+00:00",
+  "last_run": "2026-03-06T00:48:48.390803+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -46,12 +46,12 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41911
+      "stars": 41912
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40817
+      "stars": 40822
     },
     {
       "type": "github_ai_repo",
@@ -61,21 +61,21 @@
     {
       "type": "trending_article",
       "title": "Share, Embed, and Curate Agent Sessions on DEV [Beta]",
-      "reactions": 46
+      "reactions": 51
     },
     {
       "type": "trending_article",
       "title": "How Claude Skills Replaced Our Documentation",
-      "reactions": 7
+      "reactions": 16
     },
     {
       "type": "trending_article",
-      "title": "The Old Seniority Definition Is Collapsing",
-      "reactions": 18
+      "title": "Your MCP server's tool descriptions are an attack surface",
+      "reactions": 4
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2488591345659.256
+      "value": 2485441958521.8013
     }
   ],
   "opportunities": [
@@ -87,12 +87,12 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16552 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13876 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10980 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41911 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40817 stars) \u2014 build integration engine",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41912 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40822 stars) \u2014 build integration engine",
     "Engine wrapper: CopilotKit/CopilotKit (29186 stars) \u2014 build integration engine",
-    "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (46 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How Claude Skills Replaced Our Documentation' (7 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'The Old Seniority Definition Is Collapsing' (18 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How Claude Skills Replaced Our Documentation' (16 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Your MCP server's tool descriptions are an attack surface' (4 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

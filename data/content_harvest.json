@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-05T22:01:41.039601+00:00",
+  "timestamp": "2026-03-06T00:48:40.004196+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "GPT-5.4",
-        "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 432,
+        "title": "CBP tapped into the online advertising ecosystem to track peoples\u2019 movements",
+        "url": "https://www.404media.co/cbp-tapped-into-the-online-advertising-ecosystem-to-track-peoples-movements/",
+        "score": 236,
         "source": "hackernews"
       },
       {
-        "title": "Wikipedia in read-only mode following mass admin account compromise",
-        "url": "https://www.wikimediastatus.net",
-        "score": 758,
+        "title": "GPT-5.4",
+        "url": "https://openai.com/index/introducing-gpt-5-4/",
+        "score": 596,
+        "source": "hackernews"
+      },
+      {
+        "title": "The next generations of Bubble Tea, Lip Gloss, and Bubbles are available now",
+        "url": "https://charm.land/blog/v2/",
+        "score": 52,
+        "source": "hackernews"
+      },
+      {
+        "title": "A standard protocol to handle and discard low-effort, AI-Generated pull requests",
+        "url": "https://406.fail/",
+        "score": 53,
         "source": "hackernews"
       },
       {
         "title": "The Brand Age",
         "url": "https://paulgraham.com/brandage.html",
-        "score": 140,
-        "source": "hackernews"
-      },
-      {
-        "title": "Hardware hotplug events on Linux, the gory details",
-        "url": "https://arcanenibble.github.io/hardware-hotplug-events-on-linux-the-gory-details.html",
-        "score": 74,
-        "source": "hackernews"
-      },
-      {
-        "title": "Good software knows when to stop",
-        "url": "https://ogirardot.writizzy.com/p/good-software-knows-when-to-stop",
-        "score": 277,
+        "score": 203,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 9.8,
+    "temp_c": 8.0,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "stop",
-      "count": 2
-    },
-    {
-      "word": "wikipedia",
+      "word": "tapped",
       "count": 1
     },
     {
-      "word": "read",
+      "word": "into",
       "count": 1
     },
     {
-      "word": "only",
+      "word": "online",
       "count": 1
     },
     {
-      "word": "mode",
+      "word": "advertising",
       "count": 1
     },
     {
-      "word": "following",
+      "word": "ecosystem",
       "count": 1
     },
     {
-      "word": "mass",
+      "word": "track",
       "count": 1
     },
     {
-      "word": "admin",
+      "word": "peoples\u2019",
       "count": 1
     },
     {
-      "word": "account",
+      "word": "movements",
       "count": 1
     },
     {
-      "word": "compromise",
+      "word": "next",
       "count": 1
     },
     {
-      "word": "brand",
+      "word": "generations",
       "count": 1
     },
     {
-      "word": "hardware",
+      "word": "bubble",
       "count": 1
     },
     {
-      "word": "hotplug",
+      "word": "gloss",
       "count": 1
     },
     {
-      "word": "events",
+      "word": "bubbles",
       "count": 1
     },
     {
-      "word": "linux",
+      "word": "available",
       "count": 1
     },
     {
-      "word": "gory",
+      "word": "standard",
       "count": 1
     },
     {
-      "word": "details",
+      "word": "protocol",
       "count": 1
     },
     {
-      "word": "good",
+      "word": "handle",
       "count": 1
     },
     {
-      "word": "software",
+      "word": "discard",
       "count": 1
     },
     {
-      "word": "knows",
+      "word": "effort",
+      "count": 1
+    },
+    {
+      "word": "generated",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'GPT-5.4...' connects to Gaza resilience",
+      "hook": "How 'CBP tapped into the online advertising ecosystem to track pe...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

@@ -109,13 +109,14 @@
       "SOCIAL_DASHBOARD.py",
       "SOCIAL_PROMOTER.py",
       "SOLARPUNK_LEGAL.py",
+      "STORE_BUILDER.py",
       "SUBSTACK_ENGINE.py",
       "SYNAPSE.py",
       "SYNTHESIS_FACTORY.py",
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 63,
+    "engine_count": 64,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -214,7 +215,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-05T22:01:51.646102+00:00"
+    "timestamp": "2026-03-06T00:48:48.503460+00:00"
   },
-  "generated_at": "2026-03-05T22:01:52.241335+00:00"
+  "generated_at": "2026-03-06T00:48:48.850848+00:00"
 }
