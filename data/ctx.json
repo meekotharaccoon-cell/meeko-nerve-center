@@ -1,6 +1,6 @@
 {
-  "run_id": "22754053455",
-  "ts": "2026-03-06T07:44:34.326990+00:00",
+  "run_id": "22754161830",
+  "ts": "2026-03-06T07:48:26.286440+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -37,7 +37,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-06T07:44:23.326704+00:00",
+        "timestamp": "2026-03-06T07:48:15.512263+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -62,9 +62,9 @@
     },
     "total_cycles": 3,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-06T07:44:23.326704+00:00",
+    "last_updated": "2026-03-06T07:48:15.512263+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-06T07:44:23.326704+00:00",
+      "timestamp": "2026-03-06T07:48:15.512263+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -81,29 +81,45 @@
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-06T07:43:45.285829+00:00",
-    "cycle_number": 1,
+    "generated": "2026-03-06T07:47:31.657357+00:00",
+    "cycle_number": 2,
     "health": 40,
     "health_trend": "unknown",
     "delta": {
-      "first_cycle": true,
-      "wins": [],
-      "regressions": [],
+      "first_cycle": false,
+      "wins": [
+        "BOTTLENECK_SCANNER",
+        "STORE_BUILDER"
+      ],
+      "regressions": [
+        "BRIEFING_ENGINE"
+      ],
+      "new_failures": [
+        "BRIEFING_ENGINE"
+      ],
+      "still_failing": [
+        "BRAND_LEGAL"
+      ],
       "revenue_delta": 0,
       "health_delta": 0,
-      "stars_delta": 0,
-      "resonance_delta": 0,
-      "new_failures": [],
-      "fixed_engines": []
+      "stars_delta": 1,
+      "resonance_delta": 30
     },
     "persistent": [],
-    "still_failing": [],
-    "new_fixes": [],
-    "new_regressions": [],
+    "still_failing": [
+      "BRAND_LEGAL"
+    ],
+    "new_fixes": [
+      "BOTTLENECK_SCANNER",
+      "STORE_BUILDER"
+    ],
+    "new_regressions": [
+      "BRIEFING_ENGINE"
+    ],
     "revenue": 0,
     "revenue_delta": 0,
-    "resonance": 0,
-    "summary": "Cycle 1 | Health: 40 (unknown) | Fixed: 0 | Regressed: 0 | Persistent blockers: 0 | Revenue: $0.00"
+    "resonance": 30,
+    "summary": "Cycle 2 | Health: 40 (unknown) | Fixed: 2 | Regressed: 1 | Persistent blockers: 0 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -324,6 +340,7 @@
         "payout_ledger.json",
         "paypal_payout_state.json",
         "proof_state.json",
+        "quick_revenue.json",
         "resonance_state.json",
         "revenue_inbox.json",
         "revenue_loop_history.json",
@@ -332,11 +349,13 @@
         "scam_shield_state.json",
         "secrets_checker_state.json",
         "self_builder_state.json",
+        "self_portrait_log.json",
         "social_latest.json",
         "social_promoter_state.json",
         "social_queue.json",
         "solarpunk_legal_state.json",
         "sponsors_state.json",
+        "store_builder_state.json",
         "substack_state.json",
         "synthesis_log.json",
         "virality_posts.json"
@@ -347,9 +366,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-06T07:44:07.304843+00:00"
+      "timestamp": "2026-03-06T07:47:58.590962+00:00"
     },
-    "generated_at": "2026-03-06T07:44:07.735800+00:00"
+    "generated_at": "2026-03-06T07:47:59.028232+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -398,10 +417,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-06T07:44:07.963659+00:00"
+    "generated_at": "2026-03-06T07:47:59.266364+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-06T07:44:10.616650+00:00",
+    "ts": "2026-03-06T07:48:01.993103+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -411,14 +430,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 31,
+          "cycles": 32,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-06T02:11:10.574126+00:00"
+          "last_run": "2026-03-06T07:44:17.711244+00:00"
         }
       },
       "grants": {
@@ -427,11 +446,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 31,
+          "cycles": 32,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-06T02:11:08.760097+00:00"
+          "last_run": "2026-03-06T07:44:15.335466+00:00"
         }
       },
       "sponsors": {
@@ -440,11 +459,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 31,
+          "cycles": 32,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-06T02:11:10.733135+00:00"
+          "last_run": "2026-03-06T07:44:17.988920+00:00"
         }
       },
       "exchange": {
@@ -453,14 +472,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 31,
+          "cycles": 32,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-06T02:11:08.646469+00:00"
+          "last_run": "2026-03-06T07:44:15.219974+00:00"
         }
       },
       "substack": {
@@ -469,11 +488,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 31,
+          "cycles": 32,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-06T02:11:09.181371+00:00"
+          "last_run": "2026-03-06T07:44:15.817305+00:00"
         }
       },
       "gumroad": {
@@ -486,13 +505,13 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-06T07:43:51.835898+00:00",
+    "timestamp": "2026-03-06T07:47:38.113436+00:00",
     "sources": {
       "hackernews": [
         {
           "title": "System76 on Age Verification Laws",
           "url": "https://blog.system76.com/post/system76-on-age-verification/",
-          "score": 181,
+          "score": 189,
           "source": "hackernews"
         },
         {
@@ -504,19 +523,19 @@
         {
           "title": "10% of Firefox crashes are caused by bitflips",
           "url": "https://mas.to/@gabrielesvelto/116171750653898304",
-          "score": 511,
+          "score": 513,
           "source": "hackernews"
         },
         {
           "title": "Where things stand with the Department of War",
           "url": "https://www.anthropic.com/news/where-stand-department-war",
-          "score": 394,
+          "score": 396,
           "source": "hackernews"
         },
         {
-          "title": "Labor market impacts of AI: A new measure and early evidence",
-          "url": "https://www.anthropic.com/research/labor-market-impacts",
-          "score": 155,
+          "title": "The Brand Age",
+          "url": "https://paulgraham.com/brandage.html",
+          "score": 320,
           "source": "hackernews"
         }
       ],
@@ -549,7 +568,7 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 16.1,
+      "temp_c": 16.6,
       "vibe": "sunny",
       "code": 0,
       "location": "Gaza City"
@@ -600,27 +619,7 @@
         "count": 1
       },
       {
-        "word": "labor",
-        "count": 1
-      },
-      {
-        "word": "market",
-        "count": 1
-      },
-      {
-        "word": "impacts",
-        "count": 1
-      },
-      {
-        "word": "measure",
-        "count": 1
-      },
-      {
-        "word": "early",
-        "count": 1
-      },
-      {
-        "word": "evidence",
+        "word": "brand",
         "count": 1
       },
       {
@@ -633,6 +632,26 @@
       },
       {
         "word": "hidden",
+        "count": 1
+      },
+      {
+        "word": "film",
+        "count": 1
+      },
+      {
+        "word": "clubs",
+        "count": 1
+      },
+      {
+        "word": "discoverable",
+        "count": 1
+      },
+      {
+        "word": "shipped",
+        "count": 1
+      },
+      {
+        "word": "broken",
         "count": 1
       }
     ],
@@ -661,7 +680,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-06T07:44:01.980753+00:00",
+    "last_run": "2026-03-06T07:47:47.011586+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -737,7 +756,7 @@
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2489533064581.385
+        "value": 2491607933014.4917
       }
     ],
     "opportunities": [
@@ -993,7 +1012,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-06T07:44:13.125505+00:00",
+    "started_at": "2026-03-06T07:48:04.391634+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1010,7 +1029,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-06T07:44:14.017297+00:00",
+        "queued_at": "2026-03-06T07:48:05.296765+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1018,7 +1037,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-06T07:44:14.017297+00:00",
+        "queued_at": "2026-03-06T07:48:05.296765+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1026,28 +1045,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-06T07:44:14.017297+00:00",
+        "queued_at": "2026-03-06T07:48:05.296765+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-06T07:44:14.989140+00:00",
-    "elapsed_seconds": 1,
+    "completed_at": "2026-03-06T07:48:06.577489+00:00",
+    "elapsed_seconds": 2,
     "success": true
   },
   "exchange": {
-    "cycles": 32,
+    "cycles": 33,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-06T07:44:15.219974+00:00"
+    "last_run": "2026-03-06T07:48:06.805956+00:00"
   },
   "biz_factory": {
-    "cycles": 32,
+    "cycles": 33,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1272,16 +1291,25 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-06T07:44:11.895420+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-06T07:48:03.143196+00:00"
       }
     ],
-    "total_revenue_potential": 20280,
-    "last_run": "2026-03-06T07:44:11.019062+00:00"
+    "total_revenue_potential": 21020,
+    "last_run": "2026-03-06T07:48:02.249809+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-06T07:43:46.857676+00:00",
-    "configured": 10,
+    "last_check": "2026-03-06T07:47:33.475551+00:00",
+    "configured": 4,
     "total": 16,
-    "critical_missing": [],
+    "critical_missing": [
+      "GUMROAD_SECRET"
+    ],
     "secrets": {
       "ANTHROPIC_API_KEY": {
         "present": true,
@@ -1294,17 +1322,17 @@
         "impact": "low"
       },
       "GUMROAD_SECRET": {
-        "present": true,
+        "present": false,
         "required": true,
         "impact": "critical"
       },
       "GUMROAD_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
       "GUMROAD_NAME": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
@@ -1319,7 +1347,7 @@
         "impact": "medium"
       },
       "X_API_KEY": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "high"
       },
@@ -1349,12 +1377,12 @@
         "impact": "high"
       },
       "PAYPAL_CLIENT_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
       "PAYPAL_CLIENT_SECRET": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
@@ -1366,12 +1394,12 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-06T07:43:46.885826+00:00",
+    "generated": "2026-03-06T07:47:33.503340+00:00",
     "summary": {
-      "total_bottlenecks": 1,
-      "critical": 0,
-      "high": 1,
-      "secrets_ok": 10,
+      "total_bottlenecks": 3,
+      "critical": 1,
+      "high": 2,
+      "secrets_ok": 4,
       "secrets_total": 18,
       "engines_ok": 76,
       "engines_total": 76,
@@ -1383,12 +1411,30 @@
     "bottlenecks": [
       {
         "id": "BN-001",
+        "severity": "CRITICAL",
+        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
+        "description": "GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.",
+        "fix": "gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET",
+        "revenue_impact": "$10/sale blocked",
+        "status": "PENDING"
+      },
+      {
+        "id": "BN-002",
         "severity": "HIGH",
         "title": "Gmail 534 error -- App Password wrong or expired",
         "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
         "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
         "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
         "status": "BROKEN"
+      },
+      {
+        "id": "BN-003",
+        "severity": "HIGH",
+        "title": "Twitter/X keys missing -- 100+ posts in queue",
+        "description": "SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.",
+        "fix": "developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets",
+        "revenue_impact": "Zero Twitter distribution",
+        "status": "PENDING"
       }
     ],
     "secrets": [
@@ -1405,8 +1451,8 @@
       },
       {
         "name": "GUMROAD_SECRET",
-        "present": true,
-        "length": 43,
+        "present": false,
+        "length": 0,
         "impact": "CRITICAL",
         "unlocks": [
           "10 queued products publishing"
@@ -1433,8 +1479,8 @@
       },
       {
         "name": "X_API_KEY",
-        "present": true,
-        "length": 64,
+        "present": false,
+        "length": 0,
         "impact": "HIGH",
         "unlocks": [
           "100+ queued tweets posting"
@@ -1487,8 +1533,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_ID",
-        "present": true,
-        "length": 80,
+        "present": false,
+        "length": 0,
         "impact": "MEDIUM",
         "unlocks": [
           "automated payouts"
@@ -1496,8 +1542,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_SECRET",
-        "present": true,
-        "length": 80,
+        "present": false,
+        "length": 0,
         "impact": "MEDIUM",
         "unlocks": [
           "PayPal API auth"
@@ -1514,8 +1560,8 @@
       },
       {
         "name": "GUMROAD_ID",
-        "present": true,
-        "length": 43,
+        "present": false,
+        "length": 0,
         "impact": "LOW",
         "unlocks": [
           "Gumroad analytics"
@@ -1523,8 +1569,8 @@
       },
       {
         "name": "GUMROAD_NAME",
-        "present": true,
-        "length": 11,
+        "present": false,
+        "length": 0,
         "impact": "LOW",
         "unlocks": [
           "Gumroad display name"
@@ -1560,14 +1606,16 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-06T07:44:20.628273+00:00",
+    "generated_at": "2026-03-06T07:48:12.655033+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
       "engines_ok": [
+        "CYCLE_MEMORY",
         "GUARDIAN",
         "ENGINE_INTEGRITY",
         "SECRETS_CHECKER",
+        "BOTTLENECK_SCANNER",
         "AUTO_HEALER",
         "CAPABILITY_SCANNER",
         "EMAIL_BRAIN",
@@ -1577,6 +1625,8 @@
         "AI_WATCHER",
         "CRYPTO_WATCHER",
         "FREE_API_ENGINE",
+        "RESONANCE_ENGINE",
+        "FIRST_CONTACT",
         "NEURON_A",
         "NEURON_B",
         "GRANT_HUNTER",
@@ -1584,6 +1634,7 @@
         "INCOME_ARCHITECT",
         "REVENUE_FLYWHEEL",
         "GUMROAD_AUTO_QUEUE",
+        "QUICK_REVENUE",
         "BUSINESS_FACTORY",
         "LANDING_DEPLOYER",
         "ART_CATALOG",
@@ -1600,6 +1651,7 @@
         "CONNECTION_FORGE",
         "HUMAN_CONNECTOR",
         "AFFILIATE_MAXIMIZER",
+        "STORE_BUILDER",
         "BRIDGE_BUILDER",
         "EMAIL_OUTREACH",
         "VIRALITY_ENGINE",
@@ -1621,27 +1673,28 @@
         "BIG_BRAIN_ORACLE",
         "MEMORY_PALACE",
         "README_GENERATOR",
-        "BRIEFING_ENGINE",
         "NIGHTLY_DIGEST",
         "ISSUE_SYNC",
         "SOLARPUNK_LEGAL",
         "TASK_ATOMIZER",
         "AUTONOMY_PROOF",
-        "CLAUDE_ENGINE"
+        "CLAUDE_ENGINE",
+        "SELF_PORTRAIT"
       ],
       "engines_failed": [
-        "BOTTLENECK_SCANNER",
-        "STORE_BUILDER",
+        "BRIEFING_ENGINE",
         "BRAND_LEGAL"
       ],
-      "engines_skipped": [],
+      "engines_skipped": [
+        "DEV_TO_PUBLISHER"
+      ],
       "exchange_tasks": 0,
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 32,
+      "businesses_built": 33,
       "engines_built": 0,
-      "revenue_potential": 20280,
+      "revenue_potential": 21020,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1710,16 +1763,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 13,
-    "last_run": "2026-03-06T07:44:22.036117+00:00",
+    "cycles": 14,
+    "last_run": "2026-03-06T07:48:14.179352+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 13,
+    "cycles": 14,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-06T07:44:23.029553+00:00"
+    "last_run": "2026-03-06T07:48:15.162951+00:00"
   },
   "revenue_inbox": [
     {
@@ -1745,9 +1798,9 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-06T07:43:50.932429+00:00",
-    "active": 6,
-    "blocked": 2,
+    "scanned_at": "2026-03-06T07:47:37.023628+00:00",
+    "active": 5,
+    "blocked": 3,
     "degraded": 1,
     "capabilities": {
       "anthropic_api": {
@@ -1781,7 +1834,7 @@
       },
       "twitter": {
         "name": "Twitter/X (auto-post)",
-        "status": "active",
+        "status": "blocked",
         "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
         "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
         "blocks": [
@@ -1831,10 +1884,10 @@
     },
     "priority_fix": "GUMROAD_ACCESS_TOKEN",
     "best_channel_now": "gmail \u2014 works today, no new keys needed",
-    "summary": "6 active / 2 blocked / 1 degraded"
+    "summary": "5 active / 3 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 3,
+    "cycles": 4,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2001,7 +2054,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-06T07:44:02.045912+00:00",
+    "generated_at": "2026-03-06T07:47:47.078404+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2015,10 +2068,8 @@
       "open_issues": 4,
       "latest_stargazer": "meekotharaccoon-cell"
     },
-    "star_delta": 1,
-    "star_milestones": [
-      1
-    ],
+    "star_delta": 0,
+    "star_milestones": [],
     "hn_mentions": [
       {
         "source": "hackernews",
@@ -2040,7 +2091,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-06T07:44:10.910691+00:00",
+    "generated_at": "2026-03-06T07:48:02.142802+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [

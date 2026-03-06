@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-06T07:43:51.835898+00:00",
+  "timestamp": "2026-03-06T07:47:38.113436+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "System76 on Age Verification Laws",
         "url": "https://blog.system76.com/post/system76-on-age-verification/",
-        "score": 181,
+        "score": 189,
         "source": "hackernews"
       },
       {
@@ -17,19 +17,19 @@
       {
         "title": "10% of Firefox crashes are caused by bitflips",
         "url": "https://mas.to/@gabrielesvelto/116171750653898304",
-        "score": 511,
+        "score": 513,
         "source": "hackernews"
       },
       {
         "title": "Where things stand with the Department of War",
         "url": "https://www.anthropic.com/news/where-stand-department-war",
-        "score": 394,
+        "score": 396,
         "source": "hackernews"
       },
       {
-        "title": "Labor market impacts of AI: A new measure and early evidence",
-        "url": "https://www.anthropic.com/research/labor-market-impacts",
-        "score": 155,
+        "title": "The Brand Age",
+        "url": "https://paulgraham.com/brandage.html",
+        "score": 320,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.1,
+    "temp_c": 16.6,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -113,27 +113,7 @@
       "count": 1
     },
     {
-      "word": "labor",
-      "count": 1
-    },
-    {
-      "word": "market",
-      "count": 1
-    },
-    {
-      "word": "impacts",
-      "count": 1
-    },
-    {
-      "word": "measure",
-      "count": 1
-    },
-    {
-      "word": "early",
-      "count": 1
-    },
-    {
-      "word": "evidence",
+      "word": "brand",
       "count": 1
     },
     {
@@ -146,6 +126,26 @@
     },
     {
       "word": "hidden",
+      "count": 1
+    },
+    {
+      "word": "film",
+      "count": 1
+    },
+    {
+      "word": "clubs",
+      "count": 1
+    },
+    {
+      "word": "discoverable",
+      "count": 1
+    },
+    {
+      "word": "shipped",
+      "count": 1
+    },
+    {
+      "word": "broken",
       "count": 1
     }
   ],

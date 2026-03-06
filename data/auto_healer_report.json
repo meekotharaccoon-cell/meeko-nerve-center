@@ -1,15 +1,13 @@
 {
-  "timestamp": "2026-03-06T07:43:50.891961+00:00",
+  "timestamp": "2026-03-06T07:47:36.983296+00:00",
   "healed": [],
   "auto_installed": [],
   "skipped": [
-    "BOTTLENECK_SCANNER",
-    "STORE_BUILDER",
+    "BRIEFING_ENGINE",
     "BRAND_LEGAL"
   ],
   "failed_engines_seen": [
-    "BOTTLENECK_SCANNER",
-    "STORE_BUILDER",
+    "BRIEFING_ENGINE",
     "BRAND_LEGAL"
   ]
 }

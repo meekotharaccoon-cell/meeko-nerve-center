@@ -1,12 +1,14 @@
 {
-  "generated_at": "2026-03-06T07:44:20.628273+00:00",
+  "generated_at": "2026-03-06T07:48:12.655033+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
     "engines_ok": [
+      "CYCLE_MEMORY",
       "GUARDIAN",
       "ENGINE_INTEGRITY",
       "SECRETS_CHECKER",
+      "BOTTLENECK_SCANNER",
       "AUTO_HEALER",
       "CAPABILITY_SCANNER",
       "EMAIL_BRAIN",
@@ -16,6 +18,8 @@
       "AI_WATCHER",
       "CRYPTO_WATCHER",
       "FREE_API_ENGINE",
+      "RESONANCE_ENGINE",
+      "FIRST_CONTACT",
       "NEURON_A",
       "NEURON_B",
       "GRANT_HUNTER",
@@ -23,6 +27,7 @@
       "INCOME_ARCHITECT",
       "REVENUE_FLYWHEEL",
       "GUMROAD_AUTO_QUEUE",
+      "QUICK_REVENUE",
       "BUSINESS_FACTORY",
       "LANDING_DEPLOYER",
       "ART_CATALOG",
@@ -39,6 +44,7 @@
       "CONNECTION_FORGE",
       "HUMAN_CONNECTOR",
       "AFFILIATE_MAXIMIZER",
+      "STORE_BUILDER",
       "BRIDGE_BUILDER",
       "EMAIL_OUTREACH",
       "VIRALITY_ENGINE",
@@ -60,27 +66,28 @@
       "BIG_BRAIN_ORACLE",
       "MEMORY_PALACE",
       "README_GENERATOR",
-      "BRIEFING_ENGINE",
       "NIGHTLY_DIGEST",
       "ISSUE_SYNC",
       "SOLARPUNK_LEGAL",
       "TASK_ATOMIZER",
       "AUTONOMY_PROOF",
-      "CLAUDE_ENGINE"
+      "CLAUDE_ENGINE",
+      "SELF_PORTRAIT"
     ],
     "engines_failed": [
-      "BOTTLENECK_SCANNER",
-      "STORE_BUILDER",
+      "BRIEFING_ENGINE",
       "BRAND_LEGAL"
     ],
-    "engines_skipped": [],
+    "engines_skipped": [
+      "DEV_TO_PUBLISHER"
+    ],
     "exchange_tasks": 0,
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 32,
+    "businesses_built": 33,
     "engines_built": 0,
-    "revenue_potential": 20280,
+    "revenue_potential": 21020,
     "active_revenue_streams": [
       "substack"
     ]
