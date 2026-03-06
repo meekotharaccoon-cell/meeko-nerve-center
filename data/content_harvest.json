@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T01:05:50.874785+00:00",
+  "timestamp": "2026-03-06T02:09:16.489903+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "CBP tapped into the online advertising ecosystem to track peoples\u2019 movements",
         "url": "https://www.404media.co/cbp-tapped-into-the-online-advertising-ecosystem-to-track-peoples-movements/",
-        "score": 262,
+        "score": 327,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 606,
+        "score": 636,
         "source": "hackernews"
       },
       {
         "title": "Where things stand with the Department of War",
         "url": "https://www.anthropic.com/news/where-stand-department-war",
-        "score": 22,
+        "score": 161,
         "source": "hackernews"
       },
       {
         "title": "The next generations of Bubble Tea, Lip Gloss, and Bubbles are available now",
         "url": "https://charm.land/blog/v2/",
-        "score": 64,
+        "score": 93,
         "source": "hackernews"
       },
       {
         "title": "A standard protocol to handle and discard low-effort, AI-Generated pull requests",
         "url": "https://406.fail/",
-        "score": 64,
+        "score": 86,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 7.8,
+    "temp_c": 6.7,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"

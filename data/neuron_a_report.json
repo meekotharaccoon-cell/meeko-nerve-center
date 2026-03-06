@@ -57,13 +57,17 @@
       "ARCHITECT.py",
       "ART_CATALOG.py",
       "ART_GENERATOR.py",
+      "AUTONOMY_PROOF.py",
       "AUTO_HEALER.py",
       "BIG_BRAIN_ORACLE.py",
       "BOTTLENECK_SCANNER.py",
       "BRAND_LEGAL.py",
+      "BRIDGE_BUILDER.py",
       "BRIEFING_ENGINE.py",
       "BUSINESS_FACTORY.py",
       "CALENDAR_BRAIN.py",
+      "CAPABILITY_SCANNER.py",
+      "CLAUDE_ENGINE.py",
       "CONNECTION_FORGE.py",
       "CONTENT_HARVESTER.py",
       "CONTRIBUTOR_REGISTRY.py",
@@ -72,6 +76,7 @@
       "DISPATCH_HANDLER.py",
       "EMAIL_AGENT_EXCHANGE.py",
       "EMAIL_BRAIN.py",
+      "EMAIL_OUTREACH.py",
       "ENGINE_INTEGRITY.py",
       "ETSY_SEO_ENGINE.py",
       "FREE_API_ENGINE.py",
@@ -113,10 +118,12 @@
       "SUBSTACK_ENGINE.py",
       "SYNAPSE.py",
       "SYNTHESIS_FACTORY.py",
+      "TASK_ATOMIZER.py",
+      "VIRALITY_ENGINE.py",
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 64,
+    "engine_count": 71,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -147,6 +154,7 @@
       "business_palestinian_art_prints.json",
       "business_social_media_content_packs.json",
       "calendar_brain_state.json",
+      "capability_map.json",
       "connection_forge_state.json",
       "connections.json",
       "consolidated_knowledge.json",
@@ -215,7 +223,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-06T01:05:59.168104+00:00"
+    "timestamp": "2026-03-06T02:09:27.261110+00:00"
   },
-  "generated_at": "2026-03-06T01:05:59.550935+00:00"
+  "generated_at": "2026-03-06T02:09:27.840593+00:00"
 }
