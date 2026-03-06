@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-06T01:44:31.755412",
+  "last_checked": "2026-03-06T01:45:31.061483",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -40,6 +40,7 @@
     "SUBSTACK_ENGINE.py",
     "README_GENERATOR.py",
     "EMAIL_OUTREACH.py",
+    "AUTONOMY_PROOF.py",
     "SOLARPUNK_LEGAL.py",
     "KOFI_ENGINE.py",
     "GRANT_HUNTER.py",
