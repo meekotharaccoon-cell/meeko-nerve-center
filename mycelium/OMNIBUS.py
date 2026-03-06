@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v13 -- full autonomous self-expanding loop
+OMNIBUS v14 — full autonomous self-expanding loop
 ===================================================
-New in v13:
-  L2: QUICK_REVENUE      -- fastest path to first dollar
-                            Ko-fi listings copy-paste ready, exchange promo,
-                            sponsor snippets. Claude's answer to:
-                            "I need revenue as fast as possible. What do you suggest?"
+New in v14:
+  L0: CYCLE_MEMORY       -- cross-cycle learning layer
+                            tracks what changed, what improved, what's stuck
+                            escalates persistent blockers (URGENT/CRITICAL/STUCK)
+                            writes cycle_delta.json for all downstream engines
+                            No API key required. Zero dependencies.
+                            Built because the system kept running in circles.
+                            The first step out of a loop is noticing you're in one.
 
+v13: QUICK_REVENUE (L2)
 v12: RESONANCE_ENGINE (L1), DEV_TO_PUBLISHER + VIRALITY_ENGINE (L4), SELF_PORTRAIT (L7)
 v11: CLAUDE_ENGINE (L7)
-v10: CAPABILITY_SCANNER (L0), STORE_BUILDER, BRIDGE_BUILDER, EMAIL_OUTREACH (L4),
-     TASK_ATOMIZER, AUTONOMY_PROOF (L7)
+v10: CAPABILITY_SCANNER (L0), EMAIL_OUTREACH, STORE_BUILDER, BRIDGE_BUILDER (L4)
 
-The loop: build -> speak -> listen -> respond -> grow
+The loop: build -> speak -> listen -> remember -> respond -> grow
 
-L0  GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
+L0  CYCLE_MEMORY . GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
     AUTO_HEALER . CAPABILITY_SCANNER
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE . NEURON_A . NEURON_B .
     RESONANCE_ENGINE
 L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
-    GUMROAD_AUTO_QUEUE . BUSINESS_FACTORY . QUICK_REVENUE
+    GUMROAD_AUTO_QUEUE . QUICK_REVENUE . BUSINESS_FACTORY
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
     EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER
 L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
@@ -96,8 +99,10 @@ def eng(name, *, timeout=120):
 def rj(fname, fb=None):
     f = DATA / fname
     if f.exists():
-        try: return json.loads(f.read_text())
-        except Exception: pass
+        try:
+            d = json.loads(f.read_text())
+            return d if isinstance(d, (dict, list)) else (fb or {})
+        except: pass
     return fb if fb is not None else {}
 
 
@@ -107,6 +112,7 @@ def ctx():
         "ts":              datetime.now(timezone.utc).isoformat(),
         "prev_health":     rj("brain_state.json").get("health_score", 40),
         "memory":          rj("memory_palace.json"),
+        "cycle_delta":     rj("cycle_delta.json"),       # v14: cross-cycle learning
         "neuron_a":        rj("neuron_a_report.json"),
         "neuron_b":        rj("neuron_b_report.json"),
         "flywheel":        rj("flywheel_summary.json"),
@@ -136,13 +142,14 @@ def save_ctx():
 
 
 def L0():
-    print("\n--- L0: HEALTH + INTEGRITY + CAPABILITIES ---")
-    eng("GUARDIAN",           timeout=60)
-    eng("ENGINE_INTEGRITY",   timeout=60)
-    eng("SECRETS_CHECKER",    timeout=60)
-    eng("BOTTLENECK_SCANNER", timeout=60)
-    eng("AUTO_HEALER",        timeout=90)
-    eng("CAPABILITY_SCANNER", timeout=30)
+    print("\n--- L0: REMEMBER + HEALTH + INTEGRITY ---")
+    eng("CYCLE_MEMORY",      timeout=30)    # v14: first — snapshot prev state, compute delta
+    eng("GUARDIAN",          timeout=60)
+    eng("ENGINE_INTEGRITY",  timeout=60)
+    eng("SECRETS_CHECKER",   timeout=60)
+    eng("BOTTLENECK_SCANNER",timeout=60)
+    eng("AUTO_HEALER",       timeout=90)
+    eng("CAPABILITY_SCANNER",timeout=30)
     save_ctx()
 
 
@@ -168,7 +175,7 @@ def L2():
     eng("INCOME_ARCHITECT",   timeout=60)
     eng("REVENUE_FLYWHEEL",   timeout=90)
     eng("GUMROAD_AUTO_QUEUE", timeout=60)
-    eng("QUICK_REVENUE",      timeout=60)   # v13: fastest path to $1, copy-paste ready
+    eng("QUICK_REVENUE",      timeout=60)
     save_ctx()
     eng("BUSINESS_FACTORY",   timeout=180)
     save_ctx()
@@ -264,9 +271,9 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v13 -- {ts}")
+    print(f"\nOMNIBUS v14 -- {ts}")
     print(f"   Run: {run_id}")
-    print(f"   build -> speak -> listen -> respond -> grow")
+    print(f"   build -> speak -> listen -> remember -> respond -> grow")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -287,23 +294,28 @@ def run():
     weaver     = rj("knowledge_weaver_state.json")
     outreach   = rj("outreach_state.json")
     resonance  = rj("resonance_state.json")
+    cycle_mem  = rj("cycle_delta.json")
     biz_count  = len(list(DATA.glob("business_*.json")))
     health_now = rj("brain_state.json").get("health_score", 0)
     emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
     quick_rev  = rj("quick_revenue.json")
     first_sale = quick_rev.get("first_sale_done", False)
+    rev_total  = revenue.get("total_received", 0) if isinstance(revenue, dict) else 0
+    gaza_total = revenue.get("total_to_gaza",  0) if isinstance(revenue, dict) else 0
 
     manifest = {
-        "version":            "v13",
+        "version":            "v14",
         "run_id":             run_id,
         "completed":          datetime.now(timezone.utc).isoformat(),
         "elapsed_s":          elapsed,
         "health_before":      rj("brain_state.json").get("health_score", 40),
         "health_after":       health_now,
+        "health_trend":       cycle_mem.get("health_trend", "unknown"),
+        "cycle_number":       cycle_mem.get("cycle_number", 0),
         "businesses_built":   biz_count,
         "live_url":           rj("revenue_loop_last.json").get("live_url"),
-        "total_revenue":      revenue.get("total_received", 0) if isinstance(revenue, dict) else 0,
-        "total_to_gaza":      revenue.get("total_to_gaza", 0) if isinstance(revenue, dict) else 0,
+        "total_revenue":      rev_total,
+        "total_to_gaza":      gaza_total,
         "first_sale_done":    first_sale,
         "legal_fund":         legal.get("upto_fund_collected", 0),
         "total_paid_out":     payouts.get("total_paid_usd", 0) if isinstance(payouts, dict) else 0,
@@ -315,6 +327,7 @@ def run():
         "resonance_score":    resonance.get("resonance_score", 0),
         "resonance_label":    resonance.get("resonance_label", "SILENT"),
         "github_stars":       resonance.get("github", {}).get("stars", 0),
+        "persistent_blockers":len(cycle_mem.get("persistent", [])),
         "engines_ok":         results["ok"],
         "engines_failed":     results["failed"],
         "engines_skipped":    results["skipped"],
@@ -328,20 +341,21 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v13 done -- {elapsed}s")
+    print(f"OMNIBUS v14 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
-    print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
-    print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f} | First sale: {'YES' if first_sale else 'not yet'}")
+    print(f"   Health: {manifest['health_before']} -> {manifest['health_after']} ({manifest['health_trend']})")
+    print(f"   Revenue: ${rev_total:.2f} | Gaza: ${gaza_total:.2f} | First sale: {'YES' if first_sale else 'not yet'}")
     print(f"   Resonance: {manifest['resonance_score']}/100 ({manifest['resonance_label']}) | Stars: {manifest['github_stars']}")
-    print(f"   Outreach sent: {emails_out}")
+    if manifest["persistent_blockers"]:
+        print(f"   Persistent blockers: {manifest['persistent_blockers']} (see memory.html)")
     if manifest["engines_auto_built"]:
         print(f"   Auto-built: {', '.join(manifest['engines_auto_built'])}")
     if manifest["critical_missing"]:
         print(f"   MISSING: {', '.join(manifest['critical_missing'])}")
     print(f"\n   Live:")
-    for page in ["quick_revenue", "store", "proof", "launch", "resonance", "self_portrait"]:
+    for page in ["memory", "quick_revenue", "store", "proof", "resonance", "self_portrait", "launch"]:
         print(f"      {BASE}/{page}.html")
     return manifest
 
