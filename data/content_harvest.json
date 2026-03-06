@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T07:47:38.113436+00:00",
+  "timestamp": "2026-03-06T07:54:35.265164+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "System76 on Age Verification Laws",
         "url": "https://blog.system76.com/post/system76-on-age-verification/",
-        "score": 189,
+        "score": 194,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 781,
+        "score": 787,
         "source": "hackernews"
       },
       {
         "title": "10% of Firefox crashes are caused by bitflips",
         "url": "https://mas.to/@gabrielesvelto/116171750653898304",
-        "score": 513,
+        "score": 522,
+        "source": "hackernews"
+      },
+      {
+        "title": "A GitHub Issue Title Compromised 4k Developer Machines",
+        "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
+        "score": 393,
         "source": "hackernews"
       },
       {
         "title": "Where things stand with the Department of War",
         "url": "https://www.anthropic.com/news/where-stand-department-war",
-        "score": 396,
-        "source": "hackernews"
-      },
-      {
-        "title": "The Brand Age",
-        "url": "https://paulgraham.com/brandage.html",
-        "score": 320,
+        "score": 401,
         "source": "hackernews"
       }
     ],
@@ -97,6 +97,30 @@
       "count": 1
     },
     {
+      "word": "github",
+      "count": 1
+    },
+    {
+      "word": "issue",
+      "count": 1
+    },
+    {
+      "word": "title",
+      "count": 1
+    },
+    {
+      "word": "compromised",
+      "count": 1
+    },
+    {
+      "word": "developer",
+      "count": 1
+    },
+    {
+      "word": "machines",
+      "count": 1
+    },
+    {
       "word": "where",
       "count": 1
     },
@@ -113,10 +137,6 @@
       "count": 1
     },
     {
-      "word": "brand",
-      "count": 1
-    },
-    {
       "word": "making",
       "count": 1
     },
@@ -126,26 +146,6 @@
     },
     {
       "word": "hidden",
-      "count": 1
-    },
-    {
-      "word": "film",
-      "count": 1
-    },
-    {
-      "word": "clubs",
-      "count": 1
-    },
-    {
-      "word": "discoverable",
-      "count": 1
-    },
-    {
-      "word": "shipped",
-      "count": 1
-    },
-    {
-      "word": "broken",
       "count": 1
     }
   ],

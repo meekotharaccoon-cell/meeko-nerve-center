@@ -1,7 +1,7 @@
 {
-  "last_run": "2026-03-06T07:47:47.011586+00:00",
-  "apis_ok": 18,
-  "apis_failed": 2,
+  "last_run": "2026-03-06T07:54:58.418887+00:00",
+  "apis_ok": 17,
+  "apis_failed": 3,
   "signals": [
     {
       "type": "trending_model",
@@ -51,7 +51,7 @@
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40854
+      "stars": 40855
     },
     {
       "type": "github_ai_repo",
@@ -88,7 +88,7 @@
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
     "Engine wrapper: zhayujie/chatgpt-on-wechat (41933 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40854 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40855 stars) \u2014 build integration engine",
     "Engine wrapper: CopilotKit/CopilotKit (29192 stars) \u2014 build integration engine",
     "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
     "Content leverage: 'How Claude Skills Replaced Our Documentation' (24 reactions) \u2014 create SolarPunk angle",

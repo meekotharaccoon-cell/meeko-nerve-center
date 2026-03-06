@@ -1,24 +1,14 @@
 {
-  "generated_at": "2026-03-06T07:48:26.253452+00:00",
+  "generated_at": "2026-03-06T07:55:32.305407+00:00",
   "system_version": "OMNIBUS v10",
   "health": 40,
   "total_revenue": 0,
   "outreach_sent": 0,
-  "atoms_created": 36,
+  "atoms_created": 45,
   "engines_ok_last_cycle": 69,
   "engines_failed_last_cycle": 2,
   "engines_auto_built": [],
-  "priorities": [
-    {
-      "priority": 2,
-      "action": "Add GUMROAD_ACCESS_TOKEN to GitHub Secrets",
-      "why": "6 products queued, $0 published. Store exists, nothing for sale.",
-      "how": "gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token \u2192 GitHub Secrets",
-      "unlocks": [
-        "GUMROAD_ENGINE \u2014 publishes 6 queued products immediately"
-      ]
-    }
-  ],
+  "priorities": [],
   "live_capabilities": [
     "Read full system state (all data/*.json files)",
     "Write and commit new Python engines directly to GitHub",
