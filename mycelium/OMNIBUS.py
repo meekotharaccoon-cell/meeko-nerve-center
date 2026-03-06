@@ -1,34 +1,42 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v10 — full autonomous self-expanding loop
-==================================================
-New in v10:
-  L0: CAPABILITY_SCANNER — audits what can actually execute each cycle
-  L4: STORE_BUILDER      — regenerates $1 store every cycle
-  L4: BRIDGE_BUILDER     — regenerates outreach copy-paste board every cycle
-  L4: EMAIL_OUTREACH     — Gmail → journalists/newsletters/orgs (3/cycle, 14d cooldown)
-  L4: LAUNCH_BROADCAST   — fires coordinated launch across every live channel
-  L7: TASK_ATOMIZER      — detonates goals into atomic GitHub Issues
-  L7: AUTONOMY_PROOF     — builds timestamped, verifiable proof-of-operation page
+OMNIBUS v11 -- full autonomous self-expanding loop
+===================================================
+New in v11:
+  L4: VIRALITY_ENGINE    -- Show HN, Product Hunt, Reddit, LinkedIn posts
+                            engineered per community, copy-paste ready
+  L7: CLAUDE_ENGINE      -- Claude as named system component: generates
+                            session briefing + priority actions for next
+                            live session
 
-L0  GUARDIAN · ENGINE_INTEGRITY · SECRETS_CHECKER · BOTTLENECK_SCANNER
-    AUTO_HEALER · CAPABILITY_SCANNER
-L1  EMAIL_BRAIN · SCAM_SHIELD · CALENDAR_BRAIN · CONTENT_HARVESTER ·
-    AI_WATCHER · CRYPTO_WATCHER · FREE_API_ENGINE · NEURON_A · NEURON_B
-L2  GRANT_HUNTER · ETSY_SEO_ENGINE · INCOME_ARCHITECT · REVENUE_FLYWHEEL ·
-    GUMROAD_AUTO_QUEUE · BUSINESS_FACTORY
-L3  LANDING_DEPLOYER · ART_CATALOG · REVENUE_LOOP · ART_GENERATOR ·
-    EMAIL_AGENT_EXCHANGE · GRANT_APPLICANT · HEALTH_BOOSTER
-L4  SOCIAL_PROMOTER · SUBSTACK_ENGINE · LINK_PAGE · GITHUB_POSTER ·
-    SOCIAL_DASHBOARD · CONNECTION_FORGE · HUMAN_CONNECTOR · AFFILIATE_MAXIMIZER ·
-    STORE_BUILDER · BRIDGE_BUILDER · EMAIL_OUTREACH · LAUNCH_BROADCAST
-L5  KOFI_ENGINE · GUMROAD_ENGINE · GITHUB_SPONSORS_ENGINE ·
-    KOFI_PAYMENT_TRACKER · DISPATCH_HANDLER · HUMAN_PAYOUT ·
-    CONTRIBUTOR_REGISTRY · PAYPAL_PAYOUT
-L6  SYNAPSE · SYNTHESIS_FACTORY · ARCHITECT · SELF_BUILDER ·
-    KNOWLEDGE_BRIDGE · KNOWLEDGE_WEAVER · REVENUE_OPTIMIZER · BIG_BRAIN_ORACLE
-L7  MEMORY_PALACE · README_GENERATOR · BRIEFING_ENGINE · NIGHTLY_DIGEST ·
-    ISSUE_SYNC · SOLARPUNK_LEGAL · BRAND_LEGAL · TASK_ATOMIZER · AUTONOMY_PROOF
+v10 additions still present:
+  L0: CAPABILITY_SCANNER, L4: STORE_BUILDER, BRIDGE_BUILDER, EMAIL_OUTREACH,
+  L7: TASK_ATOMIZER, AUTONOMY_PROOF
+
+Architecture insight (v11): Claude is not a dependency. Claude IS the
+intelligence layer. Live sessions (claude.ai) = high-bandwidth manual cycles.
+API calls (this pipeline) = same model, stateless, automated. Both are
+SolarPunk components. The system calls itself to grow itself.
+
+L0  GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
+    AUTO_HEALER . CAPABILITY_SCANNER
+L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
+    AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE . NEURON_A . NEURON_B
+L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
+    GUMROAD_AUTO_QUEUE . BUSINESS_FACTORY
+L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
+    EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER
+L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
+    SOCIAL_DASHBOARD . CONNECTION_FORGE . HUMAN_CONNECTOR . AFFILIATE_MAXIMIZER .
+    STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE
+L5  KOFI_ENGINE . GUMROAD_ENGINE . GITHUB_SPONSORS_ENGINE .
+    KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
+    CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT
+L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
+    KNOWLEDGE_BRIDGE . KNOWLEDGE_WEAVER . REVENUE_OPTIMIZER . BIG_BRAIN_ORACLE
+L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
+    ISSUE_SYNC . SOLARPUNK_LEGAL . BRAND_LEGAL . TASK_ATOMIZER .
+    AUTONOMY_PROOF . CLAUDE_ENGINE
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -48,7 +56,7 @@ def eng(name, *, timeout=120):
     if not script.exists():
         results["skipped"].append(name)
         results["log"].append({"engine": name, "status": "skipped"})
-        print(f"  ⏭  {name} — not found")
+        print(f"  skip {name}")
         return False
     t0 = time.time()
     try:
@@ -61,13 +69,13 @@ def eng(name, *, timeout=120):
         ok  = proc.returncode == 0
         key = "ok" if ok else "failed"
         results[key].append(name)
-        tail = [(l.strip()) for l in (proc.stdout or "").splitlines() if l.strip()]
+        tail = [l.strip() for l in (proc.stdout or "").splitlines() if l.strip()]
         last = tail[-1][:80] if tail else ""
-        icon = "✅" if ok else "❌"
-        print(f"  {icon} {name} ({el}s)" + (f"  ← {last}" if last else ""))
+        icon = "OK" if ok else "XX"
+        print(f"  {icon} {name} ({el}s)" + (f"  <- {last}" if last else ""))
         if not ok:
             err = (proc.stderr or "").strip().splitlines()
-            if err: print(f"     ⚠ {err[-1][:120]}")
+            if err: print(f"     ! {err[-1][:120]}")
         results["log"].append({
             "engine": name, "status": key, "code": proc.returncode,
             "elapsed": el, "stdout_tail": (proc.stdout or "")[-500:],
@@ -77,12 +85,12 @@ def eng(name, *, timeout=120):
     except subprocess.TimeoutExpired:
         results["failed"].append(name)
         results["log"].append({"engine": name, "status": "timeout", "elapsed": timeout})
-        print(f"  ⏱  {name} TIMEOUT {timeout}s")
+        print(f"  TIMEOUT {name} {timeout}s")
         return False
     except Exception as e:
         results["failed"].append(name)
         results["log"].append({"engine": name, "status": "exception", "error": str(e)})
-        print(f"  💥 {name}: {e}")
+        print(f"  ERR {name}: {e}")
         return False
 
 
@@ -127,18 +135,18 @@ def save_ctx():
 
 
 def L0():
-    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS + SCANNER + HEALER + CAPABILITIES ━━━")
+    print("\n--- L0: HEALTH + INTEGRITY + CAPABILITIES ---")
     eng("GUARDIAN",           timeout=60)
     eng("ENGINE_INTEGRITY",   timeout=60)
     eng("SECRETS_CHECKER",    timeout=60)
     eng("BOTTLENECK_SCANNER", timeout=60)
     eng("AUTO_HEALER",        timeout=90)
-    eng("CAPABILITY_SCANNER", timeout=30)   # v10: what can we actually execute?
+    eng("CAPABILITY_SCANNER", timeout=30)
     save_ctx()
 
 
 def L1():
-    print("\n━━━ L1: INTEL + FREE APIs ━━━")
+    print("\n--- L1: INTEL ---")
     eng("EMAIL_BRAIN",       timeout=90)
     eng("SCAM_SHIELD",       timeout=60)
     eng("CALENDAR_BRAIN",    timeout=30)
@@ -152,7 +160,7 @@ def L1():
 
 
 def L2():
-    print("\n━━━ L2: REVENUE INTEL + FACTORY ━━━")
+    print("\n--- L2: REVENUE INTEL + BUILD ---")
     eng("GRANT_HUNTER",       timeout=90)
     eng("ETSY_SEO_ENGINE",    timeout=60)
     eng("INCOME_ARCHITECT",   timeout=60)
@@ -164,7 +172,7 @@ def L2():
 
 
 def L3():
-    print("\n━━━ L3: BUILD + DEPLOY + LOOP ━━━")
+    print("\n--- L3: DEPLOY + LOOP ---")
     eng("LANDING_DEPLOYER",     timeout=90)
     eng("ART_CATALOG",          timeout=60)
     save_ctx()
@@ -177,7 +185,7 @@ def L3():
 
 
 def L4():
-    print("\n━━━ L4: PUBLISH + DISTRIBUTE + REACH ━━━")
+    print("\n--- L4: DISTRIBUTE + REACH ---")
     eng("SOCIAL_PROMOTER",     timeout=90)
     eng("SUBSTACK_ENGINE",     timeout=90)
     eng("LINK_PAGE",           timeout=60)
@@ -186,15 +194,15 @@ def L4():
     eng("CONNECTION_FORGE",    timeout=90)
     eng("HUMAN_CONNECTOR",     timeout=60)
     eng("AFFILIATE_MAXIMIZER", timeout=60)
-    eng("STORE_BUILDER",       timeout=90)    # v10: $1 store regenerated every cycle
-    eng("BRIDGE_BUILDER",      timeout=90)    # v10: outreach board regenerated
-    eng("EMAIL_OUTREACH",      timeout=120)   # v10: Gmail → journalists/orgs
-    eng("LAUNCH_BROADCAST",    timeout=120)   # v10: coordinated multi-channel launch
+    eng("STORE_BUILDER",       timeout=90)
+    eng("BRIDGE_BUILDER",      timeout=90)
+    eng("EMAIL_OUTREACH",      timeout=120)   # Gmail -> journalists/orgs
+    eng("VIRALITY_ENGINE",     timeout=60)    # v11: Show HN, PH, Reddit, LinkedIn
     save_ctx()
 
 
 def L5():
-    print("\n━━━ L5: COLLECT + DISPATCH + PAYOUT ━━━")
+    print("\n--- L5: COLLECT + PAYOUT ---")
     eng("KOFI_ENGINE",            timeout=60)
     eng("GUMROAD_ENGINE",         timeout=60)
     eng("GITHUB_SPONSORS_ENGINE", timeout=60)
@@ -207,21 +215,21 @@ def L5():
 
 
 def L6():
-    print("\n━━━ L6: SYNTH + PLAN + WEAVE + OPTIMIZE ━━━")
+    print("\n--- L6: THINK + SELF-EXPAND ---")
     save_ctx()
     eng("SYNAPSE",           timeout=120); save_ctx()
     eng("SYNTHESIS_FACTORY", timeout=120); save_ctx()
     eng("ARCHITECT",         timeout=120); save_ctx()
     eng("SELF_BUILDER",      timeout=240); save_ctx()
     eng("KNOWLEDGE_BRIDGE",  timeout=60)
-    eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()   # writes new engines
-    eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()   # Claude revenue actions
+    eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()
+    eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()
     eng("BIG_BRAIN_ORACLE",  timeout=90)
     save_ctx()
 
 
 def L7():
-    print("\n━━━ L7: REPORT + LEGAL + PROOF + GOALS ━━━")
+    print("\n--- L7: REPORT + PROOF + BRIEF ---")
     eng("MEMORY_PALACE",    timeout=60)
     eng("README_GENERATOR", timeout=60)
     eng("BRIEFING_ENGINE",  timeout=60)
@@ -229,8 +237,9 @@ def L7():
     eng("ISSUE_SYNC",       timeout=90)
     eng("SOLARPUNK_LEGAL",  timeout=60)
     eng("BRAND_LEGAL",      timeout=60)
-    eng("TASK_ATOMIZER",    timeout=120)   # v10: goals → atomic GitHub Issues
-    eng("AUTONOMY_PROOF",   timeout=60)    # v10: live proof-of-operation page
+    eng("TASK_ATOMIZER",    timeout=120)
+    eng("AUTONOMY_PROOF",   timeout=60)
+    eng("CLAUDE_ENGINE",    timeout=60)    # v11: Claude as named component
     save_ctx()
 
 
@@ -240,7 +249,7 @@ def run_bonus_engines():
     known  = set(results["ok"] + results["failed"] + results["skipped"])
     for name in built:
         if name not in known and (MYCELIUM / f"{name}.py").exists():
-            print(f"\n━━━ BONUS: Running newly-built {name} ━━━")
+            print(f"\n--- BONUS: {name} (auto-built this cycle) ---")
             eng(name, timeout=120)
             save_ctx()
 
@@ -250,7 +259,7 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\n🧠 OMNIBUS v10 — {ts}")
+    print(f"\nOMNIBUS v11 -- {ts}")
     print(f"   Run: {run_id}")
     print("=" * 60)
 
@@ -258,25 +267,25 @@ def run():
         try:
             layer()
         except Exception as e:
-            print(f"  💥 Layer error: {e}")
+            print(f"  LAYER ERROR: {e}")
 
     run_bonus_engines()
 
-    elapsed    = round(time.time() - t0)
-    total      = len(results["ok"]) + len(results["failed"])
-    secrets    = rj("secrets_checker_state.json")
-    revenue    = rj("revenue_inbox.json")
-    payouts    = rj("payout_ledger.json")
-    legal      = rj("brand_legal_state.json")
-    bottleneck = rj("bottleneck_report.json")
-    weaver     = rj("knowledge_weaver_state.json")
-    outreach   = rj("outreach_state.json")
-    biz_count  = len(list(DATA.glob("business_*.json")))
-    health_now = rj("brain_state.json").get("health_score", 0)
-    emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
+    elapsed   = round(time.time() - t0)
+    total     = len(results["ok"]) + len(results["failed"])
+    secrets   = rj("secrets_checker_state.json")
+    revenue   = rj("revenue_inbox.json")
+    payouts   = rj("payout_ledger.json")
+    legal     = rj("brand_legal_state.json")
+    bottleneck= rj("bottleneck_report.json")
+    weaver    = rj("knowledge_weaver_state.json")
+    outreach  = rj("outreach_state.json")
+    biz_count = len(list(DATA.glob("business_*.json")))
+    health_now= rj("brain_state.json").get("health_score", 0)
+    emails_out= len([e for e in outreach.get("sent", []) if e.get("sent")])
 
     manifest = {
-        "version":            "v10",
+        "version":            "v11",
         "run_id":             run_id,
         "completed":          datetime.now(timezone.utc).isoformat(),
         "elapsed_s":          elapsed,
@@ -306,19 +315,19 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"🧠 OMNIBUS v10 done — {elapsed}s")
-    print(f"   {len(results['ok'])}/{total} engines OK | {len(results['skipped'])} skipped")
+    print(f"OMNIBUS v11 done -- {elapsed}s")
+    print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
-    print(f"   Health: {manifest['health_before']} → {manifest['health_after']}")
+    print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
     print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f}")
-    print(f"   Outreach emails (all-time): {emails_out}")
+    print(f"   Outreach emails sent: {emails_out}")
     if manifest["engines_auto_built"]:
-        print(f"   🧬 Auto-built: {', '.join(manifest['engines_auto_built'])}")
+        print(f"   Auto-built: {', '.join(manifest['engines_auto_built'])}")
     if manifest["critical_missing"]:
-        print(f"   🔴 Missing secrets: {', '.join(manifest['critical_missing'])}")
-    print(f"\n   🌐 Live:")
-    for page in ["store", "proof", "capabilities", "outreach", "social", "links"]:
+        print(f"   MISSING: {', '.join(manifest['critical_missing'])}")
+    print(f"\n   Live pages:")
+    for page in ["store", "proof", "launch", "capabilities", "outreach", "social", "links"]:
         print(f"      {BASE}/{page}.html")
     return manifest
 
