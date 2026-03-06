@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-06T02:09:13.068722+00:00",
+  "generated": "2026-03-06T02:10:50.493880+00:00",
   "summary": {
-    "total_bottlenecks": 2,
-    "critical": 0,
-    "high": 1,
-    "secrets_ok": 10,
+    "total_bottlenecks": 4,
+    "critical": 1,
+    "high": 2,
+    "secrets_ok": 4,
     "secrets_total": 18,
     "engines_ok": 71,
     "engines_total": 71,
@@ -16,21 +16,39 @@
   "bottlenecks": [
     {
       "id": "BN-001",
+      "severity": "CRITICAL",
+      "title": "GUMROAD_SECRET missing \u2014 no products can publish",
+      "description": "GUMROAD_ENGINE has products ready but can't authenticate to Gumroad API.",
+      "fix": "gumroad.com \u2192 avatar \u2192 Settings \u2192 Advanced \u2192 Generate Token \u2192 copy \u2192 GitHub Secret: GUMROAD_SECRET",
+      "revenue_impact": "$170/day potential blocked",
+      "status": "PENDING"
+    },
+    {
+      "id": "BN-002",
       "severity": "HIGH",
       "title": "10 products seeded but 0 live on Gumroad",
       "description": "gumroad_listings.json has products but GUMROAD_ENGINE hasn't run successfully yet.",
       "fix": "Ensure GUMROAD_SECRET is set, then trigger OMNIBRAIN or run GUMROAD_ENGINE manually via RUN_NOW",
       "revenue_impact": "All product sales blocked",
-      "status": "READY_TO_RUN"
+      "status": "PENDING"
     },
     {
-      "id": "BN-002",
+      "id": "BN-003",
       "severity": "MEDIUM",
       "title": "Gmail App Password may be account password (535 auth error)",
       "description": "Gmail requires an App Password (16 chars) not your account password. 2FA must be ON.",
       "fix": "Google Account \u2192 Security \u2192 2-Step Verification \u2192 App Passwords \u2192 Generate for Mail \u2192 paste new value to GMAIL_APP_PASSWORD",
       "revenue_impact": "No email briefings, no payment notifications",
       "status": "VERIFY"
+    },
+    {
+      "id": "BN-004",
+      "severity": "HIGH",
+      "title": "Twitter/X keys missing \u2014 24 queued posts stuck",
+      "description": "SOCIAL_PROMOTER has 24 tweet drafts ready. No X_API_KEY = no auto-posting.",
+      "fix": "developer.twitter.com \u2192 Projects \u2192 App \u2192 Keys \u2192 API Key + Secret + Access Token + Secret \u2192 add 4 secrets",
+      "revenue_impact": "Zero Twitter distribution for products",
+      "status": "PENDING"
     }
   ],
   "secrets": [
@@ -48,8 +66,8 @@
     },
     {
       "name": "GUMROAD_SECRET",
-      "present": true,
-      "length": 43,
+      "present": false,
+      "length": 0,
       "impact": "CRITICAL",
       "unlocks": [
         "product publishing",
@@ -58,8 +76,8 @@
     },
     {
       "name": "GUMROAD_ID",
-      "present": true,
-      "length": 43,
+      "present": false,
+      "length": 0,
       "impact": "LOW",
       "unlocks": [
         "Gumroad analytics"
@@ -67,8 +85,8 @@
     },
     {
       "name": "GUMROAD_NAME",
-      "present": true,
-      "length": 11,
+      "present": false,
+      "length": 0,
       "impact": "LOW",
       "unlocks": [
         "Gumroad display name"
@@ -104,8 +122,8 @@
     },
     {
       "name": "X_API_KEY",
-      "present": true,
-      "length": 64,
+      "present": false,
+      "length": 0,
       "impact": "HIGH",
       "unlocks": [
         "auto-posting 24 queued tweets"
@@ -176,8 +194,8 @@
     },
     {
       "name": "PAYPAL_CLIENT_ID",
-      "present": true,
-      "length": 80,
+      "present": false,
+      "length": 0,
       "impact": "MEDIUM",
       "unlocks": [
         "automated human payouts"
@@ -185,8 +203,8 @@
     },
     {
       "name": "PAYPAL_CLIENT_SECRET",
-      "present": true,
-      "length": 80,
+      "present": false,
+      "length": 0,
       "impact": "MEDIUM",
       "unlocks": [
         "PayPal API auth"

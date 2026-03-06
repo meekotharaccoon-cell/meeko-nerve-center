@@ -133,8 +133,12 @@
       "architect_state.json",
       "art_catalog.json",
       "asset_map.json",
+      "atomizer_state.json",
+      "auto_healer_history.json",
+      "auto_healer_report.json",
       "bottleneck_report.json",
       "brain_state.json",
+      "bridge_state.json",
       "briefing_state.json",
       "business_ai_prompt_packs.json",
       "business_ai_side_income_blueprint.json",
@@ -155,6 +159,7 @@
       "business_social_media_content_packs.json",
       "calendar_brain_state.json",
       "capability_map.json",
+      "claude_briefing.json",
       "connection_forge_state.json",
       "connections.json",
       "consolidated_knowledge.json",
@@ -173,6 +178,7 @@
       "flywheel_summary.json",
       "free_api_state.json",
       "github_poster_state.json",
+      "goal_queue.json",
       "grant_applicant_state.json",
       "grant_hunter_state.json",
       "grants_found.json",
@@ -200,8 +206,10 @@
       "nightly_digest_state.json",
       "omnibus_history.json",
       "omnibus_last.json",
+      "outreach_state.json",
       "payout_ledger.json",
       "paypal_payout_state.json",
+      "proof_state.json",
       "revenue_inbox.json",
       "revenue_loop_history.json",
       "revenue_loop_last.json",
@@ -215,7 +223,8 @@
       "solarpunk_legal_state.json",
       "sponsors_state.json",
       "substack_state.json",
-      "synthesis_log.json"
+      "synthesis_log.json",
+      "virality_posts.json"
     ],
     "revenue": 0.0,
     "revenue_streams": {},
@@ -223,7 +232,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-06T02:09:27.261110+00:00"
+    "timestamp": "2026-03-06T02:11:03.470341+00:00"
   },
-  "generated_at": "2026-03-06T02:09:27.840593+00:00"
+  "generated_at": "2026-03-06T02:11:03.740090+00:00"
 }
