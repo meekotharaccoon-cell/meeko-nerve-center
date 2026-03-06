@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-06T01:24:41.638478",
+  "last_checked": "2026-03-06T01:34:53.962781",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -26,6 +26,7 @@
     "SOCIAL_DASHBOARD.py",
     "NEURON_B.py",
     "ENGINE_INTEGRITY.py",
+    "CAPABILITY_SCANNER.py",
     "HUMAN_CONNECTOR.py",
     "PAYPAL_PAYOUT.py",
     "ARCHITECT.py",
