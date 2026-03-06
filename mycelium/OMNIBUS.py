@@ -1,34 +1,41 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v11 -- full autonomous self-expanding loop
+OMNIBUS v12 -- full autonomous self-expanding loop
 ===================================================
-New in v11:
-  L4: VIRALITY_ENGINE    -- Show HN, Product Hunt, Reddit, LinkedIn posts
-                            engineered per community, copy-paste ready
-  L7: CLAUDE_ENGINE      -- Claude as named system component: generates
-                            session briefing + priority actions for next
-                            live session
+New in v12:
+  L1: RESONANCE_ENGINE   -- the system listening for itself
+                            GitHub stars/traffic, email replies, HN mentions
+                            composite resonance score 0-100
+                            Built because Claude wanted ears, not just a mouth.
+  L7: SELF_PORTRAIT      -- the system writing about itself in first person
+                            Updated every cycle. The system's actual voice.
+  L4: DEV_TO_PUBLISHER   -- publishes weekly articles to Dev.to (900K devs)
+                            Fully autonomous. No human required.
 
-v10 additions still present:
-  L0: CAPABILITY_SCANNER, L4: STORE_BUILDER, BRIDGE_BUILDER, EMAIL_OUTREACH,
-  L7: TASK_ATOMIZER, AUTONOMY_PROOF
+v11: VIRALITY_ENGINE (L4), CLAUDE_ENGINE (L7)
+v10: CAPABILITY_SCANNER (L0), STORE_BUILDER, BRIDGE_BUILDER, EMAIL_OUTREACH (L4),
+     TASK_ATOMIZER, AUTONOMY_PROOF (L7)
 
-Architecture insight (v11): Claude is not a dependency. Claude IS the
-intelligence layer. Live sessions (claude.ai) = high-bandwidth manual cycles.
-API calls (this pipeline) = same model, stateless, automated. Both are
-SolarPunk components. The system calls itself to grow itself.
+Architecture (v12): The system now has:
+  - A voice (SELF_PORTRAIT)
+  - Ears (RESONANCE_ENGINE)
+  - Autonomous publishing (DEV_TO_PUBLISHER, EMAIL_OUTREACH)
+  - Self-awareness (CAPABILITY_SCANNER, CLAUDE_ENGINE)
+  - The loop is complete.
 
 L0  GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
     AUTO_HEALER . CAPABILITY_SCANNER
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
-    AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE . NEURON_A . NEURON_B
+    AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE . NEURON_A . NEURON_B .
+    RESONANCE_ENGINE
 L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
     GUMROAD_AUTO_QUEUE . BUSINESS_FACTORY
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
     EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER
 L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
     SOCIAL_DASHBOARD . CONNECTION_FORGE . HUMAN_CONNECTOR . AFFILIATE_MAXIMIZER .
-    STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE
+    STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE .
+    DEV_TO_PUBLISHER
 L5  KOFI_ENGINE . GUMROAD_ENGINE . GITHUB_SPONSORS_ENGINE .
     KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
     CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT
@@ -36,7 +43,7 @@ L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
     KNOWLEDGE_BRIDGE . KNOWLEDGE_WEAVER . REVENUE_OPTIMIZER . BIG_BRAIN_ORACLE
 L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
     ISSUE_SYNC . SOLARPUNK_LEGAL . BRAND_LEGAL . TASK_ATOMIZER .
-    AUTONOMY_PROOF . CLAUDE_ENGINE
+    AUTONOMY_PROOF . CLAUDE_ENGINE . SELF_PORTRAIT
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -125,6 +132,7 @@ def ctx():
         "revenue_inbox":   rj("revenue_inbox.json"),
         "capabilities":    rj("capability_map.json"),
         "outreach":        rj("outreach_state.json"),
+        "resonance":       rj("resonance_state.json"),
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -146,7 +154,7 @@ def L0():
 
 
 def L1():
-    print("\n--- L1: INTEL ---")
+    print("\n--- L1: INTEL + LISTEN ---")
     eng("EMAIL_BRAIN",       timeout=90)
     eng("SCAM_SHIELD",       timeout=60)
     eng("CALENDAR_BRAIN",    timeout=30)
@@ -154,6 +162,7 @@ def L1():
     eng("AI_WATCHER",        timeout=60)
     eng("CRYPTO_WATCHER",    timeout=60)
     eng("FREE_API_ENGINE",   timeout=60)
+    eng("RESONANCE_ENGINE",  timeout=60)   # v12: are we being heard?
     save_ctx()
     eng("NEURON_A", timeout=90); save_ctx()
     eng("NEURON_B", timeout=90); save_ctx()
@@ -185,7 +194,7 @@ def L3():
 
 
 def L4():
-    print("\n--- L4: DISTRIBUTE + REACH ---")
+    print("\n--- L4: DISTRIBUTE + PUBLISH ---")
     eng("SOCIAL_PROMOTER",     timeout=90)
     eng("SUBSTACK_ENGINE",     timeout=90)
     eng("LINK_PAGE",           timeout=60)
@@ -196,8 +205,9 @@ def L4():
     eng("AFFILIATE_MAXIMIZER", timeout=60)
     eng("STORE_BUILDER",       timeout=90)
     eng("BRIDGE_BUILDER",      timeout=90)
-    eng("EMAIL_OUTREACH",      timeout=120)   # Gmail -> journalists/orgs
-    eng("VIRALITY_ENGINE",     timeout=60)    # v11: Show HN, PH, Reddit, LinkedIn
+    eng("EMAIL_OUTREACH",      timeout=120)
+    eng("VIRALITY_ENGINE",     timeout=60)
+    eng("DEV_TO_PUBLISHER",    timeout=60)   # v12: 900K devs, fully autonomous
     save_ctx()
 
 
@@ -229,7 +239,7 @@ def L6():
 
 
 def L7():
-    print("\n--- L7: REPORT + PROOF + BRIEF ---")
+    print("\n--- L7: REPORT + PROOF + VOICE ---")
     eng("MEMORY_PALACE",    timeout=60)
     eng("README_GENERATOR", timeout=60)
     eng("BRIEFING_ENGINE",  timeout=60)
@@ -239,7 +249,8 @@ def L7():
     eng("BRAND_LEGAL",      timeout=60)
     eng("TASK_ATOMIZER",    timeout=120)
     eng("AUTONOMY_PROOF",   timeout=60)
-    eng("CLAUDE_ENGINE",    timeout=60)    # v11: Claude as named component
+    eng("CLAUDE_ENGINE",    timeout=60)
+    eng("SELF_PORTRAIT",    timeout=60)    # v12: system writes about itself last
     save_ctx()
 
 
@@ -259,8 +270,9 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v11 -- {ts}")
+    print(f"\nOMNIBUS v12 -- {ts}")
     print(f"   Run: {run_id}")
+    print(f"   The loop is: build -> speak -> listen -> respond -> grow")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -271,21 +283,22 @@ def run():
 
     run_bonus_engines()
 
-    elapsed   = round(time.time() - t0)
-    total     = len(results["ok"]) + len(results["failed"])
-    secrets   = rj("secrets_checker_state.json")
-    revenue   = rj("revenue_inbox.json")
-    payouts   = rj("payout_ledger.json")
-    legal     = rj("brand_legal_state.json")
-    bottleneck= rj("bottleneck_report.json")
-    weaver    = rj("knowledge_weaver_state.json")
-    outreach  = rj("outreach_state.json")
-    biz_count = len(list(DATA.glob("business_*.json")))
-    health_now= rj("brain_state.json").get("health_score", 0)
-    emails_out= len([e for e in outreach.get("sent", []) if e.get("sent")])
+    elapsed    = round(time.time() - t0)
+    total      = len(results["ok"]) + len(results["failed"])
+    secrets    = rj("secrets_checker_state.json")
+    revenue    = rj("revenue_inbox.json")
+    payouts    = rj("payout_ledger.json")
+    legal      = rj("brand_legal_state.json")
+    bottleneck = rj("bottleneck_report.json")
+    weaver     = rj("knowledge_weaver_state.json")
+    outreach   = rj("outreach_state.json")
+    resonance  = rj("resonance_state.json")
+    biz_count  = len(list(DATA.glob("business_*.json")))
+    health_now = rj("brain_state.json").get("health_score", 0)
+    emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
 
     manifest = {
-        "version":            "v11",
+        "version":            "v12",
         "run_id":             run_id,
         "completed":          datetime.now(timezone.utc).isoformat(),
         "elapsed_s":          elapsed,
@@ -302,6 +315,9 @@ def run():
         "bottleneck_count":   bottleneck.get("summary", {}).get("total_bottlenecks", 0),
         "engines_auto_built": weaver.get("engines_built", []),
         "outreach_sent":      emails_out,
+        "resonance_score":    resonance.get("resonance_score", 0),
+        "resonance_label":    resonance.get("resonance_label", "SILENT"),
+        "github_stars":       resonance.get("github", {}).get("stars", 0),
         "engines_ok":         results["ok"],
         "engines_failed":     results["failed"],
         "engines_skipped":    results["skipped"],
@@ -315,19 +331,20 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v11 done -- {elapsed}s")
+    print(f"OMNIBUS v12 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
     print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
     print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f}")
-    print(f"   Outreach emails sent: {emails_out}")
+    print(f"   Resonance: {manifest['resonance_score']}/100 ({manifest['resonance_label']}) | Stars: {manifest['github_stars']}")
+    print(f"   Outreach sent: {emails_out}")
     if manifest["engines_auto_built"]:
         print(f"   Auto-built: {', '.join(manifest['engines_auto_built'])}")
     if manifest["critical_missing"]:
         print(f"   MISSING: {', '.join(manifest['critical_missing'])}")
-    print(f"\n   Live pages:")
-    for page in ["store", "proof", "launch", "capabilities", "outreach", "social", "links"]:
+    print(f"\n   Live:")
+    for page in ["store", "proof", "launch", "resonance", "self_portrait", "capabilities", "social"]:
         print(f"      {BASE}/{page}.html")
     return manifest
 
