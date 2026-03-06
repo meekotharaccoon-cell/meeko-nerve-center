@@ -1,33 +1,34 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v9 — full autonomous self-expanding loop
-=================================================
-Changes from v8:
-  L1: FREE_API_ENGINE — 20+ zero-auth public APIs, harvests signals every cycle
-  L6: KNOWLEDGE_WEAVER — Claude writes a new engine every cycle (system self-expands)
-  L6: REVENUE_OPTIMIZER — Claude generates 5 revenue actions + rewrites product copy
-  AI_CLIENT: dead HF models purged, 3 live fallbacks, Claude primary
-  YAML: shell quoting bug fixed
+OMNIBUS v10 — full autonomous self-expanding loop
+==================================================
+New in v10:
+  L0: CAPABILITY_SCANNER — audits what can actually execute each cycle
+  L4: STORE_BUILDER      — regenerates $1 store every cycle
+  L4: BRIDGE_BUILDER     — regenerates outreach copy-paste board every cycle
+  L4: EMAIL_OUTREACH     — Gmail → journalists/newsletters/orgs (3/cycle, 14d cooldown)
+  L4: LAUNCH_BROADCAST   — fires coordinated launch across every live channel
+  L7: TASK_ATOMIZER      — detonates goals into atomic GitHub Issues
+  L7: AUTONOMY_PROOF     — builds timestamped, verifiable proof-of-operation page
 
-Every layer's output feeds the next. Claude reads all data and builds
-whatever is missing. System grows itself without human input.
-
-L0  GUARDIAN + ENGINE_INTEGRITY + SECRETS_CHECKER + BOTTLENECK_SCANNER + AUTO_HEALER
-L1  EMAIL_BRAIN + SCAM_SHIELD + CALENDAR_BRAIN + CONTENT_HARVESTER +
-    AI_WATCHER + CRYPTO_WATCHER + FREE_API_ENGINE + NEURON_A + NEURON_B
-L2  GRANT_HUNTER + ETSY_SEO + INCOME_ARCHITECT + REVENUE_FLYWHEEL +
-    GUMROAD_AUTO_QUEUE + BUSINESS_FACTORY
-L3  LANDING_DEPLOYER + ART_CATALOG + REVENUE_LOOP + ART_GENERATOR +
-    EMAIL_AGENT_EXCHANGE + GRANT_APPLICANT + HEALTH_BOOSTER
-L4  SOCIAL_PROMOTER + SUBSTACK_ENGINE + LINK_PAGE + GITHUB_POSTER +
-    SOCIAL_DASHBOARD + CONNECTION_FORGE + HUMAN_CONNECTOR + AFFILIATE_MAXIMIZER
-L5  KOFI_ENGINE + GUMROAD_ENGINE + GITHUB_SPONSORS_ENGINE +
-    KOFI_PAYMENT_TRACKER + DISPATCH_HANDLER + HUMAN_PAYOUT +
-    CONTRIBUTOR_REGISTRY + PAYPAL_PAYOUT
-L6  SYNAPSE + SYNTHESIS_FACTORY + ARCHITECT + SELF_BUILDER +
-    KNOWLEDGE_BRIDGE + KNOWLEDGE_WEAVER + REVENUE_OPTIMIZER + BIG_BRAIN_ORACLE
-L7  MEMORY_PALACE + README_GENERATOR + BRIEFING_ENGINE +
-    NIGHTLY_DIGEST + ISSUE_SYNC + SOLARPUNK_LEGAL + BRAND_LEGAL
+L0  GUARDIAN · ENGINE_INTEGRITY · SECRETS_CHECKER · BOTTLENECK_SCANNER
+    AUTO_HEALER · CAPABILITY_SCANNER
+L1  EMAIL_BRAIN · SCAM_SHIELD · CALENDAR_BRAIN · CONTENT_HARVESTER ·
+    AI_WATCHER · CRYPTO_WATCHER · FREE_API_ENGINE · NEURON_A · NEURON_B
+L2  GRANT_HUNTER · ETSY_SEO_ENGINE · INCOME_ARCHITECT · REVENUE_FLYWHEEL ·
+    GUMROAD_AUTO_QUEUE · BUSINESS_FACTORY
+L3  LANDING_DEPLOYER · ART_CATALOG · REVENUE_LOOP · ART_GENERATOR ·
+    EMAIL_AGENT_EXCHANGE · GRANT_APPLICANT · HEALTH_BOOSTER
+L4  SOCIAL_PROMOTER · SUBSTACK_ENGINE · LINK_PAGE · GITHUB_POSTER ·
+    SOCIAL_DASHBOARD · CONNECTION_FORGE · HUMAN_CONNECTOR · AFFILIATE_MAXIMIZER ·
+    STORE_BUILDER · BRIDGE_BUILDER · EMAIL_OUTREACH · LAUNCH_BROADCAST
+L5  KOFI_ENGINE · GUMROAD_ENGINE · GITHUB_SPONSORS_ENGINE ·
+    KOFI_PAYMENT_TRACKER · DISPATCH_HANDLER · HUMAN_PAYOUT ·
+    CONTRIBUTOR_REGISTRY · PAYPAL_PAYOUT
+L6  SYNAPSE · SYNTHESIS_FACTORY · ARCHITECT · SELF_BUILDER ·
+    KNOWLEDGE_BRIDGE · KNOWLEDGE_WEAVER · REVENUE_OPTIMIZER · BIG_BRAIN_ORACLE
+L7  MEMORY_PALACE · README_GENERATOR · BRIEFING_ENGINE · NIGHTLY_DIGEST ·
+    ISSUE_SYNC · SOLARPUNK_LEGAL · BRAND_LEGAL · TASK_ATOMIZER · AUTONOMY_PROOF
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -114,6 +115,8 @@ def ctx():
         "weaver":          rj("knowledge_weaver_state.json"),
         "optimizer":       rj("revenue_optimizer_state.json"),
         "revenue_inbox":   rj("revenue_inbox.json"),
+        "capabilities":    rj("capability_map.json"),
+        "outreach":        rj("outreach_state.json"),
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -124,12 +127,13 @@ def save_ctx():
 
 
 def L0():
-    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS + SCANNER + HEALER ━━━")
+    print("\n━━━ L0: GUARDIAN + INTEGRITY + SECRETS + SCANNER + HEALER + CAPABILITIES ━━━")
     eng("GUARDIAN",           timeout=60)
     eng("ENGINE_INTEGRITY",   timeout=60)
     eng("SECRETS_CHECKER",    timeout=60)
     eng("BOTTLENECK_SCANNER", timeout=60)
     eng("AUTO_HEALER",        timeout=90)
+    eng("CAPABILITY_SCANNER", timeout=30)   # v10: what can we actually execute?
     save_ctx()
 
 
@@ -173,7 +177,7 @@ def L3():
 
 
 def L4():
-    print("\n━━━ L4: PUBLISH + AFFILIATE ━━━")
+    print("\n━━━ L4: PUBLISH + DISTRIBUTE + REACH ━━━")
     eng("SOCIAL_PROMOTER",     timeout=90)
     eng("SUBSTACK_ENGINE",     timeout=90)
     eng("LINK_PAGE",           timeout=60)
@@ -182,6 +186,10 @@ def L4():
     eng("CONNECTION_FORGE",    timeout=90)
     eng("HUMAN_CONNECTOR",     timeout=60)
     eng("AFFILIATE_MAXIMIZER", timeout=60)
+    eng("STORE_BUILDER",       timeout=90)    # v10: $1 store regenerated every cycle
+    eng("BRIDGE_BUILDER",      timeout=90)    # v10: outreach board regenerated
+    eng("EMAIL_OUTREACH",      timeout=120)   # v10: Gmail → journalists/orgs
+    eng("LAUNCH_BROADCAST",    timeout=120)   # v10: coordinated multi-channel launch
     save_ctx()
 
 
@@ -206,14 +214,14 @@ def L6():
     eng("ARCHITECT",         timeout=120); save_ctx()
     eng("SELF_BUILDER",      timeout=240); save_ctx()
     eng("KNOWLEDGE_BRIDGE",  timeout=60)
-    eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()  # ← auto-builds new engines
-    eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()  # ← Claude revenue actions
+    eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()   # writes new engines
+    eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()   # Claude revenue actions
     eng("BIG_BRAIN_ORACLE",  timeout=90)
     save_ctx()
 
 
 def L7():
-    print("\n━━━ L7: REPORT + LEGAL ━━━")
+    print("\n━━━ L7: REPORT + LEGAL + PROOF + GOALS ━━━")
     eng("MEMORY_PALACE",    timeout=60)
     eng("README_GENERATOR", timeout=60)
     eng("BRIEFING_ENGINE",  timeout=60)
@@ -221,11 +229,12 @@ def L7():
     eng("ISSUE_SYNC",       timeout=90)
     eng("SOLARPUNK_LEGAL",  timeout=60)
     eng("BRAND_LEGAL",      timeout=60)
+    eng("TASK_ATOMIZER",    timeout=120)   # v10: goals → atomic GitHub Issues
+    eng("AUTONOMY_PROOF",   timeout=60)    # v10: live proof-of-operation page
     save_ctx()
 
 
 def run_bonus_engines():
-    """Run any engine KNOWLEDGE_WEAVER just built this cycle."""
     weaver = rj("knowledge_weaver_state.json")
     built  = weaver.get("engines_built", [])
     known  = set(results["ok"] + results["failed"] + results["skipped"])
@@ -241,7 +250,7 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\n🧠 OMNIBUS v9 — {ts}")
+    print(f"\n🧠 OMNIBUS v10 — {ts}")
     print(f"   Run: {run_id}")
     print("=" * 60)
 
@@ -261,11 +270,13 @@ def run():
     legal      = rj("brand_legal_state.json")
     bottleneck = rj("bottleneck_report.json")
     weaver     = rj("knowledge_weaver_state.json")
+    outreach   = rj("outreach_state.json")
     biz_count  = len(list(DATA.glob("business_*.json")))
     health_now = rj("brain_state.json").get("health_score", 0)
+    emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
 
     manifest = {
-        "version":            "v9",
+        "version":            "v10",
         "run_id":             run_id,
         "completed":          datetime.now(timezone.utc).isoformat(),
         "elapsed_s":          elapsed,
@@ -273,14 +284,15 @@ def run():
         "health_after":       health_now,
         "businesses_built":   biz_count,
         "live_url":           rj("revenue_loop_last.json").get("live_url"),
-        "total_revenue":      revenue.get("total_received", 0),
-        "total_to_gaza":      revenue.get("total_to_gaza", 0),
+        "total_revenue":      revenue.get("total_received", 0) if isinstance(revenue, dict) else 0,
+        "total_to_gaza":      revenue.get("total_to_gaza", 0) if isinstance(revenue, dict) else 0,
         "legal_fund":         legal.get("upto_fund_collected", 0),
-        "total_paid_out":     payouts.get("total_paid_usd", 0),
+        "total_paid_out":     payouts.get("total_paid_usd", 0) if isinstance(payouts, dict) else 0,
         "secrets_configured": secrets.get("configured", 0),
         "critical_missing":   secrets.get("critical_missing", []),
         "bottleneck_count":   bottleneck.get("summary", {}).get("total_bottlenecks", 0),
         "engines_auto_built": weaver.get("engines_built", []),
+        "outreach_sent":      emails_out,
         "engines_ok":         results["ok"],
         "engines_failed":     results["failed"],
         "engines_skipped":    results["skipped"],
@@ -294,19 +306,20 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"🧠 OMNIBUS v9 done — {elapsed}s")
+    print(f"🧠 OMNIBUS v10 done — {elapsed}s")
     print(f"   {len(results['ok'])}/{total} engines OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
     print(f"   Health: {manifest['health_before']} → {manifest['health_after']}")
     print(f"   Revenue: ${manifest['total_revenue']:.2f} | Gaza: ${manifest['total_to_gaza']:.2f}")
+    print(f"   Outreach emails (all-time): {emails_out}")
     if manifest["engines_auto_built"]:
         print(f"   🧬 Auto-built: {', '.join(manifest['engines_auto_built'])}")
     if manifest["critical_missing"]:
-        print(f"   🔴 Missing: {', '.join(manifest['critical_missing'])}")
-    print(f"\n   🌐 Live pages:")
-    for page in ["index", "store", "dashboard", "opportunities", "weaver", "optimizer", "bottleneck", "links"]:
-        print(f"   {BASE}/{page}.html")
+        print(f"   🔴 Missing secrets: {', '.join(manifest['critical_missing'])}")
+    print(f"\n   🌐 Live:")
+    for page in ["store", "proof", "capabilities", "outreach", "social", "links"]:
+        print(f"      {BASE}/{page}.html")
     return manifest
 
 
