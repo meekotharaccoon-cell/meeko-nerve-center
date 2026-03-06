@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T07:54:35.265164+00:00",
+  "timestamp": "2026-03-06T14:06:02.923756+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Workers who love 'synergizing paradigms' might be bad at their jobs",
+        "url": "https://news.cornell.edu/stories/2026/03/workers-who-love-synergizing-paradigms-might-be-bad-their-jobs",
+        "score": 33,
+        "source": "hackernews"
+      },
+      {
+        "title": "LibreSprite \u2013 open-source pixel art editor",
+        "url": "https://libresprite.github.io/",
+        "score": 117,
+        "source": "hackernews"
+      },
+      {
         "title": "System76 on Age Verification Laws",
         "url": "https://blog.system76.com/post/system76-on-age-verification/",
-        "score": 194,
+        "score": 564,
+        "source": "hackernews"
+      },
+      {
+        "title": "Payphone Go",
+        "url": "https://walzr.com/payphone-go/",
+        "score": 27,
         "source": "hackernews"
       },
       {
         "title": "GPT-5.4",
         "url": "https://openai.com/index/introducing-gpt-5-4/",
-        "score": 787,
-        "source": "hackernews"
-      },
-      {
-        "title": "10% of Firefox crashes are caused by bitflips",
-        "url": "https://mas.to/@gabrielesvelto/116171750653898304",
-        "score": 522,
-        "source": "hackernews"
-      },
-      {
-        "title": "A GitHub Issue Title Compromised 4k Developer Machines",
-        "url": "https://grith.ai/blog/clinejection-when-your-ai-tool-installs-another",
-        "score": 393,
-        "source": "hackernews"
-      },
-      {
-        "title": "Where things stand with the Department of War",
-        "url": "https://www.anthropic.com/news/where-stand-department-war",
-        "score": 401,
+        "score": 894,
         "source": "hackernews"
       }
     ],
@@ -62,12 +62,60 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.6,
-    "vibe": "sunny",
-    "code": 0,
+    "temp_c": 17.3,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
+    {
+      "word": "workers",
+      "count": 1
+    },
+    {
+      "word": "love",
+      "count": 1
+    },
+    {
+      "word": "synergizing",
+      "count": 1
+    },
+    {
+      "word": "paradigms",
+      "count": 1
+    },
+    {
+      "word": "might",
+      "count": 1
+    },
+    {
+      "word": "their",
+      "count": 1
+    },
+    {
+      "word": "jobs",
+      "count": 1
+    },
+    {
+      "word": "libresprite",
+      "count": 1
+    },
+    {
+      "word": "open",
+      "count": 1
+    },
+    {
+      "word": "source",
+      "count": 1
+    },
+    {
+      "word": "pixel",
+      "count": 1
+    },
+    {
+      "word": "editor",
+      "count": 1
+    },
     {
       "word": "system76",
       "count": 1
@@ -81,59 +129,7 @@
       "count": 1
     },
     {
-      "word": "firefox",
-      "count": 1
-    },
-    {
-      "word": "crashes",
-      "count": 1
-    },
-    {
-      "word": "caused",
-      "count": 1
-    },
-    {
-      "word": "bitflips",
-      "count": 1
-    },
-    {
-      "word": "github",
-      "count": 1
-    },
-    {
-      "word": "issue",
-      "count": 1
-    },
-    {
-      "word": "title",
-      "count": 1
-    },
-    {
-      "word": "compromised",
-      "count": 1
-    },
-    {
-      "word": "developer",
-      "count": 1
-    },
-    {
-      "word": "machines",
-      "count": 1
-    },
-    {
-      "word": "where",
-      "count": 1
-    },
-    {
-      "word": "things",
-      "count": 1
-    },
-    {
-      "word": "stand",
-      "count": 1
-    },
-    {
-      "word": "department",
+      "word": "payphone",
       "count": 1
     },
     {
@@ -147,12 +143,16 @@
     {
       "word": "hidden",
       "count": 1
+    },
+    {
+      "word": "film",
+      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'System76 on Age Verification Laws...' connects to Gaza resilience",
+      "hook": "How 'Workers who love 'synergizing paradigms' might be bad at the...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

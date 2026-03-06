@@ -1,7 +1,7 @@
 {
-  "last_run": "2026-03-06T07:54:58.418887+00:00",
-  "apis_ok": 17,
-  "apis_failed": 3,
+  "last_run": "2026-03-06T14:06:15.464175+00:00",
+  "apis_ok": 18,
+  "apis_failed": 2,
   "signals": [
     {
       "type": "trending_model",
@@ -46,36 +46,36 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41933
+      "stars": 41940
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40855
+      "stars": 40883
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29192
+      "stars": 29200
     },
     {
       "type": "trending_article",
       "title": "Share, Embed, and Curate Agent Sessions on DEV [Beta]",
-      "reactions": 51
+      "reactions": 54
     },
     {
       "type": "trending_article",
-      "title": "How Claude Skills Replaced Our Documentation",
-      "reactions": 24
+      "title": "How to Scale Claude Code with an MCP Gateway (Run Any LLM, Centralize Tools, Control Costs)",
+      "reactions": 28
     },
     {
       "type": "trending_article",
-      "title": "The Old Seniority Definition Is Collapsing",
-      "reactions": 18
+      "title": "From Black Box to Traceable Swarm: OpenTelemetry Patterns for AI Agents",
+      "reactions": 2
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2491607933014.4917
+      "value": 2436617458840.958
     }
   ],
   "opportunities": [
@@ -87,12 +87,12 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16553 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41933 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40855 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29192 stars) \u2014 build integration engine",
-    "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (51 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How Claude Skills Replaced Our Documentation' (24 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'The Old Seniority Definition Is Collapsing' (18 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41940 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40883 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29200 stars) \u2014 build integration engine",
+    "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (54 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (28 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'From Black Box to Traceable Swarm: OpenTelemetry Patterns fo' (2 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",
