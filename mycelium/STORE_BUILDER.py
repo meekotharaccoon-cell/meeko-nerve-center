@@ -11,6 +11,8 @@ Zero human input. Zero manual updates. Ever.
 
 The first line of store.html says: built by SolarPunk.
 Because it was. From inception.
+
+Fix: revenue_inbox.json can be a list — load_json now normalizes.
 """
 import json, os, re
 from pathlib import Path
@@ -21,14 +23,16 @@ DOCS  = Path("docs"); DOCS.mkdir(exist_ok=True)
 STATE = DATA / "store_builder_state.json"
 
 
-# ── helpers ─────────────────────────────────────────────────────────────────
-
 def ts():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 def load_json(path):
-    try: return json.loads(Path(path).read_text())
-    except: return {}
+    try:
+        data = json.loads(Path(path).read_text())
+        # revenue_inbox.json can be a list — normalize to dict
+        return data if isinstance(data, dict) else {}
+    except:
+        return {}
 
 def load_state():
     try: return json.loads(STATE.read_text())
@@ -36,7 +40,8 @@ def load_state():
 
 def categorize(name):
     n = name.lower()
-    if any(k in n for k in ["gaza", "rose", "dove", "olive", "tatreez", "coastline", "star of hope", "pomegranate", "night garden", "desert rose", "art print"]):
+    if any(k in n for k in ["gaza", "rose", "dove", "olive", "tatreez", "coastline",
+                              "star of hope", "pomegranate", "night garden", "desert rose", "art print"]):
         return "art"
     if any(k in n for k in ["notion", "template", "cold email", "freelance"]):
         return "templates"
@@ -46,102 +51,87 @@ def categorize(name):
 
 def price_float(raw):
     if isinstance(raw, (int, float)): return float(raw)
-    try: return float(str(raw).replace("$","").split("-")[0].strip())
+    try: return float(str(raw).replace("$", "").split("-")[0].strip())
     except: return 0.0
 
-
-# ── product ingestion ────────────────────────────────────────────────────────
 
 def gather_products():
     seen = set()
     buckets = {"art": [], "tools": [], "templates": [], "content": []}
 
-    # 1. Gumroad listings (primary source of truth)
     gf = DATA / "gumroad_listings.json"
     if gf.exists():
         d = load_json(gf)
         for p in d.get("products", []):
-            name = p.get("name","").strip()
+            name = p.get("name", "").strip()
             if not name or name in seen: continue
             seen.add(name)
-            price = price_float(p.get("price_cents", 100) / 100)
-            cat   = categorize(name)
+            price  = price_float(p.get("price_cents", 100) / 100)
+            cat    = categorize(name)
             gz_pct = 70 if cat == "art" else 15
             buckets[cat].append({
-                "name":    name,
-                "price":   price,
-                "desc":    (p.get("description","") or "")[:400],
-                "url":     p.get("landing_url") or "https://meekotharaccoon.gumroad.com",
-                "cat":     cat,
-                "gz_pct":  gz_pct,
-                "tag":     "ART PRINT" if cat == "art" else "DIGITAL",
+                "name": name, "price": price,
+                "desc": (p.get("description", "") or "")[:400],
+                "url":  p.get("landing_url") or "https://meekotharaccoon.gumroad.com",
+                "cat": cat, "gz_pct": gz_pct,
+                "tag": "ART PRINT" if cat == "art" else "DIGITAL",
             })
 
-    # 2. Business factory JSON files (auto-created by BUSINESS_FACTORY)
     for f in sorted(DATA.glob("business_*.json")):
         try:
             d = load_json(f)
             name = (d.get("name") or d.get("title") or "").strip()
             if not name or name in seen: continue
             seen.add(name)
-            price = price_float(d.get("price") or d.get("price_usd") or d.get("price_range","").split("-")[0] or 0)
+            price = price_float(d.get("price") or d.get("price_usd") or
+                                 d.get("price_range", "").split("-")[0] or 0)
             if price <= 0: continue
-            cat = categorize(name)
+            cat    = categorize(name)
             gz_pct = 70 if cat == "art" else 15
             buckets[cat].append({
-                "name":   name,
-                "price":  price,
-                "desc":   (d.get("description") or d.get("pitch") or "")[:400],
-                "url":    d.get("landing_url") or d.get("gumroad_url") or "https://meekotharaccoon.gumroad.com",
-                "cat":    cat,
-                "gz_pct": gz_pct,
-                "tag":    "DIGITAL",
+                "name": name, "price": price,
+                "desc": (d.get("description") or d.get("pitch") or "")[:400],
+                "url":  d.get("landing_url") or d.get("gumroad_url") or "https://meekotharaccoon.gumroad.com",
+                "cat": cat, "gz_pct": gz_pct, "tag": "DIGITAL",
             })
         except Exception as e:
             print(f"  warn: {f.name}: {e}")
 
-    # 3. Etsy SEO output (art prints)
     ef = DATA / "etsy_seo_output.json"
     if ef.exists():
         d = load_json(ef)
-        for listing in (d.get("listings") or d if isinstance(d, list) else []):
+        for listing in (d.get("listings") or (d if isinstance(d, list) else [])):
             if not isinstance(listing, dict): continue
             name = (listing.get("title") or listing.get("name") or "").strip()
             if not name or name in seen: continue
             seen.add(name)
             buckets["art"].append({
-                "name":   name,
-                "price":  price_float(listing.get("price", 1)),
-                "desc":   (listing.get("description") or listing.get("desc") or "")[:400],
-                "url":    "https://meekotharaccoon.gumroad.com",
-                "cat":    "art",
-                "gz_pct": 70,
-                "tag":    "ART PRINT",
+                "name": name, "price": price_float(listing.get("price", 1)),
+                "desc": (listing.get("description") or listing.get("desc") or "")[:400],
+                "url":  "https://meekotharaccoon.gumroad.com",
+                "cat": "art", "gz_pct": 70, "tag": "ART PRINT",
             })
 
     return buckets
 
 
-# ── card renderer ────────────────────────────────────────────────────────────
-
 def card_html(p):
     price = p["price"]
     gz    = price * p["gz_pct"] / 100
-    name  = p["name"].replace("<","&lt;").replace('"','&quot;')
-    desc  = (p["desc"] or "").replace("<","&lt;").replace(">","&gt;")[:350]
+    name  = p["name"].replace("<", "&lt;").replace('"', "&quot;")
+    desc  = (p["desc"] or "").replace("<", "&lt;").replace(">", "&gt;")[:350]
     url   = p["url"] or "https://meekotharaccoon.gumroad.com"
     tc    = "tag-art" if p["cat"] == "art" else "tag-tool"
-    gz_s  = f"{p['gz_pct']}% (${gz:.2f}) → PCRF"
     return f'''    <div class="card">
       <div class="card-eyebrow">DIGITAL DOWNLOAD · INSTANT ACCESS</div>
-      <div class="tags"><span class="tag {tc}">{p['tag']}</span></div>
+      <div class="tags"><span class="tag {tc}">{p["tag"]}</span></div>
       <div class="card-title">{name}</div>
       <div class="card-desc">{desc}</div>
       <div class="card-footer">
         <div><div class="price">${price:.2f}</div><span class="price-sub">instant download</span></div>
         <a href="{url}" target="_blank" class="btn">GET IT →</a>
       </div>
-      <div class="gaza-line">{gz_s}</div>
+      <div class="gaza-line">{p["gz_pct"]}% (${gz:.2f}) → PCRF</div>
     </div>'''
 
 
@@ -158,33 +148,30 @@ def section_html(title, sub, anchor, cards_html):
 </div>'''
 
 
-# ── full page builder ────────────────────────────────────────────────────────
-
 def build_page(buckets, state, revenue):
-    total     = sum(len(v) for v in buckets.values())
-    gaza_tot  = revenue.get("total_to_gaza", 0)
-    cycle     = state.get("cycles", 0)
-    now       = ts()
-
-    art_html  = "\n".join(card_html(p) for p in buckets["art"])
-    tool_html = "\n".join(card_html(p) for p in buckets["tools"])
-    tmpl_html = "\n".join(card_html(p) for p in buckets["templates"])
-    cont_html = "\n".join(card_html(p) for p in buckets["content"])
+    total    = sum(len(v) for v in buckets.values())
+    gaza_tot = revenue.get("total_to_gaza", 0)
+    cycle    = state.get("cycles", 0)
+    now      = ts()
 
     art_sec  = section_html("🎨 GAZA ROSE GALLERY — ART PRINTS",
-                             f"{len(buckets['art'])} prints · 70% to PCRF", "art", art_html)
+                             f"{len(buckets['art'])} prints · 70% to PCRF", "art",
+                             "\n".join(card_html(p) for p in buckets["art"]))
     tool_sec = section_html("🛠️ AI TOOLS — BUILT BY SOLARPUNK",
-                             f"{len(buckets['tools'])} products · 15% to Gaza", "tools", tool_html)
+                             f"{len(buckets['tools'])} products · 15% to Gaza", "tools",
+                             "\n".join(card_html(p) for p in buckets["tools"]))
     tmpl_sec = section_html("📄 TEMPLATES",
-                             f"{len(buckets['templates'])} packs · 15% to Gaza", "templates", tmpl_html)
+                             f"{len(buckets['templates'])} packs · 15% to Gaza", "templates",
+                             "\n".join(card_html(p) for p in buckets["templates"]))
     cont_sec = section_html("📣 CONTENT PACKS",
-                             f"{len(buckets['content'])} packs · 15% to Gaza", "content", cont_html)
+                             f"{len(buckets['content'])} packs · 15% to Gaza", "content",
+                             "\n".join(card_html(p) for p in buckets["content"]))
 
     nav_links = ""
-    if buckets["art"]:      nav_links += '<a href="#art">Art Prints</a>'
-    if buckets["tools"]:    nav_links += '<a href="#tools">AI Tools</a>'
-    if buckets["templates"]:nav_links += '<a href="#templates">Templates</a>'
-    if buckets["content"]:  nav_links += '<a href="#content">Content</a>'
+    if buckets["art"]:       nav_links += '<a href="#art">Art Prints</a>'
+    if buckets["tools"]:     nav_links += '<a href="#tools">AI Tools</a>'
+    if buckets["templates"]: nav_links += '<a href="#templates">Templates</a>'
+    if buckets["content"]:   nav_links += '<a href="#content">Content</a>'
     nav_links += '<a href="#support">Support</a><a href="links.html">All Links</a>'
 
     return f"""<!DOCTYPE html>
@@ -230,10 +217,10 @@ nav{{position:sticky;top:0;z-index:200;background:rgba(6,10,7,.94);backdrop-filt
 .section-title{{font-size:12px;letter-spacing:.22em;color:var(--green)}}
 .section-sub{{font-size:11px;color:var(--muted)}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(274px,1fr));gap:14px}}
-.card{{background:var(--bg2);border:1px solid var(--border);border-radius:13px;padding:22px;display:flex;flex-direction:column;transition:border-color .2s,transform .18s,box-shadow .2s;position:relative;overflow:hidden}}
+.card{{background:var(--bg2);border:1px solid var(--border);border-radius:13px;padding:22px;display:flex;flex-direction:column;transition:border-color .2s,transform .18s,box-shadow .2s}}
 .card:hover{{border-color:rgba(0,255,136,.36);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}}
 .card-eyebrow{{font-size:10px;letter-spacing:.18em;color:var(--muted);margin-bottom:9px}}
-.card-title{{font-size:14px;font-weight:700;color:var(--text);line-height:1.38;margin-bottom:11px;font-family:-apple-system,sans-serif;margin-top:8px}}
+.card-title{{font-size:14px;font-weight:700;color:var(--text);line-height:1.38;margin-bottom:11px;margin-top:8px;font-family:-apple-system,sans-serif}}
 .card-desc{{font-size:12px;color:var(--muted);line-height:1.65;flex:1;margin-bottom:18px;font-family:-apple-system,sans-serif;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}}
 .tags{{margin-bottom:8px;display:flex;flex-wrap:wrap;gap:5px}}
 .tag{{padding:2px 9px;border-radius:4px;font-size:10px;letter-spacing:.1em}}
@@ -313,24 +300,22 @@ footer{{position:relative;z-index:1;border-top:1px solid var(--border);padding:3
 </html>"""
 
 
-# ── main ────────────────────────────────────────────────────────────────────
-
 def run():
     print("STORE_BUILDER starting...")
-    state   = load_state()
+    state = load_state()
     state["cycles"] = state.get("cycles", 0) + 1
 
-    revenue = load_json(DATA / "revenue_inbox.json")
+    revenue = load_json(DATA / "revenue_inbox.json")  # list-safe
     buckets = gather_products()
     total   = sum(len(v) for v in buckets.values())
 
     html = build_page(buckets, state, revenue)
     (DOCS / "store.html").write_text(html, encoding="utf-8")
 
-    print(f"  ✅ store.html rebuilt — {total} products")
+    print(f"  store.html rebuilt -- {total} products")
     for cat, items in buckets.items():
         if items: print(f"     {cat}: {len(items)}")
-    print(f"  🌐 https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html")
+    print(f"  https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html")
 
     state["products_last"] = total
     state["last_run"]      = datetime.now(timezone.utc).isoformat()
