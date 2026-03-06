@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T21:26:37.236501+00:00",
+  "timestamp": "2026-03-06T21:55:33.661849+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Ada 2022",
         "url": "https://www.adaic.org/ada-resources/standards/ada22/",
-        "score": 55,
+        "score": 75,
         "source": "hackernews"
       },
       {
-        "title": "Why it takes you and an elephant the same amount of time to poop (2017)",
-        "url": "https://www.pbs.org/newshour/health/takes-elephant-amount-time-poop",
-        "score": 41,
-        "source": "hackernews"
-      },
-      {
-        "title": "Anthropic, Please Make a New Slack",
-        "url": "https://www.fivetran.com/blog/anthropic-please-make-a-new-slack",
-        "score": 60,
+        "title": "TSA leaves passenger needing surgery after illegally forcing her through scanner",
+        "url": "https://www.thetravel.com/tsa-leaves-passenger-needing-surgery-after-illegally-forcing-her-through-scanner-spinal-cord-implant/",
+        "score": 97,
         "source": "hackernews"
       },
       {
         "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
         "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-        "score": 462,
+        "score": 499,
         "source": "hackernews"
       },
       {
         "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
         "url": "https://github.com/moongate-community/moongatev2",
-        "score": 189,
+        "score": 199,
+        "source": "hackernews"
+      },
+      {
+        "title": "Hardening Firefox with Anthropic's Red Team",
+        "url": "https://www.anthropic.com/news/mozilla-firefox-security",
+        "score": 380,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 12.8,
+    "temp_c": 11.4,
     "vibe": "partly cloudy",
     "code": 2,
     "location": "Gaza City"
@@ -73,47 +73,39 @@
       "count": 1
     },
     {
-      "word": "takes",
+      "word": "leaves",
       "count": 1
     },
     {
-      "word": "elephant",
+      "word": "passenger",
       "count": 1
     },
     {
-      "word": "same",
+      "word": "needing",
       "count": 1
     },
     {
-      "word": "amount",
+      "word": "surgery",
       "count": 1
     },
     {
-      "word": "time",
+      "word": "after",
       "count": 1
     },
     {
-      "word": "poop",
+      "word": "illegally",
       "count": 1
     },
     {
-      "word": "2017",
+      "word": "forcing",
       "count": 1
     },
     {
-      "word": "anthropic",
+      "word": "through",
       "count": 1
     },
     {
-      "word": "please",
-      "count": 1
-    },
-    {
-      "word": "make",
-      "count": 1
-    },
-    {
-      "word": "slack",
+      "word": "scanner",
       "count": 1
     },
     {
@@ -146,6 +138,14 @@
     },
     {
       "word": "recessions",
+      "count": 1
+    },
+    {
+      "word": "show",
+      "count": 1
+    },
+    {
+      "word": "moongate",
       "count": 1
     }
   ],
