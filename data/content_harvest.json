@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T19:48:46.874760+00:00",
+  "timestamp": "2026-03-06T21:25:08.524747+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
-        "url": "https://github.com/moongate-community/moongatev2",
-        "score": 173,
+        "title": "Ada 2022",
+        "url": "https://www.adaic.org/ada-resources/standards/ada22/",
+        "score": 54,
+        "source": "hackernews"
+      },
+      {
+        "title": "Why it takes you and an elephant the same amount of time to poop (2017)",
+        "url": "https://www.pbs.org/newshour/health/takes-elephant-amount-time-poop",
+        "score": 41,
+        "source": "hackernews"
+      },
+      {
+        "title": "Anthropic, Please Make a New Slack",
+        "url": "https://www.fivetran.com/blog/anthropic-please-make-a-new-slack",
+        "score": 54,
         "source": "hackernews"
       },
       {
         "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
         "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-        "score": 229,
+        "score": 457,
         "source": "hackernews"
       },
       {
-        "title": "Open Camera is a FOSS Camera App for Android",
-        "url": "https://opencamera.org.uk/",
-        "score": 142,
-        "source": "hackernews"
-      },
-      {
-        "title": "CT Scans of Health Wearables",
-        "url": "https://www.lumafield.com/scan-of-the-month/health-wearables",
-        "score": 133,
-        "source": "hackernews"
-      },
-      {
-        "title": "Payphone Go",
-        "url": "https://walzr.com/payphone-go/",
-        "score": 220,
+        "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
+        "url": "https://github.com/moongate-community/moongatev2",
+        "score": 189,
         "source": "hackernews"
       }
     ],
@@ -54,58 +54,66 @@
         "source": "devto"
       },
       {
-        "title": "Supercharging Open Source Projects With Free AI Code Reviews",
-        "url": "https://dev.to/googleai/supercharging-open-source-projects-with-free-ai-code-reviews-l2m",
-        "hearts": 23,
+        "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
+        "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
+        "hearts": 5,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.4,
+    "temp_c": 12.8,
     "vibe": "partly cloudy",
-    "code": 3,
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "open",
-      "count": 2
-    },
-    {
-      "word": "camera",
-      "count": 2
-    },
-    {
-      "word": "code",
-      "count": 2
-    },
-    {
-      "word": "show",
+      "word": "2022",
       "count": 1
     },
     {
-      "word": "moongate",
+      "word": "takes",
       "count": 1
     },
     {
-      "word": "ultima",
+      "word": "elephant",
       "count": 1
     },
     {
-      "word": "online",
+      "word": "same",
       "count": 1
     },
     {
-      "word": "server",
+      "word": "amount",
       "count": 1
     },
     {
-      "word": "emulator",
+      "word": "time",
       "count": 1
     },
     {
-      "word": "scripting",
+      "word": "poop",
+      "count": 1
+    },
+    {
+      "word": "2017",
+      "count": 1
+    },
+    {
+      "word": "anthropic",
+      "count": 1
+    },
+    {
+      "word": "please",
+      "count": 1
+    },
+    {
+      "word": "make",
+      "count": 1
+    },
+    {
+      "word": "slack",
       "count": 1
     },
     {
@@ -139,20 +147,12 @@
     {
       "word": "recessions",
       "count": 1
-    },
-    {
-      "word": "foss",
-      "count": 1
-    },
-    {
-      "word": "android",
-      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10...' connects to Gaza resilience",
+      "hook": "How 'Ada 2022...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

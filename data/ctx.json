@@ -1,6 +1,6 @@
 {
-  "run_id": "22779382464",
-  "ts": "2026-03-06T19:49:15.568872+00:00",
+  "run_id": "22782578024",
+  "ts": "2026-03-06T21:25:41.228920+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -37,7 +37,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-06T19:49:09.735953+00:00",
+        "timestamp": "2026-03-06T21:25:33.636634+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -47,9 +47,9 @@
         "loop_cycles_count": 0,
         "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "open",
-          "camera",
-          "code"
+          "2022",
+          "takes",
+          "elephant"
         ]
       }
     ],
@@ -62,9 +62,9 @@
     },
     "total_cycles": 3,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-06T19:49:09.735953+00:00",
+    "last_updated": "2026-03-06T21:25:33.636634+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-06T19:49:09.735953+00:00",
+      "timestamp": "2026-03-06T21:25:33.636634+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -74,15 +74,15 @@
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "open",
-        "camera",
-        "code"
+        "2022",
+        "takes",
+        "elephant"
       ]
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-06T19:48:41.780420+00:00",
-    "cycle_number": 7,
+    "generated": "2026-03-06T21:25:02.389802+00:00",
+    "cycle_number": 8,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
@@ -104,7 +104,7 @@
         "id": "BN-001",
         "title": "Gmail 534 error -- App Password wrong or expired",
         "severity": "HIGH",
-        "cycles_open": 6,
+        "cycles_open": 7,
         "escalation": "URGENT"
       }
     ],
@@ -117,7 +117,7 @@
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 7 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 8 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -364,9 +364,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-06T19:48:58.995508+00:00"
+      "timestamp": "2026-03-06T21:25:20.775785+00:00"
     },
-    "generated_at": "2026-03-06T19:48:59.250265+00:00"
+    "generated_at": "2026-03-06T21:25:21.117602+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -415,10 +415,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-06T19:48:59.426691+00:00"
+    "generated_at": "2026-03-06T21:25:21.322932+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-06T19:49:01.307688+00:00",
+    "ts": "2026-03-06T21:25:23.431561+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -428,14 +428,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 37,
+          "cycles": 38,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-06T19:39:45.457148+00:00"
+          "last_run": "2026-03-06T19:49:06.002785+00:00"
         }
       },
       "grants": {
@@ -444,11 +444,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 37,
+          "cycles": 38,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-06T19:39:43.231376+00:00"
+          "last_run": "2026-03-06T19:49:04.182414+00:00"
         }
       },
       "sponsors": {
@@ -457,11 +457,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 37,
+          "cycles": 38,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-06T19:39:45.718314+00:00"
+          "last_run": "2026-03-06T19:49:06.269164+00:00"
         }
       },
       "exchange": {
@@ -470,14 +470,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 37,
+          "cycles": 38,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-06T19:39:43.114624+00:00"
+          "last_run": "2026-03-06T19:49:04.070351+00:00"
         }
       },
       "substack": {
@@ -486,11 +486,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 37,
+          "cycles": 38,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-06T19:39:43.670451+00:00"
+          "last_run": "2026-03-06T19:49:04.584863+00:00"
         }
       },
       "gumroad": {
@@ -503,37 +503,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-06T19:48:46.874760+00:00",
+    "timestamp": "2026-03-06T21:25:08.524747+00:00",
     "sources": {
       "hackernews": [
         {
-          "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
-          "url": "https://github.com/moongate-community/moongatev2",
-          "score": 173,
+          "title": "Ada 2022",
+          "url": "https://www.adaic.org/ada-resources/standards/ada22/",
+          "score": 54,
+          "source": "hackernews"
+        },
+        {
+          "title": "Why it takes you and an elephant the same amount of time to poop (2017)",
+          "url": "https://www.pbs.org/newshour/health/takes-elephant-amount-time-poop",
+          "score": 41,
+          "source": "hackernews"
+        },
+        {
+          "title": "Anthropic, Please Make a New Slack",
+          "url": "https://www.fivetran.com/blog/anthropic-please-make-a-new-slack",
+          "score": 54,
           "source": "hackernews"
         },
         {
           "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
           "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-          "score": 229,
+          "score": 457,
           "source": "hackernews"
         },
         {
-          "title": "Open Camera is a FOSS Camera App for Android",
-          "url": "https://opencamera.org.uk/",
-          "score": 142,
-          "source": "hackernews"
-        },
-        {
-          "title": "CT Scans of Health Wearables",
-          "url": "https://www.lumafield.com/scan-of-the-month/health-wearables",
-          "score": 133,
-          "source": "hackernews"
-        },
-        {
-          "title": "Payphone Go",
-          "url": "https://walzr.com/payphone-go/",
-          "score": 220,
+          "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
+          "url": "https://github.com/moongate-community/moongatev2",
+          "score": 189,
           "source": "hackernews"
         }
       ],
@@ -558,58 +558,66 @@
           "source": "devto"
         },
         {
-          "title": "Supercharging Open Source Projects With Free AI Code Reviews",
-          "url": "https://dev.to/googleai/supercharging-open-source-projects-with-free-ai-code-reviews-l2m",
-          "hearts": 23,
+          "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
+          "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
+          "hearts": 5,
           "source": "devto"
         }
       ]
     },
     "gaza_weather": {
-      "temp_c": 13.4,
+      "temp_c": 12.8,
       "vibe": "partly cloudy",
-      "code": 3,
+      "code": 2,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "open",
-        "count": 2
-      },
-      {
-        "word": "camera",
-        "count": 2
-      },
-      {
-        "word": "code",
-        "count": 2
-      },
-      {
-        "word": "show",
+        "word": "2022",
         "count": 1
       },
       {
-        "word": "moongate",
+        "word": "takes",
         "count": 1
       },
       {
-        "word": "ultima",
+        "word": "elephant",
         "count": 1
       },
       {
-        "word": "online",
+        "word": "same",
         "count": 1
       },
       {
-        "word": "server",
+        "word": "amount",
         "count": 1
       },
       {
-        "word": "emulator",
+        "word": "time",
         "count": 1
       },
       {
-        "word": "scripting",
+        "word": "poop",
+        "count": 1
+      },
+      {
+        "word": "2017",
+        "count": 1
+      },
+      {
+        "word": "anthropic",
+        "count": 1
+      },
+      {
+        "word": "please",
+        "count": 1
+      },
+      {
+        "word": "make",
+        "count": 1
+      },
+      {
+        "word": "slack",
         "count": 1
       },
       {
@@ -643,20 +651,12 @@
       {
         "word": "recessions",
         "count": 1
-      },
-      {
-        "word": "foss",
-        "count": 1
-      },
-      {
-        "word": "android",
-        "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10...' connects to Gaza resilience",
+        "hook": "How 'Ada 2022...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -678,7 +678,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-06T19:48:54.999798+00:00",
+    "last_run": "2026-03-06T21:25:16.407197+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -710,7 +710,7 @@
       {
         "type": "trending_space",
         "name": "enzostvs/deepsite",
-        "likes": 16554
+        "likes": 16555
       },
       {
         "type": "trending_space",
@@ -730,7 +730,7 @@
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 40894
+        "stars": 40895
       },
       {
         "type": "github_ai_repo",
@@ -744,17 +744,17 @@
       },
       {
         "type": "trending_article",
-        "title": "Supercharging Open Source Projects With Free AI Code Reviews",
-        "reactions": 23
-      },
-      {
-        "type": "trending_article",
         "title": "I Built a Pixel Art Village Where AI Characters Have Real Emotions",
         "reactions": 28
       },
       {
+        "type": "trending_article",
+        "title": "How to Scale Claude Code with an MCP Gateway (Run Any LLM, Centralize Tools, Control Costs)",
+        "reactions": 31
+      },
+      {
         "type": "crypto_market_cap_usd",
-        "value": 2407413604469.48
+        "value": 2406025464115.011
       }
     ],
     "opportunities": [
@@ -763,15 +763,15 @@
       "Guide/tutorial product: 'google/electra-base-discriminator' (48,194,492 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,437,569 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,556,129 downloads) \u2014 build how-to guide",
-      "Clone/extend HF space: 'enzostvs/deepsite' (16554 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'enzostvs/deepsite' (16555 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
       "Engine wrapper: zhayujie/chatgpt-on-wechat (41945 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (40894 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (40895 stars) \u2014 build integration engine",
       "Engine wrapper: CopilotKit/CopilotKit (29206 stars) \u2014 build integration engine",
       "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (58 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'Supercharging Open Source Projects With Free AI Code Reviews' (23 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'I Built a Pixel Art Village Where AI Characters Have Real Em' (28 reactions) \u2014 create SolarPunk angle"
+      "Content leverage: 'I Built a Pixel Art Village Where AI Characters Have Real Em' (28 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (31 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1010,7 +1010,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-06T19:49:02.865978+00:00",
+    "started_at": "2026-03-06T21:25:25.315347+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1027,7 +1027,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-06T19:49:03.445340+00:00",
+        "queued_at": "2026-03-06T21:25:25.938653+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1035,7 +1035,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-06T19:49:03.445340+00:00",
+        "queued_at": "2026-03-06T21:25:25.938653+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1043,28 +1043,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-06T19:49:03.445340+00:00",
+        "queued_at": "2026-03-06T21:25:25.938653+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-06T19:49:03.841034+00:00",
-    "elapsed_seconds": 0,
+    "completed_at": "2026-03-06T21:25:26.658684+00:00",
+    "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 38,
+    "cycles": 39,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-06T19:49:04.070351+00:00"
+    "last_run": "2026-03-06T21:25:26.888324+00:00"
   },
   "biz_factory": {
-    "cycles": 38,
+    "cycles": 39,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1331,16 +1331,25 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-06T19:49:02.210942+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-06T21:25:24.298693+00:00"
       }
     ],
-    "total_revenue_potential": 24720,
-    "last_run": "2026-03-06T19:49:01.687687+00:00"
+    "total_revenue_potential": 25460,
+    "last_run": "2026-03-06T21:25:23.690134+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-06T19:48:43.006314+00:00",
-    "configured": 10,
+    "last_check": "2026-03-06T21:25:03.778977+00:00",
+    "configured": 4,
     "total": 16,
-    "critical_missing": [],
+    "critical_missing": [
+      "GUMROAD_SECRET"
+    ],
     "secrets": {
       "ANTHROPIC_API_KEY": {
         "present": true,
@@ -1353,17 +1362,17 @@
         "impact": "low"
       },
       "GUMROAD_SECRET": {
-        "present": true,
+        "present": false,
         "required": true,
         "impact": "critical"
       },
       "GUMROAD_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
       "GUMROAD_NAME": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "low"
       },
@@ -1378,7 +1387,7 @@
         "impact": "medium"
       },
       "X_API_KEY": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "high"
       },
@@ -1408,12 +1417,12 @@
         "impact": "high"
       },
       "PAYPAL_CLIENT_ID": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
       "PAYPAL_CLIENT_SECRET": {
-        "present": true,
+        "present": false,
         "required": false,
         "impact": "medium"
       },
@@ -1425,12 +1434,12 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-06T19:48:43.034635+00:00",
+    "generated": "2026-03-06T21:25:03.807300+00:00",
     "summary": {
-      "total_bottlenecks": 1,
-      "critical": 0,
-      "high": 1,
-      "secrets_ok": 10,
+      "total_bottlenecks": 3,
+      "critical": 1,
+      "high": 2,
+      "secrets_ok": 4,
       "secrets_total": 18,
       "engines_ok": 76,
       "engines_total": 76,
@@ -1442,12 +1451,30 @@
     "bottlenecks": [
       {
         "id": "BN-001",
+        "severity": "CRITICAL",
+        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
+        "description": "GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.",
+        "fix": "gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET",
+        "revenue_impact": "$10/sale blocked",
+        "status": "PENDING"
+      },
+      {
+        "id": "BN-002",
         "severity": "HIGH",
         "title": "Gmail 534 error -- App Password wrong or expired",
         "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
         "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
         "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
         "status": "BROKEN"
+      },
+      {
+        "id": "BN-003",
+        "severity": "HIGH",
+        "title": "Twitter/X keys missing -- 100+ posts in queue",
+        "description": "SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.",
+        "fix": "developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets",
+        "revenue_impact": "Zero Twitter distribution",
+        "status": "PENDING"
       }
     ],
     "secrets": [
@@ -1464,8 +1491,8 @@
       },
       {
         "name": "GUMROAD_SECRET",
-        "present": true,
-        "length": 43,
+        "present": false,
+        "length": 0,
         "impact": "CRITICAL",
         "unlocks": [
           "10 queued products publishing"
@@ -1492,8 +1519,8 @@
       },
       {
         "name": "X_API_KEY",
-        "present": true,
-        "length": 64,
+        "present": false,
+        "length": 0,
         "impact": "HIGH",
         "unlocks": [
           "100+ queued tweets posting"
@@ -1546,8 +1573,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_ID",
-        "present": true,
-        "length": 80,
+        "present": false,
+        "length": 0,
         "impact": "MEDIUM",
         "unlocks": [
           "automated payouts"
@@ -1555,8 +1582,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_SECRET",
-        "present": true,
-        "length": 80,
+        "present": false,
+        "length": 0,
         "impact": "MEDIUM",
         "unlocks": [
           "PayPal API auth"
@@ -1573,8 +1600,8 @@
       },
       {
         "name": "GUMROAD_ID",
-        "present": true,
-        "length": 43,
+        "present": false,
+        "length": 0,
         "impact": "LOW",
         "unlocks": [
           "Gumroad analytics"
@@ -1582,8 +1609,8 @@
       },
       {
         "name": "GUMROAD_NAME",
-        "present": true,
-        "length": 11,
+        "present": false,
+        "length": 0,
         "impact": "LOW",
         "unlocks": [
           "Gumroad display name"
@@ -1619,7 +1646,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-06T19:49:08.043434+00:00",
+    "generated_at": "2026-03-06T21:25:31.546306+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1705,9 +1732,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 38,
+      "businesses_built": 39,
       "engines_built": 0,
-      "revenue_potential": 24720,
+      "revenue_potential": 25460,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1776,16 +1803,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 19,
-    "last_run": "2026-03-06T19:49:08.894522+00:00",
+    "cycles": 20,
+    "last_run": "2026-03-06T21:25:32.612746+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 19,
+    "cycles": 20,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-06T19:49:09.510742+00:00"
+    "last_run": "2026-03-06T21:25:33.347141+00:00"
   },
   "revenue_inbox": [
     {
@@ -1811,9 +1838,9 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-06T19:48:46.130671+00:00",
-    "active": 6,
-    "blocked": 2,
+    "scanned_at": "2026-03-06T21:25:07.104999+00:00",
+    "active": 5,
+    "blocked": 3,
     "degraded": 1,
     "capabilities": {
       "anthropic_api": {
@@ -1847,7 +1874,7 @@
       },
       "twitter": {
         "name": "Twitter/X (auto-post)",
-        "status": "active",
+        "status": "blocked",
         "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
         "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
         "blocks": [
@@ -1897,10 +1924,10 @@
     },
     "priority_fix": "GUMROAD_ACCESS_TOKEN",
     "best_channel_now": "gmail \u2014 works today, no new keys needed",
-    "summary": "6 active / 2 blocked / 1 degraded"
+    "summary": "5 active / 3 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 9,
+    "cycles": 10,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2067,7 +2094,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-06T19:48:55.064287+00:00",
+    "generated_at": "2026-03-06T21:25:16.471414+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2104,7 +2131,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-06T19:49:01.581095+00:00",
+    "generated_at": "2026-03-06T21:25:23.582456+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
