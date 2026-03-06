@@ -1,6 +1,6 @@
 {
-  "run_id": "22779056404",
-  "ts": "2026-03-06T19:39:57.634308+00:00",
+  "run_id": "22779382464",
+  "ts": "2026-03-06T19:49:15.568872+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -37,7 +37,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-06T19:39:49.829777+00:00",
+        "timestamp": "2026-03-06T19:49:09.735953+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -62,9 +62,9 @@
     },
     "total_cycles": 3,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-06T19:39:49.829777+00:00",
+    "last_updated": "2026-03-06T19:49:09.735953+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-06T19:39:49.829777+00:00",
+      "timestamp": "2026-03-06T19:49:09.735953+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -81,21 +81,18 @@
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-06T19:39:14.203135+00:00",
-    "cycle_number": 6,
+    "generated": "2026-03-06T19:48:41.780420+00:00",
+    "cycle_number": 7,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
       "first_cycle": false,
       "wins": [],
-      "regressions": [
-        "BRIEFING_ENGINE"
-      ],
-      "new_failures": [
-        "BRIEFING_ENGINE"
-      ],
+      "regressions": [],
+      "new_failures": [],
       "still_failing": [
-        "BRAND_LEGAL"
+        "BRAND_LEGAL",
+        "BRIEFING_ENGINE"
       ],
       "revenue_delta": 0,
       "health_delta": 0,
@@ -105,23 +102,22 @@
     "persistent": [
       {
         "id": "BN-001",
-        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-        "severity": "CRITICAL",
-        "cycles_open": 5,
+        "title": "Gmail 534 error -- App Password wrong or expired",
+        "severity": "HIGH",
+        "cycles_open": 6,
         "escalation": "URGENT"
       }
     ],
     "still_failing": [
-      "BRAND_LEGAL"
-    ],
-    "new_fixes": [],
-    "new_regressions": [
+      "BRAND_LEGAL",
       "BRIEFING_ENGINE"
     ],
+    "new_fixes": [],
+    "new_regressions": [],
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 6 | Health: 40 (stuck) | Fixed: 0 | Regressed: 1 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 7 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -368,9 +364,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-06T19:39:31.717000+00:00"
+      "timestamp": "2026-03-06T19:48:58.995508+00:00"
     },
-    "generated_at": "2026-03-06T19:39:32.101875+00:00"
+    "generated_at": "2026-03-06T19:48:59.250265+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -419,10 +415,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-06T19:39:32.315744+00:00"
+    "generated_at": "2026-03-06T19:48:59.426691+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-06T19:39:34.394866+00:00",
+    "ts": "2026-03-06T19:49:01.307688+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -432,14 +428,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 36,
+          "cycles": 37,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-06T19:38:35.091225+00:00"
+          "last_run": "2026-03-06T19:39:45.457148+00:00"
         }
       },
       "grants": {
@@ -448,11 +444,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 36,
+          "cycles": 37,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-06T19:38:33.018987+00:00"
+          "last_run": "2026-03-06T19:39:43.231376+00:00"
         }
       },
       "sponsors": {
@@ -461,11 +457,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 36,
+          "cycles": 37,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-06T19:38:35.254140+00:00"
+          "last_run": "2026-03-06T19:39:45.718314+00:00"
         }
       },
       "exchange": {
@@ -474,14 +470,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 36,
+          "cycles": 37,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-06T19:38:32.896604+00:00"
+          "last_run": "2026-03-06T19:39:43.114624+00:00"
         }
       },
       "substack": {
@@ -490,11 +486,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 36,
+          "cycles": 37,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-06T19:38:33.450000+00:00"
+          "last_run": "2026-03-06T19:39:43.670451+00:00"
         }
       },
       "gumroad": {
@@ -507,37 +503,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-06T19:39:19.983085+00:00",
+    "timestamp": "2026-03-06T19:48:46.874760+00:00",
     "sources": {
       "hackernews": [
         {
           "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
           "url": "https://github.com/moongate-community/moongatev2",
-          "score": 170,
+          "score": 173,
           "source": "hackernews"
         },
         {
           "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
           "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-          "score": 202,
+          "score": 229,
           "source": "hackernews"
         },
         {
           "title": "Open Camera is a FOSS Camera App for Android",
           "url": "https://opencamera.org.uk/",
-          "score": 138,
+          "score": 142,
           "source": "hackernews"
         },
         {
           "title": "CT Scans of Health Wearables",
           "url": "https://www.lumafield.com/scan-of-the-month/health-wearables",
-          "score": 132,
+          "score": 133,
           "source": "hackernews"
         },
         {
           "title": "Payphone Go",
           "url": "https://walzr.com/payphone-go/",
-          "score": 216,
+          "score": 220,
           "source": "hackernews"
         }
       ],
@@ -682,7 +678,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-06T19:39:27.568497+00:00",
+    "last_run": "2026-03-06T19:48:54.999798+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -758,7 +754,7 @@
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2409323736669.173
+        "value": 2407413604469.48
       }
     ],
     "opportunities": [
@@ -1014,7 +1010,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-06T19:39:41.495291+00:00",
+    "started_at": "2026-03-06T19:49:02.865978+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1031,7 +1027,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-06T19:39:42.139096+00:00",
+        "queued_at": "2026-03-06T19:49:03.445340+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1039,7 +1035,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-06T19:39:42.139096+00:00",
+        "queued_at": "2026-03-06T19:49:03.445340+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1047,28 +1043,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-06T19:39:42.139096+00:00",
+        "queued_at": "2026-03-06T19:49:03.445340+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-06T19:39:42.878650+00:00",
-    "elapsed_seconds": 1,
+    "completed_at": "2026-03-06T19:49:03.841034+00:00",
+    "elapsed_seconds": 0,
     "success": true
   },
   "exchange": {
-    "cycles": 37,
+    "cycles": 38,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-06T19:39:43.114624+00:00"
+    "last_run": "2026-03-06T19:49:04.070351+00:00"
   },
   "biz_factory": {
-    "cycles": 37,
+    "cycles": 38,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1328,13 +1324,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-06T19:39:35.419763+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-06T19:49:02.210942+00:00"
       }
     ],
-    "total_revenue_potential": 23980,
-    "last_run": "2026-03-06T19:39:34.856569+00:00"
+    "total_revenue_potential": 24720,
+    "last_run": "2026-03-06T19:49:01.687687+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-06T19:39:15.716381+00:00",
+    "last_check": "2026-03-06T19:48:43.006314+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -1422,7 +1425,7 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-06T19:39:15.747077+00:00",
+    "generated": "2026-03-06T19:48:43.034635+00:00",
     "summary": {
       "total_bottlenecks": 1,
       "critical": 0,
@@ -1616,7 +1619,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-06T19:39:47.836658+00:00",
+    "generated_at": "2026-03-06T19:49:08.043434+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1702,9 +1705,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 37,
+      "businesses_built": 38,
       "engines_built": 0,
-      "revenue_potential": 23980,
+      "revenue_potential": 24720,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1773,16 +1776,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 18,
-    "last_run": "2026-03-06T19:39:48.895493+00:00",
+    "cycles": 19,
+    "last_run": "2026-03-06T19:49:08.894522+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 18,
+    "cycles": 19,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-06T19:39:49.574424+00:00"
+    "last_run": "2026-03-06T19:49:09.510742+00:00"
   },
   "revenue_inbox": [
     {
@@ -1808,7 +1811,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-06T19:39:19.099796+00:00",
+    "scanned_at": "2026-03-06T19:48:46.130671+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -1897,7 +1900,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 8,
+    "cycles": 9,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2064,7 +2067,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-06T19:39:27.633121+00:00",
+    "generated_at": "2026-03-06T19:48:55.064287+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2101,7 +2104,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-06T19:39:34.746323+00:00",
+    "generated_at": "2026-03-06T19:49:01.581095+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [

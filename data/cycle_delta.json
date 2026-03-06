@@ -1,19 +1,16 @@
 {
-  "generated": "2026-03-06T19:39:14.203135+00:00",
-  "cycle_number": 6,
+  "generated": "2026-03-06T19:48:41.780420+00:00",
+  "cycle_number": 7,
   "health": 40,
   "health_trend": "stuck",
   "delta": {
     "first_cycle": false,
     "wins": [],
-    "regressions": [
-      "BRIEFING_ENGINE"
-    ],
-    "new_failures": [
-      "BRIEFING_ENGINE"
-    ],
+    "regressions": [],
+    "new_failures": [],
     "still_failing": [
-      "BRAND_LEGAL"
+      "BRAND_LEGAL",
+      "BRIEFING_ENGINE"
     ],
     "revenue_delta": 0,
     "health_delta": 0,
@@ -23,21 +20,20 @@
   "persistent": [
     {
       "id": "BN-001",
-      "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-      "severity": "CRITICAL",
-      "cycles_open": 5,
+      "title": "Gmail 534 error -- App Password wrong or expired",
+      "severity": "HIGH",
+      "cycles_open": 6,
       "escalation": "URGENT"
     }
   ],
   "still_failing": [
-    "BRAND_LEGAL"
-  ],
-  "new_fixes": [],
-  "new_regressions": [
+    "BRAND_LEGAL",
     "BRIEFING_ENGINE"
   ],
+  "new_fixes": [],
+  "new_regressions": [],
   "revenue": 0,
   "revenue_delta": 0,
   "resonance": 30,
-  "summary": "Cycle 6 | Health: 40 (stuck) | Fixed: 0 | Regressed: 1 | Persistent blockers: 1 | Revenue: $0.00"
+  "summary": "Cycle 7 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
 }
