@@ -78,5 +78,18 @@
     "failed_engines_seen": [
       "BRAND_LEGAL"
     ]
+  },
+  {
+    "timestamp": "2026-03-06T19:39:19.058900+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "BRIEFING_ENGINE",
+      "BRAND_LEGAL"
+    ],
+    "failed_engines_seen": [
+      "BRIEFING_ENGINE",
+      "BRAND_LEGAL"
+    ]
   }
 ]
