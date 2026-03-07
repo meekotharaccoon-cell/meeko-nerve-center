@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-06T21:55:43.762085+00:00",
+  "last_run": "2026-03-07T04:26:09.130675+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,7 +31,7 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16555
+      "likes": 16557
     },
     {
       "type": "trending_space",
@@ -46,22 +46,27 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41945
+      "stars": 41951
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40895
+      "stars": 40909
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29206
+      "stars": 29208
     },
     {
       "type": "trending_article",
-      "title": "Share, Embed, and Curate Agent Sessions on DEV [Beta]",
-      "reactions": 58
+      "title": "How to Scale Claude Code with an MCP Gateway (Run Any LLM, Centralize Tools, Control Costs)",
+      "reactions": 39
+    },
+    {
+      "type": "trending_article",
+      "title": "Ship Less, Measure More",
+      "reactions": 4
     },
     {
       "type": "trending_article",
@@ -69,13 +74,8 @@
       "reactions": 28
     },
     {
-      "type": "trending_article",
-      "title": "How to Scale Claude Code with an MCP Gateway (Run Any LLM, Centralize Tools, Control Costs)",
-      "reactions": 31
-    },
-    {
       "type": "crypto_market_cap_usd",
-      "value": 2407053577776.7173
+      "value": 2399653830402.4795
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (48,194,492 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,437,569 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,556,129 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16555 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'enzostvs/deepsite' (16557 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41945 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40895 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29206 stars) \u2014 build integration engine",
-    "Content leverage: 'Share, Embed, and Curate Agent Sessions on DEV [Beta]' (58 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Built a Pixel Art Village Where AI Characters Have Real Em' (28 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (31 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41951 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40909 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29208 stars) \u2014 build integration engine",
+    "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (39 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Ship Less, Measure More' (4 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Built a Pixel Art Village Where AI Characters Have Real Em' (28 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

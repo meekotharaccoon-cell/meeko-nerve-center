@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-06T21:55:33.661849+00:00",
+  "timestamp": "2026-03-07T04:26:00.633198+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Ada 2022",
-        "url": "https://www.adaic.org/ada-resources/standards/ada22/",
-        "score": 75,
+        "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
+        "url": "https://plasma-bigscreen.org",
+        "score": 231,
         "source": "hackernews"
       },
       {
-        "title": "TSA leaves passenger needing surgery after illegally forcing her through scanner",
-        "url": "https://www.thetravel.com/tsa-leaves-passenger-needing-surgery-after-illegally-forcing-her-through-scanner-spinal-cord-implant/",
-        "score": 97,
+        "title": "UUID package coming to Go standard library",
+        "url": "https://github.com/golang/go/issues/62026",
+        "score": 56,
         "source": "hackernews"
       },
       {
-        "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
-        "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-        "score": 499,
+        "title": "this css proves me human",
+        "url": "https://will-keleher.com/posts/this-css-makes-me-human/",
+        "score": 189,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
-        "url": "https://github.com/moongate-community/moongatev2",
-        "score": 199,
+        "title": "Can a wealthy family change the course of a deadly brain disease?",
+        "url": "https://www.science.org/content/article/can-wealthy-family-change-course-deadly-brain-disease",
+        "score": 16,
         "source": "hackernews"
       },
       {
-        "title": "Hardening Firefox with Anthropic's Red Team",
-        "url": "https://www.anthropic.com/news/mozilla-firefox-security",
-        "score": 380,
+        "title": "LLMs work best when the user defines their acceptance criteria first",
+        "url": "https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code",
+        "score": 104,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.4,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 8.2,
+    "vibe": "sunny",
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "2022",
+      "word": "plasma",
+      "count": 2
+    },
+    {
+      "word": "bigscreen",
       "count": 1
     },
     {
-      "word": "leaves",
+      "word": "foot",
       "count": 1
     },
     {
-      "word": "passenger",
+      "word": "interface",
       "count": 1
     },
     {
-      "word": "needing",
+      "word": "uuid",
       "count": 1
     },
     {
-      "word": "surgery",
+      "word": "package",
       "count": 1
     },
     {
-      "word": "after",
+      "word": "coming",
       "count": 1
     },
     {
-      "word": "illegally",
+      "word": "standard",
       "count": 1
     },
     {
-      "word": "forcing",
+      "word": "library",
       "count": 1
     },
     {
-      "word": "through",
+      "word": "proves",
       "count": 1
     },
     {
-      "word": "scanner",
+      "word": "human",
       "count": 1
     },
     {
-      "word": "tech",
+      "word": "wealthy",
       "count": 1
     },
     {
-      "word": "employment",
+      "word": "family",
       "count": 1
     },
     {
-      "word": "significantly",
+      "word": "change",
       "count": 1
     },
     {
-      "word": "worse",
+      "word": "course",
       "count": 1
     },
     {
-      "word": "than",
+      "word": "deadly",
       "count": 1
     },
     {
-      "word": "2008",
+      "word": "brain",
       "count": 1
     },
     {
-      "word": "2020",
+      "word": "disease",
       "count": 1
     },
     {
-      "word": "recessions",
+      "word": "llms",
       "count": 1
     },
     {
-      "word": "show",
-      "count": 1
-    },
-    {
-      "word": "moongate",
+      "word": "work",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Ada 2022...' connects to Gaza resilience",
+      "hook": "How 'Plasma Bigscreen \u2013 10-foot interface for KDE plasma...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
