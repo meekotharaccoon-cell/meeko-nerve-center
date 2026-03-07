@@ -1,6 +1,6 @@
 {
-  "run_id": "22800253038",
-  "ts": "2026-03-07T13:51:43.685944+00:00",
+  "run_id": "22803168164",
+  "ts": "2026-03-07T16:57:07.841793+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -53,7 +53,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-07T13:51:33.222839+00:00",
+        "timestamp": "2026-03-07T16:57:00.456835+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -63,9 +63,9 @@
         "loop_cycles_count": 0,
         "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "editor",
-          "plasma",
-          "code"
+          "show",
+          "code",
+          "editor"
         ]
       }
     ],
@@ -78,9 +78,9 @@
     },
     "total_cycles": 4,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-07T13:51:33.222839+00:00",
+    "last_updated": "2026-03-07T16:57:00.456835+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-07T13:51:33.222839+00:00",
+      "timestamp": "2026-03-07T16:57:00.456835+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -90,26 +90,24 @@
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "editor",
-        "plasma",
-        "code"
+        "show",
+        "code",
+        "editor"
       ]
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-07T13:50:53.784630+00:00",
-    "cycle_number": 15,
+    "generated": "2026-03-07T16:56:28.543268+00:00",
+    "cycle_number": 16,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
       "first_cycle": false,
-      "wins": [],
-      "regressions": [
+      "wins": [
         "BRIEFING_ENGINE"
       ],
-      "new_failures": [
-        "BRIEFING_ENGINE"
-      ],
+      "regressions": [],
+      "new_failures": [],
       "still_failing": [
         "BRAND_LEGAL"
       ],
@@ -123,21 +121,21 @@
         "id": "BN-001",
         "title": "Gmail 534 error -- App Password wrong or expired",
         "severity": "HIGH",
-        "cycles_open": 14,
+        "cycles_open": 15,
         "escalation": "CRITICAL"
       }
     ],
     "still_failing": [
       "BRAND_LEGAL"
     ],
-    "new_fixes": [],
-    "new_regressions": [
+    "new_fixes": [
       "BRIEFING_ENGINE"
     ],
+    "new_regressions": [],
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 15 | Health: 40 (stuck) | Fixed: 0 | Regressed: 1 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 16 | Health: 40 (stuck) | Fixed: 1 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -384,9 +382,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-07T13:51:17.214314+00:00"
+      "timestamp": "2026-03-07T16:56:47.670099+00:00"
     },
-    "generated_at": "2026-03-07T13:51:17.810098+00:00"
+    "generated_at": "2026-03-07T16:56:48.025084+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -435,10 +433,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-07T13:51:18.080914+00:00"
+    "generated_at": "2026-03-07T16:56:48.220820+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-07T13:51:20.524353+00:00",
+    "ts": "2026-03-07T16:56:50.153949+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -448,14 +446,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 45,
+          "cycles": 46,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-07T07:42:35.158944+00:00"
+          "last_run": "2026-03-07T13:51:27.670593+00:00"
         }
       },
       "grants": {
@@ -464,11 +462,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 45,
+          "cycles": 46,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-07T07:42:32.348467+00:00"
+          "last_run": "2026-03-07T13:51:25.245511+00:00"
         }
       },
       "sponsors": {
@@ -477,11 +475,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 45,
+          "cycles": 46,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-07T07:42:35.474948+00:00"
+          "last_run": "2026-03-07T13:51:27.954795+00:00"
         }
       },
       "exchange": {
@@ -490,14 +488,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 45,
+          "cycles": 46,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-07T07:42:32.233506+00:00"
+          "last_run": "2026-03-07T13:51:25.128247+00:00"
         }
       },
       "substack": {
@@ -506,11 +504,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 45,
+          "cycles": 46,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-07T07:42:32.833182+00:00"
+          "last_run": "2026-03-07T13:51:25.706800+00:00"
         }
       },
       "gumroad": {
@@ -523,37 +521,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-07T13:51:00.925800+00:00",
+    "timestamp": "2026-03-07T16:56:33.727207+00:00",
     "sources": {
       "hackernews": [
         {
+          "title": "Show HN: Argus \u2013 VSCode debugger for Claude Code sessions",
+          "url": "https://github.com/yessGlory17/argus",
+          "score": 21,
+          "source": "hackernews"
+        },
+        {
           "title": "Ki Editor - an editor that operates on the AST",
           "url": "https://ki-editor.org/",
-          "score": 93,
+          "score": 232,
           "source": "hackernews"
         },
         {
-          "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
-          "url": "https://plasma-bigscreen.org",
-          "score": 505,
+          "title": "The Millisecond That Could Change Cancer Treatment",
+          "url": "https://spectrum.ieee.org/flash-radiotherapy",
+          "score": 24,
           "source": "hackernews"
         },
         {
-          "title": "Tell HN: I'm 60 years old. Claude Code has re-ignited a passion",
-          "url": "",
-          "score": 632,
+          "title": "Show HN: ANSI-Saver \u2013 A macOS Screensaver",
+          "url": "https://github.com/lardissone/ansi-saver",
+          "score": 37,
           "source": "hackernews"
         },
         {
-          "title": "US economy sheds 92,000 jobs in February in sharp slide",
-          "url": "https://www.ft.com/content/6542bd0c-59ca-493b-ab5d-2d69e4e00cae",
-          "score": 74,
-          "source": "hackernews"
-        },
-        {
-          "title": "UUID package coming to Go standard library",
-          "url": "https://github.com/golang/go/issues/62026",
-          "score": 240,
+          "title": "Compiling Prolog to Forth [pdf]",
+          "url": "https://vfxforth.com/flag/jfar/vol4/no4/article4.pdf",
+          "score": 11,
           "source": "hackernews"
         }
       ],
@@ -586,18 +584,14 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 17.4,
-      "vibe": "sunny",
-      "code": 1,
+      "temp_c": 13.8,
+      "vibe": "partly cloudy",
+      "code": 2,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "editor",
-        "count": 2
-      },
-      {
-        "word": "plasma",
+        "word": "show",
         "count": 2
       },
       {
@@ -605,27 +599,19 @@
         "count": 2
       },
       {
-        "word": "operates",
+        "word": "editor",
+        "count": 2
+      },
+      {
+        "word": "argus",
         "count": 1
       },
       {
-        "word": "bigscreen",
+        "word": "vscode",
         "count": 1
       },
       {
-        "word": "foot",
-        "count": 1
-      },
-      {
-        "word": "interface",
-        "count": 1
-      },
-      {
-        "word": "tell",
-        "count": 1
-      },
-      {
-        "word": "years",
+        "word": "debugger",
         "count": 1
       },
       {
@@ -633,50 +619,62 @@
         "count": 1
       },
       {
-        "word": "ignited",
+        "word": "sessions",
         "count": 1
       },
       {
-        "word": "passion",
+        "word": "operates",
         "count": 1
       },
       {
-        "word": "economy",
+        "word": "millisecond",
         "count": 1
       },
       {
-        "word": "sheds",
+        "word": "could",
         "count": 1
       },
       {
-        "word": "92,000",
+        "word": "change",
         "count": 1
       },
       {
-        "word": "jobs",
+        "word": "cancer",
         "count": 1
       },
       {
-        "word": "february",
+        "word": "treatment",
         "count": 1
       },
       {
-        "word": "sharp",
+        "word": "ansi",
         "count": 1
       },
       {
-        "word": "slide",
+        "word": "saver",
         "count": 1
       },
       {
-        "word": "uuid",
+        "word": "macos",
+        "count": 1
+      },
+      {
+        "word": "screensaver",
+        "count": 1
+      },
+      {
+        "word": "compiling",
+        "count": 1
+      },
+      {
+        "word": "prolog",
         "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'Ki Editor - an editor that operates on the AST...' connects to Gaza resilience",
+        "hook": "How 'Show HN: Argus \u2013 VSCode debugger for Claude Code sessions...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -698,7 +696,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-07T13:51:11.425899+00:00",
+    "last_run": "2026-03-07T16:56:41.684519+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -730,7 +728,7 @@
       {
         "type": "trending_space",
         "name": "enzostvs/deepsite",
-        "likes": 16559
+        "likes": 16560
       },
       {
         "type": "trending_space",
@@ -745,12 +743,12 @@
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 41976
+        "stars": 41981
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 40936
+        "stars": 40957
       },
       {
         "type": "github_ai_repo",
@@ -760,21 +758,21 @@
       {
         "type": "trending_article",
         "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-        "reactions": 11
+        "reactions": 22
       },
       {
         "type": "trending_article",
-        "title": "How I manage skills and MCP servers across AI coding agents",
-        "reactions": 0
+        "title": "Archival Intelligence: A Forensic Rare Book Auditor",
+        "reactions": 8
       },
       {
         "type": "trending_article",
-        "title": "Encrypt Google ADK Sessions in 5 Minutes",
+        "title": "Production AI Broke Because of a Model Deprecation \u2014 So I Built llm-model-deprecation",
         "reactions": 0
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2400894641450.8022
+        "value": 2395695560179.406
       }
     ],
     "opportunities": [
@@ -783,15 +781,15 @@
       "Guide/tutorial product: 'google/electra-base-discriminator' (47,947,508 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,588,106 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,780,304 downloads) \u2014 build how-to guide",
-      "Clone/extend HF space: 'enzostvs/deepsite' (16559 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'enzostvs/deepsite' (16560 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13879 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10983 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (41976 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (40936 stars) \u2014 build integration engine",
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (41981 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (40957 stars) \u2014 build integration engine",
       "Engine wrapper: CopilotKit/CopilotKit (29210 stars) \u2014 build integration engine",
-      "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (11 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'How I manage skills and MCP servers across AI coding agents' (0 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'Encrypt Google ADK Sessions in 5 Minutes' (0 reactions) \u2014 create SolarPunk angle"
+      "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (22 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'Archival Intelligence: A Forensic Rare Book Auditor' (8 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'Production AI Broke Because of a Model Deprecation \u2014 So I Bu' (0 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1030,7 +1028,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-07T13:51:22.992193+00:00",
+    "started_at": "2026-03-07T16:56:52.226563+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1047,7 +1045,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-07T13:51:23.930998+00:00",
+        "queued_at": "2026-03-07T16:56:52.779962+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1055,7 +1053,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-07T13:51:23.930998+00:00",
+        "queued_at": "2026-03-07T16:56:52.779962+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1063,28 +1061,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-07T13:51:23.930998+00:00",
+        "queued_at": "2026-03-07T16:56:52.779962+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-07T13:51:24.893011+00:00",
+    "completed_at": "2026-03-07T16:56:53.515779+00:00",
     "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 46,
+    "cycles": 47,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-07T13:51:25.128247+00:00"
+    "last_run": "2026-03-07T16:56:53.744232+00:00"
   },
   "biz_factory": {
-    "cycles": 46,
+    "cycles": 47,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1407,13 +1405,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-07T13:51:21.808137+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-07T16:56:51.215191+00:00"
       }
     ],
-    "total_revenue_potential": 30640,
-    "last_run": "2026-03-07T13:51:20.915232+00:00"
+    "total_revenue_potential": 31380,
+    "last_run": "2026-03-07T16:56:50.603009+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-07T13:50:55.490766+00:00",
+    "last_check": "2026-03-07T16:56:29.849357+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -1501,7 +1506,7 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-07T13:50:55.519799+00:00",
+    "generated": "2026-03-07T16:56:29.877954+00:00",
     "summary": {
       "total_bottlenecks": 1,
       "critical": 0,
@@ -1695,7 +1700,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-07T13:51:30.584080+00:00",
+    "generated_at": "2026-03-07T16:56:58.515999+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1762,6 +1767,7 @@
         "BIG_BRAIN_ORACLE",
         "MEMORY_PALACE",
         "README_GENERATOR",
+        "BRIEFING_ENGINE",
         "NIGHTLY_DIGEST",
         "ISSUE_SYNC",
         "SOLARPUNK_LEGAL",
@@ -1771,7 +1777,6 @@
         "SELF_PORTRAIT"
       ],
       "engines_failed": [
-        "BRIEFING_ENGINE",
         "BRAND_LEGAL"
       ],
       "engines_skipped": [
@@ -1781,9 +1786,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 46,
+      "businesses_built": 47,
       "engines_built": 0,
-      "revenue_potential": 30640,
+      "revenue_potential": 31380,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1852,16 +1857,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 27,
-    "last_run": "2026-03-07T13:51:31.973415+00:00",
+    "cycles": 28,
+    "last_run": "2026-03-07T16:56:59.510906+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 27,
+    "cycles": 28,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-07T13:51:32.951156+00:00"
+    "last_run": "2026-03-07T16:57:00.204528+00:00"
   },
   "revenue_inbox": [
     {
@@ -1887,7 +1892,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-07T13:50:59.355875+00:00",
+    "scanned_at": "2026-03-07T16:56:32.869999+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -1976,7 +1981,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 17,
+    "cycles": 18,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2143,7 +2148,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-07T13:51:11.491272+00:00",
+    "generated_at": "2026-03-07T16:56:41.747528+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2180,7 +2185,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-07T13:51:20.805424+00:00",
+    "generated_at": "2026-03-07T16:56:50.495945+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [

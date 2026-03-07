@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T13:51:00.925800+00:00",
+  "timestamp": "2026-03-07T16:56:33.727207+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Show HN: Argus \u2013 VSCode debugger for Claude Code sessions",
+        "url": "https://github.com/yessGlory17/argus",
+        "score": 21,
+        "source": "hackernews"
+      },
+      {
         "title": "Ki Editor - an editor that operates on the AST",
         "url": "https://ki-editor.org/",
-        "score": 93,
+        "score": 232,
         "source": "hackernews"
       },
       {
-        "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
-        "url": "https://plasma-bigscreen.org",
-        "score": 505,
+        "title": "The Millisecond That Could Change Cancer Treatment",
+        "url": "https://spectrum.ieee.org/flash-radiotherapy",
+        "score": 24,
         "source": "hackernews"
       },
       {
-        "title": "Tell HN: I'm 60 years old. Claude Code has re-ignited a passion",
-        "url": "",
-        "score": 632,
+        "title": "Show HN: ANSI-Saver \u2013 A macOS Screensaver",
+        "url": "https://github.com/lardissone/ansi-saver",
+        "score": 37,
         "source": "hackernews"
       },
       {
-        "title": "US economy sheds 92,000 jobs in February in sharp slide",
-        "url": "https://www.ft.com/content/6542bd0c-59ca-493b-ab5d-2d69e4e00cae",
-        "score": 74,
-        "source": "hackernews"
-      },
-      {
-        "title": "UUID package coming to Go standard library",
-        "url": "https://github.com/golang/go/issues/62026",
-        "score": 240,
+        "title": "Compiling Prolog to Forth [pdf]",
+        "url": "https://vfxforth.com/flag/jfar/vol4/no4/article4.pdf",
+        "score": 11,
         "source": "hackernews"
       }
     ],
@@ -62,18 +62,14 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 17.4,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 13.8,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "editor",
-      "count": 2
-    },
-    {
-      "word": "plasma",
+      "word": "show",
       "count": 2
     },
     {
@@ -81,27 +77,19 @@
       "count": 2
     },
     {
-      "word": "operates",
+      "word": "editor",
+      "count": 2
+    },
+    {
+      "word": "argus",
       "count": 1
     },
     {
-      "word": "bigscreen",
+      "word": "vscode",
       "count": 1
     },
     {
-      "word": "foot",
-      "count": 1
-    },
-    {
-      "word": "interface",
-      "count": 1
-    },
-    {
-      "word": "tell",
-      "count": 1
-    },
-    {
-      "word": "years",
+      "word": "debugger",
       "count": 1
     },
     {
@@ -109,50 +97,62 @@
       "count": 1
     },
     {
-      "word": "ignited",
+      "word": "sessions",
       "count": 1
     },
     {
-      "word": "passion",
+      "word": "operates",
       "count": 1
     },
     {
-      "word": "economy",
+      "word": "millisecond",
       "count": 1
     },
     {
-      "word": "sheds",
+      "word": "could",
       "count": 1
     },
     {
-      "word": "92,000",
+      "word": "change",
       "count": 1
     },
     {
-      "word": "jobs",
+      "word": "cancer",
       "count": 1
     },
     {
-      "word": "february",
+      "word": "treatment",
       "count": 1
     },
     {
-      "word": "sharp",
+      "word": "ansi",
       "count": 1
     },
     {
-      "word": "slide",
+      "word": "saver",
       "count": 1
     },
     {
-      "word": "uuid",
+      "word": "macos",
+      "count": 1
+    },
+    {
+      "word": "screensaver",
+      "count": 1
+    },
+    {
+      "word": "compiling",
+      "count": 1
+    },
+    {
+      "word": "prolog",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Ki Editor - an editor that operates on the AST...' connects to Gaza resilience",
+      "hook": "How 'Show HN: Argus \u2013 VSCode debugger for Claude Code sessions...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
