@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T18:59:42.471037+00:00",
+  "timestamp": "2026-03-07T21:41:39.794169+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "A Decade of Docker Containers",
+        "title": "CasNum",
+        "url": "https://github.com/0x0mer/CasNum",
+        "score": 52,
+        "source": "hackernews"
+      },
+      {
+        "title": "A decade of Docker containers",
         "url": "https://cacm.acm.org/research/a-decade-of-docker-containers/",
-        "score": 99,
+        "score": 178,
         "source": "hackernews"
       },
       {
-        "title": "The Millisecond That Could Change Cancer Treatment",
+        "title": "Dumping Lego NXT firmware off of an existing brick",
+        "url": "https://arcanenibble.github.io/dumping-lego-nxt-firmware-off-of-an-existing-brick.html",
+        "score": 81,
+        "source": "hackernews"
+      },
+      {
+        "title": "FLASH radiotherapy's bold approach to cancer treatment",
         "url": "https://spectrum.ieee.org/flash-radiotherapy",
-        "score": 97,
+        "score": 161,
         "source": "hackernews"
       },
       {
-        "title": "Ki Editor - an editor that operates on the AST",
-        "url": "https://ki-editor.org/",
-        "score": 284,
-        "source": "hackernews"
-      },
-      {
-        "title": "Compiling Prolog to Forth [pdf]",
-        "url": "https://vfxforth.com/flag/jfar/vol4/no4/article4.pdf",
-        "score": 51,
-        "source": "hackernews"
-      },
-      {
-        "title": "Re-creating the complex cuisine of prehistoric Europeans",
-        "url": "https://arstechnica.com/science/2026/03/recreating-the-complex-cuisine-of-prehistoric-europeans/",
-        "score": 30,
+        "title": "Senators Launch Effort Ban Elected Officials Profiting from Prediction Markets",
+        "url": "https://www.merkley.senate.gov/merkley-klobuchar-launch-new-effort-to-ban-federal-elected-officials-profiting-from-prediction-markets/",
+        "score": 36,
         "source": "hackernews"
       }
     ],
@@ -62,15 +62,15 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.0,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 11.4,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "editor",
-      "count": 2
+      "word": "casnum",
+      "count": 1
     },
     {
       "word": "decade",
@@ -85,15 +85,39 @@
       "count": 1
     },
     {
-      "word": "millisecond",
+      "word": "dumping",
       "count": 1
     },
     {
-      "word": "could",
+      "word": "lego",
       "count": 1
     },
     {
-      "word": "change",
+      "word": "firmware",
+      "count": 1
+    },
+    {
+      "word": "existing",
+      "count": 1
+    },
+    {
+      "word": "brick",
+      "count": 1
+    },
+    {
+      "word": "flash",
+      "count": 1
+    },
+    {
+      "word": "radiotherapy's",
+      "count": 1
+    },
+    {
+      "word": "bold",
+      "count": 1
+    },
+    {
+      "word": "approach",
       "count": 1
     },
     {
@@ -105,54 +129,30 @@
       "count": 1
     },
     {
-      "word": "operates",
+      "word": "senators",
       "count": 1
     },
     {
-      "word": "compiling",
+      "word": "launch",
       "count": 1
     },
     {
-      "word": "prolog",
+      "word": "effort",
       "count": 1
     },
     {
-      "word": "forth",
+      "word": "elected",
       "count": 1
     },
     {
-      "word": "creating",
-      "count": 1
-    },
-    {
-      "word": "complex",
-      "count": 1
-    },
-    {
-      "word": "cuisine",
-      "count": 1
-    },
-    {
-      "word": "prehistoric",
-      "count": 1
-    },
-    {
-      "word": "europeans",
-      "count": 1
-    },
-    {
-      "word": "making",
-      "count": 1
-    },
-    {
-      "word": "london's",
+      "word": "officials",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'A Decade of Docker Containers...' connects to Gaza resilience",
+      "hook": "How 'CasNum...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

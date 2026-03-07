@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-07T18:59:53.515183+00:00",
+  "last_run": "2026-03-07T21:41:48.470172+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -41,41 +41,41 @@
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10983
+      "likes": 10984
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41980
+      "stars": 41982
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40959
+      "stars": 40962
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29211
+      "stars": 29213
     },
     {
       "type": "trending_article",
       "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-      "reactions": 22
+      "reactions": 29
     },
     {
       "type": "trending_article",
       "title": "Archival Intelligence: A Forensic Rare Book Auditor",
-      "reactions": 8
+      "reactions": 10
     },
     {
       "type": "trending_article",
-      "title": "How to build a self-improving AI agent: the nightly loop pattern",
-      "reactions": 0
+      "title": "Stop Building Rigid AI: Master Conditional Edges to Build Real Decision Trees",
+      "reactions": 2
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2390028698676.4653
+      "value": 2382691375979.24
     }
   ],
   "opportunities": [
@@ -86,13 +86,13 @@
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,780,304 downloads) \u2014 build how-to guide",
     "Clone/extend HF space: 'enzostvs/deepsite' (16560 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13879 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10983 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41980 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40959 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29211 stars) \u2014 build integration engine",
-    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (22 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Archival Intelligence: A Forensic Rare Book Auditor' (8 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How to build a self-improving AI agent: the nightly loop pat' (0 reactions) \u2014 create SolarPunk angle"
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10984 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41982 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40962 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29213 stars) \u2014 build integration engine",
+    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (29 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Archival Intelligence: A Forensic Rare Book Auditor' (10 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Stop Building Rigid AI: Master Conditional Edges to Build Re' (2 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",
