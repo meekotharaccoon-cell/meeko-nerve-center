@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T07:42:06.901752+00:00",
+  "timestamp": "2026-03-07T13:51:00.925800+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
-        "url": "https://plasma-bigscreen.org",
-        "score": 340,
+        "title": "Ki Editor - an editor that operates on the AST",
+        "url": "https://ki-editor.org/",
+        "score": 93,
         "source": "hackernews"
       },
       {
-        "title": "German police probe student poster slur (Lick my balls Merz) against Merz",
-        "url": "https://dpa-international.com/politics/urn:newsml:dpa.com:20090101:260306-99-743434/",
-        "score": 7,
+        "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
+        "url": "https://plasma-bigscreen.org",
+        "score": 505,
+        "source": "hackernews"
+      },
+      {
+        "title": "Tell HN: I'm 60 years old. Claude Code has re-ignited a passion",
+        "url": "",
+        "score": 632,
+        "source": "hackernews"
+      },
+      {
+        "title": "US economy sheds 92,000 jobs in February in sharp slide",
+        "url": "https://www.ft.com/content/6542bd0c-59ca-493b-ab5d-2d69e4e00cae",
+        "score": 74,
         "source": "hackernews"
       },
       {
         "title": "UUID package coming to Go standard library",
         "url": "https://github.com/golang/go/issues/62026",
-        "score": 132,
-        "source": "hackernews"
-      },
-      {
-        "title": "this css proves me human",
-        "url": "https://will-keleher.com/posts/this-css-makes-me-human/",
-        "score": 233,
-        "source": "hackernews"
-      },
-      {
-        "title": "Maybe there's a pattern here?",
-        "url": "https://dynomight.net/pattern/",
-        "score": 88,
+        "score": 240,
         "source": "hackernews"
       }
     ],
@@ -62,19 +62,27 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.3,
+    "temp_c": 17.4,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
+      "word": "editor",
+      "count": 2
+    },
+    {
       "word": "plasma",
       "count": 2
     },
     {
-      "word": "merz",
+      "word": "code",
       "count": 2
+    },
+    {
+      "word": "operates",
+      "count": 1
     },
     {
       "word": "bigscreen",
@@ -89,70 +97,62 @@
       "count": 1
     },
     {
-      "word": "german",
+      "word": "tell",
       "count": 1
     },
     {
-      "word": "police",
+      "word": "years",
       "count": 1
     },
     {
-      "word": "probe",
+      "word": "claude",
       "count": 1
     },
     {
-      "word": "student",
+      "word": "ignited",
       "count": 1
     },
     {
-      "word": "poster",
+      "word": "passion",
       "count": 1
     },
     {
-      "word": "slur",
+      "word": "economy",
       "count": 1
     },
     {
-      "word": "lick",
+      "word": "sheds",
       "count": 1
     },
     {
-      "word": "balls",
+      "word": "92,000",
       "count": 1
     },
     {
-      "word": "against",
+      "word": "jobs",
+      "count": 1
+    },
+    {
+      "word": "february",
+      "count": 1
+    },
+    {
+      "word": "sharp",
+      "count": 1
+    },
+    {
+      "word": "slide",
       "count": 1
     },
     {
       "word": "uuid",
-      "count": 1
-    },
-    {
-      "word": "package",
-      "count": 1
-    },
-    {
-      "word": "coming",
-      "count": 1
-    },
-    {
-      "word": "standard",
-      "count": 1
-    },
-    {
-      "word": "library",
-      "count": 1
-    },
-    {
-      "word": "proves",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Plasma Bigscreen \u2013 10-foot interface for KDE plasma...' connects to Gaza resilience",
+      "hook": "How 'Ki Editor - an editor that operates on the AST...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

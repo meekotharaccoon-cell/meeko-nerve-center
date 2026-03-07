@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-07T07:42:18.381902+00:00",
+  "last_run": "2026-03-07T13:51:11.425899+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,27 +31,27 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16558
+      "likes": 16559
     },
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13878
+      "likes": 13879
     },
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10981
+      "likes": 10983
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41960
+      "stars": 41976
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 40920
+      "stars": 40936
     },
     {
       "type": "github_ai_repo",
@@ -60,22 +60,22 @@
     },
     {
       "type": "trending_article",
-      "title": "How to Scale Claude Code with an MCP Gateway (Run Any LLM, Centralize Tools, Control Costs)",
-      "reactions": 39
+      "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
+      "reactions": 11
     },
     {
       "type": "trending_article",
-      "title": "Agent Harness Engineering: What 8 Months in Production Taught Me",
-      "reactions": 4
+      "title": "How I manage skills and MCP servers across AI coding agents",
+      "reactions": 0
     },
     {
       "type": "trending_article",
-      "title": "I Built a Flight Recorder for AI Agents \u2014 Now I Can Replay Every Decision They Made",
-      "reactions": 1
+      "title": "Encrypt Google ADK Sessions in 5 Minutes",
+      "reactions": 0
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2396383652311.65
+      "value": 2400894641450.8022
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (47,947,508 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,588,106 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,780,304 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16558 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41960 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (40920 stars) \u2014 build integration engine",
+    "Clone/extend HF space: 'enzostvs/deepsite' (16559 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13879 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10983 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41976 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (40936 stars) \u2014 build integration engine",
     "Engine wrapper: CopilotKit/CopilotKit (29210 stars) \u2014 build integration engine",
-    "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (39 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Agent Harness Engineering: What 8 Months in Production Taugh' (4 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Built a Flight Recorder for AI Agents \u2014 Now I Can Replay E' (1 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (11 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How I manage skills and MCP servers across AI coding agents' (0 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Encrypt Google ADK Sessions in 5 Minutes' (0 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

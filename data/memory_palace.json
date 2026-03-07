@@ -49,7 +49,7 @@
       ]
     },
     {
-      "timestamp": "2026-03-07T07:42:41.364279+00:00",
+      "timestamp": "2026-03-07T13:51:33.222839+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -59,9 +59,9 @@
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
+        "editor",
         "plasma",
-        "merz",
-        "bigscreen"
+        "code"
       ]
     }
   ],
@@ -74,9 +74,9 @@
   },
   "total_cycles": 4,
   "created": "2026-03-04T08:02:58.495462+00:00",
-  "last_updated": "2026-03-07T07:42:41.364279+00:00",
+  "last_updated": "2026-03-07T13:51:33.222839+00:00",
   "latest_snap": {
-    "timestamp": "2026-03-07T07:42:41.364279+00:00",
+    "timestamp": "2026-03-07T13:51:33.222839+00:00",
     "health_score": 40,
     "revenue": 0.0,
     "engines": 76,
@@ -86,9 +86,9 @@
     "loop_cycles_count": 0,
     "top_opportunity": "Gaza Rose Gallery Etsy SEO",
     "trending_themes": [
+      "editor",
       "plasma",
-      "merz",
-      "bigscreen"
+      "code"
     ]
   }
 }
