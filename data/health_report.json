@@ -1,5 +1,5 @@
 {
-  "score": 61,
+  "score": 66,
   "status": "GROWING",
   "achievements": [
     "\u2705 Shop page: docs/index.html deployed",
@@ -9,18 +9,18 @@
     "\u2705 ANTHROPIC_API_KEY: configured",
     "\u2705 GMAIL_ADDRESS: configured",
     "\u2705 GMAIL_APP_PASSWORD: configured",
-    "\u2705 HF_TOKEN: configured"
+    "\u2705 HF_TOKEN: configured",
+    "\u2705 X_API_KEY: configured"
   ],
   "issues": [
     "\ud83d\udd34 CRITICAL: API error: 400 \u2014 All AI features disabled",
     "\u26a0\ufe0f Revenue: 1 secret(s) missing \u2192 -10 pts potential",
-    "\u26a0\ufe0f Social: 3 secret(s) missing \u2192 -10 pts potential",
+    "\u26a0\ufe0f Social: 2 secret(s) missing \u2192 -5 pts potential",
     "\ud83d\udcb0 No revenue yet \u2014 shop needs human promotion"
   ],
   "fixes": [
     "Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets",
     "Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token",
-    "Add X_API_KEY: developer.twitter.com \u2192 App \u2192 Keys & Tokens",
     "Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens",
     "Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)",
     "Share shop URL: meekotharaccoon-cell.github.io/meeko-nerve-center",
@@ -32,12 +32,6 @@
       "category": "Revenue",
       "how": "gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token",
       "secret": "GUMROAD_ACCESS_TOKEN"
-    },
-    {
-      "pts": 5,
-      "category": "Social",
-      "how": "developer.twitter.com \u2192 App \u2192 Keys & Tokens",
-      "secret": "X_API_KEY"
     },
     {
       "pts": 3,
@@ -55,5 +49,5 @@
   "has_revenue": false,
   "total_sales": 0,
   "total_to_gaza": 0.0,
-  "timestamp": "2026-03-07T16:57:56.913979+00:00"
+  "timestamp": "2026-03-07T19:00:09.851277+00:00"
 }

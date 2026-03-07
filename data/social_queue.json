@@ -276,87 +276,6 @@
   "posts": [
     {
       "platform": "reddit",
-      "text": "Built this with autonomous AI: GitHub Actions for Beginners. $37, 15% goes to Palestinian kids.",
-      "queued_at": "2026-03-05T15:57:51.540874+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "GitHub Actions for Beginners",
-      "sent": true,
-      "sent_at": "2026-03-06T07:44:15.700113+00:00",
-      "send_result": {
-        "success": false,
-        "info": "no credentials"
-      }
-    },
-    {
-      "platform": "linkedin",
-      "text": "New digital product: GitHub Actions for Beginners. $37. 15% to PCRF (Gaza children's relief).",
-      "queued_at": "2026-03-05T15:57:51.540874+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "GitHub Actions for Beginners",
-      "sent": true,
-      "sent_at": "2026-03-06T07:44:15.700119+00:00",
-      "send_result": {
-        "success": true,
-        "info": "manual"
-      }
-    },
-    {
-      "platform": "twitter",
-      "text": "\ud83c\udf39 New: SolarPunk GitHub Actions for Beginners \u2014 GitHub Actions for Beginners \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/ $37, 15% to Gaza",
-      "queued_at": "2026-03-05T15:57:53.611836+00:00",
-      "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
-      "niche": "GitHub Actions for Beginners",
-      "sent": true,
-      "sent_at": "2026-03-06T07:48:07.300504+00:00",
-      "send_result": {
-        "success": false,
-        "info": "no credentials"
-      }
-    },
-    {
-      "platform": "reddit",
-      "text": "Built with AI: SolarPunk GitHub Actions for Beginners\n\nGitHub Actions for Beginners \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/\n15% \u2192 Gaza.",
-      "queued_at": "2026-03-05T15:57:53.611836+00:00",
-      "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
-      "niche": "GitHub Actions for Beginners",
-      "sent": true,
-      "sent_at": "2026-03-06T07:48:07.300513+00:00",
-      "send_result": {
-        "success": false,
-        "info": "no credentials"
-      }
-    },
-    {
-      "platform": "linkedin",
-      "text": "New launch: SolarPunk GitHub Actions for Beginners\nGitHub Actions for Beginners \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
-      "queued_at": "2026-03-05T15:57:53.611836+00:00",
-      "source": "REVENUE_LOOP",
-      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-for-beginners/",
-      "niche": "GitHub Actions for Beginners",
-      "sent": true,
-      "sent_at": "2026-03-06T07:48:07.300518+00:00",
-      "send_result": {
-        "success": true,
-        "info": "manual"
-      }
-    },
-    {
-      "platform": "twitter",
-      "text": "Just launched: AI Tools Mega Pack \u2014 Mar 2026 \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
-      "queued_at": "2026-03-05T18:57:37.932837+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
-      "sent": true,
-      "sent_at": "2026-03-06T07:55:13.130543+00:00",
-      "send_result": {
-        "success": false,
-        "info": "no credentials"
-      }
-    },
-    {
-      "platform": "reddit",
       "text": "Built this with autonomous AI: AI Tools Mega Pack \u2014 Mar 2026. $37, 15% goes to Palestinian kids.",
       "queued_at": "2026-03-05T18:57:37.932837+00:00",
       "source": "BUSINESS_FACTORY",
@@ -954,7 +873,13 @@
       "queued_at": "2026-03-05T20:13:19.065218+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "sent": true,
+      "sent_at": "2026-03-07T19:00:09.967016+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
@@ -962,7 +887,13 @@
       "queued_at": "2026-03-05T20:13:19.065218+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "sent": true,
+      "sent_at": "2026-03-07T19:00:09.967026+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
@@ -970,7 +901,13 @@
       "queued_at": "2026-03-05T20:13:19.065218+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "sent": true,
+      "sent_at": "2026-03-07T19:00:09.967030+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "platform": "twitter",
@@ -2093,6 +2030,51 @@
       "platform": "linkedin",
       "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
       "queued_at": "2026-03-07T16:57:55.902144+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: AI Tools Mega Pack \u2014 Mar 2026 \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-07T19:00:06.595194+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: AI Tools Mega Pack \u2014 Mar 2026. $37, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-07T19:00:06.595194+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: AI Tools Mega Pack \u2014 Mar 2026. $37. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-07T19:00:06.595194+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
+      "queued_at": "2026-03-07T19:00:08.662473+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-07T19:00:08.662473+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026"
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "queued_at": "2026-03-07T19:00:08.662473+00:00",
       "source": "REVENUE_LOOP",
       "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
       "niche": "AI Tools Mega Pack \u2014 Mar 2026"

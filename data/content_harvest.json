@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T16:57:39.049556+00:00",
+  "timestamp": "2026-03-07T18:59:42.471037+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Show HN: Argus \u2013 VSCode debugger for Claude Code sessions",
-        "url": "https://github.com/yessGlory17/argus",
-        "score": 23,
-        "source": "hackernews"
-      },
-      {
-        "title": "Ki Editor - an editor that operates on the AST",
-        "url": "https://ki-editor.org/",
-        "score": 233,
+        "title": "A Decade of Docker Containers",
+        "url": "https://cacm.acm.org/research/a-decade-of-docker-containers/",
+        "score": 99,
         "source": "hackernews"
       },
       {
         "title": "The Millisecond That Could Change Cancer Treatment",
         "url": "https://spectrum.ieee.org/flash-radiotherapy",
-        "score": 24,
+        "score": 97,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: ANSI-Saver \u2013 A macOS Screensaver",
-        "url": "https://github.com/lardissone/ansi-saver",
-        "score": 38,
+        "title": "Ki Editor - an editor that operates on the AST",
+        "url": "https://ki-editor.org/",
+        "score": 284,
         "source": "hackernews"
       },
       {
         "title": "Compiling Prolog to Forth [pdf]",
         "url": "https://vfxforth.com/flag/jfar/vol4/no4/article4.pdf",
-        "score": 11,
+        "score": 51,
+        "source": "hackernews"
+      },
+      {
+        "title": "Re-creating the complex cuisine of prehistoric Europeans",
+        "url": "https://arstechnica.com/science/2026/03/recreating-the-complex-cuisine-of-prehistoric-europeans/",
+        "score": 30,
         "source": "hackernews"
       }
     ],
@@ -62,46 +62,26 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.8,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 13.0,
+    "vibe": "sunny",
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
-    {
-      "word": "show",
-      "count": 2
-    },
-    {
-      "word": "code",
-      "count": 2
-    },
     {
       "word": "editor",
       "count": 2
     },
     {
-      "word": "argus",
+      "word": "decade",
       "count": 1
     },
     {
-      "word": "vscode",
+      "word": "docker",
       "count": 1
     },
     {
-      "word": "debugger",
-      "count": 1
-    },
-    {
-      "word": "claude",
-      "count": 1
-    },
-    {
-      "word": "sessions",
-      "count": 1
-    },
-    {
-      "word": "operates",
+      "word": "containers",
       "count": 1
     },
     {
@@ -125,19 +105,7 @@
       "count": 1
     },
     {
-      "word": "ansi",
-      "count": 1
-    },
-    {
-      "word": "saver",
-      "count": 1
-    },
-    {
-      "word": "macos",
-      "count": 1
-    },
-    {
-      "word": "screensaver",
+      "word": "operates",
       "count": 1
     },
     {
@@ -147,12 +115,44 @@
     {
       "word": "prolog",
       "count": 1
+    },
+    {
+      "word": "forth",
+      "count": 1
+    },
+    {
+      "word": "creating",
+      "count": 1
+    },
+    {
+      "word": "complex",
+      "count": 1
+    },
+    {
+      "word": "cuisine",
+      "count": 1
+    },
+    {
+      "word": "prehistoric",
+      "count": 1
+    },
+    {
+      "word": "europeans",
+      "count": 1
+    },
+    {
+      "word": "making",
+      "count": 1
+    },
+    {
+      "word": "london's",
+      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Show HN: Argus \u2013 VSCode debugger for Claude Code sessions...' connects to Gaza resilience",
+      "hook": "How 'A Decade of Docker Containers...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
