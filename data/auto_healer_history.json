@@ -156,5 +156,16 @@
       "BRIEFING_ENGINE",
       "BRAND_LEGAL"
     ]
+  },
+  {
+    "timestamp": "2026-03-07T04:27:20.605474+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "BRAND_LEGAL"
+    ],
+    "failed_engines_seen": [
+      "BRAND_LEGAL"
+    ]
   }
 ]

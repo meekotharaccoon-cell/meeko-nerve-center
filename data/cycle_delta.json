@@ -1,16 +1,17 @@
 {
-  "generated": "2026-03-07T04:25:54.930162+00:00",
-  "cycle_number": 11,
+  "generated": "2026-03-07T04:27:15.861690+00:00",
+  "cycle_number": 12,
   "health": 40,
   "health_trend": "stuck",
   "delta": {
     "first_cycle": false,
-    "wins": [],
+    "wins": [
+      "BRIEFING_ENGINE"
+    ],
     "regressions": [],
     "new_failures": [],
     "still_failing": [
-      "BRAND_LEGAL",
-      "BRIEFING_ENGINE"
+      "BRAND_LEGAL"
     ],
     "revenue_delta": 0,
     "health_delta": 0,
@@ -22,18 +23,19 @@
       "id": "BN-001",
       "title": "Gmail 534 error -- App Password wrong or expired",
       "severity": "HIGH",
-      "cycles_open": 10,
+      "cycles_open": 11,
       "escalation": "CRITICAL"
     }
   ],
   "still_failing": [
-    "BRAND_LEGAL",
+    "BRAND_LEGAL"
+  ],
+  "new_fixes": [
     "BRIEFING_ENGINE"
   ],
-  "new_fixes": [],
   "new_regressions": [],
   "revenue": 0,
   "revenue_delta": 0,
   "resonance": 30,
-  "summary": "Cycle 11 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+  "summary": "Cycle 12 | Health: 40 (stuck) | Fixed: 1 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
 }

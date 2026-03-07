@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-07T04:26:09.130675+00:00",
+  "last_run": "2026-03-07T04:27:29.699892+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -46,7 +46,7 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 41951
+      "stars": 41952
     },
     {
       "type": "github_ai_repo",
@@ -75,7 +75,7 @@
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2399653830402.4795
+      "value": 2401505161675.7065
     }
   ],
   "opportunities": [
@@ -87,7 +87,7 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16557 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13878 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10981 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (41951 stars) \u2014 build integration engine",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (41952 stars) \u2014 build integration engine",
     "Engine wrapper: CherryHQ/cherry-studio (40909 stars) \u2014 build integration engine",
     "Engine wrapper: CopilotKit/CopilotKit (29208 stars) \u2014 build integration engine",
     "Content leverage: 'How to Scale Claude Code with an MCP Gateway (Run Any LLM, C' (39 reactions) \u2014 create SolarPunk angle",
