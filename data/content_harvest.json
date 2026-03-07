@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T04:28:28.486601+00:00",
+  "timestamp": "2026-03-07T07:42:06.901752+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Plasma Bigscreen \u2013 10-foot interface for KDE plasma",
         "url": "https://plasma-bigscreen.org",
-        "score": 232,
+        "score": 340,
+        "source": "hackernews"
+      },
+      {
+        "title": "German police probe student poster slur (Lick my balls Merz) against Merz",
+        "url": "https://dpa-international.com/politics/urn:newsml:dpa.com:20090101:260306-99-743434/",
+        "score": 7,
         "source": "hackernews"
       },
       {
         "title": "UUID package coming to Go standard library",
         "url": "https://github.com/golang/go/issues/62026",
-        "score": 56,
+        "score": 132,
         "source": "hackernews"
       },
       {
         "title": "this css proves me human",
         "url": "https://will-keleher.com/posts/this-css-makes-me-human/",
-        "score": 189,
+        "score": 233,
         "source": "hackernews"
       },
       {
-        "title": "Can a wealthy family change the course of a deadly brain disease?",
-        "url": "https://www.science.org/content/article/can-wealthy-family-change-course-deadly-brain-disease",
-        "score": 16,
-        "source": "hackernews"
-      },
-      {
-        "title": "LLMs work best when the user defines their acceptance criteria first",
-        "url": "https://blog.katanaquant.com/p/your-llm-doesnt-write-correct-code",
-        "score": 106,
+        "title": "Maybe there's a pattern here?",
+        "url": "https://dynomight.net/pattern/",
+        "score": 88,
         "source": "hackernews"
       }
     ],
@@ -62,14 +62,18 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 8.2,
+    "temp_c": 16.3,
     "vibe": "sunny",
-    "code": 0,
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
       "word": "plasma",
+      "count": 2
+    },
+    {
+      "word": "merz",
       "count": 2
     },
     {
@@ -82,6 +86,42 @@
     },
     {
       "word": "interface",
+      "count": 1
+    },
+    {
+      "word": "german",
+      "count": 1
+    },
+    {
+      "word": "police",
+      "count": 1
+    },
+    {
+      "word": "probe",
+      "count": 1
+    },
+    {
+      "word": "student",
+      "count": 1
+    },
+    {
+      "word": "poster",
+      "count": 1
+    },
+    {
+      "word": "slur",
+      "count": 1
+    },
+    {
+      "word": "lick",
+      "count": 1
+    },
+    {
+      "word": "balls",
+      "count": 1
+    },
+    {
+      "word": "against",
       "count": 1
     },
     {
@@ -106,46 +146,6 @@
     },
     {
       "word": "proves",
-      "count": 1
-    },
-    {
-      "word": "human",
-      "count": 1
-    },
-    {
-      "word": "wealthy",
-      "count": 1
-    },
-    {
-      "word": "family",
-      "count": 1
-    },
-    {
-      "word": "change",
-      "count": 1
-    },
-    {
-      "word": "course",
-      "count": 1
-    },
-    {
-      "word": "deadly",
-      "count": 1
-    },
-    {
-      "word": "brain",
-      "count": 1
-    },
-    {
-      "word": "disease",
-      "count": 1
-    },
-    {
-      "word": "llms",
-      "count": 1
-    },
-    {
-      "word": "work",
       "count": 1
     }
   ],

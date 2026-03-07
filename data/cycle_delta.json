@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-07T04:28:23.449807+00:00",
-  "cycle_number": 13,
+  "generated": "2026-03-07T07:42:00.890402+00:00",
+  "cycle_number": 14,
   "health": 40,
   "health_trend": "stuck",
   "delta": {
@@ -19,9 +19,9 @@
   "persistent": [
     {
       "id": "BN-001",
-      "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-      "severity": "CRITICAL",
-      "cycles_open": 12,
+      "title": "Gmail 534 error -- App Password wrong or expired",
+      "severity": "HIGH",
+      "cycles_open": 13,
       "escalation": "CRITICAL"
     }
   ],
@@ -33,5 +33,5 @@
   "revenue": 0,
   "revenue_delta": 0,
   "resonance": 30,
-  "summary": "Cycle 13 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+  "summary": "Cycle 14 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
 }
