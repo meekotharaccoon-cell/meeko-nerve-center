@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-08T19:01:41.151443+00:00",
+  "last_run": "2026-03-08T21:01:23.905314+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -46,17 +46,17 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42009
+      "stars": 42011
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41015
+      "stars": 41017
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29226
+      "stars": 29227
     },
     {
       "type": "trending_article",
@@ -65,17 +65,17 @@
     },
     {
       "type": "trending_article",
+      "title": "The Junior Developer Isn't Extinct\u2014They're Stuck Below the API",
+      "reactions": 23
+    },
+    {
+      "type": "trending_article",
       "title": "Confessions of an AI Sceptic",
       "reactions": 7
     },
     {
-      "type": "trending_article",
-      "title": "Notion Career Sync: 1-Click AI Job Tracker via Notion MCP",
-      "reactions": 4
-    },
-    {
       "type": "crypto_market_cap_usd",
-      "value": 2364776643237.0483
+      "value": 2378661446000.952
     }
   ],
   "opportunities": [
@@ -87,12 +87,12 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16562 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13881 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10985 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42009 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41015 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29226 stars) \u2014 build integration engine",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42011 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41017 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29227 stars) \u2014 build integration engine",
     "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (46 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Confessions of an AI Sceptic' (7 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Notion Career Sync: 1-Click AI Job Tracker via Notion MCP' (4 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'The Junior Developer Isn't Extinct\u2014They're Stuck Below the A' (23 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Confessions of an AI Sceptic' (7 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

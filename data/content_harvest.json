@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-08T19:01:31.965502+00:00",
+  "timestamp": "2026-03-08T21:01:13.455109+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Neural Boids",
+        "url": "https://campedersen.com/noid",
+        "score": 33,
+        "source": "hackernews"
+      },
+      {
+        "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
+        "url": "https://agent-safehouse.dev/",
+        "score": 26,
+        "source": "hackernews"
+      },
+      {
         "title": "FrameBook",
         "url": "https://fb.edoo.gg",
-        "score": 192,
+        "score": 284,
         "source": "hackernews"
       },
       {
-        "title": "My Homelab Setup",
-        "url": "https://bryananthonio.com/blog/my-homelab-setup/",
-        "score": 53,
+        "title": "71% Desk Workers Say Screen-Related Visual Discomfort Is Reducing Productivity",
+        "url": "https://www.vspvision.com/newsroom/eye-health-and-wellness/vision-care/new-research-from-vsp-vision-care-and-workplace-intelligence-finds-desk-workers-spend-nearly-100-hours-a-week-on-screens",
+        "score": 8,
         "source": "hackernews"
       },
       {
-        "title": "Log messages are mostly for the people operating your software",
-        "url": "https://utcc.utoronto.ca/~cks/space/blog/programming/LogMessagesAreForOperation",
-        "score": 43,
-        "source": "hackernews"
-      },
-      {
-        "title": "LibreOffice Writer now supports Markdown",
-        "url": "https://blog.documentfoundation.org/blog/2026/02/04/libreoffice-26-2-is-here/",
-        "score": 91,
-        "source": "hackernews"
-      },
-      {
-        "title": "What if the Apple ][ had run on Field-Sequential?",
-        "url": "https://nicole.express/2026/the-apple-that-wasnt.html",
-        "score": 45,
+        "title": "Pushing and Pulling: Three reactivity algorithms",
+        "url": "https://jonathan-frere.com/posts/reactivity-algorithms/",
+        "score": 21,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.4,
+    "temp_c": 8.8,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
@@ -73,86 +73,86 @@
       "count": 3
     },
     {
+      "word": "neural",
+      "count": 1
+    },
+    {
+      "word": "boids",
+      "count": 1
+    },
+    {
+      "word": "agent",
+      "count": 1
+    },
+    {
+      "word": "safehouse",
+      "count": 1
+    },
+    {
+      "word": "macos",
+      "count": 1
+    },
+    {
+      "word": "native",
+      "count": 1
+    },
+    {
+      "word": "sandboxing",
+      "count": 1
+    },
+    {
+      "word": "local",
+      "count": 1
+    },
+    {
+      "word": "agents",
+      "count": 1
+    },
+    {
       "word": "framebook",
       "count": 1
     },
     {
-      "word": "homelab",
+      "word": "desk",
       "count": 1
     },
     {
-      "word": "setup",
+      "word": "workers",
       "count": 1
     },
     {
-      "word": "messages",
+      "word": "screen",
       "count": 1
     },
     {
-      "word": "mostly",
+      "word": "related",
       "count": 1
     },
     {
-      "word": "people",
+      "word": "visual",
       "count": 1
     },
     {
-      "word": "operating",
+      "word": "discomfort",
       "count": 1
     },
     {
-      "word": "your",
+      "word": "reducing",
       "count": 1
     },
     {
-      "word": "software",
+      "word": "productivity",
       "count": 1
     },
     {
-      "word": "libreoffice",
-      "count": 1
-    },
-    {
-      "word": "writer",
-      "count": 1
-    },
-    {
-      "word": "supports",
-      "count": 1
-    },
-    {
-      "word": "markdown",
-      "count": 1
-    },
-    {
-      "word": "apple",
-      "count": 1
-    },
-    {
-      "word": "field",
-      "count": 1
-    },
-    {
-      "word": "sequential",
-      "count": 1
-    },
-    {
-      "word": "shipped",
-      "count": 1
-    },
-    {
-      "word": "broken",
-      "count": 1
-    },
-    {
-      "word": "wrote",
+      "word": "pushing",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'FrameBook...' connects to Gaza resilience",
+      "hook": "How 'Neural Boids...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
