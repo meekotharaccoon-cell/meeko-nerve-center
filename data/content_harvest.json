@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-07T21:41:39.794169+00:00",
+  "timestamp": "2026-03-08T07:44:41.041627+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Cloud VM benchmarks 2026",
+        "url": "https://devblog.ecuadors.net/cloud-vm-benchmarks-2026-performance-price-1i1m.html",
+        "score": 185,
+        "source": "hackernews"
+      },
+      {
+        "title": "\"Warn about PyPy being unmaintained\"",
+        "url": "https://github.com/astral-sh/uv/pull/17643",
+        "score": 126,
+        "source": "hackernews"
+      },
+      {
         "title": "CasNum",
         "url": "https://github.com/0x0mer/CasNum",
-        "score": 52,
+        "score": 264,
         "source": "hackernews"
       },
       {
-        "title": "A decade of Docker containers",
-        "url": "https://cacm.acm.org/research/a-decade-of-docker-containers/",
-        "score": 178,
+        "title": "From RGB to L*a*b* color space (2024)",
+        "url": "https://kaizoudou.com/from-rgb-to-lab-color-space/",
+        "score": 6,
         "source": "hackernews"
       },
       {
-        "title": "Dumping Lego NXT firmware off of an existing brick",
-        "url": "https://arcanenibble.github.io/dumping-lego-nxt-firmware-off-of-an-existing-brick.html",
-        "score": 81,
-        "source": "hackernews"
-      },
-      {
-        "title": "FLASH radiotherapy's bold approach to cancer treatment",
-        "url": "https://spectrum.ieee.org/flash-radiotherapy",
-        "score": 161,
-        "source": "hackernews"
-      },
-      {
-        "title": "Senators Launch Effort Ban Elected Officials Profiting from Prediction Markets",
-        "url": "https://www.merkley.senate.gov/merkley-klobuchar-launch-new-effort-to-ban-federal-elected-officials-profiting-from-prediction-markets/",
-        "score": 36,
+        "title": "MonoGame: A .NET framework for making cross-platform games",
+        "url": "https://github.com/MonoGame/MonoGame",
+        "score": 54,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.4,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 16.3,
+    "vibe": "sunny",
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
+    {
+      "word": "about",
+      "count": 2
+    },
+    {
+      "word": "making",
+      "count": 2
+    },
+    {
+      "word": "cloud",
+      "count": 1
+    },
+    {
+      "word": "benchmarks",
+      "count": 1
+    },
+    {
+      "word": "2026",
+      "count": 1
+    },
+    {
+      "word": "warn",
+      "count": 1
+    },
+    {
+      "word": "pypy",
+      "count": 1
+    },
+    {
+      "word": "being",
+      "count": 1
+    },
+    {
+      "word": "unmaintained",
+      "count": 1
+    },
     {
       "word": "casnum",
       "count": 1
     },
     {
-      "word": "decade",
+      "word": "l*a*b*",
       "count": 1
     },
     {
-      "word": "docker",
+      "word": "color",
       "count": 1
     },
     {
-      "word": "containers",
+      "word": "space",
       "count": 1
     },
     {
-      "word": "dumping",
+      "word": "2024",
       "count": 1
     },
     {
-      "word": "lego",
+      "word": "monogame:",
       "count": 1
     },
     {
-      "word": "firmware",
+      "word": "framework",
       "count": 1
     },
     {
-      "word": "existing",
+      "word": "cross",
       "count": 1
     },
     {
-      "word": "brick",
+      "word": "platform",
       "count": 1
     },
     {
-      "word": "flash",
+      "word": "games",
       "count": 1
     },
     {
-      "word": "radiotherapy's",
-      "count": 1
-    },
-    {
-      "word": "bold",
-      "count": 1
-    },
-    {
-      "word": "approach",
-      "count": 1
-    },
-    {
-      "word": "cancer",
-      "count": 1
-    },
-    {
-      "word": "treatment",
-      "count": 1
-    },
-    {
-      "word": "senators",
-      "count": 1
-    },
-    {
-      "word": "launch",
-      "count": 1
-    },
-    {
-      "word": "effort",
-      "count": 1
-    },
-    {
-      "word": "elected",
-      "count": 1
-    },
-    {
-      "word": "officials",
+      "word": "london's",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'CasNum...' connects to Gaza resilience",
+      "hook": "How 'Cloud VM benchmarks 2026...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
