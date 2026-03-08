@@ -1,158 +1,158 @@
 {
-  "timestamp": "2026-03-08T13:52:13.902053+00:00",
+  "timestamp": "2026-03-08T19:01:31.965502+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "How Big Diaper absorbs billions of extra dollars from American parents",
-        "url": "https://thehustle.co/originals/how-big-diaper-absorbs-billions-of-extra-dollars-from-american-parents",
-        "score": 12,
+        "title": "FrameBook",
+        "url": "https://fb.edoo.gg",
+        "score": 192,
         "source": "hackernews"
       },
       {
-        "title": "Notes on Writing WASM",
-        "url": "https://notes.brooklynzelenka.com/Blog/Notes-on-Writing-Wasm",
-        "score": 65,
+        "title": "My Homelab Setup",
+        "url": "https://bryananthonio.com/blog/my-homelab-setup/",
+        "score": 53,
         "source": "hackernews"
       },
       {
-        "title": "You Don't Need a Vector Database",
-        "url": "https://vecstore.app/blog/you-dont-need-a-vector-database",
-        "score": 13,
+        "title": "Log messages are mostly for the people operating your software",
+        "url": "https://utcc.utoronto.ca/~cks/space/blog/programming/LogMessagesAreForOperation",
+        "score": 43,
         "source": "hackernews"
       },
       {
-        "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via CI",
-        "url": "https://arxiv.org/abs/2603.03823",
-        "score": 78,
+        "title": "LibreOffice Writer now supports Markdown",
+        "url": "https://blog.documentfoundation.org/blog/2026/02/04/libreoffice-26-2-is-here/",
+        "score": 91,
         "source": "hackernews"
       },
       {
-        "title": "The Collective Ambition Behind Odysseus, a Game-Changing Sci-Fi Larp",
-        "url": "https://mssv.net/2025/03/19/the-collective-ambition-behind-odysseus/",
-        "score": 40,
+        "title": "What if the Apple ][ had run on Field-Sequential?",
+        "url": "https://nicole.express/2026/the-apple-that-wasnt.html",
+        "score": 45,
         "source": "hackernews"
       }
     ],
     "reddit": [],
     "devto": [
       {
-        "title": "Making London's hidden film clubs discoverable",
-        "url": "https://dev.to/alistairjcbrown/i-built-a-film-club-discovery-tool-for-londons-cinema-community-2md",
-        "hearts": 38,
-        "source": "devto"
-      },
-      {
         "title": "I Shipped Broken Code and Wrote an Article About It",
         "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 38,
+        "hearts": 39,
         "source": "devto"
       },
       {
         "title": "I Created An Enterprise MCP Gateway",
         "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 107,
+        "hearts": 109,
         "source": "devto"
       },
       {
-        "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
-        "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
-        "hearts": 5,
+        "title": "I overpowered AI by inventing \"Brilliant\" code by AI opinion itself",
+        "url": "https://dev.to/framemuse/i-overpowered-ai-by-inventing-brilliant-code-by-ai-opinion-itself-3732",
+        "hearts": 7,
+        "source": "devto"
+      },
+      {
+        "title": "In the AI Era, Code Is Cheap. Reputation Isn\u2019t.",
+        "url": "https://dev.to/kaleman15/in-the-ai-era-code-is-cheap-reputation-isnt-3482",
+        "hearts": 36,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.7,
+    "temp_c": 10.4,
     "vibe": "sunny",
-    "code": 0,
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "diaper",
+      "word": "code",
+      "count": 3
+    },
+    {
+      "word": "framebook",
       "count": 1
     },
     {
-      "word": "absorbs",
+      "word": "homelab",
       "count": 1
     },
     {
-      "word": "billions",
+      "word": "setup",
       "count": 1
     },
     {
-      "word": "extra",
+      "word": "messages",
       "count": 1
     },
     {
-      "word": "dollars",
+      "word": "mostly",
       "count": 1
     },
     {
-      "word": "american",
+      "word": "people",
       "count": 1
     },
     {
-      "word": "parents",
+      "word": "operating",
       "count": 1
     },
     {
-      "word": "notes",
+      "word": "your",
       "count": 1
     },
     {
-      "word": "writing",
+      "word": "software",
       "count": 1
     },
     {
-      "word": "wasm",
+      "word": "libreoffice",
       "count": 1
     },
     {
-      "word": "don't",
+      "word": "writer",
       "count": 1
     },
     {
-      "word": "need",
+      "word": "supports",
       "count": 1
     },
     {
-      "word": "vector",
+      "word": "markdown",
       "count": 1
     },
     {
-      "word": "database",
+      "word": "apple",
       "count": 1
     },
     {
-      "word": "evaluating",
+      "word": "field",
       "count": 1
     },
     {
-      "word": "agent",
+      "word": "sequential",
       "count": 1
     },
     {
-      "word": "capabilities",
+      "word": "shipped",
       "count": 1
     },
     {
-      "word": "maintaining",
+      "word": "broken",
       "count": 1
     },
     {
-      "word": "codebases",
-      "count": 1
-    },
-    {
-      "word": "collective",
+      "word": "wrote",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'How Big Diaper absorbs billions of extra dollars from Americ...' connects to Gaza resilience",
+      "hook": "How 'FrameBook...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

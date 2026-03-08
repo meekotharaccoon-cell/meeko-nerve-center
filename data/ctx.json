@@ -1,6 +1,6 @@
 {
-  "run_id": "22822437160",
-  "ts": "2026-03-08T13:52:56.852472+00:00",
+  "run_id": "22827701839",
+  "ts": "2026-03-08T19:02:05.034127+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -69,7 +69,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-08T13:52:48.660754+00:00",
+        "timestamp": "2026-03-08T19:01:59.251016+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -79,9 +79,9 @@
         "loop_cycles_count": 0,
         "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "diaper",
-          "absorbs",
-          "billions"
+          "code",
+          "framebook",
+          "homelab"
         ]
       }
     ],
@@ -94,9 +94,9 @@
     },
     "total_cycles": 5,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-08T13:52:48.660754+00:00",
+    "last_updated": "2026-03-08T19:01:59.251016+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-08T13:52:48.660754+00:00",
+      "timestamp": "2026-03-08T19:01:59.251016+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -106,25 +106,26 @@
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "diaper",
-        "absorbs",
-        "billions"
+        "code",
+        "framebook",
+        "homelab"
       ]
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-08T13:52:07.826130+00:00",
-    "cycle_number": 23,
+    "generated": "2026-03-08T19:01:26.842031+00:00",
+    "cycle_number": 24,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
       "first_cycle": false,
-      "wins": [],
+      "wins": [
+        "BRIEFING_ENGINE"
+      ],
       "regressions": [],
       "new_failures": [],
       "still_failing": [
-        "BRAND_LEGAL",
-        "BRIEFING_ENGINE"
+        "BRAND_LEGAL"
       ],
       "revenue_delta": 0,
       "health_delta": 0,
@@ -141,15 +142,16 @@
       }
     ],
     "still_failing": [
-      "BRAND_LEGAL",
+      "BRAND_LEGAL"
+    ],
+    "new_fixes": [
       "BRIEFING_ENGINE"
     ],
-    "new_fixes": [],
     "new_regressions": [],
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 23 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 24 | Health: 40 (stuck) | Fixed: 1 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -396,9 +398,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-08T13:52:33.141218+00:00"
+      "timestamp": "2026-03-08T19:01:47.173162+00:00"
     },
-    "generated_at": "2026-03-08T13:52:33.512824+00:00"
+    "generated_at": "2026-03-08T19:01:47.578285+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -447,10 +449,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-08T13:52:33.758305+00:00"
+    "generated_at": "2026-03-08T19:01:47.768384+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-08T13:52:36.397177+00:00",
+    "ts": "2026-03-08T19:01:49.726144+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -460,14 +462,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 53,
+          "cycles": 54,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-08T08:41:38.482524+00:00"
+          "last_run": "2026-03-08T13:52:43.080325+00:00"
         }
       },
       "grants": {
@@ -476,11 +478,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 53,
+          "cycles": 54,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-08T08:41:36.238626+00:00"
+          "last_run": "2026-03-08T13:52:40.558833+00:00"
         }
       },
       "sponsors": {
@@ -489,11 +491,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 53,
+          "cycles": 54,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-08T08:41:38.795616+00:00"
+          "last_run": "2026-03-08T13:52:43.363084+00:00"
         }
       },
       "exchange": {
@@ -502,14 +504,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 53,
+          "cycles": 54,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-08T08:41:36.122960+00:00"
+          "last_run": "2026-03-08T13:52:40.446121+00:00"
         }
       },
       "substack": {
@@ -518,11 +520,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 53,
+          "cycles": 54,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-08T08:41:36.762035+00:00"
+          "last_run": "2026-03-08T13:52:41.001448+00:00"
         }
       },
       "gumroad": {
@@ -535,160 +537,160 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-08T13:52:13.902053+00:00",
+    "timestamp": "2026-03-08T19:01:31.965502+00:00",
     "sources": {
       "hackernews": [
         {
-          "title": "How Big Diaper absorbs billions of extra dollars from American parents",
-          "url": "https://thehustle.co/originals/how-big-diaper-absorbs-billions-of-extra-dollars-from-american-parents",
-          "score": 12,
+          "title": "FrameBook",
+          "url": "https://fb.edoo.gg",
+          "score": 192,
           "source": "hackernews"
         },
         {
-          "title": "Notes on Writing WASM",
-          "url": "https://notes.brooklynzelenka.com/Blog/Notes-on-Writing-Wasm",
-          "score": 65,
+          "title": "My Homelab Setup",
+          "url": "https://bryananthonio.com/blog/my-homelab-setup/",
+          "score": 53,
           "source": "hackernews"
         },
         {
-          "title": "You Don't Need a Vector Database",
-          "url": "https://vecstore.app/blog/you-dont-need-a-vector-database",
-          "score": 13,
+          "title": "Log messages are mostly for the people operating your software",
+          "url": "https://utcc.utoronto.ca/~cks/space/blog/programming/LogMessagesAreForOperation",
+          "score": 43,
           "source": "hackernews"
         },
         {
-          "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via CI",
-          "url": "https://arxiv.org/abs/2603.03823",
-          "score": 78,
+          "title": "LibreOffice Writer now supports Markdown",
+          "url": "https://blog.documentfoundation.org/blog/2026/02/04/libreoffice-26-2-is-here/",
+          "score": 91,
           "source": "hackernews"
         },
         {
-          "title": "The Collective Ambition Behind Odysseus, a Game-Changing Sci-Fi Larp",
-          "url": "https://mssv.net/2025/03/19/the-collective-ambition-behind-odysseus/",
-          "score": 40,
+          "title": "What if the Apple ][ had run on Field-Sequential?",
+          "url": "https://nicole.express/2026/the-apple-that-wasnt.html",
+          "score": 45,
           "source": "hackernews"
         }
       ],
       "reddit": [],
       "devto": [
         {
-          "title": "Making London's hidden film clubs discoverable",
-          "url": "https://dev.to/alistairjcbrown/i-built-a-film-club-discovery-tool-for-londons-cinema-community-2md",
-          "hearts": 38,
-          "source": "devto"
-        },
-        {
           "title": "I Shipped Broken Code and Wrote an Article About It",
           "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-          "hearts": 38,
+          "hearts": 39,
           "source": "devto"
         },
         {
           "title": "I Created An Enterprise MCP Gateway",
           "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-          "hearts": 107,
+          "hearts": 109,
           "source": "devto"
         },
         {
-          "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
-          "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
-          "hearts": 5,
+          "title": "I overpowered AI by inventing \"Brilliant\" code by AI opinion itself",
+          "url": "https://dev.to/framemuse/i-overpowered-ai-by-inventing-brilliant-code-by-ai-opinion-itself-3732",
+          "hearts": 7,
+          "source": "devto"
+        },
+        {
+          "title": "In the AI Era, Code Is Cheap. Reputation Isn\u2019t.",
+          "url": "https://dev.to/kaleman15/in-the-ai-era-code-is-cheap-reputation-isnt-3482",
+          "hearts": 36,
           "source": "devto"
         }
       ]
     },
     "gaza_weather": {
-      "temp_c": 16.7,
+      "temp_c": 10.4,
       "vibe": "sunny",
-      "code": 0,
+      "code": 1,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "diaper",
+        "word": "code",
+        "count": 3
+      },
+      {
+        "word": "framebook",
         "count": 1
       },
       {
-        "word": "absorbs",
+        "word": "homelab",
         "count": 1
       },
       {
-        "word": "billions",
+        "word": "setup",
         "count": 1
       },
       {
-        "word": "extra",
+        "word": "messages",
         "count": 1
       },
       {
-        "word": "dollars",
+        "word": "mostly",
         "count": 1
       },
       {
-        "word": "american",
+        "word": "people",
         "count": 1
       },
       {
-        "word": "parents",
+        "word": "operating",
         "count": 1
       },
       {
-        "word": "notes",
+        "word": "your",
         "count": 1
       },
       {
-        "word": "writing",
+        "word": "software",
         "count": 1
       },
       {
-        "word": "wasm",
+        "word": "libreoffice",
         "count": 1
       },
       {
-        "word": "don't",
+        "word": "writer",
         "count": 1
       },
       {
-        "word": "need",
+        "word": "supports",
         "count": 1
       },
       {
-        "word": "vector",
+        "word": "markdown",
         "count": 1
       },
       {
-        "word": "database",
+        "word": "apple",
         "count": 1
       },
       {
-        "word": "evaluating",
+        "word": "field",
         "count": 1
       },
       {
-        "word": "agent",
+        "word": "sequential",
         "count": 1
       },
       {
-        "word": "capabilities",
+        "word": "shipped",
         "count": 1
       },
       {
-        "word": "maintaining",
+        "word": "broken",
         "count": 1
       },
       {
-        "word": "codebases",
-        "count": 1
-      },
-      {
-        "word": "collective",
+        "word": "wrote",
         "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'How Big Diaper absorbs billions of extra dollars from Americ...' connects to Gaza resilience",
+        "hook": "How 'FrameBook...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -710,7 +712,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-08T13:52:28.634385+00:00",
+    "last_run": "2026-03-08T19:01:41.151443+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -742,7 +744,7 @@
       {
         "type": "trending_space",
         "name": "enzostvs/deepsite",
-        "likes": 16560
+        "likes": 16562
       },
       {
         "type": "trending_space",
@@ -757,17 +759,17 @@
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 41998
+        "stars": 42009
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 41008
+        "stars": 41015
       },
       {
         "type": "github_ai_repo",
         "repo": "CopilotKit/CopilotKit",
-        "stars": 29222
+        "stars": 29226
       },
       {
         "type": "trending_article",
@@ -776,17 +778,17 @@
       },
       {
         "type": "trending_article",
-        "title": "The Junior Developer Isn't Extinct\u2014They're Stuck Below the API",
-        "reactions": 8
-      },
-      {
-        "type": "trending_article",
         "title": "Confessions of an AI Sceptic",
         "reactions": 7
       },
       {
+        "type": "trending_article",
+        "title": "Notion Career Sync: 1-Click AI Job Tracker via Notion MCP",
+        "reactions": 4
+      },
+      {
         "type": "crypto_market_cap_usd",
-        "value": 2373363854704.938
+        "value": 2364776643237.0483
       }
     ],
     "opportunities": [
@@ -795,15 +797,15 @@
       "Guide/tutorial product: 'google/electra-base-discriminator' (48,263,513 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,209,325 downloads) \u2014 build how-to guide",
       "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,635,362 downloads) \u2014 build how-to guide",
-      "Clone/extend HF space: 'enzostvs/deepsite' (16560 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'enzostvs/deepsite' (16562 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13881 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10985 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (41998 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (41008 stars) \u2014 build integration engine",
-      "Engine wrapper: CopilotKit/CopilotKit (29222 stars) \u2014 build integration engine",
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (42009 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (41015 stars) \u2014 build integration engine",
+      "Engine wrapper: CopilotKit/CopilotKit (29226 stars) \u2014 build integration engine",
       "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (46 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'The Junior Developer Isn't Extinct\u2014They're Stuck Below the A' (8 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'Confessions of an AI Sceptic' (7 reactions) \u2014 create SolarPunk angle"
+      "Content leverage: 'Confessions of an AI Sceptic' (7 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'Notion Career Sync: 1-Click AI Job Tracker via Notion MCP' (4 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1042,7 +1044,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-08T13:52:38.711085+00:00",
+    "started_at": "2026-03-08T19:01:52.015660+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1059,7 +1061,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-08T13:52:39.635769+00:00",
+        "queued_at": "2026-03-08T19:01:52.638508+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1067,7 +1069,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-08T13:52:39.635769+00:00",
+        "queued_at": "2026-03-08T19:01:52.638508+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1075,28 +1077,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-08T13:52:39.635769+00:00",
+        "queued_at": "2026-03-08T19:01:52.638508+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-08T13:52:40.215188+00:00",
+    "completed_at": "2026-03-08T19:01:53.071776+00:00",
     "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 54,
+    "cycles": 55,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-08T13:52:40.446121+00:00"
+    "last_run": "2026-03-08T19:01:53.300975+00:00"
   },
   "biz_factory": {
-    "cycles": 54,
+    "cycles": 55,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1475,13 +1477,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-08T13:52:37.760378+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-08T19:01:50.810677+00:00"
       }
     ],
-    "total_revenue_potential": 36560,
-    "last_run": "2026-03-08T13:52:36.841974+00:00"
+    "total_revenue_potential": 37300,
+    "last_run": "2026-03-08T19:01:50.093833+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-08T13:52:09.270790+00:00",
+    "last_check": "2026-03-08T19:01:28.175027+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -1569,7 +1578,7 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-08T13:52:09.299327+00:00",
+    "generated": "2026-03-08T19:01:28.203173+00:00",
     "summary": {
       "total_bottlenecks": 1,
       "critical": 0,
@@ -1763,7 +1772,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-08T13:52:45.732453+00:00",
+    "generated_at": "2026-03-08T19:01:57.414881+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1830,6 +1839,7 @@
         "BIG_BRAIN_ORACLE",
         "MEMORY_PALACE",
         "README_GENERATOR",
+        "BRIEFING_ENGINE",
         "NIGHTLY_DIGEST",
         "ISSUE_SYNC",
         "SOLARPUNK_LEGAL",
@@ -1839,7 +1849,6 @@
         "SELF_PORTRAIT"
       ],
       "engines_failed": [
-        "BRIEFING_ENGINE",
         "BRAND_LEGAL"
       ],
       "engines_skipped": [
@@ -1849,9 +1858,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 54,
+      "businesses_built": 55,
       "engines_built": 0,
-      "revenue_potential": 36560,
+      "revenue_potential": 37300,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1920,16 +1929,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 35,
-    "last_run": "2026-03-08T13:52:47.391452+00:00",
+    "cycles": 36,
+    "last_run": "2026-03-08T19:01:58.370735+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 35,
+    "cycles": 36,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-08T13:52:48.370973+00:00"
+    "last_run": "2026-03-08T19:01:59.010189+00:00"
   },
   "revenue_inbox": [
     {
@@ -1955,7 +1964,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-08T13:52:13.097788+00:00",
+    "scanned_at": "2026-03-08T19:01:31.209575+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -2044,7 +2053,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 25,
+    "cycles": 26,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2211,7 +2220,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-08T13:52:28.698459+00:00",
+    "generated_at": "2026-03-08T19:01:41.217052+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2248,7 +2257,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-08T13:52:36.732996+00:00",
+    "generated_at": "2026-03-08T19:01:49.986229+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
@@ -2357,7 +2366,6 @@
     "BIG_BRAIN_ORACLE",
     "MEMORY_PALACE",
     "README_GENERATOR",
-    "BRIEFING_ENGINE",
     "NIGHTLY_DIGEST",
     "ISSUE_SYNC",
     "SOLARPUNK_LEGAL",
@@ -2367,6 +2375,7 @@
     "SELF_PORTRAIT"
   ],
   "engines_failed": [
+    "BRIEFING_ENGINE",
     "BRAND_LEGAL"
   ]
 }
