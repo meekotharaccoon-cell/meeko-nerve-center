@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-08T21:03:05.817863+00:00",
+  "generated": "2026-03-08T21:47:44.301696+00:00",
   "summary": {
-    "total_bottlenecks": 3,
-    "critical": 1,
-    "high": 2,
-    "secrets_ok": 4,
+    "total_bottlenecks": 1,
+    "critical": 0,
+    "high": 1,
+    "secrets_ok": 10,
     "secrets_total": 18,
     "engines_ok": 76,
     "engines_total": 76,
@@ -16,30 +16,12 @@
   "bottlenecks": [
     {
       "id": "BN-001",
-      "severity": "CRITICAL",
-      "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-      "description": "GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.",
-      "fix": "gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET",
-      "revenue_impact": "$10/sale blocked",
-      "status": "PENDING"
-    },
-    {
-      "id": "BN-002",
       "severity": "HIGH",
       "title": "Gmail 534 error -- App Password wrong or expired",
       "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
       "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
       "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
       "status": "BROKEN"
-    },
-    {
-      "id": "BN-003",
-      "severity": "HIGH",
-      "title": "Twitter/X keys missing -- 100+ posts in queue",
-      "description": "SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.",
-      "fix": "developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets",
-      "revenue_impact": "Zero Twitter distribution",
-      "status": "PENDING"
     }
   ],
   "secrets": [
@@ -56,8 +38,8 @@
     },
     {
       "name": "GUMROAD_SECRET",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 43,
       "impact": "CRITICAL",
       "unlocks": [
         "10 queued products publishing"
@@ -84,8 +66,8 @@
     },
     {
       "name": "X_API_KEY",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 64,
       "impact": "HIGH",
       "unlocks": [
         "100+ queued tweets posting"
@@ -138,8 +120,8 @@
     },
     {
       "name": "PAYPAL_CLIENT_ID",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 80,
       "impact": "MEDIUM",
       "unlocks": [
         "automated payouts"
@@ -147,8 +129,8 @@
     },
     {
       "name": "PAYPAL_CLIENT_SECRET",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 80,
       "impact": "MEDIUM",
       "unlocks": [
         "PayPal API auth"
@@ -165,8 +147,8 @@
     },
     {
       "name": "GUMROAD_ID",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 43,
       "impact": "LOW",
       "unlocks": [
         "Gumroad analytics"
@@ -174,8 +156,8 @@
     },
     {
       "name": "GUMROAD_NAME",
-      "present": false,
-      "length": 0,
+      "present": true,
+      "length": 11,
       "impact": "LOW",
       "unlocks": [
         "Gumroad display name"

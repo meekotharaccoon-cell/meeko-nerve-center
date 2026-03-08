@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-08T21:03:09.787813+00:00",
+  "timestamp": "2026-03-08T21:47:48.760416+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Neural Boids",
-        "url": "https://campedersen.com/noid",
-        "score": 35,
+        "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
+        "url": "https://agent-safehouse.dev/",
+        "score": 79,
         "source": "hackernews"
       },
       {
-        "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
-        "url": "https://agent-safehouse.dev/",
-        "score": 28,
+        "title": "Every single board computer I tested in 2025",
+        "url": "https://bret.dk/every-single-board-computer-i-tested-in-2025/",
+        "score": 34,
+        "source": "hackernews"
+      },
+      {
+        "title": "Neural Boids",
+        "url": "https://campedersen.com/noid",
+        "score": 85,
+        "source": "hackernews"
+      },
+      {
+        "title": "We should revisit literate programming in the agent era",
+        "url": "https://silly.business/blog/we-should-revisit-literate-programming-in-the-agent-era/",
+        "score": 31,
         "source": "hackernews"
       },
       {
         "title": "FrameBook",
         "url": "https://fb.edoo.gg",
-        "score": 285,
-        "source": "hackernews"
-      },
-      {
-        "title": "71% Desk Workers Say Screen-Related Visual Discomfort Is Reducing Productivity",
-        "url": "https://www.vspvision.com/newsroom/eye-health-and-wellness/vision-care/new-research-from-vsp-vision-care-and-workplace-intelligence-finds-desk-workers-spend-nearly-100-hours-a-week-on-screens",
-        "score": 10,
-        "source": "hackernews"
-      },
-      {
-        "title": "Pushing and Pulling: Three reactivity algorithms",
-        "url": "https://jonathan-frere.com/posts/reactivity-algorithms/",
-        "score": 21,
+        "score": 302,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 8.8,
+    "temp_c": 7.8,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
@@ -73,16 +73,8 @@
       "count": 3
     },
     {
-      "word": "neural",
-      "count": 1
-    },
-    {
-      "word": "boids",
-      "count": 1
-    },
-    {
       "word": "agent",
-      "count": 1
+      "count": 2
     },
     {
       "word": "safehouse",
@@ -109,50 +101,58 @@
       "count": 1
     },
     {
-      "word": "framebook",
+      "word": "every",
       "count": 1
     },
     {
-      "word": "desk",
+      "word": "single",
       "count": 1
     },
     {
-      "word": "workers",
+      "word": "board",
       "count": 1
     },
     {
-      "word": "screen",
+      "word": "computer",
       "count": 1
     },
     {
-      "word": "related",
+      "word": "tested",
       "count": 1
     },
     {
-      "word": "visual",
+      "word": "2025",
       "count": 1
     },
     {
-      "word": "discomfort",
+      "word": "neural",
       "count": 1
     },
     {
-      "word": "reducing",
+      "word": "boids",
       "count": 1
     },
     {
-      "word": "productivity",
+      "word": "should",
       "count": 1
     },
     {
-      "word": "pushing",
+      "word": "revisit",
+      "count": 1
+    },
+    {
+      "word": "literate",
+      "count": 1
+    },
+    {
+      "word": "programming",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Neural Boids...' connects to Gaza resilience",
+      "hook": "How 'Agent Safehouse \u2013 macOS-native sandboxing for local agents...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
