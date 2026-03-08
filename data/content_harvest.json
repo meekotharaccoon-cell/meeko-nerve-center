@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-08T07:44:41.041627+00:00",
+  "timestamp": "2026-03-08T08:37:33.239754+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via CI",
+        "url": "https://arxiv.org/abs/2603.03823",
+        "score": 13,
+        "source": "hackernews"
+      },
+      {
         "title": "Cloud VM benchmarks 2026",
         "url": "https://devblog.ecuadors.net/cloud-vm-benchmarks-2026-performance-price-1i1m.html",
-        "score": 185,
+        "score": 202,
         "source": "hackernews"
       },
       {
         "title": "\"Warn about PyPy being unmaintained\"",
         "url": "https://github.com/astral-sh/uv/pull/17643",
-        "score": 126,
-        "source": "hackernews"
-      },
-      {
-        "title": "CasNum",
-        "url": "https://github.com/0x0mer/CasNum",
-        "score": 264,
+        "score": 151,
         "source": "hackernews"
       },
       {
         "title": "From RGB to L*a*b* color space (2024)",
         "url": "https://kaizoudou.com/from-rgb-to-lab-color-space/",
-        "score": 6,
+        "score": 19,
         "source": "hackernews"
       },
       {
-        "title": "MonoGame: A .NET framework for making cross-platform games",
-        "url": "https://github.com/MonoGame/MonoGame",
-        "score": 54,
+        "title": "CasNum",
+        "url": "https://github.com/0x0mer/CasNum",
+        "score": 272,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.3,
+    "temp_c": 17.2,
     "vibe": "sunny",
-    "code": 0,
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -73,8 +73,24 @@
       "count": 2
     },
     {
-      "word": "making",
-      "count": 2
+      "word": "evaluating",
+      "count": 1
+    },
+    {
+      "word": "agent",
+      "count": 1
+    },
+    {
+      "word": "capabilities",
+      "count": 1
+    },
+    {
+      "word": "maintaining",
+      "count": 1
+    },
+    {
+      "word": "codebases",
+      "count": 1
     },
     {
       "word": "cloud",
@@ -105,10 +121,6 @@
       "count": 1
     },
     {
-      "word": "casnum",
-      "count": 1
-    },
-    {
       "word": "l*a*b*",
       "count": 1
     },
@@ -125,23 +137,11 @@
       "count": 1
     },
     {
-      "word": "monogame:",
+      "word": "casnum",
       "count": 1
     },
     {
-      "word": "framework",
-      "count": 1
-    },
-    {
-      "word": "cross",
-      "count": 1
-    },
-    {
-      "word": "platform",
-      "count": 1
-    },
-    {
-      "word": "games",
+      "word": "making",
       "count": 1
     },
     {
@@ -152,7 +152,7 @@
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Cloud VM benchmarks 2026...' connects to Gaza resilience",
+      "hook": "How 'SWE-CI: Evaluating Agent Capabilities in Maintaining Codebas...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
