@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-08T08:37:46.823039+00:00",
+  "last_run": "2026-03-08T08:41:22.231346+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -75,7 +75,7 @@
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2377791802563.377
+      "value": 2379006745835.6846
     }
   ],
   "opportunities": [
