@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-08T08:41:11.977327+00:00",
+  "timestamp": "2026-03-08T13:52:13.902053+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via CI",
-        "url": "https://arxiv.org/abs/2603.03823",
+        "title": "How Big Diaper absorbs billions of extra dollars from American parents",
+        "url": "https://thehustle.co/originals/how-big-diaper-absorbs-billions-of-extra-dollars-from-american-parents",
+        "score": 12,
+        "source": "hackernews"
+      },
+      {
+        "title": "Notes on Writing WASM",
+        "url": "https://notes.brooklynzelenka.com/Blog/Notes-on-Writing-Wasm",
+        "score": 65,
+        "source": "hackernews"
+      },
+      {
+        "title": "You Don't Need a Vector Database",
+        "url": "https://vecstore.app/blog/you-dont-need-a-vector-database",
         "score": 13,
         "source": "hackernews"
       },
       {
-        "title": "Cloud VM benchmarks 2026",
-        "url": "https://devblog.ecuadors.net/cloud-vm-benchmarks-2026-performance-price-1i1m.html",
-        "score": 205,
+        "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via CI",
+        "url": "https://arxiv.org/abs/2603.03823",
+        "score": 78,
         "source": "hackernews"
       },
       {
-        "title": "\"Warn about PyPy being unmaintained\"",
-        "url": "https://github.com/astral-sh/uv/pull/17643",
-        "score": 151,
-        "source": "hackernews"
-      },
-      {
-        "title": "From RGB to L*a*b* color space (2024)",
-        "url": "https://kaizoudou.com/from-rgb-to-lab-color-space/",
-        "score": 21,
-        "source": "hackernews"
-      },
-      {
-        "title": "CasNum",
-        "url": "https://github.com/0x0mer/CasNum",
-        "score": 274,
+        "title": "The Collective Ambition Behind Odysseus, a Game-Changing Sci-Fi Larp",
+        "url": "https://mssv.net/2025/03/19/the-collective-ambition-behind-odysseus/",
+        "score": 40,
         "source": "hackernews"
       }
     ],
@@ -62,15 +62,67 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 17.2,
+    "temp_c": 16.7,
     "vibe": "sunny",
-    "code": 1,
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "about",
-      "count": 2
+      "word": "diaper",
+      "count": 1
+    },
+    {
+      "word": "absorbs",
+      "count": 1
+    },
+    {
+      "word": "billions",
+      "count": 1
+    },
+    {
+      "word": "extra",
+      "count": 1
+    },
+    {
+      "word": "dollars",
+      "count": 1
+    },
+    {
+      "word": "american",
+      "count": 1
+    },
+    {
+      "word": "parents",
+      "count": 1
+    },
+    {
+      "word": "notes",
+      "count": 1
+    },
+    {
+      "word": "writing",
+      "count": 1
+    },
+    {
+      "word": "wasm",
+      "count": 1
+    },
+    {
+      "word": "don't",
+      "count": 1
+    },
+    {
+      "word": "need",
+      "count": 1
+    },
+    {
+      "word": "vector",
+      "count": 1
+    },
+    {
+      "word": "database",
+      "count": 1
     },
     {
       "word": "evaluating",
@@ -93,66 +145,14 @@
       "count": 1
     },
     {
-      "word": "cloud",
-      "count": 1
-    },
-    {
-      "word": "benchmarks",
-      "count": 1
-    },
-    {
-      "word": "2026",
-      "count": 1
-    },
-    {
-      "word": "warn",
-      "count": 1
-    },
-    {
-      "word": "pypy",
-      "count": 1
-    },
-    {
-      "word": "being",
-      "count": 1
-    },
-    {
-      "word": "unmaintained",
-      "count": 1
-    },
-    {
-      "word": "l*a*b*",
-      "count": 1
-    },
-    {
-      "word": "color",
-      "count": 1
-    },
-    {
-      "word": "space",
-      "count": 1
-    },
-    {
-      "word": "2024",
-      "count": 1
-    },
-    {
-      "word": "casnum",
-      "count": 1
-    },
-    {
-      "word": "making",
-      "count": 1
-    },
-    {
-      "word": "london's",
+      "word": "collective",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'SWE-CI: Evaluating Agent Capabilities in Maintaining Codebas...' connects to Gaza resilience",
+      "hook": "How 'How Big Diaper absorbs billions of extra dollars from Americ...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
