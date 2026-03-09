@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-08T21:47:48.760416+00:00",
+  "timestamp": "2026-03-09T08:02:10.204331+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "US Court of Appeals: TOS may be updated by email, use can imply consent [pdf]",
+        "url": "https://cdn.ca9.uscourts.gov/datastore/memoranda/2026/03/03/25-403.pdf",
+        "score": 100,
+        "source": "hackernews"
+      },
+      {
         "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
         "url": "https://agent-safehouse.dev/",
-        "score": 79,
+        "score": 541,
         "source": "hackernews"
       },
       {
-        "title": "Every single board computer I tested in 2025",
-        "url": "https://bret.dk/every-single-board-computer-i-tested-in-2025/",
-        "score": 34,
+        "title": "Microscopes can see video on a laserdisc",
+        "url": "https://www.youtube.com/watch?v=qZuR-772cks",
+        "score": 395,
         "source": "hackernews"
       },
       {
-        "title": "Neural Boids",
-        "url": "https://campedersen.com/noid",
-        "score": 85,
+        "title": "Show HN: Mcp2cli \u2013 One CLI for every API, 96-99% fewer tokens than native MCP",
+        "url": "https://github.com/knowsuchagency/mcp2cli",
+        "score": 30,
         "source": "hackernews"
       },
       {
-        "title": "We should revisit literate programming in the agent era",
-        "url": "https://silly.business/blog/we-should-revisit-literate-programming-in-the-agent-era/",
-        "score": 31,
-        "source": "hackernews"
-      },
-      {
-        "title": "FrameBook",
-        "url": "https://fb.edoo.gg",
-        "score": 302,
+        "title": "PCB devboard the size of a USB-C plug",
+        "url": "https://github.com/Dieu-de-l-elec/AngstromIO-devboard",
+        "score": 150,
         "source": "hackernews"
       }
     ],
@@ -38,13 +38,13 @@
       {
         "title": "I Shipped Broken Code and Wrote an Article About It",
         "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 39,
+        "hearts": 40,
         "source": "devto"
       },
       {
         "title": "I Created An Enterprise MCP Gateway",
         "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 109,
+        "hearts": 110,
         "source": "devto"
       },
       {
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 7.8,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 15.9,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -73,8 +73,36 @@
       "count": 3
     },
     {
-      "word": "agent",
+      "word": "native",
       "count": 2
+    },
+    {
+      "word": "court",
+      "count": 1
+    },
+    {
+      "word": "appeals:",
+      "count": 1
+    },
+    {
+      "word": "updated",
+      "count": 1
+    },
+    {
+      "word": "email",
+      "count": 1
+    },
+    {
+      "word": "imply",
+      "count": 1
+    },
+    {
+      "word": "consent",
+      "count": 1
+    },
+    {
+      "word": "agent",
+      "count": 1
     },
     {
       "word": "safehouse",
@@ -82,10 +110,6 @@
     },
     {
       "word": "macos",
-      "count": 1
-    },
-    {
-      "word": "native",
       "count": 1
     },
     {
@@ -101,58 +125,34 @@
       "count": 1
     },
     {
+      "word": "microscopes",
+      "count": 1
+    },
+    {
+      "word": "video",
+      "count": 1
+    },
+    {
+      "word": "laserdisc",
+      "count": 1
+    },
+    {
+      "word": "show",
+      "count": 1
+    },
+    {
+      "word": "mcp2cli",
+      "count": 1
+    },
+    {
       "word": "every",
-      "count": 1
-    },
-    {
-      "word": "single",
-      "count": 1
-    },
-    {
-      "word": "board",
-      "count": 1
-    },
-    {
-      "word": "computer",
-      "count": 1
-    },
-    {
-      "word": "tested",
-      "count": 1
-    },
-    {
-      "word": "2025",
-      "count": 1
-    },
-    {
-      "word": "neural",
-      "count": 1
-    },
-    {
-      "word": "boids",
-      "count": 1
-    },
-    {
-      "word": "should",
-      "count": 1
-    },
-    {
-      "word": "revisit",
-      "count": 1
-    },
-    {
-      "word": "literate",
-      "count": 1
-    },
-    {
-      "word": "programming",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Agent Safehouse \u2013 macOS-native sandboxing for local agents...' connects to Gaza resilience",
+      "hook": "How 'US Court of Appeals: TOS may be updated by email, use can im...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

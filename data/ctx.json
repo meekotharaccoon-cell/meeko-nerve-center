@@ -1,6 +1,6 @@
 {
-  "run_id": "22830602600",
-  "ts": "2026-03-08T21:48:28.286277+00:00",
+  "run_id": "22843869209",
+  "ts": "2026-03-09T08:02:50.966298+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -83,6 +83,22 @@
           "agent",
           "safehouse"
         ]
+      },
+      {
+        "timestamp": "2026-03-09T08:02:44.863907+00:00",
+        "health_score": 40,
+        "revenue": 0.0,
+        "engines": 76,
+        "synth_built": 0,
+        "loop_balance": 0,
+        "total_sales": 0,
+        "loop_cycles_count": 0,
+        "top_opportunity": "Gaza Rose Gallery Etsy SEO",
+        "trending_themes": [
+          "code",
+          "native",
+          "court"
+        ]
       }
     ],
     "patterns": {
@@ -92,11 +108,11 @@
       "revenue_events": 0,
       "total_loops_triggered": 0
     },
-    "total_cycles": 5,
+    "total_cycles": 6,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-08T21:48:20.185028+00:00",
+    "last_updated": "2026-03-09T08:02:44.863907+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-08T21:48:20.185028+00:00",
+      "timestamp": "2026-03-09T08:02:44.863907+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -107,14 +123,14 @@
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
         "code",
-        "agent",
-        "safehouse"
+        "native",
+        "court"
       ]
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-08T21:47:42.938636+00:00",
-    "cycle_number": 27,
+    "generated": "2026-03-09T08:02:04.351196+00:00",
+    "cycle_number": 28,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
@@ -134,8 +150,8 @@
     "persistent": [
       {
         "id": "BN-001",
-        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-        "severity": "CRITICAL",
+        "title": "Gmail 534 error -- App Password wrong or expired",
+        "severity": "HIGH",
         "cycles_open": 20,
         "escalation": "STUCK"
       }
@@ -149,7 +165,7 @@
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 27 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 28 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -396,9 +412,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-08T21:48:05.056075+00:00"
+      "timestamp": "2026-03-09T08:02:23.865783+00:00"
     },
-    "generated_at": "2026-03-08T21:48:05.509697+00:00"
+    "generated_at": "2026-03-09T08:02:24.150412+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -447,10 +463,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-08T21:48:05.739042+00:00"
+    "generated_at": "2026-03-09T08:02:24.335327+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-08T21:48:08.391365+00:00",
+    "ts": "2026-03-09T08:02:26.607262+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -460,14 +476,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 57,
+          "cycles": 58,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-08T21:03:29.248260+00:00"
+          "last_run": "2026-03-08T21:48:14.797672+00:00"
         }
       },
       "grants": {
@@ -476,11 +492,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 57,
+          "cycles": 58,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-08T21:03:27.342951+00:00"
+          "last_run": "2026-03-08T21:48:12.676651+00:00"
         }
       },
       "sponsors": {
@@ -489,11 +505,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 57,
+          "cycles": 58,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-08T21:03:29.407073+00:00"
+          "last_run": "2026-03-08T21:48:15.081407+00:00"
         }
       },
       "exchange": {
@@ -502,14 +518,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 57,
+          "cycles": 58,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-08T21:03:27.229241+00:00"
+          "last_run": "2026-03-08T21:48:12.560996+00:00"
         }
       },
       "substack": {
@@ -518,11 +534,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 57,
+          "cycles": 58,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-08T21:03:27.755936+00:00"
+          "last_run": "2026-03-08T21:48:13.137520+00:00"
         }
       },
       "gumroad": {
@@ -535,37 +551,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-08T21:47:48.760416+00:00",
+    "timestamp": "2026-03-09T08:02:10.204331+00:00",
     "sources": {
       "hackernews": [
         {
+          "title": "US Court of Appeals: TOS may be updated by email, use can imply consent [pdf]",
+          "url": "https://cdn.ca9.uscourts.gov/datastore/memoranda/2026/03/03/25-403.pdf",
+          "score": 100,
+          "source": "hackernews"
+        },
+        {
           "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
           "url": "https://agent-safehouse.dev/",
-          "score": 79,
+          "score": 541,
           "source": "hackernews"
         },
         {
-          "title": "Every single board computer I tested in 2025",
-          "url": "https://bret.dk/every-single-board-computer-i-tested-in-2025/",
-          "score": 34,
+          "title": "Microscopes can see video on a laserdisc",
+          "url": "https://www.youtube.com/watch?v=qZuR-772cks",
+          "score": 395,
           "source": "hackernews"
         },
         {
-          "title": "Neural Boids",
-          "url": "https://campedersen.com/noid",
-          "score": 85,
+          "title": "Show HN: Mcp2cli \u2013 One CLI for every API, 96-99% fewer tokens than native MCP",
+          "url": "https://github.com/knowsuchagency/mcp2cli",
+          "score": 30,
           "source": "hackernews"
         },
         {
-          "title": "We should revisit literate programming in the agent era",
-          "url": "https://silly.business/blog/we-should-revisit-literate-programming-in-the-agent-era/",
-          "score": 31,
-          "source": "hackernews"
-        },
-        {
-          "title": "FrameBook",
-          "url": "https://fb.edoo.gg",
-          "score": 302,
+          "title": "PCB devboard the size of a USB-C plug",
+          "url": "https://github.com/Dieu-de-l-elec/AngstromIO-devboard",
+          "score": 150,
           "source": "hackernews"
         }
       ],
@@ -574,13 +590,13 @@
         {
           "title": "I Shipped Broken Code and Wrote an Article About It",
           "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-          "hearts": 39,
+          "hearts": 40,
           "source": "devto"
         },
         {
           "title": "I Created An Enterprise MCP Gateway",
           "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-          "hearts": 109,
+          "hearts": 110,
           "source": "devto"
         },
         {
@@ -598,9 +614,9 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 7.8,
-      "vibe": "sunny",
-      "code": 1,
+      "temp_c": 15.9,
+      "vibe": "partly cloudy",
+      "code": 2,
       "location": "Gaza City"
     },
     "trending_themes": [
@@ -609,8 +625,36 @@
         "count": 3
       },
       {
-        "word": "agent",
+        "word": "native",
         "count": 2
+      },
+      {
+        "word": "court",
+        "count": 1
+      },
+      {
+        "word": "appeals:",
+        "count": 1
+      },
+      {
+        "word": "updated",
+        "count": 1
+      },
+      {
+        "word": "email",
+        "count": 1
+      },
+      {
+        "word": "imply",
+        "count": 1
+      },
+      {
+        "word": "consent",
+        "count": 1
+      },
+      {
+        "word": "agent",
+        "count": 1
       },
       {
         "word": "safehouse",
@@ -618,10 +662,6 @@
       },
       {
         "word": "macos",
-        "count": 1
-      },
-      {
-        "word": "native",
         "count": 1
       },
       {
@@ -637,58 +677,34 @@
         "count": 1
       },
       {
+        "word": "microscopes",
+        "count": 1
+      },
+      {
+        "word": "video",
+        "count": 1
+      },
+      {
+        "word": "laserdisc",
+        "count": 1
+      },
+      {
+        "word": "show",
+        "count": 1
+      },
+      {
+        "word": "mcp2cli",
+        "count": 1
+      },
+      {
         "word": "every",
-        "count": 1
-      },
-      {
-        "word": "single",
-        "count": 1
-      },
-      {
-        "word": "board",
-        "count": 1
-      },
-      {
-        "word": "computer",
-        "count": 1
-      },
-      {
-        "word": "tested",
-        "count": 1
-      },
-      {
-        "word": "2025",
-        "count": 1
-      },
-      {
-        "word": "neural",
-        "count": 1
-      },
-      {
-        "word": "boids",
-        "count": 1
-      },
-      {
-        "word": "should",
-        "count": 1
-      },
-      {
-        "word": "revisit",
-        "count": 1
-      },
-      {
-        "word": "literate",
-        "count": 1
-      },
-      {
-        "word": "programming",
         "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'Agent Safehouse \u2013 macOS-native sandboxing for local agents...' connects to Gaza resilience",
+        "hook": "How 'US Court of Appeals: TOS may be updated by email, use can im...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -710,44 +726,44 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-08T21:48:00.417839+00:00",
+    "last_run": "2026-03-09T08:02:19.844826+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-MiniLM-L6-v2",
-        "downloads": 199494680
+        "downloads": 200187461
       },
       {
         "type": "trending_model",
         "name": "google-bert/bert-base-uncased",
-        "downloads": 66868510
+        "downloads": 67112469
       },
       {
         "type": "trending_model",
         "name": "google/electra-base-discriminator",
-        "downloads": 48263513
+        "downloads": 48435237
       },
       {
         "type": "trending_model",
         "name": "Falconsai/nsfw_image_detection",
-        "downloads": 41209325
+        "downloads": 41654388
       },
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-mpnet-base-v2",
-        "downloads": 27635362
+        "downloads": 27494556
       },
       {
         "type": "trending_space",
         "name": "enzostvs/deepsite",
-        "likes": 16562
+        "likes": 16563
       },
       {
         "type": "trending_space",
         "name": "open-llm-leaderboard/open_llm_leaderboard",
-        "likes": 13881
+        "likes": 13882
       },
       {
         "type": "trending_space",
@@ -757,53 +773,53 @@
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 42011
+        "stars": 42036
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 41018
+        "stars": 41064
       },
       {
         "type": "github_ai_repo",
         "repo": "CopilotKit/CopilotKit",
-        "stars": 29228
+        "stars": 29239
       },
       {
         "type": "trending_article",
         "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-        "reactions": 46
+        "reactions": 49
       },
       {
         "type": "trending_article",
-        "title": "The Junior Developer Isn't Extinct\u2014They're Stuck Below the API",
-        "reactions": 23
+        "title": "The SOUL.md Pattern: How to Give Your AI Agent a Behavioral Constitution",
+        "reactions": 1
       },
       {
         "type": "trending_article",
-        "title": "Confessions of an AI Sceptic",
-        "reactions": 9
+        "title": "Your AI Agent Has Amnesia. And You Designed It That Way.",
+        "reactions": 1
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2371798065196.9194
+        "value": 2389681059472.9395
       }
     ],
     "opportunities": [
-      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (199,494,680 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google-bert/bert-base-uncased' (66,868,510 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google/electra-base-discriminator' (48,263,513 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,209,325 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,635,362 downloads) \u2014 build how-to guide",
-      "Clone/extend HF space: 'enzostvs/deepsite' (16562 likes) \u2014 integrate into SolarPunk",
-      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13881 likes) \u2014 integrate into SolarPunk",
+      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (200,187,461 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google-bert/bert-base-uncased' (67,112,469 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google/electra-base-discriminator' (48,435,237 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,654,388 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,494,556 downloads) \u2014 build how-to guide",
+      "Clone/extend HF space: 'enzostvs/deepsite' (16563 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13882 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10985 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (42011 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (41018 stars) \u2014 build integration engine",
-      "Engine wrapper: CopilotKit/CopilotKit (29228 stars) \u2014 build integration engine",
-      "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (46 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'The Junior Developer Isn't Extinct\u2014They're Stuck Below the A' (23 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'Confessions of an AI Sceptic' (9 reactions) \u2014 create SolarPunk angle"
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (42036 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (41064 stars) \u2014 build integration engine",
+      "Engine wrapper: CopilotKit/CopilotKit (29239 stars) \u2014 build integration engine",
+      "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (49 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'The SOUL.md Pattern: How to Give Your AI Agent a Behavioral ' (1 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'Your AI Agent Has Amnesia. And You Designed It That Way.' (1 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1042,7 +1058,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-08T21:48:10.776394+00:00",
+    "started_at": "2026-03-09T08:02:34.049759+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1059,7 +1075,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-08T21:48:11.694776+00:00",
+        "queued_at": "2026-03-09T08:02:34.647284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1067,7 +1083,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-08T21:48:11.694776+00:00",
+        "queued_at": "2026-03-09T08:02:34.647284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1075,28 +1091,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-08T21:48:11.694776+00:00",
+        "queued_at": "2026-03-09T08:02:34.647284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-08T21:48:12.328973+00:00",
+    "completed_at": "2026-03-09T08:02:35.073929+00:00",
     "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 58,
+    "cycles": 59,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-08T21:48:12.560996+00:00"
+    "last_run": "2026-03-09T08:02:35.307112+00:00"
   },
   "biz_factory": {
-    "cycles": 58,
+    "cycles": 59,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1503,13 +1519,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-08T21:48:09.821860+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-09T08:02:33.324468+00:00"
       }
     ],
-    "total_revenue_potential": 39520,
-    "last_run": "2026-03-08T21:48:08.820340+00:00"
+    "total_revenue_potential": 40260,
+    "last_run": "2026-03-09T08:02:32.641372+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-08T21:47:44.273832+00:00",
+    "last_check": "2026-03-09T08:02:05.702893+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -1597,7 +1620,7 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-08T21:47:44.301696+00:00",
+    "generated": "2026-03-09T08:02:05.731307+00:00",
     "summary": {
       "total_bottlenecks": 1,
       "critical": 0,
@@ -1791,7 +1814,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-08T21:48:17.520422+00:00",
+    "generated_at": "2026-03-09T08:02:42.859570+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -1877,9 +1900,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 58,
+      "businesses_built": 59,
       "engines_built": 0,
-      "revenue_potential": 39520,
+      "revenue_potential": 40260,
       "active_revenue_streams": [
         "substack"
       ]
@@ -1948,16 +1971,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 39,
-    "last_run": "2026-03-08T21:48:18.928928+00:00",
+    "cycles": 40,
+    "last_run": "2026-03-09T08:02:43.827904+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 39,
+    "cycles": 40,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-08T21:48:19.896610+00:00"
+    "last_run": "2026-03-09T08:02:44.604554+00:00"
   },
   "revenue_inbox": [
     {
@@ -1983,7 +2006,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-08T21:47:47.902690+00:00",
+    "scanned_at": "2026-03-09T08:02:09.104994+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -2072,7 +2095,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 29,
+    "cycles": 30,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2239,7 +2262,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-08T21:48:00.480910+00:00",
+    "generated_at": "2026-03-09T08:02:19.908920+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2276,7 +2299,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-08T21:48:08.713398+00:00",
+    "generated_at": "2026-03-09T08:02:32.534655+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
