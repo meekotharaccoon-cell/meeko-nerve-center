@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-09T19:54:18.104376+00:00",
+  "timestamp": "2026-03-09T21:58:39.869319+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Rendezvous with Rama",
+        "url": "https://blog.engora.com/2026/03/rendezvous-with-rama.html",
+        "score": 33,
+        "source": "hackernews"
+      },
+      {
         "title": "Building a Procedural Hex Map with Wave Function Collapse",
         "url": "https://felixturner.github.io/hex-map-wfc/article/",
-        "score": 173,
+        "score": 294,
         "source": "hackernews"
       },
       {
         "title": "JSLinux Now Supports x86_64",
         "url": "https://bellard.org/jslinux/",
-        "score": 98,
+        "score": 160,
         "source": "hackernews"
       },
       {
-        "title": "Bluesky CEO Jay Graber is stepping down",
-        "url": "https://bsky.social/about/blog/03-09-2026-a-new-chapter-for-bluesky",
-        "score": 68,
+        "title": "Zuckerberg has \u201cfinished\u201d with Alexandr Wang",
+        "url": "https://www.idnfinancials.com/news/61918/zuckerberg-has-finished-with-alexandr-wang-worth-us14-billion",
+        "score": 69,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: The Mog Programming Language",
-        "url": "https://moglang.org",
-        "score": 46,
-        "source": "hackernews"
-      },
-      {
-        "title": "DARPA's new X-76",
-        "url": "https://www.darpa.mil/news/2026/darpa-new-x-76-speed-of-jet-freedom-of-helicopter",
-        "score": 64,
+        "title": "Is legal the same as legitimate: AI reimplementation and the erosion of copyleft",
+        "url": "https://writings.hongminhee.org/2026/03/legal-vs-legitimate/",
+        "score": 222,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.6,
+    "temp_c": 9.4,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -71,6 +71,14 @@
     {
       "word": "code",
       "count": 3
+    },
+    {
+      "word": "rendezvous",
+      "count": 1
+    },
+    {
+      "word": "rama",
+      "count": 1
     },
     {
       "word": "building",
@@ -105,54 +113,46 @@
       "count": 1
     },
     {
-      "word": "bluesky",
+      "word": "zuckerberg",
       "count": 1
     },
     {
-      "word": "graber",
+      "word": "\u201cfinished\u201d",
       "count": 1
     },
     {
-      "word": "stepping",
+      "word": "alexandr",
       "count": 1
     },
     {
-      "word": "down",
+      "word": "wang",
       "count": 1
     },
     {
-      "word": "show",
+      "word": "legal",
       "count": 1
     },
     {
-      "word": "programming",
+      "word": "same",
       "count": 1
     },
     {
-      "word": "language",
+      "word": "legitimate:",
       "count": 1
     },
     {
-      "word": "darpa's",
+      "word": "reimplementation",
       "count": 1
     },
     {
-      "word": "shipped",
-      "count": 1
-    },
-    {
-      "word": "broken",
-      "count": 1
-    },
-    {
-      "word": "wrote",
+      "word": "erosion",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Building a Procedural Hex Map with Wave Function Collapse...' connects to Gaza resilience",
+      "hook": "How 'Rendezvous with Rama...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
