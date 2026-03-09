@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-09T18:03:18.964020+00:00",
+  "timestamp": "2026-03-09T19:54:18.104376+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Building a Procedural Hex Map with Wave Function Collapse",
         "url": "https://felixturner.github.io/hex-map-wfc/article/",
+        "score": 173,
+        "source": "hackernews"
+      },
+      {
+        "title": "JSLinux Now Supports x86_64",
+        "url": "https://bellard.org/jslinux/",
+        "score": 98,
+        "source": "hackernews"
+      },
+      {
+        "title": "Bluesky CEO Jay Graber is stepping down",
+        "url": "https://bsky.social/about/blog/03-09-2026-a-new-chapter-for-bluesky",
+        "score": 68,
+        "source": "hackernews"
+      },
+      {
+        "title": "Show HN: The Mog Programming Language",
+        "url": "https://moglang.org",
+        "score": 46,
+        "source": "hackernews"
+      },
+      {
+        "title": "DARPA's new X-76",
+        "url": "https://www.darpa.mil/news/2026/darpa-new-x-76-speed-of-jet-freedom-of-helicopter",
         "score": 64,
-        "source": "hackernews"
-      },
-      {
-        "title": "Florida Judge Rules Red Light Camera Tickets Are Unconstitutional",
-        "url": "https://cbs12.com/news/local/florida-news-judge-rules-red-light-camera-tickets-unconstitutional",
-        "score": 55,
-        "source": "hackernews"
-      },
-      {
-        "title": "Fixfest is a global gathering of repairers, tinkerers, and activists",
-        "url": "https://fixfest.therestartproject.org/",
-        "score": 18,
-        "source": "hackernews"
-      },
-      {
-        "title": "Launch HN: Terminal Use (YC W26) \u2013 Vercel for filesystem-based agents",
-        "url": "",
-        "score": 19,
-        "source": "hackernews"
-      },
-      {
-        "title": "Restoring a Sun SPARCstation IPX Part 1: PSU and Nvram",
-        "url": "https://www.rs-online.com/designspark/restoring-a-sun-sparcstation-ipx-part-1-psu-and-nvram",
-        "score": 42,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 12.1,
+    "temp_c": 10.6,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -93,59 +93,59 @@
       "count": 1
     },
     {
-      "word": "florida",
+      "word": "jslinux",
       "count": 1
     },
     {
-      "word": "judge",
+      "word": "supports",
       "count": 1
     },
     {
-      "word": "rules",
+      "word": "x86_64",
       "count": 1
     },
     {
-      "word": "light",
+      "word": "bluesky",
       "count": 1
     },
     {
-      "word": "camera",
+      "word": "graber",
       "count": 1
     },
     {
-      "word": "tickets",
+      "word": "stepping",
       "count": 1
     },
     {
-      "word": "unconstitutional",
+      "word": "down",
       "count": 1
     },
     {
-      "word": "fixfest",
+      "word": "show",
       "count": 1
     },
     {
-      "word": "global",
+      "word": "programming",
       "count": 1
     },
     {
-      "word": "gathering",
+      "word": "language",
       "count": 1
     },
     {
-      "word": "repairers",
+      "word": "darpa's",
       "count": 1
     },
     {
-      "word": "tinkerers",
+      "word": "shipped",
       "count": 1
     },
     {
-      "word": "activists",
+      "word": "broken",
       "count": 1
     },
     {
-      "word": "launch",
+      "word": "wrote",
       "count": 1
     }
   ],
