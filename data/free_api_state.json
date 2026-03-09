@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-09T14:40:12.221407+00:00",
+  "last_run": "2026-03-09T18:01:48.308538+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -41,41 +41,41 @@
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10987
+      "likes": 10986
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42058
+      "stars": 42063
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41094
+      "stars": 41104
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29242
-    },
-    {
-      "type": "trending_article",
-      "title": "Mapping the Territory",
-      "reactions": 1
+      "stars": 29246
     },
     {
       "type": "trending_article",
       "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-      "reactions": 50
+      "reactions": 51
     },
     {
       "type": "trending_article",
-      "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
-      "reactions": 36
+      "title": "Mapping the Territory",
+      "reactions": 3
+    },
+    {
+      "type": "trending_article",
+      "title": "Building a Text-to-Speech Engine in Pure C",
+      "reactions": 2
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2438144152613.455
+      "value": 2419028492841.0034
     }
   ],
   "opportunities": [
@@ -86,13 +86,13 @@
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (27,494,556 downloads) \u2014 build how-to guide",
     "Clone/extend HF space: 'enzostvs/deepsite' (16563 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13883 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42058 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41094 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29242 stars) \u2014 build integration engine",
-    "Content leverage: 'Mapping the Territory' (1 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (50 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Criei uma pipeline de planejamento no OpenCode e olha no que' (36 reactions) \u2014 create SolarPunk angle"
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10986 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42063 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41104 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29246 stars) \u2014 build integration engine",
+    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (51 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Mapping the Territory' (3 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Building a Text-to-Speech Engine in Pure C' (2 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

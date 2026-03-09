@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-09T14:40:30.829692+00:00",
+  "generated_at": "2026-03-09T18:02:08.921213+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -66,6 +66,7 @@
       "BIG_BRAIN_ORACLE",
       "MEMORY_PALACE",
       "README_GENERATOR",
+      "BRIEFING_ENGINE",
       "NIGHTLY_DIGEST",
       "ISSUE_SYNC",
       "SOLARPUNK_LEGAL",
@@ -75,7 +76,6 @@
       "SELF_PORTRAIT"
     ],
     "engines_failed": [
-      "BRIEFING_ENGINE",
       "BRAND_LEGAL"
     ],
     "engines_skipped": [
@@ -85,9 +85,9 @@
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 60,
+    "businesses_built": 61,
     "engines_built": 0,
-    "revenue_potential": 41000,
+    "revenue_potential": 41740,
     "active_revenue_streams": [
       "substack"
     ]

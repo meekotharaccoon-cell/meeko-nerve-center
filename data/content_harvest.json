@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-09T14:40:00.585488+00:00",
+  "timestamp": "2026-03-09T18:01:38.434473+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Fontcrafter: Turn Your Handwriting into a Real Font",
-        "url": "https://arcade.pirillo.com/fontcrafter.html",
-        "score": 189,
+        "title": "Florida Judge Rules Red Light Camera Tickets Are Unconstitutional",
+        "url": "https://cbs12.com/news/local/florida-news-judge-rules-red-light-camera-tickets-unconstitutional",
+        "score": 50,
         "source": "hackernews"
       },
       {
-        "title": "Ireland shuts last coal plant, becomes 15th coal-free country in Europe (2025)",
-        "url": "https://www.pv-magazine.com/2025/06/20/ireland-coal-free-ends-coal-power-generation-moneypoint/",
-        "score": 363,
+        "title": "Building a Procedural Hex Map with Wave Function Collapse",
+        "url": "https://felixturner.github.io/hex-map-wfc/article/",
+        "score": 62,
         "source": "hackernews"
       },
       {
-        "title": "US Court of Appeals: TOS may be updated by email, use can imply consent [pdf]",
-        "url": "https://cdn.ca9.uscourts.gov/datastore/memoranda/2026/03/03/25-403.pdf",
-        "score": 356,
+        "title": "Fixfest is a global gathering of repairers, tinkerers, and activists",
+        "url": "https://fixfest.therestartproject.org/",
+        "score": 17,
         "source": "hackernews"
       },
       {
-        "title": "Reverse-engineering the UniFi inform protocol",
-        "url": "https://tamarack.cloud/blog/reverse-engineering-unifi-inform-protocol",
-        "score": 21,
+        "title": "Launch HN: Terminal Use (YC W26) \u2013 Vercel for filesystem-based agents",
+        "url": "",
+        "score": 19,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: VS Code Agent Kanban: Task Management for the AI-Assisted Developer",
-        "url": "https://www.appsoftware.com/blog/introducing-vs-code-agent-kanban-task-management-for-the-ai-assisted-developer",
-        "score": 40,
+        "title": "Restoring a Sun SPARCstation IPX Part 1: PSU and Nvram",
+        "url": "https://www.rs-online.com/designspark/restoring-a-sun-sparcstation-ipx-part-1-psu-and-nvram",
+        "score": 42,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.3,
+    "temp_c": 12.1,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -70,89 +70,89 @@
   "trending_themes": [
     {
       "word": "code",
-      "count": 4
+      "count": 3
     },
     {
-      "word": "coal",
-      "count": 2
-    },
-    {
-      "word": "fontcrafter:",
+      "word": "florida",
       "count": 1
     },
     {
-      "word": "turn",
+      "word": "judge",
       "count": 1
     },
     {
-      "word": "your",
+      "word": "rules",
       "count": 1
     },
     {
-      "word": "handwriting",
+      "word": "light",
       "count": 1
     },
     {
-      "word": "into",
+      "word": "camera",
       "count": 1
     },
     {
-      "word": "real",
+      "word": "tickets",
       "count": 1
     },
     {
-      "word": "font",
+      "word": "unconstitutional",
       "count": 1
     },
     {
-      "word": "ireland",
+      "word": "building",
       "count": 1
     },
     {
-      "word": "shuts",
+      "word": "procedural",
       "count": 1
     },
     {
-      "word": "last",
+      "word": "wave",
       "count": 1
     },
     {
-      "word": "plant",
+      "word": "function",
       "count": 1
     },
     {
-      "word": "becomes",
+      "word": "collapse",
       "count": 1
     },
     {
-      "word": "15th",
+      "word": "fixfest",
       "count": 1
     },
     {
-      "word": "free",
+      "word": "global",
       "count": 1
     },
     {
-      "word": "country",
+      "word": "gathering",
       "count": 1
     },
     {
-      "word": "europe",
+      "word": "repairers",
       "count": 1
     },
     {
-      "word": "2025",
+      "word": "tinkerers",
       "count": 1
     },
     {
-      "word": "court",
+      "word": "activists",
+      "count": 1
+    },
+    {
+      "word": "launch",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Fontcrafter: Turn Your Handwriting into a Real Font...' connects to Gaza resilience",
+      "hook": "How 'Florida Judge Rules Red Light Camera Tickets Are Unconstitut...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
