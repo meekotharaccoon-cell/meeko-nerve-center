@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-09T08:02:10.204331+00:00",
+  "timestamp": "2026-03-09T14:40:00.585488+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Fontcrafter: Turn Your Handwriting into a Real Font",
+        "url": "https://arcade.pirillo.com/fontcrafter.html",
+        "score": 189,
+        "source": "hackernews"
+      },
+      {
+        "title": "Ireland shuts last coal plant, becomes 15th coal-free country in Europe (2025)",
+        "url": "https://www.pv-magazine.com/2025/06/20/ireland-coal-free-ends-coal-power-generation-moneypoint/",
+        "score": 363,
+        "source": "hackernews"
+      },
+      {
         "title": "US Court of Appeals: TOS may be updated by email, use can imply consent [pdf]",
         "url": "https://cdn.ca9.uscourts.gov/datastore/memoranda/2026/03/03/25-403.pdf",
-        "score": 100,
+        "score": 356,
         "source": "hackernews"
       },
       {
-        "title": "Agent Safehouse \u2013 macOS-native sandboxing for local agents",
-        "url": "https://agent-safehouse.dev/",
-        "score": 541,
+        "title": "Reverse-engineering the UniFi inform protocol",
+        "url": "https://tamarack.cloud/blog/reverse-engineering-unifi-inform-protocol",
+        "score": 21,
         "source": "hackernews"
       },
       {
-        "title": "Microscopes can see video on a laserdisc",
-        "url": "https://www.youtube.com/watch?v=qZuR-772cks",
-        "score": 395,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: Mcp2cli \u2013 One CLI for every API, 96-99% fewer tokens than native MCP",
-        "url": "https://github.com/knowsuchagency/mcp2cli",
-        "score": 30,
-        "source": "hackernews"
-      },
-      {
-        "title": "PCB devboard the size of a USB-C plug",
-        "url": "https://github.com/Dieu-de-l-elec/AngstromIO-devboard",
-        "score": 150,
+        "title": "Show HN: VS Code Agent Kanban: Task Management for the AI-Assisted Developer",
+        "url": "https://www.appsoftware.com/blog/introducing-vs-code-agent-kanban-task-management-for-the-ai-assisted-developer",
+        "score": 40,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 15.9,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 16.3,
+    "vibe": "sunny",
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
       "word": "code",
-      "count": 3
+      "count": 4
     },
     {
-      "word": "native",
+      "word": "coal",
       "count": 2
     },
     {
+      "word": "fontcrafter:",
+      "count": 1
+    },
+    {
+      "word": "turn",
+      "count": 1
+    },
+    {
+      "word": "your",
+      "count": 1
+    },
+    {
+      "word": "handwriting",
+      "count": 1
+    },
+    {
+      "word": "into",
+      "count": 1
+    },
+    {
+      "word": "real",
+      "count": 1
+    },
+    {
+      "word": "font",
+      "count": 1
+    },
+    {
+      "word": "ireland",
+      "count": 1
+    },
+    {
+      "word": "shuts",
+      "count": 1
+    },
+    {
+      "word": "last",
+      "count": 1
+    },
+    {
+      "word": "plant",
+      "count": 1
+    },
+    {
+      "word": "becomes",
+      "count": 1
+    },
+    {
+      "word": "15th",
+      "count": 1
+    },
+    {
+      "word": "free",
+      "count": 1
+    },
+    {
+      "word": "country",
+      "count": 1
+    },
+    {
+      "word": "europe",
+      "count": 1
+    },
+    {
+      "word": "2025",
+      "count": 1
+    },
+    {
       "word": "court",
-      "count": 1
-    },
-    {
-      "word": "appeals:",
-      "count": 1
-    },
-    {
-      "word": "updated",
-      "count": 1
-    },
-    {
-      "word": "email",
-      "count": 1
-    },
-    {
-      "word": "imply",
-      "count": 1
-    },
-    {
-      "word": "consent",
-      "count": 1
-    },
-    {
-      "word": "agent",
-      "count": 1
-    },
-    {
-      "word": "safehouse",
-      "count": 1
-    },
-    {
-      "word": "macos",
-      "count": 1
-    },
-    {
-      "word": "sandboxing",
-      "count": 1
-    },
-    {
-      "word": "local",
-      "count": 1
-    },
-    {
-      "word": "agents",
-      "count": 1
-    },
-    {
-      "word": "microscopes",
-      "count": 1
-    },
-    {
-      "word": "video",
-      "count": 1
-    },
-    {
-      "word": "laserdisc",
-      "count": 1
-    },
-    {
-      "word": "show",
-      "count": 1
-    },
-    {
-      "word": "mcp2cli",
-      "count": 1
-    },
-    {
-      "word": "every",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'US Court of Appeals: TOS may be updated by email, use can im...' connects to Gaza resilience",
+      "hook": "How 'Fontcrafter: Turn Your Handwriting into a Real Font...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
