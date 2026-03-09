@@ -27,19 +27,17 @@ h1{color:#ff5e5b;font-size:1.4rem;margin-bottom:4px}
 .section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.2);margin:24px 0 10px}
 </style></head><body>
 <h1>Bottleneck Scanner</h1>
-<p class="ts">Generated 2026-03-09T18:01:33.789880+00:00 - 3 blockers</p>
+<p class="ts">Generated 2026-03-09T18:03:15.163986+00:00 - 1 blockers</p>
 <div class="stat-row">
-  <div class="stat red"><span class="n">1</span><span class="l">Critical</span></div>
-  <div class="stat orange"><span class="n">2</span><span class="l">High</span></div>
-  <div class="stat green"><span class="n">4/18</span><span class="l">Secrets OK</span></div>
+  <div class="stat red"><span class="n">0</span><span class="l">Critical</span></div>
+  <div class="stat orange"><span class="n">1</span><span class="l">High</span></div>
+  <div class="stat green"><span class="n">10/18</span><span class="l">Secrets OK</span></div>
   <div class="stat blue"><span class="n">76/76</span><span class="l">Engines OK</span></div>
   <div class="stat green"><span class="n">$0.00</span><span class="l">To Gaza</span></div>
   <div class="stat"><span class="n">0/10</span><span class="l">Gumroad Live</span></div>
 </div>
 <div class="section-title">Blockers</div>
-<div class="bn CRITICAL"><div class="bn-head"><span class="bn-title">BN-001 -- GUMROAD_SECRET missing -- 10 products can't publish</span><span class="badge CRITICAL">CRITICAL</span></div><div class="bn-desc">GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.</div><div class="bn-fix">gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET</div></div>
-<div class="bn HIGH"><div class="bn-head"><span class="bn-title">BN-002 -- Gmail 534 error -- App Password wrong or expired</span><span class="badge HIGH">HIGH</span></div><div class="bn-desc">Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.</div><div class="bn-fix">Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret</div></div>
-<div class="bn HIGH"><div class="bn-head"><span class="bn-title">BN-003 -- Twitter/X keys missing -- 100+ posts in queue</span><span class="badge HIGH">HIGH</span></div><div class="bn-desc">SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.</div><div class="bn-fix">developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets</div></div>
+<div class="bn HIGH"><div class="bn-head"><span class="bn-title">BN-001 -- Gmail 534 error -- App Password wrong or expired</span><span class="badge HIGH">HIGH</span></div><div class="bn-desc">Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.</div><div class="bn-fix">Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret</div></div>
 
 <div class="section-title">-> After fixing: trigger Actions -> OMNIBRAIN (workflow_dispatch)</div>
 </body></html>

@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-03-09T18:01:38.434473+00:00",
+  "timestamp": "2026-03-09T18:03:18.964020+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Florida Judge Rules Red Light Camera Tickets Are Unconstitutional",
-        "url": "https://cbs12.com/news/local/florida-news-judge-rules-red-light-camera-tickets-unconstitutional",
-        "score": 50,
+        "title": "Building a Procedural Hex Map with Wave Function Collapse",
+        "url": "https://felixturner.github.io/hex-map-wfc/article/",
+        "score": 64,
         "source": "hackernews"
       },
       {
-        "title": "Building a Procedural Hex Map with Wave Function Collapse",
-        "url": "https://felixturner.github.io/hex-map-wfc/article/",
-        "score": 62,
+        "title": "Florida Judge Rules Red Light Camera Tickets Are Unconstitutional",
+        "url": "https://cbs12.com/news/local/florida-news-judge-rules-red-light-camera-tickets-unconstitutional",
+        "score": 55,
         "source": "hackernews"
       },
       {
         "title": "Fixfest is a global gathering of repairers, tinkerers, and activists",
         "url": "https://fixfest.therestartproject.org/",
-        "score": 17,
+        "score": 18,
         "source": "hackernews"
       },
       {
@@ -73,6 +73,26 @@
       "count": 3
     },
     {
+      "word": "building",
+      "count": 1
+    },
+    {
+      "word": "procedural",
+      "count": 1
+    },
+    {
+      "word": "wave",
+      "count": 1
+    },
+    {
+      "word": "function",
+      "count": 1
+    },
+    {
+      "word": "collapse",
+      "count": 1
+    },
+    {
       "word": "florida",
       "count": 1
     },
@@ -98,26 +118,6 @@
     },
     {
       "word": "unconstitutional",
-      "count": 1
-    },
-    {
-      "word": "building",
-      "count": 1
-    },
-    {
-      "word": "procedural",
-      "count": 1
-    },
-    {
-      "word": "wave",
-      "count": 1
-    },
-    {
-      "word": "function",
-      "count": 1
-    },
-    {
-      "word": "collapse",
       "count": 1
     },
     {
@@ -152,7 +152,7 @@
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Florida Judge Rules Red Light Camera Tickets Are Unconstitut...' connects to Gaza resilience",
+      "hook": "How 'Building a Procedural Hex Map with Wave Function Collapse...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
