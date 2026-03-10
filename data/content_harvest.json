@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-10T00:48:31.341542+00:00",
+  "timestamp": "2026-03-10T07:57:26.245455+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Building a Procedural Hex Map with Wave Function Collapse",
-        "url": "https://felixturner.github.io/hex-map-wfc/article/",
-        "score": 370,
+        "title": "Two Years of Emacs Solo",
+        "url": "https://www.rahuljuliato.com/posts/emacs-solo-two-years",
+        "score": 197,
         "source": "hackernews"
       },
       {
-        "title": "JSLinux Now Supports x86_64",
-        "url": "https://bellard.org/jslinux/",
-        "score": 232,
-        "source": "hackernews"
-      },
-      {
-        "title": "Is legal the same as legitimate: AI reimplementation and the erosion of copyleft",
-        "url": "https://writings.hongminhee.org/2026/03/legal-vs-legitimate/",
-        "score": 323,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: Remotely use my guitar tuner",
-        "url": "https://realtuner.online/",
+        "title": "Claude Code, Claude Cowork and Codex #5",
+        "url": "https://thezvi.wordpress.com/2026/03/09/claude-code-claude-cowork-and-codex-5/",
         "score": 31,
         "source": "hackernews"
       },
       {
-        "title": "Two Years of Emacs Solo: 35 Modules, Zero External Packages, and a Full Refactor",
-        "url": "https://www.rahuljuliato.com/posts/emacs-solo-two-years",
-        "score": 4,
+        "title": "Optimizing Top K in Postgres",
+        "url": "https://www.paradedb.com/blog/optimizing-top-k",
+        "score": 50,
+        "source": "hackernews"
+      },
+      {
+        "title": "Lotus 1-2-3 on the PC with DOS",
+        "url": "https://stonetools.ghost.io/lotus123-dos/",
+        "score": 42,
+        "source": "hackernews"
+      },
+      {
+        "title": "macOS Tahoe windows have different corner radiuses",
+        "url": "https://lapcatsoftware.com/articles/2026/3/1.html",
+        "score": 50,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 7.4,
+    "temp_c": 16.8,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -70,89 +70,89 @@
   "trending_themes": [
     {
       "word": "code",
-      "count": 3
+      "count": 4
     },
     {
-      "word": "building",
-      "count": 1
-    },
-    {
-      "word": "procedural",
-      "count": 1
-    },
-    {
-      "word": "wave",
-      "count": 1
-    },
-    {
-      "word": "function",
-      "count": 1
-    },
-    {
-      "word": "collapse",
-      "count": 1
-    },
-    {
-      "word": "jslinux",
-      "count": 1
-    },
-    {
-      "word": "supports",
-      "count": 1
-    },
-    {
-      "word": "x86_64",
-      "count": 1
-    },
-    {
-      "word": "legal",
-      "count": 1
-    },
-    {
-      "word": "same",
-      "count": 1
-    },
-    {
-      "word": "legitimate:",
-      "count": 1
-    },
-    {
-      "word": "reimplementation",
-      "count": 1
-    },
-    {
-      "word": "erosion",
-      "count": 1
-    },
-    {
-      "word": "copyleft",
-      "count": 1
-    },
-    {
-      "word": "show",
-      "count": 1
-    },
-    {
-      "word": "remotely",
-      "count": 1
-    },
-    {
-      "word": "guitar",
-      "count": 1
-    },
-    {
-      "word": "tuner",
-      "count": 1
+      "word": "claude",
+      "count": 2
     },
     {
       "word": "years",
+      "count": 1
+    },
+    {
+      "word": "emacs",
+      "count": 1
+    },
+    {
+      "word": "solo",
+      "count": 1
+    },
+    {
+      "word": "cowork",
+      "count": 1
+    },
+    {
+      "word": "codex",
+      "count": 1
+    },
+    {
+      "word": "optimizing",
+      "count": 1
+    },
+    {
+      "word": "postgres",
+      "count": 1
+    },
+    {
+      "word": "lotus",
+      "count": 1
+    },
+    {
+      "word": "macos",
+      "count": 1
+    },
+    {
+      "word": "tahoe",
+      "count": 1
+    },
+    {
+      "word": "windows",
+      "count": 1
+    },
+    {
+      "word": "different",
+      "count": 1
+    },
+    {
+      "word": "corner",
+      "count": 1
+    },
+    {
+      "word": "radiuses",
+      "count": 1
+    },
+    {
+      "word": "shipped",
+      "count": 1
+    },
+    {
+      "word": "broken",
+      "count": 1
+    },
+    {
+      "word": "wrote",
+      "count": 1
+    },
+    {
+      "word": "article",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Building a Procedural Hex Map with Wave Function Collapse...' connects to Gaza resilience",
+      "hook": "How 'Two Years of Emacs Solo...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
