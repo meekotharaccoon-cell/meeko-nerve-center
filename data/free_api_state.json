@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-10T19:54:13.955704+00:00",
+  "last_run": "2026-03-10T21:54:49.183413+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -51,12 +51,12 @@
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41189
+      "stars": 41190
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29273
+      "stars": 29274
     },
     {
       "type": "trending_article",
@@ -65,17 +65,17 @@
     },
     {
       "type": "trending_article",
-      "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-      "reactions": 56
+      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
+      "reactions": 8
     },
     {
       "type": "trending_article",
-      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-      "reactions": 3
+      "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
+      "reactions": 25
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2461528521596.9014
+      "value": 2453579751449.7524
     }
   ],
   "opportunities": [
@@ -88,11 +88,11 @@
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13884 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
     "Engine wrapper: zhayujie/chatgpt-on-wechat (42101 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41189 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29273 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41190 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29274 stars) \u2014 build integration engine",
     "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (116 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (56 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (3 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (8 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (25 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

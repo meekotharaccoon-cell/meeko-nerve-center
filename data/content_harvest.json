@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-10T19:54:01.667174+00:00",
+  "timestamp": "2026-03-10T21:54:38.678018+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Tony Hoare has died",
         "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
-        "score": 1016,
+        "score": 1225,
         "source": "hackernews"
       },
       {
-        "title": "You Hired the AI to Write the Tests. Of Course They Pass",
+        "title": "RISC-V Is Sloooow",
+        "url": "https://marcin.juszkiewicz.com.pl/2026/03/10/risc-v-is-sloooow/",
+        "score": 83,
+        "source": "hackernews"
+      },
+      {
+        "title": "After outages, Amazon to make senior engineers sign off on AI-assisted changes",
+        "url": "https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/",
+        "score": 183,
+        "source": "hackernews"
+      },
+      {
+        "title": "Agents that run while I sleep",
         "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
-        "score": 34,
+        "score": 136,
         "source": "hackernews"
       },
       {
         "title": "Yann LeCun raises $1B to build AI that understands the physical world",
         "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
-        "score": 128,
-        "source": "hackernews"
-      },
-      {
-        "title": "Launch HN: RunAnywhere (YC W26) \u2013 Faster AI Inference on Apple Silicon",
-        "url": "https://github.com/RunanywhereAI/rcli",
-        "score": 132,
-        "source": "hackernews"
-      },
-      {
-        "title": "Google to Discontinue Widevine Cloud License Service in April 2027",
-        "url": "https://castlabs.com/blog/widevine-retiring-cloud-license-service/",
-        "score": 21,
+        "score": 222,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 12.3,
+    "temp_c": 9.6,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -81,27 +81,59 @@
       "count": 1
     },
     {
-      "word": "hired",
+      "word": "risc",
       "count": 1
     },
     {
-      "word": "write",
+      "word": "sloooow",
       "count": 1
     },
     {
-      "word": "tests",
+      "word": "after",
       "count": 1
     },
     {
-      "word": "course",
+      "word": "outages",
       "count": 1
     },
     {
-      "word": "they",
+      "word": "amazon",
       "count": 1
     },
     {
-      "word": "pass",
+      "word": "make",
+      "count": 1
+    },
+    {
+      "word": "senior",
+      "count": 1
+    },
+    {
+      "word": "engineers",
+      "count": 1
+    },
+    {
+      "word": "sign",
+      "count": 1
+    },
+    {
+      "word": "assisted",
+      "count": 1
+    },
+    {
+      "word": "changes",
+      "count": 1
+    },
+    {
+      "word": "agents",
+      "count": 1
+    },
+    {
+      "word": "while",
+      "count": 1
+    },
+    {
+      "word": "sleep",
       "count": 1
     },
     {
@@ -114,38 +146,6 @@
     },
     {
       "word": "raises",
-      "count": 1
-    },
-    {
-      "word": "build",
-      "count": 1
-    },
-    {
-      "word": "understands",
-      "count": 1
-    },
-    {
-      "word": "physical",
-      "count": 1
-    },
-    {
-      "word": "world",
-      "count": 1
-    },
-    {
-      "word": "launch",
-      "count": 1
-    },
-    {
-      "word": "runanywhere",
-      "count": 1
-    },
-    {
-      "word": "faster",
-      "count": 1
-    },
-    {
-      "word": "inference",
       "count": 1
     }
   ],
