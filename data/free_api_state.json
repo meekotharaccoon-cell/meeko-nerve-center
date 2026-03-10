@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-10T07:57:34.364173+00:00",
+  "last_run": "2026-03-10T14:35:44.877991+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,51 +31,51 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16566
+      "likes": 16569
     },
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13883
+      "likes": 13884
     },
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10986
+      "likes": 10987
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42081
+      "stars": 42094
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41154
+      "stars": 41179
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29261
+      "stars": 29268
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 94
+      "reactions": 112
     },
     {
       "type": "trending_article",
       "title": "3 words worth a billion dollars: Drift to Determinism (DriDe)",
-      "reactions": 53
+      "reactions": 55
     },
     {
       "type": "trending_article",
-      "title": "Building a Text-to-Speech Engine in Pure C",
-      "reactions": 2
+      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
+      "reactions": 0
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2472008942324.9976
+      "value": 2455038769824.399
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (48,598,806 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,928,714 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,229,272 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16566 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13883 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10986 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42081 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41154 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29261 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (94 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (53 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Building a Text-to-Speech Engine in Pure C' (2 reactions) \u2014 create SolarPunk angle"
+    "Clone/extend HF space: 'enzostvs/deepsite' (16569 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13884 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42094 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41179 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29268 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (112 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: '3 words worth a billion dollars: Drift to Determinism (DriDe' (55 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (0 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

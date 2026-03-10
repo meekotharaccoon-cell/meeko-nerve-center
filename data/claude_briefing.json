@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-03-10T07:57:57.215486+00:00",
+  "generated_at": "2026-03-10T14:36:28.152549+00:00",
   "system_version": "OMNIBUS v10",
   "health": 40,
   "total_revenue": 0,
   "outreach_sent": 0,
-  "atoms_created": 342,
-  "engines_ok_last_cycle": 70,
-  "engines_failed_last_cycle": 1,
+  "atoms_created": 351,
+  "engines_ok_last_cycle": 69,
+  "engines_failed_last_cycle": 2,
   "engines_auto_built": [],
   "priorities": [],
   "live_capabilities": [
