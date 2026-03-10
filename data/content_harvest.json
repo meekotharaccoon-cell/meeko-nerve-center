@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-09T21:58:39.869319+00:00",
+  "timestamp": "2026-03-10T00:47:24.543239+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Rendezvous with Rama",
-        "url": "https://blog.engora.com/2026/03/rendezvous-with-rama.html",
-        "score": 33,
-        "source": "hackernews"
-      },
-      {
         "title": "Building a Procedural Hex Map with Wave Function Collapse",
         "url": "https://felixturner.github.io/hex-map-wfc/article/",
-        "score": 294,
+        "score": 370,
         "source": "hackernews"
       },
       {
         "title": "JSLinux Now Supports x86_64",
         "url": "https://bellard.org/jslinux/",
-        "score": 160,
-        "source": "hackernews"
-      },
-      {
-        "title": "Zuckerberg has \u201cfinished\u201d with Alexandr Wang",
-        "url": "https://www.idnfinancials.com/news/61918/zuckerberg-has-finished-with-alexandr-wang-worth-us14-billion",
-        "score": 69,
+        "score": 231,
         "source": "hackernews"
       },
       {
         "title": "Is legal the same as legitimate: AI reimplementation and the erosion of copyleft",
         "url": "https://writings.hongminhee.org/2026/03/legal-vs-legitimate/",
-        "score": 222,
+        "score": 323,
+        "source": "hackernews"
+      },
+      {
+        "title": "Two Years of Emacs Solo: 35 Modules, Zero External Packages, and a Full Refactor",
+        "url": "https://www.rahuljuliato.com/posts/emacs-solo-two-years",
+        "score": 4,
+        "source": "hackernews"
+      },
+      {
+        "title": "The \"JVG algorithm\" is crap",
+        "url": "https://scottaaronson.blog/?p=9615",
+        "score": 3,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 9.4,
+    "temp_c": 7.4,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -71,14 +71,6 @@
     {
       "word": "code",
       "count": 3
-    },
-    {
-      "word": "rendezvous",
-      "count": 1
-    },
-    {
-      "word": "rama",
-      "count": 1
     },
     {
       "word": "building",
@@ -113,22 +105,6 @@
       "count": 1
     },
     {
-      "word": "zuckerberg",
-      "count": 1
-    },
-    {
-      "word": "\u201cfinished\u201d",
-      "count": 1
-    },
-    {
-      "word": "alexandr",
-      "count": 1
-    },
-    {
-      "word": "wang",
-      "count": 1
-    },
-    {
       "word": "legal",
       "count": 1
     },
@@ -147,12 +123,36 @@
     {
       "word": "erosion",
       "count": 1
+    },
+    {
+      "word": "copyleft",
+      "count": 1
+    },
+    {
+      "word": "years",
+      "count": 1
+    },
+    {
+      "word": "emacs",
+      "count": 1
+    },
+    {
+      "word": "solo:",
+      "count": 1
+    },
+    {
+      "word": "modules",
+      "count": 1
+    },
+    {
+      "word": "zero",
+      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Rendezvous with Rama...' connects to Gaza resilience",
+      "hook": "How 'Building a Procedural Hex Map with Wave Function Collapse...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
