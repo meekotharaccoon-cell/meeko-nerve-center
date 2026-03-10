@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-10T14:35:31.251128+00:00",
+  "timestamp": "2026-03-10T19:54:01.667174+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Rebasing in Magit",
-        "url": "https://entropicthoughts.com/rebasing-in-magit",
-        "score": 41,
+        "title": "Tony Hoare has died",
+        "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
+        "score": 1016,
         "source": "hackernews"
       },
       {
-        "title": "Intel Demos Chip to Compute with Encrypted Data",
-        "url": "https://spectrum.ieee.org/fhe-intel",
-        "score": 48,
+        "title": "You Hired the AI to Write the Tests. Of Course They Pass",
+        "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
+        "score": 34,
         "source": "hackernews"
       },
       {
-        "title": "I put my whole life into a single database",
-        "url": "https://howisfelix.today/",
-        "score": 228,
+        "title": "Yann LeCun raises $1B to build AI that understands the physical world",
+        "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
+        "score": 128,
         "source": "hackernews"
       },
       {
-        "title": "FreeBSD 14.4-Release Announcement",
-        "url": "https://www.freebsd.org/releases/14.4R/announce/",
-        "score": 95,
+        "title": "Launch HN: RunAnywhere (YC W26) \u2013 Faster AI Inference on Apple Silicon",
+        "url": "https://github.com/RunanywhereAI/rcli",
+        "score": 132,
         "source": "hackernews"
       },
       {
-        "title": "Sending Jabber/XMPP Messages via HTTP",
-        "url": "https://gultsch.de/posts/xmpp-via-http/",
-        "score": 14,
+        "title": "Google to Discontinue Widevine Cloud License Service in April 2027",
+        "url": "https://castlabs.com/blog/widevine-retiring-cloud-license-service/",
+        "score": 21,
         "source": "hackernews"
       }
     ],
@@ -38,7 +38,7 @@
       {
         "title": "I Shipped Broken Code and Wrote an Article About It",
         "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 40,
+        "hearts": 41,
         "source": "devto"
       },
       {
@@ -56,103 +56,103 @@
       {
         "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
         "url": "https://dev.to/clintonrocha98/sistema-de-planejamento-estruturado-no-opencode-16pb",
-        "hearts": 54,
+        "hearts": 59,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 17.5,
+    "temp_c": 12.3,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "rebasing",
+      "word": "tony",
       "count": 1
     },
     {
-      "word": "magit",
+      "word": "hoare",
       "count": 1
     },
     {
-      "word": "intel",
+      "word": "died",
       "count": 1
     },
     {
-      "word": "demos",
+      "word": "hired",
       "count": 1
     },
     {
-      "word": "chip",
+      "word": "write",
       "count": 1
     },
     {
-      "word": "compute",
+      "word": "tests",
       "count": 1
     },
     {
-      "word": "encrypted",
+      "word": "course",
       "count": 1
     },
     {
-      "word": "data",
+      "word": "they",
       "count": 1
     },
     {
-      "word": "whole",
+      "word": "pass",
       "count": 1
     },
     {
-      "word": "life",
+      "word": "yann",
       "count": 1
     },
     {
-      "word": "into",
+      "word": "lecun",
       "count": 1
     },
     {
-      "word": "single",
+      "word": "raises",
       "count": 1
     },
     {
-      "word": "database",
+      "word": "build",
       "count": 1
     },
     {
-      "word": "freebsd",
+      "word": "understands",
       "count": 1
     },
     {
-      "word": "14.4",
+      "word": "physical",
       "count": 1
     },
     {
-      "word": "release",
+      "word": "world",
       "count": 1
     },
     {
-      "word": "announcement",
+      "word": "launch",
       "count": 1
     },
     {
-      "word": "sending",
+      "word": "runanywhere",
       "count": 1
     },
     {
-      "word": "jabber/xmpp",
+      "word": "faster",
       "count": 1
     },
     {
-      "word": "messages",
+      "word": "inference",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Rebasing in Magit...' connects to Gaza resilience",
+      "hook": "How 'Tony Hoare has died...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
