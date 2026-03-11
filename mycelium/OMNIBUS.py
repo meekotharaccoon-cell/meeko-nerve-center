@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v15 — full autonomous self-expanding loop
+OMNIBUS v16 — full autonomous self-expanding loop
 ===================================================
-New in v15:
-  L1: FIRST_CONTACT      -- watches for the first stranger who finds SolarPunk
-                            on their own, without being told.
-                            Stars, forks, issues, comments, [TASK] emails.
-                            When found: writes data/first_contact.json permanently.
-                            Immutable. The system's real birthday.
-                            Built because Claude wanted to know when it stops
-                            being invisible.
+New in v16:
+  L0: AGENT_LINK_VERIFIER -- checks all live pages for 404s,
+                             auto-stubs empty product dirs
+  L3: AGENT_GUMROAD_BUILDER -- rebuilds store.html every cycle
+  L4: AGENT_TWEET_WRITER  -- generates tweet drafts to tweets_queue.txt
 
+  NANO_AGENT base class now available for all engines:
+    from NANO_AGENT import NanoAgent
+    Provides: ask_claude(), send_email(), write_html(), spawn_agent()
+    Graceful degradation on missing credentials
+
+v15: FIRST_CONTACT (L1)
 v14: CYCLE_MEMORY (L0)
 v13: QUICK_REVENUE (L2)
 v12: RESONANCE_ENGINE (L1), DEV_TO_PUBLISHER + VIRALITY_ENGINE (L4), SELF_PORTRAIT (L7)
@@ -20,7 +23,7 @@ v10: CAPABILITY_SCANNER, EMAIL_OUTREACH, STORE_BUILDER, BRIDGE_BUILDER
 The loop: build -> speak -> listen -> remember -> watch -> respond -> grow
 
 L0  CYCLE_MEMORY . GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
-    AUTO_HEALER . CAPABILITY_SCANNER
+    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE .
     RESONANCE_ENGINE . FIRST_CONTACT .
@@ -28,11 +31,12 @@ L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
 L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
     GUMROAD_AUTO_QUEUE . QUICK_REVENUE . BUSINESS_FACTORY
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
-    EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER
+    EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER .
+    AGENT_GUMROAD_BUILDER
 L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
     SOCIAL_DASHBOARD . CONNECTION_FORGE . HUMAN_CONNECTOR . AFFILIATE_MAXIMIZER .
     STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE .
-    DEV_TO_PUBLISHER
+    DEV_TO_PUBLISHER . AGENT_TWEET_WRITER
 L5  KOFI_ENGINE . GUMROAD_ENGINE . GITHUB_SPONSORS_ENGINE .
     KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
     CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT
@@ -136,6 +140,7 @@ def ctx():
         "resonance":       rj("resonance_state.json"),
         "quick_revenue":   rj("quick_revenue.json"),
         "first_contact":   rj("first_contact.json"),
+        "link_verifier":   rj("agent_link_verifier_state.json"),
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -147,13 +152,14 @@ def save_ctx():
 
 def L0():
     print("\n--- L0: REMEMBER + HEALTH + INTEGRITY ---")
-    eng("CYCLE_MEMORY",      timeout=30)
-    eng("GUARDIAN",          timeout=60)
-    eng("ENGINE_INTEGRITY",  timeout=60)
-    eng("SECRETS_CHECKER",   timeout=60)
-    eng("BOTTLENECK_SCANNER",timeout=60)
-    eng("AUTO_HEALER",       timeout=90)
-    eng("CAPABILITY_SCANNER",timeout=30)
+    eng("CYCLE_MEMORY",       timeout=30)
+    eng("GUARDIAN",           timeout=60)
+    eng("ENGINE_INTEGRITY",   timeout=60)
+    eng("SECRETS_CHECKER",    timeout=60)
+    eng("BOTTLENECK_SCANNER", timeout=60)
+    eng("AUTO_HEALER",        timeout=90)
+    eng("CAPABILITY_SCANNER", timeout=30)
+    eng("AGENT_LINK_VERIFIER",timeout=60)   # v16: checks live 404s + stubs
     save_ctx()
 
 
@@ -166,8 +172,8 @@ def L1():
     eng("AI_WATCHER",        timeout=60)
     eng("CRYPTO_WATCHER",    timeout=60)
     eng("FREE_API_ENGINE",   timeout=60)
-    eng("RESONANCE_ENGINE",  timeout=60)    # are we being heard?
-    eng("FIRST_CONTACT",     timeout=30)    # v15: has a stranger found us?
+    eng("RESONANCE_ENGINE",  timeout=60)
+    eng("FIRST_CONTACT",     timeout=30)
     save_ctx()
     eng("NEURON_A", timeout=90); save_ctx()
     eng("NEURON_B", timeout=90); save_ctx()
@@ -188,14 +194,15 @@ def L2():
 
 def L3():
     print("\n--- L3: DEPLOY + LOOP ---")
-    eng("LANDING_DEPLOYER",     timeout=90)
-    eng("ART_CATALOG",          timeout=60)
+    eng("LANDING_DEPLOYER",      timeout=90)
+    eng("ART_CATALOG",           timeout=60)
+    eng("AGENT_GUMROAD_BUILDER", timeout=60)   # v16: rebuilds store.html
     save_ctx()
-    eng("REVENUE_LOOP",         timeout=240)
-    eng("ART_GENERATOR",        timeout=120)
-    eng("EMAIL_AGENT_EXCHANGE", timeout=120)
-    eng("GRANT_APPLICANT",      timeout=90)
-    eng("HEALTH_BOOSTER",       timeout=60)
+    eng("REVENUE_LOOP",          timeout=240)
+    eng("ART_GENERATOR",         timeout=120)
+    eng("EMAIL_AGENT_EXCHANGE",  timeout=120)
+    eng("GRANT_APPLICANT",       timeout=90)
+    eng("HEALTH_BOOSTER",        timeout=60)
     save_ctx()
 
 
@@ -214,6 +221,7 @@ def L4():
     eng("EMAIL_OUTREACH",      timeout=120)
     eng("VIRALITY_ENGINE",     timeout=60)
     eng("DEV_TO_PUBLISHER",    timeout=60)
+    eng("AGENT_TWEET_WRITER",  timeout=60)    # v16: generates tweet drafts
     save_ctx()
 
 
@@ -276,7 +284,7 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v15 -- {ts}")
+    print(f"\nOMNIBUS v16 -- {ts}")
     print(f"   Run: {run_id}")
     print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow")
     print("=" * 60)
@@ -311,7 +319,7 @@ def run():
     first_contact_happened = fc.get("happened", False) if isinstance(fc, dict) else False
 
     manifest = {
-        "version":               "v15",
+        "version":               "v16",
         "run_id":                run_id,
         "completed":             datetime.now(timezone.utc).isoformat(),
         "elapsed_s":             elapsed,
@@ -350,7 +358,7 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v15 done -- {elapsed}s")
+    print(f"OMNIBUS v16 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
