@@ -1,7 +1,38 @@
 {
-  "timestamp": "2026-03-11T21:59:01.532540+00:00",
+  "timestamp": "2026-03-11T22:32:29.833405+00:00",
   "sources": {
-    "hackernews": [],
+    "hackernews": [
+      {
+        "title": "Don't post generated/AI-edited comments. HN is for conversation between humans.",
+        "url": "https://news.ycombinator.com/newsguidelines.html#generated",
+        "score": 1939,
+        "source": "hackernews"
+      },
+      {
+        "title": "Temporal: A nine-year journey to fix time in JavaScript",
+        "url": "https://bloomberg.github.io/js-blog/post/temporal/",
+        "score": 418,
+        "source": "hackernews"
+      },
+      {
+        "title": "Many SWE-bench-Passing PRs would not be merged",
+        "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
+        "score": 35,
+        "source": "hackernews"
+      },
+      {
+        "title": "Making WebAssembly a first-class language on the Web",
+        "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
+        "score": 324,
+        "source": "hackernews"
+      },
+      {
+        "title": "Google closes deal to acquire Wiz",
+        "url": "https://www.wiz.io/blog/google-closes-deal-to-acquire-wiz",
+        "score": 182,
+        "source": "hackernews"
+      }
+    ],
     "reddit": [],
     "devto": [
       {
@@ -31,94 +62,100 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.0,
+    "temp_c": 10.8,
     "vibe": "partly cloudy",
-    "code": 2,
+    "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "shipped",
+      "word": "don't",
       "count": 1
     },
     {
-      "word": "broken",
+      "word": "post",
       "count": 1
     },
     {
-      "word": "code",
+      "word": "generated/ai",
       "count": 1
     },
     {
-      "word": "wrote",
+      "word": "edited",
       "count": 1
     },
     {
-      "word": "article",
+      "word": "comments",
       "count": 1
     },
     {
-      "word": "about",
+      "word": "conversation",
       "count": 1
     },
     {
-      "word": "created",
+      "word": "between",
       "count": 1
     },
     {
-      "word": "enterprise",
+      "word": "humans",
       "count": 1
     },
     {
-      "word": "gateway",
+      "word": "temporal:",
       "count": 1
     },
     {
-      "word": "tired",
+      "word": "nine",
       "count": 1
     },
     {
-      "word": "color",
+      "word": "year",
       "count": 1
     },
     {
-      "word": "contrast",
+      "word": "journey",
       "count": 1
     },
     {
-      "word": "tools",
+      "word": "time",
       "count": 1
     },
     {
-      "word": "break",
+      "word": "javascript",
       "count": 1
     },
     {
-      "word": "brand",
+      "word": "many",
       "count": 1
     },
     {
-      "word": "colors",
+      "word": "bench",
       "count": 1
     },
     {
-      "word": "built",
+      "word": "passing",
       "count": 1
     },
     {
-      "word": "criei",
+      "word": "would",
       "count": 1
     },
     {
-      "word": "pipeline",
+      "word": "merged",
       "count": 1
     },
     {
-      "word": "planejamento",
+      "word": "making",
       "count": 1
     }
   ],
   "content_angles": [
+    {
+      "type": "tech_solidarity",
+      "hook": "How 'Don't post generated/AI-edited comments. HN is for conversat...' connects to Gaza resilience",
+      "platform": "twitter/linkedin",
+      "effort": "5min"
+    },
     {
       "type": "gallery_promo",
       "hook": "$1 gets you AI art. 70c goes to Gaza Rose Gallery. The loop funds itself.",
@@ -133,6 +170,6 @@
       "effort": "15min"
     }
   ],
-  "total_items": 4,
+  "total_items": 9,
   "status": "harvested"
 }
