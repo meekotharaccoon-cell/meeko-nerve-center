@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-10T21:54:38.678018+00:00",
+  "timestamp": "2026-03-11T00:28:46.137204+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Tony Hoare has died",
         "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
-        "score": 1225,
+        "score": 1411,
         "source": "hackernews"
       },
       {
-        "title": "RISC-V Is Sloooow",
-        "url": "https://marcin.juszkiewicz.com.pl/2026/03/10/risc-v-is-sloooow/",
-        "score": 83,
-        "source": "hackernews"
-      },
-      {
-        "title": "After outages, Amazon to make senior engineers sign off on AI-assisted changes",
-        "url": "https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/",
-        "score": 183,
+        "title": "U+237C \u237c Is Azimuth",
+        "url": "https://ionathan.ch/2026/02/16/angzarr.html",
+        "score": 89,
         "source": "hackernews"
       },
       {
         "title": "Agents that run while I sleep",
         "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
-        "score": 136,
+        "score": 194,
         "source": "hackernews"
       },
       {
         "title": "Yann LeCun raises $1B to build AI that understands the physical world",
         "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
-        "score": 222,
+        "score": 298,
+        "source": "hackernews"
+      },
+      {
+        "title": "Cloudflare Crawl Endpoint",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/",
+        "score": 73,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 9.6,
+    "temp_c": 7.6,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -81,47 +81,11 @@
       "count": 1
     },
     {
-      "word": "risc",
+      "word": "u+237c",
       "count": 1
     },
     {
-      "word": "sloooow",
-      "count": 1
-    },
-    {
-      "word": "after",
-      "count": 1
-    },
-    {
-      "word": "outages",
-      "count": 1
-    },
-    {
-      "word": "amazon",
-      "count": 1
-    },
-    {
-      "word": "make",
-      "count": 1
-    },
-    {
-      "word": "senior",
-      "count": 1
-    },
-    {
-      "word": "engineers",
-      "count": 1
-    },
-    {
-      "word": "sign",
-      "count": 1
-    },
-    {
-      "word": "assisted",
-      "count": 1
-    },
-    {
-      "word": "changes",
+      "word": "azimuth",
       "count": 1
     },
     {
@@ -146,6 +110,42 @@
     },
     {
       "word": "raises",
+      "count": 1
+    },
+    {
+      "word": "build",
+      "count": 1
+    },
+    {
+      "word": "understands",
+      "count": 1
+    },
+    {
+      "word": "physical",
+      "count": 1
+    },
+    {
+      "word": "world",
+      "count": 1
+    },
+    {
+      "word": "cloudflare",
+      "count": 1
+    },
+    {
+      "word": "crawl",
+      "count": 1
+    },
+    {
+      "word": "endpoint",
+      "count": 1
+    },
+    {
+      "word": "shipped",
+      "count": 1
+    },
+    {
+      "word": "broken",
       "count": 1
     }
   ],

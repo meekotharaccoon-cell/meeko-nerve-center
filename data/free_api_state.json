@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-10T21:54:49.183413+00:00",
+  "last_run": "2026-03-11T00:28:54.936368+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -56,26 +56,26 @@
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29274
+      "stars": 29275
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 116
-    },
-    {
-      "type": "trending_article",
-      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-      "reactions": 8
+      "reactions": 117
     },
     {
       "type": "trending_article",
       "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
-      "reactions": 25
+      "reactions": 30
+    },
+    {
+      "type": "trending_article",
+      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
+      "reactions": 27
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2453579751449.7524
+      "value": 2461436287791.283
     }
   ],
   "opportunities": [
@@ -89,10 +89,10 @@
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
     "Engine wrapper: zhayujie/chatgpt-on-wechat (42101 stars) \u2014 build integration engine",
     "Engine wrapper: CherryHQ/cherry-studio (41190 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29274 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (116 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (8 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (25 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: CopilotKit/CopilotKit (29275 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (117 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (30 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (27 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",
