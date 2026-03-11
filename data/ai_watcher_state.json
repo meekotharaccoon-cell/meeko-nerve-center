@@ -1,5 +1,5 @@
 {
-  "cycles": 41,
+  "cycles": 70,
   "last_digest": "2026-03-05T11:39:35.984381+00:00",
   "discoveries": [
     {
@@ -780,8 +780,559 @@
         "Hurlas13/upwork-autopilot-ai-agent1"
       ],
       "analysis": null
+    },
+    {
+      "ts": "2026-03-07T04:26:04.524944+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Verdugie/Opus-Candid-8B-v3",
+        "ryomac/lora_sft_full_ep2",
+        "MightyOctopus/pricer-merged-model-A-v1"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T04:27:25.220737+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Verdugie/Opus-Candid-8B-v3",
+        "ryomac/lora_sft_full_ep2",
+        "MightyOctopus/pricer-merged-model-A-v1"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T04:28:32.584786+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Verdugie/Opus-Candid-8B-v3",
+        "ryomac/lora_sft_full_ep2",
+        "MightyOctopus/pricer-merged-model-A-v1"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T07:42:11.520250+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "migarcoes/Qwen3.5-0.8B",
+        "braginpawel/gpt-oss-20b-simpo-335",
+        "mradermacher/Qwen3.5-9B-Writing-DPO-GGUF"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T13:51:05.586022+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "paperscarecrow/LFM2.5-1.2B-Instruct-abliterated",
+        "Navpy/phi-3.5-AI-Vtuber-json",
+        "Dorjzodovsuren/orpheus_3b_Mongolia_mbpeech_eleven_v1"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T16:56:37.372503+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "32ScottRD/qwen3-4b-structured-output-lora-rev.03",
+        "s0ck3t/CyberSec-Assistant-3B-GGUF",
+        "pthinc/Cicikus-v3-1.4B"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T16:57:43.022839+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "32ScottRD/qwen3-4b-structured-output-lora-rev.03",
+        "s0ck3t/CyberSec-Assistant-3B-GGUF",
+        "pthinc/Cicikus-v3-1.4B"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T18:59:47.198763+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "sathishphdai/supply-chain-manager-slm-5m",
+        "Navpy/phi-3.5-AI-Vtuber-json",
+        "sathishphdai/software-engineer-slm-5m"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-07T21:41:43.748159+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Somnus-Sovereign-Systems/qwen3-pinion-gguf",
+        "Verdugie/Opus-Candid-27B-v3",
+        "Verdugie/Opus-Candid-8B-v3"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T07:44:45.617440+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "UmbrellaInc/Albert_Wesker-1B",
+        "motobrew/qwen-dpo-v66",
+        "Ayodele01/Qwen3.5-27B-opus46-reasoning"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T08:37:37.657271+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Cognitapp/Cognitapp-Med-Nano-v1",
+        "motobrew/qwen-dpo-v70",
+        "sh0ck0r/Forgotten-Safeword-70B-v5.0-heretic"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T08:41:16.494402+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Cognitapp/Cognitapp-Med-Nano-v1",
+        "sh0ck0r/L3.3-The-Omega-Directive-70B-Unslop-v2.0-heretic",
+        "sh0ck0r/Strawberrylemonade-L3-70B-v1.2-heretic"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T13:52:18.631853+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "kwisschen/TwinLlama-3.1-8B-Merged",
+        "jamesmeike/CodeNexus",
+        "Evrmind/EVR-1-Maano-8b"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T19:01:36.302275+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "abhinand/sarvam-30b-bf16",
+        "abhinand/sarvam-105b-bf16",
+        "VINAY-UMRETHE/Nanbeige4.1-3B-heretic-REPRODUCE-Test2"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T21:01:18.005946+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "moazeldegwy/Qwen3-4B-LABD-GRPO",
+        "hamzah0asadullah/Perexiguus-0.6B",
+        "Venkat9990/finance-specialist-v7"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T21:03:13.630280+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "moazeldegwy/Qwen3-4B-LABD-GRPO",
+        "hamzah0asadullah/Perexiguus-0.6B",
+        "Venkat9990/finance-specialist-v7"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-08T21:47:53.234718+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "jc-builds/Qwen3.5-9B-Q4_K_M-GGUF",
+        "gpnd/llama-falc",
+        "exit70/gpt-oss-rl-2048"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T08:02:14.617340+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "yusufbaykaloglu/qwen3.5-4b-turkish-sft-gguf",
+        "tencent/Penguin-VL-8B",
+        "tocchitocchi/GPT-OSS-Swallow-120B-RL-v0.1-6bit-mlx"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T14:40:06.557349+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "kgrabko/JiRackTernary_70b",
+        "sathishphdai/cloud-architect-slm-5m",
+        "splendidcomputer/new-dim"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T18:01:43.407624+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "tvall43/Qwen3.5-14B-A3B-Claude-4.6-Opus-Reasoning-Distilled-reap-gguf",
+        "sumitagrawal/functiongemma-270m-tool-agent",
+        "tvall43/Qwen3.5-14B-A3B-Claude-4.6-Opus-Reasoning-Distilled-reap"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T18:03:22.855844+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "tvall43/Qwen3.5-14B-A3B-Claude-4.6-Opus-Reasoning-Distilled-reap-gguf",
+        "sumitagrawal/functiongemma-270m-tool-agent",
+        "tvall43/Qwen3.5-14B-A3B-Claude-4.6-Opus-Reasoning-Distilled-reap"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T19:54:22.643735+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Vaultkeeper/ouroboros-next",
+        "sumitagrawal/functiongemma-270m-tool-agent",
+        "null-space/Qwen3-235B-A22B-abliterated"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-09T21:58:43.528271+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "affectively-ai/gpt-oss-20b-gguf",
+        "affectively-ai/dolphin-2.9.1-yi-1.5-34b-gguf",
+        "affectively-ai/nvidia-nemotron-parse-v1.1-gguf"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T00:47:28.531027+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "STELLiQ/aria-aar-1b-gguf",
+        "DJLougen/LFM2-24B-A2B-REAP-GGUF",
+        "DJLougen/LFM2-24B-A2B-REAP-MLX-8bit"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T00:48:35.758663+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "STELLiQ/aria-aar-1b-gguf",
+        "DJLougen/LFM2-24B-A2B-REAP-GGUF",
+        "DJLougen/LFM2-24B-A2B-REAP-MLX-8bit"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T07:57:30.096569+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "pkun2/qwen3_8b_16bit_mixed_meme_kr",
+        "groxaxo/Crow-9B-Opus-4.6-Distill-Heretic-Qwen3.5-W4G128",
+        "baa-ai/MiniMax-M2.5-SWAN-4bit"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T14:35:36.263681+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "SvalTek/ColdBrew-Nemo-12B-Arcane-Fusion-CharTest0",
+        "LH-Tech-AI/Apex-1-Instruct-350M",
+        "mohhhhhit/nonoql"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T19:54:06.666026+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "openenv-community/replicalab-scientist-grpo-lora",
+        "Siarhei/Phi-4-mini-reasoning-4bit",
+        "kth8/gemma-3-270m-it-YAML-Repair-GGUF"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-10T21:54:43.414537+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "hamzah0asadullah/Perexiguus-0.6B",
+        "Vaultkeeper/ouroboros-next",
+        "Phonsiri/Qwen3.5-0.8B-Base-Distillation-Qwen3.5-9B"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Hurlas13/upwork-autopilot-ai-agent1"
+      ],
+      "analysis": null
     }
   ],
   "upgrade_proposals": [],
-  "last_run": "2026-03-06T21:55:37.431522+00:00"
+  "last_run": "2026-03-10T21:54:42.550663+00:00"
 }

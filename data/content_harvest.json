@@ -1,91 +1,91 @@
 {
-  "timestamp": "2026-03-06T21:55:33.661849+00:00",
+  "timestamp": "2026-03-10T21:54:38.678018+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Ada 2022",
-        "url": "https://www.adaic.org/ada-resources/standards/ada22/",
-        "score": 75,
+        "title": "Tony Hoare has died",
+        "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
+        "score": 1225,
         "source": "hackernews"
       },
       {
-        "title": "TSA leaves passenger needing surgery after illegally forcing her through scanner",
-        "url": "https://www.thetravel.com/tsa-leaves-passenger-needing-surgery-after-illegally-forcing-her-through-scanner-spinal-cord-implant/",
-        "score": 97,
+        "title": "RISC-V Is Sloooow",
+        "url": "https://marcin.juszkiewicz.com.pl/2026/03/10/risc-v-is-sloooow/",
+        "score": 83,
         "source": "hackernews"
       },
       {
-        "title": "Tech employment now significantly worse than the 2008 or 2020 recessions",
-        "url": "https://twitter.com/JosephPolitano/status/2029916364664611242",
-        "score": 499,
+        "title": "After outages, Amazon to make senior engineers sign off on AI-assisted changes",
+        "url": "https://arstechnica.com/ai/2026/03/after-outages-amazon-to-make-senior-engineers-sign-off-on-ai-assisted-changes/",
+        "score": 183,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: Moongate \u2013 Ultima Online server emulator in .NET 10 with Lua scripting",
-        "url": "https://github.com/moongate-community/moongatev2",
-        "score": 199,
+        "title": "Agents that run while I sleep",
+        "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
+        "score": 136,
         "source": "hackernews"
       },
       {
-        "title": "Hardening Firefox with Anthropic's Red Team",
-        "url": "https://www.anthropic.com/news/mozilla-firefox-security",
-        "score": 380,
+        "title": "Yann LeCun raises $1B to build AI that understands the physical world",
+        "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
+        "score": 222,
         "source": "hackernews"
       }
     ],
     "reddit": [],
     "devto": [
       {
-        "title": "Making London's hidden film clubs discoverable",
-        "url": "https://dev.to/alistairjcbrown/i-built-a-film-club-discovery-tool-for-londons-cinema-community-2md",
-        "hearts": 38,
-        "source": "devto"
-      },
-      {
         "title": "I Shipped Broken Code and Wrote an Article About It",
         "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 38,
+        "hearts": 41,
         "source": "devto"
       },
       {
         "title": "I Created An Enterprise MCP Gateway",
         "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 107,
+        "hearts": 110,
         "source": "devto"
       },
       {
-        "title": "Stop Downloading Apps for Your Kids. Build Them Instead.",
-        "url": "https://dev.to/meimakes/stop-downloading-apps-for-your-kids-build-them-instead-1bhn",
-        "hearts": 5,
+        "title": "I got tired of color contrast tools that break brand colors. So I built my own.",
+        "url": "https://dev.to/danishmk1286/i-got-tired-of-color-contrast-tools-that-break-brand-colors-so-i-built-my-own-4ani",
+        "hearts": 13,
+        "source": "devto"
+      },
+      {
+        "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
+        "url": "https://dev.to/clintonrocha98/sistema-de-planejamento-estruturado-no-opencode-16pb",
+        "hearts": 59,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.4,
-    "vibe": "partly cloudy",
-    "code": 2,
+    "temp_c": 9.6,
+    "vibe": "sunny",
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "2022",
+      "word": "tony",
       "count": 1
     },
     {
-      "word": "leaves",
+      "word": "hoare",
       "count": 1
     },
     {
-      "word": "passenger",
+      "word": "died",
       "count": 1
     },
     {
-      "word": "needing",
+      "word": "risc",
       "count": 1
     },
     {
-      "word": "surgery",
+      "word": "sloooow",
       "count": 1
     },
     {
@@ -93,66 +93,66 @@
       "count": 1
     },
     {
-      "word": "illegally",
+      "word": "outages",
       "count": 1
     },
     {
-      "word": "forcing",
+      "word": "amazon",
       "count": 1
     },
     {
-      "word": "through",
+      "word": "make",
       "count": 1
     },
     {
-      "word": "scanner",
+      "word": "senior",
       "count": 1
     },
     {
-      "word": "tech",
+      "word": "engineers",
       "count": 1
     },
     {
-      "word": "employment",
+      "word": "sign",
       "count": 1
     },
     {
-      "word": "significantly",
+      "word": "assisted",
       "count": 1
     },
     {
-      "word": "worse",
+      "word": "changes",
       "count": 1
     },
     {
-      "word": "than",
+      "word": "agents",
       "count": 1
     },
     {
-      "word": "2008",
+      "word": "while",
       "count": 1
     },
     {
-      "word": "2020",
+      "word": "sleep",
       "count": 1
     },
     {
-      "word": "recessions",
+      "word": "yann",
       "count": 1
     },
     {
-      "word": "show",
+      "word": "lecun",
       "count": 1
     },
     {
-      "word": "moongate",
+      "word": "raises",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Ada 2022...' connects to Gaza resilience",
+      "hook": "How 'Tony Hoare has died...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
