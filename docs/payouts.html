@@ -31,7 +31,7 @@ td{padding:10px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem;c
   <a href="art.html">Art</a>
 </nav>
 <h1>💸 SolarPunk™ Payout Ledger</h1>
-<p class="sub">Transparent auto-generated ledger. Updated 2026-03-11 22:32 UTC. Mode: SANDBOX.</p>
+<p class="sub">Transparent auto-generated ledger. Updated 2026-03-11 22:33 UTC. Mode: SANDBOX.</p>
 
 <div class="stats">
   <div class="stat"><div class="n">$0.00</div><div class="l">Total Paid Out</div></div>
@@ -40,7 +40,16 @@ td{padding:10px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem;c
   <div class="stat"><div class="n">0</div><div class="l">Pending</div></div>
 </div>
 
-
+<div class="no-paypal">
+<h3>⚠️ PayPal not connected — enable to auto-send payouts</h3>
+<ol>
+<li>Go to <b>developer.paypal.com</b> — sign in with PayPal</li>
+<li>My Apps &amp; Credentials → <b>Create App</b> → name: "SolarPunk"</li>
+<li>Copy <b>Client ID</b> and <b>Secret</b></li>
+<li>GitHub Secrets → Add: <code>PAYPAL_CLIENT_ID</code> and <code>PAYPAL_CLIENT_SECRET</code></li>
+<li>Also add: <code>PAYPAL_MODE</code> = <code>sandbox</code> (test first, then switch to <code>live</code>)</li>
+</ol>
+</div>
 
 <table>
 <tr><th></th><th>Date</th><th>Amount</th><th>Description</th></tr>

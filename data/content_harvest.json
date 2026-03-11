@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-11T22:32:29.833405+00:00",
+  "timestamp": "2026-03-11T22:33:32.918596+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Don't post generated/AI-edited comments. HN is for conversation between humans.",
         "url": "https://news.ycombinator.com/newsguidelines.html#generated",
-        "score": 1939,
+        "score": 1951,
         "source": "hackernews"
       },
       {
@@ -17,19 +17,19 @@
       {
         "title": "Many SWE-bench-Passing PRs would not be merged",
         "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
-        "score": 35,
+        "score": 37,
         "source": "hackernews"
       },
       {
         "title": "Making WebAssembly a first-class language on the Web",
         "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
-        "score": 324,
+        "score": 325,
         "source": "hackernews"
       },
       {
         "title": "Google closes deal to acquire Wiz",
         "url": "https://www.wiz.io/blog/google-closes-deal-to-acquire-wiz",
-        "score": 182,
+        "score": 183,
         "source": "hackernews"
       }
     ],
