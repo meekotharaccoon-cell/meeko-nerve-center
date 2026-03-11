@@ -1,38 +1,7 @@
 {
-  "timestamp": "2026-03-11T19:53:41.503301+00:00",
+  "timestamp": "2026-03-11T21:59:01.532540+00:00",
   "sources": {
-    "hackernews": [
-      {
-        "title": "Don't post generated/AI-edited comments. HN is for conversation between humans.",
-        "url": "https://news.ycombinator.com/newsguidelines.html#generated",
-        "score": 146,
-        "source": "hackernews"
-      },
-      {
-        "title": "Temporal: A nine-year journey to fix time in JavaScript",
-        "url": "https://bloomberg.github.io/js-blog/post/temporal/",
-        "score": 331,
-        "source": "hackernews"
-      },
-      {
-        "title": "Making WebAssembly a first-class language on the Web",
-        "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
-        "score": 229,
-        "source": "hackernews"
-      },
-      {
-        "title": "Entities enabling scientific fraud at scale (2025)",
-        "url": "https://doi.org/10.1073/pnas.2420092122",
-        "score": 215,
-        "source": "hackernews"
-      },
-      {
-        "title": "BitNet: 100B Param 1-Bit model for local CPUs",
-        "url": "https://github.com/microsoft/BitNet",
-        "score": 253,
-        "source": "hackernews"
-      }
-    ],
+    "hackernews": [],
     "reddit": [],
     "devto": [
       {
@@ -62,100 +31,94 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.9,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 11.0,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "don't",
+      "word": "shipped",
       "count": 1
     },
     {
-      "word": "post",
+      "word": "broken",
       "count": 1
     },
     {
-      "word": "generated/ai",
+      "word": "code",
       "count": 1
     },
     {
-      "word": "edited",
+      "word": "wrote",
       "count": 1
     },
     {
-      "word": "comments",
+      "word": "article",
       "count": 1
     },
     {
-      "word": "conversation",
+      "word": "about",
       "count": 1
     },
     {
-      "word": "between",
+      "word": "created",
       "count": 1
     },
     {
-      "word": "humans",
+      "word": "enterprise",
       "count": 1
     },
     {
-      "word": "temporal:",
+      "word": "gateway",
       "count": 1
     },
     {
-      "word": "nine",
+      "word": "tired",
       "count": 1
     },
     {
-      "word": "year",
+      "word": "color",
       "count": 1
     },
     {
-      "word": "journey",
+      "word": "contrast",
       "count": 1
     },
     {
-      "word": "time",
+      "word": "tools",
       "count": 1
     },
     {
-      "word": "javascript",
+      "word": "break",
       "count": 1
     },
     {
-      "word": "making",
+      "word": "brand",
       "count": 1
     },
     {
-      "word": "webassembly",
+      "word": "colors",
       "count": 1
     },
     {
-      "word": "first",
+      "word": "built",
       "count": 1
     },
     {
-      "word": "class",
+      "word": "criei",
       "count": 1
     },
     {
-      "word": "language",
+      "word": "pipeline",
       "count": 1
     },
     {
-      "word": "entities",
+      "word": "planejamento",
       "count": 1
     }
   ],
   "content_angles": [
-    {
-      "type": "tech_solidarity",
-      "hook": "How 'Don't post generated/AI-edited comments. HN is for conversat...' connects to Gaza resilience",
-      "platform": "twitter/linkedin",
-      "effort": "5min"
-    },
     {
       "type": "gallery_promo",
       "hook": "$1 gets you AI art. 70c goes to Gaza Rose Gallery. The loop funds itself.",
@@ -170,6 +133,6 @@
       "effort": "15min"
     }
   ],
-  "total_items": 9,
+  "total_items": 4,
   "status": "harvested"
 }
