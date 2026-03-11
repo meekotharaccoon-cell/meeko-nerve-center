@@ -1,5 +1,5 @@
 {
-  "cycles": 74,
+  "cycles": 75,
   "last_digest": "2026-03-05T11:39:35.984381+00:00",
   "discoveries": [
     {
@@ -1407,8 +1407,27 @@
         "Jmerc151/hive"
       ],
       "analysis": null
+    },
+    {
+      "ts": "2026-03-11T19:53:47.084665+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "AdritaB/true-north",
+        "OpenMOSE/RWKV-GLM-4.7-Flash-exp",
+        "tencent/Penguin-VL-2B"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Jmerc151/hive"
+      ],
+      "analysis": null
     }
   ],
   "upgrade_proposals": [],
-  "last_run": "2026-03-11T14:36:57.696340+00:00"
+  "last_run": "2026-03-11T19:53:46.247269+00:00"
 }

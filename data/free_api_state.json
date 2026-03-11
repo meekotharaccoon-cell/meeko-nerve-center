@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-11T14:37:04.100796+00:00",
+  "last_run": "2026-03-11T19:53:51.750708+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,7 +31,7 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16569
+      "likes": 16570
     },
     {
       "type": "trending_space",
@@ -41,41 +41,41 @@
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10989
+      "likes": 10990
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42131
+      "stars": 42134
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41251
+      "stars": 41259
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29283
+      "stars": 29285
     },
     {
       "type": "trending_article",
-      "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 120
+      "title": "Getting Started with Gemini CLI",
+      "reactions": 24
     },
     {
       "type": "trending_article",
-      "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-      "reactions": 33
+      "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
+      "reactions": 14
     },
     {
       "type": "trending_article",
-      "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
-      "reactions": 35
+      "title": "How to add AI to your App in 5 minutes",
+      "reactions": 42
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2480159596201.7173
+      "value": 2483063929910.959
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (49,706,634 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,119,374 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,352,227 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16569 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'enzostvs/deepsite' (16570 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13887 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10989 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42131 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41251 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29283 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (120 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (33 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (35 reactions) \u2014 create SolarPunk angle"
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10990 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42134 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41259 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29285 stars) \u2014 build integration engine",
+    "Content leverage: 'Getting Started with Gemini CLI' (24 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (14 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How to add AI to your App in 5 minutes' (42 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",
