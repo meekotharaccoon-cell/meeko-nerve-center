@@ -1,0 +1,394 @@
+{
+  "version": "v15",
+  "run_id": "local-1773176815",
+  "completed": "2026-03-10T21:06:55.284734+00:00",
+  "elapsed_s": 0,
+  "health_before": 40,
+  "health_after": 0,
+  "health_trend": "unknown",
+  "cycle_number": 0,
+  "businesses_built": 0,
+  "live_url": null,
+  "total_revenue": 0,
+  "total_to_gaza": 0,
+  "first_sale_done": false,
+  "first_contact_happened": false,
+  "first_contact_who": null,
+  "legal_fund": 0,
+  "total_paid_out": 0,
+  "secrets_configured": 0,
+  "critical_missing": [],
+  "bottleneck_count": 3,
+  "engines_auto_built": [],
+  "outreach_sent": 0,
+  "resonance_score": 0,
+  "resonance_label": "SILENT",
+  "github_stars": 0,
+  "persistent_blockers": 0,
+  "engines_ok": [],
+  "engines_failed": [],
+  "engines_skipped": [
+    "CYCLE_MEMORY",
+    "GUARDIAN",
+    "ENGINE_INTEGRITY",
+    "SECRETS_CHECKER",
+    "BOTTLENECK_SCANNER",
+    "AUTO_HEALER",
+    "CAPABILITY_SCANNER",
+    "EMAIL_BRAIN",
+    "SCAM_SHIELD",
+    "CALENDAR_BRAIN",
+    "CONTENT_HARVESTER",
+    "AI_WATCHER",
+    "CRYPTO_WATCHER",
+    "FREE_API_ENGINE",
+    "RESONANCE_ENGINE",
+    "FIRST_CONTACT",
+    "NEURON_A",
+    "NEURON_B",
+    "GRANT_HUNTER",
+    "ETSY_SEO_ENGINE",
+    "INCOME_ARCHITECT",
+    "REVENUE_FLYWHEEL",
+    "GUMROAD_AUTO_QUEUE",
+    "QUICK_REVENUE",
+    "BUSINESS_FACTORY",
+    "LANDING_DEPLOYER",
+    "ART_CATALOG",
+    "REVENUE_LOOP",
+    "ART_GENERATOR",
+    "EMAIL_AGENT_EXCHANGE",
+    "GRANT_APPLICANT",
+    "HEALTH_BOOSTER",
+    "SOCIAL_PROMOTER",
+    "SUBSTACK_ENGINE",
+    "LINK_PAGE",
+    "GITHUB_POSTER",
+    "SOCIAL_DASHBOARD",
+    "CONNECTION_FORGE",
+    "HUMAN_CONNECTOR",
+    "AFFILIATE_MAXIMIZER",
+    "STORE_BUILDER",
+    "BRIDGE_BUILDER",
+    "EMAIL_OUTREACH",
+    "VIRALITY_ENGINE",
+    "DEV_TO_PUBLISHER",
+    "KOFI_ENGINE",
+    "GUMROAD_ENGINE",
+    "GITHUB_SPONSORS_ENGINE",
+    "KOFI_PAYMENT_TRACKER",
+    "DISPATCH_HANDLER",
+    "HUMAN_PAYOUT",
+    "CONTRIBUTOR_REGISTRY",
+    "PAYPAL_PAYOUT",
+    "SYNAPSE",
+    "SYNTHESIS_FACTORY",
+    "ARCHITECT",
+    "SELF_BUILDER",
+    "KNOWLEDGE_BRIDGE",
+    "KNOWLEDGE_WEAVER",
+    "REVENUE_OPTIMIZER",
+    "BIG_BRAIN_ORACLE",
+    "MEMORY_PALACE",
+    "README_GENERATOR",
+    "BRIEFING_ENGINE",
+    "NIGHTLY_DIGEST",
+    "ISSUE_SYNC",
+    "SOLARPUNK_LEGAL",
+    "BRAND_LEGAL",
+    "TASK_ATOMIZER",
+    "AUTONOMY_PROOF",
+    "CLAUDE_ENGINE",
+    "SELF_PORTRAIT"
+  ],
+  "log": [
+    {
+      "engine": "CYCLE_MEMORY",
+      "status": "skipped"
+    },
+    {
+      "engine": "GUARDIAN",
+      "status": "skipped"
+    },
+    {
+      "engine": "ENGINE_INTEGRITY",
+      "status": "skipped"
+    },
+    {
+      "engine": "SECRETS_CHECKER",
+      "status": "skipped"
+    },
+    {
+      "engine": "BOTTLENECK_SCANNER",
+      "status": "skipped"
+    },
+    {
+      "engine": "AUTO_HEALER",
+      "status": "skipped"
+    },
+    {
+      "engine": "CAPABILITY_SCANNER",
+      "status": "skipped"
+    },
+    {
+      "engine": "EMAIL_BRAIN",
+      "status": "skipped"
+    },
+    {
+      "engine": "SCAM_SHIELD",
+      "status": "skipped"
+    },
+    {
+      "engine": "CALENDAR_BRAIN",
+      "status": "skipped"
+    },
+    {
+      "engine": "CONTENT_HARVESTER",
+      "status": "skipped"
+    },
+    {
+      "engine": "AI_WATCHER",
+      "status": "skipped"
+    },
+    {
+      "engine": "CRYPTO_WATCHER",
+      "status": "skipped"
+    },
+    {
+      "engine": "FREE_API_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "RESONANCE_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "FIRST_CONTACT",
+      "status": "skipped"
+    },
+    {
+      "engine": "NEURON_A",
+      "status": "skipped"
+    },
+    {
+      "engine": "NEURON_B",
+      "status": "skipped"
+    },
+    {
+      "engine": "GRANT_HUNTER",
+      "status": "skipped"
+    },
+    {
+      "engine": "ETSY_SEO_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "INCOME_ARCHITECT",
+      "status": "skipped"
+    },
+    {
+      "engine": "REVENUE_FLYWHEEL",
+      "status": "skipped"
+    },
+    {
+      "engine": "GUMROAD_AUTO_QUEUE",
+      "status": "skipped"
+    },
+    {
+      "engine": "QUICK_REVENUE",
+      "status": "skipped"
+    },
+    {
+      "engine": "BUSINESS_FACTORY",
+      "status": "skipped"
+    },
+    {
+      "engine": "LANDING_DEPLOYER",
+      "status": "skipped"
+    },
+    {
+      "engine": "ART_CATALOG",
+      "status": "skipped"
+    },
+    {
+      "engine": "REVENUE_LOOP",
+      "status": "skipped"
+    },
+    {
+      "engine": "ART_GENERATOR",
+      "status": "skipped"
+    },
+    {
+      "engine": "EMAIL_AGENT_EXCHANGE",
+      "status": "skipped"
+    },
+    {
+      "engine": "GRANT_APPLICANT",
+      "status": "skipped"
+    },
+    {
+      "engine": "HEALTH_BOOSTER",
+      "status": "skipped"
+    },
+    {
+      "engine": "SOCIAL_PROMOTER",
+      "status": "skipped"
+    },
+    {
+      "engine": "SUBSTACK_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "LINK_PAGE",
+      "status": "skipped"
+    },
+    {
+      "engine": "GITHUB_POSTER",
+      "status": "skipped"
+    },
+    {
+      "engine": "SOCIAL_DASHBOARD",
+      "status": "skipped"
+    },
+    {
+      "engine": "CONNECTION_FORGE",
+      "status": "skipped"
+    },
+    {
+      "engine": "HUMAN_CONNECTOR",
+      "status": "skipped"
+    },
+    {
+      "engine": "AFFILIATE_MAXIMIZER",
+      "status": "skipped"
+    },
+    {
+      "engine": "STORE_BUILDER",
+      "status": "skipped"
+    },
+    {
+      "engine": "BRIDGE_BUILDER",
+      "status": "skipped"
+    },
+    {
+      "engine": "EMAIL_OUTREACH",
+      "status": "skipped"
+    },
+    {
+      "engine": "VIRALITY_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "DEV_TO_PUBLISHER",
+      "status": "skipped"
+    },
+    {
+      "engine": "KOFI_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "GUMROAD_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "GITHUB_SPONSORS_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "KOFI_PAYMENT_TRACKER",
+      "status": "skipped"
+    },
+    {
+      "engine": "DISPATCH_HANDLER",
+      "status": "skipped"
+    },
+    {
+      "engine": "HUMAN_PAYOUT",
+      "status": "skipped"
+    },
+    {
+      "engine": "CONTRIBUTOR_REGISTRY",
+      "status": "skipped"
+    },
+    {
+      "engine": "PAYPAL_PAYOUT",
+      "status": "skipped"
+    },
+    {
+      "engine": "SYNAPSE",
+      "status": "skipped"
+    },
+    {
+      "engine": "SYNTHESIS_FACTORY",
+      "status": "skipped"
+    },
+    {
+      "engine": "ARCHITECT",
+      "status": "skipped"
+    },
+    {
+      "engine": "SELF_BUILDER",
+      "status": "skipped"
+    },
+    {
+      "engine": "KNOWLEDGE_BRIDGE",
+      "status": "skipped"
+    },
+    {
+      "engine": "KNOWLEDGE_WEAVER",
+      "status": "skipped"
+    },
+    {
+      "engine": "REVENUE_OPTIMIZER",
+      "status": "skipped"
+    },
+    {
+      "engine": "BIG_BRAIN_ORACLE",
+      "status": "skipped"
+    },
+    {
+      "engine": "MEMORY_PALACE",
+      "status": "skipped"
+    },
+    {
+      "engine": "README_GENERATOR",
+      "status": "skipped"
+    },
+    {
+      "engine": "BRIEFING_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "NIGHTLY_DIGEST",
+      "status": "skipped"
+    },
+    {
+      "engine": "ISSUE_SYNC",
+      "status": "skipped"
+    },
+    {
+      "engine": "SOLARPUNK_LEGAL",
+      "status": "skipped"
+    },
+    {
+      "engine": "BRAND_LEGAL",
+      "status": "skipped"
+    },
+    {
+      "engine": "TASK_ATOMIZER",
+      "status": "skipped"
+    },
+    {
+      "engine": "AUTONOMY_PROOF",
+      "status": "skipped"
+    },
+    {
+      "engine": "CLAUDE_ENGINE",
+      "status": "skipped"
+    },
+    {
+      "engine": "SELF_PORTRAIT",
+      "status": "skipped"
+    }
+  ]
+}

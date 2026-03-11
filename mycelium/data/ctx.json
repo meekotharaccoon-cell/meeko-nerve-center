@@ -1,0 +1,240 @@
+{
+  "run_id": "local-1773176815",
+  "ts": "2026-03-10T21:06:55.284734+00:00",
+  "prev_health": 40,
+  "memory": {},
+  "cycle_delta": {},
+  "neuron_a": {},
+  "neuron_b": {},
+  "flywheel": {},
+  "content": {},
+  "free_apis": {},
+  "grants": {},
+  "loop_result": {},
+  "exchange": {},
+  "biz_factory": {},
+  "secrets": {},
+  "bottlenecks": {
+    "generated": "2026-03-10T21:05:20.047355+00:00",
+    "summary": {
+      "total_bottlenecks": 3,
+      "critical": 2,
+      "high": 1,
+      "secrets_ok": 0,
+      "secrets_total": 18,
+      "engines_ok": 0,
+      "engines_total": 0,
+      "gumroad_live": 0,
+      "gumroad_pending": 0,
+      "revenue_total": 0,
+      "gaza_total": 0
+    },
+    "bottlenecks": [
+      {
+        "id": "BN-001",
+        "severity": "CRITICAL",
+        "title": "ANTHROPIC_API_KEY missing",
+        "description": "All Claude-powered engines fail. SELF_BUILDER, KNOWLEDGE_WEAVER, SYNTHESIS_FACTORY output nothing.",
+        "fix": "console.anthropic.com -> API Keys -> Create -> GitHub Secret: ANTHROPIC_API_KEY",
+        "revenue_impact": "$0/day (AI brain offline)",
+        "status": "PENDING"
+      },
+      {
+        "id": "BN-002",
+        "severity": "CRITICAL",
+        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
+        "description": "GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.",
+        "fix": "gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET",
+        "revenue_impact": "$0/sale blocked",
+        "status": "PENDING"
+      },
+      {
+        "id": "BN-003",
+        "severity": "HIGH",
+        "title": "Twitter/X keys missing -- 100+ posts in queue",
+        "description": "SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.",
+        "fix": "developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets",
+        "revenue_impact": "Zero Twitter distribution",
+        "status": "PENDING"
+      }
+    ],
+    "secrets": [
+      {
+        "name": "ANTHROPIC_API_KEY",
+        "present": false,
+        "length": 0,
+        "impact": "CRITICAL",
+        "unlocks": [
+          "SELF_BUILDER",
+          "KNOWLEDGE_WEAVER",
+          "AI brain"
+        ]
+      },
+      {
+        "name": "GUMROAD_SECRET",
+        "present": false,
+        "length": 0,
+        "impact": "CRITICAL",
+        "unlocks": [
+          "10 queued products publishing"
+        ]
+      },
+      {
+        "name": "GMAIL_ADDRESS",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "email briefings",
+          "outreach"
+        ]
+      },
+      {
+        "name": "GMAIL_APP_PASSWORD",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "email sending \u2014 MUST be App Password not account password"
+        ]
+      },
+      {
+        "name": "X_API_KEY",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "100+ queued tweets posting"
+        ]
+      },
+      {
+        "name": "X_API_SECRET",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "Twitter auth"
+        ]
+      },
+      {
+        "name": "X_ACCESS_TOKEN",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "Twitter account auth"
+        ]
+      },
+      {
+        "name": "X_ACCESS_TOKEN_SECRET",
+        "present": false,
+        "length": 0,
+        "impact": "HIGH",
+        "unlocks": [
+          "Twitter account auth"
+        ]
+      },
+      {
+        "name": "REDDIT_CLIENT_ID",
+        "present": false,
+        "length": 0,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "Reddit auto-posting"
+        ]
+      },
+      {
+        "name": "REDDIT_CLIENT_SECRET",
+        "present": false,
+        "length": 0,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "Reddit auto-posting"
+        ]
+      },
+      {
+        "name": "PAYPAL_CLIENT_ID",
+        "present": false,
+        "length": 0,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "automated payouts"
+        ]
+      },
+      {
+        "name": "PAYPAL_CLIENT_SECRET",
+        "present": false,
+        "length": 0,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "PayPal API auth"
+        ]
+      },
+      {
+        "name": "HF_TOKEN",
+        "present": false,
+        "length": 0,
+        "impact": "MEDIUM",
+        "unlocks": [
+          "HuggingFace fallback AI"
+        ]
+      },
+      {
+        "name": "GUMROAD_ID",
+        "present": false,
+        "length": 0,
+        "impact": "LOW",
+        "unlocks": [
+          "Gumroad analytics"
+        ]
+      },
+      {
+        "name": "GUMROAD_NAME",
+        "present": false,
+        "length": 0,
+        "impact": "LOW",
+        "unlocks": [
+          "Gumroad display name"
+        ]
+      },
+      {
+        "name": "REDDIT_USERNAME",
+        "present": false,
+        "length": 0,
+        "impact": "LOW",
+        "unlocks": [
+          "Reddit identity"
+        ]
+      },
+      {
+        "name": "REDDIT_PASSWORD",
+        "present": false,
+        "length": 0,
+        "impact": "LOW",
+        "unlocks": [
+          "Reddit login"
+        ]
+      },
+      {
+        "name": "KOFI_VERIFICATION_TOKEN",
+        "present": false,
+        "length": 0,
+        "impact": "LOW",
+        "unlocks": [
+          "Ko-fi webhook verification"
+        ]
+      }
+    ]
+  },
+  "architect_plan": {},
+  "weaver": {},
+  "optimizer": {},
+  "revenue_inbox": {},
+  "capabilities": {},
+  "outreach": {},
+  "resonance": {},
+  "quick_revenue": {},
+  "first_contact": {},
+  "engines_ok": [],
+  "engines_failed": []
+}
