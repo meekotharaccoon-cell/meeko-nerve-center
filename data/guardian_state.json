@@ -1,11 +1,12 @@
 {
-  "last_checked": "2026-03-11T23:19:11.133421",
+  "last_checked": "2026-03-11T23:19:26.285549",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
     "GUARDIAN.yml",
     "OMNIBRAIN.yml",
     "claude.yml",
+    "PAGES_DEPLOY.yml",
     "RUN_NOW.yml",
     "claude-code-review.yml",
     "BUILD.yml",
