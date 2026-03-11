@@ -1,32 +1,32 @@
 {
-  "last_run": "2026-03-11T00:30:30.085663+00:00",
+  "last_run": "2026-03-11T07:58:26.324494+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-MiniLM-L6-v2",
-      "downloads": 202130878
+      "downloads": 203633600
     },
     {
       "type": "trending_model",
       "name": "google-bert/bert-base-uncased",
-      "downloads": 68133004
+      "downloads": 68879514
     },
     {
       "type": "trending_model",
       "name": "google/electra-base-discriminator",
-      "downloads": 48598806
+      "downloads": 49706634
     },
     {
       "type": "trending_model",
       "name": "Falconsai/nsfw_image_detection",
-      "downloads": 41928714
+      "downloads": 42119374
     },
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-mpnet-base-v2",
-      "downloads": 28229272
+      "downloads": 28352227
     },
     {
       "type": "trending_space",
@@ -36,7 +36,7 @@
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13884
+      "likes": 13886
     },
     {
       "type": "trending_space",
@@ -46,53 +46,53 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42101
+      "stars": 42120
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41190
+      "stars": 41235
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29275
+      "stars": 29282
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 117
-    },
-    {
-      "type": "trending_article",
-      "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
-      "reactions": 30
+      "reactions": 119
     },
     {
       "type": "trending_article",
       "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-      "reactions": 27
+      "reactions": 31
+    },
+    {
+      "type": "trending_article",
+      "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
+      "reactions": 33
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2461436287791.283
+      "value": 2447798458656.5728
     }
   ],
   "opportunities": [
-    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (202,130,878 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google-bert/bert-base-uncased' (68,133,004 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google/electra-base-discriminator' (48,598,806 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,928,714 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,229,272 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (203,633,600 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google-bert/bert-base-uncased' (68,879,514 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google/electra-base-discriminator' (49,706,634 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,119,374 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,352,227 downloads) \u2014 build how-to guide",
     "Clone/extend HF space: 'enzostvs/deepsite' (16570 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13884 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13886 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42101 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41190 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29275 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (117 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (30 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (27 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42120 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41235 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29282 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (119 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (31 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (33 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

@@ -1,7 +1,7 @@
 {
-  "scanned_at": "2026-03-11T00:30:19.781940+00:00",
-  "active": 5,
-  "blocked": 3,
+  "scanned_at": "2026-03-11T07:58:17.242100+00:00",
+  "active": 6,
+  "blocked": 2,
   "degraded": 1,
   "capabilities": {
     "anthropic_api": {
@@ -35,7 +35,7 @@
     },
     "twitter": {
       "name": "Twitter/X (auto-post)",
-      "status": "blocked",
+      "status": "active",
       "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
       "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
       "blocks": [
@@ -85,5 +85,5 @@
   },
   "priority_fix": "GUMROAD_ACCESS_TOKEN",
   "best_channel_now": "gmail \u2014 works today, no new keys needed",
-  "summary": "5 active / 3 blocked / 1 degraded"
+  "summary": "6 active / 2 blocked / 1 degraded"
 }

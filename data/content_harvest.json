@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-11T00:30:20.557469+00:00",
+  "timestamp": "2026-03-11T07:58:18.223499+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Tony Hoare has died",
-        "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
-        "score": 1415,
+        "title": "Create value for others and don\u2019t worry about the returns",
+        "url": "https://geohot.github.io//blog/jekyll/update/2026/03/11/running-69-agents.html",
+        "score": 187,
+        "source": "hackernews"
+      },
+      {
+        "title": "I'm going to build my own OpenClaw, with blackjack and bun",
+        "url": "https://github.com/rcarmo/piclaw",
+        "score": 7,
+        "source": "hackernews"
+      },
+      {
+        "title": "Zig \u2013 Type Resolution Redesign and Language Changes",
+        "url": "https://ziglang.org/devlog/2026/#2026-03-10",
+        "score": 164,
         "source": "hackernews"
       },
       {
         "title": "U+237C \u237c Is Azimuth",
         "url": "https://ionathan.ch/2026/02/16/angzarr.html",
-        "score": 89,
+        "score": 266,
         "source": "hackernews"
       },
       {
-        "title": "Agents that run while I sleep",
-        "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
-        "score": 194,
-        "source": "hackernews"
-      },
-      {
-        "title": "Yann LeCun raises $1B to build AI that understands the physical world",
-        "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
-        "score": 300,
-        "source": "hackernews"
-      },
-      {
-        "title": "Cloudflare Crawl Endpoint",
+        "title": "Cloudflare crawl endpoint",
         "url": "https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/",
-        "score": 73,
+        "score": 262,
         "source": "hackernews"
       }
     ],
@@ -62,22 +62,74 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 7.6,
+    "temp_c": 17.8,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "tony",
+      "word": "about",
+      "count": 2
+    },
+    {
+      "word": "create",
       "count": 1
     },
     {
-      "word": "hoare",
+      "word": "value",
       "count": 1
     },
     {
-      "word": "died",
+      "word": "others",
+      "count": 1
+    },
+    {
+      "word": "don\u2019t",
+      "count": 1
+    },
+    {
+      "word": "worry",
+      "count": 1
+    },
+    {
+      "word": "returns",
+      "count": 1
+    },
+    {
+      "word": "going",
+      "count": 1
+    },
+    {
+      "word": "build",
+      "count": 1
+    },
+    {
+      "word": "openclaw",
+      "count": 1
+    },
+    {
+      "word": "blackjack",
+      "count": 1
+    },
+    {
+      "word": "type",
+      "count": 1
+    },
+    {
+      "word": "resolution",
+      "count": 1
+    },
+    {
+      "word": "redesign",
+      "count": 1
+    },
+    {
+      "word": "language",
+      "count": 1
+    },
+    {
+      "word": "changes",
       "count": 1
     },
     {
@@ -89,70 +141,18 @@
       "count": 1
     },
     {
-      "word": "agents",
-      "count": 1
-    },
-    {
-      "word": "while",
-      "count": 1
-    },
-    {
-      "word": "sleep",
-      "count": 1
-    },
-    {
-      "word": "yann",
-      "count": 1
-    },
-    {
-      "word": "lecun",
-      "count": 1
-    },
-    {
-      "word": "raises",
-      "count": 1
-    },
-    {
-      "word": "build",
-      "count": 1
-    },
-    {
-      "word": "understands",
-      "count": 1
-    },
-    {
-      "word": "physical",
-      "count": 1
-    },
-    {
-      "word": "world",
-      "count": 1
-    },
-    {
       "word": "cloudflare",
       "count": 1
     },
     {
       "word": "crawl",
       "count": 1
-    },
-    {
-      "word": "endpoint",
-      "count": 1
-    },
-    {
-      "word": "shipped",
-      "count": 1
-    },
-    {
-      "word": "broken",
-      "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Tony Hoare has died...' connects to Gaza resilience",
+      "hook": "How 'Create value for others and don\u2019t worry about the returns...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

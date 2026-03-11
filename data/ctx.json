@@ -1,6 +1,6 @@
 {
-  "run_id": "22930716555",
-  "ts": "2026-03-11T00:30:55.349276+00:00",
+  "run_id": "22942531755",
+  "ts": "2026-03-11T07:58:52.143164+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-11T00:30:47.626404+00:00",
+        "timestamp": "2026-03-11T07:58:44.623996+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 76,
@@ -127,9 +127,9 @@
         "loop_cycles_count": 0,
         "top_opportunity": "Gaza Rose Gallery Etsy SEO",
         "trending_themes": [
-          "tony",
-          "hoare",
-          "died"
+          "about",
+          "create",
+          "value"
         ]
       }
     ],
@@ -142,9 +142,9 @@
     },
     "total_cycles": 8,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-11T00:30:47.626404+00:00",
+    "last_updated": "2026-03-11T07:58:44.623996+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-11T00:30:47.626404+00:00",
+      "timestamp": "2026-03-11T07:58:44.623996+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 76,
@@ -154,22 +154,20 @@
       "loop_cycles_count": 0,
       "top_opportunity": "Gaza Rose Gallery Etsy SEO",
       "trending_themes": [
-        "tony",
-        "hoare",
-        "died"
+        "about",
+        "create",
+        "value"
       ]
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-11T00:30:15.017983+00:00",
-    "cycle_number": 41,
+    "generated": "2026-03-11T07:58:12.761948+00:00",
+    "cycle_number": 42,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
       "first_cycle": false,
-      "wins": [
-        "BRIEFING_ENGINE"
-      ],
+      "wins": [],
       "regressions": [],
       "new_failures": [],
       "still_failing": [
@@ -183,8 +181,8 @@
     "persistent": [
       {
         "id": "BN-001",
-        "title": "Gmail 534 error -- App Password wrong or expired",
-        "severity": "HIGH",
+        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
+        "severity": "CRITICAL",
         "cycles_open": 20,
         "escalation": "STUCK"
       }
@@ -192,14 +190,12 @@
     "still_failing": [
       "BRAND_LEGAL"
     ],
-    "new_fixes": [
-      "BRIEFING_ENGINE"
-    ],
+    "new_fixes": [],
     "new_regressions": [],
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 30,
-    "summary": "Cycle 41 | Health: 40 (stuck) | Fixed: 1 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 42 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -446,9 +442,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-11T00:30:34.315683+00:00"
+      "timestamp": "2026-03-11T07:58:30.641443+00:00"
     },
-    "generated_at": "2026-03-11T00:30:34.692351+00:00"
+    "generated_at": "2026-03-11T07:58:30.946406+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -497,10 +493,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-11T00:30:35.128709+00:00"
+    "generated_at": "2026-03-11T07:58:31.163280+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-11T00:30:37.096647+00:00",
+    "ts": "2026-03-11T07:58:33.990544+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -510,14 +506,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 71,
+          "cycles": 72,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-11T00:29:09.905600+00:00"
+          "last_run": "2026-03-11T00:30:43.301010+00:00"
         }
       },
       "grants": {
@@ -526,11 +522,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 71,
+          "cycles": 72,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-11T00:29:08.021707+00:00"
+          "last_run": "2026-03-11T00:30:40.834364+00:00"
         }
       },
       "sponsors": {
@@ -539,11 +535,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 71,
+          "cycles": 72,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-11T00:29:10.188965+00:00"
+          "last_run": "2026-03-11T00:30:43.468978+00:00"
         }
       },
       "exchange": {
@@ -552,14 +548,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 71,
+          "cycles": 72,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-11T00:29:07.900284+00:00"
+          "last_run": "2026-03-11T00:30:40.717013+00:00"
         }
       },
       "substack": {
@@ -568,11 +564,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 71,
+          "cycles": 72,
           "issues_drafted": 1,
           "issues_published": 0,
           "last_draft": "2026-03-05T05:18:25.021630+00:00",
-          "last_run": "2026-03-11T00:29:08.458022+00:00"
+          "last_run": "2026-03-11T00:30:41.283562+00:00"
         }
       },
       "gumroad": {
@@ -585,37 +581,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-11T00:30:20.557469+00:00",
+    "timestamp": "2026-03-11T07:58:18.223499+00:00",
     "sources": {
       "hackernews": [
         {
-          "title": "Tony Hoare has died",
-          "url": "https://blog.computationalcomplexity.org/2026/03/tony-hoare-1934-2026.html",
-          "score": 1415,
+          "title": "Create value for others and don\u2019t worry about the returns",
+          "url": "https://geohot.github.io//blog/jekyll/update/2026/03/11/running-69-agents.html",
+          "score": 187,
+          "source": "hackernews"
+        },
+        {
+          "title": "I'm going to build my own OpenClaw, with blackjack and bun",
+          "url": "https://github.com/rcarmo/piclaw",
+          "score": 7,
+          "source": "hackernews"
+        },
+        {
+          "title": "Zig \u2013 Type Resolution Redesign and Language Changes",
+          "url": "https://ziglang.org/devlog/2026/#2026-03-10",
+          "score": 164,
           "source": "hackernews"
         },
         {
           "title": "U+237C \u237c Is Azimuth",
           "url": "https://ionathan.ch/2026/02/16/angzarr.html",
-          "score": 89,
+          "score": 266,
           "source": "hackernews"
         },
         {
-          "title": "Agents that run while I sleep",
-          "url": "https://www.claudecodecamp.com/p/i-m-building-agents-that-run-while-i-sleep",
-          "score": 194,
-          "source": "hackernews"
-        },
-        {
-          "title": "Yann LeCun raises $1B to build AI that understands the physical world",
-          "url": "https://www.wired.com/story/yann-lecun-raises-dollar1-billion-to-build-ai-that-understands-the-physical-world/",
-          "score": 300,
-          "source": "hackernews"
-        },
-        {
-          "title": "Cloudflare Crawl Endpoint",
+          "title": "Cloudflare crawl endpoint",
           "url": "https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/",
-          "score": 73,
+          "score": 262,
           "source": "hackernews"
         }
       ],
@@ -648,22 +644,74 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 7.6,
+      "temp_c": 17.8,
       "vibe": "sunny",
       "code": 0,
       "location": "Gaza City"
     },
     "trending_themes": [
       {
-        "word": "tony",
+        "word": "about",
+        "count": 2
+      },
+      {
+        "word": "create",
         "count": 1
       },
       {
-        "word": "hoare",
+        "word": "value",
         "count": 1
       },
       {
-        "word": "died",
+        "word": "others",
+        "count": 1
+      },
+      {
+        "word": "don\u2019t",
+        "count": 1
+      },
+      {
+        "word": "worry",
+        "count": 1
+      },
+      {
+        "word": "returns",
+        "count": 1
+      },
+      {
+        "word": "going",
+        "count": 1
+      },
+      {
+        "word": "build",
+        "count": 1
+      },
+      {
+        "word": "openclaw",
+        "count": 1
+      },
+      {
+        "word": "blackjack",
+        "count": 1
+      },
+      {
+        "word": "type",
+        "count": 1
+      },
+      {
+        "word": "resolution",
+        "count": 1
+      },
+      {
+        "word": "redesign",
+        "count": 1
+      },
+      {
+        "word": "language",
+        "count": 1
+      },
+      {
+        "word": "changes",
         "count": 1
       },
       {
@@ -675,70 +723,18 @@
         "count": 1
       },
       {
-        "word": "agents",
-        "count": 1
-      },
-      {
-        "word": "while",
-        "count": 1
-      },
-      {
-        "word": "sleep",
-        "count": 1
-      },
-      {
-        "word": "yann",
-        "count": 1
-      },
-      {
-        "word": "lecun",
-        "count": 1
-      },
-      {
-        "word": "raises",
-        "count": 1
-      },
-      {
-        "word": "build",
-        "count": 1
-      },
-      {
-        "word": "understands",
-        "count": 1
-      },
-      {
-        "word": "physical",
-        "count": 1
-      },
-      {
-        "word": "world",
-        "count": 1
-      },
-      {
         "word": "cloudflare",
         "count": 1
       },
       {
         "word": "crawl",
         "count": 1
-      },
-      {
-        "word": "endpoint",
-        "count": 1
-      },
-      {
-        "word": "shipped",
-        "count": 1
-      },
-      {
-        "word": "broken",
-        "count": 1
       }
     ],
     "content_angles": [
       {
         "type": "tech_solidarity",
-        "hook": "How 'Tony Hoare has died...' connects to Gaza resilience",
+        "hook": "How 'Create value for others and don\u2019t worry about the returns...' connects to Gaza resilience",
         "platform": "twitter/linkedin",
         "effort": "5min"
       },
@@ -760,34 +756,34 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-11T00:30:30.085663+00:00",
+    "last_run": "2026-03-11T07:58:26.324494+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-MiniLM-L6-v2",
-        "downloads": 202130878
+        "downloads": 203633600
       },
       {
         "type": "trending_model",
         "name": "google-bert/bert-base-uncased",
-        "downloads": 68133004
+        "downloads": 68879514
       },
       {
         "type": "trending_model",
         "name": "google/electra-base-discriminator",
-        "downloads": 48598806
+        "downloads": 49706634
       },
       {
         "type": "trending_model",
         "name": "Falconsai/nsfw_image_detection",
-        "downloads": 41928714
+        "downloads": 42119374
       },
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-mpnet-base-v2",
-        "downloads": 28229272
+        "downloads": 28352227
       },
       {
         "type": "trending_space",
@@ -797,7 +793,7 @@
       {
         "type": "trending_space",
         "name": "open-llm-leaderboard/open_llm_leaderboard",
-        "likes": 13884
+        "likes": 13886
       },
       {
         "type": "trending_space",
@@ -807,53 +803,53 @@
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 42101
+        "stars": 42120
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 41190
+        "stars": 41235
       },
       {
         "type": "github_ai_repo",
         "repo": "CopilotKit/CopilotKit",
-        "stars": 29275
+        "stars": 29282
       },
       {
         "type": "trending_article",
         "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-        "reactions": 117
-      },
-      {
-        "type": "trending_article",
-        "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
-        "reactions": 30
+        "reactions": 119
       },
       {
         "type": "trending_article",
         "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-        "reactions": 27
+        "reactions": 31
+      },
+      {
+        "type": "trending_article",
+        "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
+        "reactions": 33
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2461436287791.283
+        "value": 2447798458656.5728
       }
     ],
     "opportunities": [
-      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (202,130,878 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google-bert/bert-base-uncased' (68,133,004 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google/electra-base-discriminator' (48,598,806 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (41,928,714 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,229,272 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (203,633,600 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google-bert/bert-base-uncased' (68,879,514 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google/electra-base-discriminator' (49,706,634 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,119,374 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,352,227 downloads) \u2014 build how-to guide",
       "Clone/extend HF space: 'enzostvs/deepsite' (16570 likes) \u2014 integrate into SolarPunk",
-      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13884 likes) \u2014 integrate into SolarPunk",
+      "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13886 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (42101 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (41190 stars) \u2014 build integration engine",
-      "Engine wrapper: CopilotKit/CopilotKit (29275 stars) \u2014 build integration engine",
-      "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (117 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (30 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (27 reactions) \u2014 create SolarPunk angle"
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (42120 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (41235 stars) \u2014 build integration engine",
+      "Engine wrapper: CopilotKit/CopilotKit (29282 stars) \u2014 build integration engine",
+      "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (119 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (31 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (33 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1092,7 +1088,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-11T00:30:39.048118+00:00",
+    "started_at": "2026-03-11T07:58:36.204320+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1109,7 +1105,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-11T00:30:39.664489+00:00",
+        "queued_at": "2026-03-11T07:58:36.879284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1117,7 +1113,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-11T00:30:39.664489+00:00",
+        "queued_at": "2026-03-11T07:58:36.879284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1125,28 +1121,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-11T00:30:39.664489+00:00",
+        "queued_at": "2026-03-11T07:58:36.879284+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-11T00:30:40.481124+00:00",
+    "completed_at": "2026-03-11T07:58:37.588012+00:00",
     "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 72,
+    "cycles": 73,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-11T00:30:40.717013+00:00"
+    "last_run": "2026-03-11T07:58:37.822618+00:00"
   },
   "biz_factory": {
-    "cycles": 72,
+    "cycles": 73,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1651,18 +1647,23 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-11T00:30:38.078969+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-11T07:58:35.182198+00:00"
       }
     ],
-    "total_revenue_potential": 49880,
-    "last_run": "2026-03-11T00:30:37.360686+00:00"
+    "total_revenue_potential": 50620,
+    "last_run": "2026-03-11T07:58:34.444947+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-11T00:30:16.471044+00:00",
-    "configured": 4,
+    "last_check": "2026-03-11T07:58:14.161994+00:00",
+    "configured": 10,
     "total": 16,
-    "critical_missing": [
-      "GUMROAD_SECRET"
-    ],
+    "critical_missing": [],
     "secrets": {
       "ANTHROPIC_API_KEY": {
         "present": true,
@@ -1675,17 +1676,17 @@
         "impact": "low"
       },
       "GUMROAD_SECRET": {
-        "present": false,
+        "present": true,
         "required": true,
         "impact": "critical"
       },
       "GUMROAD_ID": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "low"
       },
       "GUMROAD_NAME": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "low"
       },
@@ -1700,7 +1701,7 @@
         "impact": "medium"
       },
       "X_API_KEY": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "high"
       },
@@ -1730,12 +1731,12 @@
         "impact": "high"
       },
       "PAYPAL_CLIENT_ID": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "medium"
       },
       "PAYPAL_CLIENT_SECRET": {
-        "present": false,
+        "present": true,
         "required": false,
         "impact": "medium"
       },
@@ -1747,12 +1748,12 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-11T00:30:16.500844+00:00",
+    "generated": "2026-03-11T07:58:14.190782+00:00",
     "summary": {
-      "total_bottlenecks": 3,
-      "critical": 1,
-      "high": 2,
-      "secrets_ok": 4,
+      "total_bottlenecks": 1,
+      "critical": 0,
+      "high": 1,
+      "secrets_ok": 10,
       "secrets_total": 18,
       "engines_ok": 76,
       "engines_total": 76,
@@ -1764,30 +1765,12 @@
     "bottlenecks": [
       {
         "id": "BN-001",
-        "severity": "CRITICAL",
-        "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-        "description": "GUMROAD_ENGINE has products queued but can't authenticate to Gumroad API.",
-        "fix": "gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET",
-        "revenue_impact": "$10/sale blocked",
-        "status": "PENDING"
-      },
-      {
-        "id": "BN-002",
         "severity": "HIGH",
         "title": "Gmail 534 error -- App Password wrong or expired",
         "description": "Every email send fails: '534 Application-specific password required'. outreach_sent=0, exchange deaf.",
         "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
         "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
         "status": "BROKEN"
-      },
-      {
-        "id": "BN-003",
-        "severity": "HIGH",
-        "title": "Twitter/X keys missing -- 100+ posts in queue",
-        "description": "SOCIAL_PROMOTER has posts ready every cycle. No X_API_KEY = none post.",
-        "fix": "developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets",
-        "revenue_impact": "Zero Twitter distribution",
-        "status": "PENDING"
       }
     ],
     "secrets": [
@@ -1804,8 +1787,8 @@
       },
       {
         "name": "GUMROAD_SECRET",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 43,
         "impact": "CRITICAL",
         "unlocks": [
           "10 queued products publishing"
@@ -1832,8 +1815,8 @@
       },
       {
         "name": "X_API_KEY",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 64,
         "impact": "HIGH",
         "unlocks": [
           "100+ queued tweets posting"
@@ -1886,8 +1869,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_ID",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 80,
         "impact": "MEDIUM",
         "unlocks": [
           "automated payouts"
@@ -1895,8 +1878,8 @@
       },
       {
         "name": "PAYPAL_CLIENT_SECRET",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 80,
         "impact": "MEDIUM",
         "unlocks": [
           "PayPal API auth"
@@ -1913,8 +1896,8 @@
       },
       {
         "name": "GUMROAD_ID",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 43,
         "impact": "LOW",
         "unlocks": [
           "Gumroad analytics"
@@ -1922,8 +1905,8 @@
       },
       {
         "name": "GUMROAD_NAME",
-        "present": false,
-        "length": 0,
+        "present": true,
+        "length": 11,
         "impact": "LOW",
         "unlocks": [
           "Gumroad display name"
@@ -1959,7 +1942,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-11T00:30:45.516615+00:00",
+    "generated_at": "2026-03-11T07:58:42.550361+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -2045,9 +2028,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 72,
+      "businesses_built": 73,
       "engines_built": 0,
-      "revenue_potential": 49880,
+      "revenue_potential": 50620,
       "active_revenue_streams": [
         "substack"
       ]
@@ -2116,16 +2099,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 53,
-    "last_run": "2026-03-11T00:30:46.596896+00:00",
+    "cycles": 54,
+    "last_run": "2026-03-11T07:58:43.657090+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 53,
+    "cycles": 54,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-11T00:30:47.371232+00:00"
+    "last_run": "2026-03-11T07:58:44.379596+00:00"
   },
   "revenue_inbox": [
     {
@@ -2151,9 +2134,9 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-11T00:30:19.781940+00:00",
-    "active": 5,
-    "blocked": 3,
+    "scanned_at": "2026-03-11T07:58:17.242100+00:00",
+    "active": 6,
+    "blocked": 2,
     "degraded": 1,
     "capabilities": {
       "anthropic_api": {
@@ -2187,7 +2170,7 @@
       },
       "twitter": {
         "name": "Twitter/X (auto-post)",
-        "status": "blocked",
+        "status": "active",
         "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
         "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
         "blocks": [
@@ -2237,10 +2220,10 @@
     },
     "priority_fix": "GUMROAD_ACCESS_TOKEN",
     "best_channel_now": "gmail \u2014 works today, no new keys needed",
-    "summary": "5 active / 3 blocked / 1 degraded"
+    "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 43,
+    "cycles": 44,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2407,7 +2390,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-11T00:30:30.155773+00:00",
+    "generated_at": "2026-03-11T07:58:26.389138+00:00",
     "resonance_score": 30,
     "resonance_label": "SIGNAL",
     "resonance_notes": [
@@ -2444,7 +2427,7 @@
     "reply_count": 0
   },
   "quick_revenue": {
-    "generated_at": "2026-03-11T00:30:37.248889+00:00",
+    "generated_at": "2026-03-11T07:58:34.335504+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
@@ -2553,7 +2536,6 @@
     "BIG_BRAIN_ORACLE",
     "MEMORY_PALACE",
     "README_GENERATOR",
-    "BRIEFING_ENGINE",
     "NIGHTLY_DIGEST",
     "ISSUE_SYNC",
     "SOLARPUNK_LEGAL",
@@ -2563,6 +2545,7 @@
     "SELF_PORTRAIT"
   ],
   "engines_failed": [
+    "BRIEFING_ENGINE",
     "BRAND_LEGAL"
   ]
 }
