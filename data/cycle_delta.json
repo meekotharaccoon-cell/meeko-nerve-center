@@ -1,16 +1,17 @@
 {
-  "generated": "2026-03-11T00:28:40.537692+00:00",
-  "cycle_number": 40,
+  "generated": "2026-03-11T00:30:15.017983+00:00",
+  "cycle_number": 41,
   "health": 40,
   "health_trend": "stuck",
   "delta": {
     "first_cycle": false,
-    "wins": [],
+    "wins": [
+      "BRIEFING_ENGINE"
+    ],
     "regressions": [],
     "new_failures": [],
     "still_failing": [
-      "BRAND_LEGAL",
-      "BRIEFING_ENGINE"
+      "BRAND_LEGAL"
     ],
     "revenue_delta": 0,
     "health_delta": 0,
@@ -27,13 +28,14 @@
     }
   ],
   "still_failing": [
-    "BRAND_LEGAL",
+    "BRAND_LEGAL"
+  ],
+  "new_fixes": [
     "BRIEFING_ENGINE"
   ],
-  "new_fixes": [],
   "new_regressions": [],
   "revenue": 0,
   "revenue_delta": 0,
   "resonance": 30,
-  "summary": "Cycle 40 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+  "summary": "Cycle 41 | Health: 40 (stuck) | Fixed: 1 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
 }
