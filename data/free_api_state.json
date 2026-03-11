@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-11T07:58:26.324494+00:00",
+  "last_run": "2026-03-11T14:37:04.100796+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,51 +31,51 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16570
+      "likes": 16569
     },
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13886
+      "likes": 13887
     },
     {
       "type": "trending_space",
       "name": "jbilcke-hf/ai-comic-factory",
-      "likes": 10987
+      "likes": 10989
     },
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42120
+      "stars": 42131
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41235
+      "stars": 41251
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29282
+      "stars": 29283
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 119
+      "reactions": 120
     },
     {
       "type": "trending_article",
       "title": "DumbQuestion.ai - Self-Awareness, Prompt Injection, Search Intent... and darkness",
-      "reactions": 31
+      "reactions": 33
     },
     {
       "type": "trending_article",
       "title": "I Made Claude Code Think Before It Codes. Here's the Prompt.",
-      "reactions": 33
+      "reactions": 35
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2447798458656.5728
+      "value": 2480159596201.7173
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (49,706,634 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,119,374 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,352,227 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16570 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13886 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10987 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42120 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41235 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29282 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (119 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (31 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (33 reactions) \u2014 create SolarPunk angle"
+    "Clone/extend HF space: 'enzostvs/deepsite' (16569 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13887 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10989 likes) \u2014 integrate into SolarPunk",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42131 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41251 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29283 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (120 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'DumbQuestion.ai - Self-Awareness, Prompt Injection, Search I' (33 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Made Claude Code Think Before It Codes. Here's the Prompt.' (35 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

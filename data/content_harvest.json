@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-11T07:58:18.223499+00:00",
+  "timestamp": "2026-03-11T14:36:54.270178+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Create value for others and don\u2019t worry about the returns",
-        "url": "https://geohot.github.io//blog/jekyll/update/2026/03/11/running-69-agents.html",
-        "score": 187,
+        "title": "Lego's 0.002 mm Specification and Its Implications for Manufacturing (2025)",
+        "url": "https://www.thewave.engineer/articles.html/productivity/legos-0002mm-specification-and-its-implications-for-manufacturing-r120/",
+        "score": 79,
         "source": "hackernews"
       },
       {
-        "title": "I'm going to build my own OpenClaw, with blackjack and bun",
-        "url": "https://github.com/rcarmo/piclaw",
-        "score": 7,
+        "title": "Microsoft BitNet: 100B Param 1-Bit model for local CPUs",
+        "url": "https://github.com/microsoft/BitNet",
+        "score": 111,
         "source": "hackernews"
       },
       {
-        "title": "Zig \u2013 Type Resolution Redesign and Language Changes",
-        "url": "https://ziglang.org/devlog/2026/#2026-03-10",
-        "score": 164,
+        "title": "The entities enabling scientific fraud at scale are large, resilient and growing",
+        "url": "https://doi.org/10.1073/pnas.2420092122",
+        "score": 30,
         "source": "hackernews"
       },
       {
-        "title": "U+237C \u237c Is Azimuth",
-        "url": "https://ionathan.ch/2026/02/16/angzarr.html",
-        "score": 266,
+        "title": "Whistleblower: DOGE member took Social Security data to new job",
+        "url": "https://www.washingtonpost.com/politics/2026/03/10/social-security-data-breach-doge-2/",
+        "score": 129,
         "source": "hackernews"
       },
       {
-        "title": "Cloudflare crawl endpoint",
-        "url": "https://developers.cloudflare.com/changelog/post/2026-03-10-br-crawl-endpoint/",
-        "score": 262,
+        "title": "PeppyOS: A simpler alternative to ROS 2 (now with containers support)",
+        "url": "https://peppy.bot/",
+        "score": 34,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 17.8,
-    "vibe": "sunny",
-    "code": 0,
+    "temp_c": 18.1,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "about",
-      "count": 2
-    },
-    {
-      "word": "create",
+      "word": "lego's",
       "count": 1
     },
     {
-      "word": "value",
+      "word": "0.002",
       "count": 1
     },
     {
-      "word": "others",
+      "word": "specification",
       "count": 1
     },
     {
-      "word": "don\u2019t",
+      "word": "implications",
       "count": 1
     },
     {
-      "word": "worry",
+      "word": "manufacturing",
       "count": 1
     },
     {
-      "word": "returns",
+      "word": "2025",
       "count": 1
     },
     {
-      "word": "going",
+      "word": "microsoft",
       "count": 1
     },
     {
-      "word": "build",
+      "word": "bitnet:",
       "count": 1
     },
     {
-      "word": "openclaw",
+      "word": "100b",
       "count": 1
     },
     {
-      "word": "blackjack",
+      "word": "param",
       "count": 1
     },
     {
-      "word": "type",
+      "word": "model",
       "count": 1
     },
     {
-      "word": "resolution",
+      "word": "local",
       "count": 1
     },
     {
-      "word": "redesign",
+      "word": "cpus",
       "count": 1
     },
     {
-      "word": "language",
+      "word": "entities",
       "count": 1
     },
     {
-      "word": "changes",
+      "word": "enabling",
       "count": 1
     },
     {
-      "word": "u+237c",
+      "word": "scientific",
       "count": 1
     },
     {
-      "word": "azimuth",
+      "word": "fraud",
       "count": 1
     },
     {
-      "word": "cloudflare",
+      "word": "scale",
       "count": 1
     },
     {
-      "word": "crawl",
+      "word": "large",
+      "count": 1
+    },
+    {
+      "word": "resilient",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Create value for others and don\u2019t worry about the returns...' connects to Gaza resilience",
+      "hook": "How 'Lego's 0.002 mm Specification and Its Implications for Manuf...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
