@@ -1,12 +1,11 @@
 ﻿{
     "machine":  "COMPUTETOR",
-    "getscreen":  true,
-    "whatsapp":  false,
-    "connected_by":  "MASTER_CONNECT.ps1",
-    "python":  true,
-    "timestamp":  "2026-03-07 00:04:33 UTC",
-    "brave_debug":  false,
+    "python_available":  true,
+    "repo_path":  "C:\\Users\\meeko\\meeko-nerve-center",
+    "brave_port":  9222,
+    "connected_by":  "SOLARPUNK_CONNECT.ps1",
+    "brave_debug_live":  true,
+    "timestamp":  "2026-03-10 20:27:20 UTC",
     "loop_status":  "CONNECTED",
-    "auto_reconnect":  true,
     "user":  "meeko"
 }
