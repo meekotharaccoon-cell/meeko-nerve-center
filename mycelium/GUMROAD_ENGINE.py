@@ -1,36 +1,57 @@
 #!/usr/bin/env python3
 """
 GUMROAD_ENGINE.py — publishes products to Gumroad automatically
-Uses YOUR actual secret names: GUMROAD_SECRET (access token), GUMROAD_ID (seller ID)
-Gumroad API: https://app.gumroad.com/api
 
-Secret mapping:
-  GUMROAD_SECRET  → access_token (the Bearer token for all API calls)
-  GUMROAD_ID      → seller/user ID (optional, used for verification)
-  GUMROAD_NAME    → your Gumroad display name
+FIXED: Gumroad API v2 uses access_token as a QUERY PARAM / FORM FIELD,
+NOT as a Bearer Authorization header. The old version was sending it wrong
+which caused every call to return 401 even with a valid token.
+
+Secret: GUMROAD_SECRET → your Gumroad access token
+How to get: gumroad.com → Settings → Advanced → Applications → Generate Token
 """
-import os, json, requests
+import os, json, urllib.request, urllib.parse
 from pathlib import Path
 from datetime import datetime, timezone
 
 DATA = Path("data"); DATA.mkdir(exist_ok=True)
 
-# YOUR actual secret names
-ACCESS_TOKEN = os.environ.get("GUMROAD_SECRET", "")   # ← fixed from GUMROAD_ACCESS_TOKEN
-SELLER_ID    = os.environ.get("GUMROAD_ID", "")
+ACCESS_TOKEN = os.environ.get("GUMROAD_SECRET", "").strip()
 SELLER_NAME  = os.environ.get("GUMROAD_NAME", "")
 
 BASE = "https://api.gumroad.com/v2"
 
 
-def gum(method, path, **kwargs):
-    """Make authenticated Gumroad API call."""
-    r = requests.request(
-        method, f"{BASE}{path}",
-        headers={"Authorization": f"Bearer {ACCESS_TOKEN}"},
-        timeout=30, **kwargs
-    )
-    return r
+def gum_get(path):
+    """GET — access_token as query param (correct Gumroad auth method)."""
+    url = f"{BASE}{path}?access_token={urllib.parse.quote(ACCESS_TOKEN)}"
+    req = urllib.request.Request(url)
+    req.add_header("User-Agent", "SolarPunk/1.0")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read())
+
+
+def gum_post(path, params):
+    """POST — access_token in form body (correct Gumroad auth method)."""
+    params = dict(params)
+    params["access_token"] = ACCESS_TOKEN
+    data = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(f"{BASE}{path}", data=data, method="POST")
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    req.add_header("User-Agent", "SolarPunk/1.0")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read())
+
+
+def gum_put(path, params):
+    """PUT — access_token in form body."""
+    params = dict(params)
+    params["access_token"] = ACCESS_TOKEN
+    data = urllib.parse.urlencode(params).encode()
+    req = urllib.request.Request(f"{BASE}{path}", data=data, method="PUT")
+    req.add_header("Content-Type", "application/x-www-form-urlencoded")
+    req.add_header("User-Agent", "SolarPunk/1.0")
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read())
 
 
 def load_state():
@@ -46,7 +67,6 @@ def save_state(s):
 
 
 def load_listings():
-    """Load queued listings from gumroad_listings.json (created by ART_GENERATOR/BUSINESS_FACTORY)."""
     f = DATA / "gumroad_listings.json"
     if f.exists():
         try: return json.loads(f.read_text())
@@ -55,98 +75,98 @@ def load_listings():
 
 
 def publish_product(product):
-    """Create or update a Gumroad product listing."""
-    name = product.get("name", "")
+    name        = product.get("name", "")
     price_cents = int(product.get("price_cents", 100))
     description = product.get("description", "")
-    file_url = product.get("file_url", "")      # URL to downloadable file
-    preview_url = product.get("preview_url", "") # cover image
+    existing_id = product.get("gumroad_id")
 
-    payload = {
-        "name": name,
-        "price": price_cents,
-        "description": description,
-        "published": "true",
+    params = {
+        "name":             name,
+        "price":            str(price_cents),
+        "description":      description,
+        "published":        "true",
         "require_shipping": "false",
     }
-    if file_url:
-        payload["url"] = file_url
-    if preview_url:
-        payload["preview_url"] = preview_url
+    if product.get("file_url"):    params["url"]         = product["file_url"]
+    if product.get("preview_url"): params["preview_url"] = product["preview_url"]
 
-    # Check if already published (has existing_id)
-    existing_id = product.get("gumroad_id")
-    if existing_id:
-        r = gum("PUT", f"/products/{existing_id}", data=payload)
-        action = "updated"
-    else:
-        r = gum("POST", "/products", data=payload)
-        action = "created"
+    try:
+        if existing_id:
+            data   = gum_put(f"/products/{existing_id}", params)
+            action = "updated"
+        else:
+            data   = gum_post("/products", params)
+            action = "created"
+    except Exception as e:
+        return {"success": False, "name": name, "body": str(e)}
 
-    if r.status_code in (200, 201):
-        data = r.json()
-        if data.get("success"):
-            prod_data = data.get("product", {})
-            return {
-                "success": True,
-                "action": action,
-                "gumroad_id": prod_data.get("id"),
-                "gumroad_url": prod_data.get("short_url") or prod_data.get("url"),
-                "name": name,
-            }
-    return {"success": False, "status": r.status_code, "body": r.text[:200], "name": name}
+    if data.get("success"):
+        prod = data.get("product", {})
+        return {
+            "success":    True,
+            "action":     action,
+            "gumroad_id": prod.get("id"),
+            "gumroad_url": prod.get("short_url") or prod.get("url"),
+            "name":       name,
+        }
+    return {"success": False, "name": name, "body": str(data)[:200]}
 
 
 def run():
     print("GUMROAD_ENGINE running...")
-    now = datetime.now(timezone.utc).isoformat()
+    now   = datetime.now(timezone.utc).isoformat()
+    state = load_state()
 
     if not ACCESS_TOKEN:
         print("  ⚠️  GUMROAD_SECRET not set — skipping")
-        print("  How to fix: Settings → Advanced → Access Token → copy → GitHub Secrets → GUMROAD_SECRET")
-        state = load_state()
-        state["last_run"] = now
-        state["status"] = "no_token"
+        print("  Fix: gumroad.com → Settings → Advanced → Applications → Generate Token")
+        state.update({"last_run": now, "status": "no_token"})
         save_state(state)
         return
 
-    # Verify token works
-    r = gum("GET", "/user")
-    if r.status_code != 200:
-        print(f"  ❌ Gumroad auth failed: {r.status_code} — check GUMROAD_SECRET")
+    # Verify token with live API call
+    try:
+        data = gum_get("/user")
+        if not data.get("success"):
+            print(f"  ❌ GUMROAD_SECRET rejected by Gumroad: {data}")
+            print(f"  Fix: gumroad.com → Settings → Advanced → Applications → Generate Token → copy entire token")
+            state.update({"last_run": now, "status": "auth_failed"})
+            save_state(state)
+            return
+        user = data.get("user", {})
+        print(f"  ✅ Gumroad auth OK — {user.get('email', SELLER_NAME)}")
+    except Exception as e:
+        print(f"  ❌ Gumroad API error: {e}")
+        state.update({"last_run": now, "status": f"api_error: {e}"})
+        save_state(state)
         return
-    user = r.json().get("user", {})
-    print(f"  ✅ Authenticated as: {user.get('name', SELLER_NAME)} ({user.get('email', '')})")
 
-    state = load_state()
     listings = load_listings()
     products = listings.get("products", [])
-
-    published_count = 0
+    published_count  = 0
     updated_listings = []
 
     for product in products:
-        # Skip if already live
         if product.get("gumroad_result", {}).get("status") == "live":
             updated_listings.append(product)
             continue
 
-        result = publish_product(product)
-        product = dict(product)  # copy
+        result  = publish_product(product)
+        product = dict(product)
 
         if result["success"]:
             product["gumroad_result"] = {
-                "status": "live",
-                "action": result["action"],
-                "gumroad_id": result["gumroad_id"],
+                "status":      "live",
+                "action":      result["action"],
+                "gumroad_id":  result["gumroad_id"],
                 "gumroad_url": result["gumroad_url"],
                 "published_at": now,
             }
             state["published"].append({
-                "name": product["name"],
+                "name":       product["name"],
                 "gumroad_id": result["gumroad_id"],
-                "url": result["gumroad_url"],
-                "ts": now,
+                "url":        result["gumroad_url"],
+                "ts":         now,
             })
             print(f"  ✅ {result['action']}: {product['name']} → {result['gumroad_url']}")
             published_count += 1
@@ -156,15 +176,15 @@ def run():
 
         updated_listings.append(product)
 
-    # Save updated listings
-    listings["products"] = updated_listings
+    listings["products"]    = updated_listings
     listings["gumroad_live"] = sum(1 for p in updated_listings if p.get("gumroad_result", {}).get("status") == "live")
-    listings["last_run"] = now
+    listings["last_run"]    = now
     (DATA / "gumroad_listings.json").write_text(json.dumps(listings, indent=2))
 
-    state["cycles"] = state.get("cycles", 0) + 1
+    state["cycles"]    = state.get("cycles", 0) + 1
     state["total_live"] = listings["gumroad_live"]
-    state["last_run"] = now
+    state["last_run"]  = now
+    state["status"]    = "ok"
     save_state(state)
 
     print(f"  📊 Published this cycle: {published_count} | Total live: {listings['gumroad_live']}/{len(products)}")
