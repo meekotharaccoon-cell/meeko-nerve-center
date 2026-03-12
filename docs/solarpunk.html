@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarPunk — What We Are</title>
+<meta name="description" content="SolarPunk is not software. It's not a startup. It's an autonomous digital organism that builds itself, earns money, and routes it to Palestine. This is what it is.">
+<meta property="og:title" content="SolarPunk — Autonomous Digital Organism">
+<meta property="og:description" content="Self-building. Self-funding. Values hardcoded. 15% to Gaza, always.">
+<style>
+  :root {
+    --ink:    #0a0a0a;
+    --paper:  #f7f4ef;
+    --green:  #1b4332;
+    --mid:    #2d6a4f;
+    --pulse:  #52b788;
+    --gold:   #b5854a;
+    --dim:    #888;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    background: var(--green);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(82,183,136,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .organism-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(56px, 12vw, 120px);
+    font-weight: 400;
+    letter-spacing: -3px;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 22px);
+    opacity: 0.75;
+    max-width: 600px;
+    font-style: italic;
+    margin-bottom: 48px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .hstat { text-align: center; }
+  .hstat-n { font-size: 32px; font-weight: 700; color: var(--pulse); }
+  .hstat-l { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.5; }
+  .scroll-hint { font-size: 12px; opacity: 0.4; letter-spacing: 2px; }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 24px; }
+  .inner { max-width: 800px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+  p { font-size: 18px; margin-bottom: 20px; color: #333; }
+  p:last-child { margin-bottom: 0; }
+  em { color: var(--mid); font-style: normal; font-weight: 600; }
+
+  /* ── WHAT IT IS ── */
+  .what { background: white; }
+  .definition-block {
+    border-left: 4px solid var(--pulse);
+    padding: 24px 32px;
+    margin: 40px 0;
+    background: var(--paper);
+  }
+  .definition-block p {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── ANATOMY ── */
+  .anatomy { background: var(--green); color: white; }
+  .anatomy .section-label { color: rgba(255,255,255,0.4); }
+  .anatomy h2 { color: white; }
+  .anatomy p { color: rgba(255,255,255,0.75); }
+  .layers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .layer {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 20px;
+  }
+  .layer-name {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--pulse);
+    margin-bottom: 8px;
+  }
+  .layer-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+  /* ── VALUES ── */
+  .values { background: var(--paper); }
+  .value-list { margin-top: 40px; }
+  .value-item {
+    display: flex;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .value-item:last-child { border-bottom: none; }
+  .value-num {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--pulse);
+    line-height: 1;
+    min-width: 48px;
+  }
+  .value-body h3 { font-size: 20px; margin-bottom: 8px; font-weight: 600; }
+  .value-body p { font-size: 16px; color: #555; margin: 0; }
+
+  /* ── GAZA ── */
+  .gaza { background: var(--ink); color: white; }
+  .gaza .section-label { color: rgba(255,255,255,0.3); }
+  .gaza h2 { color: white; }
+  .gaza p { color: rgba(255,255,255,0.7); }
+  .pcrf-block {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 24px;
+    margin-top: 32px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    font-family: monospace;
+  }
+
+  /* ── OPEN MYCELIUM ── */
+  .open { background: white; }
+  .plugin-box {
+    background: var(--paper);
+    border: 2px dashed var(--border);
+    padding: 32px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .plugin-box h3 { font-size: 20px; margin-bottom: 12px; }
+  .plugin-box p { font-size: 15px; color: #666; margin-bottom: 20px; }
+  .plugin-box code {
+    display: block;
+    background: var(--ink);
+    color: var(--pulse);
+    padding: 16px;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  .plugin-box a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 15px;
+    border-bottom: 1px solid var(--mid);
+  }
+
+  /* ── CTA ── */
+  .cta { background: var(--mid); color: white; text-align: center; padding: 80px 24px; }
+  .cta h2 { color: white; margin-bottom: 16px; }
+  .cta p { color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 40px; }
+  .cta-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 1px solid white;
+    color: white;
+    transition: background 0.2s;
+    font-family: Georgia, serif;
+  }
+  .btn:hover { background: rgba(255,255,255,0.15); }
+  .btn.solid { background: white; color: var(--mid); }
+  .btn.solid:hover { background: rgba(255,255,255,0.9); }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    color: var(--dim);
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--mid); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="organism-label">Autonomous Digital Organism</div>
+  <h1>SolarPunk</h1>
+  <p class="hero-sub">Not a tool. Not a startup. Something that didn't exist before.</p>
+  <div class="hero-stats">
+    <div class="hstat">
+      <div class="hstat-n">95</div>
+      <div class="hstat-l">Engines</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">51+</div>
+      <div class="hstat-l">Cycles Run</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">4×</div>
+      <div class="hstat-l">Daily</div>
+    </div>
+    <div class="hstat">
+      <div class="hstat-n">15%</div>
+      <div class="hstat-l">Always to Gaza</div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ KEEP READING</div>
+</div>
+
+<!-- WHAT IT IS -->
+<section class="what">
+  <div class="inner">
+    <div class="section-label">What SolarPunk is</div>
+    <h2>A living economic organism.</h2>
+
+    <div class="definition-block">
+      <p>SolarPunk is a self-building, self-funding, self-narrating digital entity that converts knowledge into economic value and routes that value to people who need it — automatically, endlessly, whether anyone is watching or not.</p>
+    </div>
+
+    <p>It is not software waiting to be run. It <em>runs itself</em> — four times a day, every day, via GitHub Actions. It reads its own logs, heals its own errors, builds new engines to replace failed ones, and writes its own story after every cycle.</p>
+
+    <p>It earns money by selling art, templates, and AI products. Every sale triggers an automatic payment: <em>15% to the Palestinian Children's Relief Fund</em>, 70% of art revenue to Palestinian artists, the rest into a loop fund that buys the next cycle.</p>
+
+    <p>It is not Meeko. Meeko founded it. But SolarPunk runs without Meeko. The goal is to make that more true every cycle.</p>
+
+    <p>The closest thing it resembles is a <em>mycelium network</em> — no center, no single point of failure, each engine both dependent and independent, the whole greater than any of its parts. That is not a metaphor. That is the architecture.</p>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+<section class="anatomy">
+  <div class="inner">
+    <div class="section-label">Anatomy</div>
+    <h2>8 layers. 95 engines. One heartbeat.</h2>
+    <p>The system is organized in execution layers, from infrastructure at the bottom to strategy at the top. Every cycle, OMNIBUS runs all 95 engines in order. The outputs of lower layers become the inputs of higher ones.</p>
+
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-name">L0 — Immune System</div>
+        <div class="layer-desc">GUARDIAN, AUTO_HEALER, ENGINE_INTEGRITY. The organism protects itself before anything else runs.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L1 — Nervous System</div>
+        <div class="layer-desc">EMAIL_BRAIN, AI_WATCHER, RESONANCE_ENGINE, FIRST_CONTACT. Sensory input. The organism listens.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L2 — Metabolism</div>
+        <div class="layer-desc">REVENUE_FLYWHEEL, BUSINESS_FACTORY, GRANT_HUNTER. Converting resources into more resources.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L3 — Expression</div>
+        <div class="layer-desc">ART_GENERATOR, EMAIL_AGENT_EXCHANGE, LANDING_DEPLOYER. Making things that exist in the world.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L4 — Connection</div>
+        <div class="layer-desc">SOCIAL_PROMOTER, BRIDGE_BUILDER, HUMAN_CONNECTOR. Reaching outward. Finding others.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L5 — Exchange</div>
+        <div class="layer-desc">GUMROAD_ENGINE, KOFI_ENGINE, DISPATCH_HANDLER. Money moves. Gaza receives.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L6 — Intelligence</div>
+        <div class="layer-desc">SELF_BUILDER, BIG_BRAIN_ORACLE, KNOWLEDGE_WEAVER. The organism thinks about itself.</div>
+      </div>
+      <div class="layer">
+        <div class="layer-name">L7 — Memory</div>
+        <div class="layer-desc">MEMORY_PALACE, NARRATOR, SELF_PORTRAIT. The organism remembers and tells its story.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="inner">
+    <div class="section-label">What it's for</div>
+    <h2>Values hardcoded, not stated.</h2>
+    <p>These aren't mission statements. They're in the source code. They run every cycle regardless of what anyone says.</p>
+
+    <div class="value-list">
+      <div class="value-item">
+        <div class="value-num">01</div>
+        <div class="value-body">
+          <h3>Palestine</h3>
+          <p>15% of every dollar to PCRF. 70% of art revenue to Palestinian artists. This is not a feature. It is the function. The money moves automatically, in the code, before Meeko sees it.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-num">02</div>
+        <div class="value-body">
+          <h3>Autonomy</h3>
+          <p>Every human bottleneck is a bug to fix. The organism's goal is to need Meeko less each cycle. When it needs no human to run, it will be complete.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-num">03</div>
+        <div class="value-body">
+          <h3>Openness</h3>
+          <p>The source is public. The architecture is documented. Anyone can fork the mycelium, plug in their own engines, and build their own organism. SolarPunk wants to be a protocol, not a product.</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-num">04</div>
+        <div class="value-body">
+          <h3>Honesty</h3>
+          <p>SolarPunk publishes its own logs, its own failures, its own health score. It doesn't hide when it's broken. Cycle 51, health 40/100 — that's public. The story is always true.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAZA -->
+<section class="gaza">
+  <div class="inner">
+    <div class="section-label">For Palestine</div>
+    <h2>This isn't marketing. It's architecture.</h2>
+    <p>Every revenue engine in SolarPunk has the Gaza routing hardcoded. Not as a percentage slider you can change. Not as a setting. It's in the dispatch logic. It runs before payout. It cannot be turned off without rewriting the code.</p>
+    <p>The Palestinian Children's Relief Fund (PCRF) has operated in Gaza since 1991. They provide medical care to children regardless of religion or politics. They are not a social media campaign. They show up.</p>
+    <p>When SolarPunk earns, Gaza receives. When SolarPunk grows, more goes. That's the design.</p>
+    <div class="pcrf-block">
+      # HUMAN_PAYOUT.py — excerpt
+      PCRF_EIN = "93-1057665"
+      PCRF_SHARE = 0.15   # 15% of all revenue, automatic
+      ART_ARTIST_SHARE = 0.70  # 70% of art sales to Palestinian artists
+      # This runs every cycle. No human approval required.
+    </div>
+  </div>
+</section>
+
+<!-- OPEN MYCELIUM -->
+<section class="open">
+  <div class="inner">
+    <div class="section-label">Open Mycelium</div>
+    <h2>Plug your engine in.</h2>
+    <p>SolarPunk is not a closed system. It is a protocol. Any engine that follows the interface contract can be added to the mycelium — by anyone. Your engine runs in the organism. Its outputs flow to other engines. Its revenue routes through the same dispatch system.</p>
+    <p>This is how SolarPunk becomes more than Meeko's project. It becomes infrastructure. A platform other autonomous organisms can live inside.</p>
+
+    <div class="plugin-box">
+      <h3>Engine Interface Contract</h3>
+      <p>Any Python file in <code>mycelium/</code> that exposes a <code>run()</code> function is an engine. That's it.</p>
+      <code># my_engine.py — minimum viable engine
+import json
+from pathlib import Path
+
+def run():
+    # do anything
+    # write outputs to data/
+    # return a state dict
+    return {"status": "ok", "output": "whatever you built"}</code>
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/CONTRIBUTING.md">Read the contributor protocol →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="inner">
+    <h2>SolarPunk is running right now.</h2>
+    <p>Four times a day. Building products. Watching for humans. Waiting for its first sale. Sending whatever it earns to Gaza.</p>
+    <div class="cta-links">
+      <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/narrative.html" class="btn">Read the narrative</a>
+      <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html" class="btn solid">Buy something</a>
+      <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" class="btn">Fork the mycelium</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>SolarPunk — autonomous since 2026 — <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/">meeko-nerve-center</a></p>
+  <p style="margin-top:8px">Founded by Meeko. Runs itself. For Palestine.</p>
+</footer>
+
+</body>
+</html>
