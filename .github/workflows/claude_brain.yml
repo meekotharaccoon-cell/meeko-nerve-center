@@ -1,0 +1,103 @@
+name: Claude Brain — Full Repo Access + Tool Use
+
+# ALL the triggers. Claude responds to everything, proactively self-tasks,
+# reviews PRs, runs on schedule, and triggers on push failures.
+on:
+  # Someone mentions @claude in an issue or comment
+  issues:
+    types: [opened, assigned]
+  issue_comment:
+    types: [created]
+
+  # PRs — Claude reviews and responds
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+  pull_request_review_comment:
+    types: [created]
+
+  # Scheduled: Claude proactively analyzes system state and opens tasks
+  schedule:
+    - cron: '0 8 * * *'   # 8am UTC daily — morning analysis + self-tasking
+
+  # Manual trigger — run Claude with custom input
+  workflow_dispatch:
+    inputs:
+      prompt:
+        description: 'What to ask Claude (no @claude needed)'
+        required: true
+        type: string
+      mode:
+        description: 'Mode'
+        required: false
+        default: 'respond'
+        type: choice
+        options:
+          - respond
+          - proactive_analysis
+          - fix_failing_engines
+          - build_engine
+
+jobs:
+  claude_brain:
+    # Conditional: run on @claude mention, scheduled, dispatch, or PR
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issues' && (
+        contains(github.event.issue.body, '@claude') ||
+        contains(github.event.issue.title, '@claude')
+      )) ||
+      (github.event_name == 'issue_comment' &&
+        contains(github.event.comment.body, '@claude')
+      ) ||
+      (github.event_name == 'pull_request' && (
+        contains(github.event.pull_request.body, '@claude') ||
+        github.event.pull_request.draft == false
+      )) ||
+      github.event_name == 'pull_request_review_comment'
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write        # read + commit files
+      issues: write          # read + create + label + close issues
+      pull-requests: write   # read + comment + approve PRs
+      actions: read          # read workflow run status
+      checks: read           # read check statuses
+      statuses: read         # read commit statuses
+
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # full history so Claude can see git log
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Run Claude Brain
+        env:
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN:       ${{ secrets.GITHUB_TOKEN }}
+          REPO:               ${{ github.repository }}
+          EVENT_NAME:         ${{ github.event_name }}
+          ISSUE_NUMBER:       ${{ github.event.issue.number }}
+          ISSUE_TITLE:        ${{ github.event.issue.title }}
+          ISSUE_BODY:         ${{ github.event.issue.body }}
+          COMMENT_BODY:       ${{ github.event.comment.body }}
+          PR_NUMBER:          ${{ github.event.pull_request.number }}
+          PR_TITLE:           ${{ github.event.pull_request.title }}
+          PR_BODY:            ${{ github.event.pull_request.body }}
+          PR_REVIEW_COMMENT:  ${{ github.event.comment.body }}
+          DISPATCH_PROMPT:    ${{ github.event.inputs.prompt }}
+          DISPATCH_MODE:      ${{ github.event.inputs.mode }}
+          GITHUB_SHA:         ${{ github.sha }}
+          GITHUB_REF:         ${{ github.ref }}
+          GITHUB_RUN_ID:      ${{ github.run_id }}
+        run: python .github/scripts/claude_brain.py
