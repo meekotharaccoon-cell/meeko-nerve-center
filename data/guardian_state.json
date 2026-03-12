@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-12T04:41:38.754536",
+  "last_checked": "2026-03-12T04:59:25.742131",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -11,7 +11,8 @@
     "claude-code-review.yml",
     "BUILD.yml",
     "WEBHOOK_RELAY.yml",
-    "SOLARPUNK_LOOP.yml"
+    "SOLARPUNK_LOOP.yml",
+    "claude_issue_responder.yml"
   ],
   "engine_names": [
     "NEURON_A.py",
