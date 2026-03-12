@@ -72,6 +72,7 @@ def rj(fname, fb=None):
     return fb or {}
 
 revenue = rj("revenue_inbox.json")
+if not isinstance(revenue, dict): revenue = {}   # guard: file can be a list
 payout_ledger = rj("payout_ledger.json")
 flywheel = rj("flywheel_summary.json")
 

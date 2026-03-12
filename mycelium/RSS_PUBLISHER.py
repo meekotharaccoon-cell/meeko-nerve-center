@@ -34,6 +34,7 @@ def rfc822(iso_ts):
 def build_items():
     items = []
     archive = rj(DATA / "newsletter_archive.json", [])
+    if not isinstance(archive, list): archive = []
     for entry in reversed(archive[-10:]):
         items.append({
             "title": escape(entry.get("subject", "SolarPunk Update")),
