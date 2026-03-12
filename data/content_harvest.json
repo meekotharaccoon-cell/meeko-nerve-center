@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T17:11:49.483608+00:00",
+  "timestamp": "2026-03-12T19:38:51.009798+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Malus \u2013 Clean Room as a Service",
         "url": "https://malus.sh",
-        "score": 419,
+        "score": 714,
+        "source": "hackernews"
+      },
+      {
+        "title": "Bubble Sorted Amen Break",
+        "url": "https://parametricavocado.itch.io/amen-sorting",
+        "score": 128,
+        "source": "hackernews"
+      },
+      {
+        "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
+        "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
+        "score": 185,
+        "source": "hackernews"
+      },
+      {
+        "title": "Reversing memory loss via gut-brain communication",
+        "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
+        "score": 92,
         "source": "hackernews"
       },
       {
         "title": "The Met Releases High-Def 3D Scans of 140 Famous Art Objects",
         "url": "https://www.openculture.com/2026/03/the-met-releases-high-definition-3d-scans-of-140-famous-art-objects.html",
-        "score": 61,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: OneCLI \u2013 Vault for AI Agents in Rust",
-        "url": "https://github.com/onecli/onecli",
-        "score": 9,
-        "source": "hackernews"
-      },
-      {
-        "title": "US banks' exposure to private credit hits $300B (2025)",
-        "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
-        "score": 157,
-        "source": "hackernews"
-      },
-      {
-        "title": "Kotlin creator's new language: a formal way to talk to LLMs instead of English",
-        "url": "https://codespeak.dev/",
-        "score": 132,
+        "score": 123,
         "source": "hackernews"
       }
     ],
@@ -62,12 +62,16 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 15.3,
+    "temp_c": 13.6,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
+    {
+      "word": "break",
+      "count": 2
+    },
     {
       "word": "malus",
       "count": 1
@@ -85,67 +89,63 @@
       "count": 1
     },
     {
-      "word": "releases",
+      "word": "bubble",
       "count": 1
     },
     {
-      "word": "high",
+      "word": "sorted",
       "count": 1
     },
     {
-      "word": "scans",
+      "word": "amen",
       "count": 1
     },
     {
-      "word": "famous",
+      "word": "atms",
       "count": 1
     },
     {
-      "word": "objects",
+      "word": "didn't",
       "count": 1
     },
     {
-      "word": "show",
+      "word": "kill",
       "count": 1
     },
     {
-      "word": "onecli",
+      "word": "bank",
       "count": 1
     },
     {
-      "word": "vault",
+      "word": "teller",
       "count": 1
     },
     {
-      "word": "agents",
+      "word": "jobs",
       "count": 1
     },
     {
-      "word": "rust",
+      "word": "iphone",
       "count": 1
     },
     {
-      "word": "banks",
+      "word": "reversing",
       "count": 1
     },
     {
-      "word": "exposure",
+      "word": "memory",
       "count": 1
     },
     {
-      "word": "private",
+      "word": "loss",
       "count": 1
     },
     {
-      "word": "credit",
+      "word": "brain",
       "count": 1
     },
     {
-      "word": "hits",
-      "count": 1
-    },
-    {
-      "word": "$300b",
+      "word": "communication",
       "count": 1
     }
   ],

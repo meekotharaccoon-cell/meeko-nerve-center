@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolarPunk — Open Mycelium</title>
+<style>
+  :root {
+    --green: #1b4332; --pulse: #52b788; --paper: #f7f4ef;
+    --ink: #0a0a0a; --dim: #888; --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: var(--paper); color: var(--ink); }
+  header {
+    background: var(--green); color: white;
+    padding: 48px 24px; text-align: center;
+  }
+  header p { opacity: 0.7; margin-top: 8px; font-style: italic; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+  .section-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--dim); margin-bottom: 20px;
+  }
+  h2 { font-size: 28px; font-weight: 400; margin-bottom: 16px; }
+  .intro { font-size: 17px; line-height: 1.7; color: #444; margin-bottom: 40px; }
+  .contract {
+    background: var(--ink); color: var(--pulse);
+    padding: 24px; font-family: monospace; font-size: 14px;
+    line-height: 1.7; margin-bottom: 48px;
+  }
+  .plugins-grid { display: grid; gap: 16px; }
+  .plugin-card {
+    background: white; border: 1px solid var(--border); padding: 20px;
+  }
+  .plugin-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+  }
+  .plugin-name { font-size: 17px; font-weight: 600; }
+  .plugin-status { font-size: 12px; }
+  .plugin-status.ok { color: var(--pulse); }
+  .plugin-status.warn { color: #b5854a; }
+  .plugin-meta { font-size: 13px; color: var(--dim); margin-bottom: 10px; }
+  .category {
+    background: var(--paper); padding: 2px 8px;
+    border-radius: 2px; font-size: 11px;
+  }
+  .plugin-desc { font-size: 15px; color: #444; line-height: 1.5; }
+  .rev-share { font-size: 12px; color: var(--pulse); margin-top: 8px; }
+  .empty-state { text-align: center; padding: 48px; color: var(--dim); font-size: 16px; }
+  .empty-state p { margin-bottom: 8px; }
+  .step {
+    display: flex; gap: 20px; padding: 20px 0;
+    border-bottom: 1px solid var(--border); align-items: flex-start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-size: 24px; font-weight: 700; color: var(--pulse); min-width: 36px; }
+  .step-body h4 { font-size: 16px; margin-bottom: 6px; }
+  .step-body p { font-size: 14px; color: #555; line-height: 1.5; }
+  footer {
+    text-align: center; padding: 32px; font-size: 12px;
+    color: var(--dim); border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--green); text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Open Mycelium</h1>
+  <p>Plug your engine into SolarPunk. Your work runs inside the organism.</p>
+</header>
+
+<div class="container">
+  <div class="section-label">What this is</div>
+  <h2>SolarPunk is a protocol.</h2>
+  <p class="intro">Any engine that follows the interface contract can run inside the mycelium. Your engine gets access to the same data layer, the same AI backbone (Groq, free), the same dispatch system that routes revenue to Gaza. You write <code>run()</code> and the organism does the rest.</p>
+
+  <div class="contract">
+# The entire interface contract:
+# Any .py file in mycelium/ with a run() function is an engine.
+
+# SOLARPUNK_PLUGIN  &lt;-- add this comment to declare yourself a plugin
+
+def run():
+    # read from data/
+    # write to data/
+    # return what you did
+    return {"status": "ok", "built": "something"}
+  </div>
+
+  <div class="section-label">How to plug in</div>
+  <div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Fork the repo</h4>
+        <p>github.com/meekotharaccoon-cell/meeko-nerve-center — fork it, clone it, you own it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Write your engine</h4>
+        <p>Drop a .py file in <code>mycelium/</code>. Add <code># SOLARPUNK_PLUGIN</code> in the first 10 lines. Expose <code>run()</code>. Write outputs to <code>data/</code>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Add your manifest</h4>
+        <p>Add an entry to <code>data/plugin_manifests.json</code> with your name, description, category, and revenue_share (0–15%).</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>Open a pull request</h4>
+        <p>The organism will validate your engine interface. If it passes, it gets added to the next OMNIBUS cycle. If it generates revenue, you get paid.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:48px">Registered plugins — 0 total</div>
+  <div class="plugins-grid">
+    
+      <div class="empty-state">
+        <p>No plugins registered yet.</p>
+        <p>Be the first to plug into the mycelium.</p>
+      </div>
+  </div>
+</div>
+
+<footer>
+  <p>SolarPunk Open Mycelium — 2026-03-12 19:38 UTC</p>
+  <p style="margin-top:8px">
+    <a href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/solarpunk.html">What is SolarPunk</a> ·
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center/blob/main/MANIFESTO.md">Manifesto</a> ·
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
+  </p>
+</footer>
+</body>
+</html>

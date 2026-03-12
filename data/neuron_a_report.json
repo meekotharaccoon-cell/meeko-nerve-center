@@ -114,12 +114,14 @@
       "LINK_PAGE.py",
       "MEMORY_PALACE.py",
       "NANO_AGENT.py",
+      "NARRATOR.py",
       "NEURON_A.py",
       "NEURON_B.py",
       "NEWSLETTER_ENGINE.py",
       "NIGHTLY_DIGEST.py",
       "OMNIBUS.py",
       "PAYPAL_PAYOUT.py",
+      "PLUGIN_REGISTRY.py",
       "QUICK_REVENUE.py",
       "README_GENERATOR.py",
       "REPO_SPIDER.py",
@@ -147,7 +149,7 @@
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 95,
+    "engine_count": 97,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -250,6 +252,7 @@
       "outreach_state.json",
       "payout_ledger.json",
       "paypal_payout_state.json",
+      "plugin_registry.json",
       "proof_state.json",
       "quick_revenue.json",
       "repo_spider_state.json",
@@ -281,7 +284,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T17:12:21.160252+00:00"
+    "timestamp": "2026-03-12T19:39:26.598721+00:00"
   },
-  "generated_at": "2026-03-12T17:12:22.063707+00:00"
+  "generated_at": "2026-03-12T19:39:27.568343+00:00"
 }
