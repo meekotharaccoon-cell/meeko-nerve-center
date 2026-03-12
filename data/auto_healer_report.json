@@ -1,11 +1,13 @@
 {
-  "timestamp": "2026-03-12T17:06:48.688796+00:00",
+  "timestamp": "2026-03-12T20:24:28.844929+00:00",
   "healed": [],
   "auto_installed": [],
   "skipped": [
-    "EMAIL_BRAIN"
+    "BRIEFING_ENGINE",
+    "NARRATOR"
   ],
   "failed_engines_seen": [
-    "EMAIL_BRAIN"
+    "BRIEFING_ENGINE",
+    "NARRATOR"
   ]
 }

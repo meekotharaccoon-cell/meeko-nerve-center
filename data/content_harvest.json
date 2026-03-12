@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T19:38:51.009798+00:00",
+  "timestamp": "2026-03-12T20:24:38.246740+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Malus \u2013 Clean Room as a Service",
         "url": "https://malus.sh",
-        "score": 714,
+        "score": 793,
+        "source": "hackernews"
+      },
+      {
+        "title": "An old photo of a large BBS",
+        "url": "https://rachelbythebay.com/w/2022/01/26/swcbbs/",
+        "score": 38,
         "source": "hackernews"
       },
       {
         "title": "Bubble Sorted Amen Break",
         "url": "https://parametricavocado.itch.io/amen-sorting",
-        "score": 128,
-        "source": "hackernews"
-      },
-      {
-        "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
-        "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-        "score": 185,
+        "score": 157,
         "source": "hackernews"
       },
       {
         "title": "Reversing memory loss via gut-brain communication",
         "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
-        "score": 92,
+        "score": 116,
         "source": "hackernews"
       },
       {
-        "title": "The Met Releases High-Def 3D Scans of 140 Famous Art Objects",
-        "url": "https://www.openculture.com/2026/03/the-met-releases-high-definition-3d-scans-of-140-famous-art-objects.html",
-        "score": 123,
+        "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
+        "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
+        "score": 211,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.6,
+    "temp_c": 13.2,
     "vibe": "sunny",
-    "code": 0,
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -89,6 +89,14 @@
       "count": 1
     },
     {
+      "word": "photo",
+      "count": 1
+    },
+    {
+      "word": "large",
+      "count": 1
+    },
+    {
       "word": "bubble",
       "count": 1
     },
@@ -98,34 +106,6 @@
     },
     {
       "word": "amen",
-      "count": 1
-    },
-    {
-      "word": "atms",
-      "count": 1
-    },
-    {
-      "word": "didn't",
-      "count": 1
-    },
-    {
-      "word": "kill",
-      "count": 1
-    },
-    {
-      "word": "bank",
-      "count": 1
-    },
-    {
-      "word": "teller",
-      "count": 1
-    },
-    {
-      "word": "jobs",
-      "count": 1
-    },
-    {
-      "word": "iphone",
       "count": 1
     },
     {
@@ -146,6 +126,26 @@
     },
     {
       "word": "communication",
+      "count": 1
+    },
+    {
+      "word": "atms",
+      "count": 1
+    },
+    {
+      "word": "didn't",
+      "count": 1
+    },
+    {
+      "word": "kill",
+      "count": 1
+    },
+    {
+      "word": "bank",
+      "count": 1
+    },
+    {
+      "word": "teller",
       "count": 1
     }
   ],

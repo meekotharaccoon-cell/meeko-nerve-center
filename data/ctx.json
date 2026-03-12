@@ -1,6 +1,6 @@
 {
-  "run_id": "23020398952",
-  "ts": "2026-03-12T19:40:08.744086+00:00",
+  "run_id": "23022206677",
+  "ts": "2026-03-12T20:26:52.792895+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -133,10 +133,10 @@
         ]
       },
       {
-        "timestamp": "2026-03-12T19:39:54.918615+00:00",
+        "timestamp": "2026-03-12T20:26:45.442166+00:00",
         "health_score": 40,
         "revenue": 0.0,
-        "engines": 97,
+        "engines": 103,
         "synth_built": 0,
         "loop_balance": 0,
         "total_sales": 0,
@@ -158,12 +158,12 @@
     },
     "total_cycles": 9,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-12T19:39:54.918615+00:00",
+    "last_updated": "2026-03-12T20:26:45.442166+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-12T19:39:54.918615+00:00",
+      "timestamp": "2026-03-12T20:26:45.442166+00:00",
       "health_score": 40,
       "revenue": 0.0,
-      "engines": 97,
+      "engines": 103,
       "synth_built": 0,
       "loop_balance": 0,
       "total_sales": 0,
@@ -177,15 +177,20 @@
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-12T19:38:31.461178+00:00",
+    "generated": "2026-03-12T20:24:21.348247+00:00",
     "cycle_number": 51,
     "health": 40,
     "health_trend": "stuck",
     "delta": {
       "first_cycle": false,
       "wins": [],
-      "regressions": [],
-      "new_failures": [],
+      "regressions": [
+        "BRIEFING_ENGINE"
+      ],
+      "new_failures": [
+        "BRIEFING_ENGINE",
+        "NARRATOR"
+      ],
       "still_failing": [],
       "revenue_delta": 0,
       "health_delta": 0,
@@ -203,11 +208,13 @@
     ],
     "still_failing": [],
     "new_fixes": [],
-    "new_regressions": [],
+    "new_regressions": [
+      "BRIEFING_ENGINE"
+    ],
     "revenue": 0,
     "revenue_delta": 0,
     "resonance": 60,
-    "summary": "Cycle 51 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 1 | Revenue: $0.00"
+    "summary": "Cycle 51 | Health: 40 (stuck) | Fixed: 0 | Regressed: 1 | Persistent blockers: 1 | Revenue: $0.00"
   },
   "neuron_a": {
     "opportunities": [
@@ -272,11 +279,14 @@
         "ARCHITECT.py",
         "ART_CATALOG.py",
         "ART_GENERATOR.py",
+        "AUTONOMOUS_PUBLISHER.py",
         "AUTONOMY_PROOF.py",
         "AUTO_HEALER.py",
         "BIG_BRAIN_ORACLE.py",
+        "BLUESKY_ENGINE.py",
         "BOTTLENECK_SCANNER.py",
         "BRAND_LEGAL.py",
+        "BRAVE_BRIDGE.py",
         "BRIDGE_BUILDER.py",
         "BRIEFING_ENGINE.py",
         "BUSINESS_FACTORY.py",
@@ -292,6 +302,7 @@
         "CYCLE_MEMORY.py",
         "DESKTOP_AGENT.py",
         "DESKTOP_DAEMON.py",
+        "DESKTOP_ORCHESTRATOR.py",
         "DEV_TO_PUBLISHER.py",
         "DISPATCH_HANDLER.py",
         "ECONOMY_CHAIN.py",
@@ -301,6 +312,7 @@
         "ENGINE_INTEGRITY.py",
         "ETSY_SEO_ENGINE.py",
         "FIRST_CONTACT.py",
+        "FIRST_SALE_NOTIFIER.py",
         "FORK_SCANNER.py",
         "FREE_API_ENGINE.py",
         "GITHUB_POSTER.py",
@@ -323,6 +335,7 @@
         "KOFI_PAYMENT_TRACKER.py",
         "LANDING_DEPLOYER.py",
         "LINK_PAGE.py",
+        "MASTODON_ENGINE.py",
         "MEMORY_PALACE.py",
         "NANO_AGENT.py",
         "NARRATOR.py",
@@ -360,7 +373,7 @@
         "ai_council.py",
         "knowledge_dispatch.py"
       ],
-      "engine_count": 97,
+      "engine_count": 103,
       "data_files": [
         "affiliate_config.json",
         "affiliate_links_master.json",
@@ -495,9 +508,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-12T19:39:26.598721+00:00"
+      "timestamp": "2026-03-12T20:25:05.709723+00:00"
     },
-    "generated_at": "2026-03-12T19:39:27.568343+00:00"
+    "generated_at": "2026-03-12T20:25:06.299841+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -546,10 +559,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-12T19:39:27.821622+00:00"
+    "generated_at": "2026-03-12T20:25:06.498229+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-12T19:39:31.060330+00:00",
+    "ts": "2026-03-12T20:25:08.431771+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -559,14 +572,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 87,
+          "cycles": 88,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-12T17:12:39.429082+00:00"
+          "last_run": "2026-03-12T19:39:44.083248+00:00"
         }
       },
       "grants": {
@@ -575,11 +588,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 87,
+          "cycles": 88,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-12T17:12:33.365848+00:00"
+          "last_run": "2026-03-12T19:39:38.751283+00:00"
         }
       },
       "sponsors": {
@@ -588,11 +601,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 87,
+          "cycles": 88,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-12T17:12:41.183900+00:00"
+          "last_run": "2026-03-12T19:39:46.206301+00:00"
         }
       },
       "exchange": {
@@ -601,14 +614,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 87,
+          "cycles": 88,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-12T17:12:33.258339+00:00"
+          "last_run": "2026-03-12T19:39:38.645712+00:00"
         }
       },
       "substack": {
@@ -617,11 +630,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 87,
+          "cycles": 88,
           "issues_drafted": 2,
           "issues_published": 0,
           "last_draft": "2026-03-12T07:41:10.532321+00:00",
-          "last_run": "2026-03-12T17:12:33.780079+00:00"
+          "last_run": "2026-03-12T19:39:39.174318+00:00"
         }
       },
       "gumroad": {
@@ -634,37 +647,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-12T19:38:51.009798+00:00",
+    "timestamp": "2026-03-12T20:24:38.246740+00:00",
     "sources": {
       "hackernews": [
         {
           "title": "Malus \u2013 Clean Room as a Service",
           "url": "https://malus.sh",
-          "score": 714,
+          "score": 793,
+          "source": "hackernews"
+        },
+        {
+          "title": "An old photo of a large BBS",
+          "url": "https://rachelbythebay.com/w/2022/01/26/swcbbs/",
+          "score": 38,
           "source": "hackernews"
         },
         {
           "title": "Bubble Sorted Amen Break",
           "url": "https://parametricavocado.itch.io/amen-sorting",
-          "score": 128,
-          "source": "hackernews"
-        },
-        {
-          "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
-          "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-          "score": 185,
+          "score": 157,
           "source": "hackernews"
         },
         {
           "title": "Reversing memory loss via gut-brain communication",
           "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
-          "score": 92,
+          "score": 116,
           "source": "hackernews"
         },
         {
-          "title": "The Met Releases High-Def 3D Scans of 140 Famous Art Objects",
-          "url": "https://www.openculture.com/2026/03/the-met-releases-high-definition-3d-scans-of-140-famous-art-objects.html",
-          "score": 123,
+          "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
+          "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
+          "score": 211,
           "source": "hackernews"
         }
       ],
@@ -697,9 +710,9 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 13.6,
+      "temp_c": 13.2,
       "vibe": "sunny",
-      "code": 0,
+      "code": 1,
       "location": "Gaza City"
     },
     "trending_themes": [
@@ -724,6 +737,14 @@
         "count": 1
       },
       {
+        "word": "photo",
+        "count": 1
+      },
+      {
+        "word": "large",
+        "count": 1
+      },
+      {
         "word": "bubble",
         "count": 1
       },
@@ -733,34 +754,6 @@
       },
       {
         "word": "amen",
-        "count": 1
-      },
-      {
-        "word": "atms",
-        "count": 1
-      },
-      {
-        "word": "didn't",
-        "count": 1
-      },
-      {
-        "word": "kill",
-        "count": 1
-      },
-      {
-        "word": "bank",
-        "count": 1
-      },
-      {
-        "word": "teller",
-        "count": 1
-      },
-      {
-        "word": "jobs",
-        "count": 1
-      },
-      {
-        "word": "iphone",
         "count": 1
       },
       {
@@ -781,6 +774,26 @@
       },
       {
         "word": "communication",
+        "count": 1
+      },
+      {
+        "word": "atms",
+        "count": 1
+      },
+      {
+        "word": "didn't",
+        "count": 1
+      },
+      {
+        "word": "kill",
+        "count": 1
+      },
+      {
+        "word": "bank",
+        "count": 1
+      },
+      {
+        "word": "teller",
         "count": 1
       }
     ],
@@ -809,7 +822,7 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-12T19:39:01.442214+00:00",
+    "last_run": "2026-03-12T20:24:47.322903+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
@@ -875,17 +888,17 @@
       },
       {
         "type": "trending_article",
+        "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
+        "reactions": 56
+      },
+      {
+        "type": "trending_article",
         "title": "Autonomous AI Research Does Not Need a Giant Framework",
         "reactions": 26
       },
       {
-        "type": "trending_article",
-        "title": "AI Agents That Actually Work, Building Reliable UI Automation with Amazon Nova Act",
-        "reactions": 8
-      },
-      {
         "type": "crypto_market_cap_usd",
-        "value": 2470249796371.9
+        "value": 2476263855884.519
       }
     ],
     "opportunities": [
@@ -901,8 +914,8 @@
       "Engine wrapper: CherryHQ/cherry-studio (41328 stars) \u2014 build integration engine",
       "Engine wrapper: CopilotKit/CopilotKit (29312 stars) \u2014 build integration engine",
       "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (143 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'Autonomous AI Research Does Not Need a Giant Framework' (26 reactions) \u2014 create SolarPunk angle",
-      "Content leverage: 'AI Agents That Actually Work, Building Reliable UI Automatio' (8 reactions) \u2014 create SolarPunk angle"
+      "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (56 reactions) \u2014 create SolarPunk angle",
+      "Content leverage: 'Autonomous AI Research Does Not Need a Giant Framework' (26 reactions) \u2014 create SolarPunk angle"
     ],
     "raw_keys": [
       "coingecko_global",
@@ -1141,7 +1154,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-12T19:39:35.300838+00:00",
+    "started_at": "2026-03-12T20:25:11.679485+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1158,7 +1171,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-12T19:39:37.229538+00:00",
+        "queued_at": "2026-03-12T20:25:12.887207+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1166,7 +1179,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-12T19:39:37.229538+00:00",
+        "queued_at": "2026-03-12T20:25:12.887207+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1174,28 +1187,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-12T19:39:37.229538+00:00",
+        "queued_at": "2026-03-12T20:25:12.887207+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-12T19:39:38.463380+00:00",
-    "elapsed_seconds": 3,
+    "completed_at": "2026-03-12T20:25:13.660220+00:00",
+    "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 88,
+    "cycles": 89,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-12T19:39:38.645712+00:00"
+    "last_run": "2026-03-12T20:25:13.846524+00:00"
   },
   "biz_factory": {
-    "cycles": 88,
+    "cycles": 89,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1812,13 +1825,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-12T19:39:33.895183+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-12T20:25:10.540519+00:00"
       }
     ],
-    "total_revenue_potential": 61720,
-    "last_run": "2026-03-12T19:39:32.001590+00:00"
+    "total_revenue_potential": 62460,
+    "last_run": "2026-03-12T20:25:09.245365+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-12T19:38:33.451300+00:00",
+    "last_check": "2026-03-12T20:24:23.921519+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -1906,15 +1926,15 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-12T19:38:33.478820+00:00",
+    "generated": "2026-03-12T20:24:23.950579+00:00",
     "summary": {
       "total_bottlenecks": 1,
       "critical": 0,
       "high": 1,
       "secrets_ok": 10,
       "secrets_total": 18,
-      "engines_ok": 97,
-      "engines_total": 97,
+      "engines_ok": 103,
+      "engines_total": 103,
       "gumroad_live": 0,
       "gumroad_pending": 10,
       "revenue_total": 0,
@@ -2100,7 +2120,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-12T19:39:50.131858+00:00",
+    "generated_at": "2026-03-12T20:26:41.520179+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -2113,6 +2133,7 @@
         "AUTO_HEALER",
         "CAPABILITY_SCANNER",
         "AGENT_LINK_VERIFIER",
+        "PLUGIN_REGISTRY",
         "EMAIL_BRAIN",
         "SCAM_SHIELD",
         "CALENDAR_BRAIN",
@@ -2176,7 +2197,6 @@
         "BIG_BRAIN_ORACLE",
         "MEMORY_PALACE",
         "README_GENERATOR",
-        "BRIEFING_ENGINE",
         "NIGHTLY_DIGEST",
         "ISSUE_SYNC",
         "SOLARPUNK_LEGAL",
@@ -2187,15 +2207,18 @@
         "SELF_PORTRAIT",
         "RSS_PUBLISHER"
       ],
-      "engines_failed": [],
+      "engines_failed": [
+        "BRIEFING_ENGINE",
+        "NARRATOR"
+      ],
       "engines_skipped": [],
       "exchange_tasks": 0,
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 88,
+      "businesses_built": 89,
       "engines_built": 0,
-      "revenue_potential": 61720,
+      "revenue_potential": 62460,
       "active_revenue_streams": [
         "substack"
       ]
@@ -2264,16 +2287,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 69,
-    "last_run": "2026-03-12T19:39:52.702538+00:00",
+    "cycles": 70,
+    "last_run": "2026-03-12T20:26:43.798713+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 69,
+    "cycles": 70,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-12T19:39:54.623630+00:00"
+    "last_run": "2026-03-12T20:26:45.209485+00:00"
   },
   "revenue_inbox": [
     {
@@ -2327,7 +2350,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-12T19:38:36.683293+00:00",
+    "scanned_at": "2026-03-12T20:24:28.881358+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -2416,7 +2439,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 59,
+    "cycles": 60,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2583,7 +2606,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-12T19:39:01.504352+00:00",
+    "generated_at": "2026-03-12T20:24:47.386809+00:00",
     "resonance_score": 60,
     "resonance_label": "LOUD",
     "resonance_notes": [
@@ -2662,7 +2685,7 @@
     "reply_count": 10
   },
   "quick_revenue": {
-    "generated_at": "2026-03-12T19:39:31.939905+00:00",
+    "generated_at": "2026-03-12T20:25:09.182735+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
@@ -2711,13 +2734,13 @@
   "link_verifier": {
     "status": "ok",
     "summary": "15 ok, 0 broken, 0 stubs created",
-    "ts": "2026-03-12T19:38:39.173939+00:00",
+    "ts": "2026-03-12T20:24:29.842335+00:00",
     "pages_ok": 15,
     "pages_broken": 0,
     "stubs_created": [],
     "broken_detail": [],
     "agent": "AGENT_LINK_VERIFIER",
-    "elapsed": 2.43,
+    "elapsed": 0.9,
     "log": []
   },
   "daemon_state": {
@@ -2730,58 +2753,58 @@
   },
   "repo_spider": {
     "processed": [
-      "Prem-ium/BingRewards",
+      "shroominic/codeinterpreter-api",
+      "letta-ai/letta",
+      "clduab11/gemini-flow",
+      "gptme/gptme",
+      "saasify-sh/saasify",
+      "langroid/langroid",
+      "inclusionAI/AReaL",
+      "a5c-ai/babysitter",
+      "The-Pocket/PocketFlow",
+      "stakpak/agent",
       "HKUDS/DeepCode",
+      "aborazmeh/awesome-palestine",
+      "salacoste/mcp-n8n-workflow-builder",
+      "operand/agency",
+      "Jackhuang166/ai-memecoin-trading-bot",
+      "VectifyAI/PageIndex",
+      "arwes/arwes",
+      "microsoft/ai-agents-for-beginners",
+      "mergisi/awesome-openclaw-agents",
       "FajarKim/github-readme-profile",
       "wanshuiyin/Auto-claude-code-research-in-sleep",
-      "Safouene1/support-palestine-banner",
-      "ruvnet/RuView",
-      "keploy/keploy",
-      "Usta0x001/Phantom",
-      "makafeli/n8n-workflow-builder",
-      "langroid/langroid",
-      "salacoste/mcp-n8n-workflow-builder",
-      "aborazmeh/awesome-palestine",
-      "kyaukyuai/gpt-all-star",
-      "stakpak/agent",
-      "VectifyAI/PageIndex",
-      "infiniflow/ragflow",
-      "google/adk-python",
-      "shroominic/codeinterpreter-api",
-      "AlexAnys/awesome-openclaw-usecases-zh",
       "Tiledesk/tiledesk-server",
-      "smixs/agent-second-brain",
-      "huggingface/agents-course",
-      "yaqiin/boycott",
-      "saasify-sh/saasify",
-      "microsoft/ai-agents-for-beginners",
-      "SamurAIGPT/awesome-openclaw",
-      "CoWork-OS/CoWork-OS",
-      "a5c-ai/babysitter",
-      "operand/agency",
+      "infiniflow/ragflow",
       "agentscope-ai/agentscope",
-      "gptme/gptme",
-      "ComposioHQ/composio",
-      "AntonOsika/gpt-engineer",
-      "ruvnet/ruflo",
-      "The-Pocket/PocketFlow",
+      "yaqiin/boycott",
+      "google/adk-python",
+      "kyaukyuai/gpt-all-star",
+      "keploy/keploy",
+      "Prem-ium/BingRewards",
       "gmickel/gmickel-claude-marketplace",
-      "arwes/arwes",
       "iris-networks/terminator",
-      "mergisi/awesome-openclaw-agents",
-      "clduab11/gemini-flow",
-      "letta-ai/letta",
+      "huggingface/agents-course",
+      "ruvnet/ruflo",
+      "ComposioHQ/composio",
+      "AlexAnys/awesome-openclaw-usecases-zh",
+      "CoWork-OS/CoWork-OS",
       "CopilotKit/CopilotKit",
-      "AIDC-AI/ComfyUI-Copilot",
       "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
-      "Jackhuang166/ai-memecoin-trading-bot",
+      "smixs/agent-second-brain",
       "sheet0/npi",
-      "inclusionAI/AReaL"
+      "Safouene1/support-palestine-banner",
+      "AntonOsika/gpt-engineer",
+      "SamurAIGPT/awesome-openclaw",
+      "makafeli/n8n-workflow-builder",
+      "AIDC-AI/ComfyUI-Copilot",
+      "ruvnet/RuView",
+      "Usta0x001/Phantom"
     ],
     "forked": [],
     "total_ideas_queued": 19,
-    "cycles": 8,
-    "last_run": "2026-03-12T19:39:24.356021+00:00",
+    "cycles": 9,
+    "last_run": "2026-03-12T20:25:04.461968+00:00",
     "last_cycle_summary": {
       "repos_analyzed": 0,
       "forks": [],
@@ -2789,19 +2812,19 @@
     }
   },
   "converter": {
-    "cycles": 8,
+    "cycles": 9,
     "total_asks_generated": 0,
     "pending_asks": 0,
     "posted_asks": 0,
     "conversion_rate": 0.0,
-    "last_run": "2026-03-12T19:39:43.821304+00:00",
+    "last_run": "2026-03-12T20:26:36.482773+00:00",
     "revenue_from_asks": 0.0,
     "last_resonance": 60,
     "last_label": "LOUD"
   },
   "asks_queue": [],
   "analytics": {
-    "ts": "2026-03-12T19:39:12.610154+00:00",
+    "ts": "2026-03-12T20:24:55.321381+00:00",
     "stars": 1,
     "forks": 0,
     "watchers": 0,
@@ -2818,17 +2841,39 @@
     "view_data": []
   },
   "fork_scanner": {
-    "cycles": 8,
-    "last_run": "2026-03-12T19:39:24.710144+00:00"
+    "cycles": 9,
+    "last_run": "2026-03-12T20:25:04.658300+00:00"
   },
   "newsletter": {},
   "plugin_registry": {
     "plugins": {},
-    "last_scan": "2026-03-12T19:38:39.236789+00:00",
+    "last_scan": "2026-03-12T20:24:29.907119+00:00",
     "total_registered": 0,
-    "cycles": 1
+    "cycles": 2
   },
   "narrator": {},
+  "bluesky": {
+    "cycles": 1,
+    "posted": 0,
+    "failed": 0,
+    "last_run": "2026-03-12T20:25:14.373339+00:00"
+  },
+  "mastodon": {
+    "cycles": 1,
+    "posted": 0,
+    "failed": 0
+  },
+  "publisher": {
+    "cycles": 1,
+    "total_sent": 0,
+    "by_channel": {}
+  },
+  "first_sale": {
+    "happened": false,
+    "amount": 0,
+    "source": null,
+    "cycles_watching": 1
+  },
   "engines_ok": [
     "CYCLE_MEMORY",
     "GUARDIAN",
@@ -2869,6 +2914,9 @@
     "GRANT_APPLICANT",
     "HEALTH_BOOSTER",
     "SOCIAL_PROMOTER",
+    "BLUESKY_ENGINE",
+    "MASTODON_ENGINE",
+    "AUTONOMOUS_PUBLISHER",
     "SUBSTACK_ENGINE",
     "LINK_PAGE",
     "GITHUB_POSTER",
@@ -2892,6 +2940,7 @@
     "HUMAN_PAYOUT",
     "CONTRIBUTOR_REGISTRY",
     "PAYPAL_PAYOUT",
+    "FIRST_SALE_NOTIFIER",
     "SYNAPSE",
     "SYNTHESIS_FACTORY",
     "ARCHITECT",

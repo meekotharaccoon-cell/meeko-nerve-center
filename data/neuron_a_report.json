@@ -61,11 +61,14 @@
       "ARCHITECT.py",
       "ART_CATALOG.py",
       "ART_GENERATOR.py",
+      "AUTONOMOUS_PUBLISHER.py",
       "AUTONOMY_PROOF.py",
       "AUTO_HEALER.py",
       "BIG_BRAIN_ORACLE.py",
+      "BLUESKY_ENGINE.py",
       "BOTTLENECK_SCANNER.py",
       "BRAND_LEGAL.py",
+      "BRAVE_BRIDGE.py",
       "BRIDGE_BUILDER.py",
       "BRIEFING_ENGINE.py",
       "BUSINESS_FACTORY.py",
@@ -81,6 +84,7 @@
       "CYCLE_MEMORY.py",
       "DESKTOP_AGENT.py",
       "DESKTOP_DAEMON.py",
+      "DESKTOP_ORCHESTRATOR.py",
       "DEV_TO_PUBLISHER.py",
       "DISPATCH_HANDLER.py",
       "ECONOMY_CHAIN.py",
@@ -90,6 +94,7 @@
       "ENGINE_INTEGRITY.py",
       "ETSY_SEO_ENGINE.py",
       "FIRST_CONTACT.py",
+      "FIRST_SALE_NOTIFIER.py",
       "FORK_SCANNER.py",
       "FREE_API_ENGINE.py",
       "GITHUB_POSTER.py",
@@ -112,6 +117,7 @@
       "KOFI_PAYMENT_TRACKER.py",
       "LANDING_DEPLOYER.py",
       "LINK_PAGE.py",
+      "MASTODON_ENGINE.py",
       "MEMORY_PALACE.py",
       "NANO_AGENT.py",
       "NARRATOR.py",
@@ -149,7 +155,7 @@
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 97,
+    "engine_count": 103,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -284,7 +290,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T19:39:26.598721+00:00"
+    "timestamp": "2026-03-12T20:25:05.709723+00:00"
   },
-  "generated_at": "2026-03-12T19:39:27.568343+00:00"
+  "generated_at": "2026-03-12T20:25:06.299841+00:00"
 }

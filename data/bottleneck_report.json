@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-12T19:38:33.478820+00:00",
+  "generated": "2026-03-12T20:24:23.950579+00:00",
   "summary": {
     "total_bottlenecks": 1,
     "critical": 0,
     "high": 1,
     "secrets_ok": 10,
     "secrets_total": 18,
-    "engines_ok": 97,
-    "engines_total": 97,
+    "engines_ok": 103,
+    "engines_total": 103,
     "gumroad_live": 0,
     "gumroad_pending": 10,
     "revenue_total": 0,

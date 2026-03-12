@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-12T19:39:01.442214+00:00",
+  "last_run": "2026-03-12T20:24:47.322903+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -65,17 +65,17 @@
     },
     {
       "type": "trending_article",
+      "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
+      "reactions": 56
+    },
+    {
+      "type": "trending_article",
       "title": "Autonomous AI Research Does Not Need a Giant Framework",
       "reactions": 26
     },
     {
-      "type": "trending_article",
-      "title": "AI Agents That Actually Work, Building Reliable UI Automation with Amazon Nova Act",
-      "reactions": 8
-    },
-    {
       "type": "crypto_market_cap_usd",
-      "value": 2470249796371.9
+      "value": 2476263855884.519
     }
   ],
   "opportunities": [
@@ -91,8 +91,8 @@
     "Engine wrapper: CherryHQ/cherry-studio (41328 stars) \u2014 build integration engine",
     "Engine wrapper: CopilotKit/CopilotKit (29312 stars) \u2014 build integration engine",
     "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (143 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Autonomous AI Research Does Not Need a Giant Framework' (26 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'AI Agents That Actually Work, Building Reliable UI Automatio' (8 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (56 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Autonomous AI Research Does Not Need a Giant Framework' (26 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",
