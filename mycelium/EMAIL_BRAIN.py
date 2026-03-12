@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
-"""EMAIL_BRAIN - SolarPunk Communications Cortex v2
+"""EMAIL_BRAIN - SolarPunk Communications Cortex v3
 Reads ALL Gmail. Routes everything. Meeko only sees personal emails.
 PERSONAL      -> flagged only (never auto-replied)
-APPOINTMENT   -> CALENDAR_BRAIN queue
+APPOINTMENT   -> CALENDAR_BRAIN queue (REAL appointments only, not bot confirmations)
 EXCHANGE_TASK -> exchange_inbox.json (for EMAIL_AGENT_EXCHANGE)
 REVENUE       -> revenue_inbox.json (Ko-fi, Gumroad, payment confirmations) WITH body
 BUSINESS      -> AI drafts + sends reply
 GITHUB        -> log failures
 SPAM          -> silent skip
 
-FIXES v2:
-- Uses AI_CLIENT (free HF) instead of Anthropic direct
-- New EXCHANGE_TASK category: [TASK] emails -> exchange_inbox.json with full body
-- queue_revenue() now stores body so KOFI_PAYMENT_TRACKER can parse refs
-- queue_exchange_task() feeds EMAIL_AGENT_EXCHANGE directly
+FIXES v3 — THE GHOST APPOINTMENTS BUG:
+Root cause: APPT_KEYWORDS had 'confirmation', 'scheduled', 'booking' — every
+auto-reply bot triggers these. CALENDAR_BRAIN then emails Meeko reminders.
+
+Fixes:
+- BOT_SENDER_PATTERNS: noreply/do-not-reply/mailer-daemon -> SPAM, never APPOINTMENT
+- APPT_KEYWORDS tightened: removed 'confirmation', 'scheduled', 'booking', 'check-in'
+- APPT_SENDER_PATTERNS: known medical senders boost confidence
+- DEFINITE_BOT_SUBJECTS: order confirmed / receipt / verify email -> SPAM
+- AI classifier explicitly told: bot confirmations = SPAM, not APPOINTMENT
+- confidence field added to extracted appointments (CALENDAR_BRAIN uses this)
 """
 import os, json, imaplib, smtplib, email, re, hashlib
 from email.mime.text import MIMEText
@@ -22,7 +28,6 @@ from email.header import decode_header
 from pathlib import Path
 from datetime import datetime, timezone
 
-# AI_CLIENT: free HF models, no Anthropic key needed
 try:
     from AI_CLIENT import ask, ask_json
     AI_ONLINE = True
@@ -36,12 +41,52 @@ GMAIL = os.environ.get("GMAIL_ADDRESS", "")
 GPWD  = os.environ.get("GMAIL_APP_PASSWORD", "")
 MAX   = 25
 
-REVENUE_SENDERS   = ["ko-fi.com", "gumroad.com", "redbubble.com", "paypal.com",
-                      "stripe.com", "substack.com", "noreply@ko-fi.com"]
-APPT_KEYWORDS     = ["appointment", "your visit", "confirmation", "scheduled",
-                      "doctor", "dr.", "clinic", "dentist", "dental",
-                      "therapy", "telehealth", "booking", "check-in",
-                      "lab results", "prescription"]
+# -- Sender lists --------------------------------------------------------------
+
+REVENUE_SENDERS = [
+    "ko-fi.com", "gumroad.com", "redbubble.com", "paypal.com",
+    "stripe.com", "substack.com", "noreply@ko-fi.com",
+]
+
+# Auto-reply bots -- NEVER classify as APPOINTMENT regardless of keywords
+# These are the source of the ghost appointments bug
+BOT_SENDER_PATTERNS = [
+    "noreply", "no-reply", "no_reply", "donotreply", "do-not-reply",
+    "do_not_reply", "mailer-daemon", "mailer_daemon", "postmaster",
+    "automailer", "auto-mailer", "automated", "notifications@",
+    "alerts@", "system@",
+]
+
+# Known medical/appointment senders -- boost confidence for APPOINTMENT
+APPT_SENDER_PATTERNS = [
+    "health", "medical", "hospital", "clinic", "dental", "dentist",
+    "doctor", "physician", "therapy", "telehealth", "optometry",
+    "pharmacy", "patient", "mychart", "athena", "epic", "allscripts",
+    "zocdoc", "healthgrades", "opencare",
+]
+
+# Tight appointment keywords -- specific to real human appointments ONLY
+# REMOVED: 'confirmation', 'scheduled', 'booking', 'check-in' -- too broad
+APPT_KEYWORDS = [
+    "your appointment", "your visit", "appointment reminder",
+    "doctor appointment", "dental appointment", "medical appointment",
+    "dr.", "dr ", "clinic appointment", "dentist appointment",
+    "therapy session", "telehealth visit", "lab results",
+    "prescription ready", "your prescription",
+    "see you tomorrow", "check in tomorrow",
+]
+
+# Subject patterns that are DEFINITELY not real appointments
+DEFINITE_BOT_SUBJECTS = [
+    "out of office", "auto-reply", "automatic reply", "automaticreply",
+    "autoreply", "delivery notification", "mail delivery",
+    "unsubscribe", "verify your email", "confirm your email",
+    "reset your password", "invoice #", "order #", "order confirmed",
+    "your order", "shipment", "tracking number", "receipt for",
+    "welcome to", "thanks for signing", "thank you for register",
+    "account created", "subscription confirmed",
+]
+
 EXCHANGE_KEYWORDS = ["[task]", "agent task", "agent request", "solarpunk agent"]
 
 
@@ -114,51 +159,83 @@ def fetch_unread():
         return []
 
 
+def is_bot_sender(from_addr):
+    """True if email is from an automated system -- these are never real appointments."""
+    f = from_addr.lower()
+    return any(p in f for p in BOT_SENDER_PATTERNS)
+
+
+def is_appt_sender(from_addr):
+    """True if email is from a known medical/appointment provider."""
+    f = from_addr.lower()
+    return any(p in f for p in APPT_SENDER_PATTERNS)
+
+
 def classify(em):
-    s    = em["from"].lower()
-    subj = em["subject"].lower()
-    body = em["body"].lower()
+    from_l = em["from"].lower()
+    subj_l = em["subject"].lower()
+    body_l = em["body"].lower()
 
     # Fast-path: exchange task
-    if any(kw in subj for kw in EXCHANGE_KEYWORDS) or "[task]" in subj:
+    if any(kw in subj_l for kw in EXCHANGE_KEYWORDS) or "[task]" in subj_l:
         return "EXCHANGE_TASK"
 
     # Fast-path: revenue senders
     for rev in REVENUE_SENDERS:
-        if rev in s: return "REVENUE"
-
-    # Fast-path: appointment keywords
-    if any(k in subj or k in body for k in APPT_KEYWORDS):
-        return "APPOINTMENT"
+        if rev in from_l: return "REVENUE"
 
     # Fast-path: GitHub
-    if "github.com" in s or "@github.com" in s:
+    if "github.com" in from_l or "@github.com" in from_l:
         return "GITHUB"
 
-    # AI classification — free HF models
-    prompt = (
-        f"Classify this email.\n"
-        f"FROM:{em['from']}\nSUBJECT:{em['subject']}\nBODY:{em['body'][:400]}\n\n"
-        f"Categories:\n"
-        f"  EXCHANGE_TASK: someone wants an AI agent to do a task\n"
-        f"  PERSONAL: friend or family — never auto-reply\n"
-        f"  APPOINTMENT: medical/dental/any visit confirmation\n"
-        f"  REVENUE: payment/sale notification\n"
-        f"  BUSINESS: professional inquiry\n"
-        f"  GITHUB: CI/CD alerts\n"
-        f"  SPAM: promotional\n"
-        f'Respond ONLY with JSON: {{"cat": "CATEGORY"}}'
-    )
-    result = ask_json(prompt, max_tokens=50)
-    if result:
-        cat = result.get("cat", "BUSINESS").strip().upper()
-        valid = {"EXCHANGE_TASK", "PERSONAL", "APPOINTMENT", "REVENUE", "BUSINESS", "GITHUB", "SPAM"}
-        return cat if cat in valid else "BUSINESS"
+    # Bot sender check -- BEFORE any appointment logic
+    # This is the core fix for ghost appointments
+    if is_bot_sender(em["from"]):
+        if any(w in subj_l for w in ["payment", "invoice", "receipt", "sale", "order"]):
+            return "REVENUE"
+        return "SPAM"
 
-    # Keyword fallback without AI
-    if any(w in subj for w in ["invoice", "order", "payment", "receipt", "sale"]):
+    # Definite bot subject lines
+    if any(p in subj_l for p in DEFINITE_BOT_SUBJECTS):
+        return "SPAM"
+
+    # APPOINTMENT: tight keyword match + sender check
+    appt_keyword_hit = any(k in subj_l or k in body_l for k in APPT_KEYWORDS)
+    appt_sender_hit  = is_appt_sender(em["from"])
+
+    if appt_keyword_hit and appt_sender_hit:
+        # High confidence: both keyword + known medical sender -> APPOINTMENT
+        return "APPOINTMENT"
+    # Medium confidence (keyword only, non-bot sender): let AI decide
+    # No keyword match: skip appointment path entirely
+
+    # AI classification
+    if AI_ONLINE:
+        prompt = (
+            f"Classify this email.\n"
+            f"FROM:{em['from']}\nSUBJECT:{em['subject']}\nBODY:{em['body'][:400]}\n\n"
+            f"Categories:\n"
+            f"  EXCHANGE_TASK: someone wants an AI agent to do a task\n"
+            f"  PERSONAL: friend or family -- never auto-reply\n"
+            f"  APPOINTMENT: ONLY real human medical/dental/therapy visits -- NOT order confirmations, NOT newsletter confirmations, NOT 'your account is confirmed'\n"
+            f"  REVENUE: payment/sale notification\n"
+            f"  BUSINESS: professional inquiry\n"
+            f"  GITHUB: CI/CD alerts\n"
+            f"  SPAM: promotional, newsletters, auto-replies, bot confirmations\n"
+            f"RULE: if From contains noreply/no-reply/automated, classify as SPAM.\n"
+            f"RULE: 'confirmation' of an order/subscription/account is SPAM, not APPOINTMENT.\n"
+            f'Respond ONLY with JSON: {{"cat": "CATEGORY"}}'
+        )
+        result = ask_json(prompt, max_tokens=50)
+        if result:
+            cat = result.get("cat", "BUSINESS").strip().upper()
+            valid = {"EXCHANGE_TASK", "PERSONAL", "APPOINTMENT", "REVENUE", "BUSINESS", "GITHUB", "SPAM"}
+            return cat if cat in valid else "BUSINESS"
+
+    # Keyword fallback
+    if any(w in subj_l for w in ["invoice", "order", "payment", "receipt", "sale"]):
         return "REVENUE"
-    if any(w in subj for w in ["hi ", "hey ", "miss you", "thinking of"]):
+    if any(w in subj_l for w in ["hi ", "hey ", "miss you", "thinking of"]):
         return "PERSONAL"
     return "BUSINESS"
 
@@ -167,13 +244,14 @@ def extract_appt(em):
     prompt = (
         f"Extract appointment details from this email.\n"
         f"FROM:{em['from']}\nSUBJECT:{em['subject']}\nBODY:{em['body'][:1500]}\n"
-        f'Respond ONLY with JSON: {{"date_str":"Month DD YYYY","time_str":"HH:MM AM/PM","location":"addr","type":"doctor/etc","provider":"name","notes":"any"}}'
+        f'Respond ONLY with JSON: {{"date_str":"Month DD YYYY","time_str":"HH:MM AM/PM","location":"addr","type":"doctor/etc","provider":"name","notes":"any","confidence":"high/medium/low"}}'
     )
     result = ask_json(prompt, max_tokens=250)
     if result:
         result["source_subject"] = em["subject"]
+        result["source_from"]    = em["from"]
         return result
-    # Regex fallback
+    # Regex fallback -- always low confidence
     text = em["subject"] + " " + em["body"]
     dm   = re.search(r'(\w+ \d{1,2},? \d{4}|\d{1,2}/\d{1,2}/\d{4})', text)
     tm   = re.search(r'(\d{1,2}:\d{2}\s*(?:AM|PM|am|pm))', text)
@@ -184,6 +262,8 @@ def extract_appt(em):
         "type":           "appointment",
         "provider":       em["from"],
         "source_subject": em["subject"],
+        "source_from":    em["from"],
+        "confidence":     "low",
     }
 
 
@@ -196,7 +276,6 @@ def queue_appointment(details):
 
 
 def queue_revenue(em):
-    """Store revenue notification — includes body so payment tracker can parse refs."""
     f = DATA / "revenue_inbox.json"
     existing = json.loads(f.read_text()) if f.exists() else []
     amt = re.search(r'\$(\d+\.?\d*)', em["subject"] + em["body"])
@@ -204,7 +283,7 @@ def queue_revenue(em):
         "ts":      datetime.now(timezone.utc).isoformat(),
         "from":    em["from"],
         "subject": em["subject"],
-        "body":    em["body"][:1000],   # FIX: include body for payment ref parsing
+        "body":    em["body"][:1000],
         "amount":  float(amt.group(1)) if amt else 0,
     }
     existing.append(entry)
@@ -212,7 +291,6 @@ def queue_revenue(em):
 
 
 def queue_exchange_task(em):
-    """Write task emails to exchange_inbox.json for EMAIL_AGENT_EXCHANGE to consume."""
     f = DATA / "exchange_inbox.json"
     existing = json.loads(f.read_text()) if f.exists() else []
     entry = {
@@ -277,7 +355,7 @@ def run():
     state = load()
     state["cycles"]   = state.get("cycles", 0) + 1
     state["last_run"] = datetime.now(timezone.utc).isoformat()
-    print(f"EMAIL_BRAIN cycle {state['cycles']} | {GMAIL or 'no credentials'} | AI={'online' if AI_ONLINE else 'offline'}")
+    print(f"EMAIL_BRAIN v3 cycle {state['cycles']} | {GMAIL or 'no credentials'} | AI={'online' if AI_ONLINE else 'offline'}")
 
     if not GMAIL:
         save(state)
@@ -314,7 +392,7 @@ def run():
             d = extract_appt(em)
             queue_appointment(d)
             state["appointments"] = state.get("appointments", 0) + 1
-            entry["action"] = f"appt_queued:{d.get('type', '?')}"
+            entry["action"] = f"appt_queued:{d.get('type','?')}:confidence={d.get('confidence','?')}"
 
         elif cat == "REVENUE":
             queue_revenue(em)
@@ -339,7 +417,7 @@ def run():
             entry["action"] = f"skipped_{cat.lower()}"
 
         state.setdefault("log", []).append(entry)
-        print(f"  [{cat}] {em['subject'][:45]} → {entry['action']}")
+        print(f"  [{cat}] {em['subject'][:45]} -> {entry['action']}")
 
     state["processed"] = list(done)
     save(state)
