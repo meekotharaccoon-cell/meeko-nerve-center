@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v19 — full autonomous self-expanding loop
-===================================================
-New in v19:
-  NEWSLETTER_ENGINE (L4) — auto-generate + send email newsletter, max 1/day
-  ANALYTICS_ENGINE  (L1) — GitHub traffic: views, referrers, paths, trends
-  RSS_PUBLISHER     (L7) — generates docs/feed.xml, zero-cost RSS distribution
-  FORK_SCANNER      (L1) — detects new forks, scores forkers, crafts outreach
-  SOLARPUNK_CLI          — terminal dashboard (run manually, not in CI)
+OMNIBUS v20 — identity + open mycelium + voice
+================================================
+New in v20:
+  NARRATOR        (L7) — SolarPunk writes its own story every cycle (docs/narrative.html)
+  PLUGIN_REGISTRY (L0) — open mycelium protocol, validates external engines (docs/plugins.html)
 
-v18: REPO_SPIDER (L1), RESONANCE_CONVERTER (L4), @claude GitHub Issues
-v17: DESKTOP_DAEMON (L6), CLAUDE_BRIDGE (L6)
+v19: NEWSLETTER_ENGINE, ANALYTICS_ENGINE, RSS_PUBLISHER, FORK_SCANNER
+v18: REPO_SPIDER, RESONANCE_CONVERTER, @claude GitHub Issues
+v17: DESKTOP_DAEMON, CLAUDE_BRIDGE
 v16: AGENT_LINK_VERIFIER, AGENT_GUMROAD_BUILDER, AGENT_TWEET_WRITER
 v15: FIRST_CONTACT
 v14: CYCLE_MEMORY
@@ -19,10 +17,10 @@ v12: RESONANCE_ENGINE, DEV_TO_PUBLISHER, VIRALITY_ENGINE, SELF_PORTRAIT
 v11: CLAUDE_ENGINE
 v10: CAPABILITY_SCANNER, EMAIL_OUTREACH, STORE_BUILDER, BRIDGE_BUILDER
 
-The loop: build -> speak -> listen -> remember -> watch -> respond -> grow
+The loop: build -> speak -> listen -> remember -> watch -> respond -> grow -> tell
 
 L0  CYCLE_MEMORY . GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
-    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER
+    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER . PLUGIN_REGISTRY [v20]
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE .
     RESONANCE_ENGINE . ANALYTICS_ENGINE . REPO_SPIDER . FORK_SCANNER . FIRST_CONTACT .
@@ -44,7 +42,8 @@ L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
     DESKTOP_DAEMON [local only] . CLAUDE_BRIDGE [local only]
 L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
     ISSUE_SYNC . SOLARPUNK_LEGAL . BRAND_LEGAL . TASK_ATOMIZER .
-    AUTONOMY_PROOF . CLAUDE_ENGINE . SELF_PORTRAIT . RSS_PUBLISHER
+    AUTONOMY_PROOF . CLAUDE_ENGINE . SELF_PORTRAIT . RSS_PUBLISHER .
+    NARRATOR [v20]
 """
 import os, sys, json, time, subprocess
 from pathlib import Path
@@ -148,6 +147,8 @@ def ctx():
         "analytics":       rj("analytics_state.json"),
         "fork_scanner":    rj("fork_scanner_state.json"),
         "newsletter":      rj("newsletter_state.json"),
+        "plugin_registry": rj("plugin_registry.json"),    # v20
+        "narrator":        rj("narrator_state.json"),     # v20
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -179,6 +180,7 @@ def L0():
     eng("AUTO_HEALER",        timeout=90)
     eng("CAPABILITY_SCANNER", timeout=30)
     eng("AGENT_LINK_VERIFIER",timeout=60)
+    eng("PLUGIN_REGISTRY",    timeout=60)   # v20 — scan + validate external plugins
     save_ctx()
 
 
@@ -192,9 +194,9 @@ def L1():
     eng("CRYPTO_WATCHER",     timeout=60)
     eng("FREE_API_ENGINE",    timeout=60)
     eng("RESONANCE_ENGINE",   timeout=60)
-    eng("ANALYTICS_ENGINE",   timeout=60)   # v19
-    eng("REPO_SPIDER",        timeout=120)  # v18
-    eng("FORK_SCANNER",       timeout=60)   # v19
+    eng("ANALYTICS_ENGINE",   timeout=60)
+    eng("REPO_SPIDER",        timeout=120)
+    eng("FORK_SCANNER",       timeout=60)
     eng("FIRST_CONTACT",      timeout=30)
     save_ctx()
     eng("NEURON_A", timeout=90); save_ctx()
@@ -244,8 +246,8 @@ def L4():
     eng("VIRALITY_ENGINE",     timeout=60)
     eng("DEV_TO_PUBLISHER",    timeout=60)
     eng("AGENT_TWEET_WRITER",  timeout=60)
-    eng("RESONANCE_CONVERTER", timeout=90)  # v18
-    eng("NEWSLETTER_ENGINE",   timeout=90)  # v19
+    eng("RESONANCE_CONVERTER", timeout=90)
+    eng("NEWSLETTER_ENGINE",   timeout=90)
     save_ctx()
 
 
@@ -275,11 +277,11 @@ def L6():
     eng("BIG_BRAIN_ORACLE",  timeout=90)
     save_ctx()
 
-    health   = rj("brain_state.json").get("health_score", 0)
-    cycle    = rj("cycle_delta.json").get("cycle_number", "?")
-    spider   = rj("repo_spider_state.json")
-    conv     = rj("resonance_converter_state.json")
-    fork_sc  = rj("fork_scanner_state.json")
+    health    = rj("brain_state.json").get("health_score", 0)
+    cycle     = rj("cycle_delta.json").get("cycle_number", "?")
+    spider    = rj("repo_spider_state.json")
+    conv      = rj("resonance_converter_state.json")
+    fork_sc   = rj("fork_scanner_state.json")
     analytics = rj("analytics_state.json")
     _queue_daemon_task(
         f"Cycle {cycle} done. Health: {health}/100. "
@@ -306,7 +308,8 @@ def L7():
     eng("AUTONOMY_PROOF",   timeout=60)
     eng("CLAUDE_ENGINE",    timeout=60)
     eng("SELF_PORTRAIT",    timeout=60)
-    eng("RSS_PUBLISHER",    timeout=30)    # v19 — generates feed.xml
+    eng("RSS_PUBLISHER",    timeout=30)
+    eng("NARRATOR",         timeout=60)   # v20 — always last: story written after everything else
     save_ctx()
 
 
@@ -326,9 +329,9 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v19 -- {ts}")
+    print(f"\nOMNIBUS v20 -- {ts}")
     print(f"   Run: {run_id}")
-    print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow")
+    print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow -> tell")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -355,6 +358,8 @@ def run():
     analytics  = rj("analytics_state.json")
     fork_sc    = rj("fork_scanner_state.json")
     newsletter = rj("newsletter_state.json")
+    narrator   = rj("narrator_state.json")      # v20
+    plugins    = rj("plugin_registry.json")      # v20
     asks       = rj("asks_queue.json") if isinstance(rj("asks_queue.json"), list) else []
 
     quick_rev  = rj("quick_revenue.json")
@@ -366,7 +371,7 @@ def run():
     first_contact_happened = fc.get("happened", False) if isinstance(fc, dict) else False
 
     manifest = {
-        "version":                "v19",
+        "version":                "v20",
         "run_id":                 run_id,
         "completed":              datetime.now(timezone.utc).isoformat(),
         "elapsed_s":              elapsed,
@@ -403,7 +408,12 @@ def run():
         "view_trend":             analytics.get("trend", "unknown"),
         "new_forkers":            len(fork_sc.get("forkers", [])),
         "newsletter_sent_total":  newsletter.get("total_sent", 0),
+        "stories_told":           narrator.get("stories_told", 0),      # v20
+        "plugins_registered":     plugins.get("total_registered", 0),   # v20
         "rss_feed_url":           f"{BASE}/feed.xml",
+        "narrative_url":          f"{BASE}/narrative.html",              # v20
+        "solarpunk_url":          f"{BASE}/solarpunk.html",              # v20
+        "plugins_url":            f"{BASE}/plugins.html",                # v20
         "engines_ok":             results["ok"],
         "engines_failed":         results["failed"],
         "engines_skipped":        results["skipped"],
@@ -417,13 +427,14 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v19 done -- {elapsed}s")
+    print(f"OMNIBUS v20 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
     print(f"   Health: {manifest['health_before']} -> {manifest['health_after']} ({manifest['health_trend']})")
     print(f"   Revenue: ${rev_total:.2f} | Gaza: ${gaza_total:.2f} | First sale: {'YES' if first_sale else 'not yet'}")
     print(f"   Resonance: {manifest['resonance_score']}/100 ({manifest['resonance_label']}) | Stars: {manifest['github_stars']}")
+    print(f"   Stories told: {manifest['stories_told']} | Plugins registered: {manifest['plugins_registered']}")
     print(f"   Views 14d: {manifest['views_14d']} | Trend: {manifest['view_trend']}")
     print(f"   Repos forked: {manifest['repos_forked']} | New forkers: {manifest['new_forkers']}")
     print(f"   Asks pending: {manifest['asks_pending']} | Newsletter sent ever: {manifest['newsletter_sent_total']}")
@@ -437,8 +448,12 @@ def run():
     if manifest["critical_missing"]:
         print(f"   MISSING SECRETS: {', '.join(manifest['critical_missing'])}")
     print(f"\n   Live:")
-    for page in ["first_contact", "memory", "quick_revenue", "store", "proof", "resonance", "self_portrait"]:
-        print(f"      {BASE}/{page}.html")
+    for label, page in [
+        ("Narrative", "narrative"), ("Identity", "solarpunk"), ("Plugins", "plugins"),
+        ("Store", "store"), ("Proof", "proof"), ("Resonance", "resonance"),
+        ("First Contact", "first_contact"), ("Memory", "memory"),
+    ]:
+        print(f"      {label}: {BASE}/{page}.html")
     print(f"   RSS: {BASE}/feed.xml")
     return manifest
 
