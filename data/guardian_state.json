@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-12T04:36:55.353093",
+  "last_checked": "2026-03-12T04:37:22.043115",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -33,6 +33,7 @@
     "DESKTOP_DAEMON.py",
     "ENGINE_INTEGRITY.py",
     "CLAUDE_ENGINE.py",
+    "RSS_PUBLISHER.py",
     "CAPABILITY_SCANNER.py",
     "ANALYTICS_ENGINE.py",
     "HUMAN_CONNECTOR.py",
