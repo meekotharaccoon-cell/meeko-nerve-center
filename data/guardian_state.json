@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-11T23:26:17.057738",
+  "last_checked": "2026-03-12T00:05:39.022049",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -67,6 +67,7 @@
     "SOCIAL_PROMOTER.py",
     "GUMROAD_AUTO_QUEUE.py",
     "knowledge_dispatch.py",
+    "DEV_TO_PUBLISHER.py",
     "ETSY_SEO_ENGINE.py",
     "DISPATCH_HANDLER.py",
     "LANDING_DEPLOYER.py",
