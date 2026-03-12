@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-12T19:55:50.581839",
+  "last_checked": "2026-03-12T19:56:51.624179",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -101,6 +101,7 @@
     "EMAIL_AGENT_EXCHANGE.py",
     "KNOWLEDGE_CHAIN.py",
     "AUTO_HEALER.py",
+    "FIRST_SALE_NOTIFIER.py",
     "FREE_API_ENGINE.py",
     "FORK_SCANNER.py",
     "KOFI_PAYMENT_TRACKER.py",
