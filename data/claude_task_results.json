@@ -1,0 +1,34 @@
+[
+  {
+    "id": "omnibus_1773301278",
+    "prompt": "Cycle 50 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New forkers: 0. Stars: 1 | Views 14d: 0. Check data/asks_queue.json \u2014 if resonance >= SIGNAL post the best ask NOW.",
+    "ts": "2026-03-12T11:00:20.708084+00:00",
+    "source": "OMNIBUS_L6",
+    "status": "failed",
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  {
+    "id": "omnibus_1773302460",
+    "prompt": "Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New forkers: 0. Stars: 1 | Views 14d: 0. Check data/asks_queue.json \u2014 if resonance >= SIGNAL post the best ask NOW.",
+    "ts": "2026-03-12T11:00:20.710012+00:00",
+    "source": "OMNIBUS_L6",
+    "status": "failed",
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  {
+    "id": "omnibus_1773283397",
+    "prompt": "SolarPunk cycle 48 just completed. Health: 40/100. Engines failed: none. Review data/omnibus_last.json and give me the single most impactful next action in 1-2 sentences.",
+    "ts": "2026-03-12T11:00:20.711914+00:00",
+    "source": "OMNIBUS_L6",
+    "status": "failed",
+    "error": "ANTHROPIC_API_KEY not set"
+  },
+  {
+    "id": "omnibus_1773283629",
+    "prompt": "SolarPunk cycle 49 just completed. Health: 40/100. Engines failed: none. Review data/omnibus_last.json and give me the single most impactful next action in 1-2 sentences.",
+    "ts": "2026-03-12T11:00:20.713854+00:00",
+    "source": "OMNIBUS_L6",
+    "status": "failed",
+    "error": "ANTHROPIC_API_KEY not set"
+  }
+]
