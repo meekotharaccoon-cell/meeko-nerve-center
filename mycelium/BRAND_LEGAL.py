@@ -72,6 +72,7 @@ def rj(fname, fb=None):
     return fb or {}
 
 revenue = rj("revenue_inbox.json")
+if isinstance(revenue, list): revenue = {}   # revenue_inbox.json is an array of emails
 payout_ledger = rj("payout_ledger.json")
 flywheel = rj("flywheel_summary.json")
 

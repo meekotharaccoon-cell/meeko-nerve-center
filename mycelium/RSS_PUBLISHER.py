@@ -20,7 +20,7 @@ BASE  = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
 
 def rj(path, fb=None):
     try: return json.loads(Path(path).read_text())
-    except: return fb or {}
+    except: return fb if fb is not None else {}
 
 
 def rfc822(iso_ts):
