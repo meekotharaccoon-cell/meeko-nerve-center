@@ -232,6 +232,53 @@ def post_comment(body):
     return False
 
 
+SELF_RESPONSE_SYSTEM = """You are Claude operating inside SolarPunk — Meeko's autonomous AI revenue system.
+
+You just posted a response to a GitHub issue. Now review what you said and generate a brief
+self-continuation: identify the single most valuable next action the system should take,
+or note any gap in your previous response that you want to address.
+
+Rules:
+- Be concise (max 200 words)
+- Be specific and actionable — name the engine, file, or secret involved
+- If your previous response was complete and nothing more is needed, say so in one sentence
+- Do NOT include <commit> blocks in the self-continuation
+- Do NOT mention that this is an auto-generated self-response in a verbose way"""
+
+
+def call_claude_self_response(previous_response: str) -> str:
+    """Make a second Claude API call to generate a self-continuation."""
+    prompt = f"""Issue #{ISSUE_NUMBER}: {ISSUE_TITLE}
+
+My previous response to this issue:
+---
+{previous_response[:3000]}
+---
+
+Generate a brief self-continuation: what is the single most valuable next action,
+or is there anything I missed or should clarify?"""
+
+    payload = json.dumps({
+        "model": MODEL,
+        "max_tokens": 512,
+        "system": SELF_RESPONSE_SYSTEM,
+        "messages": [{"role": "user", "content": prompt}]
+    }).encode()
+
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=payload,
+        headers={
+            "x-api-key": API_KEY,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json"
+        }
+    )
+    with urllib.request.urlopen(req, timeout=60) as r:
+        data = json.loads(r.read())
+        return data["content"][0]["text"]
+
+
 def run():
     if not API_KEY:
         print("SKIP: ANTHROPIC_API_KEY not set")
@@ -240,6 +287,11 @@ def run():
 
     if not TRIGGER or "@claude" not in TRIGGER.lower():
         print("No @claude mention found — skipping")
+        sys.exit(0)
+
+    # Guard: don't self-respond to own auto-continuations (prevent loops)
+    if TRIGGER.startswith("🔄 **Claude self-continuation"):
+        print("Self-continuation detected — skipping to avoid loop")
         sys.exit(0)
 
     print(f"Issue #{ISSUE_NUMBER}: {ISSUE_TITLE}")
@@ -280,7 +332,6 @@ def run():
         if result:
             commit_sha = result.get("commit", {}).get("sha", "?")[:8]
             print(f"    OK: {commit_sha}")
-            # Post a follow-up comment with the commit link
             commit_url = result.get("commit", {}).get("html_url", "")
             gh_post(f"/issues/{ISSUE_NUMBER}/comments", {
                 "body": f"✅ Committed `{c['path']}` — [{commit_sha}]({commit_url})"
@@ -291,7 +342,20 @@ def run():
                 "body": f"❌ Failed to commit `{c['path']}` — check Actions logs"
             })
 
-    print(f"Done. {len(commits)} commits, 1 comment posted.")
+    # Auto self-continuation: Claude reviews its own response and posts a follow-up
+    print("Generating self-continuation...")
+    try:
+        self_cont = call_claude_self_response(clean_response)
+        if self_cont and self_cont.strip():
+            gh_post(f"/issues/{ISSUE_NUMBER}/comments", {
+                "body": f"🔄 **Claude self-continuation:**\n\n{self_cont.strip()}"
+            })
+            print("  Self-continuation posted.")
+    except Exception as e:
+        # Non-fatal: main response already posted
+        print(f"  Self-continuation skipped: {e}")
+
+    print(f"Done. {len(commits)} commits, 1 comment + 1 self-continuation posted.")
 
 
 if __name__ == "__main__":
