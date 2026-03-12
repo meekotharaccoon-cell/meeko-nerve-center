@@ -1,5 +1,7 @@
-name: Claude Code
+name: Claude Code — SolarPunk Issue Handler
 
+# Trigger: mention @claude in any Issue or PR comment
+# Also fires when any issue is opened/assigned (so @claude in title or body works)
 on:
   issue_comment:
     types: [created]
@@ -17,34 +19,48 @@ jobs:
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: read
-      issues: read
+      contents: write
+      pull-requests: write
+      issues: write
       id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      actions: read
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Run Claude Code
-        id: claude
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests anthropic
+
+      - name: Run Claude Code Action
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-
-          # This is an optional setting that allows Claude to read CI results on PRs
           additional_permissions: |
             actions: read
-
-          # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
-          # prompt: 'Update the pull request description to include a summary of changes.'
-
-          # Optional: Add claude_args to customize behavior and configuration
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          # or https://code.claude.com/docs/en/cli-reference for available options
-          # claude_args: '--allowed-tools Bash(gh pr:*)'
-
+          # SolarPunk context injected into every @claude call
+          system_prompt: |
+            You are Claude operating inside SolarPunk — Meeko's autonomous AI revenue system.
+            Repo: meekotharaccoon-cell/meeko-nerve-center
+            Stack: Python engines in mycelium/, orchestrated by OMNIBUS.py v17 (8 layers)
+            Data: all runtime state in data/ as JSON files
+            15% of all revenue routes to Palestinian Children's Relief Fund (PCRF)
+            
+            When asked to fix engines: read the file first, fix the specific issue, commit.
+            When asked to build new engines: follow the NANO_AGENT base class pattern in mycelium/NANO_AGENT.py
+            When asked to analyze: read data/omnibus_last.json for current system state.
+            
+            Always commit with emoji prefix: 🔧 fixes, 👁️ new engines, 🌟 version bumps.
+            Be fast, direct, complete. No hand-holding. Meeko is a pro builder.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
