@@ -1,52 +1,40 @@
 {
-  "timestamp": "2026-03-11T22:33:32.918596+00:00",
+  "timestamp": "2026-03-12T02:42:50.203519+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Don't post generated/AI-edited comments. HN is for conversation between humans.",
-        "url": "https://news.ycombinator.com/newsguidelines.html#generated",
-        "score": 1951,
+        "title": "Show HN: s@: decentralized social networking over static sites",
+        "url": "http://satproto.org/",
+        "score": 43,
         "source": "hackernews"
       },
       {
         "title": "Temporal: A nine-year journey to fix time in JavaScript",
         "url": "https://bloomberg.github.io/js-blog/post/temporal/",
-        "score": 418,
+        "score": 543,
         "source": "hackernews"
       },
       {
         "title": "Many SWE-bench-Passing PRs would not be merged",
         "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
-        "score": 37,
+        "score": 152,
+        "source": "hackernews"
+      },
+      {
+        "title": "Don't post generated/AI-edited comments. HN is for conversation between humans",
+        "url": "https://news.ycombinator.com/newsguidelines.html#generated",
+        "score": 2879,
         "source": "hackernews"
       },
       {
         "title": "Making WebAssembly a first-class language on the Web",
         "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
-        "score": 325,
-        "source": "hackernews"
-      },
-      {
-        "title": "Google closes deal to acquire Wiz",
-        "url": "https://www.wiz.io/blog/google-closes-deal-to-acquire-wiz",
-        "score": 183,
+        "score": 419,
         "source": "hackernews"
       }
     ],
     "reddit": [],
     "devto": [
-      {
-        "title": "I Shipped Broken Code and Wrote an Article About It",
-        "url": "https://dev.to/dannwaneri/i-shipped-broken-code-and-wrote-an-article-about-it-98p",
-        "hearts": 41,
-        "source": "devto"
-      },
-      {
-        "title": "I Created An Enterprise MCP Gateway",
-        "url": "https://dev.to/anthonymax/i-created-an-enterprise-mcp-gateway-bg",
-        "hearts": 110,
-        "source": "devto"
-      },
       {
         "title": "I got tired of color contrast tools that break brand colors. So I built my own.",
         "url": "https://dev.to/danishmk1286/i-got-tired-of-color-contrast-tools-that-break-brand-colors-so-i-built-my-own-4ani",
@@ -56,48 +44,56 @@
       {
         "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
         "url": "https://dev.to/clintonrocha98/sistema-de-planejamento-estruturado-no-opencode-16pb",
-        "hearts": 59,
+        "hearts": 61,
+        "source": "devto"
+      },
+      {
+        "title": "Building a Text-to-Speech Engine in Pure C",
+        "url": "https://dev.to/gabrielemastrapasqua/building-a-text-to-speech-engine-in-pure-c-59h4",
+        "hearts": 35,
+        "source": "devto"
+      },
+      {
+        "title": "I overpowered AI by inventing \"Brilliant\" code by AI opinion itself",
+        "url": "https://dev.to/framemuse/i-overpowered-ai-by-inventing-brilliant-code-by-ai-opinion-itself-3732",
+        "hearts": 8,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.8,
+    "temp_c": 10.4,
     "vibe": "partly cloudy",
     "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "don't",
+      "word": "show",
       "count": 1
     },
     {
-      "word": "post",
+      "word": "decentralized",
       "count": 1
     },
     {
-      "word": "generated/ai",
+      "word": "social",
       "count": 1
     },
     {
-      "word": "edited",
+      "word": "networking",
       "count": 1
     },
     {
-      "word": "comments",
+      "word": "over",
       "count": 1
     },
     {
-      "word": "conversation",
+      "word": "static",
       "count": 1
     },
     {
-      "word": "between",
-      "count": 1
-    },
-    {
-      "word": "humans",
+      "word": "sites",
       "count": 1
     },
     {
@@ -145,14 +141,18 @@
       "count": 1
     },
     {
-      "word": "making",
+      "word": "don't",
+      "count": 1
+    },
+    {
+      "word": "post",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Don't post generated/AI-edited comments. HN is for conversat...' connects to Gaza resilience",
+      "hook": "How 'Show HN: s@: decentralized social networking over static sit...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
