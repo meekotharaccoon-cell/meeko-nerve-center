@@ -153,6 +153,7 @@
       "ai_watcher_state.json",
       "analytics_history.json",
       "analytics_state.json",
+      "appointments_inbox.json",
       "architect_plan.json",
       "architect_state.json",
       "art_catalog.json",
@@ -273,7 +274,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T14:38:15.163523+00:00"
+    "timestamp": "2026-03-12T15:14:22.267986+00:00"
   },
-  "generated_at": "2026-03-12T14:38:15.722641+00:00"
+  "generated_at": "2026-03-12T15:14:22.641655+00:00"
 }

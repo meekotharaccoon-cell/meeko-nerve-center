@@ -1,6 +1,12 @@
 {
-  "cycles": 83,
-  "sent": 0,
-  "log": [],
-  "last_run": "2026-03-12T14:37:38.078315+00:00"
+  "cycles": 84,
+  "sent": 1,
+  "log": [
+    {
+      "key": "appointment_None_Medium Daily Digest <noreply@medium.com>",
+      "ts": "2026-03-12T15:13:50.257267+00:00",
+      "sent": true
+    }
+  ],
+  "last_run": "2026-03-12T15:13:48.444126+00:00"
 }

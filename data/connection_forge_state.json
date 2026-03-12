@@ -1,5 +1,5 @@
 {
-  "cycles": 79,
+  "cycles": 80,
   "guides_sent": [
     "Redbubble",
     "Etsy",
@@ -7,12 +7,13 @@
     "Ko-fi Webhooks via Pipedream",
     "Substack",
     "HuggingFace Spaces (public demo)",
-    "OpenCollective"
+    "OpenCollective",
+    "GitHub Sponsors"
   ],
   "connections_active": [
     "Gmail",
     "HuggingFace",
     "Twitter/X"
   ],
-  "last_run": "2026-03-12T14:38:26.314725+00:00"
+  "last_run": "2026-03-12T15:14:31.955156+00:00"
 }
