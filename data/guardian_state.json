@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-12T15:29:05.017704",
+  "last_checked": "2026-03-12T15:49:11.444466",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -63,6 +63,7 @@
     "SOLARPUNK_CLI.py",
     "KOFI_ENGINE.py",
     "GRANT_HUNTER.py",
+    "ECONOMY_CHAIN.py",
     "STORE_BUILDER.py",
     "GUARDIAN.py",
     "CONTENT_HARVESTER.py",
