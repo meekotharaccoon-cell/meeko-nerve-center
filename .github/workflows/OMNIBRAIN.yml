@@ -19,6 +19,7 @@ permissions:
 env:
   PYTHONPATH: mycelium
   ANTHROPIC_API_KEY:       ${{ secrets.ANTHROPIC_API_KEY }}
+  GROQ_API_KEY:            ${{ secrets.GROQ_API_KEY }}
   GMAIL_ADDRESS:           ${{ secrets.GMAIL_ADDRESS }}
   GMAIL_APP_PASSWORD:      ${{ secrets.GMAIL_APP_PASSWORD }}
   GITHUB_TOKEN:            ${{ secrets.GITHUB_TOKEN }}
@@ -38,6 +39,10 @@ env:
   REDDIT_PASSWORD:         ${{ secrets.REDDIT_PASSWORD }}
   PAYPAL_CLIENT_ID:        ${{ secrets.PAYPAL_CLIENT_ID }}
   PAYPAL_CLIENT_SECRET:    ${{ secrets.PAYPAL_CLIENT_SECRET }}
+  OPENROUTER_KEY:          ${{ secrets.OPENROUTER_KEY }}
+  SERPAPI_KEY:             ${{ secrets.SERPAPI_KEY }}
+  DEVTO_API_KEY:           ${{ secrets.DEVTO_API_KEY }}
+  STRIKE_API_KEY:          ${{ secrets.STRIKE_API_KEY }}
   MEEKO_AFFILIATE_LINK:    autonomoushum-20
 
 jobs:
@@ -55,7 +60,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser anthropic
+        run: pip install requests python-dateutil imapclient tweepy praw beautifulsoup4 feedparser anthropic groq
 
       - name: Restore brain state
         uses: actions/cache@v4
@@ -66,25 +71,83 @@ jobs:
 
       - run: mkdir -p docs
 
-      - name: Verify secrets
+      - name: Validate secrets (live API tests — tells you exactly what's wrong)
         run: |
           python3 << 'PYEOF'
-          import os
-          checks = [
-            ('ANTHROPIC_API_KEY', True),
-            ('HF_TOKEN', False),
-            ('GMAIL_ADDRESS', True),
-            ('GMAIL_APP_PASSWORD', True),
-            ('GUMROAD_SECRET', True),
-            ('GUMROAD_ID', False),
-            ('GUMROAD_NAME', False),
-            ('PAYPAL_CLIENT_ID', False),
-          ]
-          for name, required in checks:
-              v = os.environ.get(name, '')
+          import os, smtplib, urllib.request, urllib.parse, json
+
+          def check(name, required=True):
+              v = os.environ.get(name, '').strip()
               tag = 'REQUIRED' if required else 'optional'
-              status = 'OK ' + str(len(v)) + 'c' if v else 'MISSING'
-              print(name + ': ' + status + ' [' + tag + ']')
+              if v:
+                  print(f'  OK  {name}: present ({len(v)} chars) [{tag}]')
+              else:
+                  print(f'  {"MISSING" if required else "skip"} {name} [{tag}]')
+              return v
+
+          print('=== Secrets presence ===')
+          anthropic  = check('ANTHROPIC_API_KEY', True)
+          groq_key   = check('GROQ_API_KEY', False)
+          gmail_addr = check('GMAIL_ADDRESS', True)
+          gmail_pw   = check('GMAIL_APP_PASSWORD', True)
+          gumroad    = check('GUMROAD_SECRET', True)
+          check('GITHUB_TOKEN', True)
+          check('DEVTO_API_KEY', False)
+          check('SERPAPI_KEY', False)
+          check('STRIKE_API_KEY', False)
+
+          print()
+          print('=== Live API validation ===')
+
+          # --- GROQ ---
+          if groq_key:
+              try:
+                  req = urllib.request.Request('https://api.groq.com/openai/v1/models')
+                  req.add_header('Authorization', f'Bearer {groq_key}')
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      data = json.loads(r.read())
+                  models = [m['id'] for m in data.get('data', [])[:3]]
+                  print(f'  PASS GROQ_API_KEY -- valid, models: {models}')
+              except Exception as e:
+                  print(f'  FAIL GROQ_API_KEY -- REJECTED: {e}')
+                  print(f'       Go to console.groq.com > API Keys > Create > paste full key into GitHub Secret GROQ_API_KEY')
+
+          # --- GMAIL ---
+          if gmail_addr and gmail_pw:
+              pw = gmail_pw.replace(' ', '')  # strip display spaces
+              try:
+                  with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15) as s:
+                      s.login(gmail_addr, pw)
+                  print(f'  PASS GMAIL_APP_PASSWORD -- SMTP login OK')
+              except smtplib.SMTPAuthenticationError as e:
+                  print(f'  FAIL GMAIL_APP_PASSWORD -- Auth rejected: {e}')
+                  print(f'       CAUSE: App Passwords only work when 2-Step Verification is ON.')
+                  print(f'       FIX:')
+                  print(f'         1. myaccount.google.com > Security > 2-Step Verification > turn ON')
+                  print(f'         2. myaccount.google.com > search "App Passwords"')
+                  print(f'         3. App name: SolarPunk > Generate')
+                  print(f'         4. Copy the 16-char code (no spaces) > GitHub Secret GMAIL_APP_PASSWORD')
+              except Exception as e:
+                  print(f'  WARN GMAIL_APP_PASSWORD -- network error: {e}')
+
+          # --- GUMROAD ---
+          if gumroad:
+              try:
+                  token = urllib.parse.quote(gumroad)
+                  url = f'https://api.gumroad.com/v2/user?access_token={token}'
+                  req = urllib.request.Request(url)
+                  req.add_header('User-Agent', 'SolarPunk/1.0')
+                  with urllib.request.urlopen(req, timeout=10) as r:
+                      data = json.loads(r.read())
+                  if data.get('success'):
+                      user = data.get('user', {})
+                      print(f'  PASS GUMROAD_SECRET -- account: {user.get("email", "?")}')
+                  else:
+                      print(f'  FAIL GUMROAD_SECRET -- API rejected token: {data}')
+                      print(f'       FIX: gumroad.com > Settings > Advanced > scroll to Applications section')
+                      print(f'            Click "Generate Token" > copy ENTIRE token > paste into GUMROAD_SECRET')
+              except Exception as e:
+                  print(f'  FAIL GUMROAD_SECRET -- error: {e}')
           PYEOF
         continue-on-error: true
 
