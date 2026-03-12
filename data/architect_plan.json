@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T02:43:15.331673+00:00",
+  "generated_at": "2026-03-12T02:47:06.695092+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -11,6 +11,7 @@
       "BOTTLENECK_SCANNER",
       "AUTO_HEALER",
       "CAPABILITY_SCANNER",
+      "AGENT_LINK_VERIFIER",
       "EMAIL_BRAIN",
       "SCAM_SHIELD",
       "CALENDAR_BRAIN",
@@ -31,6 +32,7 @@
       "BUSINESS_FACTORY",
       "LANDING_DEPLOYER",
       "ART_CATALOG",
+      "AGENT_GUMROAD_BUILDER",
       "REVENUE_LOOP",
       "ART_GENERATOR",
       "EMAIL_AGENT_EXCHANGE",
@@ -48,6 +50,8 @@
       "BRIDGE_BUILDER",
       "EMAIL_OUTREACH",
       "VIRALITY_ENGINE",
+      "DEV_TO_PUBLISHER",
+      "AGENT_TWEET_WRITER",
       "KOFI_ENGINE",
       "GUMROAD_ENGINE",
       "GITHUB_SPONSORS_ENGINE",
@@ -66,6 +70,7 @@
       "BIG_BRAIN_ORACLE",
       "MEMORY_PALACE",
       "README_GENERATOR",
+      "BRIEFING_ENGINE",
       "NIGHTLY_DIGEST",
       "ISSUE_SYNC",
       "SOLARPUNK_LEGAL",
@@ -75,19 +80,16 @@
       "SELF_PORTRAIT"
     ],
     "engines_failed": [
-      "BRIEFING_ENGINE",
       "BRAND_LEGAL"
     ],
-    "engines_skipped": [
-      "DEV_TO_PUBLISHER"
-    ],
+    "engines_skipped": [],
     "exchange_tasks": 0,
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 79,
+    "businesses_built": 80,
     "engines_built": 0,
-    "revenue_potential": 55060,
+    "revenue_potential": 55800,
     "active_revenue_streams": [
       "substack"
     ]

@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-03-12T02:42:50.203519+00:00",
+  "timestamp": "2026-03-12T02:46:44.220227+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Show HN: s@: decentralized social networking over static sites",
         "url": "http://satproto.org/",
-        "score": 43,
+        "score": 47,
         "source": "hackernews"
       },
       {
         "title": "Temporal: A nine-year journey to fix time in JavaScript",
         "url": "https://bloomberg.github.io/js-blog/post/temporal/",
-        "score": 543,
+        "score": 546,
         "source": "hackernews"
       },
       {
         "title": "Many SWE-bench-Passing PRs would not be merged",
         "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
-        "score": 152,
+        "score": 153,
         "source": "hackernews"
       },
       {
         "title": "Don't post generated/AI-edited comments. HN is for conversation between humans",
         "url": "https://news.ycombinator.com/newsguidelines.html#generated",
-        "score": 2879,
+        "score": 2885,
         "source": "hackernews"
       },
       {
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.4,
+    "temp_c": 10.3,
     "vibe": "partly cloudy",
     "code": 3,
     "location": "Gaza City"

@@ -140,7 +140,9 @@
       "affiliate_config.json",
       "affiliate_links_master.json",
       "affiliate_state.json",
+      "agent_gumroad_builder_state.json",
       "agent_link_verifier_state.json",
+      "agent_tweet_writer_state.json",
       "ai_watcher_state.json",
       "architect_plan.json",
       "architect_state.json",
@@ -173,6 +175,7 @@
       "calendar_brain_state.json",
       "capability_map.json",
       "claude_briefing.json",
+      "claude_tasks_queue.json",
       "connection_forge_state.json",
       "connections.json",
       "consolidated_knowledge.json",
@@ -201,6 +204,7 @@
       "guardian_log.json",
       "guardian_state.json",
       "guardian_status.json",
+      "gumroad_catalog.json",
       "gumroad_engine_state.json",
       "gumroad_listings.json",
       "gumroad_queue_state.json",
@@ -252,7 +256,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T02:43:03.986963+00:00"
+    "timestamp": "2026-03-12T02:46:56.933641+00:00"
   },
-  "generated_at": "2026-03-12T02:43:04.270170+00:00"
+  "generated_at": "2026-03-12T02:46:57.378435+00:00"
 }
