@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-12T15:13:59.999661+00:00",
+  "last_run": "2026-03-12T16:10:37.280731+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -51,22 +51,17 @@
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41313
+      "stars": 41318
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29306
+      "stars": 29310
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 135
-    },
-    {
-      "type": "trending_article",
-      "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
-      "reactions": 51
+      "reactions": 143
     },
     {
       "type": "trending_article",
@@ -74,8 +69,13 @@
       "reactions": 27
     },
     {
+      "type": "trending_article",
+      "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
+      "reactions": 51
+    },
+    {
       "type": "crypto_market_cap_usd",
-      "value": 2456716649445.2583
+      "value": 2469648169490.096
     }
   ],
   "opportunities": [
@@ -88,11 +88,11 @@
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13889 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10989 likes) \u2014 integrate into SolarPunk",
     "Engine wrapper: zhayujie/chatgpt-on-wechat (42158 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41313 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29306 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (135 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (51 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'How to Build a Multi-Provider LLM Infrastructure with an AI ' (27 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: CherryHQ/cherry-studio (41318 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29310 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (143 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'How to Build a Multi-Provider LLM Infrastructure with an AI ' (27 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (51 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

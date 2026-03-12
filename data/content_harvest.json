@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T15:13:50.361632+00:00",
+  "timestamp": "2026-03-12T16:10:28.425260+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "ATMs didn't kill bank Teller jobs, but the iPhone did",
-        "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-        "score": 24,
+        "title": "Malus \u2013 Clean Room as a Service",
+        "url": "https://malus.sh",
+        "score": 233,
         "source": "hackernews"
       },
       {
         "title": "US banks' exposure to private credit hits $300B (2025)",
         "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
-        "score": 94,
+        "score": 126,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: We analyzed 1,573 Claude Code sessions to see how AI agents work",
-        "url": "https://github.com/obsessiondb/rudel",
-        "score": 63,
+        "title": "Kotlin creator's new language: a formal way to talk to LLMs instead of English",
+        "url": "https://codespeak.dev/",
+        "score": 81,
         "source": "hackernews"
       },
       {
-        "title": "Malus \u2013 Clean Room as a Service",
-        "url": "https://malus.sh",
-        "score": 60,
+        "title": "The Met Releases High-Def 3D Scans of 140 Famous Art Objects",
+        "url": "https://www.openculture.com/2026/03/the-met-releases-high-definition-3d-scans-of-140-famous-art-objects.html",
+        "score": 11,
         "source": "hackernews"
       },
       {
-        "title": "Suburban school district uses license plate readers to verify student residency",
-        "url": "https://www.nbcchicago.com/consumer/suburban-school-district-uses-license-plate-readers-to-verify-student-residency/3906703/",
-        "score": 66,
+        "title": "Dolphin Progress Release 2603",
+        "url": "https://dolphin-emu.org/blog/2026/03/12/dolphin-progress-report-release-2603/",
+        "score": 199,
         "source": "hackernews"
       }
     ],
@@ -62,42 +62,26 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 18.3,
+    "temp_c": 16.7,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "code",
-      "count": 2
-    },
-    {
-      "word": "atms",
+      "word": "malus",
       "count": 1
     },
     {
-      "word": "didn't",
+      "word": "clean",
       "count": 1
     },
     {
-      "word": "kill",
+      "word": "room",
       "count": 1
     },
     {
-      "word": "bank",
-      "count": 1
-    },
-    {
-      "word": "teller",
-      "count": 1
-    },
-    {
-      "word": "jobs",
-      "count": 1
-    },
-    {
-      "word": "iphone",
+      "word": "service",
       "count": 1
     },
     {
@@ -129,30 +113,46 @@
       "count": 1
     },
     {
-      "word": "show",
+      "word": "kotlin",
       "count": 1
     },
     {
-      "word": "analyzed",
+      "word": "creator's",
       "count": 1
     },
     {
-      "word": "1,573",
+      "word": "language:",
       "count": 1
     },
     {
-      "word": "claude",
+      "word": "formal",
       "count": 1
     },
     {
-      "word": "sessions",
+      "word": "talk",
+      "count": 1
+    },
+    {
+      "word": "llms",
+      "count": 1
+    },
+    {
+      "word": "instead",
+      "count": 1
+    },
+    {
+      "word": "english",
+      "count": 1
+    },
+    {
+      "word": "releases",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'ATMs didn't kill bank Teller jobs, but the iPhone did...' connects to Gaza resilience",
+      "hook": "How 'Malus \u2013 Clean Room as a Service...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

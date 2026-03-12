@@ -1,12 +1,17 @@
 {
-  "cycles": 84,
-  "sent": 1,
+  "cycles": 85,
+  "sent": 2,
   "log": [
     {
       "key": "appointment_None_Medium Daily Digest <noreply@medium.com>",
       "ts": "2026-03-12T15:13:50.257267+00:00",
       "sent": true
+    },
+    {
+      "key": "appointment_March 14, 2026_Alpaca Support <support@mailer.alpaca.markets>",
+      "ts": "2026-03-12T16:10:28.321830+00:00",
+      "sent": true
     }
   ],
-  "last_run": "2026-03-12T15:13:48.444126+00:00"
+  "last_run": "2026-03-12T16:10:26.746083+00:00"
 }

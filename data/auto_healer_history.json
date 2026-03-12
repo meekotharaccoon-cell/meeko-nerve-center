@@ -1,18 +1,5 @@
 [
   {
-    "timestamp": "2026-03-06T14:06:01.984272+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-06T19:38:14.442220+00:00",
     "healed": [],
     "auto_installed": [],
@@ -604,6 +591,19 @@
   },
   {
     "timestamp": "2026-03-12T15:13:13.898777+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "BRAND_LEGAL",
+      "RSS_PUBLISHER"
+    ],
+    "failed_engines_seen": [
+      "BRAND_LEGAL",
+      "RSS_PUBLISHER"
+    ]
+  },
+  {
+    "timestamp": "2026-03-12T16:08:55.446619+00:00",
     "healed": [],
     "auto_installed": [],
     "skipped": [
