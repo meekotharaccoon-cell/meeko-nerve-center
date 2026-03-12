@@ -1,0 +1,22 @@
+[
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "DESKTOP_DAEMON started. SolarPunk is local and alive."
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "WARN",
+    "msg": "WARNING: ANTHROPIC_API_KEY not in environment."
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "  Windows: $env:ANTHROPIC_API_KEY = 'sk-ant-...'"
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "  Or add to repo root .env file"
+  }
+]
