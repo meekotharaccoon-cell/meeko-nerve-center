@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T08:00:06.369900+00:00",
+  "timestamp": "2026-03-12T14:37:38.166097+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Returning to Rails in 2026",
-        "url": "https://www.markround.com/blog/2026/03/05/returning-to-rails-in-2026/",
-        "score": 52,
+        "title": "US banks' exposure to private credit hits $300B (2025)",
+        "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
+        "score": 55,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: s@: decentralized social networking over static sites",
-        "url": "http://satproto.org/",
-        "score": 227,
+        "title": "Show HN: We analyzed 1,573 Claude Code sessions to see how AI agents work",
+        "url": "https://github.com/obsessiondb/rudel",
+        "score": 33,
         "source": "hackernews"
       },
       {
-        "title": "SBCL: A Sanely-Bootstrappable Common Lisp (2008) [pdf]",
-        "url": "https://research.gold.ac.uk/id/eprint/2336/1/sbcl.pdf",
-        "score": 10,
+        "title": "Dolphin Progress Release 2603",
+        "url": "https://dolphin-emu.org/blog/2026/03/12/dolphin-progress-report-release-2603/",
+        "score": 156,
         "source": "hackernews"
       },
       {
-        "title": "Temporal: The 9-year journey to fix time in JavaScript",
-        "url": "https://bloomberg.github.io/js-blog/post/temporal/",
-        "score": 646,
+        "title": "Big Data on the Cheapest MacBook",
+        "url": "https://duckdb.org/2026/03/11/big-data-on-the-cheapest-macbook",
+        "score": 177,
         "source": "hackernews"
       },
       {
-        "title": "Making WebAssembly a first-class language on the Web",
-        "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
-        "score": 528,
+        "title": "Iranian Hacktivists Strike Medical Device Maker Stryker and Wiped Systems",
+        "url": "https://www.zetter-zeroday.com/iranian-hacktivists-strike-medical-device-maker-stryker-in-severe-attack-that-wiped-systems/",
+        "score": 35,
         "source": "hackernews"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
         "url": "https://dev.to/clintonrocha98/sistema-de-planejamento-estruturado-no-opencode-16pb",
-        "hearts": 61,
+        "hearts": 62,
         "source": "devto"
       },
       {
@@ -56,28 +56,48 @@
       {
         "title": "I overpowered AI by inventing \"Brilliant\" code by AI opinion itself",
         "url": "https://dev.to/framemuse/i-overpowered-ai-by-inventing-brilliant-code-by-ai-opinion-itself-3732",
-        "hearts": 8,
+        "hearts": 9,
         "source": "devto"
       }
     ]
   },
   "gaza_weather": {
-    "temp_c": 19.4,
+    "temp_c": 18.7,
     "vibe": "sunny",
-    "code": 1,
+    "code": 0,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "returning",
+      "word": "code",
+      "count": 2
+    },
+    {
+      "word": "banks",
       "count": 1
     },
     {
-      "word": "rails",
+      "word": "exposure",
       "count": 1
     },
     {
-      "word": "2026",
+      "word": "private",
+      "count": 1
+    },
+    {
+      "word": "credit",
+      "count": 1
+    },
+    {
+      "word": "hits",
+      "count": 1
+    },
+    {
+      "word": "$300b",
+      "count": 1
+    },
+    {
+      "word": "2025",
       "count": 1
     },
     {
@@ -85,74 +105,54 @@
       "count": 1
     },
     {
-      "word": "decentralized",
+      "word": "analyzed",
       "count": 1
     },
     {
-      "word": "social",
+      "word": "1,573",
       "count": 1
     },
     {
-      "word": "networking",
+      "word": "claude",
       "count": 1
     },
     {
-      "word": "over",
+      "word": "sessions",
       "count": 1
     },
     {
-      "word": "static",
+      "word": "agents",
       "count": 1
     },
     {
-      "word": "sites",
+      "word": "work",
       "count": 1
     },
     {
-      "word": "sbcl:",
+      "word": "dolphin",
       "count": 1
     },
     {
-      "word": "sanely",
+      "word": "progress",
       "count": 1
     },
     {
-      "word": "bootstrappable",
+      "word": "release",
       "count": 1
     },
     {
-      "word": "common",
+      "word": "2603",
       "count": 1
     },
     {
-      "word": "lisp",
-      "count": 1
-    },
-    {
-      "word": "2008",
-      "count": 1
-    },
-    {
-      "word": "temporal:",
-      "count": 1
-    },
-    {
-      "word": "year",
-      "count": 1
-    },
-    {
-      "word": "journey",
-      "count": 1
-    },
-    {
-      "word": "time",
+      "word": "data",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Returning to Rails in 2026...' connects to Gaza resilience",
+      "hook": "How 'US banks' exposure to private credit hits $300B (2025)...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

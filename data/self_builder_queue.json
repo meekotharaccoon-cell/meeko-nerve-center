@@ -88,5 +88,10 @@
     "idea": "Build TELEGRAM_BOT engine inspired by CoWork-OS \u2014 notify via Telegram on revenue/milestones",
     "source_repo": "CoWork-OS/CoWork-OS",
     "stars": 141
+  },
+  {
+    "idea": "Build SOLARPUNK_CLI inspired by terminator \u2014 terminal dashboard showing live system state",
+    "source_repo": "iris-networks/terminator",
+    "stars": 63
   }
 ]

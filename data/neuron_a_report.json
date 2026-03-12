@@ -185,6 +185,7 @@
       "calendar_brain_state.json",
       "capability_map.json",
       "claude_briefing.json",
+      "claude_task_results.json",
       "claude_tasks_queue.json",
       "connection_forge_state.json",
       "connections.json",
@@ -197,6 +198,8 @@
       "cycle_ledger.json",
       "desktop_clean_log.json",
       "desktop_connection.json",
+      "desktop_daemon_log.json",
+      "desktop_daemon_state.json",
       "email_brain_state.json",
       "email_exchange_state.json",
       "engine_sha_registry.json",
@@ -270,7 +273,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T08:00:45.360783+00:00"
+    "timestamp": "2026-03-12T14:38:15.163523+00:00"
   },
-  "generated_at": "2026-03-12T08:00:45.657811+00:00"
+  "generated_at": "2026-03-12T14:38:15.722641+00:00"
 }
