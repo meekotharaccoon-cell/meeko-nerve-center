@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T20:26:41.520179+00:00",
+  "generated_at": "2026-03-12T22:00:03.906964+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -43,6 +43,9 @@
       "GRANT_APPLICANT",
       "HEALTH_BOOSTER",
       "SOCIAL_PROMOTER",
+      "BLUESKY_ENGINE",
+      "MASTODON_ENGINE",
+      "AUTONOMOUS_PUBLISHER",
       "SUBSTACK_ENGINE",
       "LINK_PAGE",
       "GITHUB_POSTER",
@@ -66,6 +69,7 @@
       "HUMAN_PAYOUT",
       "CONTRIBUTOR_REGISTRY",
       "PAYPAL_PAYOUT",
+      "FIRST_SALE_NOTIFIER",
       "SYNAPSE",
       "SYNTHESIS_FACTORY",
       "ARCHITECT",
@@ -95,9 +99,9 @@
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 89,
+    "businesses_built": 90,
     "engines_built": 0,
-    "revenue_potential": 62460,
+    "revenue_potential": 63200,
     "active_revenue_streams": [
       "substack"
     ]

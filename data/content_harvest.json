@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T20:24:38.246740+00:00",
+  "timestamp": "2026-03-12T21:59:02.729475+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Malus \u2013 Clean Room as a Service",
-        "url": "https://malus.sh",
-        "score": 793,
+        "title": "Shall I implement it? No",
+        "url": "https://gist.github.com/bretonium/291f4388e2de89a43b25c135b44e41f0",
+        "score": 198,
         "source": "hackernews"
       },
       {
-        "title": "An old photo of a large BBS",
-        "url": "https://rachelbythebay.com/w/2022/01/26/swcbbs/",
-        "score": 38,
+        "title": "Malus \u2013 Clean Room as a Service",
+        "url": "https://malus.sh",
+        "score": 896,
         "source": "hackernews"
       },
       {
         "title": "Bubble Sorted Amen Break",
         "url": "https://parametricavocado.itch.io/amen-sorting",
-        "score": 157,
+        "score": 206,
         "source": "hackernews"
       },
       {
         "title": "Reversing memory loss via gut-brain communication",
         "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
-        "score": 116,
+        "score": 153,
         "source": "hackernews"
       },
       {
         "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
         "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-        "score": 211,
+        "score": 255,
         "source": "hackernews"
       }
     ],
@@ -62,15 +62,23 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 13.2,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 11.2,
+    "vibe": "partly cloudy",
+    "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
       "word": "break",
       "count": 2
+    },
+    {
+      "word": "shall",
+      "count": 1
+    },
+    {
+      "word": "implement",
+      "count": 1
     },
     {
       "word": "malus",
@@ -86,14 +94,6 @@
     },
     {
       "word": "service",
-      "count": 1
-    },
-    {
-      "word": "photo",
-      "count": 1
-    },
-    {
-      "word": "large",
       "count": 1
     },
     {
@@ -152,7 +152,7 @@
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Malus \u2013 Clean Room as a Service...' connects to Gaza resilience",
+      "hook": "How 'Shall I implement it? No...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },
