@@ -1,8 +1,8 @@
 {
   "version": "v19",
-  "run_id": "23014193026",
-  "completed": "2026-03-12T17:08:07.830586+00:00",
-  "elapsed_s": 85,
+  "run_id": "23014395828",
+  "completed": "2026-03-12T17:12:58.242869+00:00",
+  "elapsed_s": 80,
   "health_before": 40,
   "health_after": 40,
   "health_trend": "stuck",
@@ -16,11 +16,9 @@
   "first_contact_who": null,
   "legal_fund": 0.0,
   "total_paid_out": 0.0,
-  "secrets_configured": 4,
-  "critical_missing": [
-    "GUMROAD_SECRET"
-  ],
-  "bottleneck_count": 3,
+  "secrets_configured": 10,
+  "critical_missing": [],
+  "bottleneck_count": 1,
   "engines_auto_built": [],
   "outreach_sent": 0,
   "resonance_score": 60,
@@ -130,7 +128,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "CYCLE_MEMORY \u2014 cycle 51\n  Health: 40 (stuck)\n  FIXED this cycle: BRAND_LEGAL, RSS_PUBLISHER\n  BROKE this cycle: EMAIL_BRAIN\n  Persistent blockers (1):\n    [STUCK] Gmail 534 error -- App Password wrong or expired \u2014 20 cycles\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/memory.html\nCYCLE_MEMORY done.\n",
+      "stdout_tail": "CYCLE_MEMORY \u2014 cycle 51\n  Health: 40 (stuck)\n  FIXED this cycle: EMAIL_BRAIN\n  Persistent blockers (1):\n    [STUCK] GUMROAD_SECRET missing -- 10 products can't publish \u2014 20 cycles\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/memory.html\nCYCLE_MEMORY done.\n",
       "stderr_tail": ""
     },
     {
@@ -138,7 +136,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.8,
-      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-12 17:06 UTC\n\ud83d\udcbe Save-state: save-20260312-170643\n\u2705 All 10 core files intact\n",
+      "stdout_tail": "\ud83d\udee1\ufe0f  GUARDIAN \u2014 SolarPunk Immune System\n   2026-03-12 17:11 UTC\n\ud83d\udcbe Save-state: save-20260312-171138\n\u2705 All 10 core files intact\n",
       "stderr_tail": ""
     },
     {
@@ -154,23 +152,23 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "SECRETS_CHECKER running...\n  Secrets: 4/16 configured\n  \ud83d\udd34 CRITICAL missing: GUMROAD_SECRET\n  \u2705 docs/setup.html updated \u2014 13,846 bytes\n  URL: https://meekotharaccoon-cell.github.io/meeko-nerve-center/setup.html\n",
+      "stdout_tail": "SECRETS_CHECKER running...\n  Secrets: 10/16 configured\n  \u2705 All critical secrets present\n  \u2705 docs/setup.html updated \u2014 11,397 bytes\n  URL: https://meekotharaccoon-cell.github.io/meeko-nerve-center/setup.html\n",
       "stderr_tail": ""
     },
     {
       "engine": "BOTTLENECK_SCANNER",
       "status": "ok",
       "code": 0,
-      "elapsed": 3.3,
-      "stdout_tail": "'t publish\n    FIX: gumroad.com -> avatar -> Settings -> Advanced -> Generate Token -> GitHub Secret: GUMROAD_SECRET\n  [HIGH] Gmail 534 error -- App Password wrong or expired\n    FIX: Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret\n  [HIGH] Twitter/X keys missing -- 100+ posts in queue\n    FIX: developer.twitter.com -> App -> Keys -> API Key+Secret+Access Token+Secret -> 4 GitHub Secrets\n  Secrets: 4/18\n  Engines: 95/95\n",
+      "elapsed": 3.8,
+      "stdout_tail": "BOTTLENECK_SCANNER running...\n  Wrote docs/bottleneck.html\n  0 CRITICAL + 1 HIGH blockers\n  [HIGH] Gmail 534 error -- App Password wrong or expired\n    FIX: Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret\n  Secrets: 10/18\n  Engines: 95/95\n",
       "stderr_tail": ""
     },
     {
       "engine": "AUTO_HEALER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "L_BRAIN...\n     Error: exit code ?\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  AI patch error: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  \u26a0\ufe0f  No patch generated for EMAIL_BRAIN\n\n  \ud83d\udd27 Heal summary: 0 fixed | 0 packages installed | 1 still broken\n",
+      "elapsed": 0.1,
+      "stdout_tail": "\ud83d\udd27 AUTO_HEALER starting...\n  \u2705 No failed engines from last run \u2014 nothing to heal\n",
       "stderr_tail": ""
     },
     {
@@ -178,23 +176,23 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "CAPABILITY_SCANNER starting...\n  5 active / 3 blocked / 1 degraded | best channel: gmail \u2014 works today, no new keys needed\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/capabilities.html\nCAPABILITY_SCANNER done.\n",
+      "stdout_tail": "CAPABILITY_SCANNER starting...\n  6 active / 2 blocked / 1 degraded | best channel: gmail \u2014 works today, no new keys needed\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/capabilities.html\nCAPABILITY_SCANNER done.\n",
       "stderr_tail": ""
     },
     {
       "engine": "AGENT_LINK_VERIFIER",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.3,
-      "stdout_tail": "\u2705 AGENT_LINK_VERIFIER (1.2s) \u2014 15 ok, 0 broken, 0 stubs created\n",
+      "elapsed": 1.7,
+      "stdout_tail": "\u2705 AGENT_LINK_VERIFIER (1.67s) \u2014 15 ok, 0 broken, 0 stubs created\n",
       "stderr_tail": ""
     },
     {
       "engine": "EMAIL_BRAIN",
       "status": "ok",
       "code": 0,
-      "elapsed": 15.1,
-      "stdout_tail": "l HF models failed. Last: HTTP Error 410: Gone\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  [BUSINESS] \ud83d\uddde\ufe0f Bitcoin rebounds while stocks fall. Coinci \u2192 business_queued_review\n",
+      "elapsed": 3.9,
+      "stdout_tail": "Router failed. Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  [BUSINESS] [SolarPunk] \ud83c\udfd7\ufe0f Built: SolarPunk AI Tools Mega \u2192 business_queued_review\n",
       "stderr_tail": ""
     },
     {
@@ -202,22 +200,22 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SCAM_SHIELD cycle 86 | 0 caught\n  Scanning 16 new emails\n  Total: 0 scams | 85 safe\n",
+      "stdout_tail": "SCAM_SHIELD cycle 87 | 0 caught\n  Scanning 1 new emails\n  Total: 0 scams | 86 safe\n",
       "stderr_tail": ""
     },
     {
       "engine": "CALENDAR_BRAIN",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.9,
-      "stdout_tail": "CALENDAR_BRAIN cycle 86\n  Calendar reminder sent: TOMORROW: You have appointment at see original email - see origin\n",
+      "elapsed": 0.1,
+      "stdout_tail": "CALENDAR_BRAIN cycle 87\n  No new appointments | 3 total sent\n",
       "stderr_tail": ""
     },
     {
       "engine": "CONTENT_HARVESTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 3.1,
+      "elapsed": 3.6,
       "stdout_tail": "CONTENT_HARVESTER starting...\n  HackerNews: 5 stories\n  Reddit: 0 posts\n  DEV.to: 4 articles\n  Gaza weather: 15.3C sunny\nHarvested 9 items -> 3 content angles\nBest angle: How 'Malus \u2013 Clean Room as a Service...' connects to Gaza resilience\n",
       "stderr_tail": ""
     },
@@ -225,23 +223,23 @@
       "engine": "AI_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.8,
-      "stdout_tail": "AI_WATCHER cycle 86\n  Found: 10 image models, 5 text models, 5 repos\n",
+      "elapsed": 0.9,
+      "stdout_tail": "AI_WATCHER cycle 87\n  Found: 10 image models, 5 text models, 5 repos\n",
       "stderr_tail": ""
     },
     {
       "engine": "CRYPTO_WATCHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "CRYPTO_WATCHER cycle 86\n  Market updated | Fear&Greed: 18 (Extreme Fear)\n  BTC: $70,484 | ETH: $2,072\n  AI tokens spotlight: RENDER-TOKEN +6.0%\n",
+      "elapsed": 0.6,
+      "stdout_tail": "CRYPTO_WATCHER cycle 87\n  Market updated | Fear&Greed: 18 (Extreme Fear)\n  BTC: $70,426 | ETH: $2,070\n  AI tokens spotlight: RENDER-TOKEN +5.8%\n",
       "stderr_tail": ""
     },
     {
       "engine": "FREE_API_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 5.8,
+      "elapsed": 4.2,
       "stdout_tail": "FREE_API_ENGINE \u2014 connecting to public APIs...\n  APIs: 18 ok | 2 failed | Signals: 15 | Opps: 14\n  Top: Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (204,525,324 do\nFREE_API_ENGINE done\n",
       "stderr_tail": ""
     },
@@ -249,7 +247,7 @@
       "engine": "RESONANCE_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 8.0,
+      "elapsed": 9.2,
       "stdout_tail": "RESONANCE_ENGINE scanning...\n  Checking GitHub stats...\n  Checking HN mentions...\n  Checking GitHub search mentions...\n  Checking email replies...\nRESONANCE_ENGINE done.\n  Score: 60/100 (LOUD)\n  Stars: 1 (delta: +0)\n  Email replies: 10\n  HN mentions: 2\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/resonance.html\n",
       "stderr_tail": ""
     },
@@ -257,7 +255,7 @@
       "engine": "ANALYTICS_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.0,
+      "elapsed": 1.1,
       "stdout_tail": "ANALYTICS_ENGINE starting...\n  403 on /traffic/views \u2014 need repo admin scope\n  403 on /traffic/clones \u2014 need repo admin scope\n  403 on /traffic/popular/paths \u2014 need repo admin scope\n  Stars: 1 | Forks: 0 | Watchers: 0\n  Views 14d: 0 (0 unique) | Trend: flat +0%\n",
       "stderr_tail": ""
     },
@@ -265,7 +263,7 @@
       "engine": "REPO_SPIDER",
       "status": "ok",
       "code": 0,
-      "elapsed": 10.1,
+      "elapsed": 10.4,
       "stdout_tail": "REPO_SPIDER starting...\n  Found 0 eligible repos across 10 topics\n  Done. Analyzed: 0 | Forked: 0 | Ideas: 0\n  Total forks ever: 0\n",
       "stderr_tail": ""
     },
@@ -281,7 +279,7 @@
       "engine": "FIRST_CONTACT",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.6,
+      "elapsed": 1.4,
       "stdout_tail": "FIRST_CONTACT scanning...\n  System: 7 days | 0 cycles | resonance=60\n  No stranger yet. 6/6 channels clear.\n  Days running: 7 | Resonance: 60 (LOUD)\n  Still waiting: https://meekotharaccoon-cell.github.io/meeko-nerve-center/first_contact.html\n",
       "stderr_tail": ""
     },
@@ -289,7 +287,7 @@
       "engine": "NEURON_A",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.3,
+      "elapsed": 1.0,
       "stdout_tail": ": HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\nBuilder thesis: Ko-fi + GitHub Sponsors = first dollars at zero spend\n  [high] Gaza Rose Gallery Etsy SEO: Generate 10 AI-optimized product descriptions with SEO keywords\n  [medium] GitHub Sponsors: Enable at github.com/sponsors/meekotharaccoon-cell\n  [high] SolarPunk Newsletter on Substack: Write first issue: I built a self-running AI agent for free\nNEURON_A done.\n",
       "stderr_tail": ""
     },
@@ -297,7 +295,7 @@
       "engine": "NEURON_B",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.2,
+      "elapsed": 0.3,
       "stdout_tail": "NEURON_B v2 - Skeptic Brain starting...\nNEURON_B error: 400 Client Error: Bad Request for url: https://api.anthropic.com/v1/messages\nSkeptic thesis: ?\nRefined priority: AFFILIATE_TRACKER.py - passive income while you sleep\n  RISK: 400 Client Error: Bad Request for url: https://api.anthropic.com/v1/messages\nNEURON_B done.\n",
       "stderr_tail": ""
     },
@@ -306,14 +304,14 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.8,
-      "stdout_tail": "GRANT_HUNTER cycle 86\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
+      "stdout_tail": "GRANT_HUNTER cycle 87\n  Top matches: Awesome Foundation, Tech for Good, Mozilla Foundation, Prototype Fund, Open Collective\n  Researched: Awesome Foundation -> priority:?\n  Researched: Tech for Good -> priority:?\n  Researched: Mozilla Foundation -> priority:?\n  Researched: Prototype Fund -> priority:?\n  Researched: Open Collective -> priority:?\n  20 grants scored | 0 high priority\n",
       "stderr_tail": ""
     },
     {
       "engine": "ETSY_SEO_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.1,
+      "elapsed": 1.5,
       "stdout_tail": "ETSY_SEO_ENGINE starting...\n  Desert Rose at Dawn...\n  White Doves Over the Mediterranean...\n  Olive Grove Eternal...\n  Tatreez Pattern Bloom...\n  Gaza Coastline at Golden Hour...\n  Star of Hope Rising...\n  Pomegranate Season...\n  Night Garden in Ruins...\n  Child with Balloon...\n  The Return - Sunflower Field...\nGenerated 10 Etsy listings (0 Claude-enhanced)\n",
       "stderr_tail": ""
     },
@@ -337,8 +335,8 @@
       "engine": "GUMROAD_AUTO_QUEUE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.1,
-      "stdout_tail": "GUMROAD_AUTO_QUEUE running...\n  \ud83d\udcca Queue: 10 total | 0 live | 0 added | 4 updated\n  \u2705 GUMROAD_ENGINE will publish these next cycle \u2014 run RUN_NOW to trigger immediately\n",
+      "elapsed": 0.9,
+      "stdout_tail": "GUMROAD_AUTO_QUEUE running...\n  \ud83d\udce6 Found 5 existing Gumroad products\n  \ud83d\udcca Queue: 10 total | 0 live | 0 added | 4 updated\n  \u2705 GUMROAD_ENGINE will publish these next cycle \u2014 run RUN_NOW to trigger immediately\n",
       "stderr_tail": ""
     },
     {
@@ -353,8 +351,8 @@
       "engine": "BUSINESS_FACTORY",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.0,
-      "stdout_tail": "ip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Saved: data/business_ai_tools_mega_pack_\u2014_mar_2026.json\n  3 social posts queued\n  \u2705 SolarPunk AI Tools Mega Pack \u2014 Mar 2026 | $370-$1480/month\n  \ud83d\udcb0 Gaza: 15% of every $37 sale = $5.55 to PCRF\n  \ud83d\udcca Total potential: $60,240/month\n",
+      "elapsed": 3.8,
+      "stdout_tail": "ip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Saved: data/business_ai_tools_mega_pack_\u2014_mar_2026.json\n  3 social posts queued\n  \u2705 SolarPunk AI Tools Mega Pack \u2014 Mar 2026 | $370-$1480/month\n  \ud83d\udcb0 Gaza: 15% of every $37 sale = $5.55 to PCRF\n  \ud83d\udcca Total potential: $60,980/month\n",
       "stderr_tail": ""
     },
     {
@@ -362,7 +360,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "LANDING_DEPLOYER cycle 86 | 85 pages live\n  Deploying: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack---mar-2026/\n  Total live pages: 86\n",
+      "stdout_tail": "LANDING_DEPLOYER cycle 87 | 86 pages live\n  Deploying: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n  \ud83c\udf10 Staged: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack---mar-2026/\n  Total live pages: 87\n",
       "stderr_tail": ""
     },
     {
@@ -385,7 +383,7 @@
       "engine": "REVENUE_LOOP",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.9,
+      "elapsed": 3.0,
       "stdout_tail": " [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json_list parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  \u2705 3 posts queued\n\n\u2501\u2501\u2501 STEP 6: EMAIL BRIEFING \u2501\u2501\u2501\n  \u2705 Email sent\n\n\u2501\u2501\u2501 STEP 7: BRAIN UPDATE \u2501\u2501\u2501\n  \u2705 Health 40\u219245 | Total loops: 1\n\n\u2705 REVENUE_LOOP done 2s\n   OK: get_business, affiliates, deploy, gumroad, social, brief, brain\n   Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n",
       "stderr_tail": ""
     },
@@ -402,7 +400,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 86 | 0 tasks | $0.00 | AI=online\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
+      "stdout_tail": "EMAIL_AGENT_EXCHANGE cycle 87 | 0 tasks | $0.00 | AI=online\n  Exchange page \u2192 docs/exchange.html\n  Gaza fund: $0.00\n",
       "stderr_tail": ""
     },
     {
@@ -410,7 +408,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "GRANT_APPLICANT cycle 86 | 0 applied\n  0 new candidates\n",
+      "stdout_tail": "GRANT_APPLICANT cycle 87 | 0 applied\n  0 new candidates\n",
       "stderr_tail": ""
     },
     {
@@ -418,7 +416,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.2,
-      "stdout_tail": "XES (for Meeko):\n  1. Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets\n  2. Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token\n  3. Add X_API_KEY: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  4. Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  5. Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)\n\n\ud83d\udcca Revenue: 0 sales | $0.00 to Gaza\n==================================================\n\n",
+      "stdout_tail": "r Meeko):\n  1. Go to anthropic.com/console \u2192 API Keys \u2192 Create new key \u2192 Add as ANTHROPIC_API_KEY in GitHub Secrets\n  2. Add GUMROAD_ACCESS_TOKEN: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Access Token\n  3. Add X_ACCESS_TOKEN: developer.twitter.com \u2192 App \u2192 Keys & Tokens\n  4. Add REDDIT_CLIENT_ID: reddit.com/prefs/apps \u2192 Create app (script type)\n  5. Share shop URL: meekotharaccoon-cell.github.io/meeko-nerve-center\n\n\ud83d\udcca Revenue: 0 sales | $0.00 to Gaza\n==================================================\n\n",
       "stderr_tail": ""
     },
     {
@@ -426,7 +424,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SOCIAL_PROMOTER v2 cycle 83 | Twitter=off | Reddit=off\n  Queue: 203 total, 203 unsent\n  Reddit:  \u26a0\ufe0f  no credentials\n  linkedin: queued (manual post needed)\n  Twitter: \u26a0\ufe0f  no credentials\n  Sent this cycle: 3 | All-time: 83 posted, 166 failed\n",
+      "stdout_tail": "SOCIAL_PROMOTER v2 cycle 84 | Twitter=off | Reddit=off\n  Queue: 203 total, 203 unsent\n  Reddit:  \u26a0\ufe0f  no credentials\n  linkedin: queued (manual post needed)\n  Twitter: \u26a0\ufe0f  no credentials\n  Sent this cycle: 3 | All-time: 84 posted, 168 failed\n",
       "stderr_tail": ""
     },
     {
@@ -434,7 +432,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "SUBSTACK_ENGINE cycle 86 | 2 issues\n  Not yet time for weekly issue\n",
+      "stdout_tail": "SUBSTACK_ENGINE cycle 87 | 2 issues\n  Not yet time for weekly issue\n",
       "stderr_tail": ""
     },
     {
@@ -450,7 +448,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.5,
-      "stdout_tail": "GITHUB_POSTER cycle 82\n  0 new releases | 17 total\n",
+      "stdout_tail": "GITHUB_POSTER cycle 83\n  0 new releases | 17 total\n",
       "stderr_tail": ""
     },
     {
@@ -465,8 +463,8 @@
       "engine": "CONNECTION_FORGE",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.3,
-      "stdout_tail": "CONNECTION_FORGE cycle 82\n  Active connections: Gmail, HuggingFace\n  Setup guide sent: Twitter/X API (full posting) (drives traffic -> sales)\n",
+      "elapsed": 0.1,
+      "stdout_tail": "CONNECTION_FORGE cycle 83\n  Active connections: Gmail, HuggingFace, Twitter/X\n  All 10 connection guides sent!\n",
       "stderr_tail": ""
     },
     {
@@ -474,15 +472,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "HUMAN_CONNECTOR cycle 86 | 0 humans met\n  0 new genuine humans found\n",
+      "stdout_tail": "HUMAN_CONNECTOR cycle 87 | 0 humans met\n  0 new genuine humans found\n",
       "stderr_tail": ""
     },
     {
       "engine": "AFFILIATE_MAXIMIZER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.1,
-      "stdout_tail": "\ud83d\udcb8 AFFILIATE_MAXIMIZER cycle 69 | Amazon tag: autonomoushum-20\n  \ud83d\udcbe Affiliate config written: 16 programs, Amazon tag=autonomoushum-20\n  \ud83d\udcc8 Commission potential: $640/month\n",
+      "elapsed": 0.9,
+      "stdout_tail": "P Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  \ud83d\udcbe Affiliate config written: 16 programs, Amazon tag=autonomoushum-20\n  \ud83d\udcc8 Commission potential: $640/month\n",
       "stderr_tail": ""
     },
     {
@@ -521,23 +519,23 @@
       "engine": "DEV_TO_PUBLISHER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.1,
-      "stdout_tail": "DEV_TO_PUBLISHER starting...\n  SKIP: DEVTO_API_KEY not set\n  To enable: add DEVTO_API_KEY to GitHub Secrets\n  Get one free at: https://dev.to/settings/extensions\n",
+      "elapsed": 0.3,
+      "stdout_tail": "DEV_TO_PUBLISHER starting...\n  Claude error: HTTP Error 400: Bad Request\n  HTTP ERROR 403: \n",
       "stderr_tail": ""
     },
     {
       "engine": "AGENT_TWEET_WRITER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.1,
-      "stdout_tail": "  [AGENT_TWEET_WRITER] Claude API error: No module named 'anthropic'\n  [AGENT_TWEET_WRITER] Added 1 tweet blocks to queue\n\u2705 AGENT_TWEET_WRITER (0.0s) \u2014 Added 1 tweet thread(s) to tweets_queue.txt\n",
+      "elapsed": 0.8,
+      "stdout_tail": "  [AGENT_TWEET_WRITER] Claude API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYyZRKaPWpoE7HUa7BkUA'}\n  [AGENT_TWEET_WRITER] Added 1 tweet blocks to queue\n\u2705 AGENT_TWEET_WRITER (0.67s) \u2014 Added 1 tweet thread(s) to tweets_queue.txt\n",
       "stderr_tail": ""
     },
     {
       "engine": "RESONANCE_CONVERTER",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.5,
+      "elapsed": 2.6,
       "stdout_tail": "RESONANCE_CONVERTER starting...\n  Resonance: 60/100 [LOUD]\n  First sale: not yet\n  Stars: 1 | Health: 40/100\n  Claude error: HTTP Error 400: Bad Request\n  Claude error: HTTP Error 400: Bad Request\n  Claude error: HTTP Error 400: Bad Request\n  Claude error: HTTP Error 400: Bad Request\n  Generated 0 asks \u2192 data/asks_queue.json\n  Total asks ever: 0\n  Pending: 0 | Posted: 0\n  HIGH PRIORITY: Queued immediate action for daemon (resonance=LOUD)\n",
       "stderr_tail": ""
     },
@@ -554,15 +552,15 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "KOFI_ENGINE cycle 86 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
+      "stdout_tail": "KOFI_ENGINE cycle 87 | $0.00 raised\n  Shop HTML updated\n  Gaza fund: $0.00 | Auto-loops: 0\n",
       "stderr_tail": ""
     },
     {
       "engine": "GUMROAD_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.1,
-      "stdout_tail": "GUMROAD_ENGINE running...\n  \u26a0\ufe0f  GUMROAD_SECRET not set \u2014 skipping\n  Fix: gumroad.com \u2192 Settings \u2192 Advanced \u2192 Applications \u2192 Generate Token\n",
+      "elapsed": 1.7,
+      "stdout_tail": "en Hour \u2014 Gaza Rose Gallery \u2014 HTTP Error 404: Not Found\n  \u274c Failed: Star of Hope Rising \u2014 Gaza Rose Gallery \u2014 HTTP Error 404: Not Found\n  \u274c Failed: SolarPunk AI Prompt Packs \u2014 HTTP Error 404: Not Found\n  \u274c Failed: SolarPunk GitHub Actions Templates \u2014 HTTP Error 404: Not Found\n  \u274c Failed: Notion Templates for Freelancers \u2014 AI Edition \u2014 HTTP Error 404: Not Found\n  \u274c Failed: Gaza Rose Gallery \u2014 7 Palestinian Art Prints Pack \u2014 HTTP Error 404: Not Found\n  \ud83d\udcca Published this cycle: 0 | Total live: 0/10\n",
       "stderr_tail": ""
     },
     {
@@ -570,7 +568,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "GITHUB_SPONSORS cycle 86 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
+      "stdout_tail": "GITHUB_SPONSORS cycle 87 | $0.00/mo\n  FUNDING.yml updated\n  Sponsor page updated\n",
       "stderr_tail": ""
     },
     {
@@ -578,7 +576,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 86 | matched: 0 | verified: $0.00\n",
+      "stdout_tail": "KOFI_PAYMENT_TRACKER cycle 87 | matched: 0 | verified: $0.00\n",
       "stderr_tail": ""
     },
     {
@@ -594,7 +592,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "HUMAN_PAYOUT running...\n  \u26a0\ufe0f  PAYPAL not configured\n  \u2192 developer.paypal.com \u2192 My Apps \u2192 Create App \u2192 copy keys \u2192 GitHub Secrets\n  \u2192 PAYPAL_CLIENT_ID + PAYPAL_CLIENT_SECRET + PAYPAL_MODE=sandbox\n  Total paid: $0.00 | \u2192 Gaza: $0.00\n  \u2705 docs/payouts.html updated\n",
+      "stdout_tail": "HUMAN_PAYOUT running...\n  PayPal mode: sandbox | Pending payouts: 0\n  Total paid: $0.00 | \u2192 Gaza: $0.00\n  \u2705 docs/payouts.html updated\n",
       "stderr_tail": ""
     },
     {
@@ -610,39 +608,39 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.1,
-      "stdout_tail": "PAYPAL_PAYOUT running...\n  \u26a0\ufe0f  PayPal credentials missing\n  HOW TO GET:\n  1. Go to developer.paypal.com > My Apps & Credentials\n  2. Create App (Business account) > copy Client ID + Secret\n  3. GitHub Secrets: PAYPAL_CLIENT_ID + PAYPAL_CLIENT_SECRET\n  4. Set PAYPAL_SANDBOX=true to test, false for real payouts\n",
+      "stdout_tail": "PAYPAL_PAYOUT running...\n  \u26a0\ufe0f  Meeko (Founder): PayPal email not set\n  \u2139\ufe0f  No contributors ready for payout (threshold: $1.00)\n  \ud83d\udcdd Update 'paypal_email' in data/contributor_registry.json to enable payouts\n",
       "stderr_tail": ""
     },
     {
       "engine": "SYNAPSE",
       "status": "ok",
       "code": 0,
-      "elapsed": 2.5,
-      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 95 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail sent: SolarPunk [40/100 -21] - 95 engines | $0.00 | 2026-03-12\nBrain state saved. Score: 40/100\n",
+      "elapsed": 1.4,
+      "stdout_tail": "SYNAPSE v2 - Resolver starting...\nStats: 95 engines | $0.00 | 0 cycles\nHealth score: 40/100\nEmail sent: SolarPunk [40/100 -26] - 95 engines | $0.00 | 2026-03-12\nBrain state saved. Score: 40/100\n",
       "stderr_tail": ""
     },
     {
       "engine": "SYNTHESIS_FACTORY",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "\ud83c\udfed SYNTHESIS_FACTORY gen 98 \u2014 using HuggingFace free AI\n   Existing engines: 95\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n   Nothing new synthesized this run\n",
+      "elapsed": 0.8,
+      "stdout_tail": "ror 404: Not Found\n  [AI] openrouter error: OpenRouter failed. Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n   Nothing new synthesized this run\n",
       "stderr_tail": ""
     },
     {
       "engine": "ARCHITECT",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "nts yet \u2014 need more promotion + task completion\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Plan written | Next engine: REDDIT_POSTER | Next niche: AI Side Income Blueprint\n",
+      "elapsed": 0.8,
+      "stdout_tail": "nRouter failed. Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Plan written | Next engine: REDDIT_POSTER | Next niche: AI Side Income Blueprint\n",
       "stderr_tail": ""
     },
     {
       "engine": "SELF_BUILDER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.9,
-      "stdout_tail": "nerating: REDDIT_POSTER\n  Purpose: Posts SolarPunk and Gaza Rose content to relevant subreddits on schedule, tracks\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  Code generation error: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Generation failed\n",
+      "elapsed": 1.4,
+      "stdout_tail": "-9b-it:free \u2014 HTTP Error 404: Not Found\n  [AI] openrouter error: OpenRouter failed. Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  Code generation error: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Generation failed\n",
       "stderr_tail": ""
     },
     {
@@ -657,16 +655,16 @@
       "engine": "KNOWLEDGE_WEAVER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.4,
-      "stdout_tail": "\u2014 synthesizing + auto-building...\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  No new engine spec returned by Claude\n  Total auto-built: 0 | Cycles: 67\nKNOWLEDGE_WEAVER done\n",
+      "elapsed": 1.0,
+      "stdout_tail": ". Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  No new engine spec returned by Claude\n  Total auto-built: 0 | Cycles: 68\nKNOWLEDGE_WEAVER done\n",
       "stderr_tail": ""
     },
     {
       "engine": "REVENUE_OPTIMIZER",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.7,
-      "stdout_tail": "l AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Actions: 0 | Product opt: no\nREVENUE_OPTIMIZER done\n",
+      "elapsed": 1.8,
+      "stdout_tail": "\n  [AI] openrouter error: OpenRouter failed. Last: HTTP Error 404: Not Found\n  [AI] anthropic error: HTTP Error 400: Bad Request\n  [AI] HF/Qwen2.5-72B-Instruct \u2014 410 Gone, skip\n  [AI] HF/Mistral-7B-Instruct-v0.3 \u2014 410 Gone, skip\n  [AI] HF/zephyr-7b-beta \u2014 410 Gone, skip\n  [AI] hf error: All HF models failed. Last: HTTP Error 410: Gone\n  [AI] ask_json parse failed: All AI backends failed. Last: All HF models failed. Last: HTTP Error 410: Gone\n  Actions: 0 | Product opt: no\nREVENUE_OPTIMIZER done\n",
       "stderr_tail": ""
     },
     {
@@ -697,16 +695,16 @@
       "engine": "BRIEFING_ENGINE",
       "status": "ok",
       "code": 0,
-      "elapsed": 0.3,
-      "stdout_tail": "BRIEFING_ENGINE cycle 40 | UTC hour: 17\n  Outside briefing windows (morning: 6-9 UTC, evening: 19-22 UTC)\n",
+      "elapsed": 0.4,
+      "stdout_tail": "BRIEFING_ENGINE cycle 41 | UTC hour: 17\n  Outside briefing windows (morning: 6-9 UTC, evening: 19-22 UTC)\n",
       "stderr_tail": ""
     },
     {
       "engine": "NIGHTLY_DIGEST",
       "status": "ok",
       "code": 0,
-      "elapsed": 1.3,
-      "stdout_tail": "NIGHTLY_DIGEST cycle 86\n  Nightly digest sent\n  Status page \u2192 docs/status.html\n",
+      "elapsed": 1.1,
+      "stdout_tail": "NIGHTLY_DIGEST cycle 87\n  Nightly digest sent\n  Status page \u2192 docs/status.html\n",
       "stderr_tail": ""
     },
     {
@@ -737,7 +735,7 @@
       "engine": "TASK_ATOMIZER",
       "status": "ok",
       "code": 0,
-      "elapsed": 3.3,
+      "elapsed": 3.8,
       "stdout_tail": "0 people to visit store.html this week\n  Claude error: HTTP Error 400: Bad Request \u2014 fallback\n  issue error: HTTP Error 403: Forbidden\n  issue error: HTTP Error 403: Forbidden\n  issue error: HTTP Error 403: Forbidden\n  issue error: HTTP Error 403: Forbidden\n  Detonating: Enable automatic Twitter posting from social queue\n  Claude error: HTTP Error 400: Bad Request \u2014 fallback\n  issue error: HTTP Error 403: Forbidden\n  issue error: HTTP Error 403: Forbidden\n  \u2705 9 atoms created\nTASK_ATOMIZER done.\n",
       "stderr_tail": ""
     },
@@ -746,7 +744,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "AUTONOMY_PROOF done.\n  80/81 engines | Health: 40 | Gaza: $0.00 | Outreach: 0 sent\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/proof.html\n",
+      "stdout_tail": "AUTONOMY_PROOF done.\n  81/81 engines | Health: 40 | Gaza: $0.00 | Outreach: 0 sent\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/proof.html\n",
       "stderr_tail": ""
     },
     {
@@ -754,7 +752,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "CLAUDE_ENGINE done.\n  Role: orchestrator (live) + intelligence layer (API)\n  Priorities: 1 blockers | Health: 40 | Revenue: $0.00\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/claude_briefing.html\n",
+      "stdout_tail": "CLAUDE_ENGINE done.\n  Role: orchestrator (live) + intelligence layer (API)\n  Priorities: 0 blockers | Health: 40 | Revenue: $0.00\n  \ud83c\udf10 https://meekotharaccoon-cell.github.io/meeko-nerve-center/claude_briefing.html\n",
       "stderr_tail": ""
     },
     {
@@ -762,7 +760,7 @@
       "status": "ok",
       "code": 0,
       "elapsed": 0.0,
-      "stdout_tail": "SELF_PORTRAIT done.\n  Cycle 0 | Health 40 | 95 engines | 55 portraits in log\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/self_portrait.html\n",
+      "stdout_tail": "SELF_PORTRAIT done.\n  Cycle 0 | Health 40 | 95 engines | 56 portraits in log\n  Live: https://meekotharaccoon-cell.github.io/meeko-nerve-center/self_portrait.html\n",
       "stderr_tail": ""
     },
     {
