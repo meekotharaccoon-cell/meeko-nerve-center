@@ -3,7 +3,8 @@
 AI_CLIENT.py — SolarPunk unified AI brain
 ==========================================
 Priority: ANTHROPIC (Claude sonnet-4-6) → HF fallback (confirmed live models)
-Dead models purged: Llama-3.1-8B, Phi-3.5-mini (both 410 Gone as of 2026-03)
+Dead models purged: Llama-3.1-8B, Phi-3.5-mini, Qwen2.5-72B, Mistral-7B-v0.3,
+  zephyr-7b-beta (all 410 Gone as of 2026-03)
 All engines import: ask(), ask_json(), ask_json_list(), ai_available(), ai_backend()
 """
 import os, json, requests
@@ -12,11 +13,11 @@ ANTHROPIC_KEY   = os.environ.get("ANTHROPIC_API_KEY", "")
 HF_TOKEN        = os.environ.get("HF_TOKEN", "")
 ANTHROPIC_MODEL = "claude-sonnet-4-6"
 
-# Only confirmed-working HF models (no 410s) — updated 2026-03
+# HF fallback models — refreshed 2026-03 (smaller, free-tier friendly)
 HF_MODELS = [
-    "Qwen/Qwen2.5-72B-Instruct",
-    "mistralai/Mistral-7B-Instruct-v0.3",
-    "HuggingFaceH4/zephyr-7b-beta",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "microsoft/Phi-4",
+    "google/gemma-2-9b-it",
 ]
 
 

@@ -75,6 +75,10 @@ revenue = rj("revenue_inbox.json")
 payout_ledger = rj("payout_ledger.json")
 flywheel = rj("flywheel_summary.json")
 
+# revenue_inbox.json may be a list of email records or a summary dict
+if isinstance(revenue, list):
+    revenue = {}
+
 total_revenue = (
     revenue.get("total_received", 0)
     or flywheel.get("total_revenue_usd", 0)
