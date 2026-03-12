@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-12T04:25:23.484836",
+  "last_checked": "2026-03-12T04:28:59.164438",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -39,6 +39,7 @@
     "ARCHITECT.py",
     "BOTTLENECK_SCANNER.py",
     "CONNECTION_FORGE.py",
+    "REPO_SPIDER.py",
     "REVENUE_OPTIMIZER.py",
     "HUMAN_PAYOUT.py",
     "AGENT_TWEET_WRITER.py",
@@ -73,6 +74,7 @@
     "ETSY_SEO_ENGINE.py",
     "DISPATCH_HANDLER.py",
     "LANDING_DEPLOYER.py",
+    "RESONANCE_CONVERTER.py",
     "SYNAPSE.py",
     "ART_GENERATOR.py",
     "RESONANCE_ENGINE.py",
