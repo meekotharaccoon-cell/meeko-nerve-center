@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
 """
-SYNAPSE v2 - Resolver
+SYNAPSE v3 - Resolver
 Reads NEURON_A+B outputs. Synthesizes final decisions. Sends OMNIBRAIN email.
 FIX: Gathers real stats directly from repo - never depends on empty A/B reports.
+v3: Uses AI_CLIENT (Groq → OpenRouter → Anthropic) so health score works even when
+    Anthropic credits are low.
 """
-import os, json, requests, smtplib
+import os, json, sys, requests, smtplib
 from pathlib import Path
 from datetime import datetime, timezone
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+sys.path.insert(0, str(Path(__file__).parent))
+try:
+    from AI_CLIENT import ask_json as _ai_ask_json, ai_available as _ai_available
+    AI_CLIENT_OK = True
+except ImportError:
+    AI_CLIENT_OK = False
 
 ANTHROPIC_API_KEY  = os.environ.get("ANTHROPIC_API_KEY","")
 GMAIL_ADDRESS      = os.environ.get("GMAIL_ADDRESS","")
@@ -43,16 +52,6 @@ def gather_real_stats():
             "prev_score":prev.get("health_score",0),"next_upgrade":nu[0],"next_upgrade_name":nu[1]}
 
 def call_claude(stats, a_report, b_report):
-    if not ANTHROPIC_API_KEY:
-        score = min(100, max(20, 20 + stats["engines_total"]*2 + stats["cycles"]))
-        return {
-            "health_score": score,
-            "top_actions": [o.get("action","") for o in a_report.get("opportunities",[])[:3]],
-            "synthesis": f"{stats['engines_total']} engines running, {stats['cycles']} autonomous cycles done. No API key - running on pure logic. First priority: add ANTHROPIC_API_KEY to GitHub Secrets to unlock full AI synthesis.",
-            "next_run_priority": b_report.get("refined_priority","Add ANTHROPIC_API_KEY to GitHub Secrets"),
-            "passive_income_progress": "Gaza Rose Gallery tracking active. GitHub Sponsors setup pending. Newsletter idea queued.",
-            "meeko_headline": f"{stats['engines_total']} engines autonomous"
-        }
     prompt = f"""You are SYNAPSE, resolver brain of SolarPunk. Synthesize everything into one clear decision.
 REAL STATS (ground truth): {stats['engines_total']} engines | {stats['data_files']} data files | ${stats['revenue']:.2f} revenue | {stats['cycles']} loop cycles | {stats['synth_built']} factory-built engines | prev score {stats['prev_score']}/100
 NEURON_A thesis: {a_report.get('builder_thesis','n/a')}
@@ -62,17 +61,42 @@ Vetted opportunities: {json.dumps(b_report.get('vetted_opportunities',[])[:3],in
 0=dead, 30=just started, 50=functional, 75=thriving, 100=self-sustaining passive income machine.
 Respond ONLY JSON (no markdown):
 {{"health_score":<int 0-100>,"top_actions":["a1","a2","a3"],"synthesis":"one paragraph - what is actually happening and what to do","next_run_priority":"single most important thing","passive_income_progress":"honest assessment","meeko_headline":"punchy subject line phrase"}}"""
-    try:
-        r = requests.post("https://api.anthropic.com/v1/messages",
-            headers={"x-api-key":ANTHROPIC_API_KEY,"Content-Type":"application/json","anthropic-version":"2023-06-01"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":800,"messages":[{"role":"user","content":prompt}]},
-            timeout=60)
-        r.raise_for_status()
-        text = r.json()["content"][0]["text"]
-        s,e = text.find("{"),text.rfind("}")+1
-        return json.loads(text[s:e]) if s>=0 else {}
-    except Exception as ex:
-        return {"health_score":40,"synthesis":str(ex),"top_actions":[]}
+
+    # Try AI_CLIENT first (Groq → OpenRouter → Anthropic) — free first, paid second
+    if AI_CLIENT_OK and _ai_available():
+        try:
+            result = _ai_ask_json(prompt, max_tokens=800)
+            if result and "health_score" in result:
+                print(f"  [SYNAPSE] AI_CLIENT synthesis done, score={result.get('health_score')}")
+                return result
+        except Exception as ex:
+            print(f"  [SYNAPSE] AI_CLIENT error: {ex}")
+
+    # Direct Anthropic fallback (legacy path)
+    if ANTHROPIC_API_KEY:
+        try:
+            r = requests.post("https://api.anthropic.com/v1/messages",
+                headers={"x-api-key":ANTHROPIC_API_KEY,"Content-Type":"application/json","anthropic-version":"2025-01-01"},
+                json={"model":"claude-sonnet-4-6","max_tokens":800,"messages":[{"role":"user","content":prompt}]},
+                timeout=60)
+            r.raise_for_status()
+            text = r.json()["content"][0]["text"]
+            s,e = text.find("{"),text.rfind("}")+1
+            if s >= 0:
+                return json.loads(text[s:e])
+        except Exception as ex:
+            print(f"  [SYNAPSE] Anthropic error: {ex}")
+
+    # Pure-logic fallback — no AI
+    score = min(100, max(20, 20 + stats["engines_total"]*2 + stats["cycles"]))
+    return {
+        "health_score": score,
+        "top_actions": [o.get("action","") for o in a_report.get("opportunities",[])[:3]],
+        "synthesis": f"{stats['engines_total']} engines running, {stats['cycles']} autonomous cycles done. AI unavailable — running on pure logic.",
+        "next_run_priority": b_report.get("refined_priority","Add GROQ_API_KEY to GitHub Secrets for free AI"),
+        "passive_income_progress": "Gaza Rose Gallery tracking active. GitHub Sponsors setup pending.",
+        "meeko_headline": f"{stats['engines_total']} engines autonomous"
+    }
 
 def build_email(stats, synthesis, a_report, b_report):
     score = synthesis.get("health_score",0)

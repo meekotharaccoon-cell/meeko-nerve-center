@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v19 — full autonomous self-expanding loop
+OMNIBUS v20 — full autonomous self-expanding loop
 ===================================================
+New in v20:
+  LOOP_BRAIN (L6) — coordinates SELF_BUILDER + KNOWLEDGE_WEAVER, reads what ran
+                    last cycle, plans what to build next, closes the feedback loop.
+                    Writes to architect_plan.json so builders use AI-prioritized ideas.
+
 New in v19:
   NEWSLETTER_ENGINE (L4) — auto-generate + send email newsletter, max 1/day
   ANALYTICS_ENGINE  (L1) — GitHub traffic: views, referrers, paths, trends
@@ -39,7 +44,7 @@ L4  SOCIAL_PROMOTER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
 L5  KOFI_ENGINE . GUMROAD_ENGINE . GITHUB_SPONSORS_ENGINE .
     KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
     CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT
-L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
+L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . LOOP_BRAIN . SELF_BUILDER .
     KNOWLEDGE_BRIDGE . KNOWLEDGE_WEAVER . REVENUE_OPTIMIZER . BIG_BRAIN_ORACLE .
     DESKTOP_DAEMON [local only] . CLAUDE_BRIDGE [local only]
 L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
@@ -268,6 +273,7 @@ def L6():
     eng("SYNAPSE",           timeout=120); save_ctx()
     eng("SYNTHESIS_FACTORY", timeout=120); save_ctx()
     eng("ARCHITECT",         timeout=120); save_ctx()
+    eng("LOOP_BRAIN",        timeout=60);  save_ctx()  # coordinates builders, closes feedback loop
     eng("SELF_BUILDER",      timeout=240); save_ctx()
     eng("KNOWLEDGE_BRIDGE",  timeout=60)
     eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()
@@ -326,7 +332,7 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v19 -- {ts}")
+    print(f"\nOMNIBUS v20 -- {ts}")
     print(f"   Run: {run_id}")
     print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow")
     print("=" * 60)
@@ -366,7 +372,7 @@ def run():
     first_contact_happened = fc.get("happened", False) if isinstance(fc, dict) else False
 
     manifest = {
-        "version":                "v19",
+        "version":                "v20",
         "run_id":                 run_id,
         "completed":              datetime.now(timezone.utc).isoformat(),
         "elapsed_s":              elapsed,
@@ -417,7 +423,7 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v19 done -- {elapsed}s")
+    print(f"OMNIBUS v20 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")

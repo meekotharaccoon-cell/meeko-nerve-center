@@ -68,7 +68,7 @@ def build_morning_email(d,prices,headlines):
     kofi_gaza=d.get("kofi",{}).get("total_to_gaza",0)
     sponsors_mo=d.get("sponsors",{}).get("total_monthly",0)
     health=d.get("brain",{}).get("health_score",0)
-    personal_emails=d.get("personal",[])[-3:] if isinstance(d.get("personal"),[]) else []
+    personal_emails=d.get("personal",[])[-3:] if isinstance(d.get("personal"),list) else []
 
     btc=prices.get("bitcoin",{}).get("usd","?")
     btc_chg=prices.get("bitcoin",{}).get("usd_24h_change",0)
@@ -130,7 +130,7 @@ GitHub: https://github.com/meekotharaccoon-cell/meeko-nerve-center
 def build_evening_report(d):
     """Everything SolarPunk did today + why"""
     email_log=d.get("email",{}).get("log",[])[-20:]
-    drafts=d.get("drafts",[])[-10:] if isinstance(d.get("drafts"),[]) else []
+    drafts=d.get("drafts",[])[-10:] if isinstance(d.get("drafts"),list) else []
     chains=d.get("applied",{}).get("email_chains",[])[-10:]
     scam_caught=d.get("scam",{}).get("scams_caught",0)
     kofi_events=d.get("kofi",{}).get("events",[])[-5:]
