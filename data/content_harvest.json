@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T02:46:44.220227+00:00",
+  "timestamp": "2026-03-12T07:40:27.441347+00:00",
   "sources": {
     "hackernews": [
       {
+        "title": "Returning to Rails in 2026",
+        "url": "https://www.markround.com/blog/2026/03/05/returning-to-rails-in-2026/",
+        "score": 36,
+        "source": "hackernews"
+      },
+      {
         "title": "Show HN: s@: decentralized social networking over static sites",
         "url": "http://satproto.org/",
-        "score": 47,
+        "score": 220,
         "source": "hackernews"
       },
       {
-        "title": "Temporal: A nine-year journey to fix time in JavaScript",
+        "title": "Temporal: The 9-year journey to fix time in JavaScript",
         "url": "https://bloomberg.github.io/js-blog/post/temporal/",
-        "score": 546,
+        "score": 638,
         "source": "hackernews"
       },
       {
-        "title": "Many SWE-bench-Passing PRs would not be merged",
-        "url": "https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/",
-        "score": 153,
+        "title": "SBCL: A Sanely-Bootstrappable Common Lisp (2008) [pdf]",
+        "url": "https://research.gold.ac.uk/id/eprint/2336/1/sbcl.pdf",
+        "score": 4,
         "source": "hackernews"
       },
       {
-        "title": "Don't post generated/AI-edited comments. HN is for conversation between humans",
-        "url": "https://news.ycombinator.com/newsguidelines.html#generated",
-        "score": 2885,
-        "source": "hackernews"
-      },
-      {
-        "title": "Making WebAssembly a first-class language on the Web",
-        "url": "https://hacks.mozilla.org/2026/02/making-webassembly-a-first-class-language-on-the-web/",
-        "score": 419,
+        "title": "WebPKI and You",
+        "url": "https://blog.brycekerley.net/2026/03/08/webpki-and-you.html",
+        "score": 31,
         "source": "hackernews"
       }
     ],
@@ -62,12 +62,24 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 10.3,
-    "vibe": "partly cloudy",
-    "code": 3,
+    "temp_c": 18.4,
+    "vibe": "sunny",
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
+    {
+      "word": "returning",
+      "count": 1
+    },
+    {
+      "word": "rails",
+      "count": 1
+    },
+    {
+      "word": "2026",
+      "count": 1
+    },
     {
       "word": "show",
       "count": 1
@@ -101,10 +113,6 @@
       "count": 1
     },
     {
-      "word": "nine",
-      "count": 1
-    },
-    {
       "word": "year",
       "count": 1
     },
@@ -121,38 +129,30 @@
       "count": 1
     },
     {
-      "word": "many",
+      "word": "sbcl:",
       "count": 1
     },
     {
-      "word": "bench",
+      "word": "sanely",
       "count": 1
     },
     {
-      "word": "passing",
+      "word": "bootstrappable",
       "count": 1
     },
     {
-      "word": "would",
+      "word": "common",
       "count": 1
     },
     {
-      "word": "merged",
-      "count": 1
-    },
-    {
-      "word": "don't",
-      "count": 1
-    },
-    {
-      "word": "post",
+      "word": "lisp",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Show HN: s@: decentralized social networking over static sit...' connects to Gaza resilience",
+      "hook": "How 'Returning to Rails in 2026...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

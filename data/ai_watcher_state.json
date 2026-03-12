@@ -1,5 +1,5 @@
 {
-  "cycles": 80,
+  "cycles": 81,
   "last_digest": "2026-03-05T11:39:35.984381+00:00",
   "discoveries": [
     {
@@ -1521,8 +1521,27 @@
         "Jmerc151/hive"
       ],
       "analysis": null
+    },
+    {
+      "ts": "2026-03-12T07:40:31.213141+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "sooyeon1/pfsp_llama8b_default_r64_ep2_template",
+        "inferencerlabs/NVIDIA-Nemotron-3-Super-120B-A12B-MLX-9bit",
+        "mradermacher/Neuron-14B-i1-GGUF"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Jmerc151/hive"
+      ],
+      "analysis": null
     }
   ],
   "upgrade_proposals": [],
-  "last_run": "2026-03-12T02:46:47.685819+00:00"
+  "last_run": "2026-03-12T07:40:30.651210+00:00"
 }

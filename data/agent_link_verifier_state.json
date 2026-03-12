@@ -1,12 +1,12 @@
 {
   "status": "ok",
   "summary": "15 ok, 0 broken, 0 stubs created",
-  "ts": "2026-03-12T02:46:43.481455+00:00",
+  "ts": "2026-03-12T07:40:26.541011+00:00",
   "pages_ok": 15,
   "pages_broken": 0,
   "stubs_created": [],
   "broken_detail": [],
   "agent": "AGENT_LINK_VERIFIER",
-  "elapsed": 0.87,
+  "elapsed": 0.73,
   "log": []
 }

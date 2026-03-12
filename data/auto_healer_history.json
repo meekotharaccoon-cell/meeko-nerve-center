@@ -1,20 +1,5 @@
 [
   {
-    "timestamp": "2026-03-06T02:10:53.854421+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BOTTLENECK_SCANNER",
-      "STORE_BUILDER",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BOTTLENECK_SCANNER",
-      "STORE_BUILDER",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-06T07:43:50.891961+00:00",
     "healed": [],
     "auto_installed": [],
@@ -608,6 +593,17 @@
   },
   {
     "timestamp": "2026-03-12T02:46:42.506469+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "BRAND_LEGAL"
+    ],
+    "failed_engines_seen": [
+      "BRAND_LEGAL"
+    ]
+  },
+  {
+    "timestamp": "2026-03-12T07:40:25.712863+00:00",
     "healed": [],
     "auto_installed": [],
     "skipped": [
