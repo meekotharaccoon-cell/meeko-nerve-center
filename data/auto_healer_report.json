@@ -1,11 +1,15 @@
 {
-  "timestamp": "2026-03-12T07:40:25.712863+00:00",
+  "timestamp": "2026-03-12T08:00:03.950471+00:00",
   "healed": [],
   "auto_installed": [],
   "skipped": [
-    "BRAND_LEGAL"
+    "BRIEFING_ENGINE",
+    "BRAND_LEGAL",
+    "RSS_PUBLISHER"
   ],
   "failed_engines_seen": [
-    "BRAND_LEGAL"
+    "BRIEFING_ENGINE",
+    "BRAND_LEGAL",
+    "RSS_PUBLISHER"
   ]
 }

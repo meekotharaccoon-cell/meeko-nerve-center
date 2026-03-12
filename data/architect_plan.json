@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-12T07:41:16.768908+00:00",
+  "generated_at": "2026-03-12T08:00:58.271379+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -20,6 +20,9 @@
       "CRYPTO_WATCHER",
       "FREE_API_ENGINE",
       "RESONANCE_ENGINE",
+      "ANALYTICS_ENGINE",
+      "REPO_SPIDER",
+      "FORK_SCANNER",
       "FIRST_CONTACT",
       "NEURON_A",
       "NEURON_B",
@@ -52,6 +55,8 @@
       "VIRALITY_ENGINE",
       "DEV_TO_PUBLISHER",
       "AGENT_TWEET_WRITER",
+      "RESONANCE_CONVERTER",
+      "NEWSLETTER_ENGINE",
       "KOFI_ENGINE",
       "GUMROAD_ENGINE",
       "GITHUB_SPONSORS_ENGINE",
@@ -70,7 +75,6 @@
       "BIG_BRAIN_ORACLE",
       "MEMORY_PALACE",
       "README_GENERATOR",
-      "BRIEFING_ENGINE",
       "NIGHTLY_DIGEST",
       "ISSUE_SYNC",
       "SOLARPUNK_LEGAL",
@@ -80,16 +84,18 @@
       "SELF_PORTRAIT"
     ],
     "engines_failed": [
-      "BRAND_LEGAL"
+      "BRIEFING_ENGINE",
+      "BRAND_LEGAL",
+      "RSS_PUBLISHER"
     ],
     "engines_skipped": [],
     "exchange_tasks": 0,
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 81,
+    "businesses_built": 82,
     "engines_built": 0,
-    "revenue_potential": 56540,
+    "revenue_potential": 57280,
     "active_revenue_streams": [
       "substack"
     ]

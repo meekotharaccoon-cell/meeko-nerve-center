@@ -43,5 +43,50 @@
     "idea": "Build TELEGRAM_BOT engine inspired by awesome-openclaw \u2014 notify via Telegram on revenue/milestones",
     "source_repo": "SamurAIGPT/awesome-openclaw",
     "stars": 780
+  },
+  {
+    "idea": "Build WEBHOOK_RECEIVER engine inspired by n8n-workflow-builder (500\u2605) \u2014 receives HTTP webhooks, routes to relevant engines",
+    "source_repo": "makafeli/n8n-workflow-builder",
+    "stars": 500
+  },
+  {
+    "idea": "Build SOLARPUNK_CLI inspired by gemini-flow \u2014 terminal dashboard showing live system state",
+    "source_repo": "clduab11/gemini-flow",
+    "stars": 374
+  },
+  {
+    "idea": "Build DISCORD_BOT engine inspired by PocketFlow-Tutorial-Codebase-Knowledge \u2014 post updates to a Discord server",
+    "source_repo": "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+    "stars": 12133
+  },
+  {
+    "idea": "Build SOLARPUNK_CLI inspired by tiledesk-server \u2014 terminal dashboard showing live system state",
+    "source_repo": "Tiledesk/tiledesk-server",
+    "stars": 376
+  },
+  {
+    "idea": "Build MONETIZATION_ENGINE inspired by saasify (1163\u2605) \u2014 The easiest way to monetize your API. \ud83d\ude80",
+    "source_repo": "saasify-sh/saasify",
+    "stars": 1163
+  },
+  {
+    "idea": "Build TELEGRAM_BOT engine inspired by awesome-openclaw-agents \u2014 notify via Telegram on revenue/milestones",
+    "source_repo": "mergisi/awesome-openclaw-agents",
+    "stars": 299
+  },
+  {
+    "idea": "Build TELEGRAM_BOT engine inspired by agent-second-brain \u2014 notify via Telegram on revenue/milestones",
+    "source_repo": "smixs/agent-second-brain",
+    "stars": 170
+  },
+  {
+    "idea": "Build DISCORD_BOT engine inspired by CoWork-OS \u2014 post updates to a Discord server",
+    "source_repo": "CoWork-OS/CoWork-OS",
+    "stars": 141
+  },
+  {
+    "idea": "Build TELEGRAM_BOT engine inspired by CoWork-OS \u2014 notify via Telegram on revenue/milestones",
+    "source_repo": "CoWork-OS/CoWork-OS",
+    "stars": 141
   }
 ]
