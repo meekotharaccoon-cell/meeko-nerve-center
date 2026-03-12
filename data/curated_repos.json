@@ -1,0 +1,217 @@
+{
+  "generated": "2026-03-12",
+  "note": "Curated list of highest-rated GitHub repos for autonomous agent patterns. Read by KNOWLEDGE_WEAVER every cycle to inject context about external best practices. Updated by REPO_SPIDER when new high-value repos are discovered.",
+  "categories": {
+    "autonomous_agents": {
+      "description": "Self-running agents that loop, plan, execute, self-correct",
+      "repos": [
+        {
+          "full_name": "Significant-Gravitas/AutoGPT",
+          "stars": 170000,
+          "license": "mit",
+          "relevance_to_solarpunk": "CRITICAL — core loop pattern: Plan → Execute → Observe → Repeat. Their 'continuous mode' is exactly what OMNIBUS does. Study their error-recovery and task-chaining for SELF_BUILDER improvements.",
+          "extract_patterns": ["continuous_loop", "task_queue", "error_recovery", "plugin_system"],
+          "integration_idea": "Adopt their plugin/skill registration pattern for SolarPunk engines"
+        },
+        {
+          "full_name": "microsoft/autogen",
+          "stars": 40000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — multi-agent conversation where agents delegate to each other. Pattern: KNOWLEDGE_WEAVER could spawn sub-agents that converse to refine code before writing it.",
+          "extract_patterns": ["agent_conversation", "code_execution_agent", "user_proxy", "group_chat"],
+          "integration_idea": "Use conversation pattern in SELF_BUILDER: have a 'critic' agent review generated code before it's written"
+        },
+        {
+          "full_name": "crewAIInc/crewAI",
+          "stars": 28000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — role-based crew coordination. Pattern: assign roles (Researcher, Writer, Publisher) — maps directly to SolarPunk's CONTENT_HARVESTER → SYNTHESIS_FACTORY → STORE_BUILDER pipeline.",
+          "extract_patterns": ["role_assignment", "task_delegation", "sequential_crew", "parallel_crew"],
+          "integration_idea": "Model OMNIBUS task ordering after crewAI's sequential/parallel execution modes"
+        },
+        {
+          "full_name": "geekan/MetaGPT",
+          "stars": 48000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — LLM 'software company': PM → Architect → Engineer → QA all run as agents. KNOWLEDGE_WEAVER could use this pattern to have Claude review its own generated code.",
+          "extract_patterns": ["software_company_roles", "document_driven_dev", "code_review_loop"],
+          "integration_idea": "Add a code-review pass in KNOWLEDGE_WEAVER before writing generated engine to disk"
+        }
+      ]
+    },
+    "memory_and_persistence": {
+      "description": "Agents with persistent memory across sessions — key for SolarPunk's cross-cycle learning",
+      "repos": [
+        {
+          "full_name": "mem0ai/mem0",
+          "stars": 25000,
+          "license": "apache-2.0",
+          "relevance_to_solarpunk": "CRITICAL — persistent memory layer for AI agents. SolarPunk's brain_state.json is a manual version of this. mem0's auto-extraction pattern (what to remember vs forget) should inform MEMORY_PALACE.",
+          "extract_patterns": ["memory_extraction", "memory_search", "memory_update", "forgetting_curve"],
+          "integration_idea": "Enhance MEMORY_PALACE to auto-extract key facts from every engine run, not just log raw JSON"
+        },
+        {
+          "full_name": "letta-ai/letta",
+          "stars": 15000,
+          "license": "apache-2.0",
+          "relevance_to_solarpunk": "HIGH — stateful LLM agents with 'archival memory'. Their in-context memory management pattern prevents context window overflow — critical for KNOWLEDGE_WEAVER's growing prompt.",
+          "extract_patterns": ["archival_memory", "context_management", "memory_compression"],
+          "integration_idea": "KNOWLEDGE_WEAVER's snapshot should compress old cycle data like Letta's archival memory"
+        }
+      ]
+    },
+    "multi_model_routing": {
+      "description": "Resilient AI backends — directly applicable to AI_CLIENT.py's Anthropic->HF fallback",
+      "repos": [
+        {
+          "full_name": "BerriAI/litellm",
+          "stars": 16000,
+          "license": "mit",
+          "relevance_to_solarpunk": "CRITICAL — unified LLM API for 100+ providers. AI_CLIENT.py's manual fallback logic is a tiny subset of what litellm does. Adopt their retry/fallback/load-balancing patterns.",
+          "extract_patterns": ["provider_fallback", "retry_logic", "rate_limit_handling", "model_aliases"],
+          "integration_idea": "Replace AI_CLIENT.py's manual fallback with litellm-style provider list + automatic retry",
+          "quick_win": "Add retry with exponential backoff to _ask_anthropic() — fixes the 400 transient errors"
+        },
+        {
+          "full_name": "openai/openai-python",
+          "stars": 24000,
+          "license": "apache-2.0",
+          "relevance_to_solarpunk": "MEDIUM — study their streaming + retry patterns for AI_CLIENT",
+          "extract_patterns": ["streaming_responses", "retry_decorator", "async_client"]
+        }
+      ]
+    },
+    "workflow_automation": {
+      "description": "Orchestration engines that run complex pipelines — applicable to OMNIBUS",
+      "repos": [
+        {
+          "full_name": "n8n-io/n8n",
+          "stars": 52000,
+          "license": "fair-code",
+          "relevance_to_solarpunk": "HIGH — visual workflow automation. Study their node connection model and error handling. Their 'continue on fail' pattern should be in OMNIBUS.",
+          "extract_patterns": ["node_connections", "error_handling", "conditional_routing", "webhook_triggers"],
+          "integration_idea": "OMNIBUS should support conditional engine skipping based on previous engine output"
+        },
+        {
+          "full_name": "activepieces/activepieces",
+          "stars": 14000,
+          "license": "mit",
+          "relevance_to_solarpunk": "MEDIUM — open-source Zapier. Their piece/connector pattern maps to SolarPunk engines.",
+          "extract_patterns": ["piece_interface", "connection_auth", "trigger_polling"]
+        },
+        {
+          "full_name": "langchain-ai/langgraph",
+          "stars": 10000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — graph-based agent execution. Nodes = engines, edges = data flow. This is exactly what KNOWLEDGE_BRIDGE is mapping! Use LangGraph's cycle detection + conditional edges.",
+          "extract_patterns": ["state_graph", "conditional_edges", "human_in_loop", "streaming_state"],
+          "integration_idea": "Model KNOWLEDGE_BRIDGE's gap analysis after LangGraph's edge definition to auto-wire missing connections"
+        }
+      ]
+    },
+    "code_agents": {
+      "description": "Agents that write, test, and deploy their own code — directly relevant to SELF_BUILDER",
+      "repos": [
+        {
+          "full_name": "princeton-nlp/SWE-agent",
+          "stars": 15000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — agent that fixes GitHub issues autonomously. Their 'ACI' (Agent-Computer Interface) pattern gives SELF_BUILDER a model for how to read+edit code safely.",
+          "extract_patterns": ["file_viewer", "code_editor", "bash_runner", "lint_check"],
+          "integration_idea": "SELF_BUILDER should lint-check generated code before writing (add a compile() + pyflakes pass)"
+        },
+        {
+          "full_name": "All-Hands-AI/OpenHands",
+          "stars": 38000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — full dev agent with sandboxed execution. Their event-stream architecture for agent actions is a mature version of OMNIBUS's engine sequence.",
+          "extract_patterns": ["event_stream", "sandboxed_exec", "agent_delegation", "memory_condenser"]
+        },
+        {
+          "full_name": "aider-chat/aider",
+          "stars": 22000,
+          "license": "apache-2.0",
+          "relevance_to_solarpunk": "MEDIUM — AI pair programmer. Their repo-map (understanding code structure before editing) should inform KNOWLEDGE_WEAVER's context snapshot.",
+          "extract_patterns": ["repo_map", "diff_editing", "context_window_management"]
+        }
+      ]
+    },
+    "knowledge_and_rag": {
+      "description": "Retrieval and knowledge management — for KNOWLEDGE_WEAVER and MEMORY_PALACE",
+      "repos": [
+        {
+          "full_name": "run-llama/llama_index",
+          "stars": 38000,
+          "license": "mit",
+          "relevance_to_solarpunk": "HIGH — data framework for LLMs. Their document indexing + query engine is what KNOWLEDGE_WEAVER needs to search across all engine code and data files.",
+          "extract_patterns": ["document_index", "retrieval_pipeline", "query_engine", "data_connectors"],
+          "integration_idea": "KNOWLEDGE_WEAVER's snapshot is just raw JSON — add vector-search over data/ for smarter gap detection"
+        },
+        {
+          "full_name": "microsoft/graphrag",
+          "stars": 22000,
+          "license": "mit",
+          "relevance_to_solarpunk": "MEDIUM — graph-based knowledge retrieval. Maps relationships between concepts. Could power a smarter KNOWLEDGE_BRIDGE that understands semantic connections, not just file I/O.",
+          "extract_patterns": ["community_detection", "entity_extraction", "knowledge_graph"]
+        }
+      ]
+    },
+    "github_actions_automation": {
+      "description": "Patterns for the GitHub Actions infrastructure SolarPunk runs on",
+      "repos": [
+        {
+          "full_name": "nektos/act",
+          "stars": 57000,
+          "license": "mit",
+          "relevance_to_solarpunk": "MEDIUM — run GitHub Actions locally. Useful for testing OMNIBUS without pushing.",
+          "extract_patterns": ["local_runner", "secret_injection", "matrix_strategy"]
+        },
+        {
+          "full_name": "dorny/paths-filter",
+          "stars": 2000,
+          "license": "mit",
+          "relevance_to_solarpunk": "LOW — run workflows only when relevant files change. Could reduce Actions minutes.",
+          "extract_patterns": ["path_filtering", "change_detection"]
+        }
+      ]
+    },
+    "revenue_and_distribution": {
+      "description": "Open-source patterns for content distribution and monetization",
+      "repos": [
+        {
+          "full_name": "formbricks/formbricks",
+          "stars": 9000,
+          "license": "agpl",
+          "relevance_to_solarpunk": "MEDIUM — open-source survey/feedback. Study their webhook pattern for DISPATCH_HANDLER.",
+          "extract_patterns": ["webhook_payload", "event_routing"]
+        },
+        {
+          "full_name": "calcom/cal.com",
+          "stars": 33000,
+          "license": "agpl",
+          "relevance_to_solarpunk": "LOW — scheduling. Their booking webhook could feed EMAIL_AGENT_EXCHANGE.",
+          "extract_patterns": ["booking_webhook", "availability_api"]
+        }
+      ]
+    }
+  },
+  "priority_for_solarpunk": [
+    "Significant-Gravitas/AutoGPT",
+    "BerriAI/litellm",
+    "mem0ai/mem0",
+    "microsoft/autogen",
+    "langchain-ai/langgraph",
+    "crewAIInc/crewAI",
+    "princeton-nlp/SWE-agent",
+    "All-Hands-AI/OpenHands",
+    "run-llama/llama_index",
+    "geekan/MetaGPT"
+  ],
+  "immediate_wins": [
+    "Add retry with exponential backoff to AI_CLIENT._ask_anthropic() — pattern from litellm",
+    "Add code-review pass in KNOWLEDGE_WEAVER before writing engine — pattern from MetaGPT",
+    "Compress KNOWLEDGE_WEAVER context snapshot — pattern from Letta archival memory",
+    "Add conditional engine skipping in OMNIBUS — pattern from n8n 'continue on fail'",
+    "Enhance REPO_SPIDER to target these priority repos by name, not just topic search"
+  ]
+}

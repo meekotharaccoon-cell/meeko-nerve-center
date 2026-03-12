@@ -48,6 +48,32 @@ SPIDER_TOPICS = [
     "solarpunk",
     "agentic-ai",
     "llm-agent",
+    "multi-agent",
+    "self-healing",
+    "llm-orchestration",
+    "agent-memory",
+]
+
+# Curated high-value repos to check every cycle regardless of topic search.
+# These are known-great repos whose patterns KNOWLEDGE_WEAVER should absorb.
+PRIORITY_REPOS = [
+    # Autonomous agents & self-building
+    "Significant-Gravitas/AutoGPT",
+    "microsoft/autogen",
+    "crewAIInc/crewAI",
+    "geekan/MetaGPT",
+    "All-Hands-AI/OpenHands",
+    "princeton-nlp/SWE-agent",
+    # Memory & persistence
+    "mem0ai/mem0",
+    "letta-ai/letta",
+    # Multi-model routing (directly applicable to AI_CLIENT.py)
+    "BerriAI/litellm",
+    # Orchestration
+    "langchain-ai/langgraph",
+    "n8n-io/n8n",
+    # Knowledge & RAG
+    "run-llama/llama_index",
 ]
 
 
@@ -200,6 +226,59 @@ def queue_ideas(ideas):
     QUEUE.write_text(json.dumps(existing[-50:], indent=2))
 
 
+def check_priority_repos(processed_set):
+    """
+    Fetch each curated priority repo by full name and harvest its README + ideas.
+    Unlike topic search (reactive), this is proactive: we always learn from
+    the best repos each cycle, regardless of whether they match a topic keyword.
+    Returns (candidates, ideas) to merge with topic-search results.
+    """
+    candidates = []
+    ideas = []
+
+    # Load curated notes for richer idea context
+    curated_notes = {}
+    try:
+        curated = json.loads((DATA / "curated_repos.json").read_text())
+        for cat in curated.get("categories", {}).values():
+            for r in cat.get("repos", []):
+                curated_notes[r["full_name"]] = r.get("integration_idea", "")
+    except Exception:
+        pass
+
+    for full_name in PRIORITY_REPOS:
+        if full_name in processed_set:
+            continue
+        owner, repo_name = full_name.split("/", 1)
+        repo = gh(f"/repos/{owner}/{repo_name}")
+        if not repo or "id" not in repo:
+            continue
+        license_key = (repo.get("license") or {}).get("spdx_id", "").lower()
+        stars = repo.get("stargazers_count", 0)
+        score = score_repo(repo)
+        candidates.append((score, repo))
+
+        # Deep README harvest → richer engine ideas
+        readme = get_readme(owner, repo_name)
+        base_ideas = extract_engine_ideas(repo, readme)
+
+        # Inject curated integration note as an additional idea
+        note = curated_notes.get(full_name, "")
+        if note and stars > 1000:
+            base_ideas.append({
+                "idea": f"[PRIORITY REPO {full_name} {stars}★] {note}",
+                "source_repo": full_name,
+                "stars": stars,
+                "type": "integration_pattern",
+            })
+
+        ideas.extend(base_ideas)
+        print(f"  [PRIORITY] {full_name} (score={score}, stars={stars}, ideas={len(base_ideas)})")
+        time.sleep(0.3)
+
+    return candidates, ideas
+
+
 def run():
     print("REPO_SPIDER starting...")
     state = load_state()
@@ -213,7 +292,14 @@ def run():
     all_candidates = []
     all_ideas = []
 
-    # Search each topic
+    # ── Phase 1: Check priority curated repos first (proactive, expert-selected)
+    print(f"  Checking {len(PRIORITY_REPOS)} priority repos...")
+    priority_candidates, priority_ideas = check_priority_repos(processed_set)
+    all_candidates.extend(priority_candidates)
+    all_ideas.extend(priority_ideas)
+    print(f"  Priority pass: {len(priority_candidates)} repos, {len(priority_ideas)} ideas")
+
+    # ── Phase 2: Search each topic (reactive, keyword-based)
     for topic in SPIDER_TOPICS:
         repos = search_repos(topic, min_stars=50)
         for r in repos:

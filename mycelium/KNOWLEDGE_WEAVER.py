@@ -42,6 +42,7 @@ def read_snapshot():
         "free_api_state.json", "bottleneck_report.json", "flywheel_summary.json",
         "revenue_loop_last.json", "architect_plan.json", "self_builder_state.json",
         "business_factory_state.json", "secrets_checker_state.json",
+        "curated_repos.json",
     ]:
         f = DATA / fname
         if f.exists():
