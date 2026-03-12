@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T16:10:28.425260+00:00",
+  "timestamp": "2026-03-12T17:07:07.188521+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Malus \u2013 Clean Room as a Service",
         "url": "https://malus.sh",
-        "score": 233,
-        "source": "hackernews"
-      },
-      {
-        "title": "US banks' exposure to private credit hits $300B (2025)",
-        "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
-        "score": 126,
-        "source": "hackernews"
-      },
-      {
-        "title": "Kotlin creator's new language: a formal way to talk to LLMs instead of English",
-        "url": "https://codespeak.dev/",
-        "score": 81,
+        "score": 412,
         "source": "hackernews"
       },
       {
         "title": "The Met Releases High-Def 3D Scans of 140 Famous Art Objects",
         "url": "https://www.openculture.com/2026/03/the-met-releases-high-definition-3d-scans-of-140-famous-art-objects.html",
-        "score": 11,
+        "score": 58,
         "source": "hackernews"
       },
       {
-        "title": "Dolphin Progress Release 2603",
-        "url": "https://dolphin-emu.org/blog/2026/03/12/dolphin-progress-report-release-2603/",
-        "score": 199,
+        "title": "Show HN: OneCLI \u2013 Vault for AI Agents in Rust",
+        "url": "https://github.com/onecli/onecli",
+        "score": 8,
+        "source": "hackernews"
+      },
+      {
+        "title": "US banks' exposure to private credit hits $300B (2025)",
+        "url": "https://alternativecreditinvestor.com/2025/10/22/us-banks-exposure-to-private-credit-hits-300bn/",
+        "score": 154,
+        "source": "hackernews"
+      },
+      {
+        "title": "Kotlin creator's new language: a formal way to talk to LLMs instead of English",
+        "url": "https://codespeak.dev/",
+        "score": 128,
         "source": "hackernews"
       }
     ],
@@ -62,7 +62,7 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 16.7,
+    "temp_c": 15.3,
     "vibe": "sunny",
     "code": 0,
     "location": "Gaza City"
@@ -82,6 +82,46 @@
     },
     {
       "word": "service",
+      "count": 1
+    },
+    {
+      "word": "releases",
+      "count": 1
+    },
+    {
+      "word": "high",
+      "count": 1
+    },
+    {
+      "word": "scans",
+      "count": 1
+    },
+    {
+      "word": "famous",
+      "count": 1
+    },
+    {
+      "word": "objects",
+      "count": 1
+    },
+    {
+      "word": "show",
+      "count": 1
+    },
+    {
+      "word": "onecli",
+      "count": 1
+    },
+    {
+      "word": "vault",
+      "count": 1
+    },
+    {
+      "word": "agents",
+      "count": 1
+    },
+    {
+      "word": "rust",
       "count": 1
     },
     {
@@ -106,46 +146,6 @@
     },
     {
       "word": "$300b",
-      "count": 1
-    },
-    {
-      "word": "2025",
-      "count": 1
-    },
-    {
-      "word": "kotlin",
-      "count": 1
-    },
-    {
-      "word": "creator's",
-      "count": 1
-    },
-    {
-      "word": "language:",
-      "count": 1
-    },
-    {
-      "word": "formal",
-      "count": 1
-    },
-    {
-      "word": "talk",
-      "count": 1
-    },
-    {
-      "word": "llms",
-      "count": 1
-    },
-    {
-      "word": "instead",
-      "count": 1
-    },
-    {
-      "word": "english",
-      "count": 1
-    },
-    {
-      "word": "releases",
       "count": 1
     }
   ],

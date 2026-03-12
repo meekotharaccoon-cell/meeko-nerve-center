@@ -1,16 +1,5 @@
 [
   {
-    "timestamp": "2026-03-06T19:38:14.442220+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-06T19:39:19.058900+00:00",
     "healed": [],
     "auto_installed": [],
@@ -613,6 +602,17 @@
     "failed_engines_seen": [
       "BRAND_LEGAL",
       "RSS_PUBLISHER"
+    ]
+  },
+  {
+    "timestamp": "2026-03-12T17:06:48.688796+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "EMAIL_BRAIN"
+    ],
+    "failed_engines_seen": [
+      "EMAIL_BRAIN"
     ]
   }
 ]

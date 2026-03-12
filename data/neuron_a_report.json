@@ -169,6 +169,7 @@
       "auto_healer_report.json",
       "bottleneck_report.json",
       "brain_state.json",
+      "brand_legal_state.json",
       "bridge_state.json",
       "briefing_state.json",
       "business_ai_prompt_packs.json",
@@ -258,6 +259,7 @@
       "revenue_loop_history.json",
       "revenue_loop_last.json",
       "revenue_optimizer_state.json",
+      "rss_publisher_state.json",
       "scam_shield_state.json",
       "secrets_checker_state.json",
       "self_builder_queue.json",
@@ -279,7 +281,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-12T16:10:58.943453+00:00"
+    "timestamp": "2026-03-12T17:07:38.185369+00:00"
   },
-  "generated_at": "2026-03-12T16:10:59.783032+00:00"
+  "generated_at": "2026-03-12T17:07:38.468718+00:00"
 }

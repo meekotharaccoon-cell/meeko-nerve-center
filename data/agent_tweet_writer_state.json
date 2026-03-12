@@ -2,12 +2,12 @@
   "status": "ok",
   "summary": "Added 1 tweet thread(s) to tweets_queue.txt",
   "tweet_blocks_added": 1,
-  "queue_size_bytes": 13690,
+  "queue_size_bytes": 14671,
   "agent": "AGENT_TWEET_WRITER",
-  "elapsed": 0.6,
-  "ts": "2026-03-12T16:11:11.558336+00:00",
+  "elapsed": 0.0,
+  "ts": "2026-03-12T17:07:50.208058+00:00",
   "log": [
-    "[AGENT_TWEET_WRITER] Claude API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CYyUjgtDghfkJMMQUZdcZ'}",
+    "[AGENT_TWEET_WRITER] Claude API error: No module named 'anthropic'",
     "[AGENT_TWEET_WRITER] Added 1 tweet blocks to queue"
   ]
 }

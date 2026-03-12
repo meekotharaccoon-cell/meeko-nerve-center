@@ -6,8 +6,15 @@
     <atom:link href="https://meekotharaccoon-cell.github.io/meeko-nerve-center/feed.xml" rel="self" type="application/rss+xml" />
     <description>Live updates from SolarPunk: autonomous AI building revenue for Palestinian relief.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Mar 2026 16:11:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 17:08:07 +0000</lastBuildDate>
     <managingEditor>meekotharaccoon@gmail.com (Meeko)</managingEditor>
+    <item>
+      <title>Cycle #51: Health 40/100</title>
+      <link>https://meekotharaccoon-cell.github.io/meeko-nerve-center/status.html</link>
+      <description>SolarPunk cycle. Health: 40/100. Revenue: $0.00. Engines built: none. 15% to PCRF (Palestinian relief).</description>
+      <pubDate>Thu, 12 Mar 2026 16:11:29 +0000</pubDate>
+      <guid isPermaLink="false">cycle-51</guid>
+    </item>
     <item>
       <title>Cycle #51: Health 40/100</title>
       <link>https://meekotharaccoon-cell.github.io/meeko-nerve-center/status.html</link>
@@ -35,13 +42,6 @@
       <description>SolarPunk cycle. Health: 40/100. Revenue: $0.00. Engines built: none. 15% to PCRF (Palestinian relief).</description>
       <pubDate>Thu, 12 Mar 2026 07:41:24 +0000</pubDate>
       <guid isPermaLink="false">cycle-50</guid>
-    </item>
-    <item>
-      <title>Cycle #49: Health 40/100</title>
-      <link>https://meekotharaccoon-cell.github.io/meeko-nerve-center/status.html</link>
-      <description>SolarPunk cycle. Health: 40/100. Revenue: $0.00. Engines built: none. 15% to PCRF (Palestinian relief).</description>
-      <pubDate>Thu, 12 Mar 2026 02:47:15 +0000</pubDate>
-      <guid isPermaLink="false">cycle-49</guid>
     </item>
   </channel>
 </rss>
