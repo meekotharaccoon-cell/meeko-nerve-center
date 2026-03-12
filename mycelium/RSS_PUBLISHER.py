@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 """
 RSS_PUBLISHER — publish RSS feed from newsletter archive + cycle history
-
-Generates docs/feed.xml — valid RSS 2.0.
-Anyone can subscribe in Feedly, Reeder, etc.
-Zero-cost distribution channel.
+FIX: newsletter_archive.json can be a dict or a list. Handle both.
 """
 import json
 from pathlib import Path
@@ -20,7 +17,7 @@ BASE  = "https://meekotharaccoon-cell.github.io/meeko-nerve-center"
 
 def rj(path, fb=None):
     try: return json.loads(Path(path).read_text())
-    except: return fb or {}
+    except: return fb
 
 
 def rfc822(iso_ts):
@@ -33,8 +30,19 @@ def rfc822(iso_ts):
 
 def build_items():
     items = []
-    archive = rj(DATA / "newsletter_archive.json", [])
+
+    # FIX: archive.json can be a dict {"newsletters": [...]} or a raw list or empty dict
+    raw = rj(DATA / "newsletter_archive.json", [])
+    if isinstance(raw, dict):
+        archive = raw.get("newsletters", [])
+    elif isinstance(raw, list):
+        archive = raw
+    else:
+        archive = []
+
     for entry in reversed(archive[-10:]):
+        if not isinstance(entry, dict):
+            continue
         items.append({
             "title": escape(entry.get("subject", "SolarPunk Update")),
             "link":  f"{BASE}/index.html",
@@ -46,16 +54,17 @@ def build_items():
     hist = rj(DATA / "omnibus_history.json", [])
     if isinstance(hist, list):
         for cycle in reversed(hist[-5:]):
+            if not isinstance(cycle, dict):
+                continue
             health = cycle.get("health_after", 0)
             built  = cycle.get("engines_auto_built", [])
             ts     = cycle.get("completed", "")
             rev    = cycle.get("total_revenue", 0)
             title  = f"Cycle #{cycle.get('cycle_number','?')}: Health {health}/100"
             if built: title += f" — built {', '.join(built[:2])}"
-            desc = (f"SolarPunk autonomous cycle complete. Health: {health}/100. "
-                    f"Revenue: ${rev:.2f}. "
-                    f"New engines: {', '.join(built) if built else 'none'}. "
-                    f"15% of revenue to Palestinian relief (PCRF).")
+            desc = (f"SolarPunk cycle. Health: {health}/100. Revenue: ${rev:.2f}. "
+                    f"Engines built: {', '.join(built) if built else 'none'}. "
+                    f"15% to PCRF (Palestinian relief).")
             items.append({
                 "title": escape(title),
                 "link":  f"{BASE}/status.html",
@@ -85,7 +94,7 @@ def render_feed(items):
     <title>SolarPunk — Autonomous AI Revenue System</title>
     <link>{BASE}</link>
     <atom:link href="{BASE}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>Live updates from SolarPunk: autonomous AI building revenue for Palestinian relief. Built by Meeko.</description>
+    <description>Live updates from SolarPunk: autonomous AI building revenue for Palestinian relief.</description>
     <language>en-us</language>
     <lastBuildDate>{now}</lastBuildDate>
     <managingEditor>meekotharaccoon@gmail.com (Meeko)</managingEditor>
@@ -97,7 +106,7 @@ def run():
     print("RSS_PUBLISHER starting...")
     items = build_items()
     FEED.write_text(render_feed(items), encoding="utf-8")
-    print(f"  Published {len(items)} items to docs/feed.xml")
+    print(f"  ✅ Published {len(items)} items → docs/feed.xml")
     print(f"  URL: {BASE}/feed.xml")
 
     idx = DOCS / "index.html"
@@ -107,7 +116,7 @@ def run():
         if tag not in html and "<head>" in html:
             html = html.replace("<head>", f"<head>\n  {tag}")
             idx.write_text(html)
-            print("  Injected RSS autodiscovery into index.html")
+            print("  ✅ RSS autodiscovery injected into index.html")
 
     STATE.write_text(json.dumps({
         "ts": datetime.now(timezone.utc).isoformat(),
