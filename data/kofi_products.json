@@ -1,0 +1,199 @@
+{
+  "_readme": "Ko-fi product URL registry. When you create shop items on Ko-fi, paste the product URLs here. Each product URL looks like: https://ko-fi.com/s/XXXXXXXX. The store regeneration engine reads this file each cycle to update buy buttons.",
+  "_instructions": "To get a Ko-fi product URL: ko-fi.com/account/shop → click a product → copy the URL from your browser (format: https://ko-fi.com/s/XXXXXXXX)",
+  "shop_url": "https://ko-fi.com/meekotharaccoon/shop",
+  "products": {
+    "white-doves-over-gaza": {
+      "title": "White Doves Over Gaza",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "Seven white doves ascending through golden morning light over ancient olive groves."
+    },
+    "ancient-olive-grove": {
+      "title": "Ancient Olive Grove",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "Thousand-year-old olive trees standing resilient against the Mediterranean sky."
+    },
+    "tatreez-living-embroidery": {
+      "title": "Tatreez — Living Embroidery",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "The geometric language of Palestinian women, woven across generations."
+    },
+    "gaza-by-the-sea": {
+      "title": "Gaza by the Sea",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "The Mediterranean at dusk, its waters catching the last gold of day."
+    },
+    "star-of-hope": {
+      "title": "Star of Hope",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "A single brilliant star above the ancient cityscape, surrounded by the warm glow of windows."
+    },
+    "pomegranate-season": {
+      "title": "Pomegranate Season",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "Deep crimson pomegranates split open on a mosaic table, seeds gleaming like rubies."
+    },
+    "night-garden-of-palestine": {
+      "title": "Night Garden of Palestine",
+      "price": 1.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "Jasmine and bougainvillea under a moon so full it turns night to silver."
+    },
+    "art-bundle-7-prints": {
+      "title": "Gaza Rose Gallery — 7 Prints Bundle",
+      "price": 7.00,
+      "category": "art-bundle",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "description": "All 7 Gaza Rose Gallery prints. 70% to PCRF."
+    },
+    "ai-prompt-packs": {
+      "title": "SolarPunk AI Prompt Packs",
+      "price": 17.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/ai-prompt-packs/",
+      "description": "200+ curated AI prompts across categories. Claude, GPT, Gemini compatible."
+    },
+    "ai-side-income-blueprint": {
+      "title": "AI Side Income Blueprint",
+      "price": 27.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/ai-side-income-blueprint/",
+      "description": "Step-by-step guide to building AI-powered income streams."
+    },
+    "ai-side-income-blueprint-2-0": {
+      "title": "AI Side Income Blueprint 2.0",
+      "price": 27.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/ai-side-income-blueprint-2-0/",
+      "description": "Updated edition with 2026 AI tools and strategies."
+    },
+    "autonomous-business-guide": {
+      "title": "Autonomous Business Guide",
+      "price": 37.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/autonomous-business-guide/",
+      "description": "Complete guide to running a business on autopilot with AI agents."
+    },
+    "email-automation-blueprints": {
+      "title": "Email Automation Blueprints",
+      "price": 37.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/email-automation-blueprints/",
+      "description": "Automated email sequences and workflows for digital businesses."
+    },
+    "freelance-cold-email-templates": {
+      "title": "Freelance Cold Email Templates",
+      "price": 17.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/freelance-cold-email-templates/",
+      "description": "Proven cold email templates for freelancers. AI-optimized."
+    },
+    "github-actions-for-beginners": {
+      "title": "GitHub Actions for Beginners",
+      "price": 37.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/github-actions-for-beginners/",
+      "description": "Zero-to-hero guide for GitHub Actions automation."
+    },
+    "github-actions-templates": {
+      "title": "GitHub Actions Templates",
+      "price": 27.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/github-actions-templates/",
+      "description": "Complete GitHub Actions workflow templates for autonomous AI revenue systems."
+    },
+    "github-pages-website-kit": {
+      "title": "GitHub Pages Website Kit",
+      "price": 19.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/github-pages-website-kit/",
+      "description": "Everything you need to launch a GitHub Pages site in under an hour."
+    },
+    "grant-writing-templates": {
+      "title": "Grant Writing Templates",
+      "price": 37.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/grant-writing-templates/",
+      "description": "AI-powered grant writing templates for nonprofits and startups."
+    },
+    "notion-templates-for-freelancers": {
+      "title": "Notion Templates for Freelancers",
+      "price": 19.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/notion-templates-for-freelancers/",
+      "description": "AI-optimized Notion templates for freelancers building autonomous income."
+    },
+    "palestine-solidarity-art-pack": {
+      "title": "Palestine Solidarity Art Pack",
+      "price": 7.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/palestine-solidarity-art-pack/",
+      "description": "Palestinian solidarity digital art pack. 70% to PCRF."
+    },
+    "palestine-solidarity-zine-pack": {
+      "title": "Palestine Solidarity Zine Pack",
+      "price": 5.00,
+      "category": "art",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/palestine-solidarity-zine-pack/",
+      "description": "Digital zine pack. Palestinian stories and art. 70% to PCRF."
+    },
+    "social-media-content-packs": {
+      "title": "Social Media Content Packs",
+      "price": 17.00,
+      "category": "digital",
+      "kofi_url": null,
+      "fallback_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "landing_page": "/social-media-content-packs/",
+      "description": "Done-for-you social media content for AI businesses."
+    }
+  },
+  "last_updated": "2026-03-13T00:00:00Z",
+  "_next_step": "When you get your Ko-fi product URLs (format: https://ko-fi.com/s/XXXXXXXX), paste them into the kofi_url fields above. The store will auto-update on the next build cycle."
+}
