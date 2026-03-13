@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-13T01:10:56.922986",
+  "last_checked": "2026-03-13T01:11:30.912279",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -66,6 +66,7 @@
     "EMAIL_OUTREACH.py",
     "AUTONOMY_PROOF.py",
     "SOLARPUNK_LEGAL.py",
+    "SWARM_COORDINATOR.py",
     "SELF_PORTRAIT.py",
     "AGENT_LINK_VERIFIER.py",
     "SOLARPUNK_CLI.py",
