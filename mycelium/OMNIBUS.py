@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v21 — full autonomy: Bluesky + Mastodon + AUTONOMOUS_PUBLISHER + FIRST_SALE_NOTIFIER
-==============================================================================================
-New in v21:
-  BLUESKY_ENGINE       (L4) — AT Protocol posting, no OAuth, pure HTTP
-  MASTODON_ENGINE      (L4) — Fediverse posting, no OAuth
-  AUTONOMOUS_PUBLISHER (L4) — 5-channel cascade: Bluesky+DEV.to+Mastodon+Twitter+GitHub Gist
-  FIRST_SALE_NOTIFIER  (L5) — watches for first dollar, blasts all channels, boosts health
-  GUMROAD_ENGINE v2    (L5) — fixed 404 bug: fetches live products first, creates if missing
-  DEV_TO_PUBLISHER v2  (L4) — fixed 403: uses api-key header, posts cycle articles
+OMNIBUS v22 — FULL AUTONOMY: generates products, publishes them, delivers them, promotes them
+=============================================================================================
+New in v22:
+  PDF_GENERATOR            (L3) — writes real 60-page guides using Groq. No placeholders.
+  GITHUB_RELEASES_PUBLISHER(L3) — uploads guides as release assets. Permanent free URLs.
+  GUMROAD_PRODUCT_PUBLISHER(L5) — creates/updates all Gumroad listings autonomously
+  PRODUCT_DELIVERY_ENGINE  (L5) — watches Gmail, auto-emails download link on every sale
+  REVENUE_AUDIT            (L0) — audits every buy link every cycle, flags 404s
+  SWARM_COORDINATOR        (L6) — ALL HANDS ON DECK coordinator
 
+v21: BLUESKY_ENGINE, MASTODON_ENGINE, AUTONOMOUS_PUBLISHER, FIRST_SALE_NOTIFIER
 v20: NARRATOR, PLUGIN_REGISTRY
 v19: NEWSLETTER_ENGINE, ANALYTICS_ENGINE, RSS_PUBLISHER, FORK_SCANNER
 v18: REPO_SPIDER, RESONANCE_CONVERTER, @claude GitHub Issues
@@ -25,7 +26,7 @@ v10: CAPABILITY_SCANNER, EMAIL_OUTREACH, STORE_BUILDER, BRIDGE_BUILDER
 The loop: build -> speak -> listen -> remember -> watch -> respond -> grow -> tell
 
 L0  CYCLE_MEMORY . GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
-    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER . PLUGIN_REGISTRY
+    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER . PLUGIN_REGISTRY . REVENUE_AUDIT [v22]
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE .
     RESONANCE_ENGINE . ANALYTICS_ENGINE . REPO_SPIDER . FORK_SCANNER . FIRST_CONTACT .
@@ -34,17 +35,19 @@ L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
     GUMROAD_AUTO_QUEUE . QUICK_REVENUE . BUSINESS_FACTORY
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
     EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER .
-    AGENT_GUMROAD_BUILDER
+    AGENT_GUMROAD_BUILDER . PDF_GENERATOR [v22] . GITHUB_RELEASES_PUBLISHER [v22]
 L4  SOCIAL_PROMOTER . BLUESKY_ENGINE [v21] . MASTODON_ENGINE [v21] .
     AUTONOMOUS_PUBLISHER [v21] . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
     SOCIAL_DASHBOARD . CONNECTION_FORGE . HUMAN_CONNECTOR . AFFILIATE_MAXIMIZER .
     STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE .
     DEV_TO_PUBLISHER [v21 fix] . AGENT_TWEET_WRITER . RESONANCE_CONVERTER . NEWSLETTER_ENGINE
-L5  KOFI_ENGINE . GUMROAD_ENGINE [v21 fix] . GITHUB_SPONSORS_ENGINE .
+L5  KOFI_ENGINE . GUMROAD_ENGINE . GUMROAD_PRODUCT_PUBLISHER [v22] . GITHUB_SPONSORS_ENGINE .
     KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
-    CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT . FIRST_SALE_NOTIFIER [v21]
+    CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT . FIRST_SALE_NOTIFIER [v21] .
+    PRODUCT_DELIVERY_ENGINE [v22]
 L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
     KNOWLEDGE_BRIDGE . KNOWLEDGE_WEAVER . REVENUE_OPTIMIZER . BIG_BRAIN_ORACLE .
+    SWARM_COORDINATOR [v22] .
     DESKTOP_DAEMON [local only] . CLAUDE_BRIDGE [local only]
 L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
     ISSUE_SYNC . SOLARPUNK_LEGAL . BRAND_LEGAL . TASK_ATOMIZER .
@@ -155,10 +158,15 @@ def ctx():
         "newsletter":      rj("newsletter_state.json"),
         "plugin_registry": rj("plugin_registry.json"),
         "narrator":        rj("narrator_state.json"),
-        "bluesky":         rj("bluesky_engine_state.json"),       # v21
-        "mastodon":        rj("mastodon_state.json"),             # v21
-        "publisher":       rj("autonomous_publisher_state.json"), # v21
-        "first_sale":      rj("first_sale_state.json"),           # v21
+        "bluesky":         rj("bluesky_engine_state.json"),
+        "mastodon":        rj("mastodon_state.json"),
+        "publisher":       rj("autonomous_publisher_state.json"),
+        "first_sale":      rj("first_sale_state.json"),
+        "pdf_generator":   rj("pdf_generator_state.json"),         # v22
+        "product_registry":rj("product_registry.json"),            # v22
+        "delivery":        rj("delivery_engine_state.json"),       # v22
+        "revenue_audit":   rj("revenue_audit.json"),               # v22
+        "swarm":           rj("swarm_state.json"),                  # v22
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -191,6 +199,7 @@ def L0():
     eng("CAPABILITY_SCANNER", timeout=30)
     eng("AGENT_LINK_VERIFIER",timeout=60)
     eng("PLUGIN_REGISTRY",    timeout=60)
+    eng("REVENUE_AUDIT",      timeout=60)  # v22: audits all buy links
     save_ctx()
 
 
@@ -227,25 +236,30 @@ def L2():
 
 
 def L3():
-    print("\n--- L3: DEPLOY + LOOP ---")
-    eng("LANDING_DEPLOYER",      timeout=90)
-    eng("ART_CATALOG",           timeout=60)
-    eng("AGENT_GUMROAD_BUILDER", timeout=60)
+    print("\n--- L3: DEPLOY + LOOP + GENERATE PRODUCTS ---")
+    eng("LANDING_DEPLOYER",         timeout=90)
+    eng("ART_CATALOG",              timeout=60)
+    eng("AGENT_GUMROAD_BUILDER",    timeout=60)
     save_ctx()
-    eng("REVENUE_LOOP",          timeout=240)
-    eng("ART_GENERATOR",         timeout=120)
-    eng("EMAIL_AGENT_EXCHANGE",  timeout=120)
-    eng("GRANT_APPLICANT",       timeout=90)
-    eng("HEALTH_BOOSTER",        timeout=60)
+    eng("REVENUE_LOOP",             timeout=240)
+    eng("ART_GENERATOR",            timeout=120)
+    eng("EMAIL_AGENT_EXCHANGE",     timeout=120)
+    eng("GRANT_APPLICANT",          timeout=90)
+    eng("HEALTH_BOOSTER",           timeout=60)
+    save_ctx()
+    # v22: generate actual product content and upload to GitHub Releases
+    eng("PDF_GENERATOR",            timeout=600)  # up to 10 min — writing real guides
+    save_ctx()
+    eng("GITHUB_RELEASES_PUBLISHER",timeout=120)  # upload to releases
     save_ctx()
 
 
 def L4():
     print("\n--- L4: DISTRIBUTE + PUBLISH + BROADCAST ---")
     eng("SOCIAL_PROMOTER",     timeout=90)
-    eng("BLUESKY_ENGINE",      timeout=60)   # v21 — AT Protocol, no OAuth
-    eng("MASTODON_ENGINE",     timeout=60)   # v21 — Fediverse
-    eng("AUTONOMOUS_PUBLISHER",timeout=90)   # v21 — 5-channel cascade, always posts
+    eng("BLUESKY_ENGINE",      timeout=60)
+    eng("MASTODON_ENGINE",     timeout=60)
+    eng("AUTONOMOUS_PUBLISHER",timeout=90)
     eng("SUBSTACK_ENGINE",     timeout=90)
     eng("LINK_PAGE",           timeout=60)
     eng("GITHUB_POSTER",       timeout=120)
@@ -257,7 +271,7 @@ def L4():
     eng("BRIDGE_BUILDER",      timeout=90)
     eng("EMAIL_OUTREACH",      timeout=120)
     eng("VIRALITY_ENGINE",     timeout=60)
-    eng("DEV_TO_PUBLISHER",    timeout=60)   # v21 fix: api-key header, no more 403
+    eng("DEV_TO_PUBLISHER",    timeout=60)
     eng("AGENT_TWEET_WRITER",  timeout=60)
     eng("RESONANCE_CONVERTER", timeout=90)
     eng("NEWSLETTER_ENGINE",   timeout=90)
@@ -265,16 +279,18 @@ def L4():
 
 
 def L5():
-    print("\n--- L5: COLLECT + PAYOUT ---")
-    eng("KOFI_ENGINE",            timeout=60)
-    eng("GUMROAD_ENGINE",         timeout=60)   # v21 fix: no more 404
-    eng("GITHUB_SPONSORS_ENGINE", timeout=60)
-    eng("KOFI_PAYMENT_TRACKER",   timeout=60)
-    eng("DISPATCH_HANDLER",       timeout=60)
-    eng("HUMAN_PAYOUT",           timeout=60)
-    eng("CONTRIBUTOR_REGISTRY",   timeout=60)
-    eng("PAYPAL_PAYOUT",          timeout=90)
-    eng("FIRST_SALE_NOTIFIER",    timeout=30)   # v21 — watch for first dollar
+    print("\n--- L5: COLLECT + PUBLISH + DELIVER + PAYOUT ---")
+    eng("KOFI_ENGINE",               timeout=60)
+    eng("GUMROAD_ENGINE",            timeout=60)
+    eng("GUMROAD_PRODUCT_PUBLISHER", timeout=60)  # v22: creates/updates all Gumroad listings
+    eng("GITHUB_SPONSORS_ENGINE",    timeout=60)
+    eng("KOFI_PAYMENT_TRACKER",      timeout=60)
+    eng("DISPATCH_HANDLER",          timeout=60)
+    eng("HUMAN_PAYOUT",              timeout=60)
+    eng("CONTRIBUTOR_REGISTRY",      timeout=60)
+    eng("PAYPAL_PAYOUT",             timeout=90)
+    eng("FIRST_SALE_NOTIFIER",       timeout=30)
+    eng("PRODUCT_DELIVERY_ENGINE",   timeout=90)  # v22: auto-delivers on sale
     save_ctx()
 
 
@@ -289,7 +305,7 @@ def L6():
     eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()
     eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()
     eng("BIG_BRAIN_ORACLE",  timeout=90)
-    save_ctx()
+    eng("SWARM_COORDINATOR", timeout=120); save_ctx()  # v22: ALL HANDS ON DECK
 
     health    = rj("brain_state.json").get("health_score", 0)
     cycle     = rj("cycle_delta.json").get("cycle_number", "?")
@@ -299,14 +315,15 @@ def L6():
     analytics = rj("analytics_state.json")
     bsky      = rj("bluesky_engine_state.json")
     pub       = rj("autonomous_publisher_state.json")
+    registry  = rj("product_registry.json")
+    products_live = sum(1 for p in registry.get("products", {}).values()
+                        if p.get("gumroad_url") or p.get("download_url"))
     _queue_daemon_task(
         f"Cycle {cycle} done. Health: {health}/100. "
+        f"Products with live URLs: {products_live}. "
         f"Bluesky posted all-time: {bsky.get('posted', 0)}. "
         f"Total published: {pub.get('total_sent', 0)}. "
-        f"Repos forked: {len(spider.get('forked', []))}. "
-        f"Asks pending: {conv.get('total_asks_generated', 0)}. "
-        f"Stars: {analytics.get('stars', 0)}. "
-        f"Check data/asks_queue.json — post the best ask if resonance >= SIGNAL.",
+        f"Check data/product_registry.json — ensure all products have download URLs.",
         source="OMNIBUS_L6",
         priority=2
     )
@@ -326,7 +343,7 @@ def L7():
     eng("CLAUDE_ENGINE",    timeout=60)
     eng("SELF_PORTRAIT",    timeout=60)
     eng("RSS_PUBLISHER",    timeout=30)
-    eng("NARRATOR",         timeout=60)   # always last: story after everything
+    eng("NARRATOR",         timeout=60)
     save_ctx()
 
 
@@ -346,10 +363,10 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v21 -- {ts}")
+    print(f"\nOMNIBUS v22 -- {ts}")
     print(f"   Run: {run_id}")
     print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow -> tell")
-    print(f"   Channels: Bluesky + Mastodon + DEV.to + Twitter + GitHub Gist (cascade)")
+    print(f"   NEW: PDF_GENERATOR + GITHUB_RELEASES + GUMROAD_PUBLISHER + DELIVERY_ENGINE")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -378,22 +395,25 @@ def run():
     newsletter = rj("newsletter_state.json")
     narrator   = rj("narrator_state.json")
     plugins    = rj("plugin_registry.json")
-    bsky       = rj("bluesky_engine_state.json")      # v21
-    mast       = rj("mastodon_state.json")             # v21
-    pub        = rj("autonomous_publisher_state.json") # v21
-    first_sale = rj("first_sale_state.json")           # v21
+    bsky       = rj("bluesky_engine_state.json")
+    mast       = rj("mastodon_state.json")
+    pub        = rj("autonomous_publisher_state.json")
+    first_sale = rj("first_sale_state.json")
+    registry   = rj("product_registry.json")    # v22
+    delivery   = rj("delivery_engine_state.json") # v22
     asks       = rj("asks_queue.json") if isinstance(rj("asks_queue.json"), list) else []
 
-    quick_rev  = rj("quick_revenue.json")
     rev_total  = revenue.get("total_received", 0) if isinstance(revenue, dict) else 0
     gaza_total = revenue.get("total_to_gaza",  0) if isinstance(revenue, dict) else 0
     health_now = rj("brain_state.json").get("health_score", 0)
     emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
     fc_happened = fc.get("happened", False) if isinstance(fc, dict) else False
     fs_happened = first_sale.get("happened", False) if isinstance(first_sale, dict) else False
+    products_ready = sum(1 for p in registry.get("products", {}).values() if p.get("content_ready"))
+    products_live  = sum(1 for p in registry.get("products", {}).values() if p.get("gumroad_url") or p.get("download_url"))
 
     manifest = {
-        "version":                "v21",
+        "version":                "v22",
         "run_id":                 run_id,
         "completed":              datetime.now(timezone.utc).isoformat(),
         "elapsed_s":              elapsed,
@@ -401,6 +421,9 @@ def run():
         "health_after":           health_now,
         "health_trend":           cycle_mem.get("health_trend", "unknown"),
         "cycle_number":           cycle_mem.get("cycle_number", 0),
+        "products_content_ready": products_ready,   # v22
+        "products_with_live_urls":products_live,    # v22
+        "deliveries_sent":        delivery.get("total_delivered", 0),  # v22
         "businesses_built":       len(list(DATA.glob("business_*.json"))),
         "live_url":               rj("revenue_loop_last.json").get("live_url"),
         "total_revenue":          rev_total,
@@ -421,26 +444,19 @@ def run():
         "github_stars":           resonance.get("github", {}).get("stars", 0),
         "persistent_blockers":    len(cycle_mem.get("persistent", [])),
         "daemon_status":          daemon.get("status", "not_started"),
-        "daemon_tasks_done":      daemon.get("tasks_completed", 0),
         "repos_forked":           len(spider.get("forked", [])),
-        "repos_analyzed":         len(spider.get("processed", [])),
         "asks_pending":           len([a for a in asks if a.get("status") == "pending"]),
-        "asks_total":             converter.get("total_asks_generated", 0),
-        "github_stars_analytics": analytics.get("stars", 0),
         "views_14d":              analytics.get("views_14d_total", 0),
         "view_trend":             analytics.get("trend", "unknown"),
         "new_forkers":            len(fork_sc.get("forkers", [])),
         "newsletter_sent_total":  newsletter.get("total_sent", 0),
         "stories_told":           narrator.get("stories_told", 0),
         "plugins_registered":     plugins.get("total_registered", 0),
-        "bluesky_posted":         bsky.get("posted", 0),             # v21
-        "mastodon_posted":        mast.get("posted", 0),             # v21
-        "total_published":        pub.get("total_sent", 0),          # v21
-        "channels_active":        pub.get("by_channel", {}),         # v21
+        "bluesky_posted":         bsky.get("posted", 0),
+        "mastodon_posted":        mast.get("posted", 0),
+        "total_published":        pub.get("total_sent", 0),
+        "channels_active":        pub.get("by_channel", {}),
         "rss_feed_url":           f"{BASE}/feed.xml",
-        "narrative_url":          f"{BASE}/narrative.html",
-        "solarpunk_url":          f"{BASE}/solarpunk.html",
-        "plugins_url":            f"{BASE}/plugins.html",
         "engines_ok":             results["ok"],
         "engines_failed":         results["failed"],
         "engines_skipped":        results["skipped"],
@@ -454,35 +470,22 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v21 done -- {elapsed}s")
+    print(f"OMNIBUS v22 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
-    print(f"   Health: {manifest['health_before']} -> {manifest['health_after']} ({manifest['health_trend']})")
+    print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
     print(f"   Revenue: ${rev_total:.2f} | Gaza: ${gaza_total:.2f}")
     print(f"   First sale: {'✅ $' + str(manifest['first_sale_amount']) if fs_happened else '⏳ waiting'}")
-    print(f"   Resonance: {manifest['resonance_score']}/100 ({manifest['resonance_label']}) | Stars: {manifest['github_stars']}")
-    print(f"   Published all-time: {manifest['total_published']} | Bluesky: {manifest['bluesky_posted']} | Mastodon: {manifest['mastodon_posted']}")
-    print(f"   Channels active: {list(manifest['channels_active'].keys()) or 'none yet — add Bluesky secrets'}")
-    print(f"   Stories told: {manifest['stories_told']} | Plugins: {manifest['plugins_registered']}")
-    print(f"   Views 14d: {manifest['views_14d']} | Trend: {manifest['view_trend']}")
-    print(f"   Repos forked: {manifest['repos_forked']} | New forkers: {manifest['new_forkers']}")
+    print(f"   Products ready: {products_ready} | Live URLs: {products_live} | Deliveries: {manifest['deliveries_sent']}")
+    print(f"   Resonance: {manifest['resonance_score']}/100 | Stars: {manifest['github_stars']}")
+    print(f"   Published: {manifest['total_published']} | Bluesky: {manifest['bluesky_posted']}")
     if fc_happened:
-        print(f"   *** FIRST CONTACT: {fc.get('stranger')} via {fc.get('channel')} ***")
-    else:
-        print(f"   First contact: still waiting")
+        print(f"   *** FIRST CONTACT: {fc.get('stranger')} ***")
     if manifest["engines_auto_built"]:
         print(f"   Auto-built: {', '.join(manifest['engines_auto_built'])}")
     if manifest["critical_missing"]:
         print(f"   MISSING SECRETS: {', '.join(manifest['critical_missing'])}")
-    print(f"\n   Live pages:")
-    for label, page in [
-        ("Narrative", "narrative"), ("Identity", "solarpunk"), ("Plugins", "plugins"),
-        ("Store", "store"), ("Proof", "proof"), ("Resonance", "resonance"),
-        ("First Contact", "first_contact"), ("Memory", "memory"),
-    ]:
-        print(f"      {label}: {BASE}/{page}.html")
-    print(f"   RSS: {BASE}/feed.xml")
     return manifest
 
 
