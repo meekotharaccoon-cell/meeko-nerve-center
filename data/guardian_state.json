@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-13T02:00:17.364738",
+  "last_checked": "2026-03-13T02:01:02.218444",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -31,6 +31,7 @@
     "BRAVE_BRIDGE.py",
     "DESKTOP_BLUEPRINT_SCANNER.py",
     "NEWSLETTER_ENGINE.py",
+    "PROOF_LEDGER.py",
     "REVENUE_AUDIT.py",
     "GUMROAD_ENGINE.py",
     "NIGHTLY_DIGEST.py",
