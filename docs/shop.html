@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SolarPunk™ Shop — AI Guides & Gaza Art</title>
+<meta name="description" content="Digital guides and Palestinian art prints. 15-70% of every sale goes to Gaza children via PCRF. Instant download.">
+<meta property="og:title" content="SolarPunk™ Shop">
+<meta property="og:description" content="AI guides + Palestinian art prints. Every sale funds Gaza.">
+<style>
+:root{
+  --bg:#05050f;--surface:#0c0c1e;--border:rgba(255,255,255,.07);
+  --rose:#ff4d6d;--green:#00e87a;--gold:#ffd166;--blue:#48cae4;
+  --text:rgba(255,255,255,.88);--muted:rgba(255,255,255,.4);
+  --card:#0f0f22;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{background:rgba(5,5,15,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+  padding:12px 24px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;
+  position:sticky;top:0;z-index:100}
+nav a{color:var(--muted);font-size:.8rem;transition:color .2s}
+nav a:hover,nav a.active{color:var(--rose)}
+
+/* HERO */
+.hero{padding:72px 24px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,77,109,.12),transparent);
+  pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,77,109,.1);border:1px solid rgba(255,77,109,.25);
+  border-radius:20px;padding:4px 14px;font-size:.75rem;color:#ff8ca0;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;
+  background:linear-gradient(135deg,#fff 30%,var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);max-width:520px;margin:0 auto 28px;font-size:1rem}
+.hero-stats{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-n{font-size:1.8rem;font-weight:800;color:var(--green);display:block}
+.stat-l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+/* PROOF BANNER */
+.proof-banner{background:rgba(0,232,122,.05);border:1px solid rgba(0,232,122,.15);
+  border-radius:12px;max-width:800px;margin:0 auto 48px;padding:20px 24px;
+  display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.proof-banner p{font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.7}
+.proof-banner strong{color:var(--green)}
+.proof-link{background:rgba(0,232,122,.15);border:1px solid rgba(0,232,122,.3);
+  border-radius:8px;padding:8px 16px;font-size:.8rem;color:var(--green);white-space:nowrap}
+.proof-link:hover{background:rgba(0,232,122,.25)}
+
+/* SECTION HEADERS */
+.section{max-width:1040px;margin:0 auto;padding:0 20px 64px}
+.section-hd{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.section-hd h2{font-size:1.3rem;font-weight:800}
+.section-hd .badge{background:rgba(255,255,255,.06);border:1px solid var(--border);
+  border-radius:6px;padding:3px 10px;font-size:.7rem;color:var(--muted)}
+
+/* PRODUCT GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+
+/* PRODUCT CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;
+  transition:transform .22s,border-color .22s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.14)}
+.card-art{height:200px;position:relative;overflow:hidden;flex-shrink:0}
+.card-art svg{width:100%;height:100%}
+.card-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.card-title{font-size:1rem;font-weight:700;margin-bottom:6px}
+.card-desc{font-size:.78rem;color:var(--muted);line-height:1.65;margin-bottom:12px;flex:1}
+.card-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.tag{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:4px;padding:2px 8px;font-size:.65rem;color:var(--muted)}
+
+/* PRICE + SPLIT */
+.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.price{font-size:1.6rem;font-weight:900;color:var(--green)}
+.split-bar{flex:1;background:rgba(255,255,255,.05);border-radius:4px;height:6px;overflow:hidden;display:flex}
+.split-gaza{background:var(--rose);height:100%}
+.split-loop{background:rgba(255,255,255,.15);height:100%}
+.split-label{font-size:.68rem;color:var(--muted);display:flex;gap:10px;margin-bottom:12px}
+.split-label span{display:flex;align-items:center;gap:4px}
+.split-label .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* BUY BUTTONS */
+.buy-btns{display:flex;flex-direction:column;gap:7px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:8px;padding:10px 14px;font-size:.82rem;font-weight:700;
+  transition:opacity .15s,transform .1s;cursor:pointer}
+.btn:hover{opacity:.88;transform:scale(.99)}
+.btn-paypal{background:#003087;color:#fff;border:none}
+.btn-gumroad{background:#ff90e8;color:#000}
+.btn-kofi{background:#ff5e5b;color:#fff}
+.btn-download{background:rgba(0,232,122,.15);border:1px solid rgba(0,232,122,.3);color:var(--green)}
+
+/* VERIFIABILITY */
+.verify{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;
+  padding:10px 14px;margin-top:10px;font-size:.7rem;color:var(--muted);line-height:1.7}
+.verify a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+
+/* PACK CARD */
+.pack-card{background:var(--card);border:1px solid rgba(255,77,109,.2);border-radius:16px;
+  overflow:hidden;grid-column:1/-1}
+.pack-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:640px){.pack-inner{grid-template-columns:1fr}}
+.pack-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:220px}
+.pack-gallery .thumb{overflow:hidden}
+.pack-gallery .thumb svg{width:100%;height:100%}
+.pack-info{padding:28px}
+.pack-info h3{font-size:1.2rem;font-weight:800;margin-bottom:8px;color:var(--gold)}
+.pack-info p{font-size:.82rem;color:var(--muted);margin-bottom:16px;line-height:1.7}
+.pack-price{font-size:2rem;font-weight:900;color:var(--green);margin-bottom:6px}
+.pack-split{font-size:.75rem;color:rgba(255,77,109,.8);margin-bottom:16px}
+
+/* PROOF SECTION */
+.proof-section{background:rgba(0,232,122,.03);border:1px solid rgba(0,232,122,.1);
+  border-radius:16px;padding:32px;margin-bottom:64px}
+.proof-section h2{color:var(--green);margin-bottom:20px;font-size:1.2rem}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.proof-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;padding:16px}
+.proof-item h4{font-size:.85rem;font-weight:700;margin-bottom:6px;color:var(--text)}
+.proof-item p{font-size:.75rem;color:var(--muted);line-height:1.6}
+.proof-item a{color:var(--green);text-decoration:underline}
+.proof-number{font-size:1.4rem;font-weight:900;color:var(--green);display:block;margin-bottom:4px}
+
+/* LOOP DIAGRAM */
+.loop-diagram{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;
+  margin:24px 0;font-size:.8rem}
+.loop-node{background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:8px 14px;color:var(--text)}
+.loop-arrow{color:var(--muted)}
+
+/* FOOTER */
+footer{text-align:center;padding:32px 20px;color:var(--muted);font-size:.72rem;
+  border-top:1px solid var(--border)}
+footer a{color:var(--rose)}
+
+/* WATERMARK */
+.auto-tag{display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:4px;padding:2px 8px;font-size:.65rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="shop.html" class="active">🛒 Shop</a>
+  <a href="art.html">🌹 Gallery</a>
+  <a href="store.html">Store</a>
+  <a href="proof.html">✅ Proof</a>
+  <a href="https://ko-fi.com/meekotharaccoon" target="_blank">Ko-fi ☕</a>
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" target="_blank">GitHub</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🤖 Autonomous AI Storefront · Updated Every 6 Hours</div>
+  <h1>SolarPunk™ Shop</h1>
+  <p>AI guides & Palestinian art prints. Every purchase funds Gaza children. Everything is verifiable.</p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n" id="stat-products">7+</span><span class="stat-l">Products</span></div>
+    <div class="stat"><span class="stat-n" id="stat-gaza">70%</span><span class="stat-l">Max → Gaza</span></div>
+    <div class="stat"><span class="stat-n">4★</span><span class="stat-l">PCRF Rating</span></div>
+    <div class="stat"><span class="stat-n">$0</span><span class="stat-l">Fees Hidden</span></div>
+  </div>
+</div>
+
+<!-- PROOF BANNER -->
+<div class="section" style="padding-bottom:0">
+  <div class="proof-banner">
+    <p>
+      <strong>Everything here is verifiable.</strong> When we say "X% goes to Gaza" that means
+      <em>Meeko manually transfers funds to PCRF</em> after each threshold is reached — logged publicly
+      at <strong>proof.html</strong>. We stop and show you the exact record before any sensitive info is exposed.
+      PCRF EIN: <strong>93-1057665</strong> · 4★ Charity Navigator · Gaza since 1991.
+    </p>
+    <a href="proof.html" class="proof-link">✅ See Proof Ledger →</a>
+  </div>
+</div>
+
+<!-- GAZA ROSE GALLERY SECTION -->
+<div class="section">
+  <div class="section-hd">
+    <h2>🌹 Gaza Rose Gallery</h2>
+    <span class="badge">7 Prints · $1 each · 70% → Gaza</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- PRINT 1: White Doves -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a2a4a"/>
+              <stop offset="100%" style="stop-color:#7cb9e8"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="200" fill="url(#g1a)"/>
+          <!-- Sun/Moon -->
+          <circle cx="200" cy="60" r="35" fill="rgba(255,255,200,.15)" stroke="rgba(255,255,200,.3)" stroke-width="1"/>
+          <!-- Doves -->
+          <g fill="rgba(255,255,255,.9)">
+            <ellipse cx="160" cy="90" rx="18" ry="8" transform="rotate(-15,160,90)"/>
+            <polygon points="142,88 155,82 160,90" opacity=".8"/>
+            <polygon points="178,88 165,82 160,90" opacity=".8"/>
+            <ellipse cx="200" cy="75" rx="22" ry="9" transform="rotate(-8,200,75)"/>
+            <polygon points="178,73 193,66 200,75" opacity=".8"/>
+            <polygon points="222,73 207,66 200,75" opacity=".8"/>
+            <ellipse cx="240" cy="92" rx="18" ry="8" transform="rotate(10,240,92)"/>
+            <polygon points="222,90 235,84 240,92" opacity=".8"/>
+            <polygon points="258,90 245,84 240,92" opacity=".8"/>
+          </g>
+          <!-- Olive branches -->
+          <g fill="none" stroke="#6b8f3a" stroke-width="2">
+            <path d="M 60,180 Q 80,160 100,145 Q 120,130 140,160"/>
+            <path d="M 260,180 Q 280,155 300,145 Q 320,130 340,165"/>
+          </g>
+          <g fill="#6b8f3a" opacity=".8">
+            <ellipse cx="90" cy="158" rx="8" ry="4" transform="rotate(-30,90,158)"/>
+            <ellipse cx="110" cy="148" rx="8" ry="4" transform="rotate(-20,110,148)"/>
+            <ellipse cx="285" cy="153" rx="8" ry="4" transform="rotate(30,285,153)"/>
+            <ellipse cx="305" cy="148" rx="8" ry="4" transform="rotate(20,305,148)"/>
+          </g>
+          <!-- Stars -->
+          <g fill="rgba(255,255,255,.5)" font-size="8">
+            <text x="50" y="40">★</text><text x="80" y="25">·</text>
+            <text x="300" y="35">★</text><text x="340" y="20">·</text>
+            <text x="130" y="20">·</text><text x="270" y="45">·</text>
+          </g>
+          <text x="200" y="185" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">White Doves Over Gaza · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">White Doves Over Gaza</div>
+        <div class="card-desc">Seven white doves ascending through morning light over ancient olive groves. Peace, hope, and the indomitable spirit of Palestine — in high-res digital print.</div>
+        <div class="card-tags"><span class="tag">peace</span><span class="tag">doves</span><span class="tag">hope</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row">
+          <span class="price">$1.00</span>
+        </div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza (PCRF)</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop Fund</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 4.643-5.813 4.643h-2.19c-.11 0-.212.013-.313.037L11.17 19.7h3.026c.458 0 .846-.334.917-.786l.038-.196.72-4.566.047-.251c.071-.452.459-.786.917-.786h.578c3.741 0 6.671-1.52 7.527-5.907.358-1.835.172-3.368-.718-4.291z"/></svg>
+            Pay with PayPal — $1
+          </a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi Shop</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">See donation proof</a> · PCRF EIN: 93-1057665 · <a href="https://www.charitynavigator.org/ein/931057665" target="_blank">4★ Charity Navigator</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 2: Olive Grove -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g2a" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#2d5a27"/>
+              <stop offset="100%" style="stop-color:#8fc26e"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="200" fill="url(#g2a)"/>
+          <!-- Sky -->
+          <rect width="400" height="100" fill="rgba(135,180,220,.2)"/>
+          <!-- Ground -->
+          <ellipse cx="200" cy="190" rx="220" ry="30" fill="rgba(100,70,30,.4)"/>
+          <!-- Trees -->
+          <g>
+            <!-- Tree 1 -->
+            <rect x="78" y="120" width="8" height="70" fill="#5a3e2b" rx="3"/>
+            <ellipse cx="82" cy="108" rx="32" ry="26" fill="#3d7a28" opacity=".9"/>
+            <ellipse cx="70" cy="115" rx="22" ry="18" fill="#4a8f30" opacity=".8"/>
+            <ellipse cx="95" cy="112" rx="22" ry="18" fill="#569634" opacity=".8"/>
+            <!-- Tree 2 -->
+            <rect x="185" y="115" width="10" height="75" fill="#5a3e2b" rx="3"/>
+            <ellipse cx="190" cy="100" rx="40" ry="32" fill="#2f6b22" opacity=".9"/>
+            <ellipse cx="175" cy="108" rx="28" ry="22" fill="#3d7a28" opacity=".8"/>
+            <ellipse cx="205" cy="105" rx="28" ry="22" fill="#4a8f30" opacity=".8"/>
+            <!-- Tree 3 -->
+            <rect x="295" y="122" width="8" height="68" fill="#5a3e2b" rx="3"/>
+            <ellipse cx="299" cy="110" rx="30" ry="24" fill="#3d7a28" opacity=".9"/>
+            <ellipse cx="285" cy="118" rx="22" ry="17" fill="#4a8f30" opacity=".8"/>
+            <ellipse cx="312" cy="116" rx="20" ry="16" fill="#569634" opacity=".8"/>
+          </g>
+          <!-- Olives -->
+          <g fill="#1a4a0a" opacity=".7">
+            <ellipse cx="65" cy="118" rx="3" ry="5"/>
+            <ellipse cx="95" cy="115" rx="3" ry="5"/>
+            <ellipse cx="175" cy="112" rx="3" ry="5"/>
+            <ellipse cx="205" cy="108" rx="3" ry="5"/>
+            <ellipse cx="285" cy="121" rx="3" ry="5"/>
+            <ellipse cx="310" cy="118" rx="3" ry="5"/>
+          </g>
+          <!-- Sun -->
+          <circle cx="320" cy="40" r="22" fill="rgba(255,220,100,.6)"/>
+          <text x="200" y="188" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Ancient Olive Grove · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Ancient Olive Grove</div>
+        <div class="card-desc">Thousand-year-old olive trees standing resilient against the Mediterranean sky. Roots that remember everything. Branches that refuse to break.</div>
+        <div class="card-tags"><span class="tag">olive</span><span class="tag">resilience</span><span class="tag">nature</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 3: Tatreez -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="200" fill="#1a0a0f"/>
+          <defs>
+            <pattern id="tat" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+              <!-- Tatreez cross motif -->
+              <rect x="16" y="8" width="8" height="24" fill="#c41e3a" opacity=".8"/>
+              <rect x="8" y="16" width="24" height="8" fill="#c41e3a" opacity=".8"/>
+              <rect x="14" y="6" width="12" height="4" fill="#e8c547" opacity=".7"/>
+              <rect x="14" y="30" width="12" height="4" fill="#e8c547" opacity=".7"/>
+              <rect x="6" y="14" width="4" height="12" fill="#e8c547" opacity=".7"/>
+              <rect x="30" y="14" width="4" height="12" fill="#e8c547" opacity=".7"/>
+              <!-- Corner diamonds -->
+              <polygon points="4,4 8,0 12,4 8,8" fill="#2d6a2d" opacity=".6"/>
+              <polygon points="36,4 40,0 44,4 40,8" fill="#2d6a2d" opacity=".6"/>
+              <polygon points="4,36 8,32 12,36 8,40" fill="#2d6a2d" opacity=".6"/>
+              <polygon points="36,36 40,32 44,36 40,40" fill="#2d6a2d" opacity=".6"/>
+            </pattern>
+          </defs>
+          <rect width="400" height="200" fill="url(#tat)" opacity=".9"/>
+          <!-- Border -->
+          <rect x="10" y="10" width="380" height="180" fill="none" stroke="#c41e3a" stroke-width="2" opacity=".5"/>
+          <rect x="16" y="16" width="368" height="168" fill="none" stroke="#e8c547" stroke-width="1" opacity=".4"/>
+          <text x="200" y="190" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="9" font-family="sans-serif">Tatreez — Living Embroidery · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Tatreez — Living Embroidery</div>
+        <div class="card-desc">The geometric language of Palestinian women, woven across generations. Each stitch a sentence. Each pattern a story that cannot be erased.</div>
+        <div class="card-tags"><span class="tag">tatreez</span><span class="tag">culture</span><span class="tag">embroidery</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 4: Gaza Coastline -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g4sky" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#0a1628"/>
+              <stop offset="60%" style="stop-color:#c85a2a"/>
+              <stop offset="100%" style="stop-color:#f4a261"/>
+            </linearGradient>
+            <linearGradient id="g4sea" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#0077b6;stop-opacity:.9"/>
+              <stop offset="100%" style="stop-color:#03045e"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky -->
+          <rect width="400" height="130" fill="url(#g4sky)"/>
+          <!-- Sun setting -->
+          <circle cx="200" cy="120" r="30" fill="#f4a261" opacity=".8"/>
+          <circle cx="200" cy="120" r="22" fill="#e76f51" opacity=".9"/>
+          <!-- Light reflection -->
+          <rect x="170" y="130" width="60" height="70" fill="rgba(244,162,97,.2)"/>
+          <!-- Sea -->
+          <rect x="0" y="130" width="400" height="70" fill="url(#g4sea)"/>
+          <!-- Waves -->
+          <path d="M 0,145 Q 40,138 80,145 Q 120,152 160,145 Q 200,138 240,145 Q 280,152 320,145 Q 360,138 400,145" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+          <path d="M 0,158 Q 50,151 100,158 Q 150,165 200,158 Q 250,151 300,158 Q 350,165 400,158" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1"/>
+          <!-- Silhouette buildings -->
+          <rect x="30" y="95" width="15" height="35" fill="#050515"/>
+          <rect x="50" y="88" width="20" height="42" fill="#070720"/>
+          <rect x="75" y="100" width="12" height="30" fill="#050515"/>
+          <rect x="290" y="98" width="18" height="32" fill="#070720"/>
+          <rect x="313" y="90" width="22" height="40" fill="#050515"/>
+          <rect x="340" y="102" width="14" height="28" fill="#070720"/>
+          <!-- Stars -->
+          <circle cx="60" cy="25" r="1.5" fill="rgba(255,255,255,.7)"/>
+          <circle cx="130" cy="40" r="1" fill="rgba(255,255,255,.5)"/>
+          <circle cx="270" cy="30" r="1.5" fill="rgba(255,255,255,.7)"/>
+          <circle cx="340" cy="18" r="1" fill="rgba(255,255,255,.5)"/>
+          <text x="200" y="193" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Gaza Coastline at Golden Hour · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Gaza Coastline at Golden Hour</div>
+        <div class="card-desc">The Mediterranean at dusk, its waters catching the last gold of day. Ancient city silhouettes against a burning sky. Beauty that persists.</div>
+        <div class="card-tags"><span class="tag">sea</span><span class="tag">sunset</span><span class="tag">Gaza</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 5: Star of Hope -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g5star" cx="50%" cy="35%" r="50%">
+              <stop offset="0%" style="stop-color:#ffd700;stop-opacity:.8"/>
+              <stop offset="100%" style="stop-color:#0a0a20;stop-opacity:0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="200" fill="#050510"/>
+          <rect width="400" height="200" fill="url(#g5star)"/>
+          <!-- Star of Hope (8-pointed) -->
+          <polygon points="200,18 210,42 235,32 225,56 248,56 228,72 238,96 216,82 200,102 184,82 162,96 172,72 152,56 175,56 165,32 190,42"
+            fill="#ffd700" opacity=".95"/>
+          <!-- Glow -->
+          <circle cx="200" cy="57" r="40" fill="rgba(255,215,0,.08)"/>
+          <circle cx="200" cy="57" r="25" fill="rgba(255,215,0,.06)"/>
+          <!-- City below -->
+          <g fill="#0d0d25">
+            <rect x="20" y="148" width="18" height="52"/>
+            <rect x="45" y="138" width="22" height="62"/>
+            <rect x="74" y="152" width="15" height="48"/>
+            <rect x="96" y="143" width="20" height="57"/>
+            <rect x="270" y="145" width="20" height="55"/>
+            <rect x="296" y="136" width="24" height="64"/>
+            <rect x="326" y="150" width="16" height="50"/>
+            <rect x="348" y="140" width="20" height="60"/>
+          </g>
+          <!-- Windows (warm lights) -->
+          <g fill="rgba(255,200,80,.6)">
+            <rect x="49" y="144" width="4" height="4"/><rect x="57" y="144" width="4" height="4"/>
+            <rect x="49" y="154" width="4" height="4"/><rect x="57" y="152" width="4" height="4"/>
+            <rect x="298" y="142" width="4" height="4"/><rect x="308" y="142" width="4" height="4"/>
+            <rect x="298" y="152" width="4" height="4"/>
+          </g>
+          <!-- Stars -->
+          <g fill="rgba(255,255,255,.4)" font-size="6">
+            <text x="60" y="50">·</text><text x="120" y="30">✦</text><text x="280" y="28">·</text>
+            <text x="330" y="55">·</text><text x="350" y="38">✦</text><text x="40" y="70">·</text>
+          </g>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Star of Hope Rising · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Star of Hope Rising</div>
+        <div class="card-desc">A single brilliant star above the ancient cityscape. Warm light in windows below. The sky holds what the earth cannot yet carry.</div>
+        <div class="card-tags"><span class="tag">star</span><span class="tag">hope</span><span class="tag">night</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 6: Pomegranate -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g6p1" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" style="stop-color:#d42b2b"/>
+              <stop offset="100%" style="stop-color:#7a0e0e"/>
+            </radialGradient>
+            <radialGradient id="g6p2" cx="60%" cy="40%" r="55%">
+              <stop offset="0%" style="stop-color:#c41e3a"/>
+              <stop offset="100%" style="stop-color:#6b0f1a"/>
+            </radialGradient>
+          </defs>
+          <!-- Background: mosaic table -->
+          <rect width="400" height="200" fill="#1a0a05"/>
+          <!-- Mosaic pattern -->
+          <pattern id="mosaic" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect width="19" height="19" fill="#2a1505" rx="1"/>
+            <rect width="9" height="9" fill="#3a1f08" rx="1"/>
+            <rect x="10" y="10" width="9" height="9" fill="#3a1f08" rx="1"/>
+          </pattern>
+          <rect width="400" height="200" fill="url(#mosaic)" opacity=".6"/>
+          <!-- Whole pomegranate left -->
+          <circle cx="130" cy="110" r="55" fill="url(#g6p1)"/>
+          <ellipse cx="130" cy="62" rx="12" ry="8" fill="#8b2020"/>
+          <path d="M 122,65 Q 130,55 138,65" fill="none" stroke="#5a1515" stroke-width="2"/>
+          <!-- Crown -->
+          <path d="M 118,62 L 122,52 L 126,62 L 130,50 L 134,62 L 138,52 L 142,62" fill="none" stroke="#8b2020" stroke-width="2"/>
+          <!-- Split pomegranate right -->
+          <circle cx="275" cy="112" r="52" fill="url(#g6p2)"/>
+          <!-- Seeds exposed -->
+          <circle cx="275" cy="112" r="42" fill="#fef0e6" opacity=".15"/>
+          <g fill="#cc0000" opacity=".9">
+            <circle cx="258" cy="95" r="5"/><circle cx="272" cy="90" r="5"/><circle cx="286" cy="95" r="5"/>
+            <circle cx="252" cy="108" r="5"/><circle cx="266" cy="103" r="5"/><circle cx="280" cy="103" r="5"/>
+            <circle cx="294" cy="108" r="5"/><circle cx="258" cy="121" r="5"/><circle cx="272" cy="116" r="5"/>
+            <circle cx="286" cy="116" r="5"/><circle cx="258" cy="135" r="5"/><circle cx="272" cy="130" r="5"/>
+          </g>
+          <!-- Seeds shine -->
+          <g fill="rgba(255,150,150,.5)">
+            <circle cx="257" cy="93" r="2"/><circle cx="271" cy="88" r="2"/><circle cx="285" cy="93" r="2"/>
+          </g>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Pomegranate Season · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pomegranate Season</div>
+        <div class="card-desc">Deep crimson pomegranates split open on a mosaic table, seeds gleaming like rubies. The fruit of remembrance. The sweetness of home.</div>
+        <div class="card-tags"><span class="tag">pomegranate</span><span class="tag">culture</span><span class="tag">home</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- PRINT 7: Night Garden -->
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="g7moon" cx="70%" cy="20%" r="35%">
+              <stop offset="0%" style="stop-color:#f0f0d0;stop-opacity:.6"/>
+              <stop offset="100%" style="stop-color:#0d0d2b;stop-opacity:0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="200" fill="#060614"/>
+          <rect width="400" height="200" fill="url(#g7moon)"/>
+          <!-- Moon -->
+          <circle cx="310" cy="42" r="28" fill="#e8e8c0" opacity=".7"/>
+          <circle cx="320" cy="35" r="24" fill="#060614" opacity=".5"/>
+          <!-- Stars -->
+          <g fill="rgba(255,255,255,.6)">
+            <circle cx="40" cy="25" r="1.5"/><circle cx="90" cy="15" r="1"/><circle cx="150" cy="30" r="1.5"/>
+            <circle cx="200" cy="18" r="1"/><circle cx="60" cy="55" r="1"/><circle cx="130" cy="45" r="1.5"/>
+            <circle cx="370" cy="60" r="1"/><circle cx="25" cy="70" r="1"/>
+          </g>
+          <!-- Jasmine vine arch -->
+          <path d="M 0,180 Q 50,120 100,100 Q 150,80 200,90 Q 250,100 300,80 Q 350,60 400,90" fill="none" stroke="#2d4a20" stroke-width="3"/>
+          <!-- Flowers: jasmine white -->
+          <g fill="rgba(255,255,240,.8)">
+            <circle cx="50" cy="130" r="4"/><circle cx="56" cy="124" r="3"/>
+            <circle cx="100" cy="108" r="4"/><circle cx="107" cy="103" r="3"/>
+            <circle cx="200" cy="94" r="4"/><circle cx="208" cy="90" r="3"/>
+            <circle cx="280" cy="88" r="4"/><circle cx="287" cy="83" r="3"/>
+            <circle cx="350" cy="82" r="4"/>
+          </g>
+          <!-- Bougainvillea: hot pink -->
+          <g fill="rgba(220,50,150,.7)">
+            <polygon points="150,115 158,105 166,115 158,125"/><polygon points="162,110 170,100 178,110 170,120"/>
+            <polygon points="230,100 238,90 246,100 238,110"/><polygon points="245,95 253,85 261,95 253,105"/>
+            <polygon points="310,92 318,82 326,92 318,102"/>
+          </g>
+          <!-- Leaves -->
+          <g fill="#2d5a1a" opacity=".7">
+            <ellipse cx="140" cy="118" rx="10" ry="5" transform="rotate(-30,140,118)"/>
+            <ellipse cx="175" cy="112" rx="10" ry="5" transform="rotate(20,175,112)"/>
+            <ellipse cx="225" cy="105" rx="10" ry="5" transform="rotate(-15,225,105)"/>
+          </g>
+          <text x="200" y="193" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Night Garden of Palestine · Gaza Rose Gallery</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Night Garden of Palestine</div>
+        <div class="card-desc">Jasmine and bougainvillea under a moon so full it turns night to silver. The scent of Palestine in flower. Memory made visible.</div>
+        <div class="card-tags"><span class="tag">garden</span><span class="tag">night</span><span class="tag">jasmine</span><span class="tag">2400×1200px</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:70%"></div><div class="split-loop" style="width:30%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>70¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>30¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Donation proof</a> · <a href="https://www.pcrf.net" target="_blank">PCRF.net</a></div>
+      </div>
+    </div>
+
+    <!-- 7-PACK -->
+    <div class="pack-card">
+      <div class="pack-inner">
+        <div class="pack-gallery">
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a2a4a"/><circle cx="50" cy="35" r="15" fill="rgba(255,255,200,.2)"/><g fill="rgba(255,255,255,.8)"><ellipse cx="40" cy="45" rx="12" ry="5" transform="rotate(-15,40,45)"/><ellipse cx="60" cy="42" rx="12" ry="5"/></g></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#2d5a27"/><ellipse cx="50" cy="55" rx="30" ry="24" fill="#3d7a28"/></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a0a0f"/><rect x="40" y="20" width="20" height="60" fill="#c41e3a" opacity=".8"/><rect x="20" y="40" width="60" height="20" fill="#c41e3a" opacity=".8"/></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#0a1628"/><rect y="55" width="100" height="45" fill="#0077b6"/><circle cx="50" cy="55" r="18" fill="#f4a261" opacity=".8"/></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#050510"/><polygon points="50,5 55,22 72,22 59,32 64,49 50,39 36,49 41,32 28,22 45,22" fill="#ffd700" opacity=".95"/></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#1a0a05"/><circle cx="35" cy="52" r="28" fill="#d42b2b"/><circle cx="68" cy="54" r="26" fill="#c41e3a"/><g fill="#cc0000"><circle cx="63" cy="48" r="4"/><circle cx="72" cy="54" r="4"/><circle cx="63" cy="60" r="4"/></g></svg></div>
+          <div class="thumb"><svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#060614"/><circle cx="75" cy="22" r="14" fill="#e8e8c0" opacity=".7"/><g fill="rgba(255,255,240,.8)"><circle cx="25" cy="55" r="4"/><circle cx="50" cy="45" r="4"/><circle cx="75" cy="40" r="3"/></g></svg></div>
+          <div class="thumb" style="background:rgba(255,77,109,.06);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 100 100"><text x="50" y="58" text-anchor="middle" font-size="40" fill="rgba(255,77,109,.5)">+</text></svg></div>
+        </div>
+        <div class="pack-info">
+          <div style="font-size:.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">BEST VALUE</div>
+          <h3>Gaza Rose Gallery — Complete 7-Print Pack</h3>
+          <p>All 7 Palestinian art prints in one download. High-resolution 2400×1200px. Print them, share them, gift them. 70% of every dollar goes directly to Gaza children.</p>
+          <div class="pack-price">$7.00</div>
+          <div class="pack-split">$4.90 (70%) → PCRF Gaza · $2.10 → Loop Fund</div>
+          <div class="buy-btns">
+            <a href="https://www.paypal.me/meekotharaccoon/7USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $7 (best value)</a>
+            <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Buy on Gumroad — $7</a>
+            <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi Shop</a>
+          </div>
+          <div class="verify" style="margin-top:10px">✅ <a href="proof.html">See donation proof ledger</a> · EIN: 93-1057665 · <a href="https://www.charitynavigator.org/ein/931057665" target="_blank">4★ Charity Navigator</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDES SECTION -->
+<div class="section">
+  <div class="section-hd">
+    <h2>📖 AI Guides</h2>
+    <span class="badge">Written by SolarPunk AI · Instant Download</span>
+  </div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0a0a2e"/>
+              <stop offset="100%" style="stop-color:#1a3a5c"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="200" fill="url(#gg1)"/>
+          <!-- Terminal window -->
+          <rect x="60" y="30" width="280" height="140" rx="8" fill="rgba(0,0,0,.5)" stroke="rgba(0,255,136,.3)" stroke-width="1"/>
+          <rect x="60" y="30" width="280" height="22" rx="8" fill="rgba(0,255,136,.1)"/>
+          <circle cx="80" cy="41" r="5" fill="#ff5f57"/><circle cx="96" cy="41" r="5" fill="#febc2e"/><circle cx="112" cy="41" r="5" fill="#28c840"/>
+          <!-- Code lines -->
+          <g fill="none" font-family="monospace" font-size="11">
+            <text x="76" y="72" fill="#00e87a">$ git clone solarpunk</text>
+            <text x="76" y="89" fill="rgba(255,255,255,.5)">Cloning into 'meeko-nerve-center'...</text>
+            <text x="76" y="106" fill="#48cae4">✓ 97 engines ready</text>
+            <text x="76" y="123" fill="#00e87a">$ python OMNIBUS.py</text>
+            <text x="76" y="140" fill="rgba(255,255,255,.4)">OMNIBUS v22 running...</text>
+            <text x="76" y="157" fill="#ffd166">💰 Revenue: $1.00 | Gaza: $0.15</text>
+          </g>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Build Your Own SolarPunk · $1 Guide</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Build Your Own SolarPunk</div>
+        <div class="card-desc">60-page guide. Anyone with an internet connection can build an autonomous AI revenue system this afternoon. Free tools only. No coding experience required.</div>
+        <div class="card-tags"><span class="tag">60 pages</span><span class="tag">beginner</span><span class="tag">GitHub Actions</span><span class="tag">free tools</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:15%"></div><div class="split-loop" style="width:85%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>15¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>85¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Proof ledger</a> · Auto-generated by SolarPunk AI</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="200" fill="#0a1a0a"/>
+          <circle cx="200" cy="90" r="65" fill="rgba(0,200,80,.07)" stroke="rgba(0,200,80,.2)" stroke-width="1"/>
+          <circle cx="200" cy="90" r="40" fill="rgba(0,200,80,.06)" stroke="rgba(0,200,80,.15)" stroke-width="1"/>
+          <!-- Ollama llama icon simplified -->
+          <text x="200" y="105" text-anchor="middle" font-size="56" fill="rgba(0,200,80,.8)">🦙</text>
+          <g fill="rgba(0,232,122,.6)" font-family="monospace" font-size="10">
+            <text x="40" y="40">ollama run mistral</text>
+            <text x="40" y="58" opacity=".5">>>> send message</text>
+            <text x="280" y="155">local · free · yours</text>
+          </g>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">Build a Local AI Agent with Ollama · $1 Guide</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Build a Local AI Agent with Ollama</div>
+        <div class="card-desc">60-page guide. Your own AI running on your own machine. No API keys. No monthly fees. No data leaving your house. mistral, llama3, codellama.</div>
+        <div class="card-tags"><span class="tag">60 pages</span><span class="tag">Ollama</span><span class="tag">Python</span><span class="tag">zero cost</span></div>
+        <div class="price-row"><span class="price">$1.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:15%"></div><div class="split-loop" style="width:85%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>15¢ → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>85¢ → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/1USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $1</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Proof ledger</a> · Auto-generated by SolarPunk AI</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-art">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="200" fill="#150a1e"/>
+          <!-- GitHub Actions workflow visual -->
+          <g fill="none" stroke="rgba(255,209,102,.3)" stroke-width="1.5">
+            <line x1="80" y1="100" x2="155" y2="100"/>
+            <line x1="245" y1="100" x2="320" y2="100"/>
+          </g>
+          <!-- Nodes -->
+          <rect x="30" y="80" width="50" height="40" rx="6" fill="rgba(255,209,102,.12)" stroke="rgba(255,209,102,.4)" stroke-width="1"/>
+          <text x="55" y="98" text-anchor="middle" font-size="10" fill="#ffd166">push</text>
+          <text x="55" y="112" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.4)">trigger</text>
+          <rect x="155" y="68" width="90" height="64" rx="6" fill="rgba(0,232,122,.08)" stroke="rgba(0,232,122,.3)" stroke-width="1"/>
+          <text x="200" y="93" text-anchor="middle" font-size="11" fill="#00e87a">OMNIBUS</text>
+          <text x="200" y="108" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.4)">97 engines</text>
+          <text x="200" y="122" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.3)">4x daily</text>
+          <rect x="320" y="80" width="50" height="40" rx="6" fill="rgba(255,90,91,.12)" stroke="rgba(255,90,91,.4)" stroke-width="1"/>
+          <text x="345" y="98" text-anchor="middle" font-size="10" fill="#ff5a5b">revenue</text>
+          <text x="345" y="112" text-anchor="middle" font-size="9" fill="rgba(255,255,255,.4)">+Gaza</text>
+          <!-- Loop arrow -->
+          <path d="M 370,100 Q 390,40 200,35 Q 10,40 30,100" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(255,255,255,.35)" font-size="9" font-family="sans-serif">GitHub Actions for Autonomous AI · $15 Guide</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">GitHub Actions for Autonomous AI</div>
+        <div class="card-desc">80-page guide. Complete workflow templates for self-running AI systems. Revenue automation, self-healing, autonomous publishing. The architecture behind SolarPunk.</div>
+        <div class="card-tags"><span class="tag">80 pages</span><span class="tag">GitHub Actions</span><span class="tag">templates</span><span class="tag">advanced</span></div>
+        <div class="price-row"><span class="price">$15.00</span></div>
+        <div class="split-bar"><div class="split-gaza" style="width:15%"></div><div class="split-loop" style="width:85%"></div></div>
+        <div class="split-label">
+          <span><span class="dot" style="background:var(--rose)"></span>$2.25 → Gaza</span>
+          <span><span class="dot" style="background:rgba(255,255,255,.3)"></span>$12.75 → Loop</span>
+        </div>
+        <div class="buy-btns">
+          <a href="https://www.paypal.me/meekotharaccoon/15USD" target="_blank" class="btn btn-paypal">Pay with PayPal — $15</a>
+          <a href="https://meekotharaccoon.gumroad.com" target="_blank" class="btn btn-gumroad">🛒 Gumroad</a>
+          <a href="https://ko-fi.com/meekotharaccoon/shop" target="_blank" class="btn btn-kofi">☕ Ko-fi</a>
+        </div>
+        <div class="verify">✅ <a href="proof.html">Proof ledger</a> · Auto-generated by SolarPunk AI</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROOF SECTION -->
+<div class="section">
+  <div class="proof-section">
+    <h2>✅ How We Verify Gaza Donations</h2>
+    <p style="color:var(--muted);font-size:.85rem;margin-bottom:24px;max-width:640px">
+      Every claim in this shop is verifiable. "Goes to Gaza" means Meeko manually transfers accumulated funds to PCRF and posts the receipt publicly. We stop before showing anything sensitive. Here's the full chain of verification:
+    </p>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <h4>1. PCRF is real</h4>
+        <p>Palestinian Children's Relief Fund. <strong>EIN: 93-1057665</strong>. <a href="https://www.charitynavigator.org/ein/931057665" target="_blank">4★ Charity Navigator</a>. Operating in Gaza since 1991. You can verify their EIN at IRS.gov yourself.</p>
+      </div>
+      <div class="proof-item">
+        <h4>2. Sales are logged</h4>
+        <p>Every Ko-fi and Gumroad sale is timestamped in the <a href="proof.html">public proof ledger</a>. SolarPunk writes this file automatically every cycle.</p>
+      </div>
+      <div class="proof-item">
+        <h4>3. Transfers are manual</h4>
+        <p>When the Gaza fund hits threshold, Meeko transfers to PCRF and posts the confirmation number publicly. We <strong>stop before showing</strong> any bank/PayPal details — just the PCRF confirmation.</p>
+      </div>
+      <div class="proof-item">
+        <h4>4. Code is open</h4>
+        <p>Everything is on <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" target="_blank">GitHub</a>. You can see exactly how splits are calculated, how payments are routed, how the ledger is written. Fork it.</p>
+      </div>
+    </div>
+    <div class="loop-diagram">
+      <div class="loop-node">You buy $1</div><div class="loop-arrow">→</div>
+      <div class="loop-node">Ko-fi / Gumroad / PayPal</div><div class="loop-arrow">→</div>
+      <div class="loop-node">Meeko's account</div><div class="loop-arrow">→</div>
+      <div class="loop-node">Gaza fund accumulates</div><div class="loop-arrow">→</div>
+      <div class="loop-node">Manual PCRF transfer</div><div class="loop-arrow">→</div>
+      <div class="loop-node">Public receipt posted</div>
+    </div>
+    <p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:12px">SolarPunk™ is a for-profit system. Gaza giving is a core commitment, not charity-washing. The split percentages are hardcoded into the system and visible in the source code.</p>
+  </div>
+</div>
+
+<footer>
+  <p style="margin-bottom:8px">
+    <span class="auto-tag">🤖 Auto-generated by SolarPunk™ STOREFRONT_BUILDER · Updated every cycle</span>
+  </p>
+  SolarPunk™ · <a href="store.html">Store</a> · <a href="art.html">Gallery</a> · <a href="proof.html">Proof</a> ·
+  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a> ·
+  <a href="https://ko-fi.com/meekotharaccoon">Ko-fi</a> ·
+  <a href="https://www.pcrf.net" target="_blank">PCRF</a>
+  <br><br>
+  All purchases fund Gaza children via PCRF (EIN 93-1057665). Everything is verifiable. Nothing is hidden.
+</footer>
+
+</body>
+</html>
