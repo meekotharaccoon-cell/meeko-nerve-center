@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-OMNIBUS v22 — FULL AUTONOMY: generates products, publishes them, delivers them, promotes them
-=============================================================================================
-New in v22:
-  PDF_GENERATOR            (L3) — writes real 60-page guides using Groq. No placeholders.
-  GITHUB_RELEASES_PUBLISHER(L3) — uploads guides as release assets. Permanent free URLs.
-  GUMROAD_PRODUCT_PUBLISHER(L5) — creates/updates all Gumroad listings autonomously
-  PRODUCT_DELIVERY_ENGINE  (L5) — watches Gmail, auto-emails download link on every sale
-  REVENUE_AUDIT            (L0) — audits every buy link every cycle, flags 404s
-  SWARM_COORDINATOR        (L6) — ALL HANDS ON DECK coordinator
+OMNIBUS v23 — SHOP IS LIVE. PROOF IS LIVE. BUILD EVERYTHING.
+=============================================================
+New in v23:
+  PROOF_LEDGER       (L5) — public verifiable Gaza donation tracker → proof.html
+  STOREFRONT_BUILDER (L5) — auto-rebuilds shop.html every cycle with live URLs
+  Gaza Rose Gallery  → 7 individual prints registered as Gumroad products
+  GUMROAD_PRODUCT_PUBLISHER → uses GUMROAD_SECRET (already in secrets, no new token)
+  PayPal.me → zero-setup direct payments, already live in shop.html
 
+v22: PDF_GENERATOR, GITHUB_RELEASES_PUBLISHER, GUMROAD_PRODUCT_PUBLISHER, PRODUCT_DELIVERY_ENGINE
 v21: BLUESKY_ENGINE, MASTODON_ENGINE, AUTONOMOUS_PUBLISHER, FIRST_SALE_NOTIFIER
 v20: NARRATOR, PLUGIN_REGISTRY
 v19: NEWSLETTER_ENGINE, ANALYTICS_ENGINE, RSS_PUBLISHER, FORK_SCANNER
@@ -23,10 +23,10 @@ v12: RESONANCE_ENGINE, DEV_TO_PUBLISHER, VIRALITY_ENGINE, SELF_PORTRAIT
 v11: CLAUDE_ENGINE
 v10: CAPABILITY_SCANNER, EMAIL_OUTREACH, STORE_BUILDER, BRIDGE_BUILDER
 
-The loop: build -> speak -> listen -> remember -> watch -> respond -> grow -> tell
+The loop: build -> speak -> listen -> remember -> watch -> respond -> grow -> tell -> prove
 
 L0  CYCLE_MEMORY . GUARDIAN . ENGINE_INTEGRITY . SECRETS_CHECKER . BOTTLENECK_SCANNER
-    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER . PLUGIN_REGISTRY . REVENUE_AUDIT [v22]
+    AUTO_HEALER . CAPABILITY_SCANNER . AGENT_LINK_VERIFIER . PLUGIN_REGISTRY . REVENUE_AUDIT
 L1  EMAIL_BRAIN . SCAM_SHIELD . CALENDAR_BRAIN . CONTENT_HARVESTER .
     AI_WATCHER . CRYPTO_WATCHER . FREE_API_ENGINE .
     RESONANCE_ENGINE . ANALYTICS_ENGINE . REPO_SPIDER . FORK_SCANNER . FIRST_CONTACT .
@@ -35,20 +35,20 @@ L2  GRANT_HUNTER . ETSY_SEO_ENGINE . INCOME_ARCHITECT . REVENUE_FLYWHEEL .
     GUMROAD_AUTO_QUEUE . QUICK_REVENUE . BUSINESS_FACTORY
 L3  LANDING_DEPLOYER . ART_CATALOG . REVENUE_LOOP . ART_GENERATOR .
     EMAIL_AGENT_EXCHANGE . GRANT_APPLICANT . HEALTH_BOOSTER .
-    AGENT_GUMROAD_BUILDER . PDF_GENERATOR [v22] . GITHUB_RELEASES_PUBLISHER [v22]
-L4  SOCIAL_PROMOTER . BLUESKY_ENGINE [v21] . MASTODON_ENGINE [v21] .
-    AUTONOMOUS_PUBLISHER [v21] . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
+    AGENT_GUMROAD_BUILDER . PDF_GENERATOR . GITHUB_RELEASES_PUBLISHER
+L4  SOCIAL_PROMOTER . BLUESKY_ENGINE . MASTODON_ENGINE .
+    AUTONOMOUS_PUBLISHER . SUBSTACK_ENGINE . LINK_PAGE . GITHUB_POSTER .
     SOCIAL_DASHBOARD . CONNECTION_FORGE . HUMAN_CONNECTOR . AFFILIATE_MAXIMIZER .
     STORE_BUILDER . BRIDGE_BUILDER . EMAIL_OUTREACH . VIRALITY_ENGINE .
-    DEV_TO_PUBLISHER [v21 fix] . AGENT_TWEET_WRITER . RESONANCE_CONVERTER . NEWSLETTER_ENGINE
-L5  KOFI_ENGINE . GUMROAD_ENGINE . GUMROAD_PRODUCT_PUBLISHER [v22] . GITHUB_SPONSORS_ENGINE .
+    DEV_TO_PUBLISHER . AGENT_TWEET_WRITER . RESONANCE_CONVERTER . NEWSLETTER_ENGINE
+L5  KOFI_ENGINE . GUMROAD_ENGINE . GUMROAD_PRODUCT_PUBLISHER . GITHUB_SPONSORS_ENGINE .
     KOFI_PAYMENT_TRACKER . DISPATCH_HANDLER . HUMAN_PAYOUT .
-    CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT . FIRST_SALE_NOTIFIER [v21] .
-    PRODUCT_DELIVERY_ENGINE [v22]
+    CONTRIBUTOR_REGISTRY . PAYPAL_PAYOUT . FIRST_SALE_NOTIFIER .
+    PRODUCT_DELIVERY_ENGINE .
+    PROOF_LEDGER [v23] . STOREFRONT_BUILDER [v23]
 L6  SYNAPSE . SYNTHESIS_FACTORY . ARCHITECT . SELF_BUILDER .
     KNOWLEDGE_BRIDGE . KNOWLEDGE_WEAVER . REVENUE_OPTIMIZER . BIG_BRAIN_ORACLE .
-    SWARM_COORDINATOR [v22] .
-    DESKTOP_DAEMON [local only] . CLAUDE_BRIDGE [local only]
+    SWARM_COORDINATOR
 L7  MEMORY_PALACE . README_GENERATOR . BRIEFING_ENGINE . NIGHTLY_DIGEST .
     ISSUE_SYNC . SOLARPUNK_LEGAL . BRAND_LEGAL . TASK_ATOMIZER .
     AUTONOMY_PROOF . CLAUDE_ENGINE . SELF_PORTRAIT . RSS_PUBLISHER .
@@ -162,11 +162,13 @@ def ctx():
         "mastodon":        rj("mastodon_state.json"),
         "publisher":       rj("autonomous_publisher_state.json"),
         "first_sale":      rj("first_sale_state.json"),
-        "pdf_generator":   rj("pdf_generator_state.json"),         # v22
-        "product_registry":rj("product_registry.json"),            # v22
-        "delivery":        rj("delivery_engine_state.json"),       # v22
-        "revenue_audit":   rj("revenue_audit.json"),               # v22
-        "swarm":           rj("swarm_state.json"),                  # v22
+        "pdf_generator":   rj("pdf_generator_state.json"),
+        "product_registry":rj("product_registry.json"),
+        "delivery":        rj("delivery_engine_state.json"),
+        "revenue_audit":   rj("revenue_audit.json"),
+        "swarm":           rj("swarm_state.json"),
+        "proof_ledger":    rj("proof_ledger.json"),            # v23
+        "storefront":      rj("storefront_builder_state.json"), # v23
         "engines_ok":      results["ok"][:],
         "engines_failed":  results["failed"][:],
     }
@@ -199,7 +201,7 @@ def L0():
     eng("CAPABILITY_SCANNER", timeout=30)
     eng("AGENT_LINK_VERIFIER",timeout=60)
     eng("PLUGIN_REGISTRY",    timeout=60)
-    eng("REVENUE_AUDIT",      timeout=60)  # v22: audits all buy links
+    eng("REVENUE_AUDIT",      timeout=60)
     save_ctx()
 
 
@@ -247,10 +249,9 @@ def L3():
     eng("GRANT_APPLICANT",          timeout=90)
     eng("HEALTH_BOOSTER",           timeout=60)
     save_ctx()
-    # v22: generate actual product content and upload to GitHub Releases
     eng("PDF_GENERATOR",            timeout=600)  # up to 10 min — writing real guides
     save_ctx()
-    eng("GITHUB_RELEASES_PUBLISHER",timeout=120)  # upload to releases
+    eng("GITHUB_RELEASES_PUBLISHER",timeout=120)
     save_ctx()
 
 
@@ -279,10 +280,10 @@ def L4():
 
 
 def L5():
-    print("\n--- L5: COLLECT + PUBLISH + DELIVER + PAYOUT ---")
+    print("\n--- L5: COLLECT + PUBLISH + DELIVER + PROVE ---")
     eng("KOFI_ENGINE",               timeout=60)
     eng("GUMROAD_ENGINE",            timeout=60)
-    eng("GUMROAD_PRODUCT_PUBLISHER", timeout=60)  # v22: creates/updates all Gumroad listings
+    eng("GUMROAD_PRODUCT_PUBLISHER", timeout=90)  # uses GUMROAD_SECRET — no new token needed
     eng("GITHUB_SPONSORS_ENGINE",    timeout=60)
     eng("KOFI_PAYMENT_TRACKER",      timeout=60)
     eng("DISPATCH_HANDLER",          timeout=60)
@@ -290,7 +291,9 @@ def L5():
     eng("CONTRIBUTOR_REGISTRY",      timeout=60)
     eng("PAYPAL_PAYOUT",             timeout=90)
     eng("FIRST_SALE_NOTIFIER",       timeout=30)
-    eng("PRODUCT_DELIVERY_ENGINE",   timeout=90)  # v22: auto-delivers on sale
+    eng("PRODUCT_DELIVERY_ENGINE",   timeout=90)
+    eng("PROOF_LEDGER",              timeout=60)   # v23: public donation tracker
+    eng("STOREFRONT_BUILDER",        timeout=90)   # v23: rebuilds shop.html every cycle
     save_ctx()
 
 
@@ -305,27 +308,23 @@ def L6():
     eng("KNOWLEDGE_WEAVER",  timeout=180); save_ctx()
     eng("REVENUE_OPTIMIZER", timeout=120); save_ctx()
     eng("BIG_BRAIN_ORACLE",  timeout=90)
-    eng("SWARM_COORDINATOR", timeout=120); save_ctx()  # v22: ALL HANDS ON DECK
+    eng("SWARM_COORDINATOR", timeout=120); save_ctx()
 
-    health    = rj("brain_state.json").get("health_score", 0)
-    cycle     = rj("cycle_delta.json").get("cycle_number", "?")
-    spider    = rj("repo_spider_state.json")
-    conv      = rj("resonance_converter_state.json")
-    fork_sc   = rj("fork_scanner_state.json")
-    analytics = rj("analytics_state.json")
-    bsky      = rj("bluesky_engine_state.json")
-    pub       = rj("autonomous_publisher_state.json")
-    registry  = rj("product_registry.json")
+    health   = rj("brain_state.json").get("health_score", 0)
+    cycle    = rj("cycle_delta.json").get("cycle_number", "?")
+    registry = rj("product_registry.json")
+    ledger   = rj("proof_ledger.json")
+    bsky     = rj("bluesky_engine_state.json")
+    pub      = rj("autonomous_publisher_state.json")
     products_live = sum(1 for p in registry.get("products", {}).values()
                         if p.get("gumroad_url") or p.get("download_url"))
     _queue_daemon_task(
         f"Cycle {cycle} done. Health: {health}/100. "
-        f"Products with live URLs: {products_live}. "
-        f"Bluesky posted all-time: {bsky.get('posted', 0)}. "
-        f"Total published: {pub.get('total_sent', 0)}. "
-        f"Check data/product_registry.json — ensure all products have download URLs.",
-        source="OMNIBUS_L6",
-        priority=2
+        f"Products live: {products_live}. "
+        f"Gaza fund: ${ledger.get('total_to_gaza', 0):.2f} | PCRF transferred: ${ledger.get('total_transferred', 0):.2f}. "
+        f"Bluesky: {bsky.get('posted', 0)} | Published: {pub.get('total_sent', 0)}. "
+        f"Shop: https://meekotharaccoon-cell.github.io/meeko-nerve-center/shop.html",
+        source="OMNIBUS_L6", priority=2
     )
 
 
@@ -363,10 +362,10 @@ def run():
     run_id = os.environ.get("GITHUB_RUN_ID", f"local-{int(t0)}")
     ts     = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    print(f"\nOMNIBUS v22 -- {ts}")
+    print(f"\nOMNIBUS v23 -- {ts}")
     print(f"   Run: {run_id}")
-    print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow -> tell")
-    print(f"   NEW: PDF_GENERATOR + GITHUB_RELEASES + GUMROAD_PUBLISHER + DELIVERY_ENGINE")
+    print(f"   build -> speak -> listen -> remember -> watch -> respond -> grow -> tell -> prove")
+    print(f"   NEW: PROOF_LEDGER + STOREFRONT_BUILDER | Shop: {BASE}/shop.html")
     print("=" * 60)
 
     for layer in [L0, L1, L2, L3, L4, L5, L6, L7]:
@@ -389,7 +388,6 @@ def run():
     fc         = rj("first_contact.json")
     daemon     = rj("desktop_daemon_state.json")
     spider     = rj("repo_spider_state.json")
-    converter  = rj("resonance_converter_state.json")
     analytics  = rj("analytics_state.json")
     fork_sc    = rj("fork_scanner_state.json")
     newsletter = rj("newsletter_state.json")
@@ -399,21 +397,23 @@ def run():
     mast       = rj("mastodon_state.json")
     pub        = rj("autonomous_publisher_state.json")
     first_sale = rj("first_sale_state.json")
-    registry   = rj("product_registry.json")    # v22
-    delivery   = rj("delivery_engine_state.json") # v22
+    registry   = rj("product_registry.json")
+    delivery   = rj("delivery_engine_state.json")
+    ledger     = rj("proof_ledger.json")  # v23
     asks       = rj("asks_queue.json") if isinstance(rj("asks_queue.json"), list) else []
 
-    rev_total  = revenue.get("total_received", 0) if isinstance(revenue, dict) else 0
-    gaza_total = revenue.get("total_to_gaza",  0) if isinstance(revenue, dict) else 0
-    health_now = rj("brain_state.json").get("health_score", 0)
-    emails_out = len([e for e in outreach.get("sent", []) if e.get("sent")])
+    rev_total   = revenue.get("total_received", 0) if isinstance(revenue, dict) else 0
+    gaza_total  = ledger.get("total_to_gaza", 0) or (revenue.get("total_to_gaza", 0) if isinstance(revenue, dict) else 0)
+    health_now  = rj("brain_state.json").get("health_score", 0)
+    emails_out  = len([e for e in outreach.get("sent", []) if e.get("sent")])
     fc_happened = fc.get("happened", False) if isinstance(fc, dict) else False
     fs_happened = first_sale.get("happened", False) if isinstance(first_sale, dict) else False
     products_ready = sum(1 for p in registry.get("products", {}).values() if p.get("content_ready"))
-    products_live  = sum(1 for p in registry.get("products", {}).values() if p.get("gumroad_url") or p.get("download_url"))
+    products_live  = sum(1 for p in registry.get("products", {}).values()
+                         if p.get("gumroad_url") or p.get("download_url"))
 
     manifest = {
-        "version":                "v22",
+        "version":                "v23",
         "run_id":                 run_id,
         "completed":              datetime.now(timezone.utc).isoformat(),
         "elapsed_s":              elapsed,
@@ -421,13 +421,17 @@ def run():
         "health_after":           health_now,
         "health_trend":           cycle_mem.get("health_trend", "unknown"),
         "cycle_number":           cycle_mem.get("cycle_number", 0),
-        "products_content_ready": products_ready,   # v22
-        "products_with_live_urls":products_live,    # v22
-        "deliveries_sent":        delivery.get("total_delivered", 0),  # v22
+        "products_content_ready": products_ready,
+        "products_with_live_urls":products_live,
+        "deliveries_sent":        delivery.get("total_delivered", 0),
+        "total_to_gaza":          gaza_total,
+        "total_transferred_pcrf": ledger.get("total_transferred", 0),  # v23
+        "pending_transfer":       ledger.get("pending_transfer", 0),    # v23
+        "shop_url":               f"{BASE}/shop.html",
+        "proof_url":              f"{BASE}/proof.html",
         "businesses_built":       len(list(DATA.glob("business_*.json"))),
         "live_url":               rj("revenue_loop_last.json").get("live_url"),
         "total_revenue":          rev_total,
-        "total_to_gaza":          gaza_total,
         "first_sale_happened":    fs_happened,
         "first_sale_amount":      first_sale.get("amount", 0) if isinstance(first_sale, dict) else 0,
         "first_contact_happened": fc_happened,
@@ -470,14 +474,16 @@ def run():
     hf.write_text(json.dumps(hist[-200:], indent=2))
 
     print(f"\n{'='*60}")
-    print(f"OMNIBUS v22 done -- {elapsed}s")
+    print(f"OMNIBUS v23 done -- {elapsed}s")
     print(f"   {len(results['ok'])}/{total} OK | {len(results['skipped'])} skipped")
     if results["failed"]:
         print(f"   FAILED: {', '.join(results['failed'])}")
     print(f"   Health: {manifest['health_before']} -> {manifest['health_after']}")
-    print(f"   Revenue: ${rev_total:.2f} | Gaza: ${gaza_total:.2f}")
-    print(f"   First sale: {'✅ $' + str(manifest['first_sale_amount']) if fs_happened else '⏳ waiting'}")
-    print(f"   Products ready: {products_ready} | Live URLs: {products_live} | Deliveries: {manifest['deliveries_sent']}")
+    print(f"   Revenue: ${rev_total:.2f} | Gaza: ${gaza_total:.2f} | PCRF: ${manifest['total_transferred_pcrf']:.2f}")
+    print(f"   First sale: {'$' + str(manifest['first_sale_amount']) if fs_happened else 'waiting'}")
+    print(f"   Products: {products_ready} ready | {products_live} live | {manifest['deliveries_sent']} delivered")
+    print(f"   Shop: {manifest['shop_url']}")
+    print(f"   Proof: {manifest['proof_url']}")
     print(f"   Resonance: {manifest['resonance_score']}/100 | Stars: {manifest['github_stars']}")
     print(f"   Published: {manifest['total_published']} | Bluesky: {manifest['bluesky_posted']}")
     if fc_happened:
