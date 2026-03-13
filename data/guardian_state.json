@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-13T01:42:09.444986",
+  "last_checked": "2026-03-13T01:43:03.779577",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -47,6 +47,7 @@
     "PAYPAL_PAYOUT.py",
     "CYCLE_MEMORY.py",
     "ARCHITECT.py",
+    "PDF_GENERATOR.py",
     "BLUESKY_ENGINE.py",
     "NARRATOR.py",
     "BOTTLENECK_SCANNER.py",
