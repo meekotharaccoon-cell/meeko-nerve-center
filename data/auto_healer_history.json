@@ -1,31 +1,5 @@
 [
   {
-    "timestamp": "2026-03-06T21:55:32.367004+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
-    "timestamp": "2026-03-07T04:25:59.769960+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-07T04:27:20.605474+00:00",
     "healed": [],
     "auto_installed": [],
@@ -612,6 +586,28 @@
     ],
     "failed_engines_seen": [
       "BRIEFING_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-13T02:07:57.204478+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-13T02:09:17.491349+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
       "NARRATOR"
     ]
   }

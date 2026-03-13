@@ -1,831 +1,6 @@
 {
   "posts": [
     {
-      "text": "L2: Revenue planning",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent": true,
-      "sent_at": "2026-03-13T02:06:46.501272+00:00",
-      "send_result": {
-        "success": true,
-        "info": "manual"
-      }
-    },
-    {
-      "text": "L3: Deploy content",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent": true,
-      "sent_at": "2026-03-13T02:06:46.501285+00:00",
-      "send_result": {
-        "success": true,
-        "info": "manual"
-      }
-    },
-    {
-      "text": "L4: Distribute + publish",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent": true,
-      "sent_at": "2026-03-13T02:06:46.501289+00:00",
-      "send_result": {
-        "success": true,
-        "info": "manual"
-      }
-    },
-    {
-      "text": "L5: Collect + pay out",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L6: Think + expand",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L7: Report + prove",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 3/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The key insight: every layer is a set of Python scripts.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "Every script either succeeds, fails gracefully, or times out.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The system knows the difference. It logs everything. It patches what it can.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 4/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "You can read every line of this architecture.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "All 76 engines. All 8 workflows. Every data file.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "MIT licensed. Fork it if you want your own.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "========================================",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "========================================",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 1/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "People ask how an AI system can run itself forever.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "Here's the actual answer: it can't.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "That's close enough.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 2/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "SolarPunk's 8 execution layers:",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L0: Check + heal itself",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L1: Gather intel (email, news, AI models)",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L2: Revenue planning",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L3: Deploy content",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L4: Distribute + publish",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L5: Collect + pay out",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L6: Think + expand",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L7: Report + prove",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 3/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The key insight: every layer is a set of Python scripts.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "Every script either succeeds, fails gracefully, or times out.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The system knows the difference. It logs everything. It patches what it can.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 4/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "You can read every line of this architecture.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "All 76 engines. All 8 workflows. Every data file.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "MIT licensed. Fork it if you want your own.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "========================================",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "========================================",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 1/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "People ask how an AI system can run itself forever.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "Here's the actual answer: it can't.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "That's close enough.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 2/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "SolarPunk's 8 execution layers:",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L0: Check + heal itself",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L1: Gather intel (email, news, AI models)",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L2: Revenue planning",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L3: Deploy content",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L4: Distribute + publish",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L5: Collect + pay out",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L6: Think + expand",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "L7: Report + prove",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 3/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The key insight: every layer is a set of Python scripts.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "Every script either succeeds, fails gracefully, or times out.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "The system knows the difference. It logs everything. It patches what it can.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "[Tweet 4/4]",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "You can read every line of this architecture.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "All 76 engines. All 8 workflows. Every data file.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "MIT licensed. Fork it if you want your own.",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
-      "platform": "all",
-      "source": "tweets_queue_txt",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T20:25:14.486129+00:00",
-      "channel_results": {
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false
-    },
-    {
-      "platform": "twitter",
-      "text": "Just launched: AI Tools Mega Pack \u2014 Mar 2026 \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
-      "queued_at": "2026-03-12T21:59:34.420161+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T21:59:38.495141+00:00",
-      "channel_results": {
-        "devto": "HTTP 403: ",
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent_devto": true,
-      "devto_url": ""
-    },
-    {
-      "platform": "reddit",
-      "text": "Built this with autonomous AI: AI Tools Mega Pack \u2014 Mar 2026. $37, 15% goes to Palestinian kids.",
-      "queued_at": "2026-03-12T21:59:34.420161+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T21:59:38.495141+00:00",
-      "channel_results": {
-        "devto": "HTTP 403: ",
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent_devto": true,
-      "devto_url": ""
-    },
-    {
-      "platform": "linkedin",
-      "text": "New digital product: AI Tools Mega Pack \u2014 Mar 2026. $37. 15% to PCRF (Gaza children's relief).",
-      "queued_at": "2026-03-12T21:59:34.420161+00:00",
-      "source": "BUSINESS_FACTORY",
-      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
-      "published_autonomous": true,
-      "published_at": "2026-03-12T21:59:38.495141+00:00",
-      "channel_results": {
-        "devto": "HTTP 403: ",
-        "github_gist": "HTTP Error 403: Forbidden"
-      },
-      "published_success": false,
-      "sent_devto": true,
-      "devto_url": ""
-    },
-    {
       "platform": "twitter",
       "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
       "queued_at": "2026-03-12T21:59:36.950684+00:00",
@@ -840,7 +15,13 @@
       },
       "published_success": false,
       "sent_devto": true,
-      "devto_url": ""
+      "devto_url": "",
+      "sent": true,
+      "sent_at": "2026-03-13T02:08:41.903430+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "reddit",
@@ -857,7 +38,13 @@
       },
       "published_success": false,
       "sent_devto": true,
-      "devto_url": ""
+      "devto_url": "",
+      "sent": true,
+      "sent_at": "2026-03-13T02:08:41.903440+00:00",
+      "send_result": {
+        "success": false,
+        "info": "no credentials"
+      }
     },
     {
       "platform": "linkedin",
@@ -874,7 +61,13 @@
       },
       "published_success": false,
       "sent_devto": true,
-      "devto_url": ""
+      "devto_url": "",
+      "sent": true,
+      "sent_at": "2026-03-13T02:08:41.903447+00:00",
+      "send_result": {
+        "success": true,
+        "info": "manual"
+      }
     },
     {
       "text": "================================================================================",
@@ -3042,7 +2235,3069 @@
         "github_gist": "HTTP Error 403: Forbidden"
       },
       "published_success": false
+    },
+    {
+      "platform": "twitter",
+      "text": "Just launched: AI Tools Mega Pack \u2014 Mar 2026 \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com",
+      "queued_at": "2026-03-13T02:08:38.568376+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "platform": "reddit",
+      "text": "Built this with autonomous AI: AI Tools Mega Pack \u2014 Mar 2026. $37, 15% goes to Palestinian kids.",
+      "queued_at": "2026-03-13T02:08:38.568376+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "platform": "linkedin",
+      "text": "New digital product: AI Tools Mega Pack \u2014 Mar 2026. $37. 15% to PCRF (Gaza children's relief).",
+      "queued_at": "2026-03-13T02:08:38.568376+00:00",
+      "source": "BUSINESS_FACTORY",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "platform": "twitter",
+      "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
+      "queued_at": "2026-03-13T02:08:40.170585+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "platform": "reddit",
+      "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
+      "queued_at": "2026-03-13T02:08:40.170585+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "platform": "linkedin",
+      "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "queued_at": "2026-03-13T02:08:40.170585+00:00",
+      "source": "REVENUE_LOOP",
+      "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "THREAD \u2014 ARCHITECTURE \u2014 2026-03-12",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "========================================",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 1/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "People ask how an AI system can run itself forever.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Here's the actual answer: it can't.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "But it can detect every failure mode and either fix it or skip it gracefully.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "That's close enough.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 2/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "SolarPunk's 8 execution layers:",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L0: Check + heal itself",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L1: Gather intel (email, news, AI models)",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L2: Revenue planning",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L3: Deploy content",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L4: Distribute + publish",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L5: Collect + pay out",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L6: Think + expand",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "L7: Report + prove",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 3/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The key insight: every layer is a set of Python scripts.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "Every script either succeeds, fails gracefully, or times out.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "The system knows the difference. It logs everything. It patches what it can.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "[Tweet 4/4]",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "You can read every line of this architecture.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "All 76 engines. All 8 workflows. Every data file.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "MIT licensed. Fork it if you want your own.",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "github.com/meekotharaccoon-cell/meeko-nerve-center",
+      "platform": "all",
+      "source": "tweets_queue_txt",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:08:42.069116+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
+    },
+    {
+      "text": "\ud83c\udf3f SolarPunk cycle 51 \u2014 92 engines, health 40/100, resonance 60/100. Autonomous AI routing 15% to Gaza. https://meekotharaccoon-cell.github.io/meeko-nerve-center/narrative.html",
+      "platform": "all",
+      "source": "auto",
+      "published_autonomous": true,
+      "published_at": "2026-03-13T02:09:13.345742+00:00",
+      "channel_results": {
+        "github_gist": "HTTP Error 403: Forbidden"
+      },
+      "published_success": false
     }
   ],
-  "last_drain": "2026-03-13T02:07:09.216484+00:00"
+  "last_drain": "2026-03-13T02:09:13.418437+00:00"
 }

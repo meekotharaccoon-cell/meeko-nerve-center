@@ -223,6 +223,8 @@
       "ctx.json",
       "cycle_delta.json",
       "cycle_ledger.json",
+      "delivery_engine_state.json",
+      "delivery_log.json",
       "desktop_clean_log.json",
       "desktop_connection.json",
       "desktop_daemon_log.json",
@@ -239,6 +241,7 @@
       "fork_scanner_state.json",
       "free_api_state.json",
       "github_poster_state.json",
+      "github_releases_state.json",
       "goal_queue.json",
       "grant_applicant_state.json",
       "grant_hunter_state.json",
@@ -251,6 +254,7 @@
       "gumroad_engine_state.json",
       "gumroad_listings.json",
       "gumroad_queue_state.json",
+      "gumroad_setup_needed.json",
       "health_report.json",
       "human_connector_state.json",
       "issue_sync_state.json",
@@ -273,7 +277,9 @@
       "outreach_state.json",
       "payout_ledger.json",
       "paypal_payout_state.json",
+      "pdf_generator_state.json",
       "plugin_registry.json",
+      "product_registry.json",
       "proof_state.json",
       "quick_revenue.json",
       "repo_spider_state.json",
@@ -297,6 +303,7 @@
       "sponsors_state.json",
       "store_builder_state.json",
       "substack_state.json",
+      "swarm_state.json",
       "synthesis_log.json",
       "system_directive.json",
       "virality_posts.json"
@@ -307,7 +314,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-13T02:06:04.840895+00:00"
+    "timestamp": "2026-03-13T02:08:35.333594+00:00"
   },
-  "generated_at": "2026-03-13T02:06:05.454680+00:00"
+  "generated_at": "2026-03-13T02:08:35.642917+00:00"
 }

@@ -1,7 +1,7 @@
 {
-  "cycles": 88,
-  "posted": 92,
-  "failed": 172,
+  "cycles": 89,
+  "posted": 93,
+  "failed": 174,
   "history": [
     {
       "platform": "linkedin",
@@ -554,7 +554,13 @@
       "niche": "",
       "info": "manual",
       "at": "2026-03-13T02:06:46.501289+00:00"
+    },
+    {
+      "platform": "linkedin",
+      "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+      "info": "manual",
+      "at": "2026-03-13T02:08:41.903447+00:00"
     }
   ],
-  "last_run": "2026-03-13T02:06:46.500687+00:00"
+  "last_run": "2026-03-13T02:08:41.902886+00:00"
 }

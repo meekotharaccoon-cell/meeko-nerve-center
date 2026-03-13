@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-13T02:07:04.354766+00:00",
+  "generated_at": "2026-03-13T02:09:11.059591+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -13,6 +13,7 @@
       "CAPABILITY_SCANNER",
       "AGENT_LINK_VERIFIER",
       "PLUGIN_REGISTRY",
+      "REVENUE_AUDIT",
       "EMAIL_BRAIN",
       "SCAM_SHIELD",
       "CALENDAR_BRAIN",
@@ -42,6 +43,8 @@
       "EMAIL_AGENT_EXCHANGE",
       "GRANT_APPLICANT",
       "HEALTH_BOOSTER",
+      "PDF_GENERATOR",
+      "GITHUB_RELEASES_PUBLISHER",
       "SOCIAL_PROMOTER",
       "BLUESKY_ENGINE",
       "MASTODON_ENGINE",
@@ -63,6 +66,7 @@
       "NEWSLETTER_ENGINE",
       "KOFI_ENGINE",
       "GUMROAD_ENGINE",
+      "GUMROAD_PRODUCT_PUBLISHER",
       "GITHUB_SPONSORS_ENGINE",
       "KOFI_PAYMENT_TRACKER",
       "DISPATCH_HANDLER",
@@ -70,6 +74,7 @@
       "CONTRIBUTOR_REGISTRY",
       "PAYPAL_PAYOUT",
       "FIRST_SALE_NOTIFIER",
+      "PRODUCT_DELIVERY_ENGINE",
       "SYNAPSE",
       "SYNTHESIS_FACTORY",
       "ARCHITECT",
@@ -78,8 +83,10 @@
       "KNOWLEDGE_WEAVER",
       "REVENUE_OPTIMIZER",
       "BIG_BRAIN_ORACLE",
+      "SWARM_COORDINATOR",
       "MEMORY_PALACE",
       "README_GENERATOR",
+      "BRIEFING_ENGINE",
       "NIGHTLY_DIGEST",
       "ISSUE_SYNC",
       "SOLARPUNK_LEGAL",
@@ -91,7 +98,6 @@
       "RSS_PUBLISHER"
     ],
     "engines_failed": [
-      "BRIEFING_ENGINE",
       "NARRATOR"
     ],
     "engines_skipped": [],
@@ -99,9 +105,9 @@
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 91,
+    "businesses_built": 92,
     "engines_built": 0,
-    "revenue_potential": 63940,
+    "revenue_potential": 64680,
     "active_revenue_streams": [
       "substack"
     ]

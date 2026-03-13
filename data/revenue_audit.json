@@ -1,10 +1,10 @@
 {
-  "ts": "2026-03-13T02:05:27.915072+00:00",
+  "ts": "2026-03-13T02:07:58.027684+00:00",
   "total_checked": 10,
   "working": 9,
   "broken": 1,
   "critical_broken": 1,
-  "buy_link_issues": 7,
+  "buy_link_issues": 24,
   "gumroad_alive": false,
   "kofi_alive": true,
   "revenue_blockers": [
@@ -19,24 +19,89 @@
   ],
   "buy_link_details": [
     {
-      "page": "art.html",
-      "url": "https://meekotharacoon.gumroad.com",
-      "issue": "TYPO: meekotharacoon (missing r)"
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
     },
     {
-      "page": "art.html",
-      "url": "https://meekotharacoon.gumroad.com",
-      "issue": "TYPO: meekotharacoon (missing r)"
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
     },
     {
-      "page": "art.html",
-      "url": "https://meekotharacoon.gumroad.com",
-      "issue": "TYPO: meekotharacoon (missing r)"
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
     },
     {
-      "page": "art.html",
-      "url": "https://meekotharacoon.gumroad.com",
-      "issue": "TYPO: meekotharacoon (missing r)"
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
     },
     {
       "page": "art.html",
@@ -129,7 +194,7 @@
   ],
   "recommended_fixes": [
     "Gumroad 404 detected: redirect all store buy buttons to Ko-fi immediately",
-    "Fix 7 buy links: replace generic gumroad.com with product-specific URLs",
+    "Fix 24 buy links: replace generic gumroad.com with product-specific URLs",
     "Add actual art preview images to store \u2014 selling art with no visuals = no trust",
     "Add free art lead magnet to top of store with interaction CTA",
     "Note: GitHub clone count includes automated CI checkouts \u2014 real human visitors are much lower"

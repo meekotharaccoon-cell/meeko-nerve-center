@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-13T02:05:35.531471+00:00",
+  "timestamp": "2026-03-13T02:08:09.854943+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Shall I implement it? No",
         "url": "https://gist.github.com/bretonium/291f4388e2de89a43b25c135b44e41f0",
-        "score": 828,
+        "score": 834,
         "source": "hackernews"
       },
       {
         "title": "Malus \u2013 Clean Room as a Service",
         "url": "https://malus.sh",
-        "score": 1042,
+        "score": 1044,
         "source": "hackernews"
       },
       {
@@ -27,9 +27,9 @@
         "source": "hackernews"
       },
       {
-        "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
-        "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-        "score": 329,
+        "title": "Document poisoning in RAG systems: How attackers corrupt AI's sources",
+        "url": "https://aminrj.com/posts/rag-document-poisoning/",
+        "score": 72,
         "source": "hackernews"
       }
     ],
@@ -129,23 +129,23 @@
       "count": 1
     },
     {
-      "word": "atms",
+      "word": "document",
       "count": 1
     },
     {
-      "word": "didn't",
+      "word": "poisoning",
       "count": 1
     },
     {
-      "word": "kill",
+      "word": "systems:",
       "count": 1
     },
     {
-      "word": "bank",
+      "word": "attackers",
       "count": 1
     },
     {
-      "word": "teller",
+      "word": "corrupt",
       "count": 1
     }
   ],
