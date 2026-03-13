@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-12T21:59:11.425360+00:00",
+  "last_run": "2026-03-13T02:05:46.235695+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -46,27 +46,22 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42162
+      "stars": 42161
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41329
+      "stars": 41337
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29314
+      "stars": 29317
     },
     {
       "type": "trending_article",
       "title": "Congrats to the GitHub Copilot CLI Challenge Winners!",
-      "reactions": 143
-    },
-    {
-      "type": "trending_article",
-      "title": "When AI Writes the Code\u2026 Who Takes Responsibility?",
-      "reactions": 56
+      "reactions": 144
     },
     {
       "type": "trending_article",
@@ -74,8 +69,13 @@
       "reactions": 25
     },
     {
+      "type": "trending_article",
+      "title": "The Internet Is Getting Quieter - Who Will Feed the Next Generation of AI?",
+      "reactions": 0
+    },
+    {
       "type": "crypto_market_cap_usd",
-      "value": 2473249183459.1274
+      "value": 2518867688079.4473
     }
   ],
   "opportunities": [
@@ -87,12 +87,12 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16574 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13890 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10989 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42162 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41329 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29314 stars) \u2014 build integration engine",
-    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (143 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'When AI Writes the Code\u2026 Who Takes Responsibility?' (56 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Built EchoHR: The HR System That Doesn\u2019t Ghost You' (25 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42161 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41337 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29317 stars) \u2014 build integration engine",
+    "Content leverage: 'Congrats to the GitHub Copilot CLI Challenge Winners!' (144 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'I Built EchoHR: The HR System That Doesn\u2019t Ghost You' (25 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'The Internet Is Getting Quieter - Who Will Feed the Next Gen' (0 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

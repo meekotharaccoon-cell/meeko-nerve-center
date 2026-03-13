@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-12T21:59:02.729475+00:00",
+  "timestamp": "2026-03-13T02:05:35.531471+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "Shall I implement it? No",
         "url": "https://gist.github.com/bretonium/291f4388e2de89a43b25c135b44e41f0",
-        "score": 198,
+        "score": 828,
         "source": "hackernews"
       },
       {
         "title": "Malus \u2013 Clean Room as a Service",
         "url": "https://malus.sh",
-        "score": 896,
+        "score": 1042,
         "source": "hackernews"
       },
       {
         "title": "Bubble Sorted Amen Break",
         "url": "https://parametricavocado.itch.io/amen-sorting",
-        "score": 206,
+        "score": 261,
         "source": "hackernews"
       },
       {
         "title": "Reversing memory loss via gut-brain communication",
         "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
-        "score": 153,
+        "score": 236,
         "source": "hackernews"
       },
       {
         "title": "ATMs didn't kill bank teller jobs, but the iPhone did",
         "url": "https://davidoks.blog/p/why-the-atm-didnt-kill-bank-teller",
-        "score": 255,
+        "score": 329,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 11.2,
-    "vibe": "partly cloudy",
-    "code": 3,
+    "temp_c": 8.0,
+    "vibe": "sunny",
+    "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [

@@ -150,5 +150,21 @@
     "source": "OMNIBUS_L6",
     "status": "pending",
     "queued_at": "2026-03-12T22:00:07.272068+00:00"
+  },
+  {
+    "id": "converter_1773367618",
+    "prompt": "Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best ask, and post it NOW. First open the platform URL in Brave, then copy-paste the ask. Revenue target: first $1.",
+    "priority": 1,
+    "source": "RESONANCE_CONVERTER",
+    "status": "pending",
+    "queued_at": "2026-03-13T02:06:58.731186+00:00"
+  },
+  {
+    "id": "omnibus_1773367634",
+    "prompt": "Cycle 51 done. Health: 40/100. Products with live URLs: 2. Bluesky posted all-time: 0. Total published: 0. Check data/product_registry.json \u2014 ensure all products have download URLs.",
+    "priority": 2,
+    "source": "OMNIBUS_L6",
+    "status": "pending",
+    "queued_at": "2026-03-13T02:07:14.740179+00:00"
   }
 ]

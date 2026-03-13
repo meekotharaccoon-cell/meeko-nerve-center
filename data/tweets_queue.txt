@@ -669,3 +669,45 @@ All of this runs on free GitHub infrastructure.
 The only cost: ~$5-20/month in API credits when the key is connected.
 
 github.com/meekotharaccoon-cell/meeko-nerve-center
+
+
+========================================
+THREAD — ARCHITECTURE — 2026-03-13
+========================================
+
+[Tweet 1/4]
+People ask how an AI system can run itself forever.
+
+Here's the actual answer: it can't.
+
+But it can detect every failure mode and either fix it or skip it gracefully.
+
+That's close enough.
+
+[Tweet 2/4]
+SolarPunk's 8 execution layers:
+
+L0: Check + heal itself
+L1: Gather intel (email, news, AI models)
+L2: Revenue planning
+L3: Deploy content
+L4: Distribute + publish
+L5: Collect + pay out
+L6: Think + expand
+L7: Report + prove
+
+[Tweet 3/4]
+The key insight: every layer is a set of Python scripts.
+
+Every script either succeeds, fails gracefully, or times out.
+
+The system knows the difference. It logs everything. It patches what it can.
+
+[Tweet 4/4]
+You can read every line of this architecture.
+
+All 76 engines. All 8 workflows. Every data file.
+
+MIT licensed. Fork it if you want your own.
+
+github.com/meekotharaccoon-cell/meeko-nerve-center

@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-12T21:58:53.432288+00:00",
+  "generated": "2026-03-13T02:07:09.288881+00:00",
   "summary": {
-    "total_bottlenecks": 1,
+    "total_bottlenecks": 2,
     "critical": 0,
     "high": 1,
     "secrets_ok": 10,
     "secrets_total": 18,
-    "engines_ok": 103,
-    "engines_total": 103,
+    "engines_ok": 112,
+    "engines_total": 113,
     "gumroad_live": 0,
     "gumroad_pending": 10,
     "revenue_total": 0,
@@ -22,6 +22,15 @@
       "fix": "Google Account -> Security -> 2-Step Verification -> App Passwords -> Generate for Mail -> update GMAIL_APP_PASSWORD secret",
       "revenue_impact": "Zero email outreach, exchange tasks undeliverable, digests silent",
       "status": "BROKEN"
+    },
+    {
+      "id": "BN-002",
+      "severity": "LOW",
+      "title": "1 engines have syntax errors",
+      "description": "Broken: DESKTOP_BLUEPRINT_SCANNER.py",
+      "fix": "Fix ANTHROPIC_API_KEY to enable AI auto-patching via AUTO_HEALER",
+      "revenue_impact": "Minor -- those engines skipped",
+      "status": "KNOWN"
     }
   ],
   "secrets": [

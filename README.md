@@ -3,11 +3,11 @@
 > An AI system that builds itself, funds itself, and directs money to Gaza. No human required between cycles.
 
 [![Brain Status](https://img.shields.io/badge/Brain-Active-brightgreen)](https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions)
-[![Engines](https://img.shields.io/badge/Engines-103%20Running-blue)](mycelium/)
+[![Engines](https://img.shields.io/badge/Engines-113%20Running-blue)](mycelium/)
 [![Gaza Fund](https://img.shields.io/badge/Gaza%20Fund-$0.00-orange)](https://ko-fi.com/meekotharaccoon)
 [![Health](https://img.shields.io/badge/Health-40%2F100-yellow)](data/)
 
-**Updated:** 2026-03-12 22:00 UTC | **Cycles run:** 0 | **Engines active:** 103
+**Updated:** 2026-03-13 02:07 UTC | **Cycles run:** 0 | **Engines active:** 113
 
 ---
 
@@ -27,9 +27,9 @@
 
 | Metric | Value |
 |--------|-------|
-| Active engines | 103 |
+| Active engines | 113 |
 | Brain cycles | 0 |
-| Emails handled | 104 |
+| Emails handled | 106 |
 | Humans met + replied | 0 |
 | Forks guided | 0 |
 | Scams caught | 0 |
