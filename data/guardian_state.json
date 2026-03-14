@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T21:58:15.077590",
+  "last_checked": "2026-03-14T22:08:30.201801",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -39,6 +39,7 @@
     "REVENUE_AUDIT.py",
     "GUMROAD_ENGINE.py",
     "NIGHTLY_DIGEST.py",
+    "COMMAND_CENTER.py",
     "GMAIL_NOTIFIER.py",
     "SOCIAL_DASHBOARD.py",
     "NEURON_B.py",
@@ -97,6 +98,7 @@
     "ISSUE_SYNC.py",
     "SECRET_LOADER.py",
     "GITHUB_POSTER.py",
+    "NEWS_HARVESTER.py",
     "REVENUE_FLYWHEEL.py",
     "ART_CATALOG.py",
     "PRODUCT_DELIVERY_ENGINE.py",
