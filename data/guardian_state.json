@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T22:25:07.363738",
+  "last_checked": "2026-03-14T22:26:57.021968",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -28,6 +28,7 @@
     "KNOWLEDGE_WEAVER.py",
     "PLUGIN_REGISTRY.py",
     "INCOME_ARCHITECT.py",
+    "MISSION_CONTROL.py",
     "OMNIBUS.py",
     "SYNTHESIS_FACTORY.py",
     "KNOWLEDGE_BRIDGE.py",
@@ -41,6 +42,7 @@
     "NIGHTLY_DIGEST.py",
     "COMMAND_CENTER.py",
     "GMAIL_NOTIFIER.py",
+    "SOCIAL_ECHO.py",
     "SOCIAL_DASHBOARD.py",
     "NEURON_B.py",
     "DESKTOP_DAEMON.py",
