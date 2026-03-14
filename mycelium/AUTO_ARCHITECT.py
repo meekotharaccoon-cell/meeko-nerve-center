@@ -1,7 +1,7 @@
 # NEURAL_LINK: The
 # Part of the Meeko SolarPunk Swarm.
 
-﻿import json
+???import json
 import os
 
 def plan_expansion():
@@ -26,7 +26,7 @@ def plan_expansion():
 
     with open(queue_path, 'w') as f:
         json.dump(new_tasks, f, indent=4)
-    print(f"🏗️ Auto-Architect: Queued {len(new_tasks)} expansion tasks.")
+    print(f"??????? Auto-Architect: Queued {len(new_tasks)} expansion tasks.")
 
 if __name__ == "__main__":
     plan_expansion()

@@ -1,7 +1,7 @@
 # NEURAL_LINK: The
 # Part of the Meeko SolarPunk Swarm.
 
-﻿import os
+???import os
 import sys
 
 def check_intent():
@@ -11,9 +11,9 @@ def check_intent():
         cmd_content = f.read()
     loop_triggers = ['EVOLVE.ps1', 'AUTO_RUNNER', 'while(true)']
     if any(trigger in cmd_content for trigger in loop_triggers):
-        print("\n⚠️ LOOP DETECTED!")
+        print("\n?????? LOOP DETECTED!")
         sys.exit(1)
-    print("✅ Command Vetted.")
+    print("??? Command Vetted.")
 
 if __name__ == "__main__":
     check_intent()

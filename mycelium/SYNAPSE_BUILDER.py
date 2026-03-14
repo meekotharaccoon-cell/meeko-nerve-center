@@ -1,7 +1,7 @@
 # NEURAL_LINK: The
 # Part of the Meeko SolarPunk Swarm.
 
-﻿import json
+???import json
 import os
 import re
 
@@ -26,7 +26,7 @@ def build_synapses():
             
     with open(graph_path, 'w') as f:
         json.dump(graph, f, indent=4)
-    print(f"🧠 Synapse Builder: Linked {len(graph['nodes'])} knowledge nodes.")
+    print(f"???? Synapse Builder: Linked {len(graph['nodes'])} knowledge nodes.")
 
 if __name__ == "__main__":
     build_synapses()

@@ -1,7 +1,7 @@
 # NEURAL_LINK: The
 # Part of the Meeko SolarPunk Swarm.
 
-﻿import json
+???import json
 import os
 
 def generate_self_commands():
@@ -23,7 +23,7 @@ def generate_self_commands():
         cmd += "python mycelium/CAPABILITY_SCANNER.py\n"
         with open('AUTO_EXEC.ps1', 'w') as f:
             f.write(cmd)
-        print(f"🤖 System safely generated command for: {topic}")
+        print(f"???? System safely generated command for: {topic}")
 
 if __name__ == '__main__':
     generate_self_commands()
