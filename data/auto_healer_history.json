@@ -1,27 +1,5 @@
 [
   {
-    "timestamp": "2026-03-07T16:56:32.827780+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRAND_LEGAL"
-    ]
-  },
-  {
-    "timestamp": "2026-03-07T16:57:38.140452+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-07T18:59:41.519422+00:00",
     "healed": [],
     "auto_installed": [],
@@ -602,6 +580,32 @@
   },
   {
     "timestamp": "2026-03-14T05:07:32.213867+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T07:52:01.877372+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T07:53:23.969890+00:00",
     "healed": [],
     "auto_installed": [],
     "skipped": [

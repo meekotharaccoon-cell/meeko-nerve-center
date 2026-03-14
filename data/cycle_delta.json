@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T05:00:57.443653+00:00",
+  "generated": "2026-03-14T07:51:55.824947+00:00",
   "cycle_number": 51,
   "health": 40,
   "health_trend": "stuck",
@@ -7,10 +7,9 @@
     "first_cycle": false,
     "wins": [],
     "regressions": [],
-    "new_failures": [
-      "NANOSHOP_ENGINE"
-    ],
+    "new_failures": [],
     "still_failing": [
+      "NANOSHOP_ENGINE",
       "NARRATOR"
     ],
     "revenue_delta": 0,
@@ -30,11 +29,12 @@
       "id": "BN-002",
       "title": "2 engines have syntax errors",
       "severity": "LOW",
-      "cycles_open": 5,
+      "cycles_open": 6,
       "escalation": "URGENT"
     }
   ],
   "still_failing": [
+    "NANOSHOP_ENGINE",
     "NARRATOR"
   ],
   "new_fixes": [],

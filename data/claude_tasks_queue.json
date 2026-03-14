@@ -214,5 +214,21 @@
     "source": "OMNIBUS_L6",
     "status": "pending",
     "queued_at": "2026-03-14T05:07:32.452178+00:00"
+  },
+  {
+    "id": "converter_1773474787",
+    "prompt": "Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best ask, and post it NOW. First open the platform URL in Brave, then copy-paste the ask. Revenue target: first $1.",
+    "priority": 1,
+    "source": "RESONANCE_CONVERTER",
+    "status": "pending",
+    "queued_at": "2026-03-14T07:53:07.411471+00:00"
+  },
+  {
+    "id": "omnibus_1773474804",
+    "prompt": "Cycle 51 done. Health: 40/100. Products live: 2. Gaza fund: $0.00 | PCRF transferred: $0.00. Nanoshop pages: 0. Passive income ideas queued: 0. Bluesky: 0 | Published: 0. Shop: https://meekotharaccoon-cell.github.io/meeko-nerve-center/shop.html | Embed: https://meekotharaccoon-cell.github.io/meeko-nerve-center/embed.html",
+    "priority": 2,
+    "source": "OMNIBUS_L6",
+    "status": "pending",
+    "queued_at": "2026-03-14T07:53:24.210234+00:00"
   }
 ]

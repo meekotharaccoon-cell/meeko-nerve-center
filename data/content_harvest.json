@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-14T05:02:09.536642+00:00",
+  "timestamp": "2026-03-14T07:52:12.528898+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
         "url": "https://claude.com/blog/1m-context-ga",
-        "score": 460,
+        "score": 592,
         "source": "hackernews"
       },
       {
-        "title": "Can I run AI locally?",
-        "url": "https://www.canirun.ai/",
-        "score": 1060,
+        "title": "A Survival Guide to a PhD (2016)",
+        "url": "http://karpathy.github.io/2016/09/07/phd/",
+        "score": 51,
         "source": "hackernews"
       },
       {
-        "title": "I found 39 Algolia admin keys exposed across open source documentation sites",
-        "url": "https://benzimmermann.dev/blog/algolia-docsearch-admin-keys",
-        "score": 103,
-        "source": "hackernews"
-      },
-      {
-        "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
-        "url": "https://channelsurfer.tv",
-        "score": 445,
+        "title": "Emacs and Vim in the Age of AI",
+        "url": "https://batsov.com/articles/2026/03/09/emacs-and-vim-in-the-age-of-ai/",
+        "score": 99,
         "source": "hackernews"
       },
       {
         "title": "Qatar helium shutdown puts chip supply chain on a two-week clock",
         "url": "https://www.tomshardware.com/tech-industry/qatar-helium-shutdown-puts-chip-supply-chain-on-a-two-week-clock",
-        "score": 485,
+        "score": 529,
+        "source": "hackernews"
+      },
+      {
+        "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
+        "url": "https://channelsurfer.tv",
+        "score": 478,
         "source": "hackernews"
       }
     ],
@@ -62,9 +62,9 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 20.7,
+    "temp_c": 26.4,
     "vibe": "partly cloudy",
-    "code": 2,
+    "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
@@ -89,47 +89,55 @@
       "count": 1
     },
     {
-      "word": "locally",
+      "word": "survival",
       "count": 1
     },
     {
-      "word": "found",
+      "word": "guide",
       "count": 1
     },
     {
-      "word": "algolia",
+      "word": "2016",
       "count": 1
     },
     {
-      "word": "admin",
+      "word": "emacs",
       "count": 1
     },
     {
-      "word": "keys",
+      "word": "qatar",
       "count": 1
     },
     {
-      "word": "exposed",
+      "word": "helium",
       "count": 1
     },
     {
-      "word": "across",
+      "word": "shutdown",
       "count": 1
     },
     {
-      "word": "open",
+      "word": "puts",
       "count": 1
     },
     {
-      "word": "source",
+      "word": "chip",
       "count": 1
     },
     {
-      "word": "documentation",
+      "word": "supply",
       "count": 1
     },
     {
-      "word": "sites",
+      "word": "chain",
+      "count": 1
+    },
+    {
+      "word": "week",
+      "count": 1
+    },
+    {
+      "word": "clock",
       "count": 1
     },
     {
@@ -138,14 +146,6 @@
     },
     {
       "word": "channel",
-      "count": 1
-    },
-    {
-      "word": "surfer",
-      "count": 1
-    },
-    {
-      "word": "watch",
       "count": 1
     }
   ],

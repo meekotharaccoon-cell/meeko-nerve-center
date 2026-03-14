@@ -1,32 +1,32 @@
 {
-  "last_run": "2026-03-14T05:02:18.263278+00:00",
+  "last_run": "2026-03-14T07:52:20.382425+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-MiniLM-L6-v2",
-      "downloads": 205361887
+      "downloads": 205677817
     },
     {
       "type": "trending_model",
       "name": "google-bert/bert-base-uncased",
-      "downloads": 69610516
+      "downloads": 70212030
     },
     {
       "type": "trending_model",
       "name": "google/electra-base-discriminator",
-      "downloads": 51117322
+      "downloads": 51275969
     },
     {
       "type": "trending_model",
       "name": "Falconsai/nsfw_image_detection",
-      "downloads": 42265345
+      "downloads": 42226668
     },
     {
       "type": "trending_model",
       "name": "sentence-transformers/all-mpnet-base-v2",
-      "downloads": 28606501
+      "downloads": 28588402
     },
     {
       "type": "trending_space",
@@ -46,17 +46,17 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42193
+      "stars": 42199
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41442
+      "stars": 41455
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29351
+      "stars": 29354
     },
     {
       "type": "trending_article",
@@ -75,21 +75,21 @@
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2499047612062.348
+      "value": 2484245334303.8926
     }
   ],
   "opportunities": [
-    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (205,361,887 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google-bert/bert-base-uncased' (69,610,516 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'google/electra-base-discriminator' (51,117,322 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,265,345 downloads) \u2014 build how-to guide",
-    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,606,501 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (205,677,817 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google-bert/bert-base-uncased' (70,212,030 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'google/electra-base-discriminator' (51,275,969 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,226,668 downloads) \u2014 build how-to guide",
+    "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,588,402 downloads) \u2014 build how-to guide",
     "Clone/extend HF space: 'enzostvs/deepsite' (16578 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13893 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10991 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42193 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41442 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29351 stars) \u2014 build integration engine",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42199 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41455 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29354 stars) \u2014 build integration engine",
     "Content leverage: 'Building a Process Scheduling Simulator: Relearning TypeScri' (1 reactions) \u2014 create SolarPunk angle",
     "Content leverage: 'I Was So Angry, I Actually Shipped It' (4 reactions) \u2014 create SolarPunk angle",
     "Content leverage: 'Brew: I Built a Real-Time Voice AI Drive-Thru Barista with G' (1 reactions) \u2014 create SolarPunk angle"

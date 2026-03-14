@@ -1,6 +1,6 @@
 {
-  "run_id": "23080945019",
-  "ts": "2026-03-14T05:08:37.569834+00:00",
+  "run_id": "23083698061",
+  "ts": "2026-03-14T07:53:29.519537+00:00",
   "prev_health": 40,
   "memory": {
     "cycles": [
@@ -165,7 +165,7 @@
         ]
       },
       {
-        "timestamp": "2026-03-14T05:07:32.475810+00:00",
+        "timestamp": "2026-03-14T07:53:24.233989+00:00",
         "health_score": 40,
         "revenue": 0.0,
         "engines": 115,
@@ -190,9 +190,9 @@
     },
     "total_cycles": 11,
     "created": "2026-03-04T08:02:58.495462+00:00",
-    "last_updated": "2026-03-14T05:07:32.475810+00:00",
+    "last_updated": "2026-03-14T07:53:24.233989+00:00",
     "latest_snap": {
-      "timestamp": "2026-03-14T05:07:32.475810+00:00",
+      "timestamp": "2026-03-14T07:53:24.233989+00:00",
       "health_score": 40,
       "revenue": 0.0,
       "engines": 115,
@@ -209,7 +209,7 @@
     }
   },
   "cycle_delta": {
-    "generated": "2026-03-14T05:00:57.443653+00:00",
+    "generated": "2026-03-14T07:51:55.824947+00:00",
     "cycle_number": 51,
     "health": 40,
     "health_trend": "stuck",
@@ -217,10 +217,9 @@
       "first_cycle": false,
       "wins": [],
       "regressions": [],
-      "new_failures": [
-        "NANOSHOP_ENGINE"
-      ],
+      "new_failures": [],
       "still_failing": [
+        "NANOSHOP_ENGINE",
         "NARRATOR"
       ],
       "revenue_delta": 0,
@@ -240,11 +239,12 @@
         "id": "BN-002",
         "title": "2 engines have syntax errors",
         "severity": "LOW",
-        "cycles_open": 5,
+        "cycles_open": 6,
         "escalation": "URGENT"
       }
     ],
     "still_failing": [
+      "NANOSHOP_ENGINE",
       "NARRATOR"
     ],
     "new_fixes": [],
@@ -584,9 +584,9 @@
       "last_insight": "",
       "synth_built": 0,
       "brain_health": 40,
-      "timestamp": "2026-03-14T05:02:38.250833+00:00"
+      "timestamp": "2026-03-14T07:52:36.871663+00:00"
     },
-    "generated_at": "2026-03-14T05:03:38.891311+00:00"
+    "generated_at": "2026-03-14T07:52:37.434478+00:00"
   },
   "neuron_b": {
     "risks": [
@@ -635,10 +635,10 @@
       }
     ],
     "refined_priority": "AFFILIATE_TRACKER.py - passive income while you sleep",
-    "generated_at": "2026-03-14T05:03:39.063499+00:00"
+    "generated_at": "2026-03-14T07:52:37.607979+00:00"
   },
   "flywheel": {
-    "ts": "2026-03-14T05:03:40.919584+00:00",
+    "ts": "2026-03-14T07:52:39.270894+00:00",
     "total_current": 0.0,
     "total_potential": 2720,
     "streams": {
@@ -648,14 +648,14 @@
         "potential": 50,
         "active": true,
         "raw": {
-          "cycles": 96,
+          "cycles": 98,
           "total_received": 0.0,
           "total_to_gaza": 0.0,
           "total_to_loop": 0.0,
           "auto_loops": 0,
           "events": [],
           "art_orders": [],
-          "last_run": "2026-03-14T03:11:41.183144+00:00"
+          "last_run": "2026-03-14T05:06:26.814870+00:00"
         }
       },
       "grants": {
@@ -664,11 +664,11 @@
         "potential": 2000,
         "active": true,
         "raw": {
-          "cycles": 93,
+          "cycles": 94,
           "applied": [],
           "total_applied": 0,
           "email_chains": [],
-          "last_run": "2026-03-14T03:11:07.402612+00:00"
+          "last_run": "2026-03-14T05:04:45.894292+00:00"
         }
       },
       "sponsors": {
@@ -677,11 +677,11 @@
         "potential": 145,
         "active": true,
         "raw": {
-          "cycles": 93,
+          "cycles": 94,
           "sponsors": [],
           "total_monthly": 0.0,
           "thank_you_sent": [],
-          "last_run": "2026-03-14T03:11:32.624583+00:00"
+          "last_run": "2026-03-14T05:05:18.077270+00:00"
         }
       },
       "exchange": {
@@ -690,14 +690,14 @@
         "potential": 300,
         "active": true,
         "raw": {
-          "cycles": 93,
+          "cycles": 94,
           "total_tasks": 0,
           "total_earned": 0.0,
           "total_to_gaza": 0.0,
           "agent_earnings": {},
           "task_log": [],
           "registered_clients": [],
-          "last_run": "2026-03-14T03:11:07.294150+00:00"
+          "last_run": "2026-03-14T05:04:45.787638+00:00"
         }
       },
       "substack": {
@@ -706,11 +706,11 @@
         "potential": 175,
         "active": true,
         "raw": {
-          "cycles": 93,
+          "cycles": 94,
           "issues_drafted": 2,
           "issues_published": 0,
           "last_draft": "2026-03-12T07:41:10.532321+00:00",
-          "last_run": "2026-03-14T03:11:25.038720+00:00"
+          "last_run": "2026-03-14T05:05:11.452068+00:00"
         }
       },
       "gumroad": {
@@ -723,37 +723,37 @@
     "recommendation": null
   },
   "content": {
-    "timestamp": "2026-03-14T05:02:09.536642+00:00",
+    "timestamp": "2026-03-14T07:52:12.528898+00:00",
     "sources": {
       "hackernews": [
         {
           "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
           "url": "https://claude.com/blog/1m-context-ga",
-          "score": 460,
+          "score": 592,
           "source": "hackernews"
         },
         {
-          "title": "Can I run AI locally?",
-          "url": "https://www.canirun.ai/",
-          "score": 1060,
+          "title": "A Survival Guide to a PhD (2016)",
+          "url": "http://karpathy.github.io/2016/09/07/phd/",
+          "score": 51,
           "source": "hackernews"
         },
         {
-          "title": "I found 39 Algolia admin keys exposed across open source documentation sites",
-          "url": "https://benzimmermann.dev/blog/algolia-docsearch-admin-keys",
-          "score": 103,
-          "source": "hackernews"
-        },
-        {
-          "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
-          "url": "https://channelsurfer.tv",
-          "score": 445,
+          "title": "Emacs and Vim in the Age of AI",
+          "url": "https://batsov.com/articles/2026/03/09/emacs-and-vim-in-the-age-of-ai/",
+          "score": 99,
           "source": "hackernews"
         },
         {
           "title": "Qatar helium shutdown puts chip supply chain on a two-week clock",
           "url": "https://www.tomshardware.com/tech-industry/qatar-helium-shutdown-puts-chip-supply-chain-on-a-two-week-clock",
-          "score": 485,
+          "score": 529,
+          "source": "hackernews"
+        },
+        {
+          "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
+          "url": "https://channelsurfer.tv",
+          "score": 478,
           "source": "hackernews"
         }
       ],
@@ -786,9 +786,9 @@
       ]
     },
     "gaza_weather": {
-      "temp_c": 20.7,
+      "temp_c": 26.4,
       "vibe": "partly cloudy",
-      "code": 2,
+      "code": 3,
       "location": "Gaza City"
     },
     "trending_themes": [
@@ -813,47 +813,55 @@
         "count": 1
       },
       {
-        "word": "locally",
+        "word": "survival",
         "count": 1
       },
       {
-        "word": "found",
+        "word": "guide",
         "count": 1
       },
       {
-        "word": "algolia",
+        "word": "2016",
         "count": 1
       },
       {
-        "word": "admin",
+        "word": "emacs",
         "count": 1
       },
       {
-        "word": "keys",
+        "word": "qatar",
         "count": 1
       },
       {
-        "word": "exposed",
+        "word": "helium",
         "count": 1
       },
       {
-        "word": "across",
+        "word": "shutdown",
         "count": 1
       },
       {
-        "word": "open",
+        "word": "puts",
         "count": 1
       },
       {
-        "word": "source",
+        "word": "chip",
         "count": 1
       },
       {
-        "word": "documentation",
+        "word": "supply",
         "count": 1
       },
       {
-        "word": "sites",
+        "word": "chain",
+        "count": 1
+      },
+      {
+        "word": "week",
+        "count": 1
+      },
+      {
+        "word": "clock",
         "count": 1
       },
       {
@@ -862,14 +870,6 @@
       },
       {
         "word": "channel",
-        "count": 1
-      },
-      {
-        "word": "surfer",
-        "count": 1
-      },
-      {
-        "word": "watch",
         "count": 1
       }
     ],
@@ -898,34 +898,34 @@
     "status": "harvested"
   },
   "free_apis": {
-    "last_run": "2026-03-14T05:02:18.263278+00:00",
+    "last_run": "2026-03-14T07:52:20.382425+00:00",
     "apis_ok": 18,
     "apis_failed": 2,
     "signals": [
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-MiniLM-L6-v2",
-        "downloads": 205361887
+        "downloads": 205677817
       },
       {
         "type": "trending_model",
         "name": "google-bert/bert-base-uncased",
-        "downloads": 69610516
+        "downloads": 70212030
       },
       {
         "type": "trending_model",
         "name": "google/electra-base-discriminator",
-        "downloads": 51117322
+        "downloads": 51275969
       },
       {
         "type": "trending_model",
         "name": "Falconsai/nsfw_image_detection",
-        "downloads": 42265345
+        "downloads": 42226668
       },
       {
         "type": "trending_model",
         "name": "sentence-transformers/all-mpnet-base-v2",
-        "downloads": 28606501
+        "downloads": 28588402
       },
       {
         "type": "trending_space",
@@ -945,17 +945,17 @@
       {
         "type": "github_ai_repo",
         "repo": "zhayujie/chatgpt-on-wechat",
-        "stars": 42193
+        "stars": 42199
       },
       {
         "type": "github_ai_repo",
         "repo": "CherryHQ/cherry-studio",
-        "stars": 41442
+        "stars": 41455
       },
       {
         "type": "github_ai_repo",
         "repo": "CopilotKit/CopilotKit",
-        "stars": 29351
+        "stars": 29354
       },
       {
         "type": "trending_article",
@@ -974,21 +974,21 @@
       },
       {
         "type": "crypto_market_cap_usd",
-        "value": 2499047612062.348
+        "value": 2484245334303.8926
       }
     ],
     "opportunities": [
-      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (205,361,887 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google-bert/bert-base-uncased' (69,610,516 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'google/electra-base-discriminator' (51,117,322 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,265,345 downloads) \u2014 build how-to guide",
-      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,606,501 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-MiniLM-L6-v2' (205,677,817 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google-bert/bert-base-uncased' (70,212,030 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'google/electra-base-discriminator' (51,275,969 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,226,668 downloads) \u2014 build how-to guide",
+      "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,588,402 downloads) \u2014 build how-to guide",
       "Clone/extend HF space: 'enzostvs/deepsite' (16578 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13893 likes) \u2014 integrate into SolarPunk",
       "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10991 likes) \u2014 integrate into SolarPunk",
-      "Engine wrapper: zhayujie/chatgpt-on-wechat (42193 stars) \u2014 build integration engine",
-      "Engine wrapper: CherryHQ/cherry-studio (41442 stars) \u2014 build integration engine",
-      "Engine wrapper: CopilotKit/CopilotKit (29351 stars) \u2014 build integration engine",
+      "Engine wrapper: zhayujie/chatgpt-on-wechat (42199 stars) \u2014 build integration engine",
+      "Engine wrapper: CherryHQ/cherry-studio (41455 stars) \u2014 build integration engine",
+      "Engine wrapper: CopilotKit/CopilotKit (29354 stars) \u2014 build integration engine",
       "Content leverage: 'Building a Process Scheduling Simulator: Relearning TypeScri' (1 reactions) \u2014 create SolarPunk angle",
       "Content leverage: 'I Was So Angry, I Actually Shipped It' (4 reactions) \u2014 create SolarPunk angle",
       "Content leverage: 'Brew: I Built a Real-Time Voice AI Drive-Thru Barista with G' (1 reactions) \u2014 create SolarPunk angle"
@@ -1230,7 +1230,7 @@
     }
   ],
   "loop_result": {
-    "started_at": "2026-03-14T05:03:43.883288+00:00",
+    "started_at": "2026-03-14T07:52:42.666135+00:00",
     "steps_ok": [
       "get_business",
       "affiliates",
@@ -1247,7 +1247,7 @@
       {
         "platform": "twitter",
         "text": "\ud83c\udf39 New: SolarPunk AI Tools Mega Pack \u2014 Mar 2026 \u2014 AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/ $37, 15% to Gaza",
-        "queued_at": "2026-03-14T05:04:44.851367+00:00",
+        "queued_at": "2026-03-14T07:52:43.561540+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1255,7 +1255,7 @@
       {
         "platform": "reddit",
         "text": "Built with AI: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\n\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n\nhttps://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/\n15% \u2192 Gaza.",
-        "queued_at": "2026-03-14T05:04:44.851367+00:00",
+        "queued_at": "2026-03-14T07:52:43.561540+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
@@ -1263,28 +1263,28 @@
       {
         "platform": "linkedin",
         "text": "New launch: SolarPunk AI Tools Mega Pack \u2014 Mar 2026\nAI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza\n$37 \u00b7 15% to PCRF \u00b7 https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
-        "queued_at": "2026-03-14T05:04:44.851367+00:00",
+        "queued_at": "2026-03-14T07:52:43.561540+00:00",
         "source": "REVENUE_LOOP",
         "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
         "niche": "AI Tools Mega Pack \u2014 Mar 2026"
       }
     ],
-    "completed_at": "2026-03-14T05:04:45.604643+00:00",
-    "elapsed_seconds": 61,
+    "completed_at": "2026-03-14T07:52:44.408368+00:00",
+    "elapsed_seconds": 1,
     "success": true
   },
   "exchange": {
-    "cycles": 94,
+    "cycles": 95,
     "total_tasks": 0,
     "total_earned": 0.0,
     "total_to_gaza": 0.0,
     "agent_earnings": {},
     "task_log": [],
     "registered_clients": [],
-    "last_run": "2026-03-14T05:04:45.787638+00:00"
+    "last_run": "2026-03-14T07:52:44.592485+00:00"
   },
   "biz_factory": {
-    "cycles": 94,
+    "cycles": 95,
     "businesses_built": [
       {
         "niche": "AI Prompt Packs",
@@ -1943,13 +1943,20 @@
         "price": 37,
         "revenue": "$370-$1480/month",
         "built_at": "2026-03-14T05:03:42.624509+00:00"
+      },
+      {
+        "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+        "name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+        "price": 37,
+        "revenue": "$370-$1480/month",
+        "built_at": "2026-03-14T07:52:40.882575+00:00"
       }
     ],
-    "total_revenue_potential": 66160,
-    "last_run": "2026-03-14T05:03:41.551867+00:00"
+    "total_revenue_potential": 66900,
+    "last_run": "2026-03-14T07:52:39.941354+00:00"
   },
   "secrets": {
-    "last_check": "2026-03-14T05:06:27.473047+00:00",
+    "last_check": "2026-03-14T07:53:19.259208+00:00",
     "configured": 10,
     "total": 16,
     "critical_missing": [],
@@ -2037,7 +2044,7 @@
     }
   },
   "bottlenecks": {
-    "generated": "2026-03-14T05:06:27.501327+00:00",
+    "generated": "2026-03-14T07:53:19.286889+00:00",
     "summary": {
       "total_bottlenecks": 2,
       "critical": 0,
@@ -2240,7 +2247,7 @@
     ]
   },
   "architect_plan": {
-    "generated_at": "2026-03-14T05:06:23.091863+00:00",
+    "generated_at": "2026-03-14T07:53:14.991829+00:00",
     "system_audit": {
       "health": 40,
       "total_loops": 0,
@@ -2350,9 +2357,9 @@
       "exchange_earned": 0.0,
       "exchange_gaza": 0.0,
       "kofi_verified": 0.0,
-      "businesses_built": 94,
+      "businesses_built": 95,
       "engines_built": 0,
-      "revenue_potential": 66160,
+      "revenue_potential": 66900,
       "active_revenue_streams": [
         "substack"
       ]
@@ -2421,16 +2428,16 @@
   },
   "weaver": {
     "engines_built": [],
-    "cycles": 75,
-    "last_run": "2026-03-14T05:06:24.352347+00:00",
+    "cycles": 76,
+    "last_run": "2026-03-14T07:53:16.271415+00:00",
     "history": []
   },
   "optimizer": {
-    "cycles": 75,
+    "cycles": 76,
     "emails_sent": 0,
     "last_email_day": "",
     "actions_taken": [],
-    "last_run": "2026-03-14T05:06:25.350282+00:00"
+    "last_run": "2026-03-14T07:53:17.201833+00:00"
   },
   "revenue_inbox": [
     {
@@ -2484,7 +2491,7 @@
     }
   ],
   "capabilities": {
-    "scanned_at": "2026-03-14T05:02:03.484145+00:00",
+    "scanned_at": "2026-03-14T07:52:01.912878+00:00",
     "active": 6,
     "blocked": 2,
     "degraded": 1,
@@ -2573,7 +2580,7 @@
     "summary": "6 active / 2 blocked / 1 degraded"
   },
   "outreach": {
-    "cycles": 65,
+    "cycles": 66,
     "sent": [
       {
         "ts": "2026-03-06T02:09:39.447314+00:00",
@@ -2740,7 +2747,7 @@
     ]
   },
   "resonance": {
-    "generated_at": "2026-03-14T05:02:18.326997+00:00",
+    "generated_at": "2026-03-14T07:52:20.445477+00:00",
     "resonance_score": 60,
     "resonance_label": "LOUD",
     "resonance_notes": [
@@ -2819,7 +2826,7 @@
     "reply_count": 10
   },
   "quick_revenue": {
-    "generated_at": "2026-03-14T05:06:27.065683+00:00",
+    "generated_at": "2026-03-14T07:53:18.903984+00:00",
     "total_revenue": 0,
     "first_sale_done": false,
     "kofi_products": [
@@ -2892,7 +2899,7 @@
   "link_verifier": {
     "status": "ok",
     "summary": "15 ok, 0 broken, 0 stubs created",
-    "ts": "2026-03-14T05:02:04.250527+00:00",
+    "ts": "2026-03-14T07:52:02.677349+00:00",
     "pages_ok": 15,
     "pages_broken": 0,
     "stubs_created": [],
@@ -2911,80 +2918,80 @@
   },
   "repo_spider": {
     "processed": [
+      "SamurAIGPT/awesome-openclaw",
       "CoWork-OS/CoWork-OS",
-      "CopilotKit/CopilotKit",
-      "makafeli/n8n-workflow-builder",
+      "agentscope-ai/agentscope",
+      "Jackhuang166/ai-memecoin-trading-bot",
+      "letta-ai/letta",
+      "kyaukyuai/gpt-all-star",
+      "Usta0x001/Phantom",
+      "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
       "The-Pocket/PocketFlow",
-      "saasify-sh/saasify",
-      "infiniflow/ragflow",
-      "operand/agency",
-      "clduab11/gemini-flow",
-      "ComposioHQ/composio",
-      "sheet0/npi",
-      "moltlaunch/cashclaw",
+      "makafeli/n8n-workflow-builder",
+      "wanshuiyin/Auto-claude-code-research-in-sleep",
       "huggingface/agents-course",
       "AlexAnys/awesome-openclaw-usecases-zh",
-      "gmickel/gmickel-claude-marketplace",
-      "inclusionAI/AReaL",
-      "FajarKim/github-readme-profile",
-      "stakpak/agent",
-      "HKUDS/DeepCode",
-      "Jackhuang166/ai-memecoin-trading-bot",
-      "kyaukyuai/gpt-all-star",
-      "mergisi/awesome-openclaw-agents",
-      "smixs/agent-second-brain",
-      "shroominic/codeinterpreter-api",
-      "Safouene1/support-palestine-banner",
-      "Usta0x001/Phantom",
-      "ruvnet/RuView",
-      "keploy/keploy",
-      "wanshuiyin/Auto-claude-code-research-in-sleep",
-      "Tiledesk/tiledesk-server",
-      "yaqiin/boycott",
       "gptme/gptme",
-      "aborazmeh/awesome-palestine",
       "AIDC-AI/ComfyUI-Copilot",
-      "microsoft/ai-agents-for-beginners",
-      "agentscope-ai/agentscope",
-      "salacoste/mcp-n8n-workflow-builder",
+      "HKUDS/DeepCode",
+      "FajarKim/github-readme-profile",
+      "smixs/agent-second-brain",
+      "VectifyAI/PageIndex",
       "a5c-ai/babysitter",
-      "The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge",
+      "yaqiin/boycott",
+      "salacoste/mcp-n8n-workflow-builder",
+      "iris-networks/terminator",
+      "aborazmeh/awesome-palestine",
+      "sheet0/npi",
+      "google/adk-python",
+      "CopilotKit/CopilotKit",
+      "gmickel/gmickel-claude-marketplace",
+      "mergisi/awesome-openclaw-agents",
+      "operand/agency",
+      "keploy/keploy",
+      "langroid/langroid",
+      "inclusionAI/AReaL",
+      "Tiledesk/tiledesk-server",
+      "ComposioHQ/composio",
+      "infiniflow/ragflow",
       "arwes/arwes",
       "ruvnet/ruflo",
-      "VectifyAI/PageIndex",
-      "iris-networks/terminator",
+      "moltlaunch/cashclaw",
+      "Safouene1/support-palestine-banner",
+      "microsoft/ai-agents-for-beginners",
       "AntonOsika/gpt-engineer",
-      "letta-ai/letta",
-      "google/adk-python",
-      "langroid/langroid",
-      "SamurAIGPT/awesome-openclaw",
-      "Prem-ium/BingRewards",
-      "uditgoenka/autoresearch"
+      "clduab11/gemini-flow",
+      "stakpak/agent",
+      "ruvnet/RuView",
+      "uditgoenka/autoresearch",
+      "saasify-sh/saasify",
+      "shroominic/codeinterpreter-api",
+      "Prem-ium/BingRewards"
     ],
     "forked": [],
     "total_ideas_queued": 20,
-    "cycles": 14,
-    "last_run": "2026-03-14T05:02:37.982606+00:00",
+    "cycles": 15,
+    "last_run": "2026-03-14T07:52:36.583393+00:00",
     "last_cycle_summary": {
-      "repos_analyzed": 1,
+      "repos_analyzed": 0,
       "forks": [],
       "ideas_queued": 0
     }
   },
   "converter": {
-    "cycles": 14,
+    "cycles": 15,
     "total_asks_generated": 0,
     "pending_asks": 0,
     "posted_asks": 0,
     "conversion_rate": 0.0,
-    "last_run": "2026-03-14T05:05:15.685372+00:00",
+    "last_run": "2026-03-14T07:53:07.411165+00:00",
     "revenue_from_asks": 0.0,
     "last_resonance": 60,
     "last_label": "LOUD"
   },
   "asks_queue": [],
   "analytics": {
-    "ts": "2026-03-14T05:02:28.383500+00:00",
+    "ts": "2026-03-14T07:52:27.360319+00:00",
     "stars": 1,
     "forks": 0,
     "watchers": 0,
@@ -3001,30 +3008,30 @@
     "view_data": []
   },
   "fork_scanner": {
-    "cycles": 14,
-    "last_run": "2026-03-14T05:02:38.136362+00:00"
+    "cycles": 15,
+    "last_run": "2026-03-14T07:52:36.751499+00:00"
   },
   "newsletter": {},
   "plugin_registry": {
     "plugins": {},
-    "last_scan": "2026-03-14T05:02:04.314876+00:00",
+    "last_scan": "2026-03-14T07:52:02.742101+00:00",
     "total_registered": 0,
-    "cycles": 7
+    "cycles": 8
   },
   "narrator": {},
   "bluesky": {
-    "cycles": 10,
+    "cycles": 12,
     "posted": 0,
     "failed": 0,
-    "last_run": "2026-03-14T05:06:27.116012+00:00"
+    "last_run": "2026-03-14T07:53:18.956668+00:00"
   },
   "mastodon": {
-    "cycles": 10,
+    "cycles": 12,
     "posted": 0,
     "failed": 0
   },
   "publisher": {
-    "cycles": 10,
+    "cycles": 12,
     "total_sent": 0,
     "by_channel": {}
   },
@@ -3032,10 +3039,10 @@
     "happened": false,
     "amount": 0,
     "source": null,
-    "cycles_watching": 6
+    "cycles_watching": 7
   },
   "pdf_generator": {
-    "ts": "2026-03-14T05:04:46.113376+00:00",
+    "ts": "2026-03-14T07:52:44.992531+00:00",
     "results": [
       {
         "id": "solarpunk-starter",
@@ -3081,16 +3088,16 @@
         "uploaded_at": "2026-03-13T02:06:44.757845+00:00"
       }
     },
-    "last_updated": "2026-03-14T05:05:17.255679+00:00",
+    "last_updated": "2026-03-14T07:53:09.127504+00:00",
     "release_url": "https://github.com/meekotharaccoon-cell/meeko-nerve-center/releases/tag/products-20260314"
   },
   "delivery": {
-    "ts": "2026-03-14T05:05:18.529589+00:00",
+    "ts": "2026-03-14T07:53:10.593460+00:00",
     "sales_found": 0,
     "delivered": 0
   },
   "revenue_audit": {
-    "ts": "2026-03-14T05:02:04.367614+00:00",
+    "ts": "2026-03-14T07:52:02.795163+00:00",
     "total_checked": 10,
     "working": 9,
     "broken": 1,
@@ -3301,8 +3308,8 @@
     ]
   },
   "swarm": {
-    "cycles": 4,
-    "total_engine_runs": 68,
+    "cycles": 5,
+    "total_engine_runs": 85,
     "human_actions_pending": [
       {
         "priority": 1,
@@ -3312,7 +3319,7 @@
         "impact": "UNLOCKS ALL SALES. Every buy button is currently a 404."
       }
     ],
-    "last_run": "2026-03-14T05:06:25.590043+00:00",
+    "last_run": "2026-03-14T07:53:17.451164+00:00",
     "swarms": [
       {
         "swarm": "SWARM_REVENUE",
@@ -3321,7 +3328,7 @@
           "KOFI_ENGINE": "ok",
           "STORE_BUILDER": "ok"
         },
-        "ts": "2026-03-14T05:06:25.590043+00:00"
+        "ts": "2026-03-14T07:53:17.451164+00:00"
       },
       {
         "swarm": "SWARM_CONTENT",
@@ -3331,7 +3338,7 @@
           "AGENT_GUMROAD_BUILDER": "ok",
           "QUICK_REVENUE": "ok"
         },
-        "ts": "2026-03-14T05:06:25.590043+00:00"
+        "ts": "2026-03-14T07:53:17.451164+00:00"
       },
       {
         "swarm": "SWARM_SOCIAL",
@@ -3341,7 +3348,7 @@
           "MASTODON_ENGINE": "ok",
           "AUTONOMOUS_PUBLISHER": "ok"
         },
-        "ts": "2026-03-14T05:06:25.590043+00:00"
+        "ts": "2026-03-14T07:53:17.451164+00:00"
       },
       {
         "swarm": "SWARM_CONNECT",
@@ -3350,7 +3357,7 @@
           "BOTTLENECK_SCANNER": "ok",
           "AUTO_HEALER": "ok"
         },
-        "ts": "2026-03-14T05:06:25.590043+00:00"
+        "ts": "2026-03-14T07:53:17.451164+00:00"
       },
       {
         "swarm": "SWARM_STORE",
@@ -3359,7 +3366,7 @@
           "LANDING_DEPLOYER": "ok",
           "LINK_PAGE": "ok"
         },
-        "ts": "2026-03-14T05:06:25.590043+00:00"
+        "ts": "2026-03-14T07:53:17.451164+00:00"
       }
     ],
     "audit_snapshot": {
@@ -3376,14 +3383,14 @@
     "pending_transfer": 0,
     "sales": [],
     "transfers": [],
-    "last_updated": "2026-03-14T05:05:19.515785+00:00",
+    "last_updated": "2026-03-14T07:53:11.471130+00:00",
     "pcrf_ein": "93-1057665",
     "pcrf_charity_navigator": "https://www.charitynavigator.org/ein/931057665",
     "pcrf_donate": "https://www.pcrf.net/donate",
     "verification_note": "All Gaza donations tracked here. STOP protocol active \u2014 sensitive data never logged."
   },
   "storefront": {
-    "ts": "2026-03-14T05:05:19.566605+00:00",
+    "ts": "2026-03-14T07:53:11.521567+00:00",
     "changed": true,
     "products_in_registry": 2,
     "total_sales": 0.0,
@@ -3391,7 +3398,7 @@
   },
   "nanoshop": {},
   "passive_income": {
-    "cycles": 2,
+    "cycles": 3,
     "ideas_generated": 0,
     "ideas_built": 0,
     "all_ideas": {},
@@ -3484,7 +3491,6 @@
     "PASSIVE_INCOME_ARCHITECT",
     "MEMORY_PALACE",
     "README_GENERATOR",
-    "BRIEFING_ENGINE",
     "NIGHTLY_DIGEST",
     "ISSUE_SYNC",
     "SOLARPUNK_LEGAL",
@@ -3497,6 +3503,7 @@
   ],
   "engines_failed": [
     "NANOSHOP_ENGINE",
+    "BRIEFING_ENGINE",
     "NARRATOR"
   ]
 }
