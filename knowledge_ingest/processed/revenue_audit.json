@@ -1,0 +1,211 @@
+{
+  "ts": "2026-03-14T07:52:02.795163+00:00",
+  "total_checked": 10,
+  "working": 9,
+  "broken": 1,
+  "critical_broken": 1,
+  "buy_link_issues": 24,
+  "gumroad_alive": false,
+  "kofi_alive": true,
+  "revenue_blockers": [
+    {
+      "name": "gumroad_store",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "status": 404,
+      "ok": false,
+      "priority": "critical",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "buy_link_details": [
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "store.html",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "issue": "GENERIC store link \u2014 not product-specific, causes drop-off"
+    },
+    {
+      "page": "art.html",
+      "url": "https://meekotharacoon.gumroad.com",
+      "issue": "TYPO: meekotharacoon (missing r)"
+    },
+    {
+      "page": "art.html",
+      "url": "https://meekotharacoon.gumroad.com",
+      "issue": "TYPO: meekotharacoon (missing r)"
+    },
+    {
+      "page": "art.html",
+      "url": "https://meekotharacoon.gumroad.com",
+      "issue": "TYPO: meekotharacoon (missing r)"
+    }
+  ],
+  "all_results": [
+    {
+      "name": "gumroad_store",
+      "url": "https://meekotharaccoon.gumroad.com",
+      "status": 404,
+      "ok": false,
+      "priority": "critical",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "gumroad_typo",
+      "url": "https://meekotharacoon.gumroad.com",
+      "status": 200,
+      "ok": true,
+      "priority": "critical"
+    },
+    {
+      "name": "kofi_profile",
+      "url": "https://ko-fi.com/meekotharaccoon",
+      "status": 200,
+      "ok": true,
+      "priority": "critical"
+    },
+    {
+      "name": "kofi_shop",
+      "url": "https://ko-fi.com/meekotharaccoon/shop",
+      "status": 200,
+      "ok": true,
+      "priority": "critical"
+    },
+    {
+      "name": "gh_sponsors",
+      "url": "https://github.com/sponsors/meekotharaccoon-cell",
+      "status": 200,
+      "ok": true,
+      "priority": "important"
+    },
+    {
+      "name": "store_page",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html",
+      "status": 200,
+      "ok": true,
+      "priority": "critical"
+    },
+    {
+      "name": "art_page",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
+      "status": 200,
+      "ok": true,
+      "priority": "critical"
+    },
+    {
+      "name": "prompt_packs",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-prompt-packs/",
+      "status": 200,
+      "ok": true,
+      "priority": "important"
+    },
+    {
+      "name": "gh_actions_tmpl",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/github-actions-templates/",
+      "status": 200,
+      "ok": true,
+      "priority": "important"
+    },
+    {
+      "name": "notion_tmpl",
+      "url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/notion-templates-for-freelancers/",
+      "status": 200,
+      "ok": true,
+      "priority": "important"
+    }
+  ],
+  "recommended_fixes": [
+    "Gumroad 404 detected: redirect all store buy buttons to Ko-fi immediately",
+    "Fix 24 buy links: replace generic gumroad.com with product-specific URLs",
+    "Add actual art preview images to store \u2014 selling art with no visuals = no trust",
+    "Add free art lead magnet to top of store with interaction CTA",
+    "Note: GitHub clone count includes automated CI checkouts \u2014 real human visitors are much lower"
+  ],
+  "human_action_required": [
+    {
+      "priority": 1,
+      "action": "Create/activate Gumroad account",
+      "url": "https://gumroad.com",
+      "detail": "gumroad.com -> signup -> username: meekotharaccoon -> create 1 product -> get real URL",
+      "impact": "UNLOCKS ALL SALES. Every buy button is currently a 404."
+    }
+  ]
+}

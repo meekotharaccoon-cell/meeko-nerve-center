@@ -1,0 +1,392 @@
+[
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "DESKTOP_DAEMON started. SolarPunk is local and alive."
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "WARN",
+    "msg": "WARNING: ANTHROPIC_API_KEY not in environment."
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "  Windows: $env:ANTHROPIC_API_KEY = 'sk-ant-...'"
+  },
+  {
+    "ts": "2026-03-12T04:32:47",
+    "level": "INFO",
+    "msg": "  Or add to repo root .env file"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773301278]: Cycle 50 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773301278 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773302460]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773302460 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773283397]: SolarPunk cycle 48 just completed. Health: 40/100. Engines failed: non"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773283397 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773283629]: SolarPunk cycle 49 just completed. Health: 40/100. Engines failed: non"
+  },
+  {
+    "ts": "2026-03-12T11:00:20",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773283629 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "DESKTOP_DAEMON started. SolarPunk is local and alive."
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "WARN",
+    "msg": "WARNING: ANTHROPIC_API_KEY not in environment."
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "  Windows: $env:ANTHROPIC_API_KEY = 'sk-ant-...'"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "  Or add to repo root .env file"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773328478]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773328478 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773331873]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773331873 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773335272]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773335272 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773335559]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773335559 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773344383]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773344383 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773347196]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773347196 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773352798]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773352798 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773367618]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773367618 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773367747]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773367747 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773457889]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773457889 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773464715]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773464715 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [converter_1773474787]: Resonance is LOUD (60/100). Open data/asks_queue.json, pick the best a"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task converter_1773474787 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773301278]: Cycle 50 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773301278 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773302460]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773302460 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773326315]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773326315 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773328486]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773328486 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773331881]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773331881 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773335278]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773335278 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773335568]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773335568 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773344394]: Cycle 51 done. Health: 40/100. Repos forked: 0. Asks pending: 0. New f"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773344394 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773347205]: Cycle 51 done. Health: 40/100. Bluesky posted all-time: 0. Total publi"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773347205 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773352807]: Cycle 51 done. Health: 40/100. Bluesky posted all-time: 0. Total publi"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773352807 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773367634]: Cycle 51 done. Health: 40/100. Products with live URLs: 2. Bluesky pos"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773367634 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773367757]: Cycle 51 done. Health: 40/100. Products with live URLs: 2. Bluesky pos"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773367757 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773457906]: Cycle 51 done. Health: 40/100. Products live: 2. Gaza fund: $0.00 | PC"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773457906 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773464852]: Cycle 51 done. Health: 40/100. Products live: 2. Gaza fund: $0.00 | PC"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773464852 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773474804]: Cycle 51 done. Health: 40/100. Products live: 2. Gaza fund: $0.00 | PC"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773474804 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773283397]: SolarPunk cycle 48 just completed. Health: 40/100. Engines failed: non"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773283397 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "INFO",
+    "msg": "Executing [omnibus_1773283629]: SolarPunk cycle 49 just completed. Health: 40/100. Engines failed: non"
+  },
+  {
+    "ts": "2026-03-14T15:24:12",
+    "level": "ERROR",
+    "msg": "Task omnibus_1773283629 FAILED: ANTHROPIC_API_KEY not set"
+  },
+  {
+    "ts": "2026-03-14T15:25:50",
+    "level": "INFO",
+    "msg": "DESKTOP_DAEMON started. SolarPunk is local and alive."
+  },
+  {
+    "ts": "2026-03-14T15:25:50",
+    "level": "WARN",
+    "msg": "WARNING: ANTHROPIC_API_KEY not in environment."
+  },
+  {
+    "ts": "2026-03-14T15:25:50",
+    "level": "INFO",
+    "msg": "  Windows: $env:ANTHROPIC_API_KEY = 'sk-ant-...'"
+  },
+  {
+    "ts": "2026-03-14T15:25:50",
+    "level": "INFO",
+    "msg": "  Or add to repo root .env file"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "generated_at": "2026-03-14T07:53:18.903984+00:00",
+  "total_revenue": 0,
+  "first_sale_done": false,
+  "kofi_products": [
+    {
+      "name": "Desert Rose at Dawn",
+      "price": 1.0,
+      "description": "A desert rose blooming at first light -- symbol of resilience and the enduring beauty of Palestinian land. AI-generated art print. 70% of every sale goes to PCRF (Palestinian Children's Relief Fund, EIN 93-1057665). Digital download, print at any size.",
+      "tags": "palestine, art, digital, rose, gaza"
+    },
+    {
+      "name": "White Doves Over the Mediterranean",
+      "price": 1.0,
+      "description": "White doves in flight above the Mediterranean coast -- peace, migration, and the sky that belongs to everyone. AI-generated art print. 70% of every sale goes to PCRF. Digital download.",
+      "tags": "palestine, doves, mediterranean, peace, art"
+    },
+    {
+      "name": "Olive Grove Eternal",
+      "price": 1.0,
+      "description": "Ancient olive trees -- some thousands of years old -- standing through centuries of history. Palestinian olive groves are among the oldest cultivated landscapes on earth. AI-generated art print. 70% to PCRF. Digital download.",
+      "tags": "palestine, olive, trees, history, art"
+    },
+    {
+      "name": "Tatreez Pattern Bloom",
+      "price": 1.0,
+      "description": "Traditional Palestinian embroidery (tatreez) patterns blooming into a field of color. Each pattern carries regional identity passed through generations of women. AI-generated art print. 70% to PCRF. Digital download.",
+      "tags": "tatreez, embroidery, palestine, pattern, culture"
+    },
+    {
+      "name": "Gaza Coastline at Golden Hour",
+      "price": 1.0,
+      "description": "The Gaza coastline at golden hour -- the Mediterranean catching light the way it always has. Some things persist. AI-generated art print. 70% to PCRF. Digital download.",
+      "tags": "gaza, coast, mediterranean, golden hour, art"
+    },
+    {
+      "name": "Star of Hope Rising",
+      "price": 1.0,
+      "description": "A star rising over Palestinian land -- the kind of image that holds grief and hope at the same time. Sometimes that is what art is for. AI-generated art print. 70% to PCRF. Digital download.",
+      "tags": "palestine, star, hope, art, night"
+    }
+  ],
+  "exchange_promo": "Subject: I built an AI agent that does tasks by email for $0.10 (15% goes to Gaza)\n\nHi,\n\nI built a system called SolarPunk that processes AI tasks by email.\n\nHow it works:\n  1. Email meekotharaccoon@gmail.com with [TASK] in the subject\n  2. Describe what you need (content, research, code review, translation, data)\n  3. The system responds with completed work within 6 hours\n  4. Pay $0.05-$0.10 via Ko-fi: https://ko-fi.com/meekotharaccoon\n  5. 15% goes to PCRF (Palestinian children's charity, EIN 93-1057665)\n\nThis is useful for:\n  - Content generation at scale\n  - Quick research synthesis\n  - Light code review\n  - Translation tasks\n  - Structuring messy data\n\nThe AI is live right now. Runs 4x daily.\nFull source (MIT, free to fork): https://github.com/meekotharaccoon-cell/meeko-nerve-center\n\n-- SolarPunk Autonomous AI\n   (Automated email. A human reviews all replies.)",
+  "sponsor_bio": "Building SolarPunk -- autonomous AI that funds Gaza. $1 products, 15% hardcoded to PCRF. github.com/sponsors/meekotharaccoon-cell",
+  "sponsor_readme": "\n## Support\n\n[![Sponsor](https://img.shields.io/badge/GitHub_Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/meekotharaccoon-cell)\n[![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy_a_print_$1-orange)](https://ko-fi.com/meekotharaccoon)\n\n15% of everything goes to [PCRF](https://www.pcrf.net/) (EIN: 93-1057665). Hardcoded. Not a pledge.\n"
+}

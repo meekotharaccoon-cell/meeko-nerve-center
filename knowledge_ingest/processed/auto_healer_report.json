@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-03-14T07:53:23.969890+00:00",
+  "healed": [],
+  "auto_installed": [],
+  "skipped": [
+    "NANOSHOP_ENGINE",
+    "NARRATOR"
+  ],
+  "failed_engines_seen": [
+    "NANOSHOP_ENGINE",
+    "NARRATOR"
+  ]
+}

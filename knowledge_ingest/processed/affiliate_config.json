@@ -1,0 +1,135 @@
+{
+  "amazon_tag": "autonomoushum-20",
+  "amazon_base": "https://www.amazon.com?tag=autonomoushum-20",
+  "programs": {
+    "amazon": {
+      "url": "https://www.amazon.com?tag=autonomoushum-20",
+      "commission": "1-10%",
+      "type": "retail",
+      "tag": "autonomoushum-20"
+    },
+    "ko-fi": {
+      "url": "https://ko-fi.com/meekotharaccoon",
+      "commission": "direct",
+      "type": "donations"
+    },
+    "gumroad": {
+      "url": "https://gumroad.com/?via=meeko",
+      "commission": "10%",
+      "type": "saas"
+    },
+    "hostinger": {
+      "url": "https://www.hostg.xyz/meeko",
+      "commission": "60%",
+      "type": "hosting"
+    },
+    "convertkit": {
+      "url": "https://convertkit.com/?lmref=meeko",
+      "commission": "30% recurring",
+      "type": "email"
+    },
+    "beehiiv": {
+      "url": "https://www.beehiiv.com/?via=meeko",
+      "commission": "50% first year",
+      "type": "newsletter"
+    },
+    "semrush": {
+      "url": "https://www.semrush.com/partner/",
+      "commission": "200% first pay",
+      "type": "seo"
+    },
+    "shopify": {
+      "url": "https://shopify.pxf.io/meeko",
+      "commission": "$150/sale",
+      "type": "ecommerce"
+    },
+    "namecheap": {
+      "url": "https://namecheap.pxf.io/meeko",
+      "commission": "35%",
+      "type": "domain"
+    },
+    "canva": {
+      "url": "https://partner.canva.com/meeko",
+      "commission": "up to 80%",
+      "type": "design"
+    },
+    "notion": {
+      "url": "https://affiliate.notion.so/meeko",
+      "commission": "$10/ref",
+      "type": "productivity"
+    },
+    "fiverr": {
+      "url": "https://www.fiverr.com/s/meeko",
+      "commission": "$100/ref",
+      "type": "marketplace"
+    },
+    "bluehost": {
+      "url": "https://www.bluehost.com/track/meeko",
+      "commission": "$65/sale",
+      "type": "hosting"
+    },
+    "coursera": {
+      "url": "https://coursera.pxf.io/meeko",
+      "commission": "up to 45%",
+      "type": "education"
+    },
+    "envato": {
+      "url": "https://envato.com/refer/meeko",
+      "commission": "30%",
+      "type": "templates"
+    },
+    "huggingface": {
+      "url": "https://huggingface.co",
+      "commission": "check program",
+      "type": "ai"
+    }
+  },
+  "amazon_products": {
+    "palestine_sacco": {
+      "asin": "1560974523",
+      "title": "Palestine \u2014 Joe Sacco",
+      "url": "https://www.amazon.com/dp/1560974523?tag=autonomoushum-20"
+    },
+    "automate_python": {
+      "asin": "1593279922",
+      "title": "Automate the Boring Stuff",
+      "url": "https://www.amazon.com/dp/1593279922?tag=autonomoushum-20"
+    },
+    "100_startup": {
+      "asin": "0307951529",
+      "title": "The $100 Startup",
+      "url": "https://www.amazon.com/dp/0307951529?tag=autonomoushum-20"
+    },
+    "steal_artist": {
+      "asin": "0761169253",
+      "title": "Steal Like an Artist",
+      "url": "https://www.amazon.com/dp/0761169253?tag=autonomoushum-20"
+    },
+    "ways_seeing": {
+      "asin": "014013515X",
+      "title": "Ways of Seeing",
+      "url": "https://www.amazon.com/dp/014013515X?tag=autonomoushum-20"
+    },
+    "passive_income": {
+      "asin": null,
+      "title": "Passive Income Books",
+      "search": "passive+income+online",
+      "url": "https://www.amazon.com/s?k=passive+income+online&tag=autonomoushum-20"
+    },
+    "python_automation": {
+      "asin": null,
+      "title": "Python Automation",
+      "search": "python+automation",
+      "url": "https://www.amazon.com/s?k=python+automation&tag=autonomoushum-20"
+    },
+    "palestine_history": {
+      "asin": null,
+      "title": "Palestine History Books",
+      "search": "palestine+history",
+      "url": "https://www.amazon.com/s?k=palestine+history&tag=autonomoushum-20"
+    }
+  },
+  "inject_into_all_content": true,
+  "disclosure": "As an Amazon Associate and affiliate partner I earn from qualifying purchases. Commissions fund Gaza aid.",
+  "updated_at": "2026-03-14T07:53:03.881974+00:00"
+}

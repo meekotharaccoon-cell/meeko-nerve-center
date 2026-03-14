@@ -6,7 +6,8 @@ def generate_self_commands():
         "python mycelium/REDUNDANCY_MGR.py",
         "python mycelium/CAPACITY_BOOSTER.py",
         "python mycelium/NETWORK_SENTRY.py",
-        "python mycelium/KNOWLEDGE_BRIDGE.py",
+        "python mycelium/KNOWLEDGE_BRIDGE.py
+        'python mycelium/LEGACY_INTEGRATOR.py',",
         "python mycelium/NEWS_HARVESTER.py",
         "python mycelium/DEEP_RESEARCHER.py",
         "python mycelium/NEURAL_PREFERENCE.py",
@@ -21,7 +22,7 @@ def generate_self_commands():
     
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
         f.write(ps_content)
-    print("🌀 Master Evolutionary Chain: SANITIZED AND REPAIRED.")
+    print("ðŸŒ€ Master Evolutionary Chain: SANITIZED AND REPAIRED.")
 
 if __name__ == '__main__':
     generate_self_commands()

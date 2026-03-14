@@ -1,0 +1,91 @@
+{
+  "id": "ai_tools_mega_pack_\u2014_mar_2026_202603140752",
+  "niche": {
+    "niche": "AI Tools Mega Pack \u2014 Mar 2026",
+    "product_type": "digital_download",
+    "price": 37,
+    "platform": "Gumroad",
+    "audience": "AI power users"
+  },
+  "plan": {
+    "business_name": "SolarPunk AI Tools Mega Pack \u2014 Mar 2026",
+    "tagline": "AI Tools Mega Pack \u2014 Mar 2026 \u2014 built by AI, 15% to Gaza",
+    "product_name": "AI Tools Mega Pack \u2014 Mar 2026 Pack",
+    "product_description": "Premium AI Tools Mega Pack \u2014 Mar 2026 created by autonomous AI. Every purchase sends 15% to Palestinian children via PCRF. Instant download, no subscription.",
+    "price": 37,
+    "email_sequence": [
+      {
+        "subject": "Your AI Tools Mega Pack \u2014 Mar 2026 is ready",
+        "body": "Thanks for your purchase. Your AI Tools Mega Pack \u2014 Mar 2026 pack is attached. 15% went to Gaza. \u2014 Meeko\n\nP.S. Worth reading: Palestine \u2014 Joe Sacco \u2192 https://www.amazon.com/dp/1560974523?tag=autonomoushum-20",
+        "day": 0
+      },
+      {
+        "subject": "How's it going?",
+        "body": "Just checking in. Let me know if you have questions. More resources at ko-fi.com/meekotharaccoon\n\nP.S. Worth reading: Palestine \u2014 Joe Sacco \u2192 https://www.amazon.com/dp/1560974523?tag=autonomoushum-20",
+        "day": 3
+      }
+    ],
+    "social_posts": [
+      {
+        "platform": "twitter",
+        "text": "Just launched: AI Tools Mega Pack \u2014 Mar 2026 \u2014 $37, 15% to Gaza \ud83c\udf39 gumroad.com"
+      },
+      {
+        "platform": "reddit",
+        "text": "Built this with autonomous AI: AI Tools Mega Pack \u2014 Mar 2026. $37, 15% goes to Palestinian kids."
+      },
+      {
+        "platform": "linkedin",
+        "text": "New digital product: AI Tools Mega Pack \u2014 Mar 2026. $37. 15% to PCRF (Gaza children's relief)."
+      }
+    ],
+    "seo_keywords": [
+      "ai tools mega pack \u2014 mar 2026",
+      "digital download",
+      "ai tools",
+      "gaza solidarity"
+    ],
+    "launch_steps": [
+      "Create Gumroad listing",
+      "Post to social",
+      "Email list",
+      "Repeat"
+    ],
+    "monthly_revenue_estimate": "$370-$1480/month",
+    "gaza_impact": "15% of every $37 sale = $5.55 to PCRF",
+    "amazon_books": [
+      {
+        "title": "The $100 Startup",
+        "url": "https://www.amazon.com/dp/0307951529?tag=autonomoushum-20"
+      },
+      {
+        "title": "Palestine \u2014 Joe Sacco",
+        "url": "https://www.amazon.com/dp/1560974523?tag=autonomoushum-20"
+      },
+      {
+        "title": "Steal Like an Artist",
+        "url": "https://www.amazon.com/dp/0761169253?tag=autonomoushum-20"
+      },
+      {
+        "title": "Automate the Boring Stuff",
+        "url": "https://www.amazon.com/dp/1593279922?tag=autonomoushum-20"
+      }
+    ],
+    "amazon_tag": "autonomoushum-20"
+  },
+  "built_at": "2026-03-14T07:52:40.877694+00:00",
+  "status": "ready_to_launch",
+  "affiliate_links": {
+    "gumroad": "https://gumroad.com/?via=meeko",
+    "ko-fi": "https://ko-fi.com/meekotharaccoon",
+    "github": "https://github.com/meekotharaccoon-cell/meeko-nerve-center",
+    "amazon_p1": "https://www.amazon.com/dp/0307951529?tag=autonomoushum-20",
+    "amazon_p2": "https://www.amazon.com/dp/1560974523?tag=autonomoushum-20"
+  },
+  "estimated_monthly_revenue": "$370-$1480/month",
+  "gaza_contribution": "15% of all sales",
+  "affiliate_injected": true,
+  "live_url": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/ai-tools-mega-pack-mar-2026/",
+  "slug": "ai-tools-mega-pack-mar-2026",
+  "deployed_at": "2026-03-14T07:52:43.161591+00:00"
+}

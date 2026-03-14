@@ -1,0 +1,167 @@
+{
+  "cycles": 66,
+  "sent": [
+    {
+      "ts": "2026-03-06T02:09:39.447314+00:00",
+      "email": "tips@tldr.tech",
+      "name": "TLDR Newsletter",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:40.027586+00:00",
+      "email": "tips@hackernewsletter.com",
+      "name": "Hacker Newsletter",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:40.631899+00:00",
+      "email": "hi@bensbites.co",
+      "name": "Ben's Bites",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:41.244814+00:00",
+      "email": "hello@indiehackers.com",
+      "name": "Indie Hackers",
+      "tag": "community",
+      "subject": "$0 infrastructure, autonomous AI business, everything $1 \u2014 wanted to share",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:41.832379+00:00",
+      "email": "tips@restofworld.org",
+      "name": "Rest of World",
+      "tag": "media",
+      "subject": "Pitch: one person + AI built an autonomous system that funds Gaza \u2014 every $1, forever",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:42.434478+00:00",
+      "email": "info@techforpalestine.org",
+      "name": "Tech for Palestine",
+      "tag": "org",
+      "subject": "Autonomous AI system routing 15% of every sale to Palestinian children \u2014 wanted to connect",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:42.953117+00:00",
+      "email": "applications@awesomefoundation.org",
+      "name": "Awesome Foundation",
+      "tag": "grant",
+      "subject": "Grant application: open-source autonomous AI system funding Palestinian children",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:43.553680+00:00",
+      "email": "grants@mozilla.org",
+      "name": "Mozilla Foundation",
+      "tag": "grant",
+      "subject": "Grant application: open-source autonomous AI system funding Palestinian children",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:44.166463+00:00",
+      "email": "thebatch@deeplearning.ai",
+      "name": "The Batch (DeepLearning.AI)",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:44.679338+00:00",
+      "email": "tips@futurism.com",
+      "name": "Futurism / The Byte tips",
+      "tag": "media",
+      "subject": "Pitch: one person + AI built an autonomous system that funds Gaza \u2014 every $1, forever",
+      "sent": false
+    }
+  ],
+  "log": [
+    {
+      "ts": "2026-03-06T02:09:39.447314+00:00",
+      "email": "tips@tldr.tech",
+      "name": "TLDR Newsletter",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:40.027586+00:00",
+      "email": "tips@hackernewsletter.com",
+      "name": "Hacker Newsletter",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:40.631899+00:00",
+      "email": "hi@bensbites.co",
+      "name": "Ben's Bites",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:41.244814+00:00",
+      "email": "hello@indiehackers.com",
+      "name": "Indie Hackers",
+      "tag": "community",
+      "subject": "$0 infrastructure, autonomous AI business, everything $1 \u2014 wanted to share",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:41.832379+00:00",
+      "email": "tips@restofworld.org",
+      "name": "Rest of World",
+      "tag": "media",
+      "subject": "Pitch: one person + AI built an autonomous system that funds Gaza \u2014 every $1, forever",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:42.434478+00:00",
+      "email": "info@techforpalestine.org",
+      "name": "Tech for Palestine",
+      "tag": "org",
+      "subject": "Autonomous AI system routing 15% of every sale to Palestinian children \u2014 wanted to connect",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:42.953117+00:00",
+      "email": "applications@awesomefoundation.org",
+      "name": "Awesome Foundation",
+      "tag": "grant",
+      "subject": "Grant application: open-source autonomous AI system funding Palestinian children",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:43.553680+00:00",
+      "email": "grants@mozilla.org",
+      "name": "Mozilla Foundation",
+      "tag": "grant",
+      "subject": "Grant application: open-source autonomous AI system funding Palestinian children",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:44.166463+00:00",
+      "email": "thebatch@deeplearning.ai",
+      "name": "The Batch (DeepLearning.AI)",
+      "tag": "newsletter",
+      "subject": "Story idea: autonomous AI that builds itself and funds Gaza ($1 per product)",
+      "sent": false
+    },
+    {
+      "ts": "2026-03-06T02:09:44.679338+00:00",
+      "email": "tips@futurism.com",
+      "name": "Futurism / The Byte tips",
+      "tag": "media",
+      "subject": "Pitch: one person + AI built an autonomous system that funds Gaza \u2014 every $1, forever",
+      "sent": false
+    }
+  ]
+}

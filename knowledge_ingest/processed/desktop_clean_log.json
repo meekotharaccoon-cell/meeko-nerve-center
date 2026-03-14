@@ -1,0 +1,36 @@
+{
+  "runs": [
+    {
+      "at": "2026-03-11T04:39:29.315000+00:00",
+      "moved": 5,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260305_013946",
+          "to": "BACKUPS\\BACKUP_20260305_013946",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260305_070713",
+          "to": "BACKUPS\\BACKUP_20260305_070713",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260308_100216",
+          "to": "BACKUPS\\BACKUP_20260308_100216",
+          "reason": "backup directory"
+        },
+        {
+          "file": "Claude.lnk",
+          "to": "Shortcuts\\Claude.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "daily_report_20260305.json",
+          "to": "Reports\\daily_report_20260305.json",
+          "reason": "report file"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}
