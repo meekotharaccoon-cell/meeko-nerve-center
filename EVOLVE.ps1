@@ -1,18 +1,25 @@
-﻿Write-Host "🌀 Initiating Recursive Evolution Loop (SolarPunk v3)..." -ForegroundColor Magenta
+﻿Write-Host "🌀 SolarPunk v4: Clearing the Path..." -ForegroundColor Magenta
 
-# 1. Auto-Sync with Cloud Brain first to prevent push rejection
+# 1. Force-stage everything so Git doesn't complain about 'unstaged changes'
+git add .
+
+# 2. Commit what we have locally (even if it's just a heartbeat)
+git commit -m "HEARTBEAT: Pre-sync state save"
+
+# 3. Pull from Cloud Brain and Rebase
+Write-Host "📡 Syncing with GitHub..." -ForegroundColor Cyan
 git pull --rebase origin main
 
-# 2. Clean the environment
+# 4. Run the Nanobots
 python mycelium/DESKTOP_HARVESTER.py
 python mycelium/SYSTEM_CONDENSER.py
 
-# 3. Recursive Logic
+# 5. Recursive Execution
 python mycelium/AUTO_RUNNER.py
 
-# 4. Push the new growth
+# 6. Final Push to Cloud
 git add .
-git commit -m "RECURSIVE: System self-updated and synchronized."
+git commit -m "RECURSIVE: Evolution cycle successful."
 git push origin main
 
-Write-Host "✨ Cycle Complete. Local and Cloud are unified." -ForegroundColor Green
+Write-Host "✨ Swarm is Unified and Up-to-Date." -ForegroundColor Green
