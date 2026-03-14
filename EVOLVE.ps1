@@ -1,15 +1,18 @@
-﻿Write-Host "🌀 Initiating Recursive Evolution Loop..." -ForegroundColor Magenta
+﻿Write-Host "🌀 Initiating Recursive Evolution Loop (SolarPunk v3)..." -ForegroundColor Magenta
 
-# 1. Standard Maintenance
+# 1. Auto-Sync with Cloud Brain first to prevent push rejection
+git pull --rebase origin main
+
+# 2. Clean the environment
 python mycelium/DESKTOP_HARVESTER.py
 python mycelium/SYSTEM_CONDENSER.py
 
-# 2. The Recursive Step: Let the AI decide the next command
+# 3. Recursive Logic
 python mycelium/AUTO_RUNNER.py
 
-# 3. Sync everything back to the Cloud Brain
+# 4. Push the new growth
 git add .
-git commit -m "RECURSIVE: System generated and executed its own commands."
+git commit -m "RECURSIVE: System self-updated and synchronized."
 git push origin main
 
-Write-Host "✨ Cycle Complete. The Mycelium is self-governing." -ForegroundColor Green
+Write-Host "✨ Cycle Complete. Local and Cloud are unified." -ForegroundColor Green
