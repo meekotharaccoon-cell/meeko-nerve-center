@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T22:23:01.927119",
+  "last_checked": "2026-03-14T22:25:07.363738",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -87,6 +87,7 @@
     "AGENT_LINK_VERIFIER.py",
     "SOLARPUNK_CLI.py",
     "KOFI_ENGINE.py",
+    "WEB_PUBLISHER.py",
     "GRANT_HUNTER.py",
     "ECONOMY_CHAIN.py",
     "AUTONOMOUS_PUBLISHER.py",
@@ -112,6 +113,7 @@
     "SOCIAL_PROMOTER.py",
     "BRAVE_BROWSER_ENGINE.py",
     "GMAIL_INTAKE.py",
+    "SYNERGY_SCOUT.py",
     "MASTODON_ENGINE.py",
     "GUMROAD_AUTO_QUEUE.py",
     "SYNAPSE_BUILDER.py",
