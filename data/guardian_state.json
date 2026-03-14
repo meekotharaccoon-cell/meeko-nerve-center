@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:39:11.104927",
+  "last_checked": "2026-03-14T23:42:02.125131",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -21,6 +21,7 @@
     "NEURON_A.py",
     "ai_council.py",
     "SECRETS_CHECKER.py",
+    "REVENUE_MONITOR.py",
     "SYSTEM_CONDENSER.py",
     "LEGACY_SIFTED__configure_medusa.py",
     "GUARDIAN_GATEKEEPER.py",
@@ -129,6 +130,7 @@
     "LEGACY_SIFTED_blockchain_tracker.py",
     "EVOLUTION_AGENT.py",
     "CONTENT_HARVESTER.py",
+    "SCAVENGER_WEB.py",
     "SYNERGY_FORGE.py",
     "QUICK_REVENUE.py",
     "ISSUE_SYNC.py",
@@ -156,6 +158,7 @@
     "GMAIL_INTAKE.py",
     "SYNERGY_SCOUT.py",
     "MASTODON_ENGINE.py",
+    "TRIFECTA_CORE.py",
     "GUMROAD_AUTO_QUEUE.py",
     "SYNAPSE_BUILDER.py",
     "knowledge_dispatch.py",
