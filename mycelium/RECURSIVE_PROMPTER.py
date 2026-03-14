@@ -1,7 +1,6 @@
 def generate_self_commands():
-    # Using a list to ensure no hidden line breaks or quote issues
     cmds = [
-        "Write-Host '💎 AWAKENING THE FINAL FORM SWARM...' -ForegroundColor Magenta",
+        "Write-Host '--- AWAKENING THE FINAL FORM SWARM ---' -ForegroundColor Magenta",
         "python mycelium/SECRET_LOADER.py",
         "python mycelium/AUTO_HEALER.py",
         "python mycelium/REDUNDANCY_MGR.py",
@@ -15,12 +14,14 @@ def generate_self_commands():
         "python mycelium/WEB_PUBLISHER.py",
         "python mycelium/MISSION_CONTROL.py",
         "python mycelium/REAL_LIFE_MANIFESTO.py",
-        "Write-Host '🌕 Swarm Evolution Cycle Complete.' -ForegroundColor Green"
+        "Write-Host '--- Swarm Evolution Cycle Complete ---' -ForegroundColor Green"
     ]
-    ps_content = "$cmds = @'\n" + "\n".join(cmds) + "\n'@\n$cmds | iex"
+    # We use a standard string join without the complex Here-String to maximize compatibility
+    ps_content = "$cmds = " + str(cmds).replace("[", "@(").replace("]", ")") + "\nforeach ($c in $cmds) { iex $c }"
+    
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
         f.write(ps_content)
-    print("🌀 Master Evolutionary Chain: CALIBRATED AND SHIELDED.")
+    print("🌀 Master Evolutionary Chain: SANITIZED AND REPAIRED.")
 
 if __name__ == '__main__':
     generate_self_commands()
