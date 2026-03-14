@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T22:28:10.692641",
+  "last_checked": "2026-03-14T22:32:29.932749",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -58,6 +58,7 @@
     "CYCLE_MEMORY.py",
     "ARCHITECT.py",
     "DESKTOP_HARVESTER.py",
+    "REDUNDANCY_MGR.py",
     "PDF_GENERATOR.py",
     "BLUESKY_ENGINE.py",
     "NARRATOR.py",
@@ -105,11 +106,13 @@
     "VALUE_GENERATOR.py",
     "GITHUB_POSTER.py",
     "SPORE_SERVER.py",
+    "NEURAL_PREFERENCE.py",
     "NEWS_HARVESTER.py",
     "REVENUE_FLYWHEEL.py",
     "ART_CATALOG.py",
     "PRODUCT_DELIVERY_ENGINE.py",
     "MEMORY_PALACE.py",
+    "DEEP_RESEARCHER.py",
     "AUTO_RUNNER.py",
     "GRANT_APPLICANT.py",
     "SOCIAL_PROMOTER.py",
