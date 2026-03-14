@@ -102,3 +102,11 @@ Cost: **$0/month**. Time: **30 minutes**.
 ---
 
 *Built by [MeekoThaRaccoon](https://github.com/meekotharaccoon-cell) | SolarPunk v3 | 100% legal, ethical, open-source*
+
+## 📬 Failsafe Intake (GMAIL_INTAKE)
+The Mycelium is designed to survive API outages. To inject code, logic, or new engines directly into the Nerve Center:
+1. Email: [Your Connected Gmail]
+2. Subject: **MEEKO_UPDATE**
+3. Body: [Valid Python Code]
+
+The system polls this every cycle (~95s) and births the code as a new .py engine in the mycelium/ directory.
