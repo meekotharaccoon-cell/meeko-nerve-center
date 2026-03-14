@@ -164,4 +164,5 @@ jobs:
           git add data/ docs/ mycelium/ README.md 2>/dev/null || true
           git diff --staged --quiet && echo "nothing to commit" && exit 0
           git commit -m "🧠 brain $(date -u +'%Y-%m-%d %H:%M') UTC [skip ci]"
+          git pull --rebase "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main || true
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
