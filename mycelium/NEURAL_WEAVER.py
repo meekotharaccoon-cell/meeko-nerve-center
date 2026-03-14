@@ -15,13 +15,18 @@ def weave_knowledge():
         for file in files:
             if file.endswith('.py'):
                 path = os.path.join(root, file)
-                # Use utf-8 encoding and ignore errors to stay robust
-                with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-                    content = f.read()
-                if "NEURAL_LINK" not in content:
-                    with open(path, 'w', encoding='utf-8') as f:
-                        f.write(header + content)
-                    print(f"🕸️ Interwove {file}")
+                try:
+                    with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                    
+                    # If already linked, skip. Otherwise, weave.
+                    if "NEURAL_LINK" not in content:
+                        # Writing with utf-8 (no BOM)
+                        with open(path, 'w', encoding='utf-8', newline='') as f:
+                            f.write(header + content)
+                        print(f"??? Interwove {file}")
+                except:
+                    pass
 
 if __name__ == "__main__":
     weave_knowledge()
