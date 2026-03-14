@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T20:15:08.074442",
+  "last_checked": "2026-03-14T20:17:40.720810",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -12,6 +12,7 @@
     "EVOLVE_SYSTEM.yml",
     "claude-code-review.yml",
     "BUILD.yml",
+    "SELF_EVOLVE.yml",
     "WEBHOOK_RELAY.yml",
     "SOLARPUNK_LOOP.yml",
     "claude_issue_responder.yml"
