@@ -1,0 +1,97 @@
+2026-02-11 09:13:48,354 - INFO - ====== WebDriver manager ======
+2026-02-11 09:13:50,765 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:13:51,298 - INFO - About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_win32.zip
+2026-02-11 09:13:51,698 - INFO - Driver downloading response is 200
+2026-02-11 09:13:53,202 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:13:54,801 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:13:56,298 - INFO - Driver has been saved in cache [C:\Users\meeko\.wdm\drivers\chromedriver\win64\114.0.5735.90]
+2026-02-11 09:13:59,827 - ERROR - Failed to initialize driver: Message: unknown error: cannot find Chrome binary
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0104A813+48355]
+	(No symbol) [0x00FDC4B1]
+	(No symbol) [0x00EE5358]
+	(No symbol) [0x00F01A9E]
+	(No symbol) [0x00F00579]
+	(No symbol) [0x00F30C55]
+	(No symbol) [0x00F3093C]
+	(No symbol) [0x00F2A536]
+	(No symbol) [0x00F082DC]
+	(No symbol) [0x00F093DD]
+	GetHandleVerifier [0x012AAABD+2539405]
+	GetHandleVerifier [0x012EA78F+2800735]
+	GetHandleVerifier [0x012E456C+2775612]
+	GetHandleVerifier [0x010D51E0+616112]
+	(No symbol) [0x00FE5F8C]
+	(No symbol) [0x00FE2328]
+	(No symbol) [0x00FE240B]
+	(No symbol) [0x00FD4FF7]
+	BaseThreadInitThunk [0x76295D49+25]
+	RtlInitializeExceptionChain [0x76FDD83B+107]
+	RtlGetAppContainerNamedObjectPath [0x76FDD7C1+561]
+
+2026-02-11 09:19:44,348 - INFO - ====== WebDriver manager ======
+2026-02-11 09:19:47,073 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:19:47,459 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:19:47,791 - INFO - There is no [win64] chromedriver "145.0.7632.46" for browser google-chrome "145.0.7632" in cache
+2026-02-11 09:19:47,791 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:19:48,591 - INFO - WebDriver version 145.0.7632.46 selected
+2026-02-11 09:19:48,607 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.46/win32/chromedriver-win32.zip
+2026-02-11 09:19:48,607 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.46/win32/chromedriver-win32.zip
+2026-02-11 09:19:48,975 - INFO - Driver downloading response is 200
+2026-02-11 09:19:49,309 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:19:49,778 - INFO - Driver has been saved in cache [C:\Users\meeko\.wdm\drivers\chromedriver\win64\145.0.7632.46]
+2026-02-11 09:19:57,146 - ERROR - Failed to initialize driver: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xfcf393
+	0xfcf3d4
+	0xdc2090
+	0xdf756b
+	0xdf2750
+	0xe3ae7f
+	0xe3a697
+	0xe2ebb6
+	0xe00319
+	0xe010d4
+	0x1223de4
+	0x121f0e9
+	0x123c080
+	0xfe80a8
+	0xfefdfd
+	0xfd7bc8
+	0xfd7d92
+	0xfc189a
+	0x76295d49
+	0x76fdd83b
+	0x76fdd7c1
+
+2026-02-11 09:22:03,014 - INFO - ====== WebDriver manager ======
+2026-02-11 09:22:05,591 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:22:05,946 - INFO - Get LATEST chromedriver version for google-chrome
+2026-02-11 09:22:06,296 - INFO - Driver [C:\Users\meeko\.wdm\drivers\chromedriver\win64\145.0.7632.46\chromedriver-win32/chromedriver.exe] found in cache
+2026-02-11 09:22:08,946 - ERROR - Failed to initialize driver: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xfcf393
+	0xfcf3d4
+	0xdc2090
+	0xdf756b
+	0xdf2750
+	0xe3ae7f
+	0xe3a697
+	0xe2ebb6
+	0xe00319
+	0xe010d4
+	0x1223de4
+	0x121f0e9
+	0x123c080
+	0xfe80a8
+	0xfefdfd
+	0xfd7bc8
+	0xfd7d92
+	0xfc189a
+	0x76295d49
+	0x76fdd83b
+	0x76fdd7c1
+

@@ -1,0 +1,81 @@
+[
+  {
+    "email_number": 1,
+    "delay": "immediate",
+    "subject": "Welcome to ProductivityPro - Here's your free guide",
+    "preview_text": "The productivity system that changed everything...",
+    "content_type": "value_delivery",
+    "body_template": "\n                <h1>Welcome to the community!</h1>\n                <p>Hi {first_name},</p>\n                <p>Thanks for joining ProductivityPro. I'm excited to help you transform your productivity.</p>\n                <p><strong>Here's your promised guide:</strong> <a href=\"[DOWNLOAD_LINK]\">Download the Productivity Toolkit</a></p>\n                <p>Over the next week, I'll share:</p>\n                <ul>\n                    <li>The exact system I use to manage 5 projects simultaneously</li>\n                    <li>Automation scripts that save 10+ hours/week</li>\n                    <li>My favorite tools (most are free)</li>\n                </ul>\n                <p>Talk soon,<br>ProductivityPro Team</p>\n                ",
+    "cta": "Download Your Free Guide",
+    "affiliate_links": []
+  },
+  {
+    "email_number": 2,
+    "delay": "1_day",
+    "subject": "The $5,000 mistake most people make",
+    "preview_text": "I made this mistake for 3 years before figuring it out...",
+    "content_type": "story",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>Three years ago, I was working 80-hour weeks and barely making ends meet.</p>\n                <p>I thought the answer was to work harder. Buy more tools. Learn more skills.</p>\n                <p><strong>I was wrong.</strong></p>\n                <p>The breakthrough came when I realized I was solving the wrong problem.</p>\n                <p>I didn't need to do MORE. I needed to do LESS, but better.</p>\n                <p>Specifically, I needed to:</p>\n                <ol>\n                    <li>Eliminate 80% of my tasks (Pareto Principle)</li>\n                    <li>Automate everything repetitive</li>\n                    <li>Focus only on high-leverage activities</li>\n                </ol>\n                <p>The result? I cut my work hours by 60% while doubling my income.</p>\n                <p>Tomorrow, I'll show you exactly how to identify your high-leverage activities.</p>\n                <p>Stay productive,<br>ProductivityPro</p>\n                ",
+    "cta": null,
+    "affiliate_links": []
+  },
+  {
+    "email_number": 3,
+    "delay": "2_days",
+    "subject": "Step 1: The 80/20 Audit (takes 15 minutes)",
+    "preview_text": "This exercise will change how you work forever...",
+    "content_type": "actionable",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>Yesterday I told you about my $5,000 mistake.</p>\n                <p>Today, let's fix it with a simple 15-minute exercise:</p>\n                <h3>The 80/20 Audit</h3>\n                <p><strong>Step 1:</strong> List everything you did last week</p>\n                <p><strong>Step 2:</strong> Mark which tasks produced results</p>\n                <p><strong>Step 3:</strong> Circle the top 20% that drove 80% of results</p>\n                <p><strong>Step 4:</strong> Eliminate, delegate, or automate the rest</p>\n                <p>I created a template to make this easier:</p>\n                <p><a href=\"[TEMPLATE_LINK]\">Get the 80/20 Audit Template</a></p>\n                <p>Tomorrow: How to automate the remaining tasks.</p>\n                <p>Best,<br>ProductivityPro</p>\n                ",
+    "cta": "Get the Template",
+    "affiliate_links": [
+      "notion_template",
+      "airtable_template"
+    ]
+  },
+  {
+    "email_number": 4,
+    "delay": "2_days",
+    "subject": "This tool saves me 10 hours every week",
+    "preview_text": "And it costs less than a coffee per month...",
+    "content_type": "product_recommendation",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>After doing your 80/20 audit, you probably identified tasks you do repeatedly.</p>\n                <p>Those are perfect candidates for automation.</p>\n                <p>My favorite automation tool? <strong>Make.com</strong> (formerly Integromat).</p>\n                <p>Here's what I automate with it:</p>\n                <ul>\n                    <li>Social media posting (saves 5 hrs/week)</li>\n                    <li>Email sorting and responses (saves 3 hrs/week)</li>\n                    <li>Data entry and reporting (saves 2 hrs/week)</li>\n                </ul>\n                <p><strong>Total time saved: 10+ hours per week</strong></p>\n                <p>Cost: $9/month</p>\n                <p>ROI: About 1000x</p>\n                <p>I wrote a complete setup guide here:</p>\n                <p><a href=\"[MAKE_GUIDE_LINK]\">Read: Make.com Setup Guide</a></p>\n                <p>Tomorrow: The final piece of the puzzle.</p>\n                <p>Cheers,<br>ProductivityPro</p>\n                ",
+    "cta": "Read the Guide",
+    "affiliate_links": [
+      "make_dot_com"
+    ]
+  },
+  {
+    "email_number": 5,
+    "delay": "2_days",
+    "subject": "The 'One Thing' principle (email 5 of 7)",
+    "preview_text": "What if you could only do ONE thing today?",
+    "content_type": "philosophy",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>Quick question:</p>\n                <p><strong>If you could only accomplish ONE thing today, what would make everything else easier or irrelevant?</strong></p>\n                <p>This is the \"One Thing\" principle from Gary Keller's book.</p>\n                <p>Here's how I apply it:</p>\n                <ol>\n                    <li>Every morning, I identify my ONE thing</li>\n                    <li>I block 3 hours for deep work on it</li>\n                    <li>Everything else waits until it's done</li>\n                </ol>\n                <p>The result? I make progress on what actually matters, every single day.</p>\n                <p>Try it tomorrow morning. Pick your ONE thing tonight.</p>\n                <p>Tomorrow, I'll share my complete daily productivity system.</p>\n                <p>Stay focused,<br>ProductivityPro</p>\n                ",
+    "cta": null,
+    "affiliate_links": []
+  },
+  {
+    "email_number": 6,
+    "delay": "2_days",
+    "subject": "My complete daily productivity system",
+    "preview_text": "The exact schedule I follow every day...",
+    "content_type": "system_reveal",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>You've learned about the 80/20 rule, automation, and the One Thing principle.</p>\n                <p>Today, I'll show you how I combine them into a daily system:</p>\n                <h3>My Daily Schedule</h3>\n                <p><strong>6:00 AM - 6:30 AM:</strong> Morning routine (no phone)</p>\n                <p><strong>6:30 AM - 9:30 AM:</strong> Deep work on ONE thing</p>\n                <p><strong>9:30 AM - 10:00 AM:</strong> Break + light exercise</p>\n                <p><strong>10:00 AM - 12:00 PM:</strong> Important meetings/calls</p>\n                <p><strong>12:00 PM - 1:00 PM:</strong> Lunch + reading</p>\n                <p><strong>1:00 PM - 3:00 PM:</strong> Administrative tasks (email, etc.)</p>\n                <p><strong>3:00 PM onwards:</strong> Flexible time / learning</p>\n                <p>The key? <strong>Protect your morning at all costs.</strong></p>\n                <p>That's when your brain is fresh and creative.</p>\n                <p>Want the complete system as a Notion template?</p>\n                <p><a href=\"[NOTION_TEMPLATE_LINK]\">Get the Daily System Template</a></p>\n                <p>One more email coming tomorrow...</p>\n                <p>Best,<br>ProductivityPro</p>\n                ",
+    "cta": "Get the Template",
+    "affiliate_links": [
+      "notion_template"
+    ]
+  },
+  {
+    "email_number": 7,
+    "delay": "2_days",
+    "subject": "Your next step (and a special offer)",
+    "preview_text": "Thank you for being part of the community...",
+    "content_type": "transition",
+    "body_template": "\n                <p>Hi {first_name},</p>\n                <p>Over the past week, you've learned:</p>\n                <ul>\n                    <li>\u2705 How to identify your high-leverage activities</li>\n                    <li>\u2705 How to automate repetitive tasks</li>\n                    <li>\u2705 How to focus on what matters most</li>\n                    <li>\u2705 My complete daily productivity system</li>\n                </ul>\n                <p>Now it's time to implement.</p>\n                <p><strong>Your next step:</strong> Choose ONE tactic from this series and implement it this week.</p>\n                <p>Just one. Don't try to do everything at once.</p>\n                <p>And if you want to go deeper...</p>\n                <h3>Special Offer for New Subscribers</h3>\n                <p>I'm opening 5 spots for 1-on-1 productivity consulting.</p>\n                <p>We'll audit your workflow, identify automation opportunities, and build a custom system for you.</p>\n                <p>Normally $500. For you: $197 (limited to first 5 replies).</p>\n                <p><a href=\"[CONSULTING_LINK]\">Book Your Session</a></p>\n                <p>Either way, keep implementing what you've learned.</p>\n                <p>To your success,<br>ProductivityPro</p>\n                <p>P.S. - Hit reply and let me know which tactic you're implementing first. I read every email.</p>\n                ",
+    "cta": "Book Your Session",
+    "affiliate_links": [
+      "consulting_service"
+    ]
+  }
+]
