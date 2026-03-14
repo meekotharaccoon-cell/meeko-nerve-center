@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T20:17:40.720810",
+  "last_checked": "2026-03-14T20:19:30.242585",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -55,6 +55,7 @@
     "NARRATOR.py",
     "BOTTLENECK_SCANNER.py",
     "CONNECTION_FORGE.py",
+    "VALIDATE_AUTH.py",
     "CROSS_POLLINATOR.py",
     "REPO_SPIDER.py",
     "REVENUE_OPTIMIZER.py",
@@ -83,6 +84,7 @@
     "STORE_BUILDER.py",
     "PASSIVE_INCOME_ARCHITECT.py",
     "GUARDIAN.py",
+    "EVOLUTION_AGENT.py",
     "CONTENT_HARVESTER.py",
     "QUICK_REVENUE.py",
     "ISSUE_SYNC.py",
