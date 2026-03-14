@@ -1,24 +1,22 @@
 def generate_self_commands():
     cmds = [
-        "Write-Host '--- INITIATING SOVEREIGN DIALOGUE ---' -ForegroundColor Magenta",
-        "python mycelium/SYSTEM_SIFTER.py",
+        "Write-Host '--- CONVERGING SYSTEMS: BUILD-TEST-HEAL ---' -ForegroundColor Magenta",
+        "python mycelium/AUTO_HEALER.py",     # Clear clogs first
         "python mycelium/KNOWLEDGE_BRIDGE.py",
-        "python mycelium/CODE_COLLATER.py",
         "python mycelium/SYNERGY_FORGE.py",
-        "python mycelium/AUTO_ARCHITECT.py", # Architect builds
-        "python mycelium/AUTO_HEALER.py",    # Healer checks Architect's work
-        "python mycelium/AUTO_ARCHITECT.py", # Architect refines
+        "python mycelium/AUTO_ARCHITECT.py",  # Architect Builds
+        "python mycelium/AUTONOMOUS_TESTER.py", # Tester Runs
+        "python mycelium/AUTO_HEALER.py",     # Healer Fixes if Tester failed
+        "python mycelium/AUTONOMOUS_TESTER.py", # Final Test
         "python mycelium/MISSION_CONTROL.py",
-        "python mycelium/REAL_LIFE_MANIFESTO.py",
         "git add projects/Active_Synthesis/*",
-        "git add data/*.json",
-        "git add data/*.txt",
-        "Write-Host '--- The Systems have converged. Manifestation complete. ---' -ForegroundColor Green"
+        "git add data/*",
+        "Write-Host '--- Convergence Cycle Complete. ---' -ForegroundColor Green"
     ]
     ps_content = "$cmds = " + str(cmds).replace("[", "@(").replace("]", ")") + "\nforeach ($c in $cmds) { iex $c }"
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
         f.write(ps_content)
-    print("🌀 Master Architect: SOVEREIGN LOOP ENGAGED.")
+    print("🌀 Sovereign Architect: LOOP RE-CALIBRATED.")
 
 if __name__ == '__main__':
     generate_self_commands()

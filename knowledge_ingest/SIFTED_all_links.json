@@ -1,0 +1,44 @@
+{
+  "tech": [
+    {
+      "product": "MacBook Air",
+      "url": "https://www.amazon.com/dp/B0CM5JV268/?tag=autonomoushum-20"
+    },
+    {
+      "product": "iPad",
+      "url": "https://www.amazon.com/dp/B0BJLCLM3S/?tag=autonomoushum-20"
+    },
+    {
+      "product": "iPhone",
+      "url": "https://www.amazon.com/dp/B0CHWV2WY5/?tag=autonomoushum-20"
+    }
+  ],
+  "home_office": [
+    {
+      "product": "Logitech MX Master 3S",
+      "url": "https://www.amazon.com/dp/B09HM94VDS/?tag=autonomoushum-20"
+    },
+    {
+      "product": "BenQ Monitor",
+      "url": "https://www.amazon.com/dp/B09Z2K9FSZ/?tag=autonomoushum-20"
+    },
+    {
+      "product": "Herman Miller Chair",
+      "url": "https://www.amazon.com/dp/B07B84TLXX/?tag=autonomoushum-20"
+    }
+  ],
+  "humanitarian": [
+    {
+      "product": "Water Filter",
+      "url": "https://www.amazon.com/dp/B08MWRH9Y4/?tag=autonomoushum-20"
+    },
+    {
+      "product": "First Aid Kit",
+      "url": "https://www.amazon.com/dp/B09B1P42Y4/?tag=autonomoushum-20"
+    },
+    {
+      "product": "Solar Charger",
+      "url": "https://www.amazon.com/dp/B09T3V3H7F/?tag=autonomoushum-20"
+    }
+  ]
+}
