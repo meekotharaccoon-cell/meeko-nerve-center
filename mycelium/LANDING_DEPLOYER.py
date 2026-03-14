@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 LANDING_DEPLOYER.py v3 — Deploys landing pages to docs/ in THIS repo.

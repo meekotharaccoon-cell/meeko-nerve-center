@@ -1,4 +1,4 @@
-﻿# ULTIMATE AGENT - NEVER BREAKS AGAIN
+# ULTIMATE AGENT - NEVER BREAKS AGAIN
 import os, sys, time, json, subprocess, datetime, shutil, platform, traceback, atexit, signal, socket, random, string, hashlib, math, re, collections, itertools, typing, textwrap, pprint, html
 
 print("=" * 60)

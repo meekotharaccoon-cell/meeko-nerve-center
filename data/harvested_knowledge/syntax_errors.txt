@@ -1,4 +1,4 @@
-﻿node : C:\Users\meeko\Desktop\GAZA_ROSE_FORCE_BOT\ai_fixed_bot.js:22
+node : C:\Users\meeko\Desktop\GAZA_ROSE_FORCE_BOT\ai_fixed_bot.js:22
 At line:1 char:16
 + $syntaxCheck = node --check "ai_fixed_bot.js" 2>&1
 +                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

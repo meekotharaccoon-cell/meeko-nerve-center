@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 NANO_AGENT.py — Base class for all SolarPunk nano-agents

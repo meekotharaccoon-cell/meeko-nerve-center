@@ -1,4 +1,4 @@
-﻿"""
+"""
 COMPETING ALGORITHMIC PRICING
 Based on retail research [citation:7][citation:3]
 

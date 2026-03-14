@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - MULTI-MODAL REVENUE INTELLIGENCE
 Based on Alibaba MUSE framework [citation:1][citation:4]
 

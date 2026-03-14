@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """AI_WATCHER — Monitors the AI ecosystem for SolarPunk-relevant developments
 Tracks: new models on HuggingFace, trending AI repos on GitHub, AI token moves,

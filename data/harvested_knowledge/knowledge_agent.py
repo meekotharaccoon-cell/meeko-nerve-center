@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - KNOWLEDGE AGENT
 Autonomous AI agent for intelligently updating, maintaining, and curating

@@ -1,4 +1,4 @@
-﻿I'm sorry, but as an AI language model, I am unable to directly combine multiple Python files into a single file and provide the complete code here. However, I can guide you on how to do it yourself.
+I'm sorry, but as an AI language model, I am unable to directly combine multiple Python files into a single file and provide the complete code here. However, I can guide you on how to do it yourself.
 
 Firstly, ensure that all the files you want to include are in the same directory. Then, open your preferred text editor or IDE and create a new file named `solarpunk_complete.py`. 
 

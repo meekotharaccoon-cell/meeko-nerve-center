@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - LEARNING & ADAPTATION ENGINE
 Learns from successful and failed integrations to improve future searches.

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 PDF_GENERATOR.py — generates actual sellable guide content using Groq

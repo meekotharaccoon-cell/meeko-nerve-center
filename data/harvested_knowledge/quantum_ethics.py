@@ -1,4 +1,4 @@
-﻿class QuantumEthicsEngine:
+class QuantumEthicsEngine:
     def __init__(self):
         self.principles = {
             'beneficence': 1.0,

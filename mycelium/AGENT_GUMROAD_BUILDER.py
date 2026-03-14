@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 AGENT_GUMROAD_BUILDER.py — Nano-agent that generates + updates Gumroad listings

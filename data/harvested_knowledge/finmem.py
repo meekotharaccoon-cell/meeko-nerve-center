@@ -1,4 +1,4 @@
-﻿class FINMEMMemory:
+class FINMEMMemory:
     def __init__(self):
         self.sensory = deque(maxlen=100)
         self.working = {}

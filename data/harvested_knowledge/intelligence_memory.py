@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - REVENUE INTELLIGENCE MEMORY CORE
 Based on MUSE framework [citation:1]

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 NIGHTLY_DIGEST.py v2 — SolarPunk Daily Summary Engine

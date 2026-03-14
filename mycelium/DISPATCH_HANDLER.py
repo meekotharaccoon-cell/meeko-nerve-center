@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """DISPATCH_HANDLER.py — processes real payments arriving via repository_dispatch
 Called by KOFI_PAYMENT.yml when Ko-fi fires a webhook.

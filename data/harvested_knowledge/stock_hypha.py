@@ -1,4 +1,4 @@
-﻿import asyncio
+import asyncio
 from typing import Dict, List
 from dataclasses import dataclass
 from datetime import datetime, time

@@ -1,4 +1,4 @@
-﻿class AETEEngine:
+class AETEEngine:
     def __init__(self):
         self.agents = {
             'maia': MarketAudienceInsightAgent(),

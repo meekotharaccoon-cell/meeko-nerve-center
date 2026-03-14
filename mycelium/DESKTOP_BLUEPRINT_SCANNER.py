@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 DESKTOP_BLUEPRINT_SCANNER.py — Catalogs and revives Meeko's desktop scripts

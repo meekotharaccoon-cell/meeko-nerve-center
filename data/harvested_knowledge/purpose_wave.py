@@ -1,4 +1,4 @@
-﻿class PurposeWaveFunction:
+class PurposeWaveFunction:
     def __init__(self):
         self.pcrf_address = '"https://give.pcrf.net/campaign/739651/donate"'
         self.allocation = 0.7

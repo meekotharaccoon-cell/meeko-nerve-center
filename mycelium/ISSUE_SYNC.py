@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """ISSUE_SYNC.py — keeps GitHub Issues current with real system state every cycle
 Uses ONLY GITHUB_TOKEN. Reads omnibus_last.json + business files,

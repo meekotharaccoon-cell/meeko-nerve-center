@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 CONTRIBUTOR_REGISTRY.py — Manages humans who get automatic revenue shares

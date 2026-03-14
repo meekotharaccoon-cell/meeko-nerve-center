@@ -1,4 +1,4 @@
-﻿class TimeAwareEvolution:
+class TimeAwareEvolution:
     def __init__(self):
         self.timeline = []
         self.future_projections = []

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - EVOLVE MONITOR
 Runs the recursive improvement engine and tracks its evolution

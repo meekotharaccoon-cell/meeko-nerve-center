@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - MASTER SYSTEM VERIFICATION
 Tests all self-healing systems and verifies they actually work.

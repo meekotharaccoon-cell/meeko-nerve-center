@@ -1,4 +1,4 @@
-﻿"""
+"""
 AGENTIC CRM - EVERY SALESPERSON GETS THEIR OWN AGENT TEAM
 Based on production CRM with 3,500+ businesses [citation:10]
 

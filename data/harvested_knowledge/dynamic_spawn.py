@@ -1,4 +1,4 @@
-﻿"""
+"""
 AGENTSPAWN - DYNAMIC AGENT SPAWNING
 Based on arXiv 2602.07072 [citation:10]
 

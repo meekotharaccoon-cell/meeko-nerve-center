@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - RECURSIVE COMPANION LAYER
 Based on Recursive Companion framework [citation:2]

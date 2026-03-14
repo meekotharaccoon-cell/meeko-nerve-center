@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 # GAZA ROSE - Swarm Agent: Ultimate Pipeline
 # Auto-registered from your system
 

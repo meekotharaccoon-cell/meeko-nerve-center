@@ -1,4 +1,4 @@
-﻿import os
+import os
 from typing import Dict, Any
 from dataclasses import dataclass
 from datetime import datetime

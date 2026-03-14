@@ -1,4 +1,4 @@
-﻿@"
+@"
 """
 SolarPunk Asset Management System
 Manages tokenized resources and distributions

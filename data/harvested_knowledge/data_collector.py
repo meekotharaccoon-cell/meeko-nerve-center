@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - DATA COLLECTOR
 Reads from all revenue systems and feeds WebSocket server

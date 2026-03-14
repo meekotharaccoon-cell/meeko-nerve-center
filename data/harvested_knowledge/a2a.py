@@ -1,4 +1,4 @@
-﻿{
+{
   'agent_card': {
     'agent_id': 'GAZA_ROSE_REVENUE_SYSTEM',
     'capabilities': ['revenue_generation', 'self_replication', 'self_healing'],

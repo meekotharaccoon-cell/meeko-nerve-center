@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - EXECUTION LOG VIEWER
 Shows what fixes were attempted and their success rate

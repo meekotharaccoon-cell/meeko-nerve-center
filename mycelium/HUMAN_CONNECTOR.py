@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """HUMAN_CONNECTOR — When a real human emails SolarPunk, help them build something
 Detects genuine human interest. Responds with: who we are, what we built, how they can help or join.

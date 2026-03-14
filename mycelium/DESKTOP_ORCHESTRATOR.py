@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 DESKTOP_ORCHESTRATOR.py — The engine that makes old blueprints live again

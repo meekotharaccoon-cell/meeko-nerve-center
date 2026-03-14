@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - MOBILE LAUNCHER
 For Android (Pydroid3) and iOS (Pythonista)
 """

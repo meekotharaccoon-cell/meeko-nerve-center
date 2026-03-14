@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 REVENUE_LOOP.py v5 — Bulletproof end-to-end revenue pipeline

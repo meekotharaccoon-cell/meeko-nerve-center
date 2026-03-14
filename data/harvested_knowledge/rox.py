@@ -1,4 +1,4 @@
-﻿class RoxSwarm:
+class RoxSwarm:
     def __init__(self):
         self.knowledge_graph = UnifiedKnowledgeGraph()
         self.swarms = {

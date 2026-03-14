@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - PERFORMANCE ANALYTICS
 Tracks success rates, recovery times, revenue growth

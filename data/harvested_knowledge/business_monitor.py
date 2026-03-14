@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - BUSINESS MONITOR
 Tracks Then & Now Flora across all platforms

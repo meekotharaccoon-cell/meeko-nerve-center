@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 GUMROAD_ENGINE.py v2 — creates AND updates Gumroad products, fixes 404 bug

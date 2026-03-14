@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - UNIVERSAL SYSTEM CONNECTOR
 Connects all 7 newly installed systems with your existing collective.

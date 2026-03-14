@@ -1,4 +1,4 @@
-﻿Write-Host "🌱 SolarPunk Sync Initiated..." -ForegroundColor Green
+Write-Host "🌱 SolarPunk Sync Initiated..." -ForegroundColor Green
 
 # 1. Pull the latest spores from the cloud
 git pull origin main

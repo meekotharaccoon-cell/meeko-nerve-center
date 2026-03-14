@@ -1,4 +1,4 @@
-﻿"""
+"""
 ROX-STYLE AGENT SWARM INTEGRATION
 Based on Rox's production system [citation:1]
 

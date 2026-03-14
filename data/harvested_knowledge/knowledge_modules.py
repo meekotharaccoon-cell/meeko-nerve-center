@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - KNOWLEDGE MODULE SYSTEM
 Based on Knoll [7]: A knowledge ecosystem where end-users can create,

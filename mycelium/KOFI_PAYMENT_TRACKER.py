@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """KOFI_PAYMENT_TRACKER — Reconciles Ko-fi payments to EMAIL_AGENT_EXCHANGE task log.
 

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - DECENTRALIZED KNOWLEDGE ASSETS
 Based on OriginTrail DKG [9] and CREWAI [5]:

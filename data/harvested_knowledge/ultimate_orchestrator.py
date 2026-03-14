@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - ULTIMATE REVENUE ORCHESTRATOR
 COMBINES ALL RESEARCH INTO ONE SUPER-SYSTEM:

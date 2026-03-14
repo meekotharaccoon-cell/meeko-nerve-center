@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 SOCIAL_PROMOTER.py v2 — Drains the real queue and actually posts

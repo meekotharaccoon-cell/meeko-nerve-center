@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """EMAIL_AGENT_EXCHANGE — AI agents that email AI agents, everyone gets paid per email
 

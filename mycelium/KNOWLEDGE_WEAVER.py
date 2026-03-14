@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 KNOWLEDGE_WEAVER.py — Claude-powered autonomous engine builder

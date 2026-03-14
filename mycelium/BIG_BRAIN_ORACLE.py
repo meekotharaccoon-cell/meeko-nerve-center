@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 BIG_BRAIN_ORACLE.py — Asks Claude the biggest strategic questions about the system.

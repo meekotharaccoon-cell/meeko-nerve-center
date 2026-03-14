@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """CRYPTO_WATCHER — Market intelligence, never trades without approval
 - Monitors BTC, ETH, SOL, relevant AI tokens (FET, OCEAN, AGIX) via free APIs

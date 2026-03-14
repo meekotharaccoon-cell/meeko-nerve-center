@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - ADAPTIVE PROMPT OPTIMIZATION
 Based on ATLAS framework [citation:3][citation:6]
 

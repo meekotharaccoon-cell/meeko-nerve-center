@@ -1,4 +1,4 @@
-﻿cd C:\Users\carol\Desktop\SolarPunk-System
+cd C:\Users\carol\Desktop\SolarPunk-System
 
 @"
 """

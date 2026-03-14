@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AUTONOMOUS SYSTEM INVENTORY SCANNER
 Scans every GAZA ROSE directory, every config file, every Python script

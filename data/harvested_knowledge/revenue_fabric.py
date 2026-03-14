@@ -1,4 +1,4 @@
-﻿class RevenueAgent:
+class RevenueAgent:
     def __init__(self, agent_id, generation=0):
         self.id = agent_id
         self.generation = generation

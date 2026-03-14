@@ -1,4 +1,4 @@
-﻿class XKDE:
+class XKDE:
     def __init__(self):
         self.languages = ['en','es','fr','de','zh','ja','ar','ru','pt','hi',
                           'bn','ur','id','tr','vi','th','ko','it','pl','uk']

@@ -1,4 +1,4 @@
-﻿class SelfHealingAgent:
+class SelfHealingAgent:
     def __init__(self):
         self.heal_log = []
         self.max_attempts = 3

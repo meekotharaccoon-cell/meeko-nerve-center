@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 GITHUB_RELEASES_PUBLISHER.py — hosts product files as GitHub Release assets

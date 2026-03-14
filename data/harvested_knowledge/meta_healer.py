@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - META-HEALER
 Connects all self-healing systems into one meta-organism.

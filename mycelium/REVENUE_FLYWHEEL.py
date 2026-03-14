@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """REVENUE_FLYWHEEL — Master revenue coordinator
 Sees ALL money streams simultaneously. Finds bottlenecks. Routes capital.

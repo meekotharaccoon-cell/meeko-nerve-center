@@ -1,4 +1,4 @@
-﻿class CrossRepoSyncAgent:
+class CrossRepoSyncAgent:
     def __init__(self, orchestrator):
         self.orchestrator = orchestrator
         self.sync_history = []

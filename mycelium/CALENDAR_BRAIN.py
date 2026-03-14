@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """CALENDAR_BRAIN v2 - Appointment -> ICS -> TOMORROW reminder
 Reads appointments_inbox.json -> sends ICS email to self -> Google Calendar auto-imports

@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - LAYERED MEMORY ARCHITECTURE
 Based on FINMEM framework [citation:9]
 

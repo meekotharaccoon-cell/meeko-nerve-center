@@ -1,4 +1,4 @@
-﻿import os
+import os
 import json
 
 def weave_knowledge():

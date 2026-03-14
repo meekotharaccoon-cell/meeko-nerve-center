@@ -1,4 +1,4 @@
-﻿"""
+"""
 SPORE BANK - The immortal reserve.
 20% of all profits. Never risked. Always growing.
 Emergency fund for network survival.

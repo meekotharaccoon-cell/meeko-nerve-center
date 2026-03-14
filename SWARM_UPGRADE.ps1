@@ -1,4 +1,4 @@
-﻿Write-Host "🛸 Nanobot Swarm Releasing..." -ForegroundColor Yellow
+Write-Host "🛸 Nanobot Swarm Releasing..." -ForegroundColor Yellow
 
 # 1. Pull latest from Cloud Brain
 git pull origin main

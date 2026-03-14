@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """GITHUB_SPONSORS_ENGINE — Manages GitHub Sponsors tier pages + thank-yous
 Generates FUNDING.yml, sponsor landing page, sends thank-you emails to new sponsors.

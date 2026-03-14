@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 BLUESKY_ENGINE.py — Posts to Bluesky via AT Protocol

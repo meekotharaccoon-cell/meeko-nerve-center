@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """GRANT_HUNTER - Finds grants SolarPunk can apply for
 Scores 20 grant sources by match. Claude researches top 5.

@@ -1,4 +1,4 @@
-﻿python mycelium/LF_FIXER.py
+python mycelium/LF_FIXER.py
 Write-Host "🛡️ Guardian Gatekeeper Active..." -ForegroundColor Yellow
 
 # 1. Sync Phase

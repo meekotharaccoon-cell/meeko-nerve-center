@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 GUMROAD_PRODUCT_PUBLISHER.py — autonomous Gumroad listing manager

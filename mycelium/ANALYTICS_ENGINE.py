@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 ANALYTICS_ENGINE — track GitHub Pages views, referrers, popular paths

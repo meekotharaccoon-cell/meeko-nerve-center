@@ -1,4 +1,4 @@
-﻿"""
+"""
 INDIRECT INCENTIVE MECHANISMS
 Based on IEEE research [citation:5][citation:9]
 

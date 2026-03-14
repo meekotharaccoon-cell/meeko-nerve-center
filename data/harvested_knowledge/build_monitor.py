@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - BUILD MONITOR
 Tracks all your AI systems, keeps them running, logs their status

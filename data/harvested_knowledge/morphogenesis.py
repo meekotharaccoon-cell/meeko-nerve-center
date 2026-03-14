@@ -1,4 +1,4 @@
-﻿class MorphogenesisEngine:
+class MorphogenesisEngine:
     def __init__(self):
         self.tokens = defaultdict(int)
         self.potentials = defaultdict(float)

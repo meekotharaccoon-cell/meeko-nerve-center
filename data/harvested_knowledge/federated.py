@@ -1,4 +1,4 @@
-﻿class FederatedLearningLayer:
+class FederatedLearningLayer:
     def __init__(self):
         self.local_models = {}
         self.global_model = None

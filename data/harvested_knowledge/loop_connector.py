@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - LOOP CONNECTOR
 Connects all autonomous loops into one ecosystem.

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 REPO_SPIDER — scan trending GitHub repos, fork compatible ones, trade knowledge

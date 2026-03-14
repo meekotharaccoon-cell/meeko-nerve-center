@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - KNOWLEDGE GRAPH CORE
 Self-organizing knowledge network based on agentic deep graph reasoning [3][6].

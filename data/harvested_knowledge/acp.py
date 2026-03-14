@@ -1,4 +1,4 @@
-﻿class ACPProtocol:
+class ACPProtocol:
     def __init__(self):
         self.services = {}
         self.transactions = []

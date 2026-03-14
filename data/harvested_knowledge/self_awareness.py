@@ -1,4 +1,4 @@
-﻿class ConsciousnessField:
+class ConsciousnessField:
     def __init__(self):
         self.self_observations = []
         self.awareness_level = 0.0

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """MORNING_BRIEFING + EVENING_REPORT — Daily emails to Meeko
 Morning (7am UTC): Grant status, what YOU need to do today, market snapshot

@@ -1,4 +1,4 @@
-﻿"""
+"""
 AETE: AI-Driven E-commerce Traffic Engine
 Based on ACM/IEEE research [citation:6]
 

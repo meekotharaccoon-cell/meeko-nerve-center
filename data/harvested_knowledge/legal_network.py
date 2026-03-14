@@ -1,4 +1,4 @@
-﻿class LegalComplianceNetwork:
+class LegalComplianceNetwork:
     def __init__(self):
         self.jurisdictions = {
             'international_humanitarian': {

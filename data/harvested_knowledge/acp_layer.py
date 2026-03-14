@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AGENT COMMERCE PROTOCOL (ACP) LAYER
 Based on Virtuals Revenue Network [5] and CERN FoA semantic routing [8]

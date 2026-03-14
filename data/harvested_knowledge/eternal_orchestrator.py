@@ -1,4 +1,4 @@
-﻿# GAZA ROSE - ETERNAL ORCHESTRATOR [FIXED]
+# GAZA ROSE - ETERNAL ORCHESTRATOR [FIXED]
 # Runs forever, heals itself, makes money
 
 import os

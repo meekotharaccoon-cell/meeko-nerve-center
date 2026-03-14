@@ -1,4 +1,4 @@
-﻿# ∿ Sigma Stratum Methodology v2
+# ∿ Sigma Stratum Methodology v2
 From: https://zenodo.org/records/16784901 [citation:6]
 
 ## Core Concepts

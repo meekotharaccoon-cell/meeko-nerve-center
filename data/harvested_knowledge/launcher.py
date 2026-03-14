@@ -1,4 +1,4 @@
-﻿# launcher.py - Simple Python launcher (no batch files needed)
+# launcher.py - Simple Python launcher (no batch files needed)
 import os, sys, subprocess, time
 
 print("SolarPunk Launcher")

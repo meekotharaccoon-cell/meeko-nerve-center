@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """SUBSTACK_ENGINE — Automated newsletter publishing
 Gathers stats from all engines, Claude writes genuine update,

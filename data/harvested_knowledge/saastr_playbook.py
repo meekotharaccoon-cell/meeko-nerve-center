@@ -1,4 +1,4 @@
-﻿"""
+"""
 SAASSTR AGENT PLAYBOOK
 Based on real-world deployment [citation:8]
 

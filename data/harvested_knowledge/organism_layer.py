@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - DAIOF ORGANISM LAYER
 Based on Digital AI Organism Framework [citation:3]

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 DESKTOP_DAEMON — runs locally on Meeko's desktop, always on, always watching.

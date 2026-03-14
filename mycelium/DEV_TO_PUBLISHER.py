@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 DEV_TO_PUBLISHER.py v2 — Fixed 403, proper api-key header, cycle articles

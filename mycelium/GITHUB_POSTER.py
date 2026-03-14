@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """GITHUB_POSTER.py — SolarPunk product launches via GitHub Releases
 Uses ONLY GITHUB_TOKEN (always present in Actions — zero external API keys needed).

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-DEVELOPING LAYER
 Based on Self-Developing framework [citation:5]

@@ -1,4 +1,4 @@
-﻿# AI Factory Framework
+# AI Factory Framework
 From: https://docs.axone.xyz/getting-started/core-concepts/ai-factory [citation:9]
 
 ## Components

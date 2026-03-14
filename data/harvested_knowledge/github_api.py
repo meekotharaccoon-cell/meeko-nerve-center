@@ -1,4 +1,4 @@
-﻿class GitHubAPI:
+class GitHubAPI:
     def __init__(self, token):
         self.token = token
         self.base_url = 'https://api.github.com'

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - PERMISSION FIXER
 Ensures all directories your healer needs are writable [citation:3][citation:9]

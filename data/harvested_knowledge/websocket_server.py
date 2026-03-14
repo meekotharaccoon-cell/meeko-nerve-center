@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - WEBSOCKET SERVER
 Real-time data broadcasting for the dashboard

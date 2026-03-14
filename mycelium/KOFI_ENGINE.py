@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """KOFI_ENGINE — Ko-fi payment processor + Gaza Rose shop
 0% platform fee. Every $1 sale: 70c Gaza artists, 30c Loop Fund.

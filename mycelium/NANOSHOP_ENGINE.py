@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 NANOSHOP_ENGINE.py — SolarPunk's autonomous micro-storefront builder

@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """SCAM_SHIELD — Email security + verification layer
 - Analyzes every incoming email for scam/phishing/malware signals

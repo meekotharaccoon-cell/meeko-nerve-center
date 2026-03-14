@@ -1,4 +1,4 @@
-﻿"""
+"""
 FEDERATED LEARNING FOR AGENT SWARMS
 Based on Monash University research [citation:3]
 

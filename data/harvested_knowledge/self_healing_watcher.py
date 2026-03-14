@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-HEALING ERROR FIXER
 USES YOUR LOCAL AI TO FIX ERRORS IN REAL TIME

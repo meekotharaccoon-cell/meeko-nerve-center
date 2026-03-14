@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-HEALING LAYER
 4-tier autonomous recovery for all revenue systems.

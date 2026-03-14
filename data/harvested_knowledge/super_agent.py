@@ -1,4 +1,4 @@
-﻿import os
+import os
 import asyncio
 import json
 from typing import Dict, List, Any

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - REVENUE CYCLE REFLECTION ENGINE
 Based on MUSE "事后诸葛亮" (after-the-fact复盘) mechanism [citation:1]

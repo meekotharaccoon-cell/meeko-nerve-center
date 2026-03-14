@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 MUSE - HIERARCHICAL MEMORY MODULE
 Based on Shanghai AI Lab's MUSE framework [citation:1]

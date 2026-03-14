@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Ultimate AI Self v14 - Complete Self-Healing, Self-Diagnosing, Self-Evolving System
 Runs on YOUR desktop, notifies YOU when done, logs everything.

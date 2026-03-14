@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - RECURSIVE SELF-UPGRADE ENGINE
 Your system can now upgrade itself using its own knowledge
 """

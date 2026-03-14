@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SEAL ADAPTATION LAYER
 Based on MIT's Self-Adapting LLMs framework [citation:4][citation:9]

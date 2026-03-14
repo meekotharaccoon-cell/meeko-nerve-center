@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 AGENT_LINK_VERIFIER.py — Nano-agent that checks all live pages for 404s

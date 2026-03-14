@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - MASTER KNOWLEDGE ORCHESTRATOR
 Connects ALL knowledge systems into one unified, self-organizing ecosystem:

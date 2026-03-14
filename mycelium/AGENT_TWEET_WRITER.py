@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 AGENT_TWEET_WRITER.py — Nano-agent that generates tweet drafts

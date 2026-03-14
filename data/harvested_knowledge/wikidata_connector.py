@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - WIKIDATA EMBEDDING CONNECTOR
 Based on Wikidata Embedding Project [10]: Open, verifiable knowledge from

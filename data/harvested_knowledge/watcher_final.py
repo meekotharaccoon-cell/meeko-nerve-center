@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 \"\"\"
 GAZA ROSE - FINAL WATCHER
 Watching Taproot for incoming Bitcoin.

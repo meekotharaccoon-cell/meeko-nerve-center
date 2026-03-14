@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 \"\"\"
 GAZA ROSE - FINAL PAYMENT SERVER
 Native Segwit: bc1qka74n62h3zk9mcv8v8xjtjtwehmnm24w3pfzzr

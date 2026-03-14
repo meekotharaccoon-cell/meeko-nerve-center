@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """ENGINE_INTEGRITY.py — SHA-based tamper detection for all 37 engines
 Uses ONLY GITHUB_TOKEN. Reads all engine SHAs via GitHub API each cycle.

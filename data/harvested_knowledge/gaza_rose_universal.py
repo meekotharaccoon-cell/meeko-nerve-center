@@ -1,4 +1,4 @@
-﻿# GAZA ROSE - UNIVERSAL SWARM DIRECTIVE
+# GAZA ROSE - UNIVERSAL SWARM DIRECTIVE
 # This blueprint defines how all your systems connect and collaborate
 # Based on multi-agent architecture research [citation:2][citation:3][citation:5]
 

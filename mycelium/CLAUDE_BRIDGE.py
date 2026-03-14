@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 CLAUDE_BRIDGE — send tasks to Claude running in Brave browser via CDP

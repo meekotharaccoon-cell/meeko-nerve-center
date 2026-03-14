@@ -1,4 +1,4 @@
-﻿Write-Host "🌀 SolarPunk v4: Clearing the Path..." -ForegroundColor Magenta
+Write-Host "🌀 SolarPunk v4: Clearing the Path..." -ForegroundColor Magenta
 
 # 1. Force-stage everything so Git doesn't complain about 'unstaged changes'
 git add .

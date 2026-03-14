@@ -1,4 +1,4 @@
-﻿# SIMPLE ERROR SCANNER
+# SIMPLE ERROR SCANNER
 import os, json, datetime
 
 print("=== SIMPLE ERROR SCANNER ===")

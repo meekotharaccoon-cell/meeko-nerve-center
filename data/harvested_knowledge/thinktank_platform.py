@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - THINKTANK COLLABORATIVE INTELLIGENCE
 Based on ThinkTank [2]: A framework for generalizing domain-specific AI agent

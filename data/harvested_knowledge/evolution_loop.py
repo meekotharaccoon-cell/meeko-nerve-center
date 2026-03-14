@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-OPTIMIZING REVENUE LOOP
 The complete MUSE integration for your revenue system.

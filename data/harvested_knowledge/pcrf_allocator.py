@@ -1,4 +1,4 @@
-﻿# GAZA ROSE - PCRF ALLOCATION ENGINE
+# GAZA ROSE - PCRF ALLOCATION ENGINE
 # Automatically sends 70% of revenue to PCRF Bitcoin address
 
 import os

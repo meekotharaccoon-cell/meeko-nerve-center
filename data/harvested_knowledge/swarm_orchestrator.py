@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AGENT SWARM ORCHESTRATOR
 Multi-agent revenue system with Queen/Worker architecture.

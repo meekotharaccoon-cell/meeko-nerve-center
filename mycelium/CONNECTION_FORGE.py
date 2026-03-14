@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """CONNECTION_FORGE — SolarPunk emails itself setup guides
 Every cycle: finds unconnected platforms, emails Meeko step-by-step wiring instructions.

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - MAXIMUM REVENUE ORCHESTRATOR
 Combines all supercharging technologies:

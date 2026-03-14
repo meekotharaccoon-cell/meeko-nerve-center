@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AUTONOMOUS DOWNLOADER & INTEGRATOR
 Downloads the best solutions from GitHub and integrates them into your system.

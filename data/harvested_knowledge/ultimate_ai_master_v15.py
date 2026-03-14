@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 ULTIMATE AI MASTER v15 - THE SYSTEM THAT CONTAINS ALL SYSTEMS
 Combines everything we've ever built into one self-healing, self-evolving master system.

@@ -1,4 +1,4 @@
-﻿class MUSEIntelligence:
+class MUSEIntelligence:
     def gsu_retrieve(self, query):
         # Lightweight cosine retrieval from 100K+ behaviors
         return relevant_behaviors

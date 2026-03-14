@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - RECURSIVE SELF-IMPROVEMENT ENGINE
 Based on Gödel Agent architecture [citation:8] and SEAL framework [citation:4][citation:9]

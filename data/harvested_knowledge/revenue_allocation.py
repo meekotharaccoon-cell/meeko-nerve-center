@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - REVENUE ALLOCATION ENGINE
 70% to PCRF, 30% reinvested in system growth

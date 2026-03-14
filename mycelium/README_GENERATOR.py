@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """README_GENERATOR — Rebuilds README.md every cycle with live stats
 SolarPunk's public face. Auto-updates with real numbers. No manual editing ever.

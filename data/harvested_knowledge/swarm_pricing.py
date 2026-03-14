@@ -1,4 +1,4 @@
-﻿"""
+"""
 SWARM-BASED PRICING OPTIMIZATION
 Based on retail swarm intelligence [citation:3]
 

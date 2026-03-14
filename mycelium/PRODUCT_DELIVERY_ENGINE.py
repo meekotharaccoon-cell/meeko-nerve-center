@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 PRODUCT_DELIVERY_ENGINE.py — auto-delivers products when sales happen

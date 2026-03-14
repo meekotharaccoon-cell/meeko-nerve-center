@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-TESTING & VALIDATION ENGINE
 Tests the system after each upgrade to ensure it works.

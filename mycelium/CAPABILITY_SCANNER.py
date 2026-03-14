@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 CAPABILITY_SCANNER.py — What can SolarPunk actually DO right now?

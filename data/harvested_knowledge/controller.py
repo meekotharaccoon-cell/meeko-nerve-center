@@ -1,4 +1,4 @@
-﻿"""
+"""
 SolarPunk System Integration Controller
 Coordinates all modules and provides unified interface
 """

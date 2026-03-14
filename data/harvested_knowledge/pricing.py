@@ -1,4 +1,4 @@
-﻿class CompetingPricingEngine:
+class CompetingPricingEngine:
     def __init__(self):
         self.agents = {
             'margin': MarginMaximizerAgent(),

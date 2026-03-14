@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - ULTIMATE AI SECURE LAUNCHER
 Keys entered each session, NEVER stored

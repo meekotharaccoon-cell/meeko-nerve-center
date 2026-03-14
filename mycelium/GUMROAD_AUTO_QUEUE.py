@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 GUMROAD_AUTO_QUEUE.py — Auto-builds gumroad_listings.json from business data

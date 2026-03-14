@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 BRAVE_BROWSER_ENGINE.py — SolarPunk controls Brave directly

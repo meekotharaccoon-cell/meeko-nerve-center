@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - GROWTH LOOP AMPLIFIER
 Based on growth loops theory [7] and compounding revenue [2]

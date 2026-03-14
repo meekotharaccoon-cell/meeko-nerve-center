@@ -1,4 +1,4 @@
-﻿{
+{
   'graph': {
     'nodes': ['root', 'revenue_agents', 'orchestrator', 'commerce', 'intelligence'],
     'edges': [

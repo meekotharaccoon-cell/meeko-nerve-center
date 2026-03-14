@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 HUMAN_PAYOUT.py — Automated PayPal payouts to collaborators + Gaza

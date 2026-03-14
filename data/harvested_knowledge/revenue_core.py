@@ -1,4 +1,4 @@
-﻿# GAZA ROSE - REVENUE GENERATION CORE
+# GAZA ROSE - REVENUE GENERATION CORE
 # Multi-agent revenue system [1][6]
 # Connects to: Amazon, Pond5, Spreadshirt, RedBubble
 

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AUTONOMOUS AI ART GENERATOR
 Creates new flower art every hour. Adds to gallery automatically.

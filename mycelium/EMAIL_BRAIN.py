@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """EMAIL_BRAIN - SolarPunk Communications Cortex v3
 Reads ALL Gmail. Routes everything. Meeko only sees personal emails.

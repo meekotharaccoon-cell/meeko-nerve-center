@@ -1,4 +1,4 @@
-﻿class RepoCreatorAgent:
+class RepoCreatorAgent:
     def __init__(self, github_api):
         self.github = github_api
         self.created_repos = []

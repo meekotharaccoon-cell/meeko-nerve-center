@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Gaza Rose - Enhanced Revenue Tracker with Source Tracking
 PCRF: "https://give.pcrf.net/campaign/739651/donate" (70%)

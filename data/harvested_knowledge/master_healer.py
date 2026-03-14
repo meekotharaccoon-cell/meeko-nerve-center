@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - MASTER SELF-HEALING SYSTEM
 Combines 4-layer healing + open-source solution finder

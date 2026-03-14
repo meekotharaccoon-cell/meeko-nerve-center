@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - HEAL MONITOR
 Watches all processes, heals any that die, logs all events

@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SECURE LAUNCHER
 Keys are entered each session and NEVER stored on disk

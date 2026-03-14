@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """
 AFFILIATE_MAXIMIZER.py — Every piece of content = affiliate revenue

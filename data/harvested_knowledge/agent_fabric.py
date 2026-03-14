@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - SELF-REPLICATING REVENUE AGENT CORE
 Based on Virtuals Revenue Network [5] and Cofounder layered memory [9]

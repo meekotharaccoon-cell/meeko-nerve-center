@@ -1,4 +1,4 @@
-﻿"""
+"""
 GAZA ROSE - NETWORK EFFECTS AMPLIFIER
 Based on Indirect Incentive Strategies research [citation:2][citation:5]
 

@@ -1,4 +1,4 @@
-﻿class SaaStrPlaybook:
+class SaaStrPlaybook:
     def __init__(self):
         self.agents = {
             'sdr': ArtisanAgent(response_rate=0.07),

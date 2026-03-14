@@ -1,4 +1,4 @@
-﻿import os
+import os
 import asyncio
 from typing import Dict, List, Optional
 from dataclasses import dataclass

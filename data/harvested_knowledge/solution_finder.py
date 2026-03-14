@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 GAZA ROSE - AUTONOMOUS GITHUB SOLUTION FINDER
 Searches GitHub for the best open-source solutions to fill gaps in your system.

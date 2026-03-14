@@ -1,3 +1,6 @@
+# NEURAL_LINK: The
+# Part of the Meeko SolarPunk Swarm.
+
 #!/usr/bin/env python3
 """SOCIAL_DASHBOARD.py — builds docs/social.html copy-paste board from social_queue.json
 Zero external APIs. Runs every cycle. Gives Meeko one URL to copy-paste all queued posts.
