@@ -1,0 +1,34 @@
+{
+  "ts": "2026-03-14T07:53:09.127504+00:00",
+  "auth_user": "meekotharaccoon@gmail.com",
+  "existing_before": 5,
+  "processed": 5,
+  "ok": 0,
+  "results": [
+    {
+      "id": "solarpunk-starter",
+      "status": "error",
+      "error": "HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <tit"
+    },
+    {
+      "id": "local-ai-agent",
+      "status": "error",
+      "error": "HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <tit"
+    },
+    {
+      "id": "github-actions-autonomous",
+      "status": "error",
+      "error": "HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <tit"
+    },
+    {
+      "id": "ai-prompt-packs",
+      "status": "error",
+      "error": "HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <tit"
+    },
+    {
+      "id": "gaza-art-pack",
+      "status": "error",
+      "error": "HTTP 404: <!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <tit"
+    }
+  ]
+}

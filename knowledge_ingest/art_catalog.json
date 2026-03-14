@@ -1,0 +1,136 @@
+{
+  "last_updated": "2026-03-14T07:53:18.710606+00:00",
+  "total_pieces": 7,
+  "price_usd": 1.0,
+  "gaza_pct": 70,
+  "loop_pct": 30,
+  "pieces": [
+    {
+      "id": "white-doves",
+      "title": "White Doves Over Gaza",
+      "emoji": "\ud83d\udd4a\ufe0f",
+      "desc": "Seven white doves ascending through golden morning light over ancient olive groves. Peace, hope, and the indomitable spirit of Palestine.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#f8f4e8",
+        "#7a9b5c"
+      ],
+      "tags": [
+        "peace",
+        "doves",
+        "hope"
+      ]
+    },
+    {
+      "id": "olive-grove",
+      "title": "Ancient Olive Grove",
+      "emoji": "\ud83e\uded2",
+      "desc": "Thousand-year-old olive trees standing resilient against the Mediterranean sky.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#6b8f47",
+        "#d4e8b8"
+      ],
+      "tags": [
+        "olive",
+        "resilience",
+        "nature"
+      ]
+    },
+    {
+      "id": "tatreez",
+      "title": "Tatreez \u2014 Living Embroidery",
+      "emoji": "\ud83e\uddf5",
+      "desc": "The geometric language of Palestinian women, woven across generations.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#c41e3a",
+        "#f4f1de"
+      ],
+      "tags": [
+        "tatreez",
+        "culture",
+        "art"
+      ]
+    },
+    {
+      "id": "gaza-coastline",
+      "title": "Gaza by the Sea",
+      "emoji": "\ud83c\udf0a",
+      "desc": "The Mediterranean at dusk, its waters catching the last gold of day.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#0077b6",
+        "#f4a261"
+      ],
+      "tags": [
+        "sea",
+        "Gaza",
+        "sunset"
+      ]
+    },
+    {
+      "id": "star-of-hope",
+      "title": "Star of Hope",
+      "emoji": "\u2b50",
+      "desc": "A single brilliant star above the ancient cityscape, surrounded by the warm glow of windows.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#1a1a2e",
+        "#ffd700"
+      ],
+      "tags": [
+        "star",
+        "hope",
+        "night"
+      ]
+    },
+    {
+      "id": "pomegranate",
+      "title": "Pomegranate Season",
+      "emoji": "\ud83c\udf4e",
+      "desc": "Deep crimson pomegranates split open on a mosaic table, seeds gleaming like rubies.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#9b2335",
+        "#f4c2c2"
+      ],
+      "tags": [
+        "pomegranate",
+        "culture",
+        "home"
+      ]
+    },
+    {
+      "id": "night-garden",
+      "title": "Night Garden of Palestine",
+      "emoji": "\ud83c\udf19",
+      "desc": "Jasmine and bougainvillea under a moon so full it turns night to silver.",
+      "kofi_url": "https://ko-fi.com/meekotharaccoon/shop",
+      "gumroad_url": "https://meekotharacoon.gumroad.com",
+      "colors": [
+        "#0d0d2b",
+        "#7b2d8b"
+      ],
+      "tags": [
+        "garden",
+        "night",
+        "jasmine"
+      ]
+    }
+  ],
+  "kofi_setup_instructions": [
+    "Go to ko-fi.com/account/shop",
+    "Click 'Add Item' for each print",
+    "Set price to $1.00 USD each",
+    "After creating item, copy its URL (e.g. ko-fi.com/s/xxxxx)",
+    "Update kofi_url for each piece in data/art_catalog.json",
+    "Re-run ART_CATALOG engine to rebuild art.html with correct URLs"
+  ]
+}

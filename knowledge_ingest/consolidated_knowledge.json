@@ -1,0 +1,59 @@
+{
+  "generated": "2026-03-10T17:18:24.118351",
+  "engine_count": 0,
+  "engines": [],
+  "data_keys": [
+    "bottleneck_report",
+    "brain_state",
+    "bridge_state",
+    "claude_briefing",
+    "ctx",
+    "guardian_log",
+    "guardian_status",
+    "health_report",
+    "knowledge_gaps",
+    "omnibus_history",
+    "omnibus_last",
+    "proof_state",
+    "self_builder_state",
+    "self_portrait_log",
+    "substack_state"
+  ],
+  "insights": {
+    "patterns": [
+      "System building phase \u2014 18 engines, 0 revenue yet",
+      "All core engines present and running"
+    ],
+    "next_build": [
+      "EMAIL_HARVESTER - captures buyer emails for newsletter",
+      "NEWSLETTER_ENGINE - weekly Gaza Rose updates to subscribers",
+      "PRICE_OPTIMIZER - A/B tests art prices for max loop velocity"
+    ],
+    "health": "BUILDING",
+    "advice": "Get first sale. Share Gaza Rose shop link. Loop starts with 1 dollar."
+  },
+  "seed": {
+    "timestamp": "2026-03-10T17:18:24.116346",
+    "health": "BUILDING",
+    "advice": "Get first sale. Share Gaza Rose shop link. Loop starts with 1 dollar.",
+    "patterns": [
+      "System building phase \u2014 18 engines, 0 revenue yet",
+      "All core engines present and running"
+    ],
+    "engines_to_build": [
+      "EMAIL_HARVESTER - captures buyer emails for newsletter",
+      "NEWSLETTER_ENGINE - weekly Gaza Rose updates to subscribers",
+      "PRICE_OPTIMIZER - A/B tests art prices for max loop velocity"
+    ],
+    "existing_engines": [],
+    "loop_active": true
+  },
+  "knowledge_db": {
+    "tables": [],
+    "data": {}
+  },
+  "mycelium_kb": {},
+  "autonomous_scripts": [],
+  "gumroad_listings_chars": [],
+  "connections_discovered": []
+}

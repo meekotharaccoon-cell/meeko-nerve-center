@@ -1,0 +1,46 @@
+{
+  "generated": "2026-03-14T07:51:55.824947+00:00",
+  "cycle_number": 51,
+  "health": 40,
+  "health_trend": "stuck",
+  "delta": {
+    "first_cycle": false,
+    "wins": [],
+    "regressions": [],
+    "new_failures": [],
+    "still_failing": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ],
+    "revenue_delta": 0,
+    "health_delta": 0,
+    "stars_delta": 0,
+    "resonance_delta": 0
+  },
+  "persistent": [
+    {
+      "id": "BN-001",
+      "title": "Gmail 534 error -- App Password wrong or expired",
+      "severity": "HIGH",
+      "cycles_open": 20,
+      "escalation": "STUCK"
+    },
+    {
+      "id": "BN-002",
+      "title": "2 engines have syntax errors",
+      "severity": "LOW",
+      "cycles_open": 6,
+      "escalation": "URGENT"
+    }
+  ],
+  "still_failing": [
+    "NANOSHOP_ENGINE",
+    "NARRATOR"
+  ],
+  "new_fixes": [],
+  "new_regressions": [],
+  "revenue": 0,
+  "revenue_delta": 0,
+  "resonance": 60,
+  "summary": "Cycle 51 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 2 | Revenue: $0.00"
+}

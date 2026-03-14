@@ -1,0 +1,25 @@
+{
+  "decisions": [
+    {
+      "action": "Run BUILD_YOURSELF to add missing revenue engine",
+      "why": "More engines = more money paths",
+      "urgency": "now",
+      "revenue_impact": "high"
+    },
+    {
+      "action": "Publish all pending Gumroad listings via GUMROAD_ENGINE",
+      "why": "Unlisted products earn $0",
+      "urgency": "now",
+      "revenue_impact": "high"
+    },
+    {
+      "action": "Generate + queue social posts for all products",
+      "why": "Distribution is the gap",
+      "urgency": "now",
+      "revenue_impact": "medium"
+    }
+  ],
+  "key_insight": "Build \u2192 deploy \u2192 promote \u2192 repeat. Every idle product is lost revenue.",
+  "meeko_message": "SolarPunk\u2122 loop running autonomously.",
+  "health_delta": 3
+}
