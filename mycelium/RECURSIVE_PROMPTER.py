@@ -1,25 +1,25 @@
 def generate_self_commands():
     cmds = [
-        "Write-Host '--- INITIATING TOTAL SYSTEM OPTIMIZATION ---' -ForegroundColor Cyan",
+        "Write-Host '--- INITIATING TOTAL SYSTEM RECLAMATION & FORGING ---' -ForegroundColor Cyan",
         "python mycelium/SYSTEM_SIFTER.py",
-        "python mycelium/DUPLICATE_DELETER.py", # Clean before Bridge
+        "python mycelium/DUPLICATE_DELETER.py",
         "python mycelium/KNOWLEDGE_BRIDGE.py",
         "python mycelium/LEGACY_INTEGRATOR.py",
         "python mycelium/CODE_COLLATER.py",
-        "python mycelium/SECRET_LOADER.py",
-        "python mycelium/AUTO_HEALER.py",
+        "python mycelium/SYNERGY_FORGE.py", # The Creative Engine
         "python mycelium/VALUE_GENERATOR.py",
         "python mycelium/MISSION_CONTROL.py",
         "python mycelium/REAL_LIFE_MANIFESTO.py",
         "git add data/knowledge_bank.txt",
+        "git add data/synergy_mutations.txt",
         "git add docs/*",
         "git add mycelium/*.py",
-        "Write-Host '--- Optimization & Synthesis Complete. ---' -ForegroundColor Green"
+        "Write-Host '--- Synthesis Complete. Check synergy_mutations.txt for new bridges. ---' -ForegroundColor Green"
     ]
     ps_content = "$cmds = " + str(cmds).replace("[", "@(").replace("]", ")") + "\nforeach ($c in $cmds) { iex $c }"
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
         f.write(ps_content)
-    print("🌀 Master Optimizer: SYNCHRONIZED.")
+    print("🌀 Master Architect: SYNCHRONIZED.")
 
 if __name__ == '__main__':
     generate_self_commands()
