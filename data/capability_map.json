@@ -1,12 +1,12 @@
 {
-  "scanned_at": "2026-03-14T19:17:03.641508+00:00",
-  "active": 6,
-  "blocked": 2,
+  "scanned_at": "2026-03-14T20:19:39.662815+00:00",
+  "active": 2,
+  "blocked": 6,
   "degraded": 1,
   "capabilities": {
     "anthropic_api": {
       "name": "Claude API",
-      "status": "active",
+      "status": "blocked",
       "impact": "SELF_BUILDER, KNOWLEDGE_WEAVER, REVENUE_OPTIMIZER, ARCHITECT all dead without this",
       "fix": "anthropic.com/console \u2192 API Keys \u2192 add ANTHROPIC_API_KEY to GitHub Secrets",
       "blocks": [
@@ -18,7 +18,7 @@
     },
     "gmail": {
       "name": "Gmail (send + read email)",
-      "status": "active",
+      "status": "blocked",
       "impact": "Can reach journalists, newsletters, orgs, communities RIGHT NOW",
       "fix": "Already connected \u2014 use it offensively via EMAIL_OUTREACH",
       "note": "BIGGEST UNDERUSED WEAPON \u2014 works today, zero new keys",
@@ -35,7 +35,7 @@
     },
     "twitter": {
       "name": "Twitter/X (auto-post)",
-      "status": "active",
+      "status": "blocked",
       "impact": "88 posts queued, 14 already failed, 42 waiting \u2014 all stuck",
       "fix": "developer.twitter.com \u2192 create app \u2192 4 keys \u2192 GitHub Secrets",
       "blocks": [
@@ -77,13 +77,13 @@
     },
     "email_outreach": {
       "name": "Email Outreach (Gmail \u2192 journalists/newsletters/orgs)",
-      "status": "active",
+      "status": "blocked",
       "impact": "Direct line to people who would care and share \u2014 unused",
       "fix": "EMAIL_OUTREACH.py now live \u2014 runs automatically each cycle",
       "note": "NEW ENGINE \u2014 first real offensive channel"
     }
   },
-  "priority_fix": "GUMROAD_ACCESS_TOKEN",
+  "priority_fix": "ANTHROPIC_API_KEY",
   "best_channel_now": "gmail \u2014 works today, no new keys needed",
-  "summary": "6 active / 2 blocked / 1 degraded"
+  "summary": "2 active / 6 blocked / 1 degraded"
 }
