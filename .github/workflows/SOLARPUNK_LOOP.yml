@@ -98,17 +98,17 @@ jobs:
 
           prompt = f"""You are SolarPunk™ — Meeko's autonomous AI revenue agent. Analyze state and decide.
 
-SYSTEM STATE:
-- Engines: {ctx.get('total_engines')} | Businesses: {ctx.get('businesses_built')}
-- Revenue: ${ctx.get('total_revenue', 0):.2f} total | ${ctx.get('total_to_gaza', 0):.2f} to Gaza
-- Brain health: {ctx.get('brain_health')} | Loops completed: {ctx.get('total_loops')}
-- Gumroad connected: {has_gumroad} (use GUMROAD_SECRET token)
-- Email connected: {has_gmail}
-- Seed instruction: "{seed or '(none — full autonomy)'}"
+          SYSTEM STATE:
+          - Engines: {ctx.get('total_engines')} | Businesses: {ctx.get('businesses_built')}
+          - Revenue: ${ctx.get('total_revenue', 0):.2f} total | ${ctx.get('total_to_gaza', 0):.2f} to Gaza
+          - Brain health: {ctx.get('brain_health')} | Loops completed: {ctx.get('total_loops')}
+          - Gumroad connected: {has_gumroad} (use GUMROAD_SECRET token)
+          - Email connected: {has_gmail}
+          - Seed instruction: "{seed or '(none — full autonomy)'}"
 
-Decide the 3 highest-leverage actions to maximize autonomous revenue RIGHT NOW.
-Respond ONLY as JSON:
-{{"decisions":[{{"action":"...","why":"...","urgency":"now|next_cycle","revenue_impact":"low|medium|high"}}],"key_insight":"...","meeko_message":"...","health_delta": 5}}"""
+          Decide the 3 highest-leverage actions to maximize autonomous revenue RIGHT NOW.
+          Respond ONLY as JSON:
+          {{"decisions":[{{"action":"...","why":"...","urgency":"now|next_cycle","revenue_impact":"low|medium|high"}}],"key_insight":"...","meeko_message":"...","health_delta": 5}}"""
 
           decisions = None
           if api_key:
@@ -217,28 +217,28 @@ Respond ONLY as JSON:
 
           body = f"""SOLARPUNK™ LOOP — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
 
-{decisions.get('meeko_message', 'Loop ran.')}
+          {decisions.get('meeko_message', 'Loop ran.')}
 
-KEY INSIGHT: {decisions.get('key_insight', '(none)')}
+          KEY INSIGHT: {decisions.get('key_insight', '(none)')}
 
-DECISIONS:
-"""
+          DECISIONS:
+          """
           for i, d in enumerate(decisions.get("decisions", []), 1):
               body += f"  {i}. [{d.get('urgency','?')}] [{d.get('revenue_impact','?')} impact] {d.get('action','')}\n"
 
           body += f"""
-SYSTEM STATS:
-  Engines:   {ctx.get('total_engines','?')}
-  Revenue:   ${ctx.get('total_revenue', 0):.2f} total
-  → Gaza:    ${ctx.get('total_to_gaza', 0):.2f}
-  Health:    {ctx.get('brain_health','?')}/100
-  Loops:     {ctx.get('total_loops','?')}
+          SYSTEM STATS:
+          Engines:   {ctx.get('total_engines','?')}
+          Revenue:   ${ctx.get('total_revenue', 0):.2f} total
+          → Gaza:    ${ctx.get('total_to_gaza', 0):.2f}
+          Health:    {ctx.get('brain_health','?')}/100
+          Loops:     {ctx.get('total_loops','?')}
 
-Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html
-Social queue: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html
-Actions: https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
+          Store: https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html
+          Social queue: https://meekotharaccoon-cell.github.io/meeko-nerve-center/social.html
+          Actions: https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
 
-— SolarPunk™"""
+          — SolarPunk™"""
 
           try:
               msg = MIMEText(body)
