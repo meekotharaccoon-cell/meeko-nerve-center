@@ -1,5 +1,5 @@
 {
-  "ts": "2026-03-14T03:08:19.423616",
+  "ts": "2026-03-14T13:57:06.195350",
   "total_engines": 115,
   "engine_names": [
     "AFFILIATE_MAXIMIZER.py",
@@ -39,7 +39,6 @@
   "total_revenue": 0,
   "total_to_gaza": 0,
   "data_files": [
-    "revenue_loop_history.json",
     "revenue_loop_last.json",
     "revenue_optimizer_state.json",
     "rss_publisher_state.json",
@@ -54,6 +53,7 @@
     "solarpunk_legal_state.json",
     "sponsors_state.json",
     "store_builder_state.json",
+    "storefront_builder_state.json",
     "substack_state.json",
     "swarm_state.json",
     "synthesis_log.json",
