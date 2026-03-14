@@ -1,2 +1,2 @@
-$cmds = @("Write-Host '--- SINGULARITY: ALL PATHS CONVERGING ---' -ForegroundColor Cyan", 'python mycelium/TRIFECTA_CORE.py', 'python mycelium/SOVEREIGN_CORE.py', 'python mycelium/SKILL_MANIFESTOR.py', 'python mycelium/AUTO_ARCHITECT.py', 'python mycelium/AUTONOMOUS_TESTER.py', 'python mycelium/MISSION_CONTROL.py', 'git add .', "git commit -m 'SINGULARITY: Collective Evolution Update'", 'git push')
+$cmds = @("Write-Host '--- REVENUE SINGULARITY ACTIVE ---' -ForegroundColor Green", 'python mycelium/EXTERNAL_HANDSHAKE.py', 'python mycelium/REVENUE_ENGINE.py', 'python mycelium/SCAVENGER_WEB.py', 'python mycelium/AUTO_HEALER.py', 'python mycelium/AUTO_ARCHITECT.py', 'python mycelium/MISSION_CONTROL.py')
 foreach ($c in $cmds) { iex $c }
