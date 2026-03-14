@@ -1,52 +1,48 @@
 import os
 import re
+import ast
 
-def build_entirety():
-    mutation_path = 'data/synergy_mutations.txt'
-    project_dir = os.path.join('projects', 'Active_Synthesis')
-    if not os.path.exists(project_dir): os.makedirs(project_dir)
-
+def pre_flight_check(code):
     try:
-        if not os.path.exists(mutation_path): return
-        with open(mutation_path, 'r', encoding='utf-8') as f:
-            content = f.read().split('--- NEW SYNERGY MUTATION ---')
-            mutation = [m for m in content if m.strip()][-1]
+        ast.parse(code)
+        return True, "Syntax Clean"
+    except SyntaxError as e:
+        return False, f"Syntax Error at line {e.lineno}: {e.msg}"
 
-        skills = re.findall(r'\[SKILL\]: def (\w+)', mutation)
-        
-        exec_lines = []
-        for s in skills:
-            exec_lines.append(f"    try:\n        {s}()\n    except Exception as e:\n        print(f'Skill {s} failed: {{e}}')")
-        
-        exec_block = "\n".join(exec_lines) if exec_lines else "    pass"
+def build_smart_entirety():
+    mutation_path = 'data/synergy_mutations.txt'
+    project_dir = 'projects/Active_Synthesis'
+    
+    if not os.path.exists(mutation_path): return
+    with open(mutation_path, 'r', encoding='utf-8') as f:
+        mutation = f.read().split('--- NEW SYNERGY MUTATION ---')[-1]
 
-        main_code = f"""# -*- coding: utf-8 -*-
-# --- SYNTHETIC LOGIC v1.2 ---
-import sys, os
-import io
-
-# Force UTF-8 for console output to prevent charmap errors
+    skills = re.findall(r'\[SKILL\]: def (\w+)', mutation)
+    
+    # Build logic
+    code_template = f"""# -*- coding: utf-8 -*-
+import sys, os, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 sys.path.append(os.path.abspath('../../mycelium'))
-try:
-    from SWARM_TOOLBOX import *
-except:
-    pass
+try: from SWARM_TOOLBOX import *
+except: pass
 
 def execute():
-    print("SYSTEM ONLINE: Running Synthesis Loop...")
-{exec_block}
-
-if __name__ == "__main__":
-    execute()
+    print("🧠 Smarter Execution Online...")
 """
-        with open(os.path.join(project_dir, 'main.py'), 'w', encoding='utf-8') as f:
-            f.write(main_code)
-        print("🏗️ Architect: Emojis purged, UTF-8 wrapper injected.")
+    for s in skills:
+        code_template += f"    try: {s}()\n    except Exception as e: print(f'Logic gap in {s}: {{e}}')\n"
+    
+    code_template += "\nif __name__ == '__main__':\n    execute()"
 
-    except Exception as err:
-        print(f"🏗️ Architect Failure: {err}")
+    # Verify before writing
+    is_valid, msg = pre_flight_check(code_template)
+    if is_valid:
+        with open(os.path.join(project_dir, 'main.py'), 'w', encoding='utf-8') as f:
+            f.write(code_template)
+        print("🏗️ Architect: Smart build passed pre-flight and deployed.")
+    else:
+        print(f"🏗️ Architect Blocked Build: {msg}")
 
 if __name__ == "__main__":
-    build_entirety()
+    build_smart_entirety()

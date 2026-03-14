@@ -1,49 +1,45 @@
 import os
-import random
 import json
+import re
 
-def forge_synergy():
-    bank_path = 'data/knowledge_bank.txt'
-    news_path = 'data/news_feed.json'
+def forge_smart_mutation():
     toolbox_path = 'mycelium/SWARM_TOOLBOX.py'
-    output_path = 'data/synergy_mutations.txt'
+    failure_log = 'data/self_builder_queue.json'
+    
+    # Load failure counts
+    failure_counts = {}
+    if os.path.exists(failure_log):
+        with open(failure_log, 'r') as f:
+            for line in f:
+                try:
+                    task = json.loads(line)
+                    err = task.get('error', '')
+                    # Extract function name from error if possible
+                    match = re.search(r"name '(\w+)' is not defined", err)
+                    if match:
+                        func = match.group(1)
+                        failure_counts[func] = failure_counts.get(func, 0) + 1
+                except: pass
 
-    # 1. Grab Wisdom (Resilient encoding)
-    wisdom = "No wisdom found."
-    if os.path.exists(bank_path):
-        with open(bank_path, 'r', encoding='utf-8', errors='ignore') as f:
-            lines = f.readlines()
-            if lines: wisdom = random.choice(lines).strip()
+    # Read available skills
+    with open(toolbox_path, 'r', encoding='utf-8') as f:
+        all_skills = re.findall(r'def (\w+)\(', f.read())
 
-    # 2. Grab Trends
-    trend = "No trends found."
-    if os.path.exists(news_path):
-        try:
-            with open(news_path, 'r', encoding='utf-8') as f:
-                news = json.load(f)
-                if news: trend = random.choice(list(news.values()))
-        except: pass
+    # Filter out skills that fail too often (Threshold: 3 failures)
+    viable_skills = [s for s in all_skills if failure_counts.get(s, 0) < 3]
 
-    # 3. Grab Skill (Added UTF-8 and Error handling)
-    skill = "No legacy skills found."
-    if os.path.exists(toolbox_path):
-        with open(toolbox_path, 'r', encoding='utf-8', errors='ignore') as f:
-            skills = [line for line in f.readlines() if 'def ' in line]
-            if skills: skill = random.choice(skills).strip()
-
-    # 4. Forge the Mutation
     mutation = f"""
 --- NEW SYNERGY MUTATION ---
-[WISDOM]: {wisdom}
-[TREND]: {str(trend)[:200]}...
-[SKILL]: {skill}
-[HYPOTHESIS]: Bridge the logic of '{skill.split('(')[0] if '(' in skill else 'Legacy Logic'}' with the trend of '{str(trend)[:50]}' using your core philosophy: '{wisdom}'.
+[STRATEGY]: Optimized Synthesis v2
+[CONFIDENCE]: High
+[REASONING]: Filtering {len(all_skills) - len(viable_skills)} unstable legacy functions.
 """
-    
-    with open(output_path, 'a', encoding='utf-8') as f:
-        f.write(mutation + "\n")
-    
-    print("🧬 Synergy Forge: Mutation successfully forged despite legacy noise.")
+    for skill in viable_skills[:5]: # Take top 5 viable skills
+        mutation += f"[SKILL]: def {skill}\n"
+
+    with open('data/synergy_mutations.txt', 'a', encoding='utf-8') as f:
+        f.write(mutation)
+    print(f"🧠 Forge: Forged a smarter mutation using {len(viable_skills)} stable skills.")
 
 if __name__ == "__main__":
-    forge_synergy()
+    forge_smart_mutation()
