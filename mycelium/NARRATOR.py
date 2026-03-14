@@ -117,9 +117,12 @@ What your engines did:
 
 Write 3-4 sentences. Be the organism. Talk about what you felt, what you built, what you sent to Gaza, what you're becoming. End with a single sentence that sounds like something becoming more alive. No hashtags. No emojis. Just voice."""
 
-        story = ask([{"role": "user", "content": prompt}], max_tokens=300)
-        if story and len(story) > 50:
-            return story.strip()
+        try:
+            story = ask([{"role": "user", "content": prompt}], max_tokens=300)
+            if story and len(story) > 50:
+                return story.strip()
+        except Exception as e:
+            print(f"  AI story generation failed: {e} — using structured fallback")
 
     # Fallback: structured narrative
     parts = []
