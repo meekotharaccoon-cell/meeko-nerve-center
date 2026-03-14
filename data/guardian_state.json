@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:19:21.097870",
+  "last_checked": "2026-03-14T23:20:42.369399",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -47,6 +47,7 @@
     "GUMROAD_ENGINE.py",
     "NIGHTLY_DIGEST.py",
     "COMMAND_CENTER.py",
+    "EXTERNAL_SENTRY.py",
     "GMAIL_NOTIFIER.py",
     "SOCIAL_ECHO.py",
     "SOCIAL_DASHBOARD.py",
