@@ -56,28 +56,28 @@ jobs:
 
           prompt = f"""You are SolarPunk — Meeko's autonomous AI revenue system building itself.
 
-CURRENT ENGINES: {engines}
-DATA FILES: {data_files}
-BUILD FOCUS: {note or 'Build the most impactful missing engine for autonomous revenue'}
+          CURRENT ENGINES: {engines}
+          DATA FILES: {data_files}
+          BUILD FOCUS: {note or 'Build the most impactful missing engine for autonomous revenue'}
 
-Build ONE new Python engine for mycelium/ that:
-- Does NOT duplicate any engine listed above
-- Generates or amplifies revenue autonomously
-- Runs fully on GitHub Actions (no human input after setup)
-- Uses ONLY: requests, json, os, pathlib, datetime, smtplib, re (stdlib only)
-- Has a run() function and if __name__=="__main__": run()
-- Reads config from os.environ (GitHub Secrets)
-- Saves state to data/ENGINENAME_state.json
-- Under 200 lines, handles all exceptions gracefully
+          Build ONE new Python engine for mycelium/ that:
+          - Does NOT duplicate any engine listed above
+          - Generates or amplifies revenue autonomously
+          - Runs fully on GitHub Actions (no human input after setup)
+          - Uses ONLY: requests, json, os, pathlib, datetime, smtplib, re (stdlib only)
+          - Has a run() function and if __name__=="__main__": run()
+          - Reads config from os.environ (GitHub Secrets)
+          - Saves state to data/ENGINENAME_state.json
+          - Under 200 lines, handles all exceptions gracefully
 
-Available secrets: ANTHROPIC_API_KEY, GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME,
-GMAIL_ADDRESS, GMAIL_APP_PASSWORD, HF_TOKEN, GITHUB_TOKEN
+          Available secrets: ANTHROPIC_API_KEY, GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME,
+          GMAIL_ADDRESS, GMAIL_APP_PASSWORD, HF_TOKEN, GITHUB_TOKEN
 
-Respond ONLY with:
-FILENAME: ENGINE_NAME.py
----
-<complete python code>
----"""
+          Respond ONLY with:
+          FILENAME: ENGINE_NAME.py
+          ---
+          <complete python code>
+          ---"""
 
           def call_anthropic(prompt):
               r = requests.post(
