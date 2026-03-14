@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:22:58.056510",
+  "last_checked": "2026-03-14T23:25:00.049960",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -42,6 +42,7 @@
     "BRAVE_BRIDGE.py",
     "DESKTOP_BLUEPRINT_SCANNER.py",
     "NEWSLETTER_ENGINE.py",
+    "TELEGRAM_BRIDGE.py",
     "PROOF_LEDGER.py",
     "REVENUE_AUDIT.py",
     "GUMROAD_ENGINE.py",
@@ -175,6 +176,7 @@
     "NANOSHOP_ENGINE.py",
     "NETWORK_SENTRY.py",
     "RESONANCE_ENGINE.py",
+    "EVOLUTION_VIEWER.py",
     "VIRALITY_ENGINE.py",
     "LEGACY_SIFTED_main.py",
     "WAKE_ON_LAN.py",
