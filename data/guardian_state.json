@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T20:38:24.212098",
+  "last_checked": "2026-03-14T20:54:55.037064",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -21,6 +21,7 @@
     "NEURON_A.py",
     "ai_council.py",
     "SECRETS_CHECKER.py",
+    "SYSTEM_CONDENSER.py",
     "AGENT_GUMROAD_BUILDER.py",
     "DESKTOP_AGENT.py",
     "KNOWLEDGE_WEAVER.py",
@@ -50,6 +51,7 @@
     "PAYPAL_PAYOUT.py",
     "CYCLE_MEMORY.py",
     "ARCHITECT.py",
+    "DESKTOP_HARVESTER.py",
     "PDF_GENERATOR.py",
     "BLUESKY_ENGINE.py",
     "NARRATOR.py",
