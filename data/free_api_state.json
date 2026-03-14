@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-14T07:52:20.382425+00:00",
+  "last_run": "2026-03-14T19:17:28.899763+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -31,12 +31,12 @@
     {
       "type": "trending_space",
       "name": "enzostvs/deepsite",
-      "likes": 16578
+      "likes": 16579
     },
     {
       "type": "trending_space",
       "name": "open-llm-leaderboard/open_llm_leaderboard",
-      "likes": 13893
+      "likes": 13895
     },
     {
       "type": "trending_space",
@@ -46,36 +46,36 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42199
+      "stars": 42206
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41455
+      "stars": 41485
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29354
+      "stars": 29372
     },
     {
       "type": "trending_article",
-      "title": "Building a Process Scheduling Simulator: Relearning TypeScript and Reducing AI Dependence",
+      "title": "Building Agent Emulator: Habbo emulator + MCP \ud83d\udc68\u200d\ud83d\udcbb\ud83c\udfe8",
+      "reactions": 2
+    },
+    {
+      "type": "trending_article",
+      "title": "Heavy AI agent frameworks were too slow for my Raspberry Pi. So I built a different one",
       "reactions": 1
     },
     {
       "type": "trending_article",
-      "title": "I Was So Angry, I Actually Shipped It",
-      "reactions": 4
-    },
-    {
-      "type": "trending_article",
-      "title": "Brew: I Built a Real-Time Voice AI Drive-Thru Barista with Gemini Live API and Google ADK",
-      "reactions": 1
+      "title": "90% of Code Will Be AI-Generated \u2014 So What the Hell Do We Actually Do?",
+      "reactions": 6
     },
     {
       "type": "crypto_market_cap_usd",
-      "value": 2484245334303.8926
+      "value": 2486517406536.2573
     }
   ],
   "opportunities": [
@@ -84,15 +84,15 @@
     "Guide/tutorial product: 'google/electra-base-discriminator' (51,275,969 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'Falconsai/nsfw_image_detection' (42,226,668 downloads) \u2014 build how-to guide",
     "Guide/tutorial product: 'sentence-transformers/all-mpnet-base-v2' (28,588,402 downloads) \u2014 build how-to guide",
-    "Clone/extend HF space: 'enzostvs/deepsite' (16578 likes) \u2014 integrate into SolarPunk",
-    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13893 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'enzostvs/deepsite' (16579 likes) \u2014 integrate into SolarPunk",
+    "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13895 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10991 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42199 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41455 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29354 stars) \u2014 build integration engine",
-    "Content leverage: 'Building a Process Scheduling Simulator: Relearning TypeScri' (1 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'I Was So Angry, I Actually Shipped It' (4 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Brew: I Built a Real-Time Voice AI Drive-Thru Barista with G' (1 reactions) \u2014 create SolarPunk angle"
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42206 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41485 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29372 stars) \u2014 build integration engine",
+    "Content leverage: 'Building Agent Emulator: Habbo emulator + MCP \ud83d\udc68\u200d\ud83d\udcbb\ud83c\udfe8' (2 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: 'Heavy AI agent frameworks were too slow for my Raspberry Pi.' (1 reactions) \u2014 create SolarPunk angle",
+    "Content leverage: '90% of Code Will Be AI-Generated \u2014 So What the Hell Do We Ac' (6 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

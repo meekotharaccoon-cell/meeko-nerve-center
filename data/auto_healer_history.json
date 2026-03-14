@@ -1,55 +1,5 @@
 [
   {
-    "timestamp": "2026-03-07T18:59:41.519422+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRAND_LEGAL"
-    ]
-  },
-  {
-    "timestamp": "2026-03-07T21:41:38.765769+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
-    "timestamp": "2026-03-08T07:44:40.077666+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
-    "timestamp": "2026-03-08T08:37:32.282018+00:00",
-    "healed": [],
-    "auto_installed": [],
-    "skipped": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ],
-    "failed_engines_seen": [
-      "BRIEFING_ENGINE",
-      "BRAND_LEGAL"
-    ]
-  },
-  {
     "timestamp": "2026-03-08T08:41:10.855244+00:00",
     "healed": [],
     "auto_installed": [],
@@ -613,6 +563,66 @@
       "NARRATOR"
     ],
     "failed_engines_seen": [
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T13:57:13.040885+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NANOSHOP_ENGINE",
+      "BRIEFING_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "NANOSHOP_ENGINE",
+      "BRIEFING_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T14:03:00.508322+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "NANOSHOP_ENGINE",
+      "BRIEFING_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "NANOSHOP_ENGINE",
+      "BRIEFING_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T19:17:03.603859+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "AFFILIATE_MAXIMIZER",
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "AFFILIATE_MAXIMIZER",
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ]
+  },
+  {
+    "timestamp": "2026-03-14T19:18:51.027423+00:00",
+    "healed": [],
+    "auto_installed": [],
+    "skipped": [
+      "AFFILIATE_MAXIMIZER",
+      "NANOSHOP_ENGINE",
+      "NARRATOR"
+    ],
+    "failed_engines_seen": [
+      "AFFILIATE_MAXIMIZER",
       "NANOSHOP_ENGINE",
       "NARRATOR"
     ]

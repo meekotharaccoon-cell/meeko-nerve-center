@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T07:53:14.991829+00:00",
+  "generated_at": "2026-03-14T19:18:39.612863+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -55,7 +55,6 @@
       "SOCIAL_DASHBOARD",
       "CONNECTION_FORGE",
       "HUMAN_CONNECTOR",
-      "AFFILIATE_MAXIMIZER",
       "STORE_BUILDER",
       "BRIDGE_BUILDER",
       "EMAIL_OUTREACH",
@@ -101,6 +100,7 @@
       "RSS_PUBLISHER"
     ],
     "engines_failed": [
+      "AFFILIATE_MAXIMIZER",
       "NANOSHOP_ENGINE",
       "NARRATOR"
     ],
@@ -109,9 +109,9 @@
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 95,
+    "businesses_built": 97,
     "engines_built": 0,
-    "revenue_potential": 66900,
+    "revenue_potential": 68380,
     "active_revenue_streams": [
       "substack"
     ]

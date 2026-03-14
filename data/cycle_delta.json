@@ -1,13 +1,19 @@
 {
-  "generated": "2026-03-14T07:51:55.824947+00:00",
+  "generated": "2026-03-14T19:16:56.374801+00:00",
   "cycle_number": 51,
   "health": 40,
   "health_trend": "stuck",
   "delta": {
     "first_cycle": false,
-    "wins": [],
-    "regressions": [],
-    "new_failures": [],
+    "wins": [
+      "BRIEFING_ENGINE"
+    ],
+    "regressions": [
+      "AFFILIATE_MAXIMIZER"
+    ],
+    "new_failures": [
+      "AFFILIATE_MAXIMIZER"
+    ],
     "still_failing": [
       "NANOSHOP_ENGINE",
       "NARRATOR"
@@ -29,7 +35,7 @@
       "id": "BN-002",
       "title": "2 engines have syntax errors",
       "severity": "LOW",
-      "cycles_open": 6,
+      "cycles_open": 8,
       "escalation": "URGENT"
     }
   ],
@@ -37,10 +43,14 @@
     "NANOSHOP_ENGINE",
     "NARRATOR"
   ],
-  "new_fixes": [],
-  "new_regressions": [],
+  "new_fixes": [
+    "BRIEFING_ENGINE"
+  ],
+  "new_regressions": [
+    "AFFILIATE_MAXIMIZER"
+  ],
   "revenue": 0,
   "revenue_delta": 0,
   "resonance": 60,
-  "summary": "Cycle 51 | Health: 40 (stuck) | Fixed: 0 | Regressed: 0 | Persistent blockers: 2 | Revenue: $0.00"
+  "summary": "Cycle 51 | Health: 40 (stuck) | Fixed: 1 | Regressed: 1 | Persistent blockers: 2 | Revenue: $0.00"
 }

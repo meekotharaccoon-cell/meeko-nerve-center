@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-14T07:52:12.528898+00:00",
+  "timestamp": "2026-03-14T19:17:20.970442+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
-        "url": "https://claude.com/blog/1m-context-ga",
-        "score": 592,
+        "title": "Sunsetting Jazzband",
+        "url": "https://jazzband.co/news/2026/03/14/sunsetting-jazzband",
+        "score": 53,
         "source": "hackernews"
       },
       {
-        "title": "A Survival Guide to a PhD (2016)",
-        "url": "http://karpathy.github.io/2016/09/07/phd/",
-        "score": 51,
+        "title": "Montana passes Right to Compute act (2025)",
+        "url": "https://www.westernmt.news/2025/04/21/montana-leads-the-nation-with-groundbreaking-right-to-compute-act/",
+        "score": 189,
         "source": "hackernews"
       },
       {
-        "title": "Emacs and Vim in the Age of AI",
-        "url": "https://batsov.com/articles/2026/03/09/emacs-and-vim-in-the-age-of-ai/",
-        "score": 99,
+        "title": "What happens when US economic data becomes unreliable",
+        "url": "https://mitsloan.mit.edu/ideas-made-to-matter/what-happens-when-us-economic-data-becomes-unreliable",
+        "score": 221,
         "source": "hackernews"
       },
       {
-        "title": "Qatar helium shutdown puts chip supply chain on a two-week clock",
-        "url": "https://www.tomshardware.com/tech-industry/qatar-helium-shutdown-puts-chip-supply-chain-on-a-two-week-clock",
-        "score": 529,
+        "title": "An ode to bzip",
+        "url": "https://purplesyringa.moe/blog/an-ode-to-bzip/",
+        "score": 45,
         "source": "hackernews"
       },
       {
-        "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
-        "url": "https://channelsurfer.tv",
-        "score": 478,
+        "title": "Hostile Volume \u2013 A game about adjusting volume with intentionally bad UI",
+        "url": "https://hostilevolume.com/",
+        "score": 8,
         "source": "hackernews"
       }
     ],
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 26.4,
+    "temp_c": 18.2,
     "vibe": "partly cloudy",
     "code": 3,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "context",
+      "word": "volume",
+      "count": 2
+    },
+    {
+      "word": "sunsetting",
       "count": 1
     },
     {
-      "word": "generally",
+      "word": "jazzband",
       "count": 1
     },
     {
-      "word": "available",
+      "word": "montana",
       "count": 1
     },
     {
-      "word": "opus",
+      "word": "passes",
       "count": 1
     },
     {
-      "word": "sonnet",
+      "word": "right",
       "count": 1
     },
     {
-      "word": "survival",
+      "word": "compute",
       "count": 1
     },
     {
-      "word": "guide",
+      "word": "2025",
       "count": 1
     },
     {
-      "word": "2016",
+      "word": "happens",
       "count": 1
     },
     {
-      "word": "emacs",
+      "word": "when",
       "count": 1
     },
     {
-      "word": "qatar",
+      "word": "economic",
       "count": 1
     },
     {
-      "word": "helium",
+      "word": "data",
       "count": 1
     },
     {
-      "word": "shutdown",
+      "word": "becomes",
       "count": 1
     },
     {
-      "word": "puts",
+      "word": "unreliable",
       "count": 1
     },
     {
-      "word": "chip",
+      "word": "bzip",
       "count": 1
     },
     {
-      "word": "supply",
+      "word": "hostile",
       "count": 1
     },
     {
-      "word": "chain",
+      "word": "game",
       "count": 1
     },
     {
-      "word": "week",
+      "word": "about",
       "count": 1
     },
     {
-      "word": "clock",
+      "word": "adjusting",
       "count": 1
     },
     {
-      "word": "show",
-      "count": 1
-    },
-    {
-      "word": "channel",
+      "word": "intentionally",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How '1M context is now generally available for Opus 4.6 and Sonne...' connects to Gaza resilience",
+      "hook": "How 'Sunsetting Jazzband...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

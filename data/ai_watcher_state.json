@@ -1,5 +1,5 @@
 {
-  "cycles": 95,
+  "cycles": 97,
   "last_digest": "2026-03-12T15:13:55.643583+00:00",
   "discoveries": [
     {
@@ -1806,8 +1806,46 @@
         "Jmerc151/hive"
       ],
       "analysis": null
+    },
+    {
+      "ts": "2026-03-14T13:58:29.242949+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Naphula-Archives/DeepWater-Pleroma-12B-v0-raw-weights",
+        "EldritchLabs/Kraken-12B-v0",
+        "Tushar9802/hybrid-summariser-crossmodal-lora"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Jmerc151/hive"
+      ],
+      "analysis": null
+    },
+    {
+      "ts": "2026-03-14T19:17:24.745821+00:00",
+      "image_models": [
+        "black-forest-labs/FLUX.1-dev",
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "CompVis/stable-diffusion-v1-4"
+      ],
+      "text_models": [
+        "Fuyanting/zhihui_v1.5_16bit",
+        "kth8/gemma-3-270m-it-JSON-Fixer-GGUF",
+        "nischay185/konkani-qwen2-1.5b"
+      ],
+      "repos": [
+        "sosloan/Actors",
+        "GenesisClawbot/income-guide",
+        "Jmerc151/hive"
+      ],
+      "analysis": null
     }
   ],
   "upgrade_proposals": [],
-  "last_run": "2026-03-14T07:52:15.862412+00:00"
+  "last_run": "2026-03-14T19:17:24.048321+00:00"
 }
