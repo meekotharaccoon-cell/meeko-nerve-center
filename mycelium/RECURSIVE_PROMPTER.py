@@ -1,17 +1,17 @@
-import os
-
 def generate_self_commands():
-    # The new safety-first sequence
-    cmd = "Write-Host '🛠️ Running Self-Diagnostic & Repair...' -ForegroundColor Yellow\n"
-    cmd += "python mycelium/AUTO_HEALER.py\n"
-    cmd += "python mycelium/SECRET_LOADER.py\n"
-    cmd += "python mycelium/SYSTEM_MAPPER.py\n"
-    # Note: git push remains commented out until the system confirms it is clean
-    cmd += "# git push origin main\n"
-    
+    prompt = """
+    Write-Host '🌿 SolarPunk Swarm Awakening...' -ForegroundColor Green
+    python mycelium/SECRET_LOADER.py
+    python mycelium/AUTO_HEALER.py
+    python mycelium/NEWS_HARVESTER.py
+    python mycelium/SYNAPSE_BUILDER.py
+    python mycelium/AUTO_ARCHITECT.py
+    python mycelium/COMMAND_CENTER.py
+    python mycelium/SYSTEM_MAPPER.py
+    Write-Host '☀️ Swarm is nourished and growing.' -ForegroundColor Yellow
+    """
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
-        f.write(cmd)
-    print("🤖 Self-Healing Routine Queued.")
+        f.write(prompt)
+    print("✨ SolarPunk Chain Manifested.")
 
-if __name__ == '__main__':
-    generate_self_commands()
+if __name__ == '__main__': generate_self_commands()
