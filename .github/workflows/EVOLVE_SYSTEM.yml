@@ -1,0 +1,37 @@
+name: EVOLVE_SYSTEM
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Runs every 6 hours
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Mycelium
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run System Cross-Pollination
+        run: python mycelium/CROSS_POLLINATOR.py
+
+      - name: Run Health Booster
+        run: python mycelium/HEALTH_BOOSTER.py
+
+      - name: Update Living Documentation
+        run: python mycelium/README_GENERATOR.py
+
+      - name: Commit Evolution
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Mycelium-Guardian"
+          git add .
+          git commit -m "System Evolution: $(date +'%Y-%m-%d %H:%M')" || echo "No changes to commit"
+          git push
