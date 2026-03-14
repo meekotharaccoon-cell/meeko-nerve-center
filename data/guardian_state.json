@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:03:12.400331",
+  "last_checked": "2026-03-14T23:04:13.321220",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -143,6 +143,7 @@
     "AUTO_RUNNER.py",
     "GRANT_APPLICANT.py",
     "SOCIAL_PROMOTER.py",
+    "DUPLICATE_DELETER.py",
     "BRAVE_BROWSER_ENGINE.py",
     "GMAIL_INTAKE.py",
     "SYNERGY_SCOUT.py",
@@ -173,6 +174,7 @@
     "VIRALITY_ENGINE.py",
     "LEGACY_SIFTED_main.py",
     "WAKE_ON_LAN.py",
+    "SWARM_TOOLBOX.py",
     "CONTRIBUTOR_REGISTRY.py",
     "BRIDGE_BUILDER.py",
     "LEGACY_SIFTED_amazon_tag_manager.py",
