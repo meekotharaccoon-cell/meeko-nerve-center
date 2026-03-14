@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:25:00.049960",
+  "last_checked": "2026-03-14T23:26:09.512476",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -135,6 +135,7 @@
     "VALUE_GENERATOR.py",
     "GITHUB_POSTER.py",
     "SPORE_SERVER.py",
+    "SKILL_MANIFESTOR.py",
     "NEURAL_PREFERENCE.py",
     "LEGACY_SIFTED_social_bot.py",
     "CODE_COLLATER.py",
