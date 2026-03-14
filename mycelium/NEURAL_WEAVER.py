@@ -5,7 +5,7 @@ def weave_knowledge():
     graph_path = 'data/knowledge_graph.json'
     if not os.path.exists(graph_path): return
     
-    with open(graph_path, 'r') as f:
+    with open(graph_path, 'r', encoding='utf-8') as f:
         graph = json.load(f)
         
     summary = " | ".join([node['tags'][0] for node in graph['nodes'] if node['tags']])
@@ -15,10 +15,11 @@ def weave_knowledge():
         for file in files:
             if file.endswith('.py'):
                 path = os.path.join(root, file)
-                with open(path, 'r') as f:
+                # Use utf-8 encoding and ignore errors to stay robust
+                with open(path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
                 if "NEURAL_LINK" not in content:
-                    with open(path, 'w') as f:
+                    with open(path, 'w', encoding='utf-8') as f:
                         f.write(header + content)
                     print(f"🕸️ Interwove {file}")
 
