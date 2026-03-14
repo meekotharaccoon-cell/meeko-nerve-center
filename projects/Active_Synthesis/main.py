@@ -1,23 +1,22 @@
 # -*- coding: utf-8 -*-
-# --- SYNTHETIC LOGIC v1.2 ---
-import sys, os
-import io
-
-# Force UTF-8 for console output to prevent charmap errors
+import sys, os, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 sys.path.append(os.path.abspath('../../mycelium'))
-try:
-    from SWARM_TOOLBOX import *
-except:
-    pass
+try: from SWARM_TOOLBOX import *
+except: pass
 
 def execute():
-    print("SYSTEM ONLINE: Running Synthesis Loop...")
-    try:
-        run_daily_cycle()
-    except Exception as e:
-        print(f'Skill run_daily_cycle failed: {e}')
+    print("🧠 Smarter Execution Online...")
+    try: link_discovered_code()
+    except Exception as e: print(f'Logic gap in link_discovered_code: {e}')
+    try: __init__()
+    except Exception as e: print(f'Logic gap in __init__: {e}')
+    try: _load_humanitarian_system()
+    except Exception as e: print(f'Logic gap in _load_humanitarian_system: {e}')
+    try: execute_playbook_1_website()
+    except Exception as e: print(f'Logic gap in execute_playbook_1_website: {e}')
+    try: execute_playbook_2_social_prospecting()
+    except Exception as e: print(f'Logic gap in execute_playbook_2_social_prospecting: {e}')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     execute()
