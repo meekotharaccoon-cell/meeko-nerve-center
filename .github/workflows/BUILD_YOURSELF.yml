@@ -124,16 +124,16 @@ jobs:
 
           Respond ONLY with valid JSON (no markdown, no fences):
           {{
-  "engines": [
-    {{
-      "filename": "engine_name.py",
-      "description": "one sentence what this does for Meeko",
-      "income_stream": "which passive income stream this serves",
-      "code": "complete python file content as a string"
-    }}
-  ],
-  "build_log": "what you built and why",
-  "next_build_suggestion": "what to build next run"
+          "engines": [
+            {{
+              "filename": "engine_name.py",
+              "description": "one sentence what this does for Meeko",
+              "income_stream": "which passive income stream this serves",
+              "code": "complete python file content as a string"
+            }}
+          ],
+          "build_log": "what you built and why",
+          "next_build_suggestion": "what to build next run"
           }}"""
 
           if not api_key:
