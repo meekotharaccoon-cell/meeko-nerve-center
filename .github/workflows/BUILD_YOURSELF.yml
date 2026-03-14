@@ -99,31 +99,31 @@ jobs:
 
           prompt = f"""You are SolarPunk — an autonomous AI agent that builds itself.
 
-CURRENT STATE:
-- Engines: {engines}
-- Workflows: {workflows}
-- Data files: {data_f}
-- Missing required engines: {missing_required}
-- Gumroad connected: {has_gumroad} (secrets: GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME)
-- Gmail connected: {has_gmail}
-- Build target: "{build_target or 'You decide — build the most valuable thing'}"
+          CURRENT STATE:
+          - Engines: {engines}
+          - Workflows: {workflows}
+          - Data files: {data_f}
+          - Missing required engines: {missing_required}
+          - Gumroad connected: {has_gumroad} (secrets: GUMROAD_SECRET, GUMROAD_ID, GUMROAD_NAME)
+          - Gmail connected: {has_gmail}
+          - Build target: "{build_target or 'You decide — build the most valuable thing'}"
 
-{INCOME_STREAMS}
+          {INCOME_STREAMS}
 
-YOUR JOB: Build {n_to_build} Python file(s) for the mycelium/ directory.
-Each file must be a complete, production-ready engine that runs in GitHub Actions.
-Import only: os, json, requests, datetime, pathlib, smtplib, email, re, urllib.
+          YOUR JOB: Build {n_to_build} Python file(s) for the mycelium/ directory.
+          Each file must be a complete, production-ready engine that runs in GitHub Actions.
+          Import only: os, json, requests, datetime, pathlib, smtplib, email, re, urllib.
 
-RULES (ABSOLUTE):
-- NEVER write to .github/ directory
-- ONLY write NEW files to mycelium/ or update data/
-- Each engine reads config from environment variables (GitHub Secrets)
-- Each engine writes results to data/[engine_name]_output.json
-- Use GUMROAD_SECRET (not GUMROAD_ACCESS_TOKEN) for Gumroad API auth
-- Use claude-sonnet-4-6 as model string for any Anthropic API calls
+          RULES (ABSOLUTE):
+          - NEVER write to .github/ directory
+          - ONLY write NEW files to mycelium/ or update data/
+          - Each engine reads config from environment variables (GitHub Secrets)
+          - Each engine writes results to data/[engine_name]_output.json
+          - Use GUMROAD_SECRET (not GUMROAD_ACCESS_TOKEN) for Gumroad API auth
+          - Use claude-sonnet-4-6 as model string for any Anthropic API calls
 
-Respond ONLY with valid JSON (no markdown, no fences):
-{{
+          Respond ONLY with valid JSON (no markdown, no fences):
+          {{
   "engines": [
     {{
       "filename": "engine_name.py",
@@ -134,7 +134,7 @@ Respond ONLY with valid JSON (no markdown, no fences):
   ],
   "build_log": "what you built and why",
   "next_build_suggestion": "what to build next run"
-}}"""
+          }}"""
 
           if not api_key:
               print("No API key — writing placeholder build plan")
@@ -276,29 +276,29 @@ Respond ONLY with valid JSON (no markdown, no fences):
           engines_now = sorted([f.name for f in Path("mycelium").glob("*.py") if not f.name.startswith("__")])
 
           body = f"""🔨 BUILD_YOURSELF RUN COMPLETE — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
-{'='*50}
+          {'='*50}
 
-WHAT WAS BUILT:
-"""
+          WHAT WAS BUILT:
+          """
           for e in plan.get("engines",[]):
               body += f"  ✅ {e['filename']}\n"
               body += f"     → {e.get('description','')}\n"
               body += f"     💰 {e.get('income_stream','')}\n\n"
 
           body += f"""
-BUILD LOG:
-{plan.get('build_log','')}
+          BUILD LOG:
+          {plan.get('build_log','')}
 
-NEXT RUN SUGGESTION:
-{plan.get('next_build_suggestion','')}
+          NEXT RUN SUGGESTION:
+          {plan.get('next_build_suggestion','')}
 
-TOTAL ENGINES NOW: {len(engines_now)}
-TOTAL BUILT BY BUILD_YOURSELF: {len(reg)}
+          TOTAL ENGINES NOW: {len(engines_now)}
+          TOTAL BUILT BY BUILD_YOURSELF: {len(reg)}
 
-Trigger another BUILD_YOURSELF run:
-→ https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
+          Trigger another BUILD_YOURSELF run:
+          → https://github.com/meekotharaccoon-cell/meeko-nerve-center/actions
 
-— SolarPunk™ 🌱"""
+          — SolarPunk™ 🌱"""
 
           try:
               msg = MIMEText(body)
