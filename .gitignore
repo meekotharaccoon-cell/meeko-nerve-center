@@ -1,14 +1,6 @@
-# Secrets and Credentials
+﻿mycelium/__pycache__/
 data/secrets.json
-.env
-secrets.ps1
-
-# System Logs and Temp Files
-logs/
-*.log
-dashboard.html
-AUTO_EXEC.ps1
-
-# Python Cache
-__pycache__/
-*.pyc
+data/known_devices.json
+knowledge_ingest/processed/
+logs/*.log
+*.tmp
