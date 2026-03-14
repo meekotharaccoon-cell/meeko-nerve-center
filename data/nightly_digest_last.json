@@ -1,11 +1,12 @@
 {
-  "ts": "2026-03-13T02:09:18.027441+00:00",
+  "ts": "2026-03-14T03:11:46.885821+00:00",
   "health": 40,
-  "total_real_revenue": 0.0,
-  "total_to_gaza": 0.0,
-  "exchange_tasks": 0,
-  "businesses_built": 92,
-  "engines_built": 0,
+  "real_revenue": 0.0,
+  "real_to_gaza": 0.0,
+  "products_live": 2,
+  "bluesky_posted": 0,
+  "total_published": 0,
   "engines_ok_count": 92,
-  "engines_fail_count": 1
+  "engines_fail_count": 1,
+  "email_sent_this_cycle": true
 }

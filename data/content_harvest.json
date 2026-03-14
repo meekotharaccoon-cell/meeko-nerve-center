@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-13T02:08:09.854943+00:00",
+  "timestamp": "2026-03-14T03:10:33.074652+00:00",
   "sources": {
     "hackernews": [
       {
-        "title": "Shall I implement it? No",
-        "url": "https://gist.github.com/bretonium/291f4388e2de89a43b25c135b44e41f0",
-        "score": 834,
+        "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
+        "url": "https://claude.com/blog/1m-context-ga",
+        "score": 333,
         "source": "hackernews"
       },
       {
-        "title": "Malus \u2013 Clean Room as a Service",
-        "url": "https://malus.sh",
-        "score": 1044,
+        "title": "I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites",
+        "url": "https://benzimmermann.dev/blog/algolia-docsearch-admin-keys",
+        "score": 90,
         "source": "hackernews"
       },
       {
-        "title": "Bubble Sorted Amen Break",
-        "url": "https://parametricavocado.itch.io/amen-sorting",
-        "score": 261,
+        "title": "Games with loot boxes to get minimum 16 age rating across Europe",
+        "url": "https://www.bbc.com/news/articles/cge84xqjg5lo",
+        "score": 49,
         "source": "hackernews"
       },
       {
-        "title": "Reversing memory loss via gut-brain communication",
-        "url": "https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html",
-        "score": 236,
+        "title": "Can I run AI locally?",
+        "url": "https://www.canirun.ai/",
+        "score": 986,
         "source": "hackernews"
       },
       {
-        "title": "Document poisoning in RAG systems: How attackers corrupt AI's sources",
-        "url": "https://aminrj.com/posts/rag-document-poisoning/",
-        "score": 72,
+        "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
+        "url": "https://channelsurfer.tv",
+        "score": 427,
         "source": "hackernews"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "title": "Criei uma pipeline de planejamento no OpenCode e olha no que deu",
         "url": "https://dev.to/clintonrocha98/sistema-de-planejamento-estruturado-no-opencode-16pb",
-        "hearts": 62,
+        "hearts": 67,
         "source": "devto"
       },
       {
@@ -62,97 +62,97 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 8.0,
+    "temp_c": 18.9,
     "vibe": "sunny",
     "code": 1,
     "location": "Gaza City"
   },
   "trending_themes": [
     {
-      "word": "break",
+      "word": "across",
       "count": 2
     },
     {
-      "word": "shall",
+      "word": "context",
       "count": 1
     },
     {
-      "word": "implement",
+      "word": "generally",
       "count": 1
     },
     {
-      "word": "malus",
+      "word": "available",
       "count": 1
     },
     {
-      "word": "clean",
+      "word": "opus",
       "count": 1
     },
     {
-      "word": "room",
+      "word": "sonnet",
       "count": 1
     },
     {
-      "word": "service",
+      "word": "found",
       "count": 1
     },
     {
-      "word": "bubble",
+      "word": "algolia",
       "count": 1
     },
     {
-      "word": "sorted",
+      "word": "admin",
       "count": 1
     },
     {
-      "word": "amen",
+      "word": "keys",
       "count": 1
     },
     {
-      "word": "reversing",
+      "word": "exposed",
       "count": 1
     },
     {
-      "word": "memory",
+      "word": "open",
       "count": 1
     },
     {
-      "word": "loss",
+      "word": "source",
       "count": 1
     },
     {
-      "word": "brain",
+      "word": "documentation",
       "count": 1
     },
     {
-      "word": "communication",
+      "word": "sites",
       "count": 1
     },
     {
-      "word": "document",
+      "word": "games",
       "count": 1
     },
     {
-      "word": "poisoning",
+      "word": "loot",
       "count": 1
     },
     {
-      "word": "systems:",
+      "word": "boxes",
       "count": 1
     },
     {
-      "word": "attackers",
+      "word": "minimum",
       "count": 1
     },
     {
-      "word": "corrupt",
+      "word": "rating",
       "count": 1
     }
   ],
   "content_angles": [
     {
       "type": "tech_solidarity",
-      "hook": "How 'Shall I implement it? No...' connects to Gaza resilience",
+      "hook": "How '1M context is now generally available for Opus 4.6 and Sonne...' connects to Gaza resilience",
       "platform": "twitter/linkedin",
       "effort": "5min"
     },

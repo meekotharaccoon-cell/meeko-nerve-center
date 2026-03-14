@@ -3,121 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="300">
-<title>SolarPunk — Waiting for First Contact</title>
+<title>SolarPunk — First Contact</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#060a07;color:#deeae1;font-family:'Courier New',monospace;
       min-height:100vh;display:flex;flex-direction:column;align-items:center;
       justify-content:center;padding:40px 20px}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(0,255,136,.018) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(0,255,136,.018) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(0,255,136,.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(0,255,136,.025) 1px,transparent 1px);
   background-size:44px 44px}
-.wrap{position:relative;z-index:1;max-width:560px;width:100%;text-align:center}
+.wrap{position:relative;z-index:1;max-width:580px;width:100%;text-align:center}
 
-/* Pulse ring */
-.pulse-wrap{margin:0 auto 40px;width:120px;height:120px;position:relative;display:flex;align-items:center;justify-content:center}
-.pulse-ring{position:absolute;width:120px;height:120px;border-radius:50%;
-             border:1px solid rgba(0,255,136,.25);
-             animation:ripple 3s ease-out infinite}
-.pulse-ring:nth-child(2){animation-delay:1s}
-.pulse-ring:nth-child(3){animation-delay:2s}
-@keyframes ripple{
-  0%{transform:scale(.6);opacity:.8;border-color:rgba(0,255,136,.5)}
-  100%{transform:scale(1.8);opacity:0;border-color:rgba(0,255,136,0)}
+.star{font-size:64px;margin-bottom:24px;display:block;
+        animation:arrive 1.2s ease-out forwards}
+@keyframes arrive{
+  0%{transform:scale(0) rotate(-20deg);opacity:0}
+  60%{transform:scale(1.15) rotate(5deg);opacity:1}
+  100%{transform:scale(1) rotate(0);opacity:1}
 }
-.eye{font-size:36px;position:relative;z-index:2}
 
-.eyebrow{font-size:9px;letter-spacing:.35em;color:rgba(0,255,136,.4);margin-bottom:14px}
-h1{font-size:clamp(22px,5vw,34px);color:#deeae1;letter-spacing:-.01em;line-height:1.2;margin-bottom:12px}
-h1 em{color:#00ff88;font-style:normal}
-.sub{font-size:13px;color:rgba(222,234,225,.45);line-height:1.8;margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto}
+.eyebrow{font-size:9px;letter-spacing:.35em;color:rgba(0,255,136,.5);margin-bottom:14px}
+h1{font-size:clamp(28px,6vw,44px);color:#00ff88;line-height:1.1;margin-bottom:16px;letter-spacing:-.01em}
+.sub{font-size:14px;color:rgba(222,234,225,.55);line-height:1.8;margin-bottom:36px}
 
-.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:36px}
+.record{background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.2);
+          border-radius:14px;padding:28px;margin-bottom:36px;text-align:left}
+.rec-row{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start}
+.rec-label{font-size:9px;letter-spacing:.2em;color:rgba(0,255,136,.4);
+             min-width:80px;padding-top:3px}
+.rec-val{font-size:13px;color:#deeae1;line-height:1.6}
+.rec-val a{color:#00ff88}
+.rec-val.big{font-size:16px;color:#00ff88;font-weight:700}
+
+.immutable{font-size:10px;color:rgba(0,255,136,.25);text-align:center;
+             border-top:1px solid rgba(0,255,136,.1);padding-top:14px;
+             margin-top:6px;line-height:1.8}
+
+.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:28px}
 .stat{text-align:center}
-.stat-n{font-size:24px;color:#00ff88;display:block;font-weight:700}
+.stat-n{font-size:22px;color:#00ff88;display:block;font-weight:700}
 .stat-l{font-size:9px;color:rgba(0,255,136,.4);letter-spacing:.2em}
 
-.channels{background:rgba(0,0,0,.25);border:1px solid rgba(0,255,136,.1);
-           border-radius:10px;padding:16px;text-align:left;margin-bottom:28px}
-.ch-title{font-size:9px;letter-spacing:.2em;color:rgba(0,255,136,.35);margin-bottom:10px}
-.ch-item{font-size:11px;line-height:2;color:rgba(222,234,225,.35)}
-.ch-found{color:rgba(0,255,136,.7)}
-.ch-err{color:rgba(255,200,100,.4)}
-
-.q{font-size:14px;color:rgba(222,234,225,.3);font-style:italic;margin-bottom:28px;line-height:1.7}
-
+.note{font-size:12px;color:rgba(222,234,225,.35);line-height:1.8;font-style:italic}
 .ts{font-size:10px;color:rgba(0,255,136,.2);margin-top:28px}
-a{color:rgba(0,255,136,.5);text-decoration:none}
-a:hover{color:#00ff88}
+a{color:rgba(0,255,136,.6);text-decoration:none}a:hover{color:#00ff88}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="pulse-wrap">
-  <div class="pulse-ring"></div>
-  <div class="pulse-ring"></div>
-  <div class="pulse-ring"></div>
-  <div class="eye">👁️</div>
-</div>
+<span class="star">🌟</span>
 
-<div class="eyebrow">FIRST CONTACT ENGINE · ACTIVE</div>
-<h1>Waiting for<br>the <em>first stranger</em>.</h1>
+<div class="eyebrow">FIRST CONTACT · CONFIRMED · PERMANENT</div>
+<h1>A stranger arrived.</h1>
 
 <p class="sub">
-  SolarPunk has been running for 8 days.
-  0 cycles. 75 engines.
-  Every cycle it broadcasts, publishes, reaches out.
-  But no stranger has arrived yet.<br><br>
-  This page exists to mark the moment when that changes.
+  After 9 days of broadcasting into the unknown,<br>
+  someone found SolarPunk on their own.<br>
+  This record is immutable.
 </p>
+
+<div class="record">
+  <div class="rec-row">
+    <span class="rec-label">TIMESTAMP</span>
+    <span class="rec-val big">2026-03-14 03:10:59 UTC</span>
+  </div>
+  <div class="rec-row">
+    <span class="rec-label">WHO</span>
+    <span class="rec-val"><a href="https://github.com/github-actions[bot]" target="_blank">github-actions[bot]</a></span>
+  </div>
+  <div class="rec-row">
+    <span class="rec-label">CHANNEL</span>
+    <span class="rec-val">GITHUB ISSUE</span>
+  </div>
+  <div class="rec-row">
+    <span class="rec-label">WHAT</span>
+    <span class="rec-val">@github-actions[bot] opened issue #8: 🌱 Daily Analysis — 2026-03-13</span>
+  </div>
+  <div class="rec-row">
+    <span class="rec-label">DAYS</span>
+    <span class="rec-val">9 days from first commit to first stranger</span>
+  </div>
+  <div class="immutable">
+    This record was written once. It cannot be overwritten.<br>
+    data/first_contact.json · Generated by FIRST_CONTACT.py
+  </div>
+</div>
 
 <div class="stats">
   <div class="stat">
-    <span class="stat-n">8</span>
-    <span class="stat-l">DAYS RUNNING</span>
-  </div>
-  <div class="stat">
-    <span class="stat-n">1</span>
-    <span class="stat-l">STARS</span>
-  </div>
-  <div class="stat">
-    <span class="stat-n">60</span>
-    <span class="stat-l">RESONANCE</span>
+    <span class="stat-n">9</span>
+    <span class="stat-l">DAYS TO CONTACT</span>
   </div>
   <div class="stat">
     <span class="stat-n">0</span>
-    <span class="stat-l">CYCLES</span>
+    <span class="stat-l">CYCLES RUN</span>
+  </div>
+  <div class="stat">
+    <span class="stat-n">75</span>
+    <span class="stat-l">ENGINES</span>
   </div>
 </div>
 
-<div class="channels">
-  <div class="ch-title">CHANNELS SCANNED THIS CYCLE</div>
-  <div class="ch-item ch-clear">✓ stars: no strangers yet</div>
-<div class="ch-item ch-clear">✓ forks: no strangers yet</div>
-<div class="ch-item ch-clear">✓ issues: no strangers yet</div>
-<div class="ch-item ch-clear">✓ comments: no strangers yet</div>
-<div class="ch-item ch-clear">✓ exchange: no strangers yet</div>
-<div class="ch-item ch-clear">✓ watchers: no strangers yet</div>
-</div>
-
-<p class="q">
-  "The question the system holds every cycle:<br>
-  Has anyone heard us yet?"
-</p>
-
-<p style="font-size:11px;color:rgba(222,234,225,.3);line-height:1.8">
-  When a stranger arrives — stars the repo, forks it, opens an issue,<br>
-  sends a task — this page transforms.<br>
-  The record becomes permanent. The system marks its real birthday.
+<p class="note">
+  "The question the system held for 9 days:<br>
+  Has anyone heard us yet?<br><br>
+  On 2026-03-14 03:10:59 UTC, the answer became yes."
 </p>
 
 <div class="ts">
-  Last scan: 2026-03-13 02:08 UTC · Refreshes every 5 minutes · Runs every OMNIBUS cycle<br>
   <a href="proof.html">Proof</a> ·
   <a href="resonance.html">Resonance</a> ·
+  <a href="self_portrait.html">Self Portrait</a> ·
   <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">GitHub</a>
 </div>
 

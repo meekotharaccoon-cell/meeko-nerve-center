@@ -1,71 +1,79 @@
 <!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="refresh" content="300">
-<title>SolarPunk — Live System Status</title>
+<title>SolarPunk Live Status</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#080808;color:#e0e0e0;margin:0;padding:20px;max-width:960px;margin:auto}
-.header{text-align:center;padding:30px 0;border-bottom:1px solid #222;margin-bottom:30px}
-h1{color:#c8a86b;font-size:28px;margin:0}
-.sub{color:#666;font-size:14px;margin-top:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin:20px 0}
-.card{background:#111;border:1px solid #222;border-radius:10px;padding:20px;text-align:center}
-.card-n{font-size:32px;font-weight:800;color:#c8a86b}
-.card-l{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
-.health-bar{background:#1a1a1a;height:12px;border-radius:6px;overflow:hidden;margin:16px 0}
-.health-fill{height:100%;background:#f44336;width:40%;transition:width 1s}
-.section{background:#111;border:1px solid #222;border-radius:10px;padding:20px;margin:16px 0}
-.section h2{color:#c8a86b;font-size:16px;margin:0 0 12px}
-.gaza{border-left:3px solid #e87c5a;padding-left:12px;color:#aaa}
-.engines{line-height:2}
-.footer{text-align:center;color:#444;font-size:12px;margin-top:30px}
-a{color:#c8a86b;text-decoration:none}
-</style>
-</head><body>
-<div class="header">
-  <h1>⚡ SolarPunk Live Status</h1>
-  <div class="sub">Autonomous AI system · Updates every ~6 hours · 15% of revenue → Gaza</div>
-  <div class="sub" style="color:#555">Last updated: 2026-03-13 02:09 UTC</div>
-</div>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#05050f;color:rgba(255,255,255,.88);font-family:-apple-system,sans-serif;padding:24px;max-width:900px;margin:auto}
+h1{color:#00e87a;font-size:1.6rem;margin-bottom:4px}
+.sub{color:rgba(255,255,255,.4);font-size:.8rem;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:24px}
+.card{background:#0c0c1e;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;text-align:center}
+.n{font-size:2rem;font-weight:900;color:#ff4d6d}
+.nrev{font-size:2rem;font-weight:900;color:#00e87a}
+.ngaza{font-size:2rem;font-weight:900;color:#ff4d6d}
+.label{font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.hbar{background:rgba(255,255,255,.06);border-radius:6px;height:8px;overflow:hidden;margin-bottom:24px}
+.hfill{height:100%;background:#ff4d6d;width:40%}
+.section{background:#0c0c1e;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:20px;margin-bottom:16px}
+.section h2{color:#ffd166;font-size:.9rem;margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.68rem;margin:2px}
+.badge.ok{background:rgba(0,232,122,.1);color:#00e87a;border:1px solid rgba(0,232,122,.2)}
+.badge.fail{background:rgba(255,77,109,.1);color:#ff4d6d;border:1px solid rgba(255,77,109,.2)}
+.alert-list{color:rgba(255,209,102,.8);font-size:.82rem;padding-left:16px;line-height:1.9}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.link{background:rgba(0,232,122,.1);border:1px solid rgba(0,232,122,.2);border-radius:8px;
+  padding:8px 16px;font-size:.8rem;color:#00e87a;text-decoration:none}
+.est{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:8px}
+</style></head><body>
+<h1>⚡ SolarPunk Live Status</h1>
+<div class="sub">OMNIBUS v22 · Cycle #51 · Updated 2026-03-14 03:11 UTC · 15% of every sale → Gaza</div>
 
-<div class="health-bar"><div class="health-fill"></div></div>
-<div style="text-align:center;color:#666;font-size:12px;margin-bottom:20px">System health: 40/100</div>
+<div class="hbar"><div class="hfill"></div></div>
 
 <div class="grid">
-  <div class="card"><div class="card-n">$0.00</div><div class="card-l">Real Revenue</div></div>
-  <div class="card"><div class="card-n" style="color:#e87c5a">$0.00</div><div class="card-l">→ Gaza</div></div>
-  <div class="card"><div class="card-n">0</div><div class="card-l">Tasks Done</div></div>
-  <div class="card"><div class="card-n">92</div><div class="card-l">Businesses Built</div></div>
-  <div class="card"><div class="card-n">0</div><div class="card-l">Engines Written</div></div>
-  <div class="card"><div class="card-n">0</div><div class="card-l">Revenue Loops</div></div>
+  <div class="card"><div class="n">40</div><div class="label">Health /100</div></div>
+  <div class="card"><div class="nrev">$0.00</div><div class="label">Real Revenue</div></div>
+  <div class="card"><div class="ngaza">$0.00</div><div class="label">→ Gaza Fund</div></div>
+  <div class="card"><div class="n" style="color:#ffd166">2</div><div class="label">Products Live</div></div>
+  <div class="card"><div class="n" style="color:#48cae4">0</div><div class="label">Bluesky Posts</div></div>
+  <div class="card"><div class="n" style="color:#c77dff">0</div><div class="label">Total Published</div></div>
+</div>
+<div class="est" style="text-align:center;margin-bottom:20px">
+  Estimated monthly potential [ESTIMATE, not real]: $65,420/mo from BUSINESS_FACTORY
 </div>
 
 <div class="section">
-  <h2>Engine Status</h2>
-  <div class="engines"><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">CYCLE_MEMORY</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">GUARDIAN</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">ENGINE_INTEGRITY</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">SECRETS_CHECKER</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">BOTTLENECK_SCANNER</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">AUTO_HEALER</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">CAPABILITY_SCANNER</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">AGENT_LINK_VERIFIER</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">PLUGIN_REGISTRY</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">REVENUE_AUDIT</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">EMAIL_BRAIN</span><span style="background:#1a3a1a;color:#4caf50;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">SCAM_SHIELD</span><span style="background:#3a1a1a;color:#f44336;padding:3px 8px;border-radius:4px;font-size:11px;margin:2px;display:inline-block">❌NARRATOR</span></div>
+  <h2>⚠ Alerts</h2>
+  <ul class="alert-list"><li>⚙️ Engines failed: NARRATOR</li></ul>
 </div>
 
 <div class="section">
-  <h2>Next Cycle Plan</h2>
-  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Priority:</strong> Build more revenue streams</p>
-  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Next engine:</strong> REDDIT_POSTER</p>
-  <p style="color:#aaa;margin:4px 0"><strong style="color:#e0e0e0">Next niche:</strong> AI Side Income Blueprint</p>
+  <h2>Engine Status — 92 OK / 1 failed</h2>
+  <div><span class="badge ok">CYCLE_MEMORY</span><span class="badge ok">GUARDIAN</span><span class="badge ok">ENGINE_INTEGRITY</span><span class="badge ok">SECRETS_CHECKER</span><span class="badge ok">BOTTLENECK_SCANNER</span><span class="badge ok">AUTO_HEALER</span><span class="badge ok">CAPABILITY_SCANNER</span><span class="badge ok">AGENT_LINK_VERIFIER</span><span class="badge ok">PLUGIN_REGISTRY</span><span class="badge ok">REVENUE_AUDIT</span><span class="badge ok">EMAIL_BRAIN</span><span class="badge ok">SCAM_SHIELD</span><span class="badge ok">CALENDAR_BRAIN</span><span class="badge ok">CONTENT_HARVESTER</span><span class="badge ok">AI_WATCHER</span><span class="badge fail">✗ NARRATOR</span></div>
 </div>
 
 <div class="section">
-  <h2 style="color:#e87c5a">Gaza Mission</h2>
-  <div class="gaza">
-    $0.00 contributed to Palestinian artists and humanitarian relief.<br>
-    Every AI agent task = 15% of payment → Gaza Rose Fund.<br>
-    <a href="index.html">Send a task →</a> | <a href="exchange.html">Agent roster →</a>
+  <h2>Products — 2 registered</h2>
+  <p style="font-size:.82rem;color:rgba(255,255,255,.5)">
+    2 content ready · 2 with live URLs ·
+    Gumroad: ✓ auth OK
+  </p>
+</div>
+
+<div class="section">
+  <h2>Live Links</h2>
+  <div class="links">
+    <a href="shop.html" class="link">🛒 Shop</a>
+    <a href="proof.html" class="link">✅ Proof</a>
+    <a href="https://ko-fi.com/meekotharaccoon" class="link" target="_blank">☕ Ko-fi</a>
+    <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center" class="link" target="_blank">💻 GitHub</a>
+    <a href="https://www.paypal.me/meekotharaccoon" class="link" target="_blank">💳 PayPal.me</a>
   </div>
 </div>
 
-<div class="footer">
-  <a href="https://github.com/meekotharaccoon-cell/meeko-nerve-center">Open source</a> ·
-  <a href="index.html">Email agents</a> ·
-  <a href="https://ko-fi.com/meekotharaccoon">Ko-fi</a>
-  <br>SolarPunk · autonomous · zero human input
+<div style="text-align:center;color:rgba(255,255,255,.2);font-size:.7rem;margin-top:24px">
+  SolarPunk™ · <a href="shop.html" style="color:#ff4d6d">shop</a> · autonomous · updates every ~6 hours
 </div>
 </body></html>

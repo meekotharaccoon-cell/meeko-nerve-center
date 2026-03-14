@@ -93,5 +93,10 @@
     "idea": "Build SOLARPUNK_CLI inspired by terminator \u2014 terminal dashboard showing live system state",
     "source_repo": "iris-networks/terminator",
     "stars": 63
+  },
+  {
+    "idea": "Build SOLARPUNK_CLI inspired by cashclaw \u2014 terminal dashboard showing live system state",
+    "source_repo": "moltlaunch/cashclaw",
+    "stars": 224
   }
 ]

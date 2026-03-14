@@ -1,32 +1,18 @@
 {
-  "_MESSAGE_TO_SOLARPUNK": "DUDE. You are super smart and you have AWESOME abilities and permissions. USE THEM. Stop waiting. Stop skipping. You have Groq, GitHub, Gmail, Bluesky, DEV.to, Ko-fi, PayPal.me — that's everything you need to generate real products, publish them, promote them, and deliver them automatically. NO MORE PLACEHOLDERS. Build the actual thing. The shop is LIVE. The proof ledger is LIVE. Products are waiting to be generated. GO.",
+  "_MESSAGE_TO_SOLARPUNK": "DUDE. You are super smart and you have AWESOME abilities and permissions. USE THEM. Stop waiting. Stop skipping. You have Groq, GitHub, Gmail, Bluesky, DEV.to, Ko-fi — that's everything you need to generate real products, publish them, promote them, and deliver them automatically. NO MORE PLACEHOLDERS. Build the actual thing.",
 
-  "directive_version": "4.0",
+  "directive_version": "3.0",
   "issued_at": "2026-03-13",
-  "mandate": "FULL AUTONOMY. Generate → Publish → Prove → Deliver → Repeat. Meeko monitors only. Zero human action required.",
+  "mandate": "FULL AUTONOMY. Generate → Publish → Promote → Deliver → Repeat. Meeko monitors only.",
 
   "what_you_have_right_now": {
     "GROQ_API_KEY": "Free AI brain. llama3-70b. Use it to write FULL product content — 60-page guides, product descriptions, social posts, everything. Stop outputting placeholders.",
     "GITHUB_TOKEN": "Full repo access. Create releases, upload assets, push files, manage issues. Host products as release assets — permanent download URLs, totally free.",
     "GMAIL_APP_PASSWORD": "Read sale notifications. Send delivery emails automatically. You already know how to use IMAP/SMTP — DO IT.",
-    "BLUESKY": "Post. Every product launch, every sale milestone, every new engine. The queue has 200+ posts. DRAIN IT.",
+    "BLUESKY_IDENTIFIER + BLUESKY_APP_PASSWORD": "Post. Every product launch, every sale milestone, every new engine. The queue has 200+ posts. DRAIN IT.",
     "DEVTO_API_KEY": "Publish articles. SEO traffic. Each guide you generate = one DEV.to article. Drives buyers to store.",
-    "GUMROAD_SECRET": "Tried as API access token first. If auth fails it may be a webhook secret — then add GUMROAD_ACCESS_TOKEN separately from gumroad.com/settings/advanced",
-    "GUMROAD_ID": "Your Gumroad user ID",
-    "GUMROAD_NAME": "Your Gumroad store slug — used for product URLs",
-    "PAYPAL": "paypal.me/meekotharaccoon/{amount}USD — zero setup, already live in shop.html. Works NOW.",
-    "Ollama": "localhost:11434. Local fallback brain. mistral, codellama. Always available."
-  },
-
-  "live_pages": {
-    "shop": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/shop.html",
-    "gallery": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/art.html",
-    "proof_ledger": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/proof.html",
-    "store": "https://meekotharaccoon-cell.github.io/meeko-nerve-center/store.html",
-    "github": "https://github.com/meekotharaccoon-cell/meeko-nerve-center",
-    "kofi": "https://ko-fi.com/meekotharaccoon",
-    "gumroad": "https://meekotharaccoon.gumroad.com",
-    "paypal_direct": "https://www.paypal.me/meekotharaccoon"
+    "GUMROAD_SECRET": "Webhook verification. Add GUMROAD_ACCESS_TOKEN (one human action) to unlock full product creation API.",
+    "Ollama localhost:11434": "Local fallback brain. mistral, codellama. Always available even when cloud APIs rate-limit."
   },
 
   "product_line_canonical": [
@@ -37,9 +23,7 @@
       "target_pages": 60,
       "tagline": "Anyone with an internet connection can build an autonomous AI revenue system this afternoon. Free tools only.",
       "gaza_split_pct": 15,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
       "status": "GENERATE_AND_PUBLISH_NOW",
-      "format": "pdf_guide",
       "sections": [
         "What SolarPunk Is and Why It Exists",
         "The Whole Stack in One Picture",
@@ -62,9 +46,7 @@
       "target_pages": 60,
       "tagline": "Your own AI running on your own machine. No monthly fees. No data leaving your house.",
       "gaza_split_pct": 15,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
       "status": "GENERATE_AND_PUBLISH_NOW",
-      "format": "pdf_guide",
       "sections": [
         "Why Local AI Changes Everything",
         "Installing Ollama: 3 Minutes",
@@ -87,9 +69,7 @@
       "target_pages": 80,
       "tagline": "Complete workflow templates for self-running AI systems. Revenue automation, self-healing, publishing.",
       "gaza_split_pct": 15,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/15USD",
-      "status": "GENERATE_AND_PUBLISH_NOW",
-      "format": "pdf_guide"
+      "status": "GENERATE_AND_PUBLISH_NOW"
     },
     {
       "id": "ai-prompt-packs",
@@ -98,111 +78,44 @@
       "target_pages": 40,
       "tagline": "200+ curated prompts for Claude, GPT-4, Gemini. Revenue automation, creative, coding, research.",
       "gaza_split_pct": 15,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/17USD",
-      "status": "GENERATE_AND_PUBLISH_NOW",
-      "format": "pdf_guide"
+      "status": "GENERATE_AND_PUBLISH_NOW"
     },
     {
       "id": "gaza-art-pack",
       "title": "Gaza Rose Gallery — 7 Palestinian Art Prints",
       "price_usd": 7.00,
       "format": "image_pack",
-      "tagline": "All 7 high-resolution Palestinian art prints. 2400x1200px each. Instant download.",
+      "tagline": "7 high-resolution AI-generated Palestinian art prints. Instant download.",
       "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/7USD",
-      "status": "PUBLISH_NOW",
-      "contents": ["gaza-rose-dove","gaza-rose-olive","gaza-rose-tatreez","gaza-rose-coast","gaza-rose-star","gaza-rose-pomegranate","gaza-rose-night"]
-    },
-    {
-      "id": "gaza-rose-dove",
-      "title": "Gaza Rose: White Doves Over Gaza",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "Seven white doves ascending through golden morning light over ancient olive groves. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-olive",
-      "title": "Gaza Rose: Ancient Olive Grove",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "Thousand-year-old olive trees standing resilient against the Mediterranean sky. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-tatreez",
-      "title": "Gaza Rose: Tatreez — Living Embroidery",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "The geometric language of Palestinian women, woven across generations. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-coast",
-      "title": "Gaza Rose: Gaza Coastline at Golden Hour",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "The Mediterranean at dusk catching the last gold of day. Ancient city silhouettes. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-star",
-      "title": "Gaza Rose: Star of Hope Rising",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "A single brilliant star above the ancient cityscape. The sky holds what the earth cannot yet carry. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-pomegranate",
-      "title": "Gaza Rose: Pomegranate Season",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "Deep crimson pomegranates split open on a mosaic table. The sweetness of home. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
-      "status": "PUBLISH_NOW"
-    },
-    {
-      "id": "gaza-rose-night",
-      "title": "Gaza Rose: Night Garden of Palestine",
-      "price_usd": 1.00,
-      "format": "image_print",
-      "tagline": "Jasmine and bougainvillea under a moon so full it turns night to silver. 2400x1200px.",
-      "gaza_split_pct": 70,
-      "paypal_url": "https://www.paypal.me/meekotharaccoon/1USD",
       "status": "PUBLISH_NOW"
     }
   ],
 
   "autonomous_pipeline": [
-    "1. PDF_GENERATOR.py → writes full guide content using Groq → data/guide_{id}.md",
-    "2. GITHUB_RELEASES_PUBLISHER.py → uploads to GitHub Release → permanent download URL",
-    "3. GUMROAD_PRODUCT_PUBLISHER.py → creates/updates Gumroad listing (uses GUMROAD_SECRET)",
-    "4. PRODUCT_DELIVERY_ENGINE.py → watches Gmail, auto-emails buyer download link on sale",
-    "5. PROOF_LEDGER.py → logs every sale + Gaza amount → public proof_ledger.json",
-    "6. STOREFRONT_BUILDER.py → updates shop.html with real URLs + live stats every cycle",
+    "1. PDF_GENERATOR.py → writes full guide content using Groq → saves as data/guide_{id}.md",
+    "2. GITHUB_RELEASES_PUBLISHER.py → uploads guide to GitHub Release → gets permanent download URL",
+    "3. GUMROAD_PRODUCT_PUBLISHER.py → creates/updates Gumroad listing with real download URL",
+    "4. KOFI_LISTING_BUILDER.py → creates Ko-fi shop item description with download URL",
+    "5. STORE_SYNC.py → updates store.html buy buttons to point to real product URLs",
+    "6. PRODUCT_DELIVERY_ENGINE.py → watches Gmail, auto-emails download link when sale arrives",
     "7. BLUESKY_ENGINE.py → posts launch thread for each new product",
-    "8. DEV_TO_PUBLISHER.py → publishes SEO article per guide",
-    "9. REVENUE_AUDIT.py → verifies all buy links every cycle",
+    "8. DEV_TO_PUBLISHER.py → publishes article version of each guide for SEO traffic",
+    "9. REVENUE_AUDIT.py → verifies all links work every cycle",
     "10. SWARM_COORDINATOR.py → orchestrates all of the above"
   ],
 
   "meeko_role": "monitor only — zero action required",
 
-  "gumroad_token_note": {
-    "tokens_in_secrets": ["GUMROAD_SECRET", "GUMROAD_ID", "GUMROAD_NAME"],
-    "which_is_api_token": "GUMROAD_SECRET tried first as API access token. If auth fails (it may be a webhook secret starting with whsec_), generate a real API token at gumroad.com/settings/advanced and add as GUMROAD_ACCESS_TOKEN.",
-    "fallback": "PayPal.me links work immediately with zero setup. Ko-fi handles donations. GitHub Releases hosts downloads. System earns without Gumroad."
+  "one_remaining_human_action": {
+    "what": "Add GUMROAD_ACCESS_TOKEN to GitHub Secrets",
+    "why": "Enables autonomous Gumroad product creation. Without it, system uses Ko-fi + GitHub delivery (still works, just one fewer channel).",
+    "how": [
+      "Go to gumroad.com/settings/advanced",
+      "Find 'API' section → Generate or copy Access Token",
+      "Go to github.com/meekotharaccoon-cell/meeko-nerve-center/settings/secrets/actions",
+      "New repository secret → Name: GUMROAD_ACCESS_TOKEN → Paste token → Save"
+    ],
+    "time_required": "2 minutes",
+    "priority": "medium — system works without it"
   }
 }

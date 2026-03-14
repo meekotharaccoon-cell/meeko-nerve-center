@@ -123,6 +123,7 @@
       "LINK_PAGE.py",
       "MASTODON_ENGINE.py",
       "MEMORY_PALACE.py",
+      "NANOSHOP_ENGINE.py",
       "NANO_AGENT.py",
       "NARRATOR.py",
       "NEURON_A.py",
@@ -130,6 +131,7 @@
       "NEWSLETTER_ENGINE.py",
       "NIGHTLY_DIGEST.py",
       "OMNIBUS.py",
+      "PASSIVE_INCOME_ARCHITECT.py",
       "PAYPAL_PAYOUT.py",
       "PDF_GENERATOR.py",
       "PLUGIN_REGISTRY.py",
@@ -165,7 +167,7 @@
       "ai_council.py",
       "knowledge_dispatch.py"
     ],
-    "engine_count": 113,
+    "engine_count": 115,
     "data_files": [
       "affiliate_config.json",
       "affiliate_links_master.json",
@@ -192,6 +194,8 @@
       "brand_legal_state.json",
       "bridge_state.json",
       "briefing_state.json",
+      "build_plan.json",
+      "build_registry.json",
       "business_ai_prompt_packs.json",
       "business_ai_side_income_blueprint.json",
       "business_ai_side_income_blueprint_20.json",
@@ -235,6 +239,7 @@
       "engine_sha_registry.json",
       "etsy_seo_output.json",
       "evolve_history.json",
+      "first_contact.json",
       "first_sale_state.json",
       "flywheel_state.json",
       "flywheel_summary.json",
@@ -266,12 +271,15 @@
       "lessons.json",
       "link_verifier_state.json",
       "live_landing_pages.json",
+      "loop_context.json",
+      "loop_decisions.json",
       "mastodon_state.json",
       "memory_palace.json",
       "neuron_a_report.json",
       "neuron_b_report.json",
       "nightly_digest_last.json",
       "nightly_digest_state.json",
+      "omnibrain_seed.json",
       "omnibus_history.json",
       "omnibus_last.json",
       "outreach_state.json",
@@ -314,7 +322,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-13T02:08:35.333594+00:00"
+    "timestamp": "2026-03-14T03:10:59.075444+00:00"
   },
-  "generated_at": "2026-03-13T02:08:35.642917+00:00"
+  "generated_at": "2026-03-14T03:10:59.574558+00:00"
 }
