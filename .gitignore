@@ -1,0 +1,14 @@
+# Secrets and Credentials
+data/secrets.json
+.env
+secrets.ps1
+
+# System Logs and Temp Files
+logs/
+*.log
+dashboard.html
+AUTO_EXEC.ps1
+
+# Python Cache
+__pycache__/
+*.pyc
