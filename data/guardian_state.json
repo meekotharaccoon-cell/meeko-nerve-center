@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T22:16:56.264016",
+  "last_checked": "2026-03-14T22:23:01.927119",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -50,6 +50,7 @@
     "RSS_PUBLISHER.py",
     "CAPABILITY_SCANNER.py",
     "ANALYTICS_ENGINE.py",
+    "FINANCIAL_MAPPER.py",
     "HUMAN_CONNECTOR.py",
     "PAYPAL_PAYOUT.py",
     "CYCLE_MEMORY.py",
@@ -59,6 +60,7 @@
     "BLUESKY_ENGINE.py",
     "NARRATOR.py",
     "BOTTLENECK_SCANNER.py",
+    "UPGRADE_ENGINE.py",
     "CONNECTION_FORGE.py",
     "VALIDATE_AUTH.py",
     "CROSS_POLLINATOR.py",
@@ -97,6 +99,7 @@
     "QUICK_REVENUE.py",
     "ISSUE_SYNC.py",
     "SECRET_LOADER.py",
+    "VALUE_GENERATOR.py",
     "GITHUB_POSTER.py",
     "SPORE_SERVER.py",
     "NEWS_HARVESTER.py",
