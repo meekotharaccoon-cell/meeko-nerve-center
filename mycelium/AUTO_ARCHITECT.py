@@ -7,35 +7,41 @@ def build_entirety():
     if not os.path.exists(project_dir): os.makedirs(project_dir)
 
     try:
-        # Capture the latest mutation
         if not os.path.exists(mutation_path): return
         with open(mutation_path, 'r', encoding='utf-8') as f:
             content = f.read().split('--- NEW SYNERGY MUTATION ---')
-            mutation = content[-1] if content[-1].strip() else content[-2]
+            mutation = [m for m in content if m.strip()][-1]
 
-        # Extract skills
         skills = re.findall(r'\[SKILL\]: def (\w+)', mutation)
         
-        main_code = f"""
-# --- SYNTHTIC LOGIC v1.0 ---
+        # Build logic with explicit spacing
+        exec_lines = []
+        for s in skills:
+            exec_lines.append(f"    try:\n        {s}()\n    except Exception as e:\n        print(f'Skill {s} failed: {{e}}')")
+        
+        exec_block = "\n".join(exec_lines) if exec_lines else "    pass"
+
+        main_code = f"""# --- SYNTHETIC LOGIC v1.1 ---
 import sys, os
 sys.path.append(os.path.abspath('../../mycelium'))
-try: from SWARM_TOOLBOX import *
-except: pass
+try:
+    from SWARM_TOOLBOX import *
+except:
+    pass
 
 def execute():
     print("🧬 System Online. Running Synthesis...")
-    {chr(10).join(['    try: ' + s + '()' + chr(10) + '    except: pass' for s in skills]) if skills else '    pass'}
+{exec_block}
 
 if __name__ == "__main__":
     execute()
 """
         with open(os.path.join(project_dir, 'main.py'), 'w', encoding='utf-8') as f:
             f.write(main_code)
-        print("🏗️ Architect: Project manifested successfully.")
+        print("🏗️ Architect: Logic spacing calibrated.")
 
     except Exception as err:
-        print(f"🏗️ Architect Critical Failure: {err}")
+        print(f"🏗️ Architect Failure: {err}")
 
 if __name__ == "__main__":
     build_entirety()
