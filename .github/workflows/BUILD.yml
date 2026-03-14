@@ -146,6 +146,7 @@ FILENAME: ENGINE_NAME.py
           code = "\n".join(code_lines)
 
           # Safety checks
+          blocked = ["os.system(", "eval(", "exec(", ".github", "git pull --rebase "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main || true
           blocked = ["os.system(", "eval(", "exec(", ".github", "git push", "git merge"]
           for bad in blocked:
               if bad in code:
@@ -180,4 +181,5 @@ FILENAME: ENGINE_NAME.py
           git add data/ mycelium/
           git diff --staged --quiet && echo "Nothing built" && exit 0
           git commit -m "🔨 BUILD: $(date +%Y-%m-%dT%H:%M) — ${{ github.event.inputs.note || 'autonomous build' }}"
+          git pull --rebase "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main || true
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
