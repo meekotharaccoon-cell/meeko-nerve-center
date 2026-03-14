@@ -115,5 +115,6 @@ jobs:
           git add data/guardian_state.json saves/ 2>/dev/null || true
           git diff --cached --quiet && echo "Clean" && exit 0
           git commit -m "[guardian] checkpoint $(date +%H:%M) -- healthy"
+          git pull --rebase "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main || true
           git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main
         continue-on-error: true
