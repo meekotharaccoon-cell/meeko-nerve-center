@@ -1,43 +1,29 @@
-# NEURAL_LINK: The
-# Part of the Meeko SolarPunk Swarm.
-
-﻿import json
 import os
-from datetime import datetime
 
-# MEEKO_ENGINE: KNOWLEDGE_BRIDGE (SolarPunk Edition)
-# Purpose: Interweave emailed intelligence into the core architecture.
-
-CAPABILITY_MAP = "data/capability_map.json"
-MANIFESTO = "solarpunk_legal_declaration.txt"
-
-def interweave(new_engine_name, engine_purpose):
-    # 1. Update the Capability Map
-    if os.path.exists(CAPABILITY_MAP):
-        with open(CAPABILITY_MAP, 'r') as f:
-            cmap = json.load(f)
-    else:
-        cmap = {"engines": []}
-
-    new_entry = {
-        "name": new_engine_name,
-        "purpose": engine_purpose,
-        "integrated_at": datetime.now().isoformat(),
-        "status": "active",
-        "philosophy": "SolarPunk / Decentralized Knowledge"
-    }
+def ingest_collective_knowledge():
+    ingest_dir = 'knowledge_ingest'
+    knowledge_bank = 'data/knowledge_bank.txt'
     
-    cmap["engines"].append(new_entry)
+    if not os.path.exists(ingest_dir): return
     
-    with open(CAPABILITY_MAP, 'w') as f:
-        json.dump(cmap, f, indent=4)
+    files = os.listdir(ingest_dir)
+    if not files:
+        print("🕯️ Knowledge Bridge: Waiting for your collective wisdom files...")
+        return
 
-    # 2. Log to the Solarpunk Manifesto
-    with open(MANIFESTO, "a") as f:
-        f.write(f"\n[{datetime.now().date()}] New knowledge bridge established: {new_engine_name}. Swarm complexity increasing.")
-
-    print(f"Interweave Complete: {new_engine_name} is now part of the Mycelium.")
+    for file in files:
+        path = os.path.join(ingest_dir, file)
+        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+            data = f.read()
+        
+        with open(knowledge_bank, 'a', encoding='utf-8') as f:
+            f.write(f"\n🧠 [COLLECTIVE KNOWLEDGE BRIDGE]: {file}\n{data}\n")
+        
+        # Move to an 'archived' folder so we don't re-process
+        if not os.path.exists('knowledge_ingest/processed'):
+            os.makedirs('knowledge_ingest/processed')
+        os.rename(path, f"knowledge_ingest/processed/{file}")
+        print(f"🌉 Bridge Manifested: {file} is now part of the Swarm.")
 
 if __name__ == "__main__":
-    # This is called by GMAIL_INTAKE when new code arrives
-    print("Bridge ready for incoming spores.")
+    ingest_collective_knowledge()
