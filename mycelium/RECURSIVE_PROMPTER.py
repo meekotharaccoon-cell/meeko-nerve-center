@@ -1,6 +1,3 @@
-# NEURAL_LINK: Wisdom
-# Part of the Meeko SolarPunk Swarm.
-
 import json
 import os
 
@@ -11,7 +8,8 @@ def generate_self_commands():
         queue = json.load(f)
     if queue and isinstance(queue, list):
         topic = queue[0].get('topic', 'Evolution')
-        cmd = f"Write-Host 'Executing: {topic}' -ForegroundColor Cyan\npython mycelium/NEURAL_WEAVER.py\npython mycelium/GMAIL_NOTIFIER.py\npython mycelium/DUPLICATE_STRIKER.py\npython mycelium/CAPABILITY_SCANNER.py"
+        # Added GMAIL_INTAKE to the sequence
+        cmd = f"Write-Host 'Executing: {topic}' -ForegroundColor Cyan\npython mycelium/GMAIL_INTAKE.py\npython mycelium/NEURAL_WEAVER.py\npython mycelium/GMAIL_NOTIFIER.py\npython mycelium/DUPLICATE_STRIKER.py\npython mycelium/CAPABILITY_SCANNER.py"
         with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
             f.write(cmd)
         print(f"🤖 Generated: {topic}")

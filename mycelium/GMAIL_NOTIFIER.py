@@ -1,3 +1,6 @@
+# NEURAL_LINK: Gmail
+# Part of the Meeko SolarPunk Swarm.
+
 import smtplib
 import os
 import json

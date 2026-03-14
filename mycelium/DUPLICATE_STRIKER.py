@@ -1,3 +1,6 @@
+# NEURAL_LINK: Gmail
+# Part of the Meeko SolarPunk Swarm.
+
 import os
 
 def strike_duplicates():

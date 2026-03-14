@@ -1,43 +1,46 @@
-# NEURAL_LINK: The
-# Part of the Meeko SolarPunk Swarm.
-
-﻿import imaplib
+import imaplib
 import email
 import os
 
-def check_gmail_for_updates():
-    # USES YOUR WORKING GMAIL CHANNEL
+def check_inbox():
     user = os.getenv('GMAIL_USER')
     password = os.getenv('GMAIL_APP_PASSWORD')
-    
     if not user or not password:
-        print("Gmail credentials missing. Skipping intake.")
+        print("Gmail credentials missing.")
         return
 
     try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        mail = imaplib.IMAP4_SSL('imap.gmail.com')
         mail.login(user, password)
-        mail.select("inbox")
+        mail.select('inbox')
+
+        # Search for unread emails with "Meeko" in the subject
+        status, messages = mail.search(None, '(UNSEEN SUBJECT "Meeko")')
         
-        # Search for updates sent from YOU to YOURSELF
-        status, messages = mail.search(None, '(SUBJECT "MEEKO_UPDATE")')
-        
-        for num in messages[0].split():
-            status, data = mail.fetch(num, "(RFC822)")
-            msg = email.message_from_bytes(data[0][1])
-            
-            for part in msg.walk():
-                if part.get_content_type() == "text/plain":
-                    new_code = part.get_payload(decode=True).decode()
-                    # Save as a new engine to be picked up by the next cycle
-                    filename = f"mycelium/AUTO_ENGINE_{num.decode()}.py"
-                    with open(filename, "w") as f:
-                        f.write(new_code)
-                    print(f"Successfully birthed {filename} via Gmail Intake.")
+        if status == 'OK':
+            for num in messages[0].split():
+                status, data = mail.fetch(num, '(RFC822)')
+                for response_part in data:
+                    if isinstance(response_part, tuple):
+                        msg = email.message_from_bytes(response_part[1])
+                        subject = msg['subject']
+                        body = ""
+                        if msg.is_multipart():
+                            for part in msg.walk():
+                                if part.get_content_type() == "text/plain":
+                                    body = part.get_payload(decode=True).decode()
+                        else:
+                            body = msg.get_payload(decode=True).decode()
+
+                        # Inject into knowledge bank
+                        with open('data/knowledge_bank.txt', 'a', encoding='utf-8') as f:
+                            f.write(f"\n[Remote Intake] {subject}: {body.strip()}")
+                        print(f"🧠 Remote Knowledge Injected: {subject}")
+
         mail.close()
         mail.logout()
     except Exception as e:
-        print(f"Gmail Intake Error: {e}")
+        print(f"Intake Error: {e}")
 
-if __name__ == '__main__':
-    check_gmail_for_updates()
+if __name__ == "__main__":
+    check_inbox()
