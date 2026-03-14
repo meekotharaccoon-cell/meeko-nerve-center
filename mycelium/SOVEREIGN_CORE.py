@@ -1,19 +1,17 @@
 import os
-import sys
-from SECURITY_SENTRY import audit_code
-from DUEL_ENGINE import duel_functions
+import subprocess
 
-def recursive_nexus():
-    print("🌀 NEXEUS CORE: Initiating self-building sequence...")
+def run_organ_pulse():
+    organs = ['REVENUE_MONITOR.py', 'SCAVENGER_WEB.py', 'TELEGRAM_BRIDGE.py']
+    print("🌀 SOVEREIGN CORE: Pulsing external sensors...")
     
-    # 1. SCAN for Logic Gaps
-    # 2. SCAVENGE knowledge_ingest
-    # 3. AUDIT with SECURITY_SENTRY
-    # 4. DUEL if multiple versions found
-    # 5. INJECT into GENERATED_SKILLS
-    # 6. RE-TRIGGER GUARD.ps1
-    
-    print("✅ System: Gaps closed. Workflows synchronized.")
+    for organ in organs:
+        path = f'mycelium/{organ}'
+        if os.path.exists(path):
+            try:
+                subprocess.run(['python', path], check=True)
+            except Exception as e:
+                print(f"⚠️ Organ {organ} failed: {e}")
 
 if __name__ == "__main__":
-    recursive_nexus()
+    run_organ_pulse()

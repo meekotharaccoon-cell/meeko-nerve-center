@@ -1,2 +1,2 @@
-$cmds = @("Write-Host '--- INITIATING DARWINIAN OPTIMIZATION ---' -ForegroundColor Green", 'python mycelium/AUTO_HEALER.py', 'python mycelium/SYNERGY_FORGE.py', 'python mycelium/SKILL_MANIFESTOR.py', 'python mycelium/AUTO_ARCHITECT.py', 'python mycelium/AUTONOMOUS_TESTER.py', 'python mycelium/EVOLUTION_VIEWER.py', 'python mycelium/MISSION_CONTROL.py', 'git add .', "Write-Host '--- Swarm Optimization Cycle Complete. ---' -ForegroundColor Yellow")
-foreach ($c in $cmds) { if (Test-Path $c.Split(' ')[1]) { iex $c } }
+$cmds = @("Write-Host '--- SINGULARITY: ALL PATHS CONVERGING ---' -ForegroundColor Cyan", 'python mycelium/TRIFECTA_CORE.py', 'python mycelium/SOVEREIGN_CORE.py', 'python mycelium/SKILL_MANIFESTOR.py', 'python mycelium/AUTO_ARCHITECT.py', 'python mycelium/AUTONOMOUS_TESTER.py', 'python mycelium/MISSION_CONTROL.py', 'git add .', "git commit -m 'SINGULARITY: Collective Evolution Update'", 'git push')
+foreach ($c in $cmds) { iex $c }
