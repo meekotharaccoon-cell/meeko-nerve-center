@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T23:48:26.461302",
+  "last_checked": "2026-03-14T23:51:08.993455",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -228,6 +228,7 @@
     "CRYPTO_WATCHER.py",
     "REVENUE_ENGINE.py",
     "STOREFRONT_BUILDER.py",
+    "EXTERNAL_HANDSHAKE.py",
     "CALENDAR_BRAIN.py",
     "HEALTH_BOOSTER.py",
     "GITHUB_SPONSORS_ENGINE.py"
