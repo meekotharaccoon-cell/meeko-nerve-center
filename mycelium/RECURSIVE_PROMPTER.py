@@ -1,6 +1,6 @@
 def generate_self_commands():
-    # Final, robust command list
-    commands = [
+    # Using a list to ensure no hidden line breaks or quote issues
+    cmds = [
         "Write-Host '💎 AWAKENING THE FINAL FORM SWARM...' -ForegroundColor Magenta",
         "python mycelium/SECRET_LOADER.py",
         "python mycelium/AUTO_HEALER.py",
@@ -17,10 +17,10 @@ def generate_self_commands():
         "python mycelium/REAL_LIFE_MANIFESTO.py",
         "Write-Host '🌕 Swarm Evolution Cycle Complete.' -ForegroundColor Green"
     ]
-    
+    ps_content = "$cmds = @'\n" + "\n".join(cmds) + "\n'@\n$cmds | iex"
     with open('AUTO_EXEC.ps1', 'w', encoding='utf-8') as f:
-        f.write("\n".join(commands))
-    print("🌀 Master Evolutionary Chain: CALIBRATED.")
+        f.write(ps_content)
+    print("🌀 Master Evolutionary Chain: CALIBRATED AND SHIELDED.")
 
 if __name__ == '__main__':
     generate_self_commands()
