@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T03:10:10.960521+00:00",
+  "generated": "2026-03-14T05:00:57.443653+00:00",
   "cycle_number": 51,
   "health": 40,
   "health_trend": "stuck",
@@ -7,7 +7,9 @@
     "first_cycle": false,
     "wins": [],
     "regressions": [],
-    "new_failures": [],
+    "new_failures": [
+      "NANOSHOP_ENGINE"
+    ],
     "still_failing": [
       "NARRATOR"
     ],
@@ -19,15 +21,15 @@
   "persistent": [
     {
       "id": "BN-001",
-      "title": "GUMROAD_SECRET missing -- 10 products can't publish",
-      "severity": "CRITICAL",
+      "title": "Gmail 534 error -- App Password wrong or expired",
+      "severity": "HIGH",
       "cycles_open": 20,
       "escalation": "STUCK"
     },
     {
       "id": "BN-002",
-      "title": "Gmail 534 error -- App Password wrong or expired",
-      "severity": "HIGH",
+      "title": "2 engines have syntax errors",
+      "severity": "LOW",
       "cycles_open": 5,
       "escalation": "URGENT"
     }

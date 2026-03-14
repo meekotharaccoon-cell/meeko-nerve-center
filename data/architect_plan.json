@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T03:11:37.015504+00:00",
+  "generated_at": "2026-03-14T05:06:23.091863+00:00",
   "system_audit": {
     "health": 40,
     "total_loops": 0,
@@ -75,6 +75,8 @@
       "PAYPAL_PAYOUT",
       "FIRST_SALE_NOTIFIER",
       "PRODUCT_DELIVERY_ENGINE",
+      "PROOF_LEDGER",
+      "STOREFRONT_BUILDER",
       "SYNAPSE",
       "SYNTHESIS_FACTORY",
       "ARCHITECT",
@@ -84,6 +86,7 @@
       "REVENUE_OPTIMIZER",
       "BIG_BRAIN_ORACLE",
       "SWARM_COORDINATOR",
+      "PASSIVE_INCOME_ARCHITECT",
       "MEMORY_PALACE",
       "README_GENERATOR",
       "BRIEFING_ENGINE",
@@ -98,6 +101,7 @@
       "RSS_PUBLISHER"
     ],
     "engines_failed": [
+      "NANOSHOP_ENGINE",
       "NARRATOR"
     ],
     "engines_skipped": [],
@@ -105,9 +109,9 @@
     "exchange_earned": 0.0,
     "exchange_gaza": 0.0,
     "kofi_verified": 0.0,
-    "businesses_built": 93,
+    "businesses_built": 94,
     "engines_built": 0,
-    "revenue_potential": 65420,
+    "revenue_potential": 66160,
     "active_revenue_streams": [
       "substack"
     ]

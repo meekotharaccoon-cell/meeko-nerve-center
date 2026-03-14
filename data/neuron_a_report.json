@@ -258,6 +258,7 @@
       "gumroad_catalog.json",
       "gumroad_engine_state.json",
       "gumroad_listings.json",
+      "gumroad_publisher_state.json",
       "gumroad_queue_state.json",
       "gumroad_setup_needed.json",
       "health_report.json",
@@ -283,11 +284,15 @@
       "omnibus_history.json",
       "omnibus_last.json",
       "outreach_state.json",
+      "passive_income_catalog.json",
+      "passive_income_state.json",
       "payout_ledger.json",
       "paypal_payout_state.json",
       "pdf_generator_state.json",
       "plugin_registry.json",
       "product_registry.json",
+      "proof_ledger.json",
+      "proof_ledger_state.json",
       "proof_state.json",
       "quick_revenue.json",
       "repo_spider_state.json",
@@ -310,6 +315,7 @@
       "solarpunk_legal_state.json",
       "sponsors_state.json",
       "store_builder_state.json",
+      "storefront_builder_state.json",
       "substack_state.json",
       "swarm_state.json",
       "synthesis_log.json",
@@ -322,7 +328,7 @@
     "last_insight": "",
     "synth_built": 0,
     "brain_health": 40,
-    "timestamp": "2026-03-14T03:10:59.075444+00:00"
+    "timestamp": "2026-03-14T05:02:38.250833+00:00"
   },
-  "generated_at": "2026-03-14T03:10:59.574558+00:00"
+  "generated_at": "2026-03-14T05:03:38.891311+00:00"
 }

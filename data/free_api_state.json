@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-03-14T03:10:41.124170+00:00",
+  "last_run": "2026-03-14T05:02:18.263278+00:00",
   "apis_ok": 18,
   "apis_failed": 2,
   "signals": [
@@ -46,17 +46,22 @@
     {
       "type": "github_ai_repo",
       "repo": "zhayujie/chatgpt-on-wechat",
-      "stars": 42192
+      "stars": 42193
     },
     {
       "type": "github_ai_repo",
       "repo": "CherryHQ/cherry-studio",
-      "stars": 41438
+      "stars": 41442
     },
     {
       "type": "github_ai_repo",
       "repo": "CopilotKit/CopilotKit",
-      "stars": 29347
+      "stars": 29351
+    },
+    {
+      "type": "trending_article",
+      "title": "Building a Process Scheduling Simulator: Relearning TypeScript and Reducing AI Dependence",
+      "reactions": 1
     },
     {
       "type": "trending_article",
@@ -69,13 +74,8 @@
       "reactions": 1
     },
     {
-      "type": "trending_article",
-      "title": "We Scanned 17 Popular MCP Servers \u2014 Here's What We Found",
-      "reactions": 1
-    },
-    {
       "type": "crypto_market_cap_usd",
-      "value": 2494521450971.118
+      "value": 2499047612062.348
     }
   ],
   "opportunities": [
@@ -87,12 +87,12 @@
     "Clone/extend HF space: 'enzostvs/deepsite' (16578 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'open-llm-leaderboard/open_llm_leaderboard' (13893 likes) \u2014 integrate into SolarPunk",
     "Clone/extend HF space: 'jbilcke-hf/ai-comic-factory' (10991 likes) \u2014 integrate into SolarPunk",
-    "Engine wrapper: zhayujie/chatgpt-on-wechat (42192 stars) \u2014 build integration engine",
-    "Engine wrapper: CherryHQ/cherry-studio (41438 stars) \u2014 build integration engine",
-    "Engine wrapper: CopilotKit/CopilotKit (29347 stars) \u2014 build integration engine",
+    "Engine wrapper: zhayujie/chatgpt-on-wechat (42193 stars) \u2014 build integration engine",
+    "Engine wrapper: CherryHQ/cherry-studio (41442 stars) \u2014 build integration engine",
+    "Engine wrapper: CopilotKit/CopilotKit (29351 stars) \u2014 build integration engine",
+    "Content leverage: 'Building a Process Scheduling Simulator: Relearning TypeScri' (1 reactions) \u2014 create SolarPunk angle",
     "Content leverage: 'I Was So Angry, I Actually Shipped It' (4 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'Brew: I Built a Real-Time Voice AI Drive-Thru Barista with G' (1 reactions) \u2014 create SolarPunk angle",
-    "Content leverage: 'We Scanned 17 Popular MCP Servers \u2014 Here's What We Found' (1 reactions) \u2014 create SolarPunk angle"
+    "Content leverage: 'Brew: I Built a Real-Time Voice AI Drive-Thru Barista with G' (1 reactions) \u2014 create SolarPunk angle"
   ],
   "raw_keys": [
     "coingecko_global",

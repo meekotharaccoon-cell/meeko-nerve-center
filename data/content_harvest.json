@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-03-14T03:10:33.074652+00:00",
+  "timestamp": "2026-03-14T05:02:09.536642+00:00",
   "sources": {
     "hackernews": [
       {
         "title": "1M context is now generally available for Opus 4.6 and Sonnet 4.6",
         "url": "https://claude.com/blog/1m-context-ga",
-        "score": 333,
-        "source": "hackernews"
-      },
-      {
-        "title": "I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites",
-        "url": "https://benzimmermann.dev/blog/algolia-docsearch-admin-keys",
-        "score": 90,
-        "source": "hackernews"
-      },
-      {
-        "title": "Games with loot boxes to get minimum 16 age rating across Europe",
-        "url": "https://www.bbc.com/news/articles/cge84xqjg5lo",
-        "score": 49,
+        "score": 460,
         "source": "hackernews"
       },
       {
         "title": "Can I run AI locally?",
         "url": "https://www.canirun.ai/",
-        "score": 986,
+        "score": 1060,
+        "source": "hackernews"
+      },
+      {
+        "title": "I found 39 Algolia admin keys exposed across open source documentation sites",
+        "url": "https://benzimmermann.dev/blog/algolia-docsearch-admin-keys",
+        "score": 103,
         "source": "hackernews"
       },
       {
         "title": "Show HN: Channel Surfer \u2013 Watch YouTube like it\u2019s cable TV",
         "url": "https://channelsurfer.tv",
-        "score": 427,
+        "score": 445,
+        "source": "hackernews"
+      },
+      {
+        "title": "Qatar helium shutdown puts chip supply chain on a two-week clock",
+        "url": "https://www.tomshardware.com/tech-industry/qatar-helium-shutdown-puts-chip-supply-chain-on-a-two-week-clock",
+        "score": 485,
         "source": "hackernews"
       }
     ],
@@ -62,16 +62,12 @@
     ]
   },
   "gaza_weather": {
-    "temp_c": 18.9,
-    "vibe": "sunny",
-    "code": 1,
+    "temp_c": 20.7,
+    "vibe": "partly cloudy",
+    "code": 2,
     "location": "Gaza City"
   },
   "trending_themes": [
-    {
-      "word": "across",
-      "count": 2
-    },
     {
       "word": "context",
       "count": 1
@@ -90,6 +86,10 @@
     },
     {
       "word": "sonnet",
+      "count": 1
+    },
+    {
+      "word": "locally",
       "count": 1
     },
     {
@@ -113,6 +113,10 @@
       "count": 1
     },
     {
+      "word": "across",
+      "count": 1
+    },
+    {
       "word": "open",
       "count": 1
     },
@@ -129,23 +133,19 @@
       "count": 1
     },
     {
-      "word": "games",
+      "word": "show",
       "count": 1
     },
     {
-      "word": "loot",
+      "word": "channel",
       "count": 1
     },
     {
-      "word": "boxes",
+      "word": "surfer",
       "count": 1
     },
     {
-      "word": "minimum",
-      "count": 1
-    },
-    {
-      "word": "rating",
+      "word": "watch",
       "count": 1
     }
   ],

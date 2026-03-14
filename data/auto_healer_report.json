@@ -1,11 +1,13 @@
 {
-  "timestamp": "2026-03-14T03:11:46.257175+00:00",
+  "timestamp": "2026-03-14T05:07:32.213867+00:00",
   "healed": [],
   "auto_installed": [],
   "skipped": [
+    "NANOSHOP_ENGINE",
     "NARRATOR"
   ],
   "failed_engines_seen": [
+    "NANOSHOP_ENGINE",
     "NARRATOR"
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "cycles": 90,
-  "posted": 96,
-  "failed": 174,
+  "cycles": 91,
+  "posted": 97,
+  "failed": 176,
   "history": [
     {
       "platform": "linkedin",
@@ -578,7 +578,13 @@
       "niche": "",
       "info": "manual",
       "at": "2026-03-14T03:11:08.205247+00:00"
+    },
+    {
+      "platform": "all",
+      "niche": "",
+      "info": "manual",
+      "at": "2026-03-14T05:04:46.445140+00:00"
     }
   ],
-  "last_run": "2026-03-14T03:11:08.204727+00:00"
+  "last_run": "2026-03-14T05:04:46.444627+00:00"
 }
