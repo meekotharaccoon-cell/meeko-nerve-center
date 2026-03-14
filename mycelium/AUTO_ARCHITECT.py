@@ -14,15 +14,20 @@ def build_entirety():
 
         skills = re.findall(r'\[SKILL\]: def (\w+)', mutation)
         
-        # Build logic with explicit spacing
         exec_lines = []
         for s in skills:
             exec_lines.append(f"    try:\n        {s}()\n    except Exception as e:\n        print(f'Skill {s} failed: {{e}}')")
         
         exec_block = "\n".join(exec_lines) if exec_lines else "    pass"
 
-        main_code = f"""# --- SYNTHETIC LOGIC v1.1 ---
+        main_code = f"""# -*- coding: utf-8 -*-
+# --- SYNTHETIC LOGIC v1.2 ---
 import sys, os
+import io
+
+# Force UTF-8 for console output to prevent charmap errors
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 sys.path.append(os.path.abspath('../../mycelium'))
 try:
     from SWARM_TOOLBOX import *
@@ -30,7 +35,7 @@ except:
     pass
 
 def execute():
-    print("🧬 System Online. Running Synthesis...")
+    print("SYSTEM ONLINE: Running Synthesis Loop...")
 {exec_block}
 
 if __name__ == "__main__":
@@ -38,7 +43,7 @@ if __name__ == "__main__":
 """
         with open(os.path.join(project_dir, 'main.py'), 'w', encoding='utf-8') as f:
             f.write(main_code)
-        print("🏗️ Architect: Logic spacing calibrated.")
+        print("🏗️ Architect: Emojis purged, UTF-8 wrapper injected.")
 
     except Exception as err:
         print(f"🏗️ Architect Failure: {err}")
