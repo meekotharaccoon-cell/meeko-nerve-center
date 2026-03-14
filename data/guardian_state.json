@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-03-14T22:08:30.201801",
+  "last_checked": "2026-03-14T22:09:46.960628",
   "workflow_names": [
     "KOFI_PAYMENT.yml",
     "BUILD_YOURSELF.yml",
@@ -120,6 +120,7 @@
     "RESONANCE_CONVERTER.py",
     "DUPLICATE_STRIKER.py",
     "SYNAPSE.py",
+    "OFFLINE_BRAIN.py",
     "ART_GENERATOR.py",
     "NANOSHOP_ENGINE.py",
     "RESONANCE_ENGINE.py",
