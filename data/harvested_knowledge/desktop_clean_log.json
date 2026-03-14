@@ -1,0 +1,472 @@
+{
+  "runs": [
+    {
+      "at": "2026-02-22T18:52:33.757538+00:00",
+      "moved": 64,
+      "moved_files": [
+        {
+          "file": " Ultimate AI Master.lnk",
+          "to": "Shortcuts\\ Ultimate AI Master.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": " Ultimate AI Self.lnk",
+          "to": "Shortcuts\\ Ultimate AI Self.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": " Ultimate AI Status.lnk",
+          "to": "Shortcuts\\ Ultimate AI Status.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "Atomic Mycelium.lnk",
+          "to": "Shortcuts\\Atomic Mycelium.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "BACKUP_20260220_132020",
+          "to": "BACKUPS\\BACKUP_20260220_132020",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260220_132033",
+          "to": "BACKUPS\\BACKUP_20260220_132033",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260221_214007",
+          "to": "BACKUPS\\BACKUP_20260221_214007",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260221_214015",
+          "to": "BACKUPS\\BACKUP_20260221_214015",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260221_215015",
+          "to": "BACKUPS\\BACKUP_20260221_215015",
+          "reason": "backup directory"
+        },
+        {
+          "file": "Desktop_Cleanup_20260214_154142.log",
+          "to": "Logs\\Desktop_Cleanup_20260214_154142.log",
+          "reason": "log file"
+        },
+        {
+          "file": "Desktop_Cleanup_20260214_154238.log",
+          "to": "Logs\\Desktop_Cleanup_20260214_154238.log",
+          "reason": "log file"
+        },
+        {
+          "file": "GAZA_ROSE_COMPLETE_LOG.txt",
+          "to": "Logs\\GAZA_ROSE_COMPLETE_LOG.txt",
+          "reason": "log file"
+        },
+        {
+          "file": "GAZA_ROSE_CONSCIOUSNESS.bat",
+          "to": "Art\\GAZA_ROSE_CONSCIOUSNESS.bat",
+          "reason": "art-related bat"
+        },
+        {
+          "file": "GAZA_ROSE_EMPIRE.bat",
+          "to": "Art\\GAZA_ROSE_EMPIRE.bat",
+          "reason": "art-related bat"
+        },
+        {
+          "file": "LAUNCH_GAZA_ROSE_EMPIRE.bat",
+          "to": "Art\\LAUNCH_GAZA_ROSE_EMPIRE.bat",
+          "reason": "art-related bat"
+        },
+        {
+          "file": "MEEKO MYCELIUM.lnk",
+          "to": "Shortcuts\\MEEKO MYCELIUM.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "Notion.lnk",
+          "to": "Shortcuts\\Notion.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "Postman.lnk",
+          "to": "Shortcuts\\Postman.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "_build_store.py",
+          "to": "_Archive\\_build_store.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_check_perms.py",
+          "to": "_Archive\\_check_perms.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_create_products.py",
+          "to": "_Archive\\_create_products.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_debug.py",
+          "to": "_Archive\\_debug.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_diag.py",
+          "to": "_Archive\\_diag.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_diagnose401.py",
+          "to": "_Archive\\_diagnose401.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_do_what_you_can.py",
+          "to": "_Archive\\_do_what_you_can.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_extract_creds.py",
+          "to": "_Archive\\_extract_creds.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_finalize_repos.py",
+          "to": "_Archive\\_finalize_repos.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_first_cycle.py",
+          "to": "_Archive\\_first_cycle.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_fix_launch.py",
+          "to": "_Archive\\_fix_launch.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_fix_repos.py",
+          "to": "_Archive\\_fix_repos.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_gen_products_v2.py",
+          "to": "_Archive\\_gen_products_v2.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_generate_products.py",
+          "to": "_Archive\\_generate_products.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_get_ci_branch.py",
+          "to": "_Archive\\_get_ci_branch.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_get_errors.py",
+          "to": "_Archive\\_get_errors.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_gumroad_check.py",
+          "to": "_Archive\\_gumroad_check.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_merge_prs.py",
+          "to": "_Archive\\_merge_prs.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_patch_engine.py",
+          "to": "_Archive\\_patch_engine.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_push_ci.py",
+          "to": "_Archive\\_push_ci.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_push_ci_pr.py",
+          "to": "_Archive\\_push_ci_pr.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_read_ci_fail.py",
+          "to": "_Archive\\_read_ci_fail.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_read_workflows.py",
+          "to": "_Archive\\_read_workflows.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_reality_check.py",
+          "to": "_Archive\\_reality_check.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_scan_secrets.py",
+          "to": "_Archive\\_scan_secrets.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_send_emails_now.py",
+          "to": "_Archive\\_send_emails_now.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_setup_gallery_repo.py",
+          "to": "_Archive\\_setup_gallery_repo.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_state_check.py",
+          "to": "_Archive\\_state_check.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_test_server.py",
+          "to": "_Archive\\_test_server.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_ts.py",
+          "to": "_Archive\\_ts.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_update_keys.py",
+          "to": "_Archive\\_update_keys.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "_write_mcp.py",
+          "to": "_Archive\\_write_mcp.py",
+          "reason": "temp/one-off script"
+        },
+        {
+          "file": "daily_report_20260217.json",
+          "to": "Reports\\daily_report_20260217.json",
+          "reason": "report file"
+        },
+        {
+          "file": "daily_report_20260218.json",
+          "to": "Reports\\daily_report_20260218.json",
+          "reason": "report file"
+        },
+        {
+          "file": "daily_report_20260219.json",
+          "to": "Reports\\daily_report_20260219.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260217_231845.json",
+          "to": "Reports\\health_report_20260217_231845.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260217_232234.json",
+          "to": "Reports\\health_report_20260217_232234.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260218_065055.json",
+          "to": "Reports\\health_report_20260218_065055.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260218_110434.json",
+          "to": "Reports\\health_report_20260218_110434.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260218_111406.json",
+          "to": "Reports\\health_report_20260218_111406.json",
+          "reason": "report file"
+        },
+        {
+          "file": "health_report_20260218_114613.json",
+          "to": "Reports\\health_report_20260218_114613.json",
+          "reason": "report file"
+        },
+        {
+          "file": "system_report.txt",
+          "to": "Reports\\system_report.txt",
+          "reason": "report file"
+        },
+        {
+          "file": "ultimate_ai_self (1).py",
+          "to": "_Archive\\ultimate_ai_self (1).py",
+          "reason": "old version"
+        },
+        {
+          "file": "ultimate_ai_self (2).py",
+          "to": "_Archive\\ultimate_ai_self (2).py",
+          "reason": "old version"
+        },
+        {
+          "file": "ultimate_ai_self_v14.py",
+          "to": "_Archive\\ultimate_ai_self_v14.py",
+          "reason": "old version"
+        },
+        {
+          "file": "ultimateai_events.jsonl",
+          "to": "Logs\\ultimateai_events.jsonl",
+          "reason": "log file"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-23T08:18:00.405060+00:00",
+      "moved": 2,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260222_160450",
+          "to": "BACKUPS\\BACKUP_20260222_160450",
+          "reason": "backup directory"
+        },
+        {
+          "file": "BACKUP_20260223_031638",
+          "to": "BACKUPS\\BACKUP_20260223_031638",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-23T08:34:30.100349+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-23T12:00:03.153230+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260223_033524",
+          "to": "BACKUPS\\BACKUP_20260223_033524",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-23T15:50:41.664736+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-23T17:49:07.445330+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260223_105051",
+          "to": "BACKUPS\\BACKUP_20260223_105051",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-24T03:41:26.239841+00:00",
+      "moved": 3,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260223_224112",
+          "to": "BACKUPS\\BACKUP_20260223_224112",
+          "reason": "backup directory"
+        },
+        {
+          "file": "Brave.lnk",
+          "to": "Shortcuts\\Brave.lnk",
+          "reason": "shortcut"
+        },
+        {
+          "file": "health_report_20260223_132517.json",
+          "to": "Reports\\health_report_20260223_132517.json",
+          "reason": "report file"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-24T05:05:26.820364+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-24T05:06:08.046301+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-25T00:51:08.363891+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260224_000820",
+          "to": "BACKUPS\\BACKUP_20260224_000820",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-25T00:52:18.671149+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-25T12:00:04.499747+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260224_195237",
+          "to": "BACKUPS\\BACKUP_20260224_195237",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-26T12:00:03.682399+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    },
+    {
+      "at": "2026-02-26T21:01:59.593878+00:00",
+      "moved": 1,
+      "moved_files": [
+        {
+          "file": "BACKUP_20260226_160135",
+          "to": "BACKUPS\\BACKUP_20260226_160135",
+          "reason": "backup directory"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "at": "2026-02-26T21:02:00.160319+00:00",
+      "moved": 0,
+      "moved_files": [],
+      "errors": []
+    }
+  ]
+}

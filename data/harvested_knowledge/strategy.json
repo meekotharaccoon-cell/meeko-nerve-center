@@ -1,0 +1,27 @@
+{
+  "generated": "2026-02-25",
+  "method": "rule-based",
+  "primary_crisis": "Congo (DRC)",
+  "all_crises": [
+    "Gaza",
+    "Congo (DRC)",
+    "Sudan"
+  ],
+  "post_weights": {
+    "awareness": 1,
+    "gallery": 3,
+    "fork": 5,
+    "info": 1,
+    "punchy": 4
+  },
+  "push_channel": "gallery",
+  "knowledge_hook": "[I made MCP cheaper](https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html)",
+  "signals_summary": {
+    "total_14d_views": 0,
+    "total_14d_unique": 0,
+    "top_repo": "meeko-nerve-center",
+    "top_engagement": 0
+  },
+  "recommendations": [],
+  "reasoning": "Primary crisis: Congo (DRC) (day rotation + traffic signals). Push channel: gallery. Post weights favor: fork. Knowledge hook: '[I made MCP cheaper](https://kanyilmaz.me/2026/02/23/cli-vs-'"
+}

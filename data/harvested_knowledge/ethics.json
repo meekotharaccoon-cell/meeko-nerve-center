@@ -1,0 +1,40 @@
+{
+  "name": "SolarPunk Nexus Ethics",
+  "version": "2.0",
+  "description": "Immutable ethical rules for SolarPunk Nexus",
+  "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "rules": {
+    "transparency": {
+      "code_open": true,
+      "logs_public": true,
+      "decisions_explainable": true
+    },
+    "sovereignty": {
+      "self_hostable": true,
+      "no_backdoors": true,
+      "user_owned_data": true
+    },
+    "redistribution": {
+      "required": true,
+      "mechanism": "value_flow",
+      "target": "crisis_response"
+    },
+    "replication": {
+      "requires_consent": true,
+      "max_per_host": 3,
+      "must_teach": true,
+      "ethical_distribution": true
+    },
+    "healing": {
+      "self_repair": true,
+      "graceful_degradation": true,
+      "fail_open": true
+    }
+  },
+  "enforcement": {
+    "immutable": true,
+    "hash_verified": true,
+    "tamper_evident": true,
+    "auto_correction": true
+  }
+}

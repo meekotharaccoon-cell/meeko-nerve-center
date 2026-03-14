@@ -1,0 +1,86 @@
+{
+  "date": "2026-02-26",
+  "count": 10,
+  "quakes": [
+    {
+      "place": "176 km SSE of Vilyuchinsk, Russia",
+      "mag": 5.7,
+      "time": "2026-02-26T04:59",
+      "alert": "green",
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0dq"
+    },
+    {
+      "place": "120 km WNW of Houma, Tonga",
+      "mag": 5.2,
+      "time": "2026-02-26T02:49",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0da"
+    },
+    {
+      "place": "east of the Kuril Islands",
+      "mag": 5.2,
+      "time": "2026-02-25T22:40",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0bx"
+    },
+    {
+      "place": "83 km SSE of Mawlaik, Burma (Myanmar)",
+      "mag": 5.1,
+      "time": "2026-02-25T16:51",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s096"
+    },
+    {
+      "place": "84 km SE of Severo-Kuril\u2019sk, Russia",
+      "mag": 5.1,
+      "time": "2026-02-26T07:04",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ek"
+    },
+    {
+      "place": "196 km SSE of Vilyuchinsk, Russia",
+      "mag": 5,
+      "time": "2026-02-26T05:58",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ea"
+    },
+    {
+      "place": "109 km WNW of Pariaman, Indonesia",
+      "mag": 5,
+      "time": "2026-02-25T17:49",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s09j"
+    },
+    {
+      "place": "73 km SSW of Ollag\u00fce, Chile",
+      "mag": 4.9,
+      "time": "2026-02-26T09:07",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0ew"
+    },
+    {
+      "place": "66 km E of Nichinan, Japan",
+      "mag": 4.9,
+      "time": "2026-02-25T17:17",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s09b"
+    },
+    {
+      "place": "78 km NNE of Isangel, Vanuatu",
+      "mag": 4.9,
+      "time": "2026-02-25T17:12",
+      "alert": null,
+      "tsunami": 0,
+      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s09a"
+    }
+  ]
+}

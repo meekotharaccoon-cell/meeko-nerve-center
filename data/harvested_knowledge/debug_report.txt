@@ -1,0 +1,167 @@
+SOLARPUNK SYSTEM DIAGNOSTIC - Mon 02/02/2026 22:10:22.07 
+=========================================== 
+[1] PYTHON ENVIRONMENT 
+----------------------- 
+Python 3.14.2
+Package            Version
+------------------ ---------
+blinker            1.9.0
+certifi            2026.1.4
+charset-normalizer 3.4.4
+click              8.3.1
+colorama           0.4.6
+Flask              3.1.2
+idna               3.11
+itsdangerous       2.2.0
+Jinja2             3.1.6
+MarkupSafe         3.0.3
+numpy              2.4.2
+opencv-python      4.13.0.90
+pillow             12.1.0
+pip                25.3
+python-dotenv      1.2.1
+qrcode             8.2
+requests           2.32.5
+urllib3            2.6.3
+Werkzeug           3.1.5
+ 
+[2] DIRECTORY STRUCTURE 
+----------------------- 
+C:\Users\carol\SolarPunk\data
+C:\Users\carol\SolarPunk\debug.bat
+C:\Users\carol\SolarPunk\debug_log.txt
+C:\Users\carol\SolarPunk\debug_report.txt
+C:\Users\carol\SolarPunk\dist
+C:\Users\carol\SolarPunk\emergency_fix.bat
+C:\Users\carol\SolarPunk\fix_github.bat
+C:\Users\carol\SolarPunk\memvid_repo
+C:\Users\carol\SolarPunk\recovery_agent.py
+C:\Users\carol\SolarPunk\recovery_config.yaml
+C:\Users\carol\SolarPunk\scripts
+C:\Users\carol\SolarPunk\static
+C:\Users\carol\SolarPunk\system_status.txt
+C:\Users\carol\SolarPunk\templates
+C:\Users\carol\SolarPunk\test_fix.bat
+C:\Users\carol\SolarPunk\web_dashboard
+C:\Users\carol\SolarPunk\.git\COMMIT_EDITMSG
+C:\Users\carol\SolarPunk\.git\config
+C:\Users\carol\SolarPunk\.git\description
+C:\Users\carol\SolarPunk\.git\HEAD
+C:\Users\carol\SolarPunk\.git\hooks
+C:\Users\carol\SolarPunk\.git\index
+C:\Users\carol\SolarPunk\.git\info
+C:\Users\carol\SolarPunk\.git\logs
+C:\Users\carol\SolarPunk\.git\objects
+C:\Users\carol\SolarPunk\.git\refs
+C:\Users\carol\SolarPunk\.git\hooks\applypatch-msg.sample
+C:\Users\carol\SolarPunk\.git\hooks\commit-msg.sample
+C:\Users\carol\SolarPunk\.git\hooks\fsmonitor-watchman.sample
+C:\Users\carol\SolarPunk\.git\hooks\post-update.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-applypatch.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-commit.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-merge-commit.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-push.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-rebase.sample
+C:\Users\carol\SolarPunk\.git\hooks\pre-receive.sample
+C:\Users\carol\SolarPunk\.git\hooks\prepare-commit-msg.sample
+C:\Users\carol\SolarPunk\.git\hooks\push-to-checkout.sample
+C:\Users\carol\SolarPunk\.git\hooks\sendemail-validate.sample
+C:\Users\carol\SolarPunk\.git\hooks\update.sample
+C:\Users\carol\SolarPunk\.git\info\exclude
+C:\Users\carol\SolarPunk\.git\logs\HEAD
+C:\Users\carol\SolarPunk\.git\logs\refs
+C:\Users\carol\SolarPunk\.git\logs\refs\heads
+C:\Users\carol\SolarPunk\.git\logs\refs\heads\master
+C:\Users\carol\SolarPunk\.git\objects\06
+C:\Users\carol\SolarPunk\.git\objects\22
+C:\Users\carol\SolarPunk\.git\objects\28
+C:\Users\carol\SolarPunk\.git\objects\34
+C:\Users\carol\SolarPunk\.git\objects\55
+C:\Users\carol\SolarPunk\.git\objects\56
+C:\Users\carol\SolarPunk\.git\objects\76
+C:\Users\carol\SolarPunk\.git\objects\79
+C:\Users\carol\SolarPunk\.git\objects\7d
+C:\Users\carol\SolarPunk\.git\objects\87
+C:\Users\carol\SolarPunk\.git\objects\dc
+C:\Users\carol\SolarPunk\.git\objects\info
+C:\Users\carol\SolarPunk\.git\objects\pack
+C:\Users\carol\SolarPunk\.git\objects\06\c7623a02348ccf966088ef670d061b1d6d5541
+C:\Users\carol\SolarPunk\.git\objects\22\6fe2c03d3efa347f2822b8949bb029c3bbc5de
+C:\Users\carol\SolarPunk\.git\objects\28\9a3ed3e8ac580ba66d3fc50396ae6b3662ee32
+C:\Users\carol\SolarPunk\.git\objects\34\5000974daf2e1ffd223d6f75d2b642162f4267
+C:\Users\carol\SolarPunk\.git\objects\34\5c5ae2fe4a2592776ccca433fdd2ab4715afe9
+C:\Users\carol\SolarPunk\.git\objects\55\87ee2da72d443ed0a723624ec7e7133b900718
+C:\Users\carol\SolarPunk\.git\objects\56\e748253208197b127ad5771bb64f038eb6d12f
+C:\Users\carol\SolarPunk\.git\objects\76\2f019fb8c43fb19221818a2d8b7dc6e5a84192
+C:\Users\carol\SolarPunk\.git\objects\79\b7965acd38ddce6f00be14423a026295775671
+C:\Users\carol\SolarPunk\.git\objects\7d\2b62e8a6280ea1158de34fe0a50f69a079f255
+C:\Users\carol\SolarPunk\.git\objects\87\a7af95423e522fc06016814d21f60ac2583be8
+C:\Users\carol\SolarPunk\.git\objects\dc\f18fcabe0495c40179c6de73e50bdbfc3be503
+C:\Users\carol\SolarPunk\.git\refs\heads
+C:\Users\carol\SolarPunk\.git\refs\tags
+C:\Users\carol\SolarPunk\.git\refs\heads\master
+C:\Users\carol\SolarPunk\dist\index.html
+C:\Users\carol\SolarPunk\scripts\auto_fix.py
+ 
+[3] GIT STATUS 
+------------- 
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   debug_report.txt
+	modified:   dist/index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	recovery_config.yaml
+	scripts/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+origin	https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git (fetch)
+origin	https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git (push)
+ 
+[4] CLOUDFLARE CHECK 
+-------------------- 
+000 
+[5] PYTHON MODULE CHECK 
+----------------------- 
+  File "<string>", line 1
+    try: import flask; print('flask: OK'); except: print('flask: MISSING')
+                                           ^^^^^^
+SyntaxError: invalid syntax
+  File "<string>", line 1
+    try: import cv2; print('opencv: OK'); except: print('opencv: MISSING')
+                                          ^^^^^^
+SyntaxError: invalid syntax
+  File "<string>", line 1
+    try: import numpy; print('numpy: OK'); except: print('numpy: MISSING')
+                                           ^^^^^^
+SyntaxError: invalid syntax
+  File "<string>", line 1
+    try: import qrcode; print('qrcode: OK'); except: print('qrcode: MISSING')
+                                             ^^^^^^
+SyntaxError: invalid syntax
+ 
+[6] AGENT FILES CHECK 
+--------------------- 
+ 
+[7] KEY DIRECTORIES 
+------------------- 
+web_dashboard: EXISTS 
+memvid_repo: EXISTS 
+dist: EXISTS 
+data: EXISTS 
+ 
+[8] WINDOWS SPECIFICS 
+--------------------- 
+
+Microsoft Windows [Version 10.0.19045.6466]
+PowerShell version: 
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      19041  6456    
+
+
+ 

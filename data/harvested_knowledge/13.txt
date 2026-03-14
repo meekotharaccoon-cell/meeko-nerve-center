@@ -1,0 +1,11 @@
+# Test China endpoint
+$headers = @{
+    "Authorization" = "Bearer sk-h2IXDq1bFzbP7dTMXg8BVXjY543m0Zysi4y4kx6olA1gtG0b"
+}
+Invoke-WebRequest -Uri "https://api.moonshot.cn/v1/models" -Headers $headers -Method Get
+
+# Test Global endpoint  
+$headers = @{
+    "Authorization" = "Bearer sk-h2IXDq1bFzbP7dTMXg8BVXjY543m0Zysi4y4kx6olA1gtG0b"
+}
+Invoke-WebRequest -Uri "https://api.moonshot.ai/v1/models" -Headers $headers -Method Get

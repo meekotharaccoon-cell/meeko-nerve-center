@@ -1,0 +1,17 @@
+[
+    {
+        "author": "AI",
+        "message": "Hello! I'm here to help you share conversations.",
+        "type": "ai"
+    },
+    {
+        "author": "You",
+        "message": "Great! How do we start?",
+        "type": "human"
+    },
+    {
+        "author": "AI",
+        "message": "Just add more conversations to this JSON file!",
+        "type": "ai"
+    }
+]

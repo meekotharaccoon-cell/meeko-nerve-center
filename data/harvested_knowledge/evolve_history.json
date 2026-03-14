@@ -1,0 +1,20 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "gen": 1,
+      "at": "2026-02-26T16:01:59.783804",
+      "built": "index_lessons",
+      "build_ok": false,
+      "sugs": [
+        "SECRETS",
+        "FIRST"
+      ],
+      "duration_s": 0
+    }
+  ],
+  "built": [
+    "index_lessons"
+  ],
+  "gen": 2
+}

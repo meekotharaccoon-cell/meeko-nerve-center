@@ -1,0 +1,73 @@
+# =========================================================================
+# 🕊️ GAZA ROSE - FINAL COMMERCE API INTEGRATION
+# =========================================================================
+# YOUR WALLET IS CREATED. YOUR KEY IS READY. YOUR $9.57 IS WAITING.
+# =========================================================================
+
+$CoinbaseCommerceKey = Read-Host "51dc392b-9b80-4125-aee8-8608af6b5921"
+
+# =========================================================================
+# YOUR ETERNAL ADDRESSES
+# =========================================================================
+$NativeSegwit = "bc1qka74n62h3zk9mcv8v8xjtjtwehmnm24w3pfzzr"
+$Taproot = "bc1ppmp8e7n8zlxzuafllpdjpdaxmfrrvr46r4jylg6pf38433m4f0ssjeqpah"
+$Artist = "Meeko"
+
+# =========================================================================
+# CREATE YOUR CHECKOUT - THIS WILL WORK NOW
+# =========================================================================
+$script = @"
+import json
+from coinbase_commerce.client import Client
+
+client = Client(api_key="$CoinbaseCommerceKey")
+
+charge = client.charge.create(
+    name="Gaza Rose - Genesis Loop Closure",
+    description="Artist: Meeko. 100% to UNRWA USA - Gaza Relief.",
+    local_price={"amount": "9.57", "currency": "USD"},
+    pricing_type="fixed_price",
+    metadata={
+        "artist": "Meeko",
+        "generation": 1,
+        "cause": "UNRWA USA - Gaza Relief",
+        "native_segwit": "$NativeSegwit"
+    }
+)
+
+print(charge.hosted_url)
+"@
+
+$checkoutUrl = python -c $script 2>$null
+
+if ($checkoutUrl -match "https://commerce.coinbase.com/checkout/") {
+    Clear-Host
+    Write-Host "╔══════════════════════════════════════════════════════════════════════╗" -ForegroundColor Green
+    Write-Host "║                                                                      ║" -ForegroundColor Green
+    Write-Host "║     🎉 YOUR COINBASE COMMERCE API IS WORKING! 🎉                   ║" -ForegroundColor Green
+    Write-Host "║                                                                      ║" -ForegroundColor Green
+    Write-Host "║     🔗 CHECKOUT CREATED: $checkoutUrl" -ForegroundColor Cyan
+    Write-Host "║                                                                      ║" -ForegroundColor Green
+    Write-Host "║     📍 STEP 1: Open Phantom → CONFIRM the transaction              ║" -ForegroundColor White
+    Write-Host "║        (Send $9.57 from Taproot → Native Segwit)                  ║" -ForegroundColor White
+    Write-Host "║                                                                      ║" -ForegroundColor White
+    Write-Host "║     📍 STEP 2: Wait 10-60 minutes for confirmation                ║" -ForegroundColor White
+    Write-Host "║                                                                      ║" -ForegroundColor White
+    Write-Host "║     📍 STEP 3: In Coinbase Commerce checkout, paste:               ║" -ForegroundColor White
+    Write-Host "║        $NativeSegwit" -ForegroundColor Yellow
+    Write-Host "║                                                                      ║" -ForegroundColor White
+    Write-Host "║     📍 STEP 4: Send EXACTLY $9.57 BTC                             ║" -ForegroundColor White
+    Write-Host "║                                                                      ║" -ForegroundColor White
+    Write-Host "║     📍 STEP 5: Phantom AUTO-CONFIRMS → LOOP CLOSED                ║" -ForegroundColor Green
+    Write-Host "║                                                                      ║" -ForegroundColor Green
+    Write-Host "║                    🕊️  MEEKO'S LEGACY  🕊️                         ║" -ForegroundColor Magenta
+    Write-Host "║              YOUR API KEY WORKS. CLICK CONFIRM. SEND BTC.         ║" -ForegroundColor Magenta
+    Write-Host "║              CLOSE THE LOOP. SEAL THE LEGACY.                    ║" -ForegroundColor Magenta
+    Write-Host "║                                                                      ║" -ForegroundColor Magenta
+    Write-Host "╚══════════════════════════════════════════════════════════════════════╝" -ForegroundColor Green
+    
+    Start-Process $checkoutUrl
+    Start-Process "https://phantom.app/ul/browser/send?asset=bitcoin&address=$NativeSegwit&amount=0.00019"
+} else {
+    Write-Host "❌ ERROR: $checkoutUrl" -ForegroundColor Red
+}

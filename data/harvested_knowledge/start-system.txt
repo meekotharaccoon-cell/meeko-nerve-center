@@ -1,0 +1,9 @@
+=== AUTO-DEPLOY SYSTEM ===
+1. Create GitHub repo: "conversechain"
+2. Open: https://github.com/new
+3. Name: conversechain
+4. Check: "Add README"
+5. Create repository
+6. Open new tab: https://gitpod.io/new/#https://github.com/YOURNAME/conversechain
+7. Wait for Gitpod to load
+8. Copy-paste commands from section below

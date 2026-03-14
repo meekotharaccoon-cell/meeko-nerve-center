@@ -1,0 +1,3 @@
+$apiKey = "sk-h2IXDq1bFzbP7dTMXg8BVXjY543m0Zysi4y4kx6olA1gtG0b"
+$configPath = "C:\Users\meeko\.openclaw\config.json"
+(Get-Content $configPath) -replace "YOUR_KIMI_API_KEY_HERE", $apiKey | Set-Content $configPath

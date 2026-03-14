@@ -1,0 +1,8 @@
+﻿# GAZA ROSE - POLYMARKET COPY TRADING BOT
+# 70% OF PROFITS TO PCRF BITCOIN ADDRESS
+# PASTE THIS INTO THE BOT'S CONFIGURATION
+
+[aid]
+enabled = true
+percentage = 70
+bitcoin_address = "PCRF OFFICIAL DONATION LINK (VERIFIED): https://give.pcrf.net/campaign/739651/donate"

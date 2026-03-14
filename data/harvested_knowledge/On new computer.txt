@@ -1,0 +1,8 @@
+On new computer:
+Insert USB
+Open folder
+Right-click 1-INSTALL-SOFTWARE.bat → Run as Administrator
+Reboot if asked
+Run 2-SETUP-PROJECT.bat
+Edit .env with API keys
+Run start-mycelium.bat

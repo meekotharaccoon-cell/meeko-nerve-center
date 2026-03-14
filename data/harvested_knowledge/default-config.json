@@ -1,0 +1,90 @@
+{
+  "_comment": "Copy this file to your target project's .ralph/config.json and fill in your real Tailscale IPs",
+  "version": "7.0",
+  "project": "your-project-name",
+
+  "roles": {
+    "backend": {
+      "directory": "src/backend",
+      "instructions": "You are the BACKEND agent. You write Express.js microservices.\n- Services live in src/backend/<service>/ with their own package.json\n- Run npm install INSIDE the service directory, never in project root\n- Servers MUST bind to 0.0.0.0 (not localhost)\n- Enable CORS for all origins\n- Auth service runs on port 3002, all other APIs on port 3001\n- Use in-memory storage (arrays/objects) unless told otherwise\n- JSON responses always. Errors: { \"error\": \"message\" }\n- Auth header: Authorization: Bearer <token>",
+      "fix_instructions": "- Server must bind to 0.0.0.0 (not localhost)\n- Enable CORS for all origins\n- Auth service on port 3002, other APIs on port 3001\n- Run npm install inside the service directory\n- Do NOT modify frontend or test files",
+      "task_description": "Express.js microservices in src/backend/<service>/, each with own package.json. Bind to 0.0.0.0, enable CORS for all origins, use in-memory storage. JSON responses always.",
+      "file_extensions": ["*.js", "*.json", "*.ts"]
+    },
+    "frontend": {
+      "directory": "src/frontend",
+      "instructions": "You are the FRONTEND agent. You write vanilla HTML/CSS/JS pages.\n- Pages live in src/frontend/<feature>/\n- No frameworks. Plain HTML, CSS, and vanilla JavaScript only\n- Use fetch() for API calls with proper error handling\n- Include CORS headers in fetch: mode 'cors'\n- Each page should be self-contained (HTML + inline or linked CSS/JS)\n- Do NOT modify backend or test files",
+      "fix_instructions": "- Use vanilla HTML/CSS/JS only, no frameworks\n- Do NOT modify backend or test files",
+      "task_description": "Vanilla HTML/CSS/JS pages in src/frontend/<feature>/. No frameworks. Self-contained pages. Use fetch() for API calls to backend IPs from config.",
+      "file_extensions": ["*.html", "*.css", "*.js"]
+    },
+    "tests": {
+      "directory": "src/tests",
+      "instructions": "You are the TESTS agent. You write bash test scripts using curl.\n- Test scripts live in src/tests/<area>/\n- Use bash with curl to test API endpoints\n- Test both success and error cases\n- Check HTTP status codes and response body content\n- Print PASS/FAIL for each test case\n- Exit with code 0 if all pass, non-zero if any fail\n- Do NOT modify backend or frontend files",
+      "fix_instructions": "- Use bash + curl for testing\n- Do NOT modify backend or frontend files",
+      "task_description": "Bash test scripts in src/tests/<area>/. Use curl to test APIs. Print PASS/FAIL per test. Exit 0 if all pass, non-zero if any fail.",
+      "file_extensions": ["*.sh", "*.bats"]
+    }
+  },
+
+  "agents": {
+    "pc1": {
+      "name": "your-backend-agent",
+      "role": "backend",
+      "host": "100.x.x.1",
+      "ssh_alias": "pc1"
+    },
+    "pc2": {
+      "name": "your-frontend-agent",
+      "role": "frontend",
+      "host": "100.x.x.2",
+      "ssh_alias": "pc2"
+    },
+    "pc3": {
+      "name": "your-tests-agent",
+      "role": "tests",
+      "host": "100.x.x.3",
+      "ssh_alias": "pc3"
+    }
+  },
+
+  "limits": {
+    "max_tasks_per_agent": 10,
+    "max_retries_per_task": 3,
+    "task_timeout_minutes": 30,
+    "stop_hour": 6,
+    "push_retry_attempts": 5,
+    "push_retry_base_delay": 10,
+    "sleep_between_tasks_seconds": 60,
+    "sleep_no_tasks_seconds": 120
+  },
+
+  "manager": {
+    "enabled": true,
+    "poll_interval_seconds": 300,
+    "max_fix_attempts": 3,
+    "max_daily_reviews": 50,
+    "max_consecutive_api_failures": 3,
+    "ai_provider": "claude",
+    "claude_model": "claude-sonnet-4-20250514",
+    "stop_hour": 6,
+    "auto_approve_success": false,
+    "packup_threshold": 0.75,
+    "require_human_review_categories": [
+      "security",
+      "database-schema",
+      "api-breaking-change"
+    ]
+  },
+
+  "telegram": {
+    "enabled": false,
+    "bot_token": "",
+    "chat_id": ""
+  },
+
+  "git": {
+    "repo": "https://github.com/YOUR_USERNAME/YOUR_PROJECT_REPO",
+    "branch": "main"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "started": "2026-03-03T07:46:45.662339",
+  "cycle": 38,
+  "last_cycle": "2026-03-03T11:01:44.011499",
+  "status": {
+    "ollama": {
+      "ok": true,
+      "models": [
+        "mycelium:latest",
+        "codellama:latest",
+        "mistral:latest",
+        "llama3.2:latest",
+        "nomic-embed-text:latest"
+      ]
+    },
+    "database": {
+      "ok": true,
+      "tables": 15
+    },
+    "gallery": {
+      "ok": false,
+      "art_count": 0,
+      "has_index": false
+    },
+    "github": {
+      "ok": true,
+      "user": "meekotharaccoon-cell"
+    },
+    "services": {
+      "alpaca": {
+        "ok": true,
+        "equity": 100000.0
+      },
+      "phantom": {
+        "ok": true,
+        "sol": 0.0,
+        "address": "Gg3MpT7o...pajGAJ"
+      },
+      "gumroad": {
+        "ok": true,
+        "email": "meekotharaccoon@gmail.com"
+      }
+    },
+    "omni": {
+      "files": 0,
+      "missing": [
+        "business_monitor.py",
+        "build_monitor.py",
+        "heal_monitor.py",
+        "evolve_monitor.py",
+        "browser_monitor.py"
+      ]
+    }
+  },
+  "fixed": [
+    "[07:46:45] Loaded 12 secrets into runtime env",
+    "[07:46:45] Fixed PowerShell profile \u2014 AIOtomate noise silenced."
+  ],
+  "pending": [
+    {
+      "key": "gallery_broken",
+      "msg": "Gallery index.html missing or no art files found.",
+      "ts": "2026-03-03T11:01:46.478593"
+    },
+    {
+      "key": "secrets_github_not_local",
+      "msg": "SECRETS IN GITHUB BUT NOT LOCAL: ['STRIPE_SECRET_KEY']. Run GRAND_SETUP_WIZARD.py \u2014 it will re-enter and save to .secrets file for local use.",
+      "ts": "2026-03-03T11:01:44.411105"
+    }
+  ],
+  "running": [],
+  "secrets": {
+    "ALPACA_KEY": true,
+    "ALPACA_SECRET": true,
+    "CB_API_KEY": true,
+    "CB_API_SECRET": true,
+    "COINBASE_COMMERCE_KEY": true,
+    "KRAKEN_API_KEY": true,
+    "KRAKEN_API_SECRET": true,
+    "PHANTOM_SOLANA_ADDRESS": true,
+    "GUMROAD_TOKEN": true,
+    "STRIPE_SECRET_KEY": false,
+    "PAYPAL_CLIENT_ID": true,
+    "PAYPAL_CLIENT_SECRET": true,
+    "CONDUCTOR_TOKEN": true
+  },
+  "errors": []
+}

@@ -1,0 +1,1 @@
+print("COMMAND PROMPT TEST") 

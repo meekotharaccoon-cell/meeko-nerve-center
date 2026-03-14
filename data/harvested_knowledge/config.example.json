@@ -1,0 +1,79 @@
+{
+  "_comment": "Copy this file to config.json and fill in your real Tailscale IPs",
+  "agents": {
+    "pc1": {
+      "name": "ralph-backend",
+      "role": "backend",
+      "ip": "100.x.x.1",
+      "ssh": "pc1"
+    },
+    "pc2": {
+      "name": "ralph-frontend",
+      "role": "frontend",
+      "ip": "100.x.x.2",
+      "ssh": "pc2"
+    },
+    "pc3": {
+      "name": "ralph-tests",
+      "role": "tests",
+      "ip": "100.x.x.3",
+      "ssh": "pc3"
+    },
+    "pc4": {
+      "name": "ralph-design",
+      "role": "design",
+      "ip": "100.x.x.4",
+      "ssh": "pc4"
+    },
+    "pc5": {
+      "name": "ralph-manager",
+      "role": "manager",
+      "ip": "100.x.x.5",
+      "ssh": "pc5"
+    },
+    "pc6": {
+      "name": "ralph-utility",
+      "role": "utility",
+      "ip": "100.x.x.6",
+      "ssh": "pc6"
+    }
+  },
+  "roles": {
+    "backend": {
+      "directory": "src/backend",
+      "extensions": [".js", ".json"],
+      "instructions": "Create Express.js microservices. Bind to 0.0.0.0, enable CORS."
+    },
+    "frontend": {
+      "directory": "src/frontend",
+      "extensions": [".html", ".css", ".js"],
+      "instructions": "Create vanilla HTML/CSS/JS pages. No frameworks."
+    },
+    "tests": {
+      "directory": "src/tests",
+      "extensions": [".sh"],
+      "instructions": "Create bash test scripts using curl for API testing."
+    },
+    "design": {
+      "directory": "src/design",
+      "extensions": [".css", ".html"],
+      "instructions": "Focus on CSS styling, visual design, and UI polish."
+    },
+    "utility": {
+      "directory": "src/utility",
+      "extensions": [".md", ".sh", ".js"],
+      "instructions": "Documentation, helper scripts, overflow tasks."
+    }
+  },
+  "manager": {
+    "enabled": true,
+    "model": "claude-3-haiku-20240307",
+    "max_fix_attempts": 3
+  },
+  "settings": {
+    "max_tasks_per_night": 10,
+    "stop_hour": 6,
+    "retry_delay_base": 10,
+    "max_push_attempts": 5
+  }
+}

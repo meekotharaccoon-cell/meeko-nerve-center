@@ -1,0 +1,42 @@
+{
+  "test_run": "2026-02-13 22:04:24.190262",
+  "duration": "0:01:27.236853",
+  "systems_tested": 5,
+  "passed": 0,
+  "failed": 5,
+  "results": {
+    "self_healing_framework": {
+      "status": "FAIL",
+      "timestamp": "2026-02-13 22:05:39.010082"
+    },
+    "opensearch": {
+      "status": "FAIL",
+      "timestamp": "2026-02-13 22:05:43.374989"
+    },
+    "9v_checker": {
+      "status": "ERROR",
+      "error": "[WinError 267] The directory name is invalid",
+      "timestamp": "2026-02-13 22:05:45.390934"
+    },
+    "autoheal": {
+      "status": "ERROR",
+      "error": "[WinError 267] The directory name is invalid",
+      "timestamp": "2026-02-13 22:05:47.399873"
+    },
+    "chess": {
+      "status": "ERROR",
+      "error": "[WinError 267] The directory name is invalid",
+      "timestamp": "2026-02-13 22:05:49.419912"
+    }
+  },
+  "summary": {
+    "self_healing": [],
+    "needs_attention": [
+      "self_healing_framework",
+      "opensearch",
+      "9v_checker",
+      "autoheal",
+      "chess"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "issues": [
+    {
+      "type": "webserver_down",
+      "description": "Web server is not running",
+      "fix": {
+        "safety": "safe",
+        "description": "Start the web server",
+        "command": "python -m http.server 5000 &"
+      }
+    },
+    {
+      "type": "low_disk_space",
+      "description": "Low disk space",
+      "fix": {
+        "safety": "safe",
+        "description": "Clean up temporary files",
+        "command": "rm -rf /tmp/* 2>/dev/null || true"
+      }
+    }
+  ],
+  "version": "1.0"
+}

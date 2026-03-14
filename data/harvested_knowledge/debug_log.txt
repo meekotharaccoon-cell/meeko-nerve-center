@@ -1,0 +1,83 @@
+[2026-02-02 20:39:02.921781] Cloudflare Site: FAIL
+   Details: Error: HTTP Error 403: Forbidden
+[2026-02-02 20:39:02.924868] SolarPunk Directory: PASS
+   Details: Found 2 files
+[2026-02-02 20:39:04.458207] Git Installed: PASS
+[2026-02-02 20:39:04.618685] GitHub API: PASS
+[2026-02-02 20:39:04.755424] Netlify Site: FAIL
+   Details: Site not found - credit limit hit
+[2026-02-02 20:39:04.756330] Python Version: PASS
+   Details: Version: 3.14.2
+[2026-02-02 20:39:07.968450] Module: requests: PASS
+[2026-02-02 20:39:07.969449] Module: flask: FAIL
+   Details: Not installed
+[2026-02-02 20:39:07.970473] Module: opencv: FAIL
+   Details: Not installed
+[2026-02-02 20:39:07.972459] Module: numpy: FAIL
+   Details: Not installed
+[2026-02-02 20:39:07.973556] Module: qrcode: FAIL
+   Details: Not installed
+[2026-02-02 20:39:07.986716] Agent File: solarpunk_agent_fixed.py: PASS
+   Details: Size: 2566 bytes
+[2026-02-02 20:39:07.988878] Agent File: solarpunk_agent_stable.py: PASS
+   Details: Size: 11420 bytes
+[2026-02-02 20:39:07.990364] Agent File: solarpunk_debug.py: PASS
+   Details: Size: 9569 bytes
+[2026-02-02 20:39:07.992322] Agent File: solarpunk_gateway.py: PASS
+   Details: Size: 4549 bytes
+[2026-02-02 20:39:07.993944] Fix Script: PASS
+   Details: 10 lines of code
+[2026-02-02 20:39:07.996470] Web Dashboard: FAIL
+   Details: Directory not found
+[2026-02-02 20:39:07.998046] Memvid Repo: FAIL
+   Details: Directory not found
+[2026-02-02 20:39:08.002208] Cloudflare GitHub App: PASS
+   Details: Check manually above
+[2026-02-02 20:39:08.172868] Cloudflare Site: FAIL
+   Details: Error: HTTP Error 403: Forbidden
+[2026-02-02 20:39:08.179192] Cloudflare GitHub App: PASS
+   Details: Check manually above
+[2026-02-02 20:39:08.180379] Fix Script: PASS
+   Details: 10 lines of code
+[2026-02-02 20:39:08.183091] Memvid Repo: FAIL
+   Details: Directory not found
+[2026-02-02 21:51:12.259208] Cloudflare Site: FAIL
+   Details: Error: HTTP Error 403: Forbidden
+[2026-02-02 21:51:12.261580] SolarPunk Directory: PASS
+   Details: Found 8 files
+[2026-02-02 21:51:12.317568] Git Installed: PASS
+[2026-02-02 21:51:12.481424] GitHub API: PASS
+[2026-02-02 21:51:12.665231] Netlify Site: FAIL
+   Details: Site not found - credit limit hit
+[2026-02-02 21:51:12.667643] Python Version: PASS
+   Details: Version: 3.14.2
+[2026-02-02 21:51:12.891628] Module: requests: PASS
+[2026-02-02 21:51:13.980310] Module: flask: PASS
+[2026-02-02 21:51:13.981435] Module: opencv: FAIL
+   Details: Not installed
+[2026-02-02 21:51:14.538433] Module: numpy: PASS
+[2026-02-02 21:51:14.737160] Module: qrcode: PASS
+[2026-02-02 21:51:14.739501] Agent File: solarpunk_agent_fixed.py: PASS
+   Details: Size: 2566 bytes
+[2026-02-02 21:51:14.740066] Agent File: solarpunk_agent_stable.py: PASS
+   Details: Size: 11420 bytes
+[2026-02-02 21:51:14.740540] Agent File: solarpunk_debug.py: PASS
+   Details: Size: 9569 bytes
+[2026-02-02 21:51:14.741038] Agent File: solarpunk_gateway.py: PASS
+   Details: Size: 4549 bytes
+[2026-02-02 21:51:14.742670] Fix Script: PASS
+   Details: 10 lines of code
+[2026-02-02 21:51:14.745283] Web Dashboard: FAIL
+   Details: Directory not found
+[2026-02-02 21:51:14.746490] Memvid Repo: FAIL
+   Details: Directory not found
+[2026-02-02 21:51:14.749616] Cloudflare GitHub App: PASS
+   Details: Check manually above
+[2026-02-02 21:51:14.864392] Cloudflare Site: FAIL
+   Details: Error: HTTP Error 403: Forbidden
+[2026-02-02 21:51:14.868857] Cloudflare GitHub App: PASS
+   Details: Check manually above
+[2026-02-02 21:51:14.870027] Fix Script: PASS
+   Details: 10 lines of code
+[2026-02-02 21:51:14.872497] Memvid Repo: FAIL
+   Details: Directory not found

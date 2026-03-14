@@ -1,0 +1,23 @@
+{
+  "market_data": {
+    "provider": "yfinance",
+    "description": "Free stock/crypto data, no API key, covers all NYSE/NASDAQ/crypto",
+    "working": true
+  },
+  "payment": {
+    "primary": "paypal",
+    "secondary": "gumroad",
+    "stripe_status": "",
+    "note": "Routing all payments through PayPal + Gumroad (both working)"
+  },
+  "crypto_data": {
+    "provider": "dexscreener",
+    "description": "Free pump.fun/Solana token data, no key needed",
+    "working": true
+  },
+  "trading": {
+    "stock": "alpaca",
+    "crypto": "kraken",
+    "fallback": "paper_only_via_yfinance_simulation"
+  }
+}

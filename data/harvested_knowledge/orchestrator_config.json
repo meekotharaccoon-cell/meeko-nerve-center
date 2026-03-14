@@ -1,0 +1,11 @@
+﻿{
+    "version": "..",
+    "pcrf_address": "https://give.pcrf.net/campaign/739651/donate",
+    "pcrf_allocation": 70,
+    "repositories": [
+        "gaza-rose-knowledge",
+        "gaza-rose-orchestrator"
+    ],
+    "sync_frequency": 21600,
+    "auto_heal": true
+}

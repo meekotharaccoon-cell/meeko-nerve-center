@@ -1,0 +1,11 @@
+MANUAL STEPS NEEDED
+==================================================
+
+Working services (8): paypal, gumroad, github, market_data, kraken, alpaca, dexscreener, ollama
+Needs manual fix (0): 
+
+==================================================
+
+After fixing all three:
+  Run: python C:\Users\meeko\Desktop\_debug.py
+  Should show 79/79 PASS, 0 FAIL

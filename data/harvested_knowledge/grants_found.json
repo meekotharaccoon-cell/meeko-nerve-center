@@ -1,0 +1,213 @@
+[
+  {
+    "name": "Awesome Foundation",
+    "url": "https://www.awesomefoundation.org",
+    "tags": [
+      "community",
+      "art",
+      "$1000",
+      "monthly"
+    ],
+    "match_score": 54,
+    "research_error": "'content'",
+    "researched": true
+  },
+  {
+    "name": "Tech for Good",
+    "url": "https://www.techforgood.global/",
+    "tags": [
+      "humanitarian tech",
+      "social good",
+      "AI"
+    ],
+    "match_score": 54,
+    "research_error": "'content'",
+    "researched": true
+  },
+  {
+    "name": "Mozilla Foundation",
+    "url": "https://foundation.mozilla.org/en/what-we-fund/",
+    "tags": [
+      "open source",
+      "internet health",
+      "AI"
+    ],
+    "match_score": 46,
+    "research_error": "'content'",
+    "researched": true
+  },
+  {
+    "name": "Prototype Fund",
+    "url": "https://prototypefund.de/en/",
+    "tags": [
+      "open source",
+      "civic tech",
+      "social good"
+    ],
+    "match_score": 46,
+    "research_error": "'content'",
+    "researched": true
+  },
+  {
+    "name": "Open Collective",
+    "url": "https://opencollective.com/grants",
+    "tags": [
+      "open source",
+      "community",
+      "tools"
+    ],
+    "match_score": 46,
+    "research_error": "'content'",
+    "researched": true
+  },
+  {
+    "name": "Shuttleworth Foundation",
+    "url": "https://www.shuttleworthfoundation.org/fellows/",
+    "tags": [
+      "open source",
+      "social change",
+      "tech"
+    ],
+    "match_score": 38
+  },
+  {
+    "name": "Arab Fund for Arts",
+    "url": "https://www.afac.com.lb",
+    "tags": [
+      "Arab",
+      "arts",
+      "culture",
+      "Palestine"
+    ],
+    "match_score": 31
+  },
+  {
+    "name": "Palestine Festival of Literature",
+    "url": "https://www.palfest.org/",
+    "tags": [
+      "Palestine",
+      "culture",
+      "arts",
+      "Arabic"
+    ],
+    "match_score": 31
+  },
+  {
+    "name": "Open Technology Fund",
+    "url": "https://www.opentech.fund/funds/",
+    "tags": [
+      "internet freedom",
+      "open source",
+      "human rights"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Knight Foundation",
+    "url": "https://knightfoundation.org/grants/",
+    "tags": [
+      "journalism",
+      "information",
+      "community"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "NLnet Foundation",
+    "url": "https://nlnet.nl/propose/",
+    "tags": [
+      "open source",
+      "internet",
+      "privacy"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Gitcoin Grants",
+    "url": "https://grants.gitcoin.co",
+    "tags": [
+      "web3",
+      "open source",
+      "public goods"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Art for Justice Fund",
+    "url": "https://artforjusticefund.org",
+    "tags": [
+      "social justice",
+      "art",
+      "advocacy"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "GitHub Fund",
+    "url": "https://resources.github.com/github-fund/",
+    "tags": [
+      "open source",
+      "developer",
+      "GitHub"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Creative Commons",
+    "url": "https://creativecommons.org/about/program-areas/arts-culture/",
+    "tags": [
+      "creative commons",
+      "art",
+      "open culture"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Experiment.com",
+    "url": "https://experiment.com",
+    "tags": [
+      "crowdfunded research",
+      "community"
+    ],
+    "match_score": 23
+  },
+  {
+    "name": "Rhizome",
+    "url": "https://rhizome.org",
+    "tags": [
+      "digital art",
+      "net art",
+      "AI art"
+    ],
+    "match_score": 16
+  },
+  {
+    "name": "Ford Foundation",
+    "url": "https://www.fordfoundation.org/work/our-grants/",
+    "tags": [
+      "social justice",
+      "technology",
+      "equity"
+    ],
+    "match_score": 0
+  },
+  {
+    "name": "Wikimedia Foundation",
+    "url": "https://meta.wikimedia.org/wiki/Grants",
+    "tags": [
+      "open knowledge",
+      "free culture"
+    ],
+    "match_score": 0
+  },
+  {
+    "name": "Sundance Institute",
+    "url": "https://www.sundance.org/programs/",
+    "tags": [
+      "storytelling",
+      "social impact",
+      "documentary"
+    ],
+    "match_score": 0
+  }
+]

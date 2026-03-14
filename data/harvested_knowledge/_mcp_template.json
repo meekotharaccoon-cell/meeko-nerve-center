@@ -1,0 +1,62 @@
+{
+  "preferences": {
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
+  },
+  "mcpServers": {
+    "phantom-docs": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://docs.phantom.com/mcp"],
+      "env": {}
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "CONDUCTOR_TOKEN_PLACEHOLDER"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y", "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\meeko\\Desktop",
+        "C:\\Users\\meeko\\Desktop\\GAZA_ROSE_GALLERY",
+        "C:\\Users\\meeko\\Desktop\\INVESTMENT_HQ",
+        "C:\\Users\\meeko\\Desktop\\UltimateAI_Master",
+        "C:\\Users\\meeko\\Desktop\\GAZA_ROSE_OMNI",
+        "C:\\Users\\meeko\\Desktop\\atomic-agents-conductor"
+      ],
+      "env": {}
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "sqlite-gazarose": {
+      "command": "npx",
+      "args": [
+        "-y", "@modelcontextprotocol/server-sqlite",
+        "--db-path", "C:\\Users\\meeko\\Desktop\\UltimateAI_Master\\gaza_rose.db"
+      ],
+      "env": {}
+    },
+    "stripe": {
+      "command": "npx",
+      "args": ["-y", "@stripe/agent-toolkit", "mcp-server", "--tools=all"],
+      "env": {
+        "STRIPE_SECRET_KEY": "STRIPE_KEY_PLACEHOLDER"
+      }
+    },
+    "paypal": {
+      "command": "npx",
+      "args": ["-y", "@paypal/agent-toolkit", "--mode=mcp"],
+      "env": {
+        "PAYPAL_CLIENT_ID": "PAYPAL_ID_PLACEHOLDER",
+        "PAYPAL_CLIENT_SECRET": "PAYPAL_SECRET_PLACEHOLDER",
+        "PAYPAL_ENVIRONMENT": "production"
+      }
+    }
+  }
+}

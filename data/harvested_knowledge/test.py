@@ -1,0 +1,6 @@
+print("=" & & 60)  
+print("?? SOLARPUNK GENESIS")  
+print("=" & & 60)  
+print("Python 3.14 working!")  
+print("Resource theft: $2500/month per person")  
+input("Press Enter...") 

@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-02-23 13:20:45",
+  "components": {
+    "Python": {
+      "status": "OK",
+      "detail": "3.12.10"
+    },
+    "Ollama": {
+      "status": "FAIL",
+      "detail": "Command '['ollama', 'list']' timed out after 10 seconds"
+    },
+    "VirtualEnv": {
+      "status": "OK",
+      "detail": "C:\\Users\\meeko\\Desktop\\mycelium_env\\Scripts\\python.exe"
+    },
+    "CrewAI": {
+      "status": "FAIL",
+      "detail": "Command '['C:\\\\Users\\\\meeko\\\\Desktop\\\\mycelium_env\\\\Scripts\\\\python.exe', '-c', 'import crewai; print(crewai.__version__)']' timed out after 15 seconds"
+    },
+    "GazaRoseDB": {
+      "status": "OK",
+      "detail": "UltimateAI_Master/gaza_rose.db (15 tables); New/gaza_rose.db (2 tables)"
+    },
+    "Gallery": {
+      "status": "OK",
+      "detail": "69 artworks, HTML: OK"
+    },
+    "GumroadProducts": {
+      "status": "OK",
+      "detail": "Listings file: OK, PDFs ready: 0"
+    },
+    "PCRFLink": {
+      "status": "OK",
+      "detail": "HTTP 200 - Link is live"
+    },
+    "UltimateAI": {
+      "status": "OK",
+      "detail": "v15 present, 1 subsystems, crypto connector: OK"
+    },
+    "CryptoConfig": {
+      "status": "OK",
+      "detail": "Phantom address on file: Gg3MpT7o...pajGAJ"
+    },
+    "WalletSafety": {
+      "status": "OK",
+      "detail": "No old wallet addresses found"
+    }
+  },
+  "warnings": [
+    "Ollama: Command '['ollama', 'list']' timed out after 10 seconds",
+    "CrewAI: Command '['C:\\\\Users\\\\meeko\\\\Desktop\\\\mycelium_env\\\\Scripts\\\\python.exe', '-c', 'import crewai; print(crewai.__version__)']' timed out after 15 seconds"
+  ],
+  "ok": [
+    "Python",
+    "VirtualEnv",
+    "GazaRoseDB",
+    "Gallery",
+    "GumroadProducts",
+    "PCRFLink",
+    "UltimateAI",
+    "CryptoConfig",
+    "WalletSafety"
+  ]
+}

@@ -1,0 +1,14 @@
+PORT REFERENCE
+Table
+Copy
+Service	Port	Access
+Ollama API	11434	localhost:11434
+GPT4All API	4891	localhost:4891
+Open WebUI	8081	localhost:8081
+AnythingLLM	3001	localhost:3001
+Khoj	42110	localhost:42110
+ComfyUI	8188	localhost:8188
+AutoGen Studio	8085	localhost:8085
+Flowise	3000	localhost:3000
+n8n	5678	localhost:5678
+Paperless	8000	localhost:8000

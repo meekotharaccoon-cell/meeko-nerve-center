@@ -1,0 +1,42 @@
+[
+  {
+    "query_id": "query_1",
+    "query": "Check current health status of the digital organism",
+    "response": "Current health status: 1.00/1.0 (GOOD). Organism is functioning normally with energy level 1000.0."
+  },
+  {
+    "query_id": "query_2",
+    "query": "Initiate evolution cycle for self-improvement",
+    "response": "Evolution cycle initiated. Learning rate evolved from 0.024 to 0.024 (+0.0%)."
+  },
+  {
+    "query_id": "query_3",
+    "query": "Monitor autonomous operations performance",
+    "response": "Autonomous operations monitoring: 3 workflows active, 12 tasks completed in last cycle, 95% success rate. Next heartbeat in 6 hours."
+  },
+  {
+    "query_id": "query_4",
+    "query": "Generate comprehensive health report",
+    "response": "Comprehensive Health Report:\n- Overall Health: 1.00/1.0 (GOOD)\n- Vital Signs: All systems operational\n- Metabolism: Active (resources available)\n- Evolution Rate: 0.15 traits/generation\n- Community Engagement: 0 connections\n- Recommendations: Enable GitHub Actions for full autonomy"
+  },
+  {
+    "query_id": "query_5",
+    "query": "Assess autonomy effectiveness metrics",
+    "response": "Autonomy effectiveness assessment: 60% autonomous (workflows not enabled). Full autonomy requires GitHub Actions activation. Current capabilities: self-monitoring, self-reporting."
+  },
+  {
+    "query_id": "query_6",
+    "query": "Track evolution rate over time",
+    "response": "Evolution rate tracking: Mutation successful (b2c55c64 \u2192 2c20bad0). Generation 1/10 completed. Projected full evolution in 7 more cycles."
+  },
+  {
+    "query_id": "query_7",
+    "query": "Evaluate organism's self-monitoring capabilities",
+    "response": "Self-monitoring evaluation: Health tracking active (1.00), resource monitoring functional. Automated alerts active for critical thresholds."
+  },
+  {
+    "query_id": "query_8",
+    "query": "Analyze health score accuracy",
+    "response": "Health score accuracy analysis: Self-reported health 0.44, actual metrics confirm accuracy. Calibration recommended every 10 cycles."
+  }
+]

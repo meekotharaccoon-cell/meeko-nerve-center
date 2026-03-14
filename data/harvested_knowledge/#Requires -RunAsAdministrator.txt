@@ -1,0 +1,291 @@
+#Requires -RunAsAdministrator
+# Save as: Install-AllDependencyTools.ps1
+
+$ErrorActionPreference = "Continue"
+$ProgressPreference = "Continue"
+
+function Write-Header($text) {
+    Write-Host "`n========================================" -ForegroundColor Cyan
+    Write-Host "  $text" -ForegroundColor Cyan
+    Write-Host "========================================" -ForegroundColor Cyan
+}
+
+function Test-Command($cmd) {
+    return [bool](Get-Command $cmd -ErrorAction SilentlyContinue)
+}
+
+# ============================================
+# 1. WINGET (Foundation for everything else)
+# ============================================
+Write-Header "Installing Winget (Windows Package Manager)"
+
+if (-not (Test-Command "winget")) {
+    # Install App Installer from Microsoft Store (contains winget)
+    $progressPreference = 'silentlyContinue'
+    Write-Host "Installing App Installer..."
+    Invoke-WebRequest -Uri "https://aka.ms/getwinget" -OutFile "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+    Add-AppxPackage -Path "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+} else {
+    Write-Host "Winget already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 2. POWERSHELL 7 (Latest)
+# ============================================
+Write-Header "Installing PowerShell 7"
+
+if (-not (Test-Command "pwsh")) {
+    winget install --id Microsoft.PowerShell --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host "PowerShell 7 already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 3. GIT (Required for many package managers)
+# ============================================
+Write-Header "Installing Git"
+
+if (-not (Test-Command "git")) {
+    winget install --id Git.Git --source winget --accept-source-agreements --accept-package-agreements
+    # Refresh PATH
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+} else {
+    Write-Host "Git already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 4. NODE.JS & NPM
+# ============================================
+Write-Header "Installing Node.js LTS"
+
+if (-not (Test-Command "node")) {
+    winget install --id OpenJS.NodeJS.LTS --source winget --accept-source-agreements --accept-package-agreements
+    
+    # Install additional Node tools
+    npm install -g npm@latest
+    npm install -g yarn
+    npm install -g pnpm
+    npm install -g npx
+} else {
+    Write-Host "Node.js already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 5. PYTHON & PIP
+# ============================================
+Write-Header "Installing Python"
+
+if (-not (Test-Command "python")) {
+    winget install --id Python.Python.3.12 --source winget --accept-source-agreements --accept-package-agreements
+    
+    # Upgrade pip
+    python -m pip install --upgrade pip
+    
+    # Install pipx for isolated Python apps
+    pip install pipx
+    pipx ensurepath
+} else {
+    Write-Host "Python already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 6. .NET SDK
+# ============================================
+Write-Header "Installing .NET SDK"
+
+if (-not (Test-Command "dotnet")) {
+    winget install --id Microsoft.DotNet.SDK.8 --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host ".NET SDK already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 7. JAVA (OpenJDK)
+# ============================================
+Write-Header "Installing Java (OpenJDK)"
+
+if (-not (Test-Command "java")) {
+    winget install --id Microsoft.OpenJDK.21 --source winget --accept-source-agreements --accept-package-agreements
+    
+    # Maven
+    winget install --id Apache.Maven --source winget --accept-source-agreements --accept-package-agreements
+    
+    # Gradle
+    winget install --id Gradle.Gradle --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host "Java already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 8. RUST (via rustup)
+# ============================================
+Write-Header "Installing Rust"
+
+if (-not (Test-Command "rustc")) {
+    Invoke-WebRequest https://win.rustup.rs/x86_64 -OutFile "$env:TEMP\rustup-init.exe"
+    Start-Process -FilePath "$env:TEMP\rustup-init.exe" -ArgumentList "-y" -Wait
+    $env:Path += ";$env:USERPROFILE\.cargo\bin"
+} else {
+    Write-Host "Rust already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 9. GO
+# ============================================
+Write-Header "Installing Go"
+
+if (-not (Test-Command "go")) {
+    winget install --id GoLang.Go --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host "Go already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 10. RUBY (with MSYS2)
+# ============================================
+Write-Header "Installing Ruby"
+
+if (-not (Test-Command "ruby")) {
+    winget install --id RubyInstallerTeam.RubyWithDevKit.3.2 --source winget --accept-source-agreements --accept-package-agreements
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+} else {
+    Write-Host "Ruby already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 11. CHOCOLATEY (Package Manager)
+# ============================================
+Write-Header "Installing Chocolatey"
+
+if (-not (Test-Command "choco")) {
+    Set-ExecutionPolicy Bypass -Scope Process -Force
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+} else {
+    Write-Host "Chocolatey already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 12. SCOOP (Package Manager)
+# ============================================
+Write-Header "Installing Scoop"
+
+if (-not (Test-Command "scoop")) {
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+    Invoke-RestMethod get.scoop.sh | Invoke-Expression
+    
+    # Add buckets
+    scoop bucket add main
+    scoop bucket add extras
+    scoop bucket add versions
+} else {
+    Write-Host "Scoop already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 13. DOCKER DESKTOP
+# ============================================
+Write-Header "Installing Docker Desktop"
+
+if (-not (Test-Command "docker")) {
+    winget install --id Docker.DockerDesktop --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host "Docker already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 14. VCPKG (C++ Package Manager)
+# ============================================
+Write-Header "Installing Vcpkg"
+
+$vcpkgPath = "C:\vcpkg"
+if (-not (Test-Path $vcpkgPath)) {
+    git clone https://github.com/Microsoft/vcpkg.git $vcpkgPath
+    & "$vcpkgPath\bootstrap-vcpkg.bat"
+    [Environment]::SetEnvironmentVariable("VCPKG_ROOT", $vcpkgPath, "Machine")
+} else {
+    Write-Host "Vcpkg already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 15. CONDA (Miniconda)
+# ============================================
+Write-Header "Installing Miniconda"
+
+if (-not (Test-Command "conda")) {
+    $condaInstaller = "$env:TEMP\Miniconda3-latest-Windows-x86_64.exe"
+    Invoke-WebRequest "https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe" -OutFile $condaInstaller
+    Start-Process -FilePath $condaInstaller -ArgumentList "/S", "/D=$env:USERPROFILE\Miniconda3" -Wait
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+} else {
+    Write-Host "Conda already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 16. MSYS2 (for C/C++ and Pacman)
+# ============================================
+Write-Header "Installing MSYS2"
+
+if (-not (Test-Command "msys2")) {
+    winget install --id MSYS2.MSYS2 --source winget --accept-source-agreements --accept-package-agreements
+} else {
+    Write-Host "MSYS2 already installed" -ForegroundColor Green
+}
+
+# ============================================
+# 17. VISUAL STUDIO BUILD TOOLS (for compiling)
+# ============================================
+Write-Header "Installing Visual Studio Build Tools"
+
+winget install --id Microsoft.VisualStudio.2022.BuildTools --source winget --accept-source-agreements --accept-package-agreements --override "--wait --add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.Windows11SDK.22621"
+
+# ============================================
+# 18. ADDITIONAL USEFUL TOOLS
+# ============================================
+Write-Header "Installing Additional Tools"
+
+# GitHub CLI
+winget install --id GitHub.cli --source winget --accept-source-agreements --accept-package-agreements
+
+# Azure CLI
+winget install --id Microsoft.AzureCLI --source winget --accept-source-agreements --accept-package-agreements
+
+# AWS CLI
+winget install --id Amazon.AWSCLI --source winget --accept-source-agreements --accept-package-agreements
+
+# Kubernetes tools
+winget install --id Kubernetes.kubectl --source winget --accept-source-agreements --accept-package-agreements
+winget install --id Helm.Helm --source winget --accept-source-agreements --accept-package-agreements
+
+# Terraform
+winget install --id HashiCorp.Terraform --source winget --accept-source-agreements --accept-package-agreements
+
+# Postman
+winget install --id Postman.Postman --source winget --accept-source-agreements --accept-package-agreements
+
+# VS Code
+winget install --id Microsoft.VisualStudioCode --source winget --accept-source-agreements --accept-package-agreements
+
+# JetBrains Toolbox (for IntelliJ, PyCharm, etc.)
+winget install --id JetBrains.Toolbox --source winget --accept-source-agreements --accept-package-agreements
+
+# ============================================
+# FINAL SUMMARY
+# ============================================
+Write-Header "INSTALLATION COMPLETE"
+
+Write-Host "`nInstalled Package Managers:" -ForegroundColor Green
+@("winget", "choco", "scoop", "npm", "yarn", "pnpm", "pip", "pipx", "conda", "dotnet", "cargo", "gem", "vcpkg", "pacman") | ForEach-Object {
+    if (Test-Command $_) { Write-Host "  ✓ $_" -ForegroundColor Green }
+    else { Write-Host "  ✗ $_" -ForegroundColor Red }
+}
+
+Write-Host "`nInstalled Runtimes:" -ForegroundColor Green
+@("node", "python", "java", "go", "rustc", "ruby", "docker") | ForEach-Object {
+    if (Test-Command $_) { Write-Host "  ✓ $_" -ForegroundColor Green }
+    else { Write-Host "  ✗ $_" -ForegroundColor Red }
+}
+
+Write-Host "`nNOTE: You may need to restart your terminal or system for all PATH changes to take effect." -ForegroundColor Yellow
+Write-Host "Run 'refreshenv' or restart PowerShell to update environment variables." -ForegroundColor Yellow

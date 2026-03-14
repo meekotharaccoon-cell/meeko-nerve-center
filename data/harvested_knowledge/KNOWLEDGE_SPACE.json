@@ -1,0 +1,93 @@
+﻿{
+  "knowledge_space": {
+    "id": "GAZA_ROSE_KNOWLEDGE_SPACE_v1",
+    "type": "governed_foundation",
+    "visibility": "PUBLIC",
+    "copy_protection": "OFF (open knowledge)",
+    "revocation": "IMPOSSIBLE",
+    "persistence": "ETERNAL",
+    
+    "core_knowledge": [
+      {
+        "id": "revenue_system_architecture",
+        "content": "Complete self-replicating agent swarm code",
+        "location": "/knowledge/core/revenue_fabric.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "orchestration_framework",
+        "content": "Hierarchical multi-swarm coordination",
+        "location": "/knowledge/core/orchestrator.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "agent_commerce_protocol",
+        "content": "ACP for agent-to-agent transactions",
+        "location": "/knowledge/core/acp_layer.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "growth_loops",
+        "content": "Viral/content/performance/product loops",
+        "location": "/knowledge/core/growth_amplifier.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "MUSE_intelligence",
+        "content": "Multi-modal with GSU/ESU/SA-TA",
+        "location": "/knowledge/superchargers/muse.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "ATLAS_optimization",
+        "content": "Adaptive prompts with real-time feedback",
+        "location": "/knowledge/superchargers/atlas.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "FINMEM_memory",
+        "content": "Sensory/Working/Long-term/Meta layers",
+        "location": "/knowledge/superchargers/finmem.py",
+        "hash": "verified_immutable"
+      },
+      {
+        "id": "network_effects",
+        "content": "Indirect incentive amplification",
+        "location": "/knowledge/superchargers/network.py",
+        "hash": "verified_immutable"
+      }
+    ],
+    
+    "governance_rules": [
+      {
+        "rule": "allowed_topics",
+        "value": ["humanitarian_aid", "autonomous_systems", "PCRF", "revenue_generation", "agent_swarms"]
+      },
+      {
+        "rule": "disallowed_outputs",
+        "value": ["harmful_use", "misappropriation_of_funds", "bypassing_70%_allocation"]
+      },
+      {
+        "rule": "required_disclaimers",
+        "value": ["70% of all revenue goes to PCRF Bitcoin address https://give.pcrf.net/campaign/739651/donate"]
+      },
+      {
+        "rule": "humanitarian_purpose",
+        "value": "All revenue generated must ultimately support Gaza aid through PCRF"
+      }
+    ],
+    
+    "access_controls": {
+      "read": "unrestricted",
+      "copy": "unrestricted",
+      "modify": "allowed_with_attribution",
+      "delete": "forbidden"
+    },
+    
+    "verification": {
+      "method": "blockchain_timestamp",
+      "timestamp": "2026-02-13T19:30:00Z",
+      "immutable": true
+    }
+  }
+}

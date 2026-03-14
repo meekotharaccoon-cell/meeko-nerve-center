@@ -1,0 +1,187 @@
+# ============================================================
+# PORTABLE MYCELIUM INSTALLER CREATOR
+# Creates USB-based auto-installer
+# ============================================================
+
+$usbDrive = Read-Host "E"
+$installPath = "$usbDrive\AtomicMyceliumInstaller"
+
+Write-Host "`n💾 Creating Portable Installer on $usbDrive..." -ForegroundColor Cyan
+
+# Create structure
+New-Item -ItemType Directory -Force -Path "$installPath\downloads" | Out-Null
+New-Item -ItemType Directory -Force -Path "$installPath\payload" | Out-Null
+
+# Create the main installer script
+$installer = @'
+@echo off
+echo ==========================================
+echo  ATOMIC MYCELIUM - PORTABLE INSTALLER
+echo  This will set up everything automatically
+echo ==========================================
+echo.
+echo WARNING: This will install:
+echo  - Python 3.12
+echo  - Git
+echo  - VS Code
+echo  - Docker Desktop (requires reboot after)
+echo  - Node.js (for Cline CLI)
+echo.
+echo You may see UAC prompts - click YES
+echo.
+pause
+
+echo [1/6] Checking Chocolatey (package manager)...
+where choco >nul 2>nul
+if %errorlevel% neq 0 (
+    echo Installing Chocolatey...
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+    refreshenv
+)
+
+echo [2/6] Installing Python...
+choco install python --version=3.12.0 -y
+
+echo [3/6] Installing Git...
+choco install git -y
+
+echo [4/6] Installing VS Code...
+choco install vscode -y
+
+echo [5/6] Installing Node.js...
+choco install nodejs -y
+
+echo [6/6] Installing Docker Desktop...
+choco install docker-desktop -y
+echo.
+echo ==========================================
+echo  BASE SOFTWARE INSTALLED
+echo  IMPORTANT: Reboot if Docker asked for it
+echo  Then run Part 2: SetupMycelium.bat
+echo ==========================================
+pause
+'@
+
+$installer | Out-File -FilePath "$installPath\INSTALL_PART1.bat" -Encoding ASCII
+
+# Create Part 2 - Project Setup
+$setupMycelium = @'
+@echo off
+echo ==========================================
+echo  MYCELIUM PROJECT SETUP (Part 2)
+echo  Run this AFTER rebooting (if needed)
+echo ==========================================
+echo.
+
+cd C:\
+
+echo Creating project structure...
+mkdir atomic-agents 2>nul
+cd atomic-agents
+
+echo Initializing Python environment...
+python -m venv venv
+call venv\Scripts\activate.bat
+
+echo Installing Python packages...
+pip install aiohttp aiohttp-cors pydantic pydantic-settings python-dotenv pytest pytest-asyncio tenacity structlog supabase openai
+
+echo Creating directory structure...
+mkdir src\core 2>nul
+mkdir src\communication 2>nul
+mkdir src\models 2>nul
+mkdir src\tools 2>nul
+mkdir src\mycelium\nodes 2>nul
+mkdir src\mycelium\spore_bank 2>nul
+mkdir src\finance\strategies 2>nul
+mkdir src\finance\exchanges 2>nul
+mkdir data\mycelium\growth_logs 2>nul
+mkdir data\trades 2>nul
+mkdir data\performance 2>nul
+
+echo ==========================================
+echo  PROJECT SKELETON CREATED
+echo  Next: Copy source files from USB\payload
+echo ==========================================
+pause
+
+xcopy /E /I /Y "%~dp0payload\*" "C:\atomic-agents\src\"
+echo Source files copied!
+
+echo ==========================================
+echo  SETUP COMPLETE
+echo  1. Edit C:\atomic-agents\.env with your API keys
+echo  2. Run start-mycelium.bat
+echo ==========================================
+pause
+'@
+
+$setupMycelium | Out-File -FilePath "$installPath\SETUP_PART2.bat" -Encoding ASCII
+
+# Create the payload copier (copies current project to USB)
+$payloadCreator = @"
+# Copy current project to USB payload
+`$src = "C:\atomic-agents\src"
+`$dest = "$installPath\payload"
+
+Write-Host "Copying source files to USB..." -ForegroundColor Yellow
+Copy-Item -Path "`$src\*" -Destination "`$dest" -Recurse -Force
+Write-Host "✅ Payload ready for portable deployment" -ForegroundColor Green
+"@
+
+$payloadCreator | Out-File -FilePath "$installPath\CopyToUSB.ps1" -Encoding UTF8
+
+# Create README
+$readme = @"
+ATOMIC MYCELIUM - PORTABLE INSTALLER
+====================================
+
+HOW TO USE ON A NEW COMPUTER:
+1. Insert USB
+2. Run INSTALL_PART1.bat (as Administrator)
+3. Reboot if prompted (Docker needs this)
+4. Run SETUP_PART2.bat
+5. Edit .env file with your API keys
+6. Run start-mycelium.bat
+
+WHAT GETS INSTALLED:
+- Python 3.12
+- Git
+- VS Code
+- Node.js
+- Docker Desktop
+- All Python packages
+
+REQUIREMENTS:
+- Windows 10/11
+- Internet connection
+- 10GB free space
+- Admin rights
+
+TROUBLESHOOTING:
+If Chocolatey fails: Install manually from chocolatey.org
+If Docker fails: Download from docker.com and install manually
+"@
+
+$readme | Out-File -FilePath "$installPath\README.txt" -Encoding UTF8
+
+# Create the "Copy Current Project to USB" script
+$copyScript = @"
+# Run this to copy your current mycelium to USB
+powershell -ExecutionPolicy Bypass -File "$installPath\CopyToUSB.ps1"
+pause
+"@
+
+$copyScript | Out-File -FilePath "$installPath\UPDATE_USB.bat" -Encoding ASCII
+
+Write-Host "`n✅ USB Installer Created!" -ForegroundColor Green
+Write-Host "Location: $installPath" -ForegroundColor Cyan
+Write-Host "`nNEXT STEPS:" -ForegroundColor Yellow
+Write-Host "1. Run UPDATE_USB.bat to copy your current mycelium to USB" -ForegroundColor White
+Write-Host "2. Eject USB safely" -ForegroundColor White
+Write-Host "3. Insert into new computer" -ForegroundColor White
+Write-Host "4. Run INSTALL_PART1.bat as Admin" -ForegroundColor White
+Write-Host "`n⚠️  LIMITS:" -ForegroundColor Red
+Write-Host "   - Cannot bypass Windows UAC (you must click YES)" -ForegroundColor Gray
+Write-Host "   - Cannot enter your API keys (security - you do this)" -ForegroundColor Gray
+Write-Host "   - May need reboot for Docker (Windows limitation)" -ForegroundColor Gray

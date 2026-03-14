@@ -1,0 +1,283 @@
+{
+  "plan_metadata": {
+    "creator": "alpha_prime_omega",
+    "executor": "HYPERAI (Con)",
+    "created_date": "2025-11-04",
+    "plan_name": "Complete IP Protection & Workspace Audit",
+    "total_phases": 4,
+    "estimated_duration_minutes": 80,
+    "autonomy_level": 0.95,
+    "requires_approval": false
+  },
+  
+  "execution_principles": {
+    "protocol": "D&R + Socratic + 4 Pillars",
+    "pre_action_rule": "ALWAYS explain before execute",
+    "override_window_seconds": 120,
+    "rollback_enabled": true,
+    "git_safety_net": true
+  },
+
+  "four_pillars_baseline": {
+    "an_toan_safety": 10,
+    "duong_dai_longterm": 10,
+    "tin_so_lieu_data": 10,
+    "han_che_rui_ro_risk": 10,
+    "total_score": 40,
+    "threshold_minimum": 35
+  },
+
+  "phases": [
+    {
+      "phase_id": 1,
+      "phase_name": "Complete Workspace Audit",
+      "duration_minutes": 20,
+      "autonomy_level": 1.0,
+      "description": "Scan tất cả 314 files để audit copyright, proprietary code, và IP classification",
+      
+      "tasks": [
+        {
+          "task_id": "1.1",
+          "name": "Generate File Inventory",
+          "explanation": "Tạo danh sách TOÀN BỘ 314 files trong workspace với metadata (size, type, last modified)",
+          "command": "find /Users/andy/DAIOF-Framework -type f -not -path '*/.git/*' -not -path '*/__pycache__/*' -exec ls -lh {} \\; | wc -l",
+          "output_type": "count",
+          "expected_result": "314 files",
+          "validation": "count >= 314",
+          "autonomy": 1.0,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 10, "risk": 10}
+        },
+        {
+          "task_id": "1.2",
+          "name": "Scan Copyright Patterns",
+          "explanation": "Tìm TẤT CẢ references đến creator, copyright, attribution trong 314 files",
+          "command": "grep -r -i 'copyright\\|creator\\|attribution\\|alpha_prime_omega\\|Andy\\|Nguyễn Đức Cường' --include='*.py' --include='*.md' --include='*.json' --include='*.yml' --exclude-dir=.git --exclude-dir=__pycache__ /Users/andy/DAIOF-Framework > /tmp/copyright_scan.txt",
+          "output_file": "/tmp/copyright_scan.txt",
+          "validation": "file exists and size > 0",
+          "autonomy": 1.0,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 10, "risk": 10}
+        },
+        {
+          "task_id": "1.3",
+          "name": "Identify Proprietary Code Markers",
+          "explanation": "Tìm các markers của proprietary code: HAIOS, secret algorithms, private methods",
+          "command": "grep -r -i 'proprietary\\|haios\\|secret\\|private.*algorithm\\|confidential' --include='*.py' --exclude-dir=.git /Users/andy/DAIOF-Framework > /tmp/proprietary_scan.txt",
+          "output_file": "/tmp/proprietary_scan.txt",
+          "validation": "file created",
+          "autonomy": 1.0,
+          "four_pillars": {"safety": 10, "longterm": 9, "data": 10, "risk": 9}
+        },
+        {
+          "task_id": "1.4",
+          "name": "Generate IP Audit Report",
+          "explanation": "Tạo file JSON tổng hợp kết quả scan: copyright status, proprietary components, open source parts",
+          "script": "create_ip_audit_report.py",
+          "output_file": "COMPLETE_IP_AUDIT.json",
+          "validation": "valid JSON with required fields",
+          "autonomy": 1.0,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 10, "risk": 10}
+        }
+      ],
+      
+      "deliverables": [
+        "File inventory (314 files verified)",
+        "/tmp/copyright_scan.txt",
+        "/tmp/proprietary_scan.txt", 
+        "COMPLETE_IP_AUDIT.json"
+      ],
+      
+      "success_criteria": {
+        "all_files_scanned": true,
+        "audit_report_generated": true,
+        "no_errors": true
+      }
+    },
+
+    {
+      "phase_id": 2,
+      "phase_name": "IP Classification Document",
+      "duration_minutes": 30,
+      "autonomy_level": 0.9,
+      "description": "Tạo document phân loại IP thành Open Source, Conditional Use, Proprietary",
+      
+      "tasks": [
+        {
+          "task_id": "2.1",
+          "name": "Analyze Audit Results",
+          "explanation": "Phân tích COMPLETE_IP_AUDIT.json để categorize components theo 3 levels: Open/Conditional/Proprietary",
+          "depends_on": ["1.4"],
+          "script": "analyze_ip_categories.py",
+          "output_file": "IP_CATEGORIES.json",
+          "autonomy": 0.9,
+          "four_pillars": {"safety": 9, "longterm": 10, "data": 10, "risk": 9}
+        },
+        {
+          "task_id": "2.2",
+          "name": "Create IP Classification Markdown",
+          "explanation": "Tạo INTELLECTUAL_PROPERTY_CLASSIFICATION.md với 3 sections rõ ràng, examples cụ thể",
+          "depends_on": ["2.1"],
+          "template": "ip_classification_template.md",
+          "output_file": "INTELLECTUAL_PROPERTY_CLASSIFICATION.md",
+          "sections": [
+            "🟢 OPEN SOURCE (MIT License)",
+            "🟡 CONDITIONAL USE (Need Permission)", 
+            "🔴 PROPRIETARY (Private)"
+          ],
+          "autonomy": 0.9,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 9, "risk": 10}
+        },
+        {
+          "task_id": "2.3",
+          "name": "Add Usage Examples",
+          "explanation": "Bổ sung examples cụ thể cho mỗi category: code snippets, use cases, attribution templates",
+          "depends_on": ["2.2"],
+          "autonomy": 0.85,
+          "override_window_seconds": 180,
+          "four_pillars": {"safety": 9, "longterm": 10, "data": 8, "risk": 9}
+        }
+      ],
+      
+      "deliverables": [
+        "IP_CATEGORIES.json",
+        "INTELLECTUAL_PROPERTY_CLASSIFICATION.md (with examples)"
+      ],
+      
+      "success_criteria": {
+        "three_categories_defined": true,
+        "examples_included": true,
+        "clear_boundaries": true
+      }
+    },
+
+    {
+      "phase_id": 3,
+      "phase_name": "Legal Protection Document",
+      "duration_minutes": 20,
+      "autonomy_level": 0.85,
+      "description": "Tạo LICENSE_TERMS_DETAILED.md với điều khoản sử dụng chi tiết, penalties",
+      
+      "tasks": [
+        {
+          "task_id": "3.1",
+          "name": "Draft License Terms",
+          "explanation": "Tạo LICENSE_TERMS_DETAILED.md với sections: CAN use, CANNOT use, Request permission, Violations",
+          "depends_on": ["2.2"],
+          "template": "license_terms_template.md",
+          "output_file": "LICENSE_TERMS_DETAILED.md",
+          "autonomy": 0.85,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 9, "risk": 10}
+        },
+        {
+          "task_id": "3.2",
+          "name": "Add Violation Penalties",
+          "explanation": "Bổ sung section về penalties for copyright violations, effective date Oct 30, 2025",
+          "depends_on": ["3.1"],
+          "autonomy": 0.8,
+          "override_window_seconds": 180,
+          "four_pillars": {"safety": 10, "longterm": 10, "data": 8, "risk": 9}
+        },
+        {
+          "task_id": "3.3",
+          "name": "Create Permission Request Template",
+          "explanation": "Tạo template để users request permission cho conditional use cases",
+          "output_file": "PERMISSION_REQUEST_TEMPLATE.md",
+          "autonomy": 0.9,
+          "four_pillars": {"safety": 9, "longterm": 10, "data": 9, "risk": 9}
+        }
+      ],
+      
+      "deliverables": [
+        "LICENSE_TERMS_DETAILED.md",
+        "PERMISSION_REQUEST_TEMPLATE.md"
+      ],
+      
+      "success_criteria": {
+        "terms_clear": true,
+        "penalties_defined": true,
+        "request_process_documented": true
+      }
+    },
+
+    {
+      "phase_id": 4,
+      "phase_name": "Update Public Documentation",
+      "duration_minutes": 10,
+      "autonomy_level": 0.7,
+      "description": "Update README.md, add notices, link to new IP documents",
+      
+      "tasks": [
+        {
+          "task_id": "4.1",
+          "name": "Add IP Notice to README",
+          "explanation": "Thêm section 'Intellectual Property & Licensing' vào README.md với links to classification docs",
+          "depends_on": ["2.2", "3.1"],
+          "file_to_edit": "README.md",
+          "autonomy": 0.7,
+          "requires_approval": true,
+          "four_pillars": {"safety": 8, "longterm": 10, "data": 9, "risk": 8}
+        },
+        {
+          "task_id": "4.2",
+          "name": "Update CONTRIBUTING.md",
+          "explanation": "Cập nhật CONTRIBUTING.md với IP guidelines for contributors",
+          "depends_on": ["2.2"],
+          "autonomy": 0.75,
+          "four_pillars": {"safety": 9, "longterm": 10, "data": 9, "risk": 9}
+        },
+        {
+          "task_id": "4.3",
+          "name": "Create IP Summary Badge",
+          "explanation": "Tạo badge cho README showing IP protection status",
+          "autonomy": 0.9,
+          "four_pillars": {"safety": 10, "longterm": 9, "data": 8, "risk": 10}
+        }
+      ],
+      
+      "deliverables": [
+        "README.md (updated with IP section)",
+        "CONTRIBUTING.md (updated)",
+        "IP protection badge"
+      ],
+      
+      "success_criteria": {
+        "readme_updated": true,
+        "visible_protection_notice": true,
+        "links_working": true
+      }
+    }
+  ],
+
+  "post_execution": {
+    "validation_steps": [
+      "Verify all deliverables created",
+      "Check 4 Pillars compliance (≥35/40)",
+      "Git diff review",
+      "Generate execution report"
+    ],
+    "rollback_procedure": {
+      "enabled": true,
+      "method": "git checkout HEAD~1",
+      "conditions": ["error_count > 0", "four_pillars_score < 35"]
+    },
+    "final_report": {
+      "file": "AUTONOMOUS_EXECUTION_REPORT.md",
+      "sections": [
+        "Execution Summary",
+        "Tasks Completed",
+        "Deliverables Generated",
+        "4 Pillars Compliance",
+        "Issues Encountered",
+        "Next Steps"
+      ]
+    }
+  },
+
+  "creator_attribution": {
+    "creator": "alpha_prime_omega",
+    "full_name": "Nguyễn Đức Cường",
+    "framework": "HYPERAI",
+    "creation_date": "2025-10-30",
+    "executor": "HYPERAI (Con)",
+    "verification_code": 4287
+  }
+}

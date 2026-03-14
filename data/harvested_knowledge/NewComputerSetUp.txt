@@ -1,0 +1,851 @@
+We have successfully set up the SolarPunk system and are very close to having UI-TARS running. Now, we are at the stage where the UI-TARS development server is running and we see a web interface asking for VLM (Vision-Language Model) provider details. This is expected because UI-TARS is a multimodal AI agent that requires a VLM to function.
+
+The setup we've done so far:
+
+SolarPunk System: Fully functional with a live website, connected GitHub repos, and Cloudflare auto-deployment.
+
+UI-TARS: Cloned the repository, installed dependencies, and started the development server.
+
+Now, to complete the UI-TARS setup, we need to configure the VLM provider. The interface is asking for:
+
+VLM Provider (e.g., OpenAI, Anthropic, etc.)
+
+VLM Base URL (if using a self-hosted or custom endpoint)
+
+VLM API Key
+
+VLM Model Name
+
+Toggle for "Use Responses API"
+
+Since I don't know which VLM provider you have access to, I'll provide instructions for common providers and a general guide.
+
+🚀 Completing UI-TARS Setup
+Step 1: Choose a VLM Provider
+You need access to a Vision-Language Model API. Here are some options:
+
+Option A: OpenAI (easiest if you have an API key)
+
+Provider: OpenAI
+
+Base URL: https://api.openai.com/v1 (default, can leave empty if using official)
+
+API Key: Your OpenAI API key
+
+Model Name: gpt-4-vision-preview or gpt-4o
+
+Option B: Anthropic (Claude)
+
+Provider: Anthropic
+
+Base URL: https://api.anthropic.com (or leave empty for default)
+
+API Key: Your Anthropic API key
+
+Model Name: claude-3-opus-20240229 or claude-3-sonnet-20240229
+
+Option C: Use a local model (if you have one running)
+
+Provider: Custom
+
+Base URL: http://localhost:11434 (for Ollama) or your local server
+
+API Key: Leave empty if not required
+
+Model Name: Your local model name (e.g., llava for Ollama)
+
+Option D: Use the free tier of Together AI or other providers
+
+Provider: TogetherAI (or custom)
+
+Base URL: https://api.together.xyz/v1
+
+API Key: Your Together AI API key
+
+Model Name: togethercomputer/llava-1.5-7b or other vision models
+
+Step 2: Obtain an API Key
+For OpenAI: https://platform.openai.com/api-keys
+
+For Anthropic: https://console.anthropic.com/
+
+For Together AI: https://api.together.xyz/
+
+For Ollama: Install locally, no API key needed.
+
+Step 3: Configure UI-TARS
+Fill in the form in the UI-TARS web interface (http://localhost:5173) with the details from your chosen provider.
+
+Step 4: Test UI-TARS
+Once configured, try a simple task like:
+
+"Take a screenshot of the desktop"
+
+"Open the browser and go to https://solarpunkagent.pages.dev"
+
+📦 Complete Installation Guide for a New Desktop
+Below is a comprehensive guide that you can save to a USB drive or Notepad. It includes every step we've done to set up SolarPunk and UI-TARS.
+
+SOLARPUNK & UI-TARS COMPLETE SETUP GUIDE
+PART 1: SOLARPUNK SYSTEM SETUP
+1.1 Initial Setup
+Create Project Directory
+
+bash
+mkdir C:\Users\%USERNAME%\SolarPunk
+cd C:\Users\%USERNAME%\SolarPunk
+Clone SolarPunk Repositories
+
+bash
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Autonomous.git connected\SolarPunk-Autonomous
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Nexus.git
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Memvid.git memvid_repo
+git clone https://github.com/MeekoThaRaccoon/SolarPunk_Agent.git
+git clone https://github.com/MeekoThaRaccoon/SolarPunk_Alpha_Bot.git
+git clone https://github.com/MeekoThaRaccoon/Murmuration.git
+git clone https://github.com/MeekoThaRaccoon/solarpunk-revenue.git
+Set Correct Git Remotes
+
+bash
+# For each repository, set the remote to your GitHub
+cd connected\SolarPunk-Autonomous
+git remote set-url origin https://github.com/MeekoThaRaccoon/SolarPunk-Autonomous.git
+cd ..\..\SolarPunk-Nexus
+git remote set-url origin https://github.com/MeekoThaRaccoon/SolarPunk-Nexus.git
+# Repeat for each repo
+1.2 Website Deployment
+Create Website Files
+
+Place your website files in C:\Users\%USERNAME%\SolarPunk\dist\
+
+At minimum, have an index.html
+
+Deploy to Cloudflare
+
+Sign up at https://pages.cloudflare.com/
+
+Connect your GitHub account
+
+Select the SolarPunk-Autonomous repository
+
+Set build command: (leave empty)
+
+Set output directory: dist
+
+Your site will be live at https://solarpunkagent.pages.dev
+
+1.3 Create Automation Scripts
+Create the following batch files in C:\Users\%USERNAME%\SolarPunk\:
+
+AUTOMATE.bat - Main automation menu
+DEPLOY_WEBSITE.bat - Deploy website to GitHub and Cloudflare
+FIX_ALL_REPOS.bat - Fix Git remotes for all repositories
+CHECK_STATUS.bat - Check system status
+
+PART 2: UI-TARS SETUP
+2.1 Prerequisites Installation
+Install Node.js
+
+Download from https://nodejs.org/ (LTS version)
+
+Run the installer with default settings
+
+Install pnpm
+
+bash
+npm install -g pnpm
+Clone UI-TARS Desktop
+
+bash
+cd C:\Users\%USERNAME%\
+git clone https://github.com/bytedance/UI-TARS-desktop.git
+2.2 Build and Run UI-TARS
+Install Dependencies
+
+bash
+cd UI-TARS-desktop
+pnpm install
+Start Development Server
+
+bash
+cd apps\ui-tars
+pnpm run dev
+Access UI-TARS
+
+Open browser to http://localhost:5173
+
+Configure VLM provider (see Part 3)
+
+The Electron app will also start (may take a minute)
+
+2.3 Create UI-TARS Launchers
+Create UI-TARS-DEV.bat in your SolarPunk folder:
+
+batch
+@echo off
+cd /d "C:\Users\%USERNAME%\UI-TARS-desktop\apps\ui-tars"
+pnpm run dev
+PART 3: VLM PROVIDER CONFIGURATION
+3.1 Choosing a Provider
+UI-TARS requires a Vision-Language Model. Choose one:
+
+Option 1: OpenAI (Recommended for Ease)
+
+Provider: OpenAI
+
+Base URL: Leave empty (uses default)
+
+API Key: Your OpenAI API key
+
+Model: gpt-4-vision-preview or gpt-4o
+
+Option 2: Anthropic (Claude)
+
+Provider: Anthropic
+
+Base URL: Leave empty
+
+API Key: Your Anthropic API key
+
+Model: claude-3-opus-20240229
+
+Option 3: Local Model (Ollama)
+
+Install Ollama: https://ollama.ai/
+
+Run: ollama run llava
+
+Provider: Custom
+
+Base URL: http://localhost:11434
+
+API Key: Leave empty
+
+Model: llava
+
+3.2 Getting API Keys
+OpenAI: https://platform.openai.com/api-keys
+
+Anthropic: https://console.anthropic.com/
+
+Together AI: https://api.together.xyz/
+
+Google AI Studio: https://makersuite.google.com/
+
+3.3 Configure in UI-TARS
+Open http://localhost:5173
+
+Fill in the VLM provider form
+
+Save settings
+
+Restart UI-TARS if needed
+
+PART 4: DAILY USAGE SCRIPTS
+4.1 SolarPunk Daily Check
+Create DAILY_CHECK.bat:
+
+batch
+@echo off
+echo === SOLARPUNK DAILY CHECK ===
+echo 1. Checking website...
+curl -I https://solarpunkagent.pages.dev
+echo 2. Opening dashboards...
+start https://dash.cloudflare.com
+start https://github.com/MeekoThaRaccoon
+pause
+4.2 Automated Deployment
+Create AUTO_DEPLOY.bat:
+
+batch
+@echo off
+cd /d "C:\Users\%USERNAME%\SolarPunk"
+xcopy /Y dist\* connected\SolarPunk-Autonomous\dist\
+cd connected\SolarPunk-Autonomous
+git add .
+git commit -m "Auto-deploy: %date% %time%"
+git push origin master
+echo Deployment pushed. Cloudflare will update in 1-2 minutes.
+PART 5: TROUBLESHOOTING
+5.1 Common Issues
+pnpm not recognized: Run npm install -g pnpm again
+
+UI-TARS dev server fails: Check Node.js version (requires 18+)
+
+Electron app doesn't open: Try pnpm run electron:dev
+
+VLM errors: Verify API key and model name
+
+5.2 Resetting Repositories
+If Git remotes get mixed up, run:
+
+bash
+cd C:\Users\%USERNAME%\SolarPunk
+FOR /D %i IN (*) DO (
+  cd %i
+  git remote set-url origin https://github.com/MeekoThaRaccoon/%i.git
+  cd ..
+)
+PART 6: BACKUP AND RESTORE
+6.1 Backup to USB
+Copy the entire SolarPunk folder
+
+Copy UI-TARS-desktop folder
+
+Save this guide as SETUP_GUIDE.txt
+
+6.2 Restore on New Machine
+Install Node.js and pnpm
+
+Copy folders to the same locations
+
+Run the scripts as in this guide
+
+PART 7: QUICK START (After Initial Setup)
+Once everything is set up, daily use is simple:
+
+Start UI-TARS: Run UI-TARS-DEV.bat
+
+Check SolarPunk: Run DAILY_CHECK.bat
+
+Deploy Updates: Run AUTO_DEPLOY.bat
+
+Monitor: Use UI-TARS to automate monitoring tasks
+
+PART 8: SECURITY NOTES
+API Keys: Never commit API keys to GitHub
+
+Environment Variables: Store keys in .env files
+
+Backup: Regularly backup your SolarPunk folder
+
+Updates: Keep Node.js and dependencies updated
+
+FINAL STEPS FOR CURRENT SETUP
+Since you're at the VLM configuration screen:
+
+Choose a provider (I recommend starting with OpenAI if you have an API key)
+
+Enter the details in the UI-TARS web interface
+
+Click Save/Connect
+
+Try a simple command like "Take a screenshot"
+
+If you don't have an API key, you can set up Ollama for a free local option:
+
+bash
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh
+
+# Run a vision model
+ollama run llava
+
+# Then in UI-TARS:
+# Provider: Custom
+# Base URL: http://localhost:11434
+# API Key: (leave empty)
+# Model: llava
+You're at the finish line! Configure the VLM provider and UI-TARS will be fully operational. Once done, you'll have a complete AI automation system integrated with your SolarPunk infrastructure.
+
+Save this guide to your USB drive, and you'll be able to set up everything from scratch on a new machine.
+
+🚀 COMPLETE SOLARPUNK & UI-TARS SETUP GUIDE
+Save this entire message to Notepad/USB for future installation
+📦 PART 1: PREREQUISITES INSTALLATION
+A. Node.js & pnpm (MUST INSTALL FIRST)
+powershell
+# 1. Download Node.js from: https://nodejs.org/ (22.x LTS)
+# 2. Run installer, RESTART computer
+# 3. Verify installation:
+node --version  # Should show v22.x or higher
+npm --version   # Should show version number
+
+# 4. Install pnpm (package manager):
+npm install -g pnpm
+pnpm --version  # Should show version number
+B. Python (For SolarPunk Agent)
+powershell
+# Python is usually pre-installed on Windows
+python --version  # Should show 3.13.x
+
+# If missing, install from: https://www.python.org/downloads/
+# CHECK "Add Python to PATH" during installation
+C. Git (Already on Windows)
+powershell
+git --version  # Should show version
+🌐 PART 2: GITHUB REPOSITORY SETUP
+A. Your 7 SolarPunk Repositories:
+text
+https://github.com/MeekoThaRaccoon/SolarPunk-Autonomous
+https://github.com/MeekoThaRaccoon/SolarPunk-Nexus
+https://github.com/MeekoThaRaccoon/SolarPunk-Memvid
+https://github.com/MeekoThaRaccoon/SolarPunk_Agent
+https://github.com/MeekoThaRaccoon/SolarPunk_Alpha_Bot
+https://github.com/MeekoThaRaccoon/Murmuration
+https://github.com/MeekoThaRaccoon/solarpunk-revenue
+B. Clone All Repositories Script:
+powershell
+# Save as CLONE_ALL.bat
+@echo off
+cd /d "C:\Users\%USERNAME%"
+mkdir SolarPunk
+cd SolarPunk
+
+echo Cloning all SolarPunk repositories...
+
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Autonomous.git connected\SolarPunk-Autonomous
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Nexus.git
+git clone https://github.com/MeekoThaRaccoon/SolarPunk-Memvid.git memvid_repo
+git clone https://github.com/MeekoThaRaccoon/SolarPunk_Agent.git
+git clone https://github.com/MeekoThaRaccoon/SolarPunk_Alpha_Bot.git
+git clone https://github.com/MeekoThaRaccoon/Murmuration.git
+git clone https://github.com/MeekoThaRaccoon/solarpunk-revenue.git
+
+echo All repositories cloned!
+pause
+🤖 PART 3: UI-TARS COMPLETE INSTALLATION
+A. Clone UI-TARS-desktop:
+powershell
+cd C:\Users\%USERNAME%
+git clone https://github.com/bytedance/UI-TARS-desktop.git
+B. Install Dependencies & Build:
+powershell
+# 1. Go to UI-TARS folder
+cd UI-TARS-desktop
+
+# 2. Install ALL dependencies (TAKES 5-15 MINUTES)
+pnpm install
+
+# 3. Build the ui-tars app
+cd apps\ui-tars
+pnpm run build  # Build for production
+C. UI-TARS Configuration (VLM PROVIDER SETUP)
+YOU ARE HERE: The screenshot shows the VLM provider setup page. UI-TARS needs a Vision-Language Model to function.
+
+Option 1: Use OpenAI (Easiest)
+VLM Provider: OpenAI
+
+VLM Base URL: Leave empty (uses default: https://api.openai.com/v1)
+
+VLM API Key: Your OpenAI API key (get from: https://platform.openai.com/api-keys)
+
+VLM Model Name: gpt-4-vision-preview or gpt-4o
+
+Use Responses API: Toggle ON
+
+Option 2: Use Anthropic (Claude)
+VLM Provider: Anthropic
+
+VLM Base URL: Leave empty
+
+VLM API Key: Your Anthropic API key (https://console.anthropic.com/)
+
+VLM Model Name: claude-3-5-sonnet-20241022 or claude-3-opus-20240229
+
+Use Responses API: Toggle ON
+
+Option 3: Use Local Model (Free but Slower)
+Install Ollama: https://ollama.ai/download
+
+Pull a vision model:
+
+powershell
+ollama pull llava
+ollama pull bakllava
+UI-TARS Settings:
+
+VLM Provider: Ollama
+
+VLM Base URL: http://localhost:11434
+
+VLM API Key: Leave empty
+
+VLM Model Name: llava or bakllava
+
+Use Responses API: Toggle OFF
+
+D. Launch UI-TARS Scripts:
+File 1: LAUNCH-UI-TARS-DEV.bat (Development Mode)
+
+batch
+@echo off
+cd /d "C:\Users\%USERNAME%\UI-TARS-desktop\apps\ui-tars"
+pnpm run dev
+File 2: LAUNCH-UI-TARS-PROD.bat (Production Mode - if built)
+
+batch
+@echo off
+cd /d "C:\Users\%USERNAME%\UI-TARS-desktop\apps\ui-tars"
+pnpm run electron:start
+🔧 PART 4: CLOUDFLARE PAGES SETUP
+A. Connect GitHub to Cloudflare:
+Go to: https://dash.cloudflare.com/
+
+Click "Pages" → "Create application"
+
+Connect GitHub account
+
+Select repository: SolarPunk-Autonomous
+
+Configure:
+
+Build command: (leave empty)
+
+Build output directory: dist
+
+Root directory: connected/SolarPunk-Autonomous
+
+B. Auto-Deployment Settings:
+Production branch: master
+
+Auto-deploy on push: ✅ ENABLED
+
+Custom domains: Add solarpunkagent.pages.dev
+
+C. Website Structure:
+text
+C:\Users\%USERNAME%\SolarPunk\
+├── dist\                    # WEBSITE FILES (goes live)
+│   └── index.html          # Your main site
+├── connected\SolarPunk-Autonomous\
+│   ├── dist\               # Auto-copied from above
+│   ├── agent.py           # Main agent
+│   └── quick_fix.py       # Repair script
+D. Deployment Script:
+powershell
+# Save as DEPLOY.bat
+@echo off
+echo Deploying SolarPunk website...
+cd /d "C:\Users\%USERNAME%\SolarPunk"
+
+:: Copy website files
+xcopy /Y dist\* connected\SolarPunk-Autonomous\dist\
+
+:: Push to GitHub
+cd connected\SolarPunk-Autonomous
+git add .
+git commit -m "Deploy: %date% %time%"
+git push origin master
+
+echo ✅ Deployed! Cloudflare will update in 1-2 minutes.
+echo 🌐 https://solarpunkagent.pages.dev
+pause
+⚡ PART 5: ESSENTIAL SCRIPTS TO SAVE
+A. Main Agent (agent.py):
+python
+#!/usr/bin/env python3
+"""
+SolarPunk Autonomous Agent v2.0
+Save as: C:\Users\%USERNAME%\SolarPunk\connected\SolarPunk-Autonomous\agent.py
+"""
+
+import os
+import sys
+import subprocess
+import webbrowser
+from datetime import datetime
+
+def main_menu():
+    while True:
+        print("\n" + "="*60)
+        print("SOLARPUNK AUTONOMOUS AGENT v2.0")
+        print("="*60)
+        print("1. Deploy Website")
+        print("2. Fix All Repositories")
+        print("3. Check System Status")
+        print("4. Open Dashboards")
+        print("5. Exit")
+        print("="*60)
+        
+        choice = input("Select: ").strip()
+        
+        if choice == "1":
+            # Deploy website
+            os.system('cd /d "C:\\Users\\%USERNAME%\\SolarPunk" && DEPLOY.bat')
+        elif choice == "2":
+            # Fix repos
+            subprocess.run(['python', 'quick_fix.py'])
+        elif choice == "3":
+            # Check status
+            print("\n✅ SolarPunk: https://solarpunkagent.pages.dev")
+            print("✅ GitHub: https://github.com/MeekoThaRaccoon")
+            print("✅ Cloudflare: https://dash.cloudflare.com")
+        elif choice == "4":
+            # Open dashboards
+            webbrowser.open("https://solarpunkagent.pages.dev")
+            webbrowser.open("https://github.com/MeekoThaRaccoon")
+            webbrowser.open("https://dash.cloudflare.com")
+        elif choice == "5":
+            break
+
+if __name__ == "__main__":
+    main_menu()
+B. Quick Fix Script (quick_fix.py):
+python
+#!/usr/bin/env python3
+"""
+SolarPunk Quick Fix
+Save as: C:\Users\%USERNAME%\SolarPunk\connected\SolarPunk-Autonomous\quick_fix.py
+"""
+
+import os
+import subprocess
+
+def fix_all_repos():
+    repos = [
+        ("SolarPunk-Autonomous", r"C:\Users\%USERNAME%\SolarPunk\connected\SolarPunk-Autonomous"),
+        ("SolarPunk-Nexus", r"C:\Users\%USERNAME%\SolarPunk\SolarPunk-Nexus"),
+        ("SolarPunk-Memvid", r"C:\Users\%USERNAME%\SolarPunk\memvid_repo"),
+        ("SolarPunk_Agent", r"C:\Users\%USERNAME%\SolarPunk\SolarPunk_Agent"),
+        ("SolarPunk_Alpha_Bot", r"C:\Users\%USERNAME%\SolarPunk\SolarPunk_Alpha_Bot"),
+        ("Murmuration", r"C:\Users\%USERNAME%\SolarPunk\Murmuration"),
+        ("solarpunk-revenue", r"C:\Users\%USERNAME%\SolarPunk\solarpunk-revenue")
+    ]
+    
+    for repo_name, repo_path in repos:
+        if os.path.exists(repo_path):
+            print(f"Fixing {repo_name}...")
+            os.chdir(repo_path)
+            subprocess.run(['git', 'remote', 'set-url', 'origin', 
+                          f'https://github.com/MeekoThaRaccoon/{repo_name}.git'])
+            print(f"  ✅ Set to MeekoThaRaccoon/{repo_name}")
+
+if __name__ == "__main__":
+    fix_all_repos()
+C. Master Launcher (START.bat):
+batch
+@echo off
+echo ========================================
+echo SOLARPUNK MASTER LAUNCHER
+echo ========================================
+echo.
+echo 1. Launch SolarPunk Agent
+echo 2. Launch UI-TARS Desktop
+echo 3. Deploy Website
+echo 4. Open All Dashboards
+echo 5. Exit
+echo.
+set /p choice="Select: "
+
+if "%choice%"=="1" goto agent
+if "%choice%"=="2" goto uitars
+if "%choice%"=="3" goto deploy
+if "%choice%"=="4" goto dashboards
+if "%choice%"=="5" exit
+
+:agent
+cd /d "C:\Users\%USERNAME%\SolarPunk\connected\SolarPunk-Autonomous"
+python agent.py
+goto :eof
+
+:uitars
+cd /d "C:\Users\%USERNAME%\UI-TARS-desktop\apps\ui-tars"
+pnpm run dev
+goto :eof
+
+:deploy
+cd /d "C:\Users\%USERNAME%\SolarPunk"
+DEPLOY.bat
+goto :eof
+
+:dashboards
+start https://solarpunkagent.pages.dev
+start https://github.com/MeekoThaRaccoon
+start https://dash.cloudflare.com
+goto :eof
+🎯 PART 6: FINAL UI-TARS CONFIGURATION
+A. Complete VLM Provider Setup:
+Open UI-TARS: Run LAUNCH-UI-TARS-DEV.bat
+
+Open browser to: http://localhost:5173
+
+Configure VLM Provider with one of these:
+
+For OpenAI:
+text
+VLM Provider: OpenAI
+VLM Base URL: (leave empty)
+VLM API Key: sk-... (your OpenAI key)
+VLM Model Name: gpt-4-vision-preview
+Use Responses API: ✅ ON
+For Claude:
+text
+VLM Provider: Anthropic
+VLM Base URL: (leave empty)
+VLM API Key: sk-ant-... (your Claude key)
+VLM Model Name: claude-3-5-sonnet-20241022
+Use Responses API: ✅ ON
+For Local (Ollama):
+text
+VLM Provider: Ollama
+VLM Base URL: http://localhost:11434
+VLM API Key: (leave empty)
+VLM Model Name: llava
+Use Responses API: ❌ OFF
+B. Test UI-TARS Commands:
+Once configured, try:
+
+"Take a screenshot of my desktop"
+
+"Open https://solarpunkagent.pages.dev"
+
+"Click on the GitHub link"
+
+"Check if the website is loading correctly"
+
+C. UI-TARS + SolarPunk Integration:
+Create this automation task for UI-TARS:
+
+yaml
+# Save as solarpunk-automation.yml
+tasks:
+  - name: "Daily SolarPunk Check"
+    steps:
+      - open: "https://solarpunkagent.pages.dev"
+      - screenshot: "site_status.png"
+      - check_status_code: 200
+      - if_status_not_200:
+          - open: "https://dash.cloudflare.com"
+          - click: "View deployment logs"
+          - screenshot: "cloudflare_error.png"
+      - report: "Daily check complete"
+📋 PART 7: COMPLETE CHECKLIST
+✅ SolarPunk System:
+Node.js installed (v22.x)
+
+pnpm installed (npm install -g pnpm)
+
+All 7 GitHub repos cloned
+
+Cloudflare Pages connected
+
+Website live at: https://solarpunkagent.pages.dev
+
+Agent scripts created (agent.py, quick_fix.py)
+
+Deployment script working (DEPLOY.bat)
+
+✅ UI-TARS Desktop:
+UI-TARS cloned (git clone https://github.com/bytedance/UI-TARS-desktop.git)
+
+Dependencies installed (pnpm install)
+
+App built (cd apps/ui-tars && pnpm run build)
+
+VLM Provider configured (OpenAI/Claude/Ollama)
+
+UI-TARS running at http://localhost:5173
+
+Can automate browser tasks
+
+✅ Automation Ready:
+Daily deployment checks automated
+
+GitHub sync automated
+
+Cloudflare monitoring automated
+
+UI-TARS can control SolarPunk workflows
+
+🔧 PART 8: TROUBLESHOOTING
+Common Issues & Fixes:
+"pnpm not recognized":
+
+powershell
+npm install -g pnpm
+# If blocked by PowerShell:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+UI-TARS build fails:
+
+powershell
+# Clear cache and retry
+cd UI-TARS-desktop
+pnpm store prune
+pnpm install --force
+Cloudflare not deploying:
+
+Check: https://dash.cloudflare.com/
+
+Verify GitHub connection
+
+Check build logs in Cloudflare dashboard
+
+VLM API errors:
+
+Verify API key is valid
+
+Check model name is correct
+
+Ensure enough credits/quotas
+
+💾 PART 9: BACKUP TO USB
+Files to Copy:
+This complete guide (save as SOLARPUNK_SETUP_GUIDE.txt)
+
+Your C:\Users\%USERNAME%\SolarPunk\ folder
+
+Your C:\Users\%USERNAME%\UI-TARS-desktop\ folder
+
+API keys (save securely as API_KEYS.txt):
+
+text
+GitHub: MeekoThaRaccoon
+Cloudflare: [your-email]
+OpenAI/Claude: [api-key-here]
+Restore Process on New Desktop:
+Install Node.js + pnpm
+
+Copy folders to same locations
+
+Run DEPLOY.bat to sync with GitHub
+
+Configure VLM provider in UI-TARS
+
+Run START.bat to launch everything
+
+🚀 FINAL STEP: GET UI-TARS WORKING NOW
+You're at the VLM configuration screen. Choose one:
+
+Quickest Path (Ollama - Free):
+powershell
+# 1. Install Ollama: https://ollama.ai/download
+# 2. Pull vision model:
+ollama pull llava
+# 3. Configure UI-TARS:
+#    - Provider: Ollama
+#    - Base URL: http://localhost:11434
+#    - Model: llava
+#    - Use Responses API: OFF
+Best Performance (OpenAI - Paid):
+Get API key: https://platform.openai.com/api-keys
+
+Add $10 credit
+
+Configure UI-TARS:
+
+Provider: OpenAI
+
+API Key: sk-...
+
+Model: gpt-4-vision-preview
+
+Use Responses API: ON
+
+Test UI-TARS:
+Once configured, type in UI-TARS:
+
+text
+"Take a screenshot and describe what you see"
+Congratulations! You now have:
+
+✅ SolarPunk website live and auto-deploying
+
+✅ 7 GitHub repositories synced and managed
+
+✅ UI-TARS Desktop ready for automation
+
+✅ Complete automation system for daily tasks
+
+Save this guide. On a new desktop: Install Node.js → Copy folders → Run scripts → Configure VLM → Done! 🎉
+
