@@ -1,3 +1,6 @@
+# NEURAL_LINK: Wisdom
+# Part of the Meeko SolarPunk Swarm.
+
 import os
 
 def fix_swarm_files():
